@@ -12,8 +12,8 @@ colorlinks: yes
 lot: yes
 lof: yes
 site: bookdown::bookdown_site
-description: Course notes for PSYC 6060
-github-repo: dstanley4/psyc6060bookdown
+description: Course notes for PSYC 3250
+github-repo: dstanley4/psyc3250bookdown
 graphics: yes
 ---
 
@@ -35,4 +35,4 @@ lapply(c('xfun'), function(pkg) {
 knitr::include_graphics("header_3250.png")
 ```
 
-These notes are a resource for students in my PSYC*3250 class.
+These notes are a resource for students in my PSYC 3250 class.

@@ -193,7 +193,7 @@ If you inspect the Files pane on the right of the screen you see the  **data_okc
 
 Once your command looks like the one below select the text and click on the "Run" button.
 
-Note: If you are not in the class, the data file is available from: https://github.com/dstanley4/psyc6060bookdown
+Note: If you are not in the class, the data file is available from: https://github.com/dstanley4/psyc3250bookdown
 
 
 ```{r firstread}

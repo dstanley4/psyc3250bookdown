@@ -7,16 +7,12 @@ library(tidyverse)
 ## Required Packages
 
 
-The data files below are used in this chapter. The files are available at: https://github.com/dstanley4/psyc6060bookdown
+The data files below are used in this chapter. The files are available at: https://github.com/dstanley4/psyc3250bookdown
 
 
 | Required Data |
 |-------------------|
-|data_ex_between.csv |
-|data_ex_within.csv |
-|data_food.csv |
 |data_item_scoring.csv |
-|data_item_time.csv |
 
 
 The following CRAN packages must be installed:

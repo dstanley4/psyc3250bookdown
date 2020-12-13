@@ -6,7 +6,7 @@ library(tidyverse)
 
 ## Required
 
-The data files below are used in this chapter. The files are available at: https://github.com/dstanley4/psyc6060bookdown
+The data files below are used in this chapter. The files are available at: https://github.com/dstanley4/psyc3250bookdown
 
 | Required Data |
 |-------------------|
