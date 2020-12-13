@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Graphing | Welcome!</title>
+  <meta name="description" content="Course notes for PSYC 6060" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Graphing | Welcome!" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course notes for PSYC 6060" />
+  <meta name="github-repo" content="dstanley4/psyc6060bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Graphing | Welcome!" />
+  
+  <meta name="twitter:description" content="Course notes for PSYC 6060" />
+  
+
+<meta name="author" content="David J. Stanley" />
+
+
+<meta name="date" content="2020-11-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="populations.html"/>
+<link rel="next" href="sampling-accuracy.html"/>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block/empty-anchor.js"></script>
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="libs/plotly-binding/plotly.js"></script>
+<script src="libs/typedarray/typedarray.min.js"></script>
+<link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Course Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course:</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.3</b> Create an account at R Studio Cloud</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.4</b> Join the class workspace</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.12</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
+<li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
+<li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
+<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
+<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
+<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv() and data frames</a></li>
+<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv() and tibbles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="populations.html"><a href="populations.html"><i class="fa fa-check"></i><b>3</b> Populations</a><ul>
+<li class="chapter" data-level="3.1" data-path="populations.html"><a href="populations.html#notation"><i class="fa fa-check"></i><b>3.1</b> Notation</a></li>
+<li class="chapter" data-level="3.2" data-path="populations.html"><a href="populations.html#population-vs-samples"><i class="fa fa-check"></i><b>3.2</b> Population vs samples</a></li>
+<li class="chapter" data-level="3.3" data-path="populations.html"><a href="populations.html#a-small-population"><i class="fa fa-check"></i><b>3.3</b> A small population</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="populations.html"><a href="populations.html#mean-mu"><i class="fa fa-check"></i><b>3.3.1</b> Mean (<span class="math inline">\(\mu\)</span>)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="populations.html"><a href="populations.html#variance-sigma2"><i class="fa fa-check"></i><b>3.3.2</b> Variance (<span class="math inline">\(\sigma^2\)</span>)</a></li>
+<li class="chapter" data-level="3.3.3" data-path="populations.html"><a href="populations.html#standard-deviation-sigma"><i class="fa fa-check"></i><b>3.3.3</b> Standard Deviation (<span class="math inline">\(\sigma\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="populations.html"><a href="populations.html#visualizing-populations"><i class="fa fa-check"></i><b>3.4</b> Visualizing populations</a></li>
+<li class="chapter" data-level="3.5" data-path="populations.html"><a href="populations.html#comparisons-same-sigma"><i class="fa fa-check"></i><b>3.5</b> Comparisons: Same <span class="math inline">\(\sigma\)</span></a><ul>
+<li class="chapter" data-level="3.5.1" data-path="populations.html"><a href="populations.html#standardized-units"><i class="fa fa-check"></i><b>3.5.1</b> Standardized units</a></li>
+<li class="chapter" data-level="3.5.2" data-path="populations.html"><a href="populations.html#cohens-d-units"><i class="fa fa-check"></i><b>3.5.2</b> Cohen’s <span class="math inline">\(d\)</span> units</a></li>
+<li class="chapter" data-level="3.5.3" data-path="populations.html"><a href="populations.html#cohens-d-advantages"><i class="fa fa-check"></i><b>3.5.3</b> Cohen’s <span class="math inline">\(d\)</span> advantages</a></li>
+<li class="chapter" data-level="3.5.4" data-path="populations.html"><a href="populations.html#cohens-d-caveats"><i class="fa fa-check"></i><b>3.5.4</b> Cohen’s <span class="math inline">\(d\)</span> caveats</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="populations.html"><a href="populations.html#comparisons-different-sigma"><i class="fa fa-check"></i><b>3.6</b> Comparisons: Different <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="3.7" data-path="populations.html"><a href="populations.html#comparisons-repeated-measures"><i class="fa fa-check"></i><b>3.7</b> Comparisons: Repeated Measures</a></li>
+<li class="chapter" data-level="3.8" data-path="populations.html"><a href="populations.html#comparison-benchmarks"><i class="fa fa-check"></i><b>3.8</b> Comparison Benchmarks</a></li>
+<li class="chapter" data-level="3.9" data-path="populations.html"><a href="populations.html#population-relations"><i class="fa fa-check"></i><b>3.9</b> Population relations</a></li>
+<li class="chapter" data-level="3.10" data-path="populations.html"><a href="populations.html#relation-benchmarks"><i class="fa fa-check"></i><b>3.10</b> Relation benchmarks</a></li>
+<li class="chapter" data-level="3.11" data-path="populations.html"><a href="populations.html#key-points"><i class="fa fa-check"></i><b>3.11</b> Key points</a></li>
+<li class="chapter" data-level="3.12" data-path="populations.html"><a href="populations.html#minor-points"><i class="fa fa-check"></i><b>3.12</b> Minor Points</a></li>
+<li class="chapter" data-level="3.13" data-path="populations.html"><a href="populations.html#self-assessment"><i class="fa fa-check"></i><b>3.13</b> Self Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>4</b> Graphing</a><ul>
+<li class="chapter" data-level="4.1" data-path="graphing.html"><a href="graphing.html#required-1"><i class="fa fa-check"></i><b>4.1</b> Required</a></li>
+<li class="chapter" data-level="4.2" data-path="graphing.html"><a href="graphing.html#data"><i class="fa fa-check"></i><b>4.2</b> Data</a></li>
+<li class="chapter" data-level="4.3" data-path="graphing.html"><a href="graphing.html#graph-basics"><i class="fa fa-check"></i><b>4.3</b> Graph basics</a></li>
+<li class="chapter" data-level="4.4" data-path="graphing.html"><a href="graphing.html#graphing-efficiently"><i class="fa fa-check"></i><b>4.4</b> Graphing efficiently</a></li>
+<li class="chapter" data-level="4.5" data-path="graphing.html"><a href="graphing.html#aesthetics"><i class="fa fa-check"></i><b>4.5</b> Aesthetics</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="graphing.html"><a href="graphing.html#fill-color"><i class="fa fa-check"></i><b>4.5.1</b> Fill color</a></li>
+<li class="chapter" data-level="4.5.2" data-path="graphing.html"><a href="graphing.html#overriding-aes"><i class="fa fa-check"></i><b>4.5.2</b> Overriding aes()</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="graphing.html"><a href="graphing.html#apa-style"><i class="fa fa-check"></i><b>4.6</b> APA style</a></li>
+<li class="chapter" data-level="4.7" data-path="graphing.html"><a href="graphing.html#axes"><i class="fa fa-check"></i><b>4.7</b> Axes</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="graphing.html"><a href="graphing.html#range"><i class="fa fa-check"></i><b>4.7.1</b> Range</a></li>
+<li class="chapter" data-level="4.7.2" data-path="graphing.html"><a href="graphing.html#ticks"><i class="fa fa-check"></i><b>4.7.2</b> Ticks</a></li>
+<li class="chapter" data-level="4.7.3" data-path="graphing.html"><a href="graphing.html#labels"><i class="fa fa-check"></i><b>4.7.3</b> Labels</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="graphing.html"><a href="graphing.html#axis-values"><i class="fa fa-check"></i><b>4.8</b> Axis values</a><ul>
+<li class="chapter" data-level="4.8.1" data-path="graphing.html"><a href="graphing.html#text"><i class="fa fa-check"></i><b>4.8.1</b> Text</a></li>
+<li class="chapter" data-level="4.8.2" data-path="graphing.html"><a href="graphing.html#angle"><i class="fa fa-check"></i><b>4.8.2</b> Angle</a></li>
+<li class="chapter" data-level="4.8.3" data-path="graphing.html"><a href="graphing.html#alignment"><i class="fa fa-check"></i><b>4.8.3</b> Alignment</a></li>
+<li class="chapter" data-level="4.8.4" data-path="graphing.html"><a href="graphing.html#order"><i class="fa fa-check"></i><b>4.8.4</b> Order</a></li>
+<li class="chapter" data-level="4.8.5" data-path="graphing.html"><a href="graphing.html#legend-order"><i class="fa fa-check"></i><b>4.8.5</b> Legend order</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="graphing.html"><a href="graphing.html#custom-colours"><i class="fa fa-check"></i><b>4.9</b> Custom colours</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="graphing.html"><a href="graphing.html#r-palette"><i class="fa fa-check"></i><b>4.9.1</b> R palette</a></li>
+<li class="chapter" data-level="4.9.2" data-path="graphing.html"><a href="graphing.html#hex-colours"><i class="fa fa-check"></i><b>4.9.2</b> Hex colours</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="graphing.html"><a href="graphing.html#emoji"><i class="fa fa-check"></i><b>4.10</b> Emoji</a></li>
+<li class="chapter" data-level="4.11" data-path="graphing.html"><a href="graphing.html#accessible-colors"><i class="fa fa-check"></i><b>4.11</b> Accessible Colors</a><ul>
+<li class="chapter" data-level="4.11.1" data-path="graphing.html"><a href="graphing.html#rcolorbrewer"><i class="fa fa-check"></i><b>4.11.1</b> RColorBrewer</a></li>
+<li class="chapter" data-level="4.11.2" data-path="graphing.html"><a href="graphing.html#avoid-color"><i class="fa fa-check"></i><b>4.11.2</b> Avoid color</a></li>
+</ul></li>
+<li class="chapter" data-level="4.12" data-path="graphing.html"><a href="graphing.html#saving"><i class="fa fa-check"></i><b>4.12</b> Saving</a><ul>
+<li class="chapter" data-level="4.12.1" data-path="graphing.html"><a href="graphing.html#mac"><i class="fa fa-check"></i><b>4.12.1</b> MAC</a></li>
+<li class="chapter" data-level="4.12.2" data-path="graphing.html"><a href="graphing.html#pc-or-mac"><i class="fa fa-check"></i><b>4.12.2</b> PC or MAC</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html"><i class="fa fa-check"></i><b>5</b> Sampling Accuracy</a><ul>
+<li class="chapter" data-level="5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
+<li class="chapter" data-level="5.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#data-for-the-chapter"><i class="fa fa-check"></i><b>5.2</b> Data for the chapter</a></li>
+<li class="chapter" data-level="5.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#notation-1"><i class="fa fa-check"></i><b>5.3</b> Notation</a></li>
+<li class="chapter" data-level="5.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-mu"><i class="fa fa-check"></i><b>5.4</b> Estimating <span class="math inline">\(\mu\)</span></a><ul>
+<li class="chapter" data-level="5.4.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias"><i class="fa fa-check"></i><b>5.4.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma2"><i class="fa fa-check"></i><b>5.5</b> Estimating <span class="math inline">\(\sigma^2\)</span></a><ul>
+<li class="chapter" data-level="5.5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-1"><i class="fa fa-check"></i><b>5.5.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma"><i class="fa fa-check"></i><b>5.6</b> Estimating <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-delta"><i class="fa fa-check"></i><b>5.7</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
+<li class="chapter" data-level="5.7.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#pooled-standard-deviation"><i class="fa fa-check"></i><b>5.7.1</b> Pooled standard deviation</a></li>
+<li class="chapter" data-level="5.7.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#calculating-d"><i class="fa fa-check"></i><b>5.7.2</b> Calculating <span class="math inline">\(d\)</span></a></li>
+<li class="chapter" data-level="5.7.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-2"><i class="fa fa-check"></i><b>5.7.3</b> Assessing bias</a></li>
+<li class="chapter" data-level="5.7.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#illustrating-variability"><i class="fa fa-check"></i><b>5.7.4</b> Illustrating variability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-rho"><i class="fa fa-check"></i><b>5.8</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
+<li class="chapter" data-level="5.8.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-3"><i class="fa fa-check"></i><b>5.8.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview-1"><i class="fa fa-check"></i><b>5.9</b> Overview</a></li>
+<li class="chapter" data-level="5.10" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#meta-analysis"><i class="fa fa-check"></i><b>5.10</b> Meta-analysis</a></li>
+<li class="chapter" data-level="5.11" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#a-joke"><i class="fa fa-check"></i><b>5.11</b> A joke</a></li>
+<li class="chapter" data-level="5.12" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#key-points-1"><i class="fa fa-check"></i><b>5.12</b> Key Points</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sampling-precision.html"><a href="sampling-precision.html"><i class="fa fa-check"></i><b>6</b> Sampling Precision</a><ul>
+<li class="chapter" data-level="6.1" data-path="sampling-precision.html"><a href="sampling-precision.html#overview-2"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
+<li class="chapter" data-level="6.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-individuals"><i class="fa fa-check"></i><b>6.2</b> Population / Individuals</a></li>
+<li class="chapter" data-level="6.3" data-path="sampling-precision.html"><a href="sampling-precision.html#sampling-distribution"><i class="fa fa-check"></i><b>6.3</b> Sampling distribution</a></li>
+<li class="chapter" data-level="6.4" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-indices"><i class="fa fa-check"></i><b>6.4</b> Precision indices</a></li>
+<li class="chapter" data-level="6.5" data-path="sampling-precision.html"><a href="sampling-precision.html#a-short-cut"><i class="fa fa-check"></i><b>6.5</b> A short cut</a></li>
+<li class="chapter" data-level="6.6" data-path="sampling-precision.html"><a href="sampling-precision.html#estimates-of-precision"><i class="fa fa-check"></i><b>6.6</b> Estimates of precision</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="sampling-precision.html"><a href="sampling-precision.html#a-worked-example"><i class="fa fa-check"></i><b>6.6.1</b> A worked example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="sampling-precision.html"><a href="sampling-precision.html#bias-of-precision-estimates"><i class="fa fa-check"></i><b>6.7</b> Bias of precision estimates</a></li>
+<li class="chapter" data-level="6.8" data-path="sampling-precision.html"><a href="sampling-precision.html#where-are-we"><i class="fa fa-check"></i><b>6.8</b> Where are we?</a></li>
+<li class="chapter" data-level="6.9" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-means-causes"><i class="fa fa-check"></i><b>6.9</b> Precision for means: Causes</a></li>
+<li class="chapter" data-level="6.10" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-d-values-causes"><i class="fa fa-check"></i><b>6.10</b> Precision for <span class="math inline">\(d\)</span>-values: Causes</a><ul>
+<li class="chapter" data-level="6.10.1" data-path="sampling-precision.html"><a href="sampling-precision.html#sample-size"><i class="fa fa-check"></i><b>6.10.1</b> Sample size</a></li>
+<li class="chapter" data-level="6.10.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-effect-size-delta"><i class="fa fa-check"></i><b>6.10.2</b> Population effect size (<span class="math inline">\(\delta\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-sample-correlations-r-causes"><i class="fa fa-check"></i><b>6.11</b> Precision for sample correlations (<span class="math inline">\(r\)</span>): Causes</a><ul>
+<li class="chapter" data-level="6.11.1" data-path="sampling-precision.html"><a href="sampling-precision.html#sample-size-1"><i class="fa fa-check"></i><b>6.11.1</b> Sample size</a></li>
+<li class="chapter" data-level="6.11.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-effect-size-rho"><i class="fa fa-check"></i><b>6.11.2</b> Population effect size (<span class="math inline">\(\rho\)</span>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html"><i class="fa fa-check"></i><b>7</b> Effect sizes from publications</a><ul>
+<li class="chapter" data-level="7.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#required-2"><i class="fa fa-check"></i><b>7.1</b> Required</a></li>
+<li class="chapter" data-level="7.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#objective-1"><i class="fa fa-check"></i><b>7.2</b> Objective</a></li>
+<li class="chapter" data-level="7.3" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#estimating-delta-1"><i class="fa fa-check"></i><b>7.3</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
+<li class="chapter" data-level="7.3.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#independent-groups"><i class="fa fa-check"></i><b>7.3.1</b> Independent Groups</a></li>
+<li class="chapter" data-level="7.3.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#repeated-measures"><i class="fa fa-check"></i><b>7.3.2</b> Repeated Measures</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#estimating-rho-1"><i class="fa fa-check"></i><b>7.4</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
+<li class="chapter" data-level="7.4.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#a-single-correlation"><i class="fa fa-check"></i><b>7.4.1</b> A single correlation</a></li>
+<li class="chapter" data-level="7.4.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#difference-between-two-correlations"><i class="fa fa-check"></i><b>7.4.2</b> Difference between two correlations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html"><i class="fa fa-check"></i><b>8</b> NHST and sample size</a><ul>
+<li class="chapter" data-level="8.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#required-3"><i class="fa fa-check"></i><b>8.1</b> Required</a></li>
+<li class="chapter" data-level="8.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#overview-3"><i class="fa fa-check"></i><b>8.2</b> Overview</a></li>
+<li class="chapter" data-level="8.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#goals"><i class="fa fa-check"></i><b>8.3</b> Goals</a></li>
+<li class="chapter" data-level="8.4" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#independent-groups-t-test"><i class="fa fa-check"></i><b>8.4</b> Independent groups <span class="math inline">\(t\)</span>-test</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size"><i class="fa fa-check"></i><b>8.4.1</b> Population effect size</a></li>
+<li class="chapter" data-level="8.4.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size"><i class="fa fa-check"></i><b>8.4.2</b> Determining sample size</a></li>
+<li class="chapter" data-level="8.4.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant"><i class="fa fa-check"></i><b>8.4.3</b> What will be signficant?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#repeated-measures-t-test"><i class="fa fa-check"></i><b>8.5</b> Repeated measures <span class="math inline">\(t\)</span>-test</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size-1"><i class="fa fa-check"></i><b>8.5.1</b> Population effect size</a></li>
+<li class="chapter" data-level="8.5.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size-1"><i class="fa fa-check"></i><b>8.5.2</b> Determining sample size</a></li>
+<li class="chapter" data-level="8.5.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant-1"><i class="fa fa-check"></i><b>8.5.3</b> What will be signficant?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#correlations"><i class="fa fa-check"></i><b>8.6</b> Correlations</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size-2"><i class="fa fa-check"></i><b>8.6.1</b> Population effect size</a></li>
+<li class="chapter" data-level="8.6.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size-2"><i class="fa fa-check"></i><b>8.6.2</b> Determining sample size</a></li>
+<li class="chapter" data-level="8.6.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant-2"><i class="fa fa-check"></i><b>8.6.3</b> What will be signficant?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html"><i class="fa fa-check"></i><b>9</b> Equivalence tests and sample size</a><ul>
+<li class="chapter" data-level="9.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#required-4"><i class="fa fa-check"></i><b>9.1</b> Required</a></li>
+<li class="chapter" data-level="9.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#interpreting-non-significant-findings"><i class="fa fa-check"></i><b>9.2</b> Interpreting non-significant findings</a></li>
+<li class="chapter" data-level="9.3" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#when-would-i-use-an-equivalence-test"><i class="fa fa-check"></i><b>9.3</b> When would I use an equivalence test?</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#t-test"><i class="fa fa-check"></i><b>9.3.1</b> <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="9.3.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#correlation"><i class="fa fa-check"></i><b>9.3.2</b> Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#possible-outcomes"><i class="fa fa-check"></i><b>9.4</b> Possible Outcomes</a></li>
+<li class="chapter" data-level="9.5" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#what-is-an-equivalence-test"><i class="fa fa-check"></i><b>9.5</b> What is an equivalence test</a></li>
+<li class="chapter" data-level="9.6" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#defining-a-zero-effect"><i class="fa fa-check"></i><b>9.6</b> Defining a zero effect</a></li>
+<li class="chapter" data-level="9.7" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence---repeated-measures"><i class="fa fa-check"></i><b>9.7</b> Equivalence - repeated measures</a><ul>
+<li class="chapter" data-level="9.7.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#raw-units"><i class="fa fa-check"></i><b>9.7.1</b> Raw units</a></li>
+<li class="chapter" data-level="9.7.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#standardized-units-1"><i class="fa fa-check"></i><b>9.7.2</b> Standardized units</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence---independent-groups"><i class="fa fa-check"></i><b>9.8</b> Equivalence - Independent groups</a><ul>
+<li class="chapter" data-level="9.8.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#raw-units-1"><i class="fa fa-check"></i><b>9.8.1</b> Raw units</a></li>
+<li class="chapter" data-level="9.8.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#standardized-units-2"><i class="fa fa-check"></i><b>9.8.2</b> Standardized units</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence-correlation"><i class="fa fa-check"></i><b>9.9</b> Equivalence Correlation</a></li>
+<li class="chapter" data-level="9.10" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#sample-sizes-for-equivalence-testing"><i class="fa fa-check"></i><b>9.10</b> Sample sizes for equivalence testing</a><ul>
+<li class="chapter" data-level="9.10.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#independent-t-test"><i class="fa fa-check"></i><b>9.10.1</b> Independent <em>t</em>-test</a></li>
+<li class="chapter" data-level="9.10.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#repeated-t-test"><i class="fa fa-check"></i><b>9.10.2</b> Repeated <em>t</em>-test</a></li>
+<li class="chapter" data-level="9.10.3" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#correlation-1"><i class="fa fa-check"></i><b>9.10.3</b> Correlation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html"><i class="fa fa-check"></i><b>10</b> Precision and sample size</a><ul>
+<li class="chapter" data-level="10.1" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#required-5"><i class="fa fa-check"></i><b>10.1</b> Required</a></li>
+<li class="chapter" data-level="10.2" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#overview-4"><i class="fa fa-check"></i><b>10.2</b> Overview</a></li>
+<li class="chapter" data-level="10.3" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision"><i class="fa fa-check"></i><b>10.3</b> Precision</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-independent-t-test"><i class="fa fa-check"></i><b>10.3.1</b> Precision Independent <em>t</em>-test</a></li>
+<li class="chapter" data-level="10.3.2" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-repeated-t-test"><i class="fa fa-check"></i><b>10.3.2</b> Precision Repeated <em>t</em>-test</a></li>
+<li class="chapter" data-level="10.3.3" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-correlation"><i class="fa fa-check"></i><b>10.3.3</b> Precision Correlation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="starting-your-research.html"><a href="starting-your-research.html"><i class="fa fa-check"></i><b>11</b> Starting your research</a><ul>
+<li class="chapter" data-level="11.1" data-path="starting-your-research.html"><a href="starting-your-research.html#required-packages"><i class="fa fa-check"></i><b>11.1</b> Required Packages</a></li>
+<li class="chapter" data-level="11.2" data-path="starting-your-research.html"><a href="starting-your-research.html#objective-2"><i class="fa fa-check"></i><b>11.2</b> Objective</a></li>
+<li class="chapter" data-level="11.3" data-path="starting-your-research.html"><a href="starting-your-research.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>11.3</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="starting-your-research.html"><a href="starting-your-research.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>11.3.1</b> Structuring data: Obtaining tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="starting-your-research.html"><a href="starting-your-research.html#data-collection-considerations"><i class="fa fa-check"></i><b>11.4</b> Data collection considerations</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="starting-your-research.html"><a href="starting-your-research.html#naming-conventions"><i class="fa fa-check"></i><b>11.4.1</b> Naming conventions</a></li>
+<li class="chapter" data-level="11.4.2" data-path="starting-your-research.html"><a href="starting-your-research.html#likert-type-items"><i class="fa fa-check"></i><b>11.4.2</b> Likert-type items</a></li>
+<li class="chapter" data-level="11.4.3" data-path="starting-your-research.html"><a href="starting-your-research.html#anova-between"><i class="fa fa-check"></i><b>11.4.3</b> ANOVA between</a></li>
+<li class="chapter" data-level="11.4.4" data-path="starting-your-research.html"><a href="starting-your-research.html#anova-within"><i class="fa fa-check"></i><b>11.4.4</b> ANOVA within</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="starting-your-research.html"><a href="starting-your-research.html#following-the-examples"><i class="fa fa-check"></i><b>11.5</b> Following the examples</a></li>
+<li class="chapter" data-level="11.6" data-path="starting-your-research.html"><a href="starting-your-research.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>11.6</b> Entering data into spreadsheets</a></li>
+<li class="chapter" data-level="11.7" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-between"><i class="fa fa-check"></i><b>11.7</b> Experiment: Between</a><ul>
+<li class="chapter" data-level="11.7.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors"><i class="fa fa-check"></i><b>11.7.1</b> Creating factors</a></li>
+<li class="chapter" data-level="11.7.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening"><i class="fa fa-check"></i><b>11.7.2</b> Factor screening</a></li>
+<li class="chapter" data-level="11.7.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening"><i class="fa fa-check"></i><b>11.7.3</b> Numeric screening</a></li>
+</ul></li>
+<li class="chapter" data-level="11.8" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-within-one-way"><i class="fa fa-check"></i><b>11.8</b> Experiment: Within one-way</a><ul>
+<li class="chapter" data-level="11.8.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-1"><i class="fa fa-check"></i><b>11.8.1</b> Creating factors</a></li>
+<li class="chapter" data-level="11.8.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-1"><i class="fa fa-check"></i><b>11.8.2</b> Factor screening</a></li>
+<li class="chapter" data-level="11.8.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-1"><i class="fa fa-check"></i><b>11.8.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="11.8.4" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data"><i class="fa fa-check"></i><b>11.8.4</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.9" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-within-n-way"><i class="fa fa-check"></i><b>11.9</b> Experiment: Within N-way</a><ul>
+<li class="chapter" data-level="11.9.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-2"><i class="fa fa-check"></i><b>11.9.1</b> Creating factors</a></li>
+<li class="chapter" data-level="11.9.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-2"><i class="fa fa-check"></i><b>11.9.2</b> Factor screening</a></li>
+<li class="chapter" data-level="11.9.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-2"><i class="fa fa-check"></i><b>11.9.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="11.9.4" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data-1"><i class="fa fa-check"></i><b>11.9.4</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.10" data-path="starting-your-research.html"><a href="starting-your-research.html#surveys-single-occassion"><i class="fa fa-check"></i><b>11.10</b> Surveys: Single Occassion</a><ul>
+<li class="chapter" data-level="11.10.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-3"><i class="fa fa-check"></i><b>11.10.1</b> Creating factors</a></li>
+<li class="chapter" data-level="11.10.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-3"><i class="fa fa-check"></i><b>11.10.2</b> Factor screening</a></li>
+<li class="chapter" data-level="11.10.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-3"><i class="fa fa-check"></i><b>11.10.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="11.10.4" data-path="starting-your-research.html"><a href="starting-your-research.html#scale-scores"><i class="fa fa-check"></i><b>11.10.4</b> Scale scores</a></li>
+</ul></li>
+<li class="chapter" data-level="11.11" data-path="starting-your-research.html"><a href="starting-your-research.html#surveys-multiple-occasions"><i class="fa fa-check"></i><b>11.11</b> Surveys: Multiple Occasions</a><ul>
+<li class="chapter" data-level="11.11.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-4"><i class="fa fa-check"></i><b>11.11.1</b> Creating factors</a></li>
+<li class="chapter" data-level="11.11.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-4"><i class="fa fa-check"></i><b>11.11.2</b> Factor screening</a></li>
+<li class="chapter" data-level="11.11.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-4"><i class="fa fa-check"></i><b>11.11.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="11.11.4" data-path="starting-your-research.html"><a href="starting-your-research.html#scale-scores-1"><i class="fa fa-check"></i><b>11.11.4</b> Scale scores</a></li>
+<li class="chapter" data-level="11.11.5" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data-2"><i class="fa fa-check"></i><b>11.11.5</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.12" data-path="starting-your-research.html"><a href="starting-your-research.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>11.12</b> Basic descriptive statistics</a><ul>
+<li class="chapter" data-level="11.12.1" data-path="starting-your-research.html"><a href="starting-your-research.html#skim"><i class="fa fa-check"></i><b>11.12.1</b> skim()</a></li>
+<li class="chapter" data-level="11.12.2" data-path="starting-your-research.html"><a href="starting-your-research.html#apa.cor.table"><i class="fa fa-check"></i><b>11.12.2</b> apa.cor.table()</a></li>
+<li class="chapter" data-level="11.12.3" data-path="starting-your-research.html"><a href="starting-your-research.html#tidyverse"><i class="fa fa-check"></i><b>11.12.3</b> tidyverse</a></li>
+<li class="chapter" data-level="11.12.4" data-path="starting-your-research.html"><a href="starting-your-research.html#cronbachs-alpha"><i class="fa fa-check"></i><b>11.12.4</b> Cronbach’s alpha</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html"><i class="fa fa-check"></i><b>12</b> Positive Predictive Value</a><ul>
+<li class="chapter" data-level="12.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#required-6"><i class="fa fa-check"></i><b>12.1</b> Required</a></li>
+<li class="chapter" data-level="12.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#overview-5"><i class="fa fa-check"></i><b>12.2</b> Overview</a></li>
+<li class="chapter" data-level="12.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#informal-explanation"><i class="fa fa-check"></i><b>12.3</b> Informal explanation</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#probability-of-an-effect"><i class="fa fa-check"></i><b>12.3.1</b> Probability of an effect</a></li>
+<li class="chapter" data-level="12.3.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#type-i-error"><i class="fa fa-check"></i><b>12.3.2</b> Type I Error</a></li>
+<li class="chapter" data-level="12.3.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power"><i class="fa fa-check"></i><b>12.3.3</b> Power</a></li>
+<li class="chapter" data-level="12.3.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-ppv"><i class="fa fa-check"></i><b>12.3.4</b> Calculating PPV</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#formal-explanation"><i class="fa fa-check"></i><b>12.4</b> Formal explanation</a><ul>
+<li class="chapter" data-level="12.4.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#no-effect"><i class="fa fa-check"></i><b>12.4.1</b> No effect</a></li>
+<li class="chapter" data-level="12.4.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#effect"><i class="fa fa-check"></i><b>12.4.2</b> Effect</a></li>
+<li class="chapter" data-level="12.4.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculation"><i class="fa fa-check"></i><b>12.4.3</b> Calculation</a></li>
+<li class="chapter" data-level="12.4.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#alternative-calculation"><i class="fa fa-check"></i><b>12.4.4</b> Alternative calculation</a></li>
+<li class="chapter" data-level="12.4.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#touchstone"><i class="fa fa-check"></i><b>12.4.5</b> Touchstone</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-power-for-your-study"><i class="fa fa-check"></i><b>12.5</b> Calculating power for your study</a><ul>
+<li class="chapter" data-level="12.5.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-independent-groups-t-test"><i class="fa fa-check"></i><b>12.5.1</b> Power independent groups <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="12.5.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-repeated-measures-t-test"><i class="fa fa-check"></i><b>12.5.2</b> Power repeated measures <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="12.5.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-correlations"><i class="fa fa-check"></i><b>12.5.3</b> Power correlations</a></li>
+<li class="chapter" data-level="12.5.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-independent-t-test"><i class="fa fa-check"></i><b>12.5.4</b> Equivalence independent <em>t</em>-test</a></li>
+<li class="chapter" data-level="12.5.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-repeated-t-test"><i class="fa fa-check"></i><b>12.5.5</b> Equivalence repeated <em>t</em>-test</a></li>
+<li class="chapter" data-level="12.5.6" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-correlation-1"><i class="fa fa-check"></i><b>12.5.6</b> Equivalence correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-ppv-for-your-study"><i class="fa fa-check"></i><b>12.6</b> Calculating PPV for your study</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html"><i class="fa fa-check"></i><b>13</b> Open Science Preregistration</a><ul>
+<li class="chapter" data-level="13.1" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#overview-6"><i class="fa fa-check"></i><b>13.1</b> Overview</a></li>
+<li class="chapter" data-level="13.2" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#daniel-simmons-interview"><i class="fa fa-check"></i><b>13.2</b> Daniel Simmons Interview</a></li>
+<li class="chapter" data-level="13.3" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#preregistration-impact"><i class="fa fa-check"></i><b>13.3</b> Preregistration Impact</a></li>
+<li class="chapter" data-level="13.4" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#preregistration-details"><i class="fa fa-check"></i><b>13.4</b> Preregistration Details</a></li>
+<li class="chapter" data-level="13.5" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#learn-more"><i class="fa fa-check"></i><b>13.5</b> Learn more</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="research-tools.html"><a href="research-tools.html"><i class="fa fa-check"></i><b>14</b> Research Tools</a><ul>
+<li class="chapter" data-level="14.1" data-path="research-tools.html"><a href="research-tools.html#statcheck"><i class="fa fa-check"></i><b>14.1</b> statcheck</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="research-tools.html"><a href="research-tools.html#statcheck-software"><i class="fa fa-check"></i><b>14.1.1</b> statcheck software</a></li>
+<li class="chapter" data-level="14.1.2" data-path="research-tools.html"><a href="research-tools.html#statcheck-website"><i class="fa fa-check"></i><b>14.1.2</b> statcheck website</a></li>
+<li class="chapter" data-level="14.1.3" data-path="research-tools.html"><a href="research-tools.html#statcheck-and-word"><i class="fa fa-check"></i><b>14.1.3</b> statcheck and Word</a></li>
+<li class="chapter" data-level="14.1.4" data-path="research-tools.html"><a href="research-tools.html#statcheck-process"><i class="fa fa-check"></i><b>14.1.4</b> statcheck process</a></li>
+<li class="chapter" data-level="14.1.5" data-path="research-tools.html"><a href="research-tools.html#statcheck-validity"><i class="fa fa-check"></i><b>14.1.5</b> statcheck validity</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="research-tools.html"><a href="research-tools.html#rmarkdown-bookdown"><i class="fa fa-check"></i><b>14.2</b> rmarkdown / bookdown</a></li>
+<li class="chapter" data-level="14.3" data-path="research-tools.html"><a href="research-tools.html#papaja"><i class="fa fa-check"></i><b>14.3</b> papaja</a></li>
+<li class="chapter" data-level="14.4" data-path="research-tools.html"><a href="research-tools.html#apatables"><i class="fa fa-check"></i><b>14.4</b> apaTables</a></li>
+<li class="chapter" data-level="14.5" data-path="research-tools.html"><a href="research-tools.html#retracted-articles"><i class="fa fa-check"></i><b>14.5</b> Retracted articles</a><ul>
+<li class="chapter" data-level="14.5.1" data-path="research-tools.html"><a href="research-tools.html#doi"><i class="fa fa-check"></i><b>14.5.1</b> DOI</a></li>
+<li class="chapter" data-level="14.5.2" data-path="research-tools.html"><a href="research-tools.html#retractiondatabase.org"><i class="fa fa-check"></i><b>14.5.2</b> retractiondatabase.org</a></li>
+<li class="chapter" data-level="14.5.3" data-path="research-tools.html"><a href="research-tools.html#openretractions.com"><i class="fa fa-check"></i><b>14.5.3</b> openretractions.com</a></li>
+<li class="chapter" data-level="14.5.4" data-path="research-tools.html"><a href="research-tools.html#retractcheck"><i class="fa fa-check"></i><b>14.5.4</b> retractcheck</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html"><i class="fa fa-check"></i><b>15</b> Regression and correlation</a><ul>
+<li class="chapter" data-level="15.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#population-example"><i class="fa fa-check"></i><b>15.1</b> Population example</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#no-predictor"><i class="fa fa-check"></i><b>15.1.1</b> No predictor</a></li>
+<li class="chapter" data-level="15.1.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#weak-relation"><i class="fa fa-check"></i><b>15.1.2</b> Weak relation</a></li>
+<li class="chapter" data-level="15.1.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#strong-relation"><i class="fa fa-check"></i><b>15.1.3</b> Strong relation</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#consider-a-sample"><i class="fa fa-check"></i><b>15.2</b> Consider a sample</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#regression"><i class="fa fa-check"></i><b>15.2.1</b> Regression</a></li>
+<li class="chapter" data-level="15.2.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#correlation-2"><i class="fa fa-check"></i><b>15.2.2</b> Correlation</a></li>
+<li class="chapter" data-level="15.2.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#graphing-1"><i class="fa fa-check"></i><b>15.2.3</b> Graphing</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#comparing-correlations"><i class="fa fa-check"></i><b>15.3</b> Comparing correlations</a><ul>
+<li class="chapter" data-level="15.3.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#p-values"><i class="fa fa-check"></i><b>15.3.1</b> p-values</a></li>
+<li class="chapter" data-level="15.3.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#within-a-data-set"><i class="fa fa-check"></i><b>15.3.2</b> Within a data set</a></li>
+<li class="chapter" data-level="15.3.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#between-data-sets"><i class="fa fa-check"></i><b>15.3.3</b> Between data sets</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>16</b> Multiple regression</a><ul>
+<li class="chapter" data-level="16.1" data-path="multiple-regression.html"><a href="multiple-regression.html#overview-7"><i class="fa fa-check"></i><b>16.1</b> Overview</a></li>
+<li class="chapter" data-level="16.2" data-path="multiple-regression.html"><a href="multiple-regression.html#example"><i class="fa fa-check"></i><b>16.2</b> Example</a></li>
+<li class="chapter" data-level="16.3" data-path="multiple-regression.html"><a href="multiple-regression.html#load-the-data"><i class="fa fa-check"></i><b>16.3</b> Load the data</a></li>
+<li class="chapter" data-level="16.4" data-path="multiple-regression.html"><a href="multiple-regression.html#bivariate-relations"><i class="fa fa-check"></i><b>16.4</b> Bivariate relations</a></li>
+<li class="chapter" data-level="16.5" data-path="multiple-regression.html"><a href="multiple-regression.html#single-best-predictor"><i class="fa fa-check"></i><b>16.5</b> Single best predictor</a></li>
+<li class="chapter" data-level="16.6" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-1"><i class="fa fa-check"></i><b>16.6</b> Multiple regression</a></li>
+<li class="chapter" data-level="16.7" data-path="multiple-regression.html"><a href="multiple-regression.html#b-weights"><i class="fa fa-check"></i><b>16.7</b> <em>b</em>-weights</a></li>
+<li class="chapter" data-level="16.8" data-path="multiple-regression.html"><a href="multiple-regression.html#r2"><i class="fa fa-check"></i><b>16.8</b> <span class="math inline">\(R^2\)</span></a><ul>
+<li class="chapter" data-level="16.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#method-1-ratio-approach"><i class="fa fa-check"></i><b>16.8.1</b> Method 1: Ratio Approach</a></li>
+<li class="chapter" data-level="16.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#method-2-correlation-approach"><i class="fa fa-check"></i><b>16.8.2</b> Method 2: Correlation Approach</a></li>
+<li class="chapter" data-level="16.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#r2-in-practice"><i class="fa fa-check"></i><b>16.8.3</b> <span class="math inline">\(R^2\)</span> in practice</a></li>
+</ul></li>
+<li class="chapter" data-level="16.9" data-path="multiple-regression.html"><a href="multiple-regression.html#semi-partial-sr"><i class="fa fa-check"></i><b>16.9</b> Semi-partial (<span class="math inline">\(sr\)</span>)</a><ul>
+<li class="chapter" data-level="16.9.1" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-theory"><i class="fa fa-check"></i><b>16.9.1</b> <span class="math inline">\(sr^2\)</span> in theory</a></li>
+<li class="chapter" data-level="16.9.2" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-practice"><i class="fa fa-check"></i><b>16.9.2</b> <span class="math inline">\(sr^2\)</span> in practice</a></li>
+<li class="chapter" data-level="16.9.3" data-path="multiple-regression.html"><a href="multiple-regression.html#blocks-regression"><i class="fa fa-check"></i><b>16.9.3</b> Blocks regression</a></li>
+</ul></li>
+<li class="chapter" data-level="16.10" data-path="multiple-regression.html"><a href="multiple-regression.html#beta-weights"><i class="fa fa-check"></i><b>16.10</b> Beta-weights</a><ul>
+<li class="chapter" data-level="16.10.1" data-path="multiple-regression.html"><a href="multiple-regression.html#in-practice"><i class="fa fa-check"></i><b>16.10.1</b> In practice</a></li>
+<li class="chapter" data-level="16.10.2" data-path="multiple-regression.html"><a href="multiple-regression.html#old-school"><i class="fa fa-check"></i><b>16.10.2</b> Old school</a></li>
+</ul></li>
+<li class="chapter" data-level="16.11" data-path="multiple-regression.html"><a href="multiple-regression.html#graphing-2"><i class="fa fa-check"></i><b>16.11</b> Graphing</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html"><i class="fa fa-check"></i><b>17</b> Sample size for multiple regression</a><ul>
+<li class="chapter" data-level="17.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#sample-size-using-r2"><i class="fa fa-check"></i><b>17.1</b> Sample size using <span class="math inline">\(R^2\)</span></a><ul>
+<li class="chapter" data-level="17.1.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determining-f2"><i class="fa fa-check"></i><b>17.1.1</b> Determining <span class="math inline">\(f^2\)</span></a></li>
+<li class="chapter" data-level="17.1.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-degrees-of-freedom"><i class="fa fa-check"></i><b>17.1.2</b> Determine degrees of freedom</a></li>
+<li class="chapter" data-level="17.1.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#calculate-sample-size"><i class="fa fa-check"></i><b>17.1.3</b> Calculate sample size</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#sample-size-using-sr2"><i class="fa fa-check"></i><b>17.2</b> Sample size using <span class="math inline">\(sr^2\)</span></a><ul>
+<li class="chapter" data-level="17.2.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-degrees-of-freedom-1"><i class="fa fa-check"></i><b>17.2.1</b> Determine degrees of freedom</a></li>
+<li class="chapter" data-level="17.2.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-f2"><i class="fa fa-check"></i><b>17.2.2</b> Determine <span class="math inline">\(f^2\)</span></a></li>
+<li class="chapter" data-level="17.2.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#calculate-power"><i class="fa fa-check"></i><b>17.2.3</b> Calculate power</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#power-obtained-sr2"><i class="fa fa-check"></i><b>17.3</b> Power obtained <span class="math inline">\(sr^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html"><i class="fa fa-check"></i><b>18</b> Moderated multiple regression</a><ul>
+<li class="chapter" data-level="18.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#overview-8"><i class="fa fa-check"></i><b>18.1</b> Overview</a></li>
+<li class="chapter" data-level="18.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#scenario"><i class="fa fa-check"></i><b>18.2</b> Scenario</a></li>
+<li class="chapter" data-level="18.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#overview-9"><i class="fa fa-check"></i><b>18.3</b> Overview</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#no-interaction"><i class="fa fa-check"></i><b>18.3.1</b> No interaction</a></li>
+<li class="chapter" data-level="18.3.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#interaction"><i class="fa fa-check"></i><b>18.3.2</b> Interaction</a></li>
+<li class="chapter" data-level="18.3.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#comparison"><i class="fa fa-check"></i><b>18.3.3</b> Comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#fastinteraction"><i class="fa fa-check"></i><b>18.4</b> fastInteraction</a><ul>
+<li class="chapter" data-level="18.4.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#graphing-in-3d"><i class="fa fa-check"></i><b>18.4.1</b> Graphing in 3D</a></li>
+<li class="chapter" data-level="18.4.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#unformatted-2d-graph"><i class="fa fa-check"></i><b>18.4.2</b> Unformatted 2D graph</a></li>
+<li class="chapter" data-level="18.4.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#tables"><i class="fa fa-check"></i><b>18.4.3</b> Tables</a></li>
+<li class="chapter" data-level="18.4.4" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#formatted-2d-graph"><i class="fa fa-check"></i><b>18.4.4</b> Formatted 2D graph</a></li>
+</ul></li>
+<li class="chapter" data-level="18.5" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#powersample-size-analysis"><i class="fa fa-check"></i><b>18.5</b> Power/sample size analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Welcome!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="graphing" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Graphing</h1>
+<div id="required-1" class="section level2">
+<h2><span class="header-section-number">4.1</span> Required</h2>
+<p>The data files below are used in this chapter. The files are available at: <a href="https://github.com/dstanley4/psyc6060bookdown" class="uri">https://github.com/dstanley4/psyc6060bookdown</a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Required Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>data_movies.csv</td>
+</tr>
+</tbody>
+</table>
+<p>The following packages CRAN must be installed:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required CRAN Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tidyverse</td>
+</tr>
+<tr class="even">
+<td>RColorBrewer</td>
+</tr>
+<tr class="odd">
+<td>remotes</td>
+</tr>
+</tbody>
+</table>
+<p>The following GitHub packages must be installed:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required GitHub Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>dill/emoGG</td>
+</tr>
+</tbody>
+</table>
+<p>After the remotes package is installed, it can be used to install a package from GitHub:</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="graphing.html#cb154-1"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;dill/emoGG&quot;</span>)</span></code></pre></div>
+</div>
+<div id="data" class="section level2">
+<h2><span class="header-section-number">4.2</span> Data</h2>
+<p>To learn about making graphs using the tidyverse we use movie ratings and box office data obtained at the time of writing. Movie ratings were obtained from the <a href="https://www.imdb.com">IMDB</a> and <a href="https://www.rottentomatoes.com">RottenTomatoes</a>. Box office data (in millions of dollars) was obtained from <a href="https://www.boxofficemojo.com">Box Office Mojo</a>. If you enjoy learning about movies these are all excellent sites.</p>
+<p>We begin by loading data_movies.csv using read_csv(), not read.csv():</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="graphing.html#cb155-1"></a>movie_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data_movies.csv&quot;</span>)</span></code></pre></div>
+<p>Next we inspect movie_data using the print() command. We see that each row of the data set corresponds to a superhero movie.</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="graphing.html#cb156-1"></a><span class="kw">print</span>(movie_data)</span></code></pre></div>
+<pre><code>## # A tibble: 8 x 7
+##   title short_title  year  imdb tomatoes_aud boxoffice
+##   &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;
+## 1 Iron… Iron         2008   7.9           96       585
+## 2 Thor… Thor         2017   7.9           93       854
+## 3 Aven… AV3          2018   8.5           91      2048
+## 4 Aven… AV4          2019   8.7           91      2744
+## 5 Man … Sup          2013   7.1           75       668
+## 6 Batm… BvS          2015   6.5           63       873
+## 7 Just… JL           2017   6.5           72       657
+## 8 Wond… WW           2017   7.5           88       821
+## # … with 1 more variable: studio &lt;chr&gt;</code></pre>
+<p>Next we use glimpse() to see the columns.</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="graphing.html#cb158-1"></a><span class="kw">glimpse</span>(movie_data)</span></code></pre></div>
+<pre><code>## Rows: 8
+## Columns: 7
+## $ title        &lt;chr&gt; &quot;Iron Man&quot;, &quot;Thor Ragnarok&quot;, &quot;Avenge…
+## $ short_title  &lt;chr&gt; &quot;Iron&quot;, &quot;Thor&quot;, &quot;AV3&quot;, &quot;AV4&quot;, &quot;Sup&quot;,…
+## $ year         &lt;dbl&gt; 2008, 2017, 2018, 2019, 2013, 2015, …
+## $ imdb         &lt;dbl&gt; 7.9, 7.9, 8.5, 8.7, 7.1, 6.5, 6.5, 7…
+## $ tomatoes_aud &lt;dbl&gt; 96, 93, 91, 91, 75, 63, 72, 88
+## $ boxoffice    &lt;dbl&gt; 585, 854, 2048, 2744, 668, 873, 657,…
+## $ studio       &lt;chr&gt; &quot;Marvel&quot;, &quot;Marvel&quot;, &quot;Marvel&quot;, &quot;Marve…</code></pre>
+<p>The title and short_title columns provide the full title and short title for each movie. Additionally, the IMDB rating, the Rotten Tomatoes Audience rating, and the Box Office Mojo revenue numbers are provided in the imdb, tomatoes_aud, and boxoffice columns, respectively. Finally, the last column, studio, indicates the studio that made the movie (Marvel or DC).</p>
+<p>It is extremely important for graphing and analyses that you tell R which columns are composed of categorical variables. We do that using the as_factor command. The as_factor command turns a column into a categorical column. We use the mutate command to replace the original column with the column that has been defined as a categorical variables using as_factor.</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="graphing.html#cb160-1"></a>movie_data &lt;-<span class="st"> </span>movie_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb160-2"><a href="graphing.html#cb160-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.character), </span>
+<span id="cb160-3"><a href="graphing.html#cb160-3"></a>                <span class="dt">.fns =</span> as_factor))</span></code></pre></div>
+<p>We can confirm the column type has changed by using the glimpse() command again and examing the column types:</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="graphing.html#cb161-1"></a><span class="kw">glimpse</span>(movie_data)</span></code></pre></div>
+<pre><code>## Rows: 8
+## Columns: 7
+## $ title        &lt;fct&gt; Iron Man, Thor Ragnarok, Avengers In…
+## $ short_title  &lt;fct&gt; Iron, Thor, AV3, AV4, Sup, BvS, JL, …
+## $ year         &lt;dbl&gt; 2008, 2017, 2018, 2019, 2013, 2015, …
+## $ imdb         &lt;dbl&gt; 7.9, 7.9, 8.5, 8.7, 7.1, 6.5, 6.5, 7…
+## $ tomatoes_aud &lt;dbl&gt; 96, 93, 91, 91, 75, 63, 72, 88
+## $ boxoffice    &lt;dbl&gt; 585, 854, 2048, 2744, 668, 873, 657,…
+## $ studio       &lt;fct&gt; Marvel, Marvel, Marvel, Marvel, DC, …</code></pre>
+</div>
+<div id="graph-basics" class="section level2">
+<h2><span class="header-section-number">4.3</span> Graph basics</h2>
+<p>In this section we teach you how to make a graph from first principles to form a foundation for understanding how the tidyverse graphing command ggplot() works. Note, however, that the approach used for creating a graph in this section is for teaching purposes only. Later we will make graphs in a typical, and more efficient, manner.</p>
+<p>We start a graph using the ggplot() command. The ggplot() command creates an empty template for the graph. After creating the template we have to add content (like bars) to the graph using the geom_col() command. We can also add text using the geom_text() command.</p>
+<p>Commands that plot information on the graph, such as geom_col(), need to know what data set to use to create the graph. We specify the data set to use via the <strong>data</strong> argument. For example, we use “data = movie_data” to tell a command which data set to use.</p>
+<p>Additionally, graphing commands, such as geom_col(), must know the columns/variables to use within that data set when plotting the graph. Specifically, commands need to know which variable/column will vary over the x- and y-axes. We can indicate these columns via the <strong>mapping</strong> argument. For example, we use “mapping = aes(x = short_title, y = boxoffice)” to tell ggplot() that we should use the column short_title along the x-axis and the column boxoffice when determining heights on the y-axis. This information is nested within the aes() command which is short for aesthetic. You are telling ggplot() about the aesthetics for the graph (i.e., which columns to use for the x- and y-axes) using the aes() command. There are a larger number of aesthetics that you can specify within the aes() command (e.g., color, fill, linetype, etc.).</p>
+<p>In the examples that follow we tell each command (geom_col, geom_text) which data set and columns to use via the <strong>data</strong> and <strong>mapping</strong> arguments.</p>
+<p>Use geom_col() to put each boxoffice column value into a bar.</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="graphing.html#cb163-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb163-2"><a href="graphing.html#cb163-2"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb163-3"><a href="graphing.html#cb163-3"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title, </span>
+<span id="cb163-4"><a href="graphing.html#cb163-4"></a>                         <span class="dt">y =</span> boxoffice))</span>
+<span id="cb163-5"><a href="graphing.html#cb163-5"></a></span>
+<span id="cb163-6"><a href="graphing.html#cb163-6"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-108-1.png" width="65%" /></p>
+<p>Next, we want to put the boxoffice revenue above each bar so it easier to interpret. In R terms, we are putting a label above each bar. We want the contents for the labels to come from the boxoffice column. Therefore, we add the geom_text() command below:</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="graphing.html#cb164-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb164-2"><a href="graphing.html#cb164-2"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb164-3"><a href="graphing.html#cb164-3"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title, </span>
+<span id="cb164-4"><a href="graphing.html#cb164-4"></a>                         <span class="dt">y =</span> boxoffice)) <span class="op">+</span></span>
+<span id="cb164-5"><a href="graphing.html#cb164-5"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> movie_data, </span>
+<span id="cb164-6"><a href="graphing.html#cb164-6"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title, </span>
+<span id="cb164-7"><a href="graphing.html#cb164-7"></a>                         <span class="dt">y =</span> boxoffice, </span>
+<span id="cb164-8"><a href="graphing.html#cb164-8"></a>                         <span class="dt">label =</span> boxoffice))</span>
+<span id="cb164-9"><a href="graphing.html#cb164-9"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-109-1.png" width="65%" /></p>
+<p>Unfortunately, when we position the text at the exact height of each column it overlaps with the column making it difficult to read. We fix this on the next page using nudge_y.</p>
+<p>We can nudge each label higher on the y-axis using the <em>nudge_y</em> command. In the above code, we nudge it up 150 units. Since nudge_y uses the values on the y-axis we are nudging the labels up by 150 million on the y-axis.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="graphing.html#cb165-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb165-2"><a href="graphing.html#cb165-2"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb165-3"><a href="graphing.html#cb165-3"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title, </span>
+<span id="cb165-4"><a href="graphing.html#cb165-4"></a>                         <span class="dt">y =</span> boxoffice)) <span class="op">+</span></span>
+<span id="cb165-5"><a href="graphing.html#cb165-5"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> movie_data, </span>
+<span id="cb165-6"><a href="graphing.html#cb165-6"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title, </span>
+<span id="cb165-7"><a href="graphing.html#cb165-7"></a>                         <span class="dt">y =</span> boxoffice, </span>
+<span id="cb165-8"><a href="graphing.html#cb165-8"></a>                         <span class="dt">label =</span> boxoffice),</span>
+<span id="cb165-9"><a href="graphing.html#cb165-9"></a>           <span class="dt">nudge_y =</span> <span class="dv">150</span>)</span>
+<span id="cb165-10"><a href="graphing.html#cb165-10"></a></span>
+<span id="cb165-11"><a href="graphing.html#cb165-11"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-110-1.png" width="65%" /></p>
+</div>
+<div id="graphing-efficiently" class="section level2">
+<h2><span class="header-section-number">4.4</span> Graphing efficiently</h2>
+<p>You may have noticed that creating the graphs the way we did above required repeating the data and mapping assignments within each command (e.g., geom_text, geom_col). Fortunately, we can use a shortcut and specify the data and mapping only once in the ggplot() command. Once we do that, the contents of the mapping argument are invisibly copied into each subsequent command (e.g., geom_col, geom_text). In this way, we only have to specify the data and the mapping once.</p>
+<p>Examine the code below and compare it to the code above. Notice how in the geom_col() command we don’t have anything specified – the data and mapping from the ggplot command are used. Likewise, notice how in the geom_text() command we only specify the arguments we need that are different from those in the ggplot command. In this case, that means simply adding the nudge_y = 150 to the geom_text command.</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="graphing.html#cb166-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb166-2"><a href="graphing.html#cb166-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title,</span>
+<span id="cb166-3"><a href="graphing.html#cb166-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb166-4"><a href="graphing.html#cb166-4"></a>                         <span class="dt">label =</span> boxoffice)) <span class="op">+</span></span>
+<span id="cb166-5"><a href="graphing.html#cb166-5"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb166-6"><a href="graphing.html#cb166-6"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>) </span>
+<span id="cb166-7"><a href="graphing.html#cb166-7"></a></span>
+<span id="cb166-8"><a href="graphing.html#cb166-8"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-111-1.png" width="65%" /></p>
+</div>
+<div id="aesthetics" class="section level2">
+<h2><span class="header-section-number">4.5</span> Aesthetics</h2>
+<p>Exactly how does that aesthetic, aes(), command work? What happens when we put the data and mapping in the ggplot() command instead of the specific commands such as geom_col()? When we put data and the mapping arguments in the ggplot() command we set those attributes for the entire graph. To understand this, you need to know that ggplot uses an internal data set that we will call the “black box” data set (i.e., inside the <a href="https://en.wikipedia.org/wiki/Black_box">black box</a> of ggplot). To create a graph ggplot maps/copies columns from your data set (e.g., movie_data) to an internal data set. This internal data set is then used to create the graph. Figure <a href="graphing.html#fig:showmap">4.1</a> below illustrates what is happening “inside the black box” when you create the graph using the code above.</p>
+<div class="figure"><span id="fig:showmap"></span>
+<img src="ch_graphing/images/mapping.png" alt="Internal data structure for ggplot" width="70%" />
+<p class="caption">
+FIGURE 4.1: Internal data structure for ggplot
+</p>
+</div>
+<div id="fill-color" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Fill color</h3>
+<p>You might want to influence the color of the bars in the graph such that the bars for Marvel and DC movies have different colors. That’s easy to do with the aes() command. We simply tell aes() that the <strong>fill</strong> color of any object in the graph should be determined by the studio column. Simply adding “fill = studio” to the aes() command changes the colors of the bars – and any other object on the graph for which fill would be relevant. The internal workings are illustrated in Figure <a href="graphing.html#fig:addfill">4.2</a>.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="graphing.html#cb167-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb167-2"><a href="graphing.html#cb167-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title,</span>
+<span id="cb167-3"><a href="graphing.html#cb167-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb167-4"><a href="graphing.html#cb167-4"></a>                         <span class="dt">label =</span> boxoffice,</span>
+<span id="cb167-5"><a href="graphing.html#cb167-5"></a>                         <span class="dt">fill =</span> studio )) <span class="op">+</span></span>
+<span id="cb167-6"><a href="graphing.html#cb167-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb167-7"><a href="graphing.html#cb167-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>) </span>
+<span id="cb167-8"><a href="graphing.html#cb167-8"></a></span>
+<span id="cb167-9"><a href="graphing.html#cb167-9"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-112-1.png" width="65%" /></p>
+<div class="figure"><span id="fig:addfill"></span>
+<img src="ch_graphing/images/mapping_fill.png" alt="Adding a fill column to the internal data" width="70%" />
+<p class="caption">
+FIGURE 4.2: Adding a fill column to the internal data
+</p>
+</div>
+</div>
+<div id="overriding-aes" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Overriding aes()</h3>
+<p>Just because you specify something in the ggplot() command doesn’t mean that you are “stuck with it” for all your subsequent commands. Recall how at the start of this exercise we specified the data and the mapping for each geom_col() and geom_text() individually. We can still do that.</p>
+<p>Now we want to add the Rotten Tomatoes Audience score for each movie above the box office revenue. But if we use geom_text(), like we did before, it will plot the same boxoffice information because of “label = boxoffice” in the aes() specification within ggplot(). We want the new geom_text() command to plot different text; that is, we want it to use “label = tomatoes_aud”.</p>
+<p>Fortunately, if we simply put “mapping = aes(label = tomatoes_aud)” within the new geom_text() command we get the desired information on the graph. The mapping/aes arguments within geom_text() override the mapping/aes arguments within ggplot(). Or more accurately, the new geom_text() command creates its own version of the internal data set in which the label column is filled with information from tomatoes_aud.</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="graphing.html#cb168-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb168-2"><a href="graphing.html#cb168-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title,</span>
+<span id="cb168-3"><a href="graphing.html#cb168-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb168-4"><a href="graphing.html#cb168-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb168-5"><a href="graphing.html#cb168-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb168-6"><a href="graphing.html#cb168-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb168-7"><a href="graphing.html#cb168-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb168-8"><a href="graphing.html#cb168-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud)) </span>
+<span id="cb168-9"><a href="graphing.html#cb168-9"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-113-1.png" width="65%" /></p>
+<p>Notice that we have the same problem as before with the text being difficult to read because it overlaps with the bar. We add “nudge_y = 400” to move the text higher than the boxoffice text/label. Don’t forget the units used by nudge_y are the units on the y-axis.</p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="graphing.html#cb169-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb169-2"><a href="graphing.html#cb169-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title,</span>
+<span id="cb169-3"><a href="graphing.html#cb169-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb169-4"><a href="graphing.html#cb169-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb169-5"><a href="graphing.html#cb169-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb169-6"><a href="graphing.html#cb169-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb169-7"><a href="graphing.html#cb169-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb169-8"><a href="graphing.html#cb169-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb169-9"><a href="graphing.html#cb169-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) </span>
+<span id="cb169-10"><a href="graphing.html#cb169-10"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-114-1.png" width="65%" /></p>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div id="apa-style" class="section level2">
+<h2><span class="header-section-number">4.6</span> APA style</h2>
+<p>Use theme_classic() to make the graph apear in APA style. We use theme_classic(12) to make the graph APA style with a 12-point font:</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="graphing.html#cb170-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb170-2"><a href="graphing.html#cb170-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title,</span>
+<span id="cb170-3"><a href="graphing.html#cb170-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb170-4"><a href="graphing.html#cb170-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb170-5"><a href="graphing.html#cb170-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb170-6"><a href="graphing.html#cb170-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb170-7"><a href="graphing.html#cb170-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb170-8"><a href="graphing.html#cb170-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb170-9"><a href="graphing.html#cb170-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb170-10"><a href="graphing.html#cb170-10"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>)</span>
+<span id="cb170-11"><a href="graphing.html#cb170-11"></a></span>
+<span id="cb170-12"><a href="graphing.html#cb170-12"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-115-1.png" width="65%" /></p>
+</div>
+<div id="axes" class="section level2">
+<h2><span class="header-section-number">4.7</span> Axes</h2>
+<div id="range" class="section level3">
+<h3><span class="header-section-number">4.7.1</span> Range</h3>
+<p>We use the coord_cartesian() command to adjust range of axes. In the code below we use coord_cartesian() to make the y-axis range from 0 to 3500.</p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="graphing.html#cb171-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb171-2"><a href="graphing.html#cb171-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title,</span>
+<span id="cb171-3"><a href="graphing.html#cb171-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb171-4"><a href="graphing.html#cb171-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb171-5"><a href="graphing.html#cb171-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb171-6"><a href="graphing.html#cb171-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb171-7"><a href="graphing.html#cb171-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb171-8"><a href="graphing.html#cb171-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb171-9"><a href="graphing.html#cb171-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb171-10"><a href="graphing.html#cb171-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb171-11"><a href="graphing.html#cb171-11"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>)</span>
+<span id="cb171-12"><a href="graphing.html#cb171-12"></a></span>
+<span id="cb171-13"><a href="graphing.html#cb171-13"></a></span>
+<span id="cb171-14"><a href="graphing.html#cb171-14"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-116-1.png" width="65%" /></p>
+<p>Note that if you had a continuous variable on the x-axis (we do not in this example), you could set the range of both the x- and y-axes like this:</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="graphing.html#cb172-1"></a><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>),</span>
+<span id="cb172-2"><a href="graphing.html#cb172-2"></a>                <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>))</span></code></pre></div>
+</div>
+<div id="ticks" class="section level3">
+<h3><span class="header-section-number">4.7.2</span> Ticks</h3>
+<p>We use the scale_y_continuous() command to adjust the ticks on the y-axis. We set the ticks on the y-axis to range from 0 to 3500 in 500 tick increments using the scale_y_continuous command below via the breaks argument:</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="graphing.html#cb173-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb173-2"><a href="graphing.html#cb173-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title,</span>
+<span id="cb173-3"><a href="graphing.html#cb173-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb173-4"><a href="graphing.html#cb173-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb173-5"><a href="graphing.html#cb173-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb173-6"><a href="graphing.html#cb173-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb173-7"><a href="graphing.html#cb173-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb173-8"><a href="graphing.html#cb173-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb173-9"><a href="graphing.html#cb173-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb173-10"><a href="graphing.html#cb173-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb173-11"><a href="graphing.html#cb173-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb173-12"><a href="graphing.html#cb173-12"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>)</span>
+<span id="cb173-13"><a href="graphing.html#cb173-13"></a></span>
+<span id="cb173-14"><a href="graphing.html#cb173-14"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-118-1.png" width="65%" /></p>
+<p>Note that if you had a continuous variable on the x-axis (we do not in this example), you could set the ticks of the x-axis like the code below using scale_x_continuous:</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="graphing.html#cb174-1"></a><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>))</span></code></pre></div>
+</div>
+<div id="labels" class="section level3">
+<h3><span class="header-section-number">4.7.3</span> Labels</h3>
+<p>Labels are an extremely important part of any graph. This fact is the focus of the <a href="https://xkcd.com/833/">xkcd</a> cartoon below:</p>
+<p><img src="ch_graphing/images/convincing.png" width="80%" /></p>
+<p>We use the labs() command to set the labels for the x- and y-axes:</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="graphing.html#cb175-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb175-2"><a href="graphing.html#cb175-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title,</span>
+<span id="cb175-3"><a href="graphing.html#cb175-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb175-4"><a href="graphing.html#cb175-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb175-5"><a href="graphing.html#cb175-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb175-6"><a href="graphing.html#cb175-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb175-7"><a href="graphing.html#cb175-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb175-8"><a href="graphing.html#cb175-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb175-9"><a href="graphing.html#cb175-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb175-10"><a href="graphing.html#cb175-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb175-11"><a href="graphing.html#cb175-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb175-12"><a href="graphing.html#cb175-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb175-13"><a href="graphing.html#cb175-13"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb175-14"><a href="graphing.html#cb175-14"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb175-15"><a href="graphing.html#cb175-15"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>)</span>
+<span id="cb175-16"><a href="graphing.html#cb175-16"></a></span>
+<span id="cb175-17"><a href="graphing.html#cb175-17"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-121-1.png" width="65%" /></p>
+</div>
+</div>
+<div id="axis-values" class="section level2">
+<h2><span class="header-section-number">4.8</span> Axis values</h2>
+<div id="text" class="section level3">
+<h3><span class="header-section-number">4.8.1</span> Text</h3>
+<p>What if we want to use the full movie title rather than the short version on the x-axis of the graph? That is, you want to change the values along the x-axis. Two methods are presented below.</p>
+<div id="method-1-recoding-axis-values" class="section level4">
+<h4><span class="header-section-number">4.8.1.1</span> Method 1: Recoding axis values</h4>
+<p>Our data file contains a column with the long/full version of the movie names. But many times you won’t have the additional/longer labels available in this manner. In this situation, you use the scale_x_discrete() command to change the values along the x-axis.</p>
+<p>The values along the x-axis come from the short_title column which is a factor. The levels of that factor correspond to the short titles for the movies (Iron, Thor, etc.). We need to relabel the levels of the short_title factor to get a graph with full titles. We relabel the levels of the short_title factor using the scale_x_discrete() command. The graph code with scale_x_discrete() command is below - notice the problem we have with the labels overlapping though. On the next page, we’ll use an easier approach though - since we have an extra column with the full titles.</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="graphing.html#cb176-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb176-2"><a href="graphing.html#cb176-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title,</span>
+<span id="cb176-3"><a href="graphing.html#cb176-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb176-4"><a href="graphing.html#cb176-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb176-5"><a href="graphing.html#cb176-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb176-6"><a href="graphing.html#cb176-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb176-7"><a href="graphing.html#cb176-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb176-8"><a href="graphing.html#cb176-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb176-9"><a href="graphing.html#cb176-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb176-10"><a href="graphing.html#cb176-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb176-11"><a href="graphing.html#cb176-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb176-12"><a href="graphing.html#cb176-12"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;Iron&quot;</span> =<span class="st"> &quot;Iron Man&quot;</span>, </span>
+<span id="cb176-13"><a href="graphing.html#cb176-13"></a>                            <span class="st">&quot;Thor&quot;</span> =<span class="st"> &quot;Thor Ragnarkok&quot;</span>,</span>
+<span id="cb176-14"><a href="graphing.html#cb176-14"></a>                            <span class="st">&quot;AV3&quot;</span> =<span class="st"> &quot;Avengers Infinity War&quot;</span>,</span>
+<span id="cb176-15"><a href="graphing.html#cb176-15"></a>                            <span class="st">&quot;AV4&quot;</span> =<span class="st"> &quot;Avengers Endgame&quot;</span>,</span>
+<span id="cb176-16"><a href="graphing.html#cb176-16"></a>                            <span class="st">&quot;Sup&quot;</span> =<span class="st"> &quot;Man of Steel&quot;</span>,</span>
+<span id="cb176-17"><a href="graphing.html#cb176-17"></a>                            <span class="st">&quot;BvS&quot;</span> =<span class="st"> &quot;Batman v Superman&quot;</span>,</span>
+<span id="cb176-18"><a href="graphing.html#cb176-18"></a>                            <span class="st">&quot;JL&quot;</span> =<span class="st"> &quot;Justice League&quot;</span>,</span>
+<span id="cb176-19"><a href="graphing.html#cb176-19"></a>                            <span class="st">&quot;WW&quot;</span> =<span class="st"> &quot;Wonder Woman&quot;</span>)) <span class="op">+</span></span>
+<span id="cb176-20"><a href="graphing.html#cb176-20"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb176-21"><a href="graphing.html#cb176-21"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb176-22"><a href="graphing.html#cb176-22"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb176-23"><a href="graphing.html#cb176-23"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>)</span>
+<span id="cb176-24"><a href="graphing.html#cb176-24"></a>  </span>
+<span id="cb176-25"><a href="graphing.html#cb176-25"></a></span>
+<span id="cb176-26"><a href="graphing.html#cb176-26"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-122-1.png" width="65%" /></p>
+</div>
+<div id="method-2-longer-label-columns" class="section level4">
+<h4><span class="header-section-number">4.8.1.2</span> Method 2: Longer label columns</h4>
+<p>With our movie data we don’t need to use scale_x_discrete() because we have a column in the data with the full titles. Consequently, to use full length titles we just have to change the <em>mapping</em>for x from short_title to title. Notice that we still have the problem with overlapping labels on the x-axis!</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="graphing.html#cb177-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb177-2"><a href="graphing.html#cb177-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb177-3"><a href="graphing.html#cb177-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb177-4"><a href="graphing.html#cb177-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb177-5"><a href="graphing.html#cb177-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb177-6"><a href="graphing.html#cb177-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb177-7"><a href="graphing.html#cb177-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb177-8"><a href="graphing.html#cb177-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb177-9"><a href="graphing.html#cb177-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb177-10"><a href="graphing.html#cb177-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb177-11"><a href="graphing.html#cb177-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb177-12"><a href="graphing.html#cb177-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb177-13"><a href="graphing.html#cb177-13"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb177-14"><a href="graphing.html#cb177-14"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb177-15"><a href="graphing.html#cb177-15"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>)</span>
+<span id="cb177-16"><a href="graphing.html#cb177-16"></a>  </span>
+<span id="cb177-17"><a href="graphing.html#cb177-17"></a></span>
+<span id="cb177-18"><a href="graphing.html#cb177-18"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-123-1.png" width="65%" /></p>
+</div>
+</div>
+<div id="angle" class="section level3">
+<h3><span class="header-section-number">4.8.2</span> Angle</h3>
+<p>Use theme() to adjust the angle of x-axis labels. Notice, however, that the longer titles are vertically centered on each point on the x-axis. In the next section we fix this problem.</p>
+<p><strong>Important</strong>: The theme command must come after the theme_classic command. Otherwise, theme_classic will undo the work done by the theme_command if it appears after the theme command.</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="graphing.html#cb178-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb178-2"><a href="graphing.html#cb178-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb178-3"><a href="graphing.html#cb178-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb178-4"><a href="graphing.html#cb178-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb178-5"><a href="graphing.html#cb178-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb178-6"><a href="graphing.html#cb178-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb178-7"><a href="graphing.html#cb178-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb178-8"><a href="graphing.html#cb178-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb178-9"><a href="graphing.html#cb178-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb178-10"><a href="graphing.html#cb178-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb178-11"><a href="graphing.html#cb178-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb178-12"><a href="graphing.html#cb178-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb178-13"><a href="graphing.html#cb178-13"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb178-14"><a href="graphing.html#cb178-14"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb178-15"><a href="graphing.html#cb178-15"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb178-16"><a href="graphing.html#cb178-16"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>))</span>
+<span id="cb178-17"><a href="graphing.html#cb178-17"></a></span>
+<span id="cb178-18"><a href="graphing.html#cb178-18"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-124-1.png" width="65%" /></p>
+</div>
+<div id="alignment" class="section level3">
+<h3><span class="header-section-number">4.8.3</span> Alignment</h3>
+<p>Use theme() and the hjust argument to adjust the alignment of the x-axis labels. To make the titles look correct on the x-axis we need them at an angle, but we also need them right justified against the x-axis. We do that with the the hjust argument (1 means right justify). See the code below:</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="graphing.html#cb179-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb179-2"><a href="graphing.html#cb179-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb179-3"><a href="graphing.html#cb179-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb179-4"><a href="graphing.html#cb179-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb179-5"><a href="graphing.html#cb179-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb179-6"><a href="graphing.html#cb179-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb179-7"><a href="graphing.html#cb179-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb179-8"><a href="graphing.html#cb179-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb179-9"><a href="graphing.html#cb179-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb179-10"><a href="graphing.html#cb179-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb179-11"><a href="graphing.html#cb179-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb179-12"><a href="graphing.html#cb179-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb179-13"><a href="graphing.html#cb179-13"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb179-14"><a href="graphing.html#cb179-14"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb179-15"><a href="graphing.html#cb179-15"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb179-16"><a href="graphing.html#cb179-16"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb179-17"><a href="graphing.html#cb179-17"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>))  </span>
+<span id="cb179-18"><a href="graphing.html#cb179-18"></a></span>
+<span id="cb179-19"><a href="graphing.html#cb179-19"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-125-1.png" width="65%" /></p>
+</div>
+<div id="order" class="section level3">
+<h3><span class="header-section-number">4.8.4</span> Order</h3>
+<div id="increasing-order" class="section level4">
+<h4><span class="header-section-number">4.8.4.1</span> Increasing order</h4>
+<p>We can make the movie bars go left to right in lowest to highest box office receipt order by changing the factor order prior to creating the graph. We do so with the mutate() and fct_reorder() commands. The default order is ascending values even though we don’t specify it.</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="graphing.html#cb180-1"></a>movie_data &lt;-<span class="st"> </span>movie_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb180-2"><a href="graphing.html#cb180-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">title =</span> <span class="kw">fct_reorder</span>(title,</span>
+<span id="cb180-3"><a href="graphing.html#cb180-3"></a>                             boxoffice))</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="graphing.html#cb181-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb181-2"><a href="graphing.html#cb181-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb181-3"><a href="graphing.html#cb181-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb181-4"><a href="graphing.html#cb181-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb181-5"><a href="graphing.html#cb181-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb181-6"><a href="graphing.html#cb181-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb181-7"><a href="graphing.html#cb181-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb181-8"><a href="graphing.html#cb181-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb181-9"><a href="graphing.html#cb181-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb181-10"><a href="graphing.html#cb181-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb181-11"><a href="graphing.html#cb181-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb181-12"><a href="graphing.html#cb181-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb181-13"><a href="graphing.html#cb181-13"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb181-14"><a href="graphing.html#cb181-14"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb181-15"><a href="graphing.html#cb181-15"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb181-16"><a href="graphing.html#cb181-16"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb181-17"><a href="graphing.html#cb181-17"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>))  </span>
+<span id="cb181-18"><a href="graphing.html#cb181-18"></a></span>
+<span id="cb181-19"><a href="graphing.html#cb181-19"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-127-1.png" width="65%" /></p>
+</div>
+<div id="decreasing-order" class="section level4">
+<h4><span class="header-section-number">4.8.4.2</span> Decreasing order</h4>
+<p>We can make the movie bars go left to right in highest to lowest box office receipt order by changing the factor order prior to creating the graph. We use the same code as before but add the desc() command (i.e.,descending) around boxoffice in the fct_reorder() call:</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="graphing.html#cb182-1"></a>movie_data &lt;-<span class="st"> </span>movie_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">title =</span> <span class="kw">fct_reorder</span>(title,</span>
+<span id="cb182-2"><a href="graphing.html#cb182-2"></a>                                  <span class="kw">desc</span>(boxoffice)))</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="graphing.html#cb183-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb183-2"><a href="graphing.html#cb183-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb183-3"><a href="graphing.html#cb183-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb183-4"><a href="graphing.html#cb183-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb183-5"><a href="graphing.html#cb183-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb183-6"><a href="graphing.html#cb183-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb183-7"><a href="graphing.html#cb183-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb183-8"><a href="graphing.html#cb183-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb183-9"><a href="graphing.html#cb183-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb183-10"><a href="graphing.html#cb183-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb183-11"><a href="graphing.html#cb183-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb183-12"><a href="graphing.html#cb183-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb183-13"><a href="graphing.html#cb183-13"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb183-14"><a href="graphing.html#cb183-14"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb183-15"><a href="graphing.html#cb183-15"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb183-16"><a href="graphing.html#cb183-16"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb183-17"><a href="graphing.html#cb183-17"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>))  </span>
+<span id="cb183-18"><a href="graphing.html#cb183-18"></a></span>
+<span id="cb183-19"><a href="graphing.html#cb183-19"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-129-1.png" width="65%" /></p>
+</div>
+<div id="custom-order" class="section level4">
+<h4><span class="header-section-number">4.8.4.3</span> Custom order</h4>
+<p>We can make the movie bars go left to right in a custom order by changing the factor order prior to creating the graph. Because we want a custom order of the factor levels we use fct_relevel(), instead of the the fct_reorder() command from the previous two examples. Below I use this approach to manually order movies highest to lowest boxoffice within movie studio (Marvel or DC).</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="graphing.html#cb184-1"></a>movie_data &lt;-<span class="st"> </span>movie_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb184-2"><a href="graphing.html#cb184-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">title =</span> <span class="kw">fct_relevel</span>(title,</span>
+<span id="cb184-3"><a href="graphing.html#cb184-3"></a>                             <span class="st">&quot;Avengers Endgame&quot;</span>,</span>
+<span id="cb184-4"><a href="graphing.html#cb184-4"></a>                             <span class="st">&quot;Avengers Infinity War&quot;</span>,</span>
+<span id="cb184-5"><a href="graphing.html#cb184-5"></a>                             <span class="st">&quot;Thor Ragnarok&quot;</span>,</span>
+<span id="cb184-6"><a href="graphing.html#cb184-6"></a>                             <span class="st">&quot;Iron Man&quot;</span>,</span>
+<span id="cb184-7"><a href="graphing.html#cb184-7"></a>                             <span class="st">&quot;Batman v Superman&quot;</span>,</span>
+<span id="cb184-8"><a href="graphing.html#cb184-8"></a>                             <span class="st">&quot;Wonder Woman&quot;</span>,</span>
+<span id="cb184-9"><a href="graphing.html#cb184-9"></a>                             <span class="st">&quot;Man of Steel&quot;</span>,</span>
+<span id="cb184-10"><a href="graphing.html#cb184-10"></a>                             <span class="st">&quot;Justice League&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="graphing.html#cb185-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb185-2"><a href="graphing.html#cb185-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb185-3"><a href="graphing.html#cb185-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb185-4"><a href="graphing.html#cb185-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb185-5"><a href="graphing.html#cb185-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb185-6"><a href="graphing.html#cb185-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb185-7"><a href="graphing.html#cb185-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb185-8"><a href="graphing.html#cb185-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb185-9"><a href="graphing.html#cb185-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb185-10"><a href="graphing.html#cb185-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb185-11"><a href="graphing.html#cb185-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb185-12"><a href="graphing.html#cb185-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb185-13"><a href="graphing.html#cb185-13"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb185-14"><a href="graphing.html#cb185-14"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb185-15"><a href="graphing.html#cb185-15"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb185-16"><a href="graphing.html#cb185-16"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb185-17"><a href="graphing.html#cb185-17"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>))  </span></code></pre></div>
+<p><img src="ch_graphing/images/custom_order.png" width="65%" /></p>
+</div>
+</div>
+<div id="legend-order" class="section level3">
+<h3><span class="header-section-number">4.8.5</span> Legend order</h3>
+<p>After inspecting the graph on the previous page, you might think that Marvel should be above DC in the legend. You can do that by reordering the studio factor:</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="graphing.html#cb186-1"></a>movie_data &lt;-<span class="st"> </span>movie_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb186-2"><a href="graphing.html#cb186-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">studio =</span> <span class="kw">fct_relevel</span>(studio,</span>
+<span id="cb186-3"><a href="graphing.html#cb186-3"></a>                             <span class="st">&quot;Marvel&quot;</span>,</span>
+<span id="cb186-4"><a href="graphing.html#cb186-4"></a>                             <span class="st">&quot;DC&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="graphing.html#cb187-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb187-2"><a href="graphing.html#cb187-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb187-3"><a href="graphing.html#cb187-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb187-4"><a href="graphing.html#cb187-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb187-5"><a href="graphing.html#cb187-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb187-6"><a href="graphing.html#cb187-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb187-7"><a href="graphing.html#cb187-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb187-8"><a href="graphing.html#cb187-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb187-9"><a href="graphing.html#cb187-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb187-10"><a href="graphing.html#cb187-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb187-11"><a href="graphing.html#cb187-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb187-12"><a href="graphing.html#cb187-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb187-13"><a href="graphing.html#cb187-13"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb187-14"><a href="graphing.html#cb187-14"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb187-15"><a href="graphing.html#cb187-15"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb187-16"><a href="graphing.html#cb187-16"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb187-17"><a href="graphing.html#cb187-17"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>))  </span></code></pre></div>
+<p><img src="ch_graphing/images/custom_order2.png" width="65%" /></p>
+</div>
+</div>
+<div id="custom-colours" class="section level2">
+<h2><span class="header-section-number">4.9</span> Custom colours</h2>
+<div id="r-palette" class="section level3">
+<h3><span class="header-section-number">4.9.1</span> R palette</h3>
+<p>You might look at the previous graph and think “Marvel should be red and DC should be blue since those are the colours of their respective logos”. You can do that with the code below. Note that you specify the colours in the order the names appear in the legend (top to bottom).</p>
+<p>R colour names/pictures can be found here: <a href="http://sape.inf.usi.ch/quick-reference/ggplot2/colour" class="uri">http://sape.inf.usi.ch/quick-reference/ggplot2/colour</a></p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="graphing.html#cb188-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb188-2"><a href="graphing.html#cb188-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb188-3"><a href="graphing.html#cb188-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb188-4"><a href="graphing.html#cb188-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb188-5"><a href="graphing.html#cb188-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb188-6"><a href="graphing.html#cb188-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb188-7"><a href="graphing.html#cb188-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb188-8"><a href="graphing.html#cb188-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb188-9"><a href="graphing.html#cb188-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb188-10"><a href="graphing.html#cb188-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb188-11"><a href="graphing.html#cb188-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb188-12"><a href="graphing.html#cb188-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb188-13"><a href="graphing.html#cb188-13"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb188-14"><a href="graphing.html#cb188-14"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb188-15"><a href="graphing.html#cb188-15"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb188-16"><a href="graphing.html#cb188-16"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb188-17"><a href="graphing.html#cb188-17"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb188-18"><a href="graphing.html#cb188-18"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
+<p><img src="ch_graphing/images/base_color_graph.png" width="65%" /></p>
+</div>
+<div id="hex-colours" class="section level3">
+<h3><span class="header-section-number">4.9.2</span> Hex colours</h3>
+<p>If you are a really big geek (like me) you might look at the previous graph and think “Those aren’t the proper colours for the Marvel and DC - lame!” So… you do some internet research and determine that you can specify colours using hexidecimal numbers. More specifically, you find Marvel red is #ed1d24 and DC blue is #0476F2 using hex colour codes. You can use those precise colours via the scale_fill_manual() command below.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="graphing.html#cb189-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb189-2"><a href="graphing.html#cb189-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb189-3"><a href="graphing.html#cb189-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb189-4"><a href="graphing.html#cb189-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb189-5"><a href="graphing.html#cb189-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb189-6"><a href="graphing.html#cb189-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb189-7"><a href="graphing.html#cb189-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb189-8"><a href="graphing.html#cb189-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb189-9"><a href="graphing.html#cb189-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb189-10"><a href="graphing.html#cb189-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb189-11"><a href="graphing.html#cb189-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb189-12"><a href="graphing.html#cb189-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb189-13"><a href="graphing.html#cb189-13"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb189-14"><a href="graphing.html#cb189-14"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb189-15"><a href="graphing.html#cb189-15"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb189-16"><a href="graphing.html#cb189-16"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb189-17"><a href="graphing.html#cb189-17"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb189-18"><a href="graphing.html#cb189-18"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;#ed1d24&quot;</span>, <span class="st">&quot;#0476F2&quot;</span>))</span></code></pre></div>
+<p><img src="ch_graphing/images/logo_color_graph.png" width="65%" /></p>
+</div>
+</div>
+<div id="emoji" class="section level2">
+<h2><span class="header-section-number">4.10</span> Emoji</h2>
+<p>Make the graph more fun with the emoGG package. You might like to make the graph more fun by putting tomatoes on the graph to indicate what the extra numbers mean. We can do that with the emoGG package. The installation instructions for this package are at the start of this chapter; note, that it is installed via GitHub rather than the CRAN. Course R Studio Cloud users - the installation has already been done.</p>
+<p>After installation you need to activate the emoGG package:</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="graphing.html#cb190-1"></a><span class="kw">library</span>(emoGG)</span></code></pre></div>
+<p>Visit this link to check out the codes for emoji: <a href="https://apps.timwhitlock.info/emoji/tables/unicode" class="uri">https://apps.timwhitlock.info/emoji/tables/unicode</a></p>
+<p>If you scroll down to section 5 Uncategorized on this page you will find the code for a tomato is 1f345. Note that the code below will only work with an internet connection. The command geom_emoji() needs internet access to retrieve the emoji graphic requested.</p>
+<p><img src="ch_graphing/images/emoji_table.png" width="90%" /></p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="graphing.html#cb191-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb191-2"><a href="graphing.html#cb191-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb191-3"><a href="graphing.html#cb191-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb191-4"><a href="graphing.html#cb191-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb191-5"><a href="graphing.html#cb191-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb191-6"><a href="graphing.html#cb191-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb191-7"><a href="graphing.html#cb191-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb191-8"><a href="graphing.html#cb191-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb191-9"><a href="graphing.html#cb191-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">600</span>, </span>
+<span id="cb191-10"><a href="graphing.html#cb191-10"></a>            <span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb191-11"><a href="graphing.html#cb191-11"></a><span class="st">  </span><span class="kw">geom_emoji</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">y =</span> boxoffice <span class="op">+</span><span class="st"> </span><span class="dv">400</span>),</span>
+<span id="cb191-12"><a href="graphing.html#cb191-12"></a>             <span class="dt">emoji=</span><span class="st">&quot;1f345&quot;</span>) <span class="op">+</span></span>
+<span id="cb191-13"><a href="graphing.html#cb191-13"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb191-14"><a href="graphing.html#cb191-14"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb191-15"><a href="graphing.html#cb191-15"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb191-16"><a href="graphing.html#cb191-16"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb191-17"><a href="graphing.html#cb191-17"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb191-18"><a href="graphing.html#cb191-18"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb191-19"><a href="graphing.html#cb191-19"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb191-20"><a href="graphing.html#cb191-20"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb191-21"><a href="graphing.html#cb191-21"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;#ed1d24&quot;</span>, <span class="st">&quot;#0476F2&quot;</span>))</span></code></pre></div>
+<p><img src="ch_graphing/images/emoji_graph.png" width="65%" /></p>
+</div>
+<div id="accessible-colors" class="section level2">
+<h2><span class="header-section-number">4.11</span> Accessible Colors</h2>
+<p>The current version of the graph is much improved from where we started at the begining of the chapter. One notable improvement was the use of the “proper” colors for the Marvel and DC studios. Although using these colors was aethetically pleasing, a major consideration is ensuring your graphs are accessible to a wide audience.</p>
+<p>Color blindness is an issue that affects approximately five percent of the population. A nuanced discussion of the different types of color blindness is beyond the scope of this chapter. We can, however, take a momement to think about every graph as being composed of two parts that work together to create the colors overall image. We can think of there being a lightness (i.e., light vs. dark) component and a hue component (e.g., magenta, yellow, etc.). Together these two components work together to create colors that we see. This distinction between lightness and hue is relevant to all images not just graphs <span class="citation">(see Margulis <a href="#ref-margulis2005photoshop" role="doc-biblioref">2005</a>)</span>.</p>
+<div class="figure"><span id="fig:colorcomparison"></span>
+<img src="ch_graphing/images/nocolorcomparison.png" alt="Hue removed from current graph" width="75%" />
+<p class="caption">
+FIGURE 4.3: Hue removed from current graph
+</p>
+</div>
+<p>Figure <a href="graphing.html#fig:colorcomparison">4.3</a>A presents our current graph whereas Figure <a href="graphing.html#fig:colorcomparison">4.3</a>B presents the same graph with the hue component removed. You can see that when the hue component is removed that the distinction between the Marvel and DC bars is also removed. The particular colors used to represent Marvel/DC differ in terms of hue but not lightness. Consequently, when we remove the hue component we are left with a graph, <a href="graphing.html#fig:colorcomparison">4.3</a>B, that does not differentiate between the two studios. In order for a color graph to be accessible to people with color blindness we need to pick colors that vary in terms of lightness as well as hue. We can do that with the help of the RColorBrewer package.</p>
+<div id="rcolorbrewer" class="section level3">
+<h3><span class="header-section-number">4.11.1</span> RColorBrewer</h3>
+<div id="picking-a-palette" class="section level4">
+<h4><span class="header-section-number">4.11.1.1</span> Picking a palette</h4>
+<p>The RColorBrewer package can be used to generate color palettes for graphs that are accessible to people with color blindness. That is, it creates sets of colors, called palettes, for which the colors vary in terms of both lightness and hue. You can see the color-blind accessible palettes, along with their respective names, by using the command below. This code produces a wide range of color-blind accessible palettes with a large number of colors in each palette - as illustrated in Figure <a href="graphing.html#fig:colorpal">4.4</a>.</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="graphing.html#cb192-1"></a><span class="kw">library</span>(RColorBrewer)</span>
+<span id="cb192-2"><a href="graphing.html#cb192-2"></a><span class="kw">display.brewer.all</span>(<span class="dt">n =</span> <span class="ot">NULL</span>, <span class="dt">colorblindFriendly =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:colorpal"></span>
+<img src="ch_graphing/images/colors_all.png" alt="Wide range color palette (color-blind accessible)" width="70%" height="70%" />
+<p class="caption">
+FIGURE 4.4: Wide range color palette (color-blind accessible)
+</p>
+</div>
+<div style="page-break-after: always;"></div>
+<p>In Figure <a href="graphing.html#fig:colorpal">4.4</a>, above, we showed palettes with a large number of colors. But if you have a smaller number of possible colors in your graph - you want a palette with fewer colors (to ensure maximum contrast between those colors). You can, for example, obtain palettes with only three colors using the code below.</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="graphing.html#cb193-1"></a><span class="kw">library</span>(RColorBrewer)</span>
+<span id="cb193-2"><a href="graphing.html#cb193-2"></a><span class="kw">display.brewer.all</span>(<span class="dt">n =</span> <span class="dv">3</span>, <span class="dt">colorblindFriendly =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p>The above code generates the three-color palettes presented in Figure <a href="graphing.html#fig:colorspalthree">4.5</a>.</p>
+<div class="figure"><span id="fig:colorspalthree"></span>
+<img src="ch_graphing/images/colors_3.png" alt="Narrow range color palette (color-blind accessible)" width="70%" height="70%" />
+<p class="caption">
+FIGURE 4.5: Narrow range color palette (color-blind accessible)
+</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="using-a-palette" class="section level4">
+<h4><span class="header-section-number">4.11.1.2</span> Using a palette</h4>
+<p>We can use a color palette by specifying its name within scale_fill_brewer(). We want to use the “Paired” palette in Figure <a href="graphing.html#fig:colorspalthree">4.5</a> so we use the code: scale_fill_brewer(palette = “Paired”), as illustrated below:</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="graphing.html#cb194-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb194-2"><a href="graphing.html#cb194-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb194-3"><a href="graphing.html#cb194-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb194-4"><a href="graphing.html#cb194-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb194-5"><a href="graphing.html#cb194-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb194-6"><a href="graphing.html#cb194-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb194-7"><a href="graphing.html#cb194-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb194-8"><a href="graphing.html#cb194-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb194-9"><a href="graphing.html#cb194-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">600</span>, </span>
+<span id="cb194-10"><a href="graphing.html#cb194-10"></a>            <span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb194-11"><a href="graphing.html#cb194-11"></a><span class="st">  </span><span class="kw">geom_emoji</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">y =</span> boxoffice <span class="op">+</span><span class="st"> </span><span class="dv">400</span>),</span>
+<span id="cb194-12"><a href="graphing.html#cb194-12"></a>             <span class="dt">emoji=</span><span class="st">&quot;1f345&quot;</span>) <span class="op">+</span></span>
+<span id="cb194-13"><a href="graphing.html#cb194-13"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb194-14"><a href="graphing.html#cb194-14"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb194-15"><a href="graphing.html#cb194-15"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb194-16"><a href="graphing.html#cb194-16"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb194-17"><a href="graphing.html#cb194-17"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb194-18"><a href="graphing.html#cb194-18"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb194-19"><a href="graphing.html#cb194-19"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb194-20"><a href="graphing.html#cb194-20"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb194-21"><a href="graphing.html#cb194-21"></a><span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Paired&quot;</span>)</span></code></pre></div>
+<p><img src="ch_graphing/images/emoji_graph4.png" width="65%" /></p>
+</div>
+<div id="palette-subsets" class="section level4">
+<h4><span class="header-section-number">4.11.1.3</span> Palette subsets</h4>
+<p>Our graph had only two colors but the “Paired” palette had three colors. When ggplot made the graph it automatically used the first two colors of the three color palette. What if you wanted the second two colors in the palette? We can do that but we have to revert to a manual color process like we used before via the scale_fill_manual(). But we want to do so using the colors from the “Paired” palette. We can obtain the color codes for the “Paired” palette with the code below:</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="graphing.html#cb195-1"></a><span class="kw">brewer.pal</span>(<span class="dt">n =</span> <span class="dv">3</span>, <span class="dt">name =</span> <span class="st">&quot;Paired&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;#A6CEE3&quot; &quot;#1F78B4&quot; &quot;#B2DF8A&quot;</code></pre>
+<p>The numbers in the output correspond to values representing the three colors of the “Paired” palette, see Figure <a href="graphing.html#fig:pairedpal">4.6</a>. If we want the last two colors in the palette for our graph that means we want the colors: #1F78B4 and #B2DF8A.</p>
+<div class="figure"><span id="fig:pairedpal"></span>
+<img src="ch_graphing/images/pairedpalette.png" alt="Paired palette colors with hex numbers" width="75%" />
+<p class="caption">
+FIGURE 4.6: Paired palette colors with hex numbers
+</p>
+</div>
+<p>We can put the two colors we want (#1F78B4 and #B2DF8A) on the graph by using the scale_fill_manual() command - instead of the scale_fill_brewer() command. We can see this in the code below:</p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="graphing.html#cb197-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb197-2"><a href="graphing.html#cb197-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb197-3"><a href="graphing.html#cb197-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb197-4"><a href="graphing.html#cb197-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb197-5"><a href="graphing.html#cb197-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb197-6"><a href="graphing.html#cb197-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb197-7"><a href="graphing.html#cb197-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb197-8"><a href="graphing.html#cb197-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb197-9"><a href="graphing.html#cb197-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">600</span>, </span>
+<span id="cb197-10"><a href="graphing.html#cb197-10"></a>            <span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb197-11"><a href="graphing.html#cb197-11"></a><span class="st">  </span><span class="kw">geom_emoji</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">y =</span> boxoffice <span class="op">+</span><span class="st"> </span><span class="dv">400</span>),</span>
+<span id="cb197-12"><a href="graphing.html#cb197-12"></a>             <span class="dt">emoji=</span><span class="st">&quot;1f345&quot;</span>) <span class="op">+</span></span>
+<span id="cb197-13"><a href="graphing.html#cb197-13"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb197-14"><a href="graphing.html#cb197-14"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb197-15"><a href="graphing.html#cb197-15"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb197-16"><a href="graphing.html#cb197-16"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb197-17"><a href="graphing.html#cb197-17"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb197-18"><a href="graphing.html#cb197-18"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb197-19"><a href="graphing.html#cb197-19"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb197-20"><a href="graphing.html#cb197-20"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb197-21"><a href="graphing.html#cb197-21"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;#1F78B4&quot;</span>, <span class="st">&quot;#B2DF8A&quot;</span>))</span></code></pre></div>
+<p><img src="ch_graphing/images/emoji_graph5.png" width="65%" /></p>
+<p>Now that we have used a color-blind accessible palette in the graph we can look at the graph without the hue component. In Figure <a href="graphing.html#fig:colorcomparison2">4.7</a>B, below, notice that the bars representing the two studios are easily distinguishable based on lightness alone. That is, the lightness graph in Figure <a href="graphing.html#fig:colorcomparison2">4.7</a>B demonstrates the new color-blind accessible colors vary in term of both hue and lightness - not just hue. Therefore, when hue is removed the two colors are distinguishable. This makes the graph accessible to color-blind individuals.</p>
+<div class="figure"><span id="fig:colorcomparison2"></span>
+<img src="ch_graphing/images/nocolorcomparison2.png" alt="Color information (i.e., hue) removed from new color-blind accessible graph" width="75%" />
+<p class="caption">
+FIGURE 4.7: Color information (i.e., hue) removed from new color-blind accessible graph
+</p>
+</div>
+</div>
+</div>
+<div id="avoid-color" class="section level3">
+<h3><span class="header-section-number">4.11.2</span> Avoid color</h3>
+<p>When you only have two colors on a graph another option for creating an accessible graph is to remove the colors entirely and make a black and white graph. In the code below we use scale_fill_manual() with the values “#ffffff” (white) and "“#000000” (black). The intent was to create bars that are white for Marvel and black for DC. Unfortunately, because the graph has a white background you can see this resulted in the Marvel bars disappearing.</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="graphing.html#cb198-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb198-2"><a href="graphing.html#cb198-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb198-3"><a href="graphing.html#cb198-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb198-4"><a href="graphing.html#cb198-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb198-5"><a href="graphing.html#cb198-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb198-6"><a href="graphing.html#cb198-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb198-7"><a href="graphing.html#cb198-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb198-8"><a href="graphing.html#cb198-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb198-9"><a href="graphing.html#cb198-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">600</span>, </span>
+<span id="cb198-10"><a href="graphing.html#cb198-10"></a>            <span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb198-11"><a href="graphing.html#cb198-11"></a><span class="st">  </span><span class="kw">geom_emoji</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">y =</span> boxoffice <span class="op">+</span><span class="st"> </span><span class="dv">400</span>),</span>
+<span id="cb198-12"><a href="graphing.html#cb198-12"></a>             <span class="dt">emoji=</span><span class="st">&quot;1f345&quot;</span>) <span class="op">+</span></span>
+<span id="cb198-13"><a href="graphing.html#cb198-13"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb198-14"><a href="graphing.html#cb198-14"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb198-15"><a href="graphing.html#cb198-15"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb198-16"><a href="graphing.html#cb198-16"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb198-17"><a href="graphing.html#cb198-17"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb198-18"><a href="graphing.html#cb198-18"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb198-19"><a href="graphing.html#cb198-19"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb198-20"><a href="graphing.html#cb198-20"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb198-21"><a href="graphing.html#cb198-21"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;#ffffff&quot;</span>, <span class="st">&quot;#000000&quot;</span>))</span></code></pre></div>
+<p><img src="ch_graphing/images/emoji_graph2.png" width="65%" /></p>
+<p>How do we get around the Marvel bars disappearing when we use white?</p>
+<p><strong>Color vs. fill.</strong> The ggplot packages makes a distinction between <strong>fill</strong> and <strong>color</strong>. The term <strong>fill</strong> is used to refer to the inside color of bars. In contrast, <strong>color</strong> is used to the refer to the lines that outline the shape of each bar. In the previous code we used fill to change the colors of the bars but we did not use the “color” argument in a command. In the code below, we modify the geom_col() command to use the “color” argument. Specifically, we change geom_col() to geom_col(color = “black”). This change adds a black outline around all the bars – including the ones with a white fill. You can see the result is a much improved graph. This black/white graph is accessible to everyone.</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="graphing.html#cb199-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb199-2"><a href="graphing.html#cb199-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb199-3"><a href="graphing.html#cb199-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb199-4"><a href="graphing.html#cb199-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb199-5"><a href="graphing.html#cb199-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb199-6"><a href="graphing.html#cb199-6"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span></span>
+<span id="cb199-7"><a href="graphing.html#cb199-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb199-8"><a href="graphing.html#cb199-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb199-9"><a href="graphing.html#cb199-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">600</span>, </span>
+<span id="cb199-10"><a href="graphing.html#cb199-10"></a>            <span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb199-11"><a href="graphing.html#cb199-11"></a><span class="st">  </span><span class="kw">geom_emoji</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">y =</span> boxoffice <span class="op">+</span><span class="st"> </span><span class="dv">400</span>),</span>
+<span id="cb199-12"><a href="graphing.html#cb199-12"></a>             <span class="dt">emoji=</span><span class="st">&quot;1f345&quot;</span>) <span class="op">+</span></span>
+<span id="cb199-13"><a href="graphing.html#cb199-13"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb199-14"><a href="graphing.html#cb199-14"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb199-15"><a href="graphing.html#cb199-15"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>,</span>
+<span id="cb199-16"><a href="graphing.html#cb199-16"></a>       <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>,</span>
+<span id="cb199-17"><a href="graphing.html#cb199-17"></a>       <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb199-18"><a href="graphing.html#cb199-18"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb199-19"><a href="graphing.html#cb199-19"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb199-20"><a href="graphing.html#cb199-20"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb199-21"><a href="graphing.html#cb199-21"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;#ffffff&quot;</span>, <span class="st">&quot;#000000&quot;</span>))</span></code></pre></div>
+<p><img src="ch_graphing/images/emoji_graph3.png" width="65%" /></p>
+</div>
+</div>
+<div id="saving" class="section level2">
+<h2><span class="header-section-number">4.12</span> Saving</h2>
+<p>If you have a Mac it is easy to drag and drop a PDF file into MS Word - so making a PDF file is the best bet for saving your graph. You can do so with the code below which creates a 6 inch by 6 inch graph.</p>
+<div id="mac" class="section level3">
+<h3><span class="header-section-number">4.12.1</span> MAC</h3>
+<p>If you are able to use PDFs in your workflow that’s often the best option for saving. PDFs are mathematical in nature and therefore can be printed at any size at high quality. With a MAC you can just drag and drop the PDF file into your MSWord document.</p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="graphing.html#cb200-1"></a><span class="kw">ggsave</span>(<span class="dt">plot =</span> my_graph, </span>
+<span id="cb200-2"><a href="graphing.html#cb200-2"></a>       <span class="dt">filename =</span> <span class="st">&quot;emoji_graph.pdf&quot;</span>, </span>
+<span id="cb200-3"><a href="graphing.html#cb200-3"></a>       <span class="dt">width =</span> <span class="dv">6</span>, </span>
+<span id="cb200-4"><a href="graphing.html#cb200-4"></a>       <span class="dt">height =</span> <span class="dv">6</span>)</span></code></pre></div>
+</div>
+<div id="pc-or-mac" class="section level3">
+<h3><span class="header-section-number">4.12.2</span> PC or MAC</h3>
+<p>If you have a PC it’s hard to put a PDF into MSWord. Therefore, save the graph as a .jpg file. You do so with the code below. This creates a picture type file at a resolution (dpi = dots per inch) that is sufficiently high for quality printing.</p>
+<p>With a PC you need to use the INSERT menu and insert the graph as a picture in MSWord. With a MAC you can just drag and drop the .jpg file into your MSWord document.</p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="graphing.html#cb201-1"></a><span class="kw">ggsave</span>(<span class="dt">plot =</span> my_graph, </span>
+<span id="cb201-2"><a href="graphing.html#cb201-2"></a>       <span class="dt">filename =</span> <span class="st">&quot;emoji_graph.jpg&quot;</span>, </span>
+<span id="cb201-3"><a href="graphing.html#cb201-3"></a>       <span class="dt">width =</span> <span class="dv">6</span>, </span>
+<span id="cb201-4"><a href="graphing.html#cb201-4"></a>       <span class="dt">height =</span> <span class="dv">6</span>, </span>
+<span id="cb201-5"><a href="graphing.html#cb201-5"></a>       <span class="dt">dpi =</span> <span class="st">&quot;print&quot;</span>)</span></code></pre></div>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-margulis2005photoshop">
+<p>Margulis, Dan. 2005. <em>Photoshop Lab Color: The Canyon Conundrum and Other Adventures in the Most Powerful Colorspace</em>. Peachpit Press.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="populations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sampling-accuracy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/04-graphing.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

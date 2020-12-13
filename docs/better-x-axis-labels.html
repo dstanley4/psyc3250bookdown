@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Better x-axis labels | PSYC6060 Course Notes</title>
+  <meta name="description" content="Course notes for PSYC 6060" />
+  <meta name="generator" content="bookdown 0.19.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Better x-axis labels | PSYC6060 Course Notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course notes for PSYC 6060" />
+  <meta name="github-repo" content="dstanley4/psyc6060bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Better x-axis labels | PSYC6060 Course Notes" />
+  
+  <meta name="twitter:description" content="Course notes for PSYC 6060" />
+  
+
+<meta name="author" content="David J. Stanley" />
+
+
+<meta name="date" content="2020-07-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="graphing.html"/>
+<link rel="next" href="more-to-say.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-the-book"><i class="fa fa-check"></i>Structure of the book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.3</b> Create an account at R Studio Cloud</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.4</b> Join the class workspace</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.12</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
+<li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
+<li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
+<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
+<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
+<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv() and data frames</a></li>
+<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv() and tibbles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html"><i class="fa fa-check"></i><b>3</b> Making your data ready for analysis</a><ul>
+<li class="chapter" data-level="3.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#required-packages"><i class="fa fa-check"></i><b>3.1</b> Required Packages</a></li>
+<li class="chapter" data-level="3.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#objective-1"><i class="fa fa-check"></i><b>3.2</b> Objective</a></li>
+<li class="chapter" data-level="3.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#context"><i class="fa fa-check"></i><b>3.3</b> Context</a></li>
+<li class="chapter" data-level="3.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>3.4</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>3.4.1</b> Structuring data: Obtaining tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>3.5</b> Data collection considerations</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#naming-conventions"><i class="fa fa-check"></i><b>3.5.1</b> Naming conventions</a></li>
+<li class="chapter" data-level="3.5.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#likert-type-items"><i class="fa fa-check"></i><b>3.5.2</b> Likert-type items</a></li>
+<li class="chapter" data-level="3.5.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#anova-between"><i class="fa fa-check"></i><b>3.5.3</b> ANOVA between</a></li>
+<li class="chapter" data-level="3.5.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#anova-within"><i class="fa fa-check"></i><b>3.5.4</b> ANOVA within</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#following-the-examples"><i class="fa fa-check"></i><b>3.6</b> Following the examples</a></li>
+<li class="chapter" data-level="3.7" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>3.7</b> Entering data into spreadsheets</a></li>
+<li class="chapter" data-level="3.8" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#experiment-between"><i class="fa fa-check"></i><b>3.8</b> Experiment: Between</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors"><i class="fa fa-check"></i><b>3.8.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.8.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening"><i class="fa fa-check"></i><b>3.8.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.8.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening"><i class="fa fa-check"></i><b>3.8.3</b> Numeric screening</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#experiment-within-one-way"><i class="fa fa-check"></i><b>3.9</b> Experiment: Within one-way</a><ul>
+<li class="chapter" data-level="3.9.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-1"><i class="fa fa-check"></i><b>3.9.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.9.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening-1"><i class="fa fa-check"></i><b>3.9.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.9.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-1"><i class="fa fa-check"></i><b>3.9.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.9.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#pivot-to-tidy-data"><i class="fa fa-check"></i><b>3.9.4</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#experiment-within-n-way"><i class="fa fa-check"></i><b>3.10</b> Experiment: Within N-way</a><ul>
+<li class="chapter" data-level="3.10.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-2"><i class="fa fa-check"></i><b>3.10.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.10.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening-2"><i class="fa fa-check"></i><b>3.10.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.10.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-2"><i class="fa fa-check"></i><b>3.10.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.10.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#pivot-to-tidy-data-1"><i class="fa fa-check"></i><b>3.10.4</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#surveys-single-occassion"><i class="fa fa-check"></i><b>3.11</b> Surveys: Single Occassion</a><ul>
+<li class="chapter" data-level="3.11.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-3"><i class="fa fa-check"></i><b>3.11.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.11.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening-3"><i class="fa fa-check"></i><b>3.11.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.11.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-3"><i class="fa fa-check"></i><b>3.11.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.11.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#scale-scores"><i class="fa fa-check"></i><b>3.11.4</b> Scale scores</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#surveys-multiple-occasions"><i class="fa fa-check"></i><b>3.12</b> Surveys: Multiple Occasions</a><ul>
+<li class="chapter" data-level="3.12.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-4"><i class="fa fa-check"></i><b>3.12.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.12.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening-4"><i class="fa fa-check"></i><b>3.12.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.12.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-4"><i class="fa fa-check"></i><b>3.12.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.12.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#scale-scores-1"><i class="fa fa-check"></i><b>3.12.4</b> Scale scores</a></li>
+<li class="chapter" data-level="3.12.5" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#pivot-to-tidy-data-2"><i class="fa fa-check"></i><b>3.12.5</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.13" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.13</b> Basic descriptive statistics</a><ul>
+<li class="chapter" data-level="3.13.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#skim"><i class="fa fa-check"></i><b>3.13.1</b> skim()</a></li>
+<li class="chapter" data-level="3.13.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#apa.cor.table"><i class="fa fa-check"></i><b>3.13.2</b> apa.cor.table()</a></li>
+<li class="chapter" data-level="3.13.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#tidyverse"><i class="fa fa-check"></i><b>3.13.3</b> tidyverse</a></li>
+<li class="chapter" data-level="3.13.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#cronbachs-alpha"><i class="fa fa-check"></i><b>3.13.4</b> Cronbach’s alpha</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="populations.html"><a href="populations.html"><i class="fa fa-check"></i><b>4</b> Populations</a><ul>
+<li class="chapter" data-level="4.1" data-path="populations.html"><a href="populations.html#notation"><i class="fa fa-check"></i><b>4.1</b> Notation</a></li>
+<li class="chapter" data-level="4.2" data-path="populations.html"><a href="populations.html#population-vs-samples"><i class="fa fa-check"></i><b>4.2</b> Population vs samples</a></li>
+<li class="chapter" data-level="4.3" data-path="populations.html"><a href="populations.html#a-small-population"><i class="fa fa-check"></i><b>4.3</b> A small population</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="populations.html"><a href="populations.html#mean-mu"><i class="fa fa-check"></i><b>4.3.1</b> Mean (<span class="math inline">\(\mu\)</span>)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="populations.html"><a href="populations.html#variance-sigma2"><i class="fa fa-check"></i><b>4.3.2</b> Variance (<span class="math inline">\(\sigma^2\)</span>)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="populations.html"><a href="populations.html#standard-deviation-sigma"><i class="fa fa-check"></i><b>4.3.3</b> Standard Deviation (<span class="math inline">\(\sigma\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="populations.html"><a href="populations.html#visualizing-populations"><i class="fa fa-check"></i><b>4.4</b> Visualizing populations</a></li>
+<li class="chapter" data-level="4.5" data-path="populations.html"><a href="populations.html#population-comparisons"><i class="fa fa-check"></i><b>4.5</b> Population comparisons</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="populations.html"><a href="populations.html#standardized-units"><i class="fa fa-check"></i><b>4.5.1</b> Standardized units</a></li>
+<li class="chapter" data-level="4.5.2" data-path="populations.html"><a href="populations.html#cohens-d-units"><i class="fa fa-check"></i><b>4.5.2</b> Cohen’s <span class="math inline">\(d\)</span> units</a></li>
+<li class="chapter" data-level="4.5.3" data-path="populations.html"><a href="populations.html#cohens-d-advantages"><i class="fa fa-check"></i><b>4.5.3</b> Cohen’s <span class="math inline">\(d\)</span> advantages</a></li>
+<li class="chapter" data-level="4.5.4" data-path="populations.html"><a href="populations.html#cohens-d-caveats"><i class="fa fa-check"></i><b>4.5.4</b> Cohen’s <span class="math inline">\(d\)</span> caveats</a></li>
+<li class="chapter" data-level="4.5.5" data-path="populations.html"><a href="populations.html#benchmarks"><i class="fa fa-check"></i><b>4.5.5</b> Benchmarks</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="populations.html"><a href="populations.html#key-points"><i class="fa fa-check"></i><b>4.6</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="samples.html"><a href="samples.html"><i class="fa fa-check"></i><b>5</b> Samples</a><ul>
+<li class="chapter" data-level="5.1" data-path="samples.html"><a href="samples.html#data-for-the-chapter"><i class="fa fa-check"></i><b>5.1</b> Data for the chapter</a></li>
+<li class="chapter" data-level="5.2" data-path="samples.html"><a href="samples.html#notation-1"><i class="fa fa-check"></i><b>5.2</b> Notation</a></li>
+<li class="chapter" data-level="5.3" data-path="samples.html"><a href="samples.html#estimating-the-mean"><i class="fa fa-check"></i><b>5.3</b> Estimating the mean</a></li>
+<li class="chapter" data-level="5.4" data-path="samples.html"><a href="samples.html#estimating-variance"><i class="fa fa-check"></i><b>5.4</b> Estimating variance</a></li>
+<li class="chapter" data-level="5.5" data-path="samples.html"><a href="samples.html#estimating-standard-deviation"><i class="fa fa-check"></i><b>5.5</b> Estimating standard deviation</a></li>
+<li class="chapter" data-level="5.6" data-path="samples.html"><a href="samples.html#estimating-smd"><i class="fa fa-check"></i><b>5.6</b> Estimating SMD</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="samples.html"><a href="samples.html#pooled-standard-deviation"><i class="fa fa-check"></i><b>5.6.1</b> Pooled standard deviation</a></li>
+<li class="chapter" data-level="5.6.2" data-path="samples.html"><a href="samples.html#calculating-d"><i class="fa fa-check"></i><b>5.6.2</b> Calculating <span class="math inline">\(d\)</span></a></li>
+<li class="chapter" data-level="5.6.3" data-path="samples.html"><a href="samples.html#asessing-bias"><i class="fa fa-check"></i><b>5.6.3</b> Asessing bias</a></li>
+<li class="chapter" data-level="5.6.4" data-path="samples.html"><a href="samples.html#illustrating-variability"><i class="fa fa-check"></i><b>5.6.4</b> Illustrating variability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="samples.html"><a href="samples.html#overview"><i class="fa fa-check"></i><b>5.7</b> Overview</a></li>
+<li class="chapter" data-level="5.8" data-path="samples.html"><a href="samples.html#meta-analysis"><i class="fa fa-check"></i><b>5.8</b> Meta-analysis</a></li>
+<li class="chapter" data-level="5.9" data-path="samples.html"><a href="samples.html#key-points-1"><i class="fa fa-check"></i><b>5.9</b> Key Points</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>6</b> Graphing</a><ul>
+<li class="chapter" data-level="6.1" data-path="graphing.html"><a href="graphing.html#data"><i class="fa fa-check"></i><b>6.1</b> Data</a></li>
+<li class="chapter" data-level="6.2" data-path="graphing.html"><a href="graphing.html#graph-basics"><i class="fa fa-check"></i><b>6.2</b> Graph basics</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="graphing.html"><a href="graphing.html#geom_col"><i class="fa fa-check"></i><b>6.2.1</b> geom_col()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="graphing.html"><a href="graphing.html#geom_text"><i class="fa fa-check"></i><b>6.3</b> geom_text()</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="graphing.html"><a href="graphing.html#nudge_y"><i class="fa fa-check"></i><b>6.3.1</b> nudge_y()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="graphing.html"><a href="graphing.html#graphing-efficiently"><i class="fa fa-check"></i><b>6.4</b> Graphing efficiently</a></li>
+<li class="chapter" data-level="6.5" data-path="graphing.html"><a href="graphing.html#inside-the-black-box"><i class="fa fa-check"></i><b>6.5</b> Inside the black box</a></li>
+<li class="chapter" data-level="6.6" data-path="graphing.html"><a href="graphing.html#changing-the-fill-pattern-on-the-graph"><i class="fa fa-check"></i><b>6.6</b> Changing the fill pattern on the graph</a></li>
+<li class="chapter" data-level="6.7" data-path="graphing.html"><a href="graphing.html#overriding-aes"><i class="fa fa-check"></i><b>6.7</b> Overriding aes()</a></li>
+<li class="chapter" data-level="6.8" data-path="graphing.html"><a href="graphing.html#axis-range"><i class="fa fa-check"></i><b>6.8</b> Axis range</a></li>
+<li class="chapter" data-level="6.9" data-path="graphing.html"><a href="graphing.html#axis-ticks"><i class="fa fa-check"></i><b>6.9</b> Axis ticks</a></li>
+<li class="chapter" data-level="6.10" data-path="graphing.html"><a href="graphing.html#axis-labels"><i class="fa fa-check"></i><b>6.10</b> Axis labels</a></li>
+<li class="chapter" data-level="6.11" data-path="graphing.html"><a href="graphing.html#apa-style"><i class="fa fa-check"></i><b>6.11</b> APA Style</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html"><i class="fa fa-check"></i><b>7</b> Better x-axis labels</a><ul>
+<li class="chapter" data-level="7.0.1" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#method-1"><i class="fa fa-check"></i><b>7.0.1</b> Method 1</a></li>
+<li class="chapter" data-level="7.0.2" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#method-2"><i class="fa fa-check"></i><b>7.0.2</b> Method 2</a></li>
+<li class="chapter" data-level="7.1" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#angle-of-x-axis-labels"><i class="fa fa-check"></i><b>7.1</b> Angle of x-axis labels</a></li>
+<li class="chapter" data-level="7.2" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#alignment-of-x-axis-labels"><i class="fa fa-check"></i><b>7.2</b> Alignment of x-axis labels</a></li>
+<li class="chapter" data-level="7.3" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#reordering-barslegends"><i class="fa fa-check"></i><b>7.3</b> Reordering bars/legends</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#column-order-increasing-box-office-receipts"><i class="fa fa-check"></i><b>7.3.1</b> Column Order: Increasing box office receipts</a></li>
+<li class="chapter" data-level="7.3.2" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#column-order-decreasing-box-office-receipts"><i class="fa fa-check"></i><b>7.3.2</b> Column Order: Decreasing box office receipts</a></li>
+<li class="chapter" data-level="7.3.3" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#column-order-custom-order"><i class="fa fa-check"></i><b>7.3.3</b> Column Order: Custom Order</a></li>
+<li class="chapter" data-level="7.3.4" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#legend-order"><i class="fa fa-check"></i><b>7.3.4</b> Legend Order</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#custom-colours"><i class="fa fa-check"></i><b>7.4</b> Custom Colours</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#custom-colours-r-palette"><i class="fa fa-check"></i><b>7.4.1</b> Custom colours: R palette</a></li>
+<li class="chapter" data-level="7.4.2" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#custom-colors-hex-colours"><i class="fa fa-check"></i><b>7.4.2</b> Custom colors: Hex colours</a></li>
+<li class="chapter" data-level="7.4.3" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#make-the-graph-more-fun-with-the-emogg-package"><i class="fa fa-check"></i><b>7.4.3</b> Make the graph more fun with the emoGG package</a></li>
+<li class="chapter" data-level="7.4.4" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#check-out-the-codes-for-emoji"><i class="fa fa-check"></i><b>7.4.4</b> Check out the codes for emoji</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#save-your-graph"><i class="fa fa-check"></i><b>7.5</b> Save your graph</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#mac"><i class="fa fa-check"></i><b>7.5.1</b> MAC</a></li>
+<li class="chapter" data-level="7.5.2" data-path="better-x-axis-labels.html"><a href="better-x-axis-labels.html#pc-or-mac"><i class="fa fa-check"></i><b>7.5.2</b> PC or MAC</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="more-to-say.html"><a href="more-to-say.html"><i class="fa fa-check"></i><b>A</b> More to Say</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PSYC6060 Course Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="better-x-axis-labels" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Better x-axis labels</h1>
+<p>What if we want to use full movie title rather than short version on the x-axis of the graph? Two methods are presented below.</p>
+<div id="method-1" class="section level3">
+<h3><span class="header-section-number">7.0.1</span> Method 1</h3>
+<p>Our data file contains a column with the long/full version of the movie names. But many times you won’t have the additional/longer labels you want to use available in this manner. In this, you use the scale_x_discrete() command to relabel our factor when we make the labels on x-axis. The code is below - notice the problem we have with the labels overlapping though. On the next page, we’ll use a easier approach though - since we have an extra column with the full titles.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="better-x-axis-labels.html#cb21-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb21-2"><a href="better-x-axis-labels.html#cb21-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> short_title,</span>
+<span id="cb21-3"><a href="better-x-axis-labels.html#cb21-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb21-4"><a href="better-x-axis-labels.html#cb21-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb21-5"><a href="better-x-axis-labels.html#cb21-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb21-6"><a href="better-x-axis-labels.html#cb21-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb21-7"><a href="better-x-axis-labels.html#cb21-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb21-8"><a href="better-x-axis-labels.html#cb21-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb21-9"><a href="better-x-axis-labels.html#cb21-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb21-10"><a href="better-x-axis-labels.html#cb21-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb21-11"><a href="better-x-axis-labels.html#cb21-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb21-12"><a href="better-x-axis-labels.html#cb21-12"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;Iron&quot;</span> =<span class="st"> &quot;Iron Man&quot;</span>, </span>
+<span id="cb21-13"><a href="better-x-axis-labels.html#cb21-13"></a>                            <span class="st">&quot;Thor&quot;</span> =<span class="st"> &quot;Thor Ragnarkok&quot;</span>,</span>
+<span id="cb21-14"><a href="better-x-axis-labels.html#cb21-14"></a>                            <span class="st">&quot;AV3&quot;</span> =<span class="st"> &quot;Avengers Infinity War&quot;</span>,</span>
+<span id="cb21-15"><a href="better-x-axis-labels.html#cb21-15"></a>                            <span class="st">&quot;AV4&quot;</span> =<span class="st"> &quot;Avengers Endgame&quot;</span>,</span>
+<span id="cb21-16"><a href="better-x-axis-labels.html#cb21-16"></a>                            <span class="st">&quot;Sup&quot;</span> =<span class="st"> &quot;Man of Steel&quot;</span>,</span>
+<span id="cb21-17"><a href="better-x-axis-labels.html#cb21-17"></a>                            <span class="st">&quot;BvS&quot;</span> =<span class="st"> &quot;Batman v Superman&quot;</span>,</span>
+<span id="cb21-18"><a href="better-x-axis-labels.html#cb21-18"></a>                            <span class="st">&quot;JL&quot;</span> =<span class="st"> &quot;Justice League&quot;</span>,</span>
+<span id="cb21-19"><a href="better-x-axis-labels.html#cb21-19"></a>                            <span class="st">&quot;WW&quot;</span> =<span class="st"> &quot;Wonder Woman&quot;</span>)) <span class="op">+</span></span>
+<span id="cb21-20"><a href="better-x-axis-labels.html#cb21-20"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb21-21"><a href="better-x-axis-labels.html#cb21-21"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>)</span>
+<span id="cb21-22"><a href="better-x-axis-labels.html#cb21-22"></a>  </span>
+<span id="cb21-23"><a href="better-x-axis-labels.html#cb21-23"></a></span>
+<span id="cb21-24"><a href="better-x-axis-labels.html#cb21-24"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-23-1.png" width="576" /></p>
+</div>
+<div id="method-2" class="section level3">
+<h3><span class="header-section-number">7.0.2</span> Method 2</h3>
+<p>With our movie data we don’t need to use <strong>scale_x_discrete</strong> because we have a column in the data with the full titles. Consequently, to use full length titles we just have to change the <strong>mapping</strong> for x from short_title to title. Notice we still have the problem with overlapping labels on the x-axis!</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="better-x-axis-labels.html#cb22-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb22-2"><a href="better-x-axis-labels.html#cb22-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb22-3"><a href="better-x-axis-labels.html#cb22-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb22-4"><a href="better-x-axis-labels.html#cb22-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb22-5"><a href="better-x-axis-labels.html#cb22-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb22-6"><a href="better-x-axis-labels.html#cb22-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb22-7"><a href="better-x-axis-labels.html#cb22-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb22-8"><a href="better-x-axis-labels.html#cb22-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb22-9"><a href="better-x-axis-labels.html#cb22-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb22-10"><a href="better-x-axis-labels.html#cb22-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb22-11"><a href="better-x-axis-labels.html#cb22-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb22-12"><a href="better-x-axis-labels.html#cb22-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb22-13"><a href="better-x-axis-labels.html#cb22-13"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>)</span>
+<span id="cb22-14"><a href="better-x-axis-labels.html#cb22-14"></a>  </span>
+<span id="cb22-15"><a href="better-x-axis-labels.html#cb22-15"></a></span>
+<span id="cb22-16"><a href="better-x-axis-labels.html#cb22-16"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-24-1.png" width="576" /></p>
+</div>
+<div id="angle-of-x-axis-labels" class="section level2">
+<h2><span class="header-section-number">7.1</span> Angle of x-axis labels</h2>
+<p>Use <em>theme</em> to adjust angle of x-axis labels. We can use the theme command to adjust the angle of the text on the x-axis. However, notice how the longer titles are centered on each point on the x-axis. In the next section we fix this problem.</p>
+<p><strong>Important</strong>: The theme command must come after the theme_classic command. Otherwise, theme_classic will undo the work done by the theme_command if it appears after the theme command.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="better-x-axis-labels.html#cb23-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb23-2"><a href="better-x-axis-labels.html#cb23-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb23-3"><a href="better-x-axis-labels.html#cb23-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb23-4"><a href="better-x-axis-labels.html#cb23-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb23-5"><a href="better-x-axis-labels.html#cb23-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb23-6"><a href="better-x-axis-labels.html#cb23-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb23-7"><a href="better-x-axis-labels.html#cb23-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb23-8"><a href="better-x-axis-labels.html#cb23-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb23-9"><a href="better-x-axis-labels.html#cb23-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb23-10"><a href="better-x-axis-labels.html#cb23-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb23-11"><a href="better-x-axis-labels.html#cb23-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb23-12"><a href="better-x-axis-labels.html#cb23-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb23-13"><a href="better-x-axis-labels.html#cb23-13"></a><span class="st">  </span><span class="kw">theme_classic</span>() <span class="op">+</span></span>
+<span id="cb23-14"><a href="better-x-axis-labels.html#cb23-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>))</span>
+<span id="cb23-15"><a href="better-x-axis-labels.html#cb23-15"></a></span>
+<span id="cb23-16"><a href="better-x-axis-labels.html#cb23-16"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-25-1.png" width="576" /></p>
+</div>
+<div id="alignment-of-x-axis-labels" class="section level2">
+<h2><span class="header-section-number">7.2</span> Alignment of x-axis labels</h2>
+<p>Use <em>theme</em> and <em>hjust</em> to adjust the alignment of the x-axis labels. To make the titles look correct on the x-axis we need them at an angle, but we also need them right justified against the x-axis. We do that with the the hjust argument (1 means right justify). See the result below.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="better-x-axis-labels.html#cb24-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb24-2"><a href="better-x-axis-labels.html#cb24-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb24-3"><a href="better-x-axis-labels.html#cb24-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb24-4"><a href="better-x-axis-labels.html#cb24-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb24-5"><a href="better-x-axis-labels.html#cb24-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb24-6"><a href="better-x-axis-labels.html#cb24-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb24-7"><a href="better-x-axis-labels.html#cb24-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb24-8"><a href="better-x-axis-labels.html#cb24-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb24-9"><a href="better-x-axis-labels.html#cb24-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb24-10"><a href="better-x-axis-labels.html#cb24-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb24-11"><a href="better-x-axis-labels.html#cb24-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb24-12"><a href="better-x-axis-labels.html#cb24-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb24-13"><a href="better-x-axis-labels.html#cb24-13"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb24-14"><a href="better-x-axis-labels.html#cb24-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb24-15"><a href="better-x-axis-labels.html#cb24-15"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>))  </span>
+<span id="cb24-16"><a href="better-x-axis-labels.html#cb24-16"></a></span>
+<span id="cb24-17"><a href="better-x-axis-labels.html#cb24-17"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-26-1.png" width="576" /></p>
+</div>
+<div id="reordering-barslegends" class="section level2">
+<h2><span class="header-section-number">7.3</span> Reordering bars/legends</h2>
+<div id="column-order-increasing-box-office-receipts" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Column Order: Increasing box office receipts</h3>
+<p>We can make the movie bars go left to right from lowest to highest box office receipts by changing the factor order prior to creating the graph. We do so with the <strong>mutate</strong> and <strong>fct_reorder</strong> commands. The default order is ascending values even though we don’t specify it.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="better-x-axis-labels.html#cb25-1"></a>movie_data &lt;-<span class="st"> </span>movie_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">title =</span> <span class="kw">fct_reorder</span>(title,</span>
+<span id="cb25-2"><a href="better-x-axis-labels.html#cb25-2"></a>                                  boxoffice))</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="better-x-axis-labels.html#cb26-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb26-2"><a href="better-x-axis-labels.html#cb26-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb26-3"><a href="better-x-axis-labels.html#cb26-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb26-4"><a href="better-x-axis-labels.html#cb26-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb26-5"><a href="better-x-axis-labels.html#cb26-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb26-6"><a href="better-x-axis-labels.html#cb26-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb26-7"><a href="better-x-axis-labels.html#cb26-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb26-8"><a href="better-x-axis-labels.html#cb26-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb26-9"><a href="better-x-axis-labels.html#cb26-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb26-10"><a href="better-x-axis-labels.html#cb26-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb26-11"><a href="better-x-axis-labels.html#cb26-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb26-12"><a href="better-x-axis-labels.html#cb26-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb26-13"><a href="better-x-axis-labels.html#cb26-13"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb26-14"><a href="better-x-axis-labels.html#cb26-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb26-15"><a href="better-x-axis-labels.html#cb26-15"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>))  </span>
+<span id="cb26-16"><a href="better-x-axis-labels.html#cb26-16"></a></span>
+<span id="cb26-17"><a href="better-x-axis-labels.html#cb26-17"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-28-1.png" width="480" /></p>
+</div>
+<div id="column-order-decreasing-box-office-receipts" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Column Order: Decreasing box office receipts</h3>
+<p>We can make the movie bars go left to right from highest to lowest box office receipts by changing the factor order prior to creating the graph. We use the same code as before but add the <strong>desc</strong> (descending) command around boxoffice in the <strong>fct_reorder</strong> call:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="better-x-axis-labels.html#cb27-1"></a>movie_data &lt;-<span class="st"> </span>movie_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">title =</span> <span class="kw">fct_reorder</span>(title,</span>
+<span id="cb27-2"><a href="better-x-axis-labels.html#cb27-2"></a>                                  <span class="kw">desc</span>(boxoffice)))</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="better-x-axis-labels.html#cb28-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb28-2"><a href="better-x-axis-labels.html#cb28-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb28-3"><a href="better-x-axis-labels.html#cb28-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb28-4"><a href="better-x-axis-labels.html#cb28-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb28-5"><a href="better-x-axis-labels.html#cb28-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb28-6"><a href="better-x-axis-labels.html#cb28-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb28-7"><a href="better-x-axis-labels.html#cb28-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb28-8"><a href="better-x-axis-labels.html#cb28-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb28-9"><a href="better-x-axis-labels.html#cb28-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb28-10"><a href="better-x-axis-labels.html#cb28-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb28-11"><a href="better-x-axis-labels.html#cb28-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb28-12"><a href="better-x-axis-labels.html#cb28-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb28-13"><a href="better-x-axis-labels.html#cb28-13"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb28-14"><a href="better-x-axis-labels.html#cb28-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb28-15"><a href="better-x-axis-labels.html#cb28-15"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>))  </span>
+<span id="cb28-16"><a href="better-x-axis-labels.html#cb28-16"></a></span>
+<span id="cb28-17"><a href="better-x-axis-labels.html#cb28-17"></a><span class="kw">print</span>(my_graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-30-1.png" width="480" /></p>
+</div>
+<div id="column-order-custom-order" class="section level3">
+<h3><span class="header-section-number">7.3.3</span> Column Order: Custom Order</h3>
+<p>We can make the movie bars go left to right from in an order of our chooseing with the fct_relevel command. Here I manually indicate an order that places the movies highest to lowest within movie studio (Marvel or DC).</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="better-x-axis-labels.html#cb29-1"></a>movie_data &lt;-<span class="st"> </span>movie_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb29-2"><a href="better-x-axis-labels.html#cb29-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">title =</span> <span class="kw">fct_relevel</span>(title,</span>
+<span id="cb29-3"><a href="better-x-axis-labels.html#cb29-3"></a>                             <span class="st">&quot;Avengers Endgame&quot;</span>,</span>
+<span id="cb29-4"><a href="better-x-axis-labels.html#cb29-4"></a>                             <span class="st">&quot;Avengers Infinity War&quot;</span>,</span>
+<span id="cb29-5"><a href="better-x-axis-labels.html#cb29-5"></a>                             <span class="st">&quot;Thor Ragnarok&quot;</span>,</span>
+<span id="cb29-6"><a href="better-x-axis-labels.html#cb29-6"></a>                             <span class="st">&quot;Iron Man&quot;</span>,</span>
+<span id="cb29-7"><a href="better-x-axis-labels.html#cb29-7"></a>                             <span class="st">&quot;Batman v Superman&quot;</span>,</span>
+<span id="cb29-8"><a href="better-x-axis-labels.html#cb29-8"></a>                             <span class="st">&quot;Wonder Woman&quot;</span>,</span>
+<span id="cb29-9"><a href="better-x-axis-labels.html#cb29-9"></a>                             <span class="st">&quot;Man of Steel&quot;</span>,</span>
+<span id="cb29-10"><a href="better-x-axis-labels.html#cb29-10"></a>                             <span class="st">&quot;Justice League&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="better-x-axis-labels.html#cb30-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb30-2"><a href="better-x-axis-labels.html#cb30-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb30-3"><a href="better-x-axis-labels.html#cb30-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb30-4"><a href="better-x-axis-labels.html#cb30-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb30-5"><a href="better-x-axis-labels.html#cb30-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb30-6"><a href="better-x-axis-labels.html#cb30-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb30-7"><a href="better-x-axis-labels.html#cb30-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb30-8"><a href="better-x-axis-labels.html#cb30-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb30-9"><a href="better-x-axis-labels.html#cb30-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb30-10"><a href="better-x-axis-labels.html#cb30-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb30-11"><a href="better-x-axis-labels.html#cb30-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb30-12"><a href="better-x-axis-labels.html#cb30-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>) <span class="op">+</span></span>
+<span id="cb30-13"><a href="better-x-axis-labels.html#cb30-13"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb30-14"><a href="better-x-axis-labels.html#cb30-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb30-15"><a href="better-x-axis-labels.html#cb30-15"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>))  </span></code></pre></div>
+<p><img src="ch_graphing/images/custom_order.png" width="60%" /></p>
+</div>
+<div id="legend-order" class="section level3">
+<h3><span class="header-section-number">7.3.4</span> Legend Order</h3>
+<p>After inspecting the graph on the previous page, you might think that Marvel should be above DC in the legend. You can do that by reordering the studio factor:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="better-x-axis-labels.html#cb31-1"></a>movie_data &lt;-<span class="st"> </span>movie_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb31-2"><a href="better-x-axis-labels.html#cb31-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">studio =</span> <span class="kw">fct_relevel</span>(studio,</span>
+<span id="cb31-3"><a href="better-x-axis-labels.html#cb31-3"></a>                             <span class="st">&quot;Marvel&quot;</span>,</span>
+<span id="cb31-4"><a href="better-x-axis-labels.html#cb31-4"></a>                             <span class="st">&quot;DC&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="better-x-axis-labels.html#cb32-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb32-2"><a href="better-x-axis-labels.html#cb32-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb32-3"><a href="better-x-axis-labels.html#cb32-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb32-4"><a href="better-x-axis-labels.html#cb32-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb32-5"><a href="better-x-axis-labels.html#cb32-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb32-6"><a href="better-x-axis-labels.html#cb32-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb32-7"><a href="better-x-axis-labels.html#cb32-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb32-8"><a href="better-x-axis-labels.html#cb32-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb32-9"><a href="better-x-axis-labels.html#cb32-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb32-10"><a href="better-x-axis-labels.html#cb32-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb32-11"><a href="better-x-axis-labels.html#cb32-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb32-12"><a href="better-x-axis-labels.html#cb32-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb32-13"><a href="better-x-axis-labels.html#cb32-13"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb32-14"><a href="better-x-axis-labels.html#cb32-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb32-15"><a href="better-x-axis-labels.html#cb32-15"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>))  </span></code></pre></div>
+<p><img src="ch_graphing/images/custom_order2.png" width="60%" /></p>
+</div>
+</div>
+<div id="custom-colours" class="section level2">
+<h2><span class="header-section-number">7.4</span> Custom Colours</h2>
+<div id="custom-colours-r-palette" class="section level3">
+<h3><span class="header-section-number">7.4.1</span> Custom colours: R palette</h3>
+<p>You might look at the previous graph and think “Marvel should be red and DC should be blue since those are the colours of their respective logos”. You can do that with the code below. Note that you specify the colours in the order the names appear in the legend (top to bottom).</p>
+<p>R colour names/pictures can be found here: <a href="http://sape.inf.usi.ch/quick-reference/ggplot2/colour" class="uri">http://sape.inf.usi.ch/quick-reference/ggplot2/colour</a></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="better-x-axis-labels.html#cb33-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb33-2"><a href="better-x-axis-labels.html#cb33-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb33-3"><a href="better-x-axis-labels.html#cb33-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb33-4"><a href="better-x-axis-labels.html#cb33-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb33-5"><a href="better-x-axis-labels.html#cb33-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb33-6"><a href="better-x-axis-labels.html#cb33-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb33-7"><a href="better-x-axis-labels.html#cb33-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb33-8"><a href="better-x-axis-labels.html#cb33-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb33-9"><a href="better-x-axis-labels.html#cb33-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb33-10"><a href="better-x-axis-labels.html#cb33-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb33-11"><a href="better-x-axis-labels.html#cb33-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb33-12"><a href="better-x-axis-labels.html#cb33-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb33-13"><a href="better-x-axis-labels.html#cb33-13"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb33-14"><a href="better-x-axis-labels.html#cb33-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb33-15"><a href="better-x-axis-labels.html#cb33-15"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb33-16"><a href="better-x-axis-labels.html#cb33-16"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
+<p><img src="ch_graphing/images/base_color_graph.png" width="60%" /></p>
+</div>
+<div id="custom-colors-hex-colours" class="section level3">
+<h3><span class="header-section-number">7.4.2</span> Custom colors: Hex colours</h3>
+<p>If you are a really big geek (like me) you might look at the previous graph and think “Those aren’t the real colours of the Marvel and DC logos - lame!” You do some internet research and determine that Marvel red is #ed1d24 and DC blue is #0476F2 using hex colour codes. You can use those precise colours as per below. Note the difference is subtle - the correct colours are somewhat more muted.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="better-x-axis-labels.html#cb34-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb34-2"><a href="better-x-axis-labels.html#cb34-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb34-3"><a href="better-x-axis-labels.html#cb34-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb34-4"><a href="better-x-axis-labels.html#cb34-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb34-5"><a href="better-x-axis-labels.html#cb34-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb34-6"><a href="better-x-axis-labels.html#cb34-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb34-7"><a href="better-x-axis-labels.html#cb34-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb34-8"><a href="better-x-axis-labels.html#cb34-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb34-9"><a href="better-x-axis-labels.html#cb34-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">400</span>) <span class="op">+</span></span>
+<span id="cb34-10"><a href="better-x-axis-labels.html#cb34-10"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb34-11"><a href="better-x-axis-labels.html#cb34-11"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb34-12"><a href="better-x-axis-labels.html#cb34-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb34-13"><a href="better-x-axis-labels.html#cb34-13"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb34-14"><a href="better-x-axis-labels.html#cb34-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb34-15"><a href="better-x-axis-labels.html#cb34-15"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb34-16"><a href="better-x-axis-labels.html#cb34-16"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;#ed1d24&quot;</span>, <span class="st">&quot;#0476F2&quot;</span>))</span></code></pre></div>
+<p><img src="ch_graphing/images/logo_color_graph.png" width="60%" /></p>
+</div>
+<div id="make-the-graph-more-fun-with-the-emogg-package" class="section level3">
+<h3><span class="header-section-number">7.4.3</span> Make the graph more fun with the emoGG package</h3>
+<p>You might like to make the graph more fun by putting tomatoes on the graph to indicate what the extra numbers mean. We can do that with the emoGG package. You can install the emoGG package with the commands below:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="better-x-axis-labels.html#cb35-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>, <span class="dt">dep =</span> <span class="ot">TRUE</span>) <span class="co"># if you haven&#39;t done this already</span></span>
+<span id="cb35-2"><a href="better-x-axis-labels.html#cb35-2"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;dill/emoGG&quot;</span>)</span></code></pre></div>
+<p>Activate the emoGG package:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="better-x-axis-labels.html#cb36-1"></a><span class="kw">library</span>(emoGG)</span></code></pre></div>
+</div>
+<div id="check-out-the-codes-for-emoji" class="section level3">
+<h3><span class="header-section-number">7.4.4</span> Check out the codes for emoji</h3>
+<p>Visit this link to check out the codes for emoji: <a href="https://apps.timwhitlock.info/emoji/tables/unicode" class="uri">https://apps.timwhitlock.info/emoji/tables/unicode</a></p>
+<p>If you scroll down to section 5 Uncategorized on this page you will find the code for a tomato is 1f345.</p>
+<p>Note that the code below will only work with an internet connection. The command geom_emoji needs internet to retrieve the emoji graphic requested.</p>
+<p><img src="ch_graphing/images/emoji_table.png" width="90%" /></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="better-x-axis-labels.html#cb37-1"></a>my_graph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> movie_data,</span>
+<span id="cb37-2"><a href="better-x-axis-labels.html#cb37-2"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> title,</span>
+<span id="cb37-3"><a href="better-x-axis-labels.html#cb37-3"></a>                         <span class="dt">y =</span> boxoffice,</span>
+<span id="cb37-4"><a href="better-x-axis-labels.html#cb37-4"></a>                         <span class="dt">label =</span> boxoffice, </span>
+<span id="cb37-5"><a href="better-x-axis-labels.html#cb37-5"></a>                         <span class="dt">fill =</span> studio)) <span class="op">+</span></span>
+<span id="cb37-6"><a href="better-x-axis-labels.html#cb37-6"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb37-7"><a href="better-x-axis-labels.html#cb37-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)  <span class="op">+</span></span>
+<span id="cb37-8"><a href="better-x-axis-labels.html#cb37-8"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> tomatoes_aud), </span>
+<span id="cb37-9"><a href="better-x-axis-labels.html#cb37-9"></a>            <span class="dt">nudge_y =</span> <span class="dv">600</span>, </span>
+<span id="cb37-10"><a href="better-x-axis-labels.html#cb37-10"></a>            <span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb37-11"><a href="better-x-axis-labels.html#cb37-11"></a><span class="st">  </span><span class="kw">geom_emoji</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">y =</span> boxoffice <span class="op">+</span><span class="st"> </span><span class="dv">400</span>),</span>
+<span id="cb37-12"><a href="better-x-axis-labels.html#cb37-12"></a>             <span class="dt">emoji=</span><span class="st">&quot;1f345&quot;</span>) <span class="op">+</span></span>
+<span id="cb37-13"><a href="better-x-axis-labels.html#cb37-13"></a><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>)) <span class="op">+</span></span>
+<span id="cb37-14"><a href="better-x-axis-labels.html#cb37-14"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3500</span>, <span class="dt">by =</span> <span class="dv">500</span>)) <span class="op">+</span></span>
+<span id="cb37-15"><a href="better-x-axis-labels.html#cb37-15"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Movie&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Box office (millions)&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;Studio&quot;</span>) <span class="op">+</span></span>
+<span id="cb37-16"><a href="better-x-axis-labels.html#cb37-16"></a><span class="st">  </span><span class="kw">theme_classic</span>(<span class="dv">12</span>) <span class="op">+</span></span>
+<span id="cb37-17"><a href="better-x-axis-labels.html#cb37-17"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, </span>
+<span id="cb37-18"><a href="better-x-axis-labels.html#cb37-18"></a>                                   <span class="dt">hjust =</span> <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb37-19"><a href="better-x-axis-labels.html#cb37-19"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;#ed1d24&quot;</span>, <span class="st">&quot;#0476F2&quot;</span>))</span></code></pre></div>
+<p><img src="ch_graphing/images/emoji_graph.png" width="60%" /></p>
+</div>
+</div>
+<div id="save-your-graph" class="section level2">
+<h2><span class="header-section-number">7.5</span> Save your graph</h2>
+<p>If you have a Mac it is easy to drag and drop a PDF file into MS Word - so making a PDF file is the best bet for saving your graph. You can do so with the code below which creates a 6 inch by 6 inch graph.</p>
+<div id="mac" class="section level3">
+<h3><span class="header-section-number">7.5.1</span> MAC</h3>
+<p>If you are able to use PDFs in your workflow that’s often the best option for saving. PDFs are mathematical in nature and therefore can be printed at any size at high quality.</p>
+<p>With a MAC you can just drag and drop the PDF file into your MSWord document.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="better-x-axis-labels.html#cb38-1"></a><span class="kw">ggsave</span>(<span class="dt">plot =</span> my_graph, </span>
+<span id="cb38-2"><a href="better-x-axis-labels.html#cb38-2"></a>       <span class="dt">filename =</span> <span class="st">&quot;emoji_graph.pdf&quot;</span>, </span>
+<span id="cb38-3"><a href="better-x-axis-labels.html#cb38-3"></a>       <span class="dt">width =</span> <span class="dv">6</span>, </span>
+<span id="cb38-4"><a href="better-x-axis-labels.html#cb38-4"></a>       <span class="dt">height =</span> <span class="dv">6</span>)</span></code></pre></div>
+</div>
+<div id="pc-or-mac" class="section level3">
+<h3><span class="header-section-number">7.5.2</span> PC or MAC</h3>
+<p>If you have a PC it’s hard to put a PDF into MSWord. Therefore save the graph as a jpg file. You do so with the code below. This creates a picture type file at a resolution (dpi = dots per inch) that is sufficiently high for quality printing.</p>
+<p>With a PC you need to use the INSERT menu and insert the graph as a picture in MSWord.
+With a MAC you can just drag and drop the PDF file into your MSWord document.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="better-x-axis-labels.html#cb39-1"></a><span class="kw">ggsave</span>(<span class="dt">plot =</span> my_graph, </span>
+<span id="cb39-2"><a href="better-x-axis-labels.html#cb39-2"></a>       <span class="dt">filename =</span> <span class="st">&quot;emoji_graph.jpg&quot;</span>, </span>
+<span id="cb39-3"><a href="better-x-axis-labels.html#cb39-3"></a>       <span class="dt">width =</span> <span class="dv">6</span>, </span>
+<span id="cb39-4"><a href="better-x-axis-labels.html#cb39-4"></a>       <span class="dt">height =</span> <span class="dv">6</span>, </span>
+<span id="cb39-5"><a href="better-x-axis-labels.html#cb39-5"></a>       <span class="dt">dpi =</span> <span class="st">&quot;print&quot;</span>)</span></code></pre></div>
+
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="graphing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="more-to-say.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/06-graphing.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

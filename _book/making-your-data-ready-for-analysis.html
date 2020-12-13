@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Making your data ready for analysis | PSYC6060 Course Notes</title>
+  <meta name="description" content="Course notes for PSYC 6060" />
+  <meta name="generator" content="bookdown 0.19.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Making your data ready for analysis | PSYC6060 Course Notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course notes for PSYC 6060" />
+  <meta name="github-repo" content="dstanley4/psyc6060bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Making your data ready for analysis | PSYC6060 Course Notes" />
+  
+  <meta name="twitter:description" content="Course notes for PSYC 6060" />
+  
+
+<meta name="author" content="David J. Stanley" />
+
+
+<meta name="date" content="2020-07-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="handling-data-with-the-tidyverse.html"/>
+<link rel="next" href="experiment-within-one-way.html"/>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-the-book"><i class="fa fa-check"></i>Structure of the book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.3</b> Create an account at R Studio Cloud</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.4</b> Join the class workspace</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.12</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
+<li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
+<li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
+<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
+<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
+<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv and data frames</a></li>
+<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv and tibbles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html"><i class="fa fa-check"></i><b>3</b> Making your data ready for analysis</a><ul>
+<li class="chapter" data-level="3.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#required-packages"><i class="fa fa-check"></i><b>3.1</b> Required Packages</a></li>
+<li class="chapter" data-level="3.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#objective-1"><i class="fa fa-check"></i><b>3.2</b> Objective</a></li>
+<li class="chapter" data-level="3.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#context"><i class="fa fa-check"></i><b>3.3</b> Context</a></li>
+<li class="chapter" data-level="3.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>3.4</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>3.4.1</b> Structuring data: Obtaining tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>3.5</b> Data collection considerations</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#naming-conventions"><i class="fa fa-check"></i><b>3.5.1</b> Naming conventions</a></li>
+<li class="chapter" data-level="3.5.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#likert-type-items"><i class="fa fa-check"></i><b>3.5.2</b> Likert-type items</a></li>
+<li class="chapter" data-level="3.5.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#anova-between"><i class="fa fa-check"></i><b>3.5.3</b> ANOVA between</a></li>
+<li class="chapter" data-level="3.5.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#anova-within"><i class="fa fa-check"></i><b>3.5.4</b> ANOVA within</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#following-the-examples"><i class="fa fa-check"></i><b>3.6</b> Following the examples</a></li>
+<li class="chapter" data-level="3.7" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>3.7</b> Entering data into spreadsheets</a></li>
+<li class="chapter" data-level="3.8" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#experiment-between"><i class="fa fa-check"></i><b>3.8</b> Experiment: Between</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors"><i class="fa fa-check"></i><b>3.8.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.8.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening"><i class="fa fa-check"></i><b>3.8.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.8.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening"><i class="fa fa-check"></i><b>3.8.3</b> Numeric screening</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html"><i class="fa fa-check"></i><b>4</b> Experiment: Within one-way</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#creating-factors-1"><i class="fa fa-check"></i><b>4.0.1</b> Creating factors</a></li>
+<li class="chapter" data-level="4.0.2" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#factor-screening-1"><i class="fa fa-check"></i><b>4.0.2</b> Factor screening</a></li>
+<li class="chapter" data-level="4.0.3" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#numeric-screening-1"><i class="fa fa-check"></i><b>4.0.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="4.0.4" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#pivot-to-tidy-data"><i class="fa fa-check"></i><b>4.0.4</b> Pivot to tidy data</a></li>
+<li class="chapter" data-level="4.1" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#experiment-within-n-way"><i class="fa fa-check"></i><b>4.1</b> Experiment: Within N-way</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#creating-factors-2"><i class="fa fa-check"></i><b>4.1.1</b> Creating factors</a></li>
+<li class="chapter" data-level="4.1.2" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#factor-screening-2"><i class="fa fa-check"></i><b>4.1.2</b> Factor screening</a></li>
+<li class="chapter" data-level="4.1.3" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#numeric-screening-2"><i class="fa fa-check"></i><b>4.1.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="4.1.4" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#pivot-to-tidy-data-1"><i class="fa fa-check"></i><b>4.1.4</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#surveys-single-occassion"><i class="fa fa-check"></i><b>4.2</b> Surveys: Single Occassion</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#creating-factors-3"><i class="fa fa-check"></i><b>4.2.1</b> Creating factors</a></li>
+<li class="chapter" data-level="4.2.2" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#factor-screening-3"><i class="fa fa-check"></i><b>4.2.2</b> Factor screening</a></li>
+<li class="chapter" data-level="4.2.3" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#numeric-screening-3"><i class="fa fa-check"></i><b>4.2.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="4.2.4" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#scale-scores"><i class="fa fa-check"></i><b>4.2.4</b> Scale scores</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#surveys-multiple-occasions"><i class="fa fa-check"></i><b>4.3</b> Surveys: Multiple Occasions</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#creating-factors-4"><i class="fa fa-check"></i><b>4.3.1</b> Creating factors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#screening-factors"><i class="fa fa-check"></i><b>4.3.2</b> Screening factors</a></li>
+<li class="chapter" data-level="4.3.3" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#numeric-screening-4"><i class="fa fa-check"></i><b>4.3.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="4.3.4" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#scale-scores-1"><i class="fa fa-check"></i><b>4.3.4</b> Scale scores</a></li>
+<li class="chapter" data-level="4.3.5" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#pivot-to-tidy-data-2"><i class="fa fa-check"></i><b>4.3.5</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>4.4</b> Basic descriptive statistics</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#skim"><i class="fa fa-check"></i><b>4.4.1</b> skim()</a></li>
+<li class="chapter" data-level="4.4.2" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#apa.cor.table"><i class="fa fa-check"></i><b>4.4.2</b> apa.cor.table()</a></li>
+<li class="chapter" data-level="4.4.3" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#tidyverse"><i class="fa fa-check"></i><b>4.4.3</b> tidyverse</a></li>
+<li class="chapter" data-level="4.4.4" data-path="experiment-within-one-way.html"><a href="experiment-within-one-way.html#cronbachs-alpha"><i class="fa fa-check"></i><b>4.4.4</b> Cronbach’s alpha</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="more-to-say.html"><a href="more-to-say.html"><i class="fa fa-check"></i><b>A</b> More to Say</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PSYC6060 Course Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="making-your-data-ready-for-analysis" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Making your data ready for analysis</h1>
+<div id="required-packages" class="section level2">
+<h2><span class="header-section-number">3.1</span> Required Packages</h2>
+<p>The following packages must be installed before starting this chapter.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>apaTables</td>
+</tr>
+<tr class="even">
+<td>HMisc</td>
+</tr>
+<tr class="odd">
+<td>janitor</td>
+</tr>
+<tr class="even">
+<td>psych</td>
+</tr>
+<tr class="odd">
+<td>skimr</td>
+</tr>
+<tr class="even">
+<td>tidyverse</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important Note:</strong> that you should NOT use library(psych) at any point. There are major conflicts between the psych package and the tidyverse. We will access the psych package commands by preceding each command with psych:: instead of using library(psych).</p>
+<p>The following data files are used in this chapter:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>data_ex_between.csv</td>
+</tr>
+<tr class="even">
+<td>data_ex_within.csv</td>
+</tr>
+<tr class="odd">
+<td>data_food.csv</td>
+</tr>
+<tr class="even">
+<td>data_item_scoring.csv</td>
+</tr>
+<tr class="odd">
+<td>data_item_time.csv</td>
+</tr>
+</tbody>
+</table>
+<p>The files are available at: <a href="https://github.com/dstanley4/psyc6060bookdown" class="uri">https://github.com/dstanley4/psyc6060bookdown</a></p>
+</div>
+<div id="objective-1" class="section level2">
+<h2><span class="header-section-number">3.2</span> Objective</h2>
+<p>In this chatper we strongly advocate for you using a naming convention for file, variable, and column names. This convention will save you hours of hassles and permit easy application of certain tidyverse command. I must stress though that although the naming convention I advocate is based on the tidyverse style guide, it is not “right” - there are other naming conventions you can use. And any naming convention is better than no naming convention. The naming convention we advocate for here will solve many problems for you. I encourage to use this system for for weeks or months over many projects - until you see the benefits of this system, and correspondingly it’s shortcomings. After you are well versed in the strengths/weaknesses of the naming conventions used here you may choose to create your own naming convention sytem.</p>
+</div>
+<div id="context" class="section level2">
+<h2><span class="header-section-number">3.3</span> Context</h2>
+<p>Due to a number of high profile failure to replicate study results <span class="citation">(Nosek <a href="#ref-cos2015" role="doc-biblioref">2015</a>)</span> it’s become increasingly clear that there is a general crisis of confidence in many areas of science <span class="citation">(Baker <a href="#ref-baker2016" role="doc-biblioref">2016</a>)</span>. Statistical (and other) explanations have been offered <span class="citation">(Simmons, Nelson, and Simonsohn <a href="#ref-simmons2011" role="doc-biblioref">2011</a>)</span> for why it’s hard to replicate results across different sets of data. However, scientists are also finding it challenging to recreate the numbers in their own papers using their own data. Indeed, the editor of Molecular Brain asked authors to submit the data used to create the numbers in published papers and found that the wrong data was submitted for 40 out of 41 papers <span class="citation">(Miyakawa <a href="#ref-miyakawa2020" role="doc-biblioref">2020</a>)</span>.</p>
+<p>Consequently, some researchers have suggested that it is critical to distinguish between replication and reproducibility <span class="citation">(Patil P. <a href="#ref-patil2019" role="doc-biblioref">2019</a>)</span>. Replication refers to trying to obtain the same result from a different data sets. Reproducibility refers to trying to obtain the same results from the same data set. Unfortunately, some authors use these two terms interchangeably and fail to make any distinction between them. I encourage you to make the distinction and the use the terms consist with use suggested by <span class="citation">(Patil P. <a href="#ref-patil2019" role="doc-biblioref">2019</a>)</span>.</p>
+<p>It may seem that reproducibility should be given - but it’s not. Correspondingly, there a trend is for journals and authors to adopt Transparency and Openness Promotion (TOP) <a href="https://www.cos.io/our-services/top-guidelines">guidelines</a>. These guidelines involve such things as making your materials, data, code, and analysis scripts available on public repositories so anyone can check your data. A new open science journal rating system has even emerged called the <a href="https://topfactor.org">TOP Factor</a>.</p>
+<p>The idea is not that open science articles are more trustworthy that other types of articles – the idea is that trust doesn’t play a role. Anyone can inspect the data using the scripts and data provided by authors. It’s really just the same as making your science available for auditing the way financial records can be audited. But just like in the world of business some people don’t like the idea of make it possible for others to audit their work. The problems reported at Molecular Brain (doubtless is common to many journals) are likely avoided with open science - because the data and scripts needed to reproduce the numbers in the articles are uploaded prior to publication.</p>
+<p>The TOP open science guidelines have made an impact and some newer journals, such as Meta Psychology, have fully embraced open science. Figure <a href="making-your-data-ready-for-analysis.html#fig:metapsychology">3.1</a> shows the header from an <a href="https://open.lnu.se/index.php/metapsychology/article/view/1630/2266">article</a> in Meta Psychology that clearly delineates the open science attributes of the article that used computer simulations (instead of participant data). Take note that the header even specifies who checked that the analyses in the article were reproducible.</p>
+<div class="figure"><span id="fig:metapsychology"></span>
+<img src="ch_score_items/images/screenshot_metapsychology.png" alt="Open science in an article header" width="100%" />
+<p class="caption">
+FIGURE 3.1: Open science in an article header
+</p>
+</div>
+<p>In Canada, the majority of university research is funded by the Federal Government’s Tri-Agency (i.e., NSERC, SSHRC, CIHR). The agency has a new draft <a href="https://www.ic.gc.ca/eic/site/063.nsf/eng/h_83F7624E.html">Data Management Policy</a> in which they state that “<em>The agencies believe that research data collected with the use of public funds belong, to the fullest extent possible, in the public domain and available for reuse by others.</em>” The perspective of the funding agency on data ownership differs substantially from that of some researchers who incorrectly believe “they own their data”. In Canada at least, the government makes it clear that when tax payers fund research (through the Tri-Agency) the research data is public property. Additionally the Tri-Agency Data Management policy clearly indicates the responsibilities of funded researchers:</p>
+<p>"Responsibilities of researchers include:</p>
+<ul>
+<li>incorporating data management best practices into their research;</li>
+<li>developing data management plans to guide the responsible collection, formatting, preservation and sharing of their data throughout the entire life cycle of a research project and beyond;</li>
+<li>following the requirements of applicable institutional and/or funding agency policies and professional or disciplinary standards;</li>
+<li>acknowledging and citing data sets that contribute to their research; and</li>
+<li>staying abreast of standards and expectations of their disciplinary community."</li>
+</ul>
+<p>As a result of this perspective on data, it’s important that you think about structuring your data for reuse by yourself and others before you collect it. Toward this end, properly documenting your data file and analysis scripts is critical.</p>
+</div>
+<div id="begin-with-the-end-in-mind" class="section level2">
+<h2><span class="header-section-number">3.4</span> Begin with the end in mind</h2>
+<p>In this chapter we will walk you though the steps from data collection, data entry, loading raw data, and the creation of data you will analyze (analytic data) via pre-processing scripts. These steps are outlined in Figure <a href="making-your-data-ready-for-analysis.html#fig:pipeline">3.2</a>. This figure makes a clear distinction between raw data and analytic data. Raw data refers to the data as you entered it into a spreadsheet or received it from survey software. Analytic data is the data that has been structured and processed so that it is ready for analysis. This pre-processing could include such things as identifying categorical variables to the computer, averaging multiple items into a scale scale scores, and other tasks.</p>
+<p>It’s critical that you don’t think of the analysis of your data as being completely removed from the data collection and data entry choices you make. Poor choices at the data collection and data entry stage can make your life substantially more complicated when it comes time to write the preprocessing script that will convert your raw data to analytic data. The mantra of this chapter is <em>begin with the end in mind</em>.</p>
+<div class="figure"><span id="fig:pipeline"></span>
+<img src="ch_enter_load/images/pipeline.png" alt="Data science pipeline by Roger Peng." width="85%" />
+<p class="caption">
+FIGURE 3.2: Data science pipeline by Roger Peng.
+</p>
+</div>
+<p>It’s difficult to being with the end in mind when you haven’t read later chapters. So here we will be provide you with some general thoughts around different approaches to structuring data files and the naming conventions you use when creating those data files.</p>
+<div id="structuring-data-obtaining-tidy-data" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> Structuring data: Obtaining tidy data</h3>
+<p>When conducting analyses in R it is typically necessary to have data in a format called tidy data <span class="citation">(Wickham <a href="#ref-tidy-data" role="doc-biblioref">2014</a>)</span>. <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">tidy data</a> as defined by Hadley involves (among other requirements) that:</p>
+<ol style="list-style-type: decimal">
+<li><p>Each variable forms a column.</p></li>
+<li><p>Each observation forms a row.</p></li>
+</ol>
+<p>The tidy data format can be initially challenging for some researchers to understand because it is based on thinking about, and structuring data, in terms of observations/measurements instead of participants. In this section we will describe common approaches to entering animal and human participant data and how they can be done keeping the tidy data requirement in mind. It’s not essential that data be entered in a tidy data format but it is essential that you enter data in manner that makes it easy to later convert data to a tidy data format. When dealing with animal or human participant data it’s common to enter data into a spreadsheet. Each row of the spreadsheet is typically used to represent a single participant and each column of the spreadsheet is used to represent a variable.</p>
+<p><strong>Between participant data</strong>. Consider Table <a href="making-your-data-ready-for-analysis.html#tab:betweenex">3.1</a> which illustrates between participant data for six human participants running 5 kilometers. The first column is id, which indicates there are six unique participants and provides and identification number for each of them. The second column is sex, which is a variable, and there is one observation per for row, so sex also conforms to the tidy data specification. Finally, there is a last column five_km_time which is a variable with one observation per row – also conforming to tidy data specification. Thus, single occasion between subject data like this conforms to the tidy data specification. There is usually nothing you need to do to convert between participant data (or cross-sectional data) to be in a tidy data format.</p>
+<table>
+<caption><span id="tab:betweenex">TABLE 3.1: </span>Between participant data entered one row per participant</caption>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">sex</th>
+<th align="right">elapsed_time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="right">38</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="right">33</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="right">42</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="right">36</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Within participant data</strong>. Consider Table <a href="making-your-data-ready-for-analysis.html#tab:withinex">3.2</a> which illustrates within participant data for six human participants running 5 kilometers - but on three different occasions. The first column is id, which indicates there are six unique participants and provides and identification number for each of them. The second column is sex, which is a variable, and there is one observation per for row, so sex also conforms to the tidy data specification. Next, there are three different columns (march, may, july) representing each of which contains and elapsed_time for the runner in a different month. Elapsed run times are spread out over three columns so elapse_timne is not in a tidy data format. Moreover, it’s not clear from the data file that march, may, and july are levels of a variable called occasion. Nor is it clear that elapsed_times are recorded in each of those columns (i.e., the dependent variable is unknown/not labelled). Although this format is fine as a data entry format it clearly has problems associated with it when it comes time to analyze your data.</p>
+<table>
+<caption><span id="tab:withinex">TABLE 3.2: </span>Within participant data entered one row per participant</caption>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">sex</th>
+<th align="right">march</th>
+<th align="right">may</th>
+<th align="right">july</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="right">40</td>
+<td align="right">37</td>
+<td align="right">35</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="right">35</td>
+<td align="right">32</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="right">38</td>
+<td align="right">35</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="right">33</td>
+<td align="right">30</td>
+<td align="right">28</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="right">42</td>
+<td align="right">39</td>
+<td align="right">37</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="right">36</td>
+<td align="right">33</td>
+<td align="right">31</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:withintidyex">TABLE 3.3: </span>A tidy data version of the within participant data</caption>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">sex</th>
+<th align="left">occasion</th>
+<th align="right">elapsed_time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="left">march</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="left">may</td>
+<td align="right">37</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="left">july</td>
+<td align="right">35</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="left">march</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="left">may</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="left">july</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="left">march</td>
+<td align="right">38</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="left">may</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="left">july</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="left">march</td>
+<td align="right">33</td>
+</tr>
+<tr class="odd">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="left">may</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="left">july</td>
+<td align="right">28</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="left">march</td>
+<td align="right">42</td>
+</tr>
+<tr class="even">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="left">may</td>
+<td align="right">39</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="left">july</td>
+<td align="right">37</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="left">march</td>
+<td align="right">36</td>
+</tr>
+<tr class="odd">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="left">may</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="left">july</td>
+<td align="right">31</td>
+</tr>
+</tbody>
+</table>
+<p>Thus, a major problem with entering repeated measures data in the one row per person format is that there are hidden variables in the data and you need insider knowledge to know what the columns represent. That said, this is not necessarily a terrible way to enter your data as long as you have all of this missing information documented in a data code book.</p>
+<table>
+<colgroup>
+<col width="55%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Disadvantages one row per participant</th>
+<th>Advantages one row per participant</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1) Predictor variable (<em>occasion</em>) is hidden and spread over multiple columns</td>
+<td>1) Easy to enter this way</td>
+</tr>
+<tr class="even">
+<td>2) Unclear that each month is a level of the predictor variable <em>occasion</em></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3) Dependent variable (<em>elapsed_time</em>) is not indicated</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4) Unclear that <em>elapsed_time</em> is the measurement in each month column</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Fortunately, the problems with Table <a href="making-your-data-ready-for-analysis.html#tab:withinex">3.2</a> can be largely resolved by converting the data to the a tidy data format. This can be done with the pivot_long() command that we will learn about later in this chapter. Thus, we can enter the data in the format of Table <a href="making-your-data-ready-for-analysis.html#tab:withinex">3.2</a> and later convert it to a tidy data format. After this conversion the data will be appear as in Table <a href="making-your-data-ready-for-analysis.html#tab:withintidyex">3.3</a>. For elapsed_time variable this data is now in the tidy data format. Each row corresponds to a single elapsed_time observed. Each column corresponds to a single variable. Somewhat problematically, however, sex is repeated three times for each person (i.e., over the three rows) - and this can be confusing. However, if the focus in on analyzing elapsed time this tidy data format makes sense. Importantly, there is an id column for each participant so R knows that this information is repeated for each participant and is not confused by repeating the sex designation over three rows. In directly, this illustrates the importance of having an id column to indicate each unique participant.</p>
+<p>Why did we walk you through this technical treatment of structuring data at this point in time? So that you pay attention to the advice the follows. You can see at this point that you may well need to restructure your data for certain analyses. The ability to do so quickly and easily depends upon you following the advice in this chapter around naming conventions for variables and other aspects of your analyses. You can imagine the challenges for converting the data in Figure <a href="making-your-data-ready-for-analysis.html#tab:withinex">3.2</a> to the data in Figure <a href="making-your-data-ready-for-analysis.html#tab:withintidyex">3.3</a> by hand. You want to be able to automate that process and others - which is made substantially easier if you following the forthcoming advice about naming conventions in the tidyverse.</p>
+</div>
+</div>
+<div id="data-collection-considerations" class="section level2">
+<h2><span class="header-section-number">3.5</span> Data collection considerations</h2>
+<p>Data can be collected in a wide variety of way. Regardless of the methods of location researchers typically come to data in one of two way: 1) a research assistant enters the data into a spreadsheet type interface, or 2) the data is obtained as the output from computer software (e.g., Qualtrics, SurveyMonkey, Noldus, etc.).</p>
+<p>Regardless of the approach it is critical to name your variables appropriately. For those using software, such as Qualtrics, this means setting up the software to use appropriate variable names PRIOR to data collection - so the exported file has desirable column names. For spreadsheet users, this means setting up the spreadsheet the data will be recorded in with column names that are amenable to the future analyses you want to conduct.</p>
+<p>Although failure to take this thoughtful approach at the data collection stage can be overcome - it is only overcome with substantial manual effort. Therefore, as noted previously, we strongly encourage you to following the naming conventions we espouse here where you set up your data recording regime. Additionally, we encourage you to give careful thought in advance to the codes you will use to record missing data.</p>
+<div id="naming-conventions" class="section level3">
+<h3><span class="header-section-number">3.5.1</span> Naming conventions</h3>
+<p>To make your life easier down the road, it is critical you set up your spreadsheet or online survey such that is uses a naming convention prior to data collection. The naming conventions suggested here are adapted from the tidyverse <a href="https://style.tidyverse.org">style guide</a>.</p>
+<ul>
+<li><p>Lowercase letters only</p></li>
+<li><p>If two word column names are necessary, only use the underscore ("_") character to separate words in the name.</p></li>
+<li><p>Avoid short uncontextualized variable names like q1, q2, q3, etc.</p></li>
+<li><p>Do use moderate length column names. Aim to achieve a unique prefix for related columns so that those columns can be selected using the starts_with() command discussed in the previous chapter. Be sure to avoid short two or three letter prefixes for item names. Use moderate length unique item prefixes so that it will easy to select with those columns using start_with() such that you don’t accidentally get additionally columns you don’t want - that have a similar prefix. See the Likert-type item section below for additional details.</p></li>
+<li><p>If you have a column name that represents the levels of two repeated measures variables only use the underscore character to separate the levels of the different variables. See within-participant ANOVA section below for details.</p></li>
+</ul>
+</div>
+<div id="likert-type-items" class="section level3">
+<h3><span class="header-section-number">3.5.2</span> Likert-type items</h3>
+<p>A Likert-type item is typically composed of a statement that participants are asked to agree or disagree with. For example, participants could be asked to indicate the extent to which they agree a number of statements such as “I like my job”. They would then be presented with response scale such as: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. A common question is how should I enter the data?</p>
+<ul>
+<li><p><strong>Enter numeric responses not the labels</strong>. You should enter the numeric value for each item response (e.g., 5) into your data - not the label (e.g., Strongly Agree). The labels associated with each value can be applied later in a script, if needed.</p></li>
+<li><p><strong>High numbers should be associated with more of the construct being measured.</strong> When designing your survey or data collection tools, it is important that you set of the response options appropriately. If your scale measures job satisfaction, it is important that you collect data in a manner that ensures high numbers on the job satisfaction scale indicate high levels of job satisfaction. Therefore, assigning numbers makes sense using the 5-point scale: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. With this approach high response numbers indicate more job satisfaction. However, using the opposite scale would not make sense: 1 - Strongly Agree, 2 - Moderately Agree, 3 - Neutral, 4, Moderately Disagree, 5 - Strongly Disagree. With this opposite scale high numbers on a job satisfaction scale would indicate lower levels of job satisfaction - a very confusing situation. Avoid this situation, assign numbers so that higher numbers are associated with more of the construct being measured.</p></li>
+<li><p><strong>Use appropriate item names.</strong> As described in the naming convention section, use moderate length names with different labels for each subscale.</p></li>
+<li><p><strong>Use moderate length column names unique to each subscale</strong>. Imagine you have a survey with an 18-item commitment scale <span class="citation">(Meyer, Allen, and Smith <a href="#ref-meyer1993commitment" role="doc-biblioref">1993</a>)</span> composed of three 6-item subscales: affective, normative, and continuance commitment. It would be a poor choice to prefix the labels of all 18 columns in your data with “commit” such that the names would be commit1, commit2, commit3, etc. The problem with this approach is that it fails to distinguishing between the three subscales in naming convention; making it impossible to select the items for a single subscale using starts_with(). A better, but still poor choice for a naming convention would be use use a two letter prefix for the three scale such ac, nc, and cc. This would result in names for the columns like ac1, ac2, ac3, etc. This is an improvement because you could apparently (but likely not) select the columns using starts_with(“ac”). The problem with these short names is that there could be many columns in data set that start with “ac” beside the affective commitment items. You might want to select the affective commitment items using starts_with(“ac”); but you would get all the affective commitment item columns but also all the columns measuring other variables that also start with “ac”. Therefore, it’s a good idea to use a moderate length unique prefix for column names. For example, you might use prefixes like affectcom, normcom, and contincom for the three subscales. This would create column names like affectcom1, affectcom2, affectcom3, etc. These column prefixes are unlikely to be duplicated in other places in your column name conventions making it easy to select those columns using a command like starts_with(“affectcom”).</p></li>
+<li><p><strong>Indicate in the item name if the item is reversed keyed </strong> Sometimes with Likert-type items, an item is reverse keyed. For example, on a job satisfaction scale participants will typically respond to items that reflect job satisfaction using the scale: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. Higher numbers indicate more job satisfaction. Sometimes however, some items will use the same 1 to 5 response scale but be worded “I hate my job”. Responding with a 5 to this item would indicate high job dissatisfaction not high job satisfaction - to the response will need to be flipped in your analysis script after data collection (i.e., 1 need to become a 5 and vice versa). To make it easier to do so, you should indicate if an item is reverse keyed in the item name. The procedure for doing so is outlined in the next point.</p></li>
+<li><p><strong>Indicate in the item name the range for reverse key items. </strong> If an item is reverse-keyed, the process for the flipping the scores depends upon the range of a scale. Although 5-point scale are common, any number of points are possible. The process for correcting a reverse key item depends upon: 1) the number of points on the scale, and 2) the range of the points on the scale. The reverse-key item correction process is different for an item that uses a 5-point scale ranging from 1 to 5 and from 0 to 4. Both are 5-point scale but your correction process will be different. Therefore, for reverse key items add as suffix at the end of each item name that indicates an item is reverse keyed and the range of the item. For example, if the third job satisfaction item was reversed keyed on scale using a 1 to 5 response format you might name the item: jobsat3_rev15. The suffix "_rev15" indicates the item is reverse keyed and the range of responses used on the item is 1 to 5. Be sure to set up your survey with this naming convention when you collect your data.</p></li>
+<li><p>If you collect items over multiple time points use a prefix with a short code to indicate the time followed by and underscore. For example, if you had a multi-item self-esteem scale you might call the column for the firs time “t1_esteem1_rev15”. This indicate that you have for time 1 (t1), the first self-esteem item (esteem1) and that item is reverse keyed on a 1 to 5 scale.</p></li>
+</ul>
+</div>
+<div id="anova-between" class="section level3">
+<h3><span class="header-section-number">3.5.3</span> ANOVA between</h3>
+<p>Avoid numerical representation of categorical variables. Don’t use 1 or 2 to represent a variable like sex. Use male and female in your spreadsheet - likewise in your survey program. Similarily, for between participant variables like drug_condition don’t use 1 or 2 use “drug” and “placebo” but the actually drug name would be even better than the word “drug.”</p>
+</div>
+<div id="anova-within" class="section level3">
+<h3><span class="header-section-number">3.5.4</span> ANOVA within</h3>
+<p>If you have a study that involves within-participant predictors naming conventions can become exomplex. When you have a single repeated measures predictor like occasion in the previous running example, it is often necessary to spread the level of that varible over multiple columns (e.g., march, may, july).</p>
+<p>When you have multiple repeated measures predictor the situation is even more complicated. In this case, each column name needs to represent the levels of mutiple repeated measures predictors at the time of data entry. For example, imagine you are a food researcher interested in taste ratings (the dependent variable) for various foods and contexts. You have food type (i.e., food_type) as a predictor with three levels (pizza, steak, burger). You have a second predictor temperature with two levels (hot, cold). All participants taste all foods at all temperatures. Thus, six columns are required to record taste rating for each participant: pizza_hot, pizza_cold, steak_hot, steak_cold, burger_hot, and burger_cold. Notice how each name contains one level of each predictor variable. The levels by the two predictor variables are separated by a single underscore. This should be the only underscore in the variable name because that underscore will be used by the computer when changing the data to the tidy format. If you had two underscores an name like “italian_pizza_hot” you would confuse the pivot_longer() command when it attempts to create a tidy version of the data. The computer would think there were three repeated levels variables instead of two. Thus, when dealing with repeated measures predictors, only use underscores to separate levels of predictor variables in column names.</p>
+</div>
+</div>
+<div id="following-the-examples" class="section level2">
+<h2><span class="header-section-number">3.6</span> Following the examples</h2>
+<p>Below we present example scripts transforming raw data to analytic data for various study designs (experimental and survey). These examples illustrate the value of using the naming conventions outlined previously. Don’t just read the example - follow along with the projects by creating a separate script for each example. Resist the urge to cut and paste from this document - type the script yourself.</p>
+<p>When first learning iPhone/Mac software development, I did so by taking a course at <a href="https://www.bignerdranch.com">Big Nerd Ranch</a> - yes, that’s a real place. They advised in their material (and now book) the following: “We have learned that “going through the motions” is much more important than it sounds. Many times we will ask you to start typing in code before you understand it. We realize that you may feel like a trained monkey typing in a bunch of code that you do not fully grasp. But the best way to learn coding is to find and fix your typos. Far from being a drag, this basic debugging is where you really learn the ins and outs of the code. That is why we encourage you to type in the code yourself. You could just download it, but copying and pasting is not programming. We want better for you and your skills.", p. xiv, <span class="citation">(Keur and Hillegass <a href="#ref-keur2020" role="doc-biblioref">2020</a>)</span>. This is excellent advice for a beginning statistician or data scientist as well. And as an aside: if you want to learn iPhone programming you can’t go wrong the Big Nerd Ranch guide!</p>
+<p>As you work through this chapter, create your own new script for each example. In light of the above advice, avoid copying and pasting code - type it out; you will be the better for it.</p>
+<p>Getting started:</p>
+<p><strong>The Class: R Studio in the Cloud Assignment</strong></p>
+<ol style="list-style-type: decimal">
+<li>The data should be in the assignment project automatically. Just start the assignment.</li>
+</ol>
+<p>For everyone in the class, that’s it.</p>
+<p>For those of you reading this work not in the class, see the two options below:</p>
+<p><strong>R Studio Cloud, custom project</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Create a new Project using the web interface</p></li>
+<li><p>Upload all the example data files in to the project. The data files need are listed at the beginning of this chapter. The upload button can be found on the Files tab.</p></li>
+</ol>
+<p><strong>R Studio Computer, custom project</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Create a folder on your computer for the example</p></li>
+<li><p>Place all the example data files in that folder. The data files need are listed at the beginning of this chapter.</p></li>
+<li><p>Use the menu item File &gt; New Project… to start the project</p></li>
+<li><p>On the window that appears select “Existing Directory”</p></li>
+<li><p>On the next screen, press the “Browse” button and find/select the folder with your data</p></li>
+<li><p>Press the Create Project Button</p></li>
+</ol>
+<p>Regardless of whether your are working from the cloud or locally you should now have an R Studio project with your data files in it.</p>
+<p>We ancticipate many people will doubtless want to refer back to an encapsulated set of instructions for each design. There for the example for each design is written in a way that it stands alone. A consequence of this approach is that there is some redundancy in the code across example. We see this a strength - because readers will see the commonalities across differ types of designs.</p>
+<p>As you make a script for each example:</p>
+<ul>
+<li><p>Recall the instruction from Chapter 1 about putting the date and your name in the script via comments.</p></li>
+<li><p>Recall the instruction from Chapter 1 about running library(tidyverse) before you type the rest of each script - this provides you with tidyverse autocomplete for the script.</p></li>
+</ul>
+</div>
+<div id="entering-data-into-spreadsheets" class="section level2">
+<h2><span class="header-section-number">3.7</span> Entering data into spreadsheets</h2>
+<p>The first example uses a data file data_ex_between.csv that corresponds to a ficticous example where we recorded the run times for a number of male and female participants. How did we create this data file? We used a spreadsheet to enter the data, as illustrated in Figure <a href="making-your-data-ready-for-analysis.html#fig:spreadsheetbetween">3.3</a>. Programs like Microsoft Excel and Google Sheets are good options for entering data.</p>
+<div class="figure"><span id="fig:spreadsheetbetween"></span>
+<img src="ch_score_items/images/screenshot_data_between.png" alt="Spreadsheet entry of running data" width="40%" />
+<p class="caption">
+FIGURE 3.3: Spreadsheet entry of running data
+</p>
+</div>
+<p>The key to using these types of programs is to the save the data as a .csv file when you are done. CSV is short for Comma Separated Values. After entering the data in Figure <a href="making-your-data-ready-for-analysis.html#fig:spreadsheetbetween">3.3</a> we saved it as data_ex_between.csv. There is no need to do so, but if you were to open this file in a text editor (such as TextEdit on a Mac or Notepad on Windows) you would see the information displayed in Figure <a href="making-your-data-ready-for-analysis.html#fig:csvsheetbetween">3.4</a>. You can see there is one row per person and the columns are created by separating each values by a comma; hence, comma separated values.</p>
+<div class="figure"><span id="fig:csvsheetbetween"></span>
+<img src="ch_score_items/images/screenshot_csv_between.png" alt="Text view of CSV data" width="25%" />
+<p class="caption">
+FIGURE 3.4: Text view of CSV data
+</p>
+</div>
+<p>There are many ways to save data, but the CSV data is one of the better ones because it is a non-proprietary format. Some software, such as SPSS, uses a proprietary format (e.g., .sav for SPSS) this makes it challenging to access that data if you don’t have that (often expensive) software. One of our goals as scientists is to make it easy for others to audit our work - that allows science to be self-correcting. Therefore, choose an open format for your data like .csv.</p>
+</div>
+<div id="experiment-between" class="section level2">
+<h2><span class="header-section-number">3.8</span> Experiment: Between</h2>
+<p>This section outlines a workflow appropriate for when you plan to conduct independent groups t-tests or a between-particpants ANOVA.</p>
+<p>To Begin:</p>
+<ul>
+<li><p>Use the Files tab to confirm you have the data: data_ex_between.csv</p></li>
+<li><p>Start a new script for this example. Don’t forget to start the script name with “script_”.</p></li>
+</ul>
+<p>As noted previously, these data correspond to a design where the researcher is interested in comparing run times (elapsed_time) based on sex (male/female).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="making-your-data-ready-for-analysis.html#cb1-1"></a><span class="co"># Date: YYYY-MM-DD</span></span>
+<span id="cb1-2"><a href="making-your-data-ready-for-analysis.html#cb1-2"></a><span class="co"># Name: your name here</span></span>
+<span id="cb1-3"><a href="making-your-data-ready-for-analysis.html#cb1-3"></a><span class="co"># Example: Between-participant experiment</span></span>
+<span id="cb1-4"><a href="making-your-data-ready-for-analysis.html#cb1-4"></a></span>
+<span id="cb1-5"><a href="making-your-data-ready-for-analysis.html#cb1-5"></a><span class="co"># Load data</span></span>
+<span id="cb1-6"><a href="making-your-data-ready-for-analysis.html#cb1-6"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-7"><a href="making-your-data-ready-for-analysis.html#cb1-7"></a></span>
+<span id="cb1-8"><a href="making-your-data-ready-for-analysis.html#cb1-8"></a>my_missing_value_codes &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;-999&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>)</span>
+<span id="cb1-9"><a href="making-your-data-ready-for-analysis.html#cb1-9"></a></span>
+<span id="cb1-10"><a href="making-your-data-ready-for-analysis.html#cb1-10"></a>raw_data_beween &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_ex_between.csv&quot;</span>,</span>
+<span id="cb1-11"><a href="making-your-data-ready-for-analysis.html#cb1-11"></a>                     <span class="dt">na =</span> my_missing_value_codes)</span></code></pre></div>
+<p>We load the intial data into a raw_data_beween but immediately make a copy we will work with called analytic_data_between. It’s good to keep a copy of the raw data for reference if you encounter problems.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="making-your-data-ready-for-analysis.html#cb2-1"></a>analytic_data_between &lt;-<span class="st"> </span>raw_data_beween</span></code></pre></div>
+<p>After loading the data we do initial cleaning to remove empty row/columns and ensure proper naming for columns:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="making-your-data-ready-for-analysis.html#cb3-1"></a><span class="kw">library</span>(janitor)</span>
+<span id="cb3-2"><a href="making-your-data-ready-for-analysis.html#cb3-2"></a></span>
+<span id="cb3-3"><a href="making-your-data-ready-for-analysis.html#cb3-3"></a><span class="co"># Initial cleaning</span></span>
+<span id="cb3-4"><a href="making-your-data-ready-for-analysis.html#cb3-4"></a>analytic_data_between &lt;-<span class="st"> </span>analytic_data_between <span class="op">%&gt;%</span></span>
+<span id="cb3-5"><a href="making-your-data-ready-for-analysis.html#cb3-5"></a><span class="st">  </span><span class="kw">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb3-6"><a href="making-your-data-ready-for-analysis.html#cb3-6"></a><span class="st">  </span><span class="kw">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb3-7"><a href="making-your-data-ready-for-analysis.html#cb3-7"></a><span class="st">  </span><span class="kw">clean_names</span>()</span></code></pre></div>
+<p>You can confirm the column names follow our naming convention with the glimpse() command.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="making-your-data-ready-for-analysis.html#cb4-1"></a><span class="kw">glimpse</span>(analytic_data_between)</span></code></pre></div>
+<pre><code>## Rows: 6
+## Columns: 3
+## $ id           &lt;dbl&gt; 1, 2, 3, 4, 5, 6
+## $ sex          &lt;chr&gt; &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;
+## $ elapsed_time &lt;dbl&gt; 40, 35, 38, 33, 42, 36</code></pre>
+<div id="creating-factors" class="section level3">
+<h3><span class="header-section-number">3.8.1</span> Creating factors</h3>
+<p>Following initial cleaning, we identify categorical variables as factors. If you plan to conduct an ANOVA - it’s critical that all predictor variables are converted to factors. Inspect the glimpse() output - if you followed our data entry naming conventions, categorical variables should be of the type character. We have one variable, sex, that is a categorical variable of type character (i.e., chr). The participant id column is categorical as well, but of type double (i.e., dbl) which is a numeric column.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="making-your-data-ready-for-analysis.html#cb6-1"></a><span class="kw">glimpse</span>(analytic_data_between)</span></code></pre></div>
+<pre><code>## Rows: 6
+## Columns: 3
+## $ id           &lt;dbl&gt; 1, 2, 3, 4, 5, 6
+## $ sex          &lt;chr&gt; &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;
+## $ elapsed_time &lt;dbl&gt; 40, 35, 38, 33, 42, 36</code></pre>
+<p>You can quickly convert all character columns to factors using the code below. In this case, this just converts the sex column to a factor. Because there is only one column (sex) being converted to a factor, we could have treated it the same was as the id column below. However, we use this code because of its broad applicability to many scripts.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="making-your-data-ready-for-analysis.html#cb8-1"></a><span class="co"># Turn all columns that are of type character into factors</span></span>
+<span id="cb8-2"><a href="making-your-data-ready-for-analysis.html#cb8-2"></a>analytic_data_between &lt;-<span class="st"> </span>analytic_data_between <span class="op">%&gt;%</span></span>
+<span id="cb8-3"><a href="making-your-data-ready-for-analysis.html#cb8-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.character),</span>
+<span id="cb8-4"><a href="making-your-data-ready-for-analysis.html#cb8-4"></a>                <span class="dt">.fns =</span> as_factor))</span></code></pre></div>
+<p>The participant identification number in the id column is a numeric column, so it was not coverted by the above code. The id column is coverted to a factor with the code below.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="making-your-data-ready-for-analysis.html#cb9-1"></a>analytic_data_between &lt;-analytic_data_between <span class="op">%&gt;%</span></span>
+<span id="cb9-2"><a href="making-your-data-ready-for-analysis.html#cb9-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="kw">as_factor</span>(id))</span></code></pre></div>
+<p>You can ensure both the sex and id columns are now factors using the glimpse() command.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="making-your-data-ready-for-analysis.html#cb10-1"></a><span class="kw">glimpse</span>(analytic_data_between)</span></code></pre></div>
+<pre><code>## Rows: 6
+## Columns: 3
+## $ id           &lt;fct&gt; 1, 2, 3, 4, 5, 6
+## $ sex          &lt;fct&gt; male, female, male, female, male, female
+## $ elapsed_time &lt;dbl&gt; 40, 35, 38, 33, 42, 36</code></pre>
+<p>This example is so small it’s clear you didn’t miss converting any columns to factors. In general, however, at this point you should inspect the output of the glimpse() command and make sure you have coverted all categorical variables to factors - especially those you will use as predictors.</p>
+</div>
+<div id="factor-screening" class="section level3">
+<h3><span class="header-section-number">3.8.2</span> Factor screening</h3>
+<p>Inspect the levels of each factor carefully. Make sure that there not any levels for a factor that are incorrect. For example, you wouldn’t want to the following levels for sex: male, mmale, female. Obviously, mmale is an incorrectly typed version of male. Scan all the factors in your data for eronious factor levels. The code below displays the factor levels:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="making-your-data-ready-for-analysis.html#cb12-1"></a>analytic_data_between <span class="op">%&gt;%</span></span>
+<span id="cb12-2"><a href="making-your-data-ready-for-analysis.html#cb12-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">where</span>(is.factor)) <span class="op">%&gt;%</span></span>
+<span id="cb12-3"><a href="making-your-data-ready-for-analysis.html#cb12-3"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
+<pre><code>##  id        sex   
+##  1:1   male  :3  
+##  2:1   female:3  
+##  3:1             
+##  4:1             
+##  5:1             
+##  6:1</code></pre>
+<p>Also inspect the output of the above summary() command paying attention to the order of the levels in the factors. The order influences how graphs are generated. In these data, the sex column has two levels: male and female in that order. Below we adjust the order of the sex varible because we want the x-axis of a future graph to display columns in the left to right order: female, male.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="making-your-data-ready-for-analysis.html#cb14-1"></a><span class="co"># Custom reordering of factor levels</span></span>
+<span id="cb14-2"><a href="making-your-data-ready-for-analysis.html#cb14-2"></a>analytic_data_between &lt;-<span class="st"> </span>analytic_data_between <span class="op">%&gt;%</span></span>
+<span id="cb14-3"><a href="making-your-data-ready-for-analysis.html#cb14-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sex =</span> <span class="kw">fct_relevel</span>(sex,</span>
+<span id="cb14-4"><a href="making-your-data-ready-for-analysis.html#cb14-4"></a>                           <span class="st">&quot;female&quot;</span>,</span>
+<span id="cb14-5"><a href="making-your-data-ready-for-analysis.html#cb14-5"></a>                           <span class="st">&quot;male&quot;</span>))</span></code></pre></div>
+<p>You can see the new order of the factor levels with summary():</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="making-your-data-ready-for-analysis.html#cb15-1"></a>analytic_data_between <span class="op">%&gt;%</span></span>
+<span id="cb15-2"><a href="making-your-data-ready-for-analysis.html#cb15-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">where</span>(is.factor)) <span class="op">%&gt;%</span></span>
+<span id="cb15-3"><a href="making-your-data-ready-for-analysis.html#cb15-3"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
+<pre><code>##  id        sex   
+##  1:1   female:3  
+##  2:1   male  :3  
+##  3:1             
+##  4:1             
+##  5:1             
+##  6:1</code></pre>
+</div>
+<div id="numeric-screening" class="section level3">
+<h3><span class="header-section-number">3.8.3</span> Numeric screening</h3>
+<p>For numeric variables, you should search for impossible values. For example, in the context of this example you want to ensure non of the elapsed_times are impossible or so large they appear to be data entry errors.</p>
+<p>One option for doing so is the summary command again. This time, however, we use “is.numeric” in the where() command.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="making-your-data-ready-for-analysis.html#cb17-1"></a>analytic_data_between <span class="op">%&gt;%</span></span>
+<span id="cb17-2"><a href="making-your-data-ready-for-analysis.html#cb17-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">where</span>(is.numeric)) <span class="op">%&gt;%</span></span>
+<span id="cb17-3"><a href="making-your-data-ready-for-analysis.html#cb17-3"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
+<pre><code>##   elapsed_time 
+##  Min.   :33.0  
+##  1st Qu.:35.2  
+##  Median :37.0  
+##  Mean   :37.3  
+##  3rd Qu.:39.5  
+##  Max.   :42.0</code></pre>
+<p>Scan the min and max values for to ensure there are not any impossible values. If necessary, got back to the original data source and fix these impossible value. Alternatively, you might need to change them to missing values (i.e., NA values).</p>
+<p>In this example all the values are reasonable values. However, if we discovered an out of range value (or values) for elapsed time we could convert those values to missing values with the code below. This code changes (i.e., mutates) a value in the elapsed_time column to become NA (not available or missing) if that value is less than zero. If the value is greater than or equal to zero, it stays the same. Note that when using this command we have to be very specific in terms of specifying our missing value. It usually needs to be one of NA_real_ or NA_character_. For numeric columns use NA_real_ and for character columns use NA_character_.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="making-your-data-ready-for-analysis.html#cb19-1"></a>analytic_data_between &lt;-<span class="st"> </span>analytic_data_between  <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb19-2"><a href="making-your-data-ready-for-analysis.html#cb19-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">elapsed_time =</span> <span class="kw">case_when</span>(</span>
+<span id="cb19-3"><a href="making-your-data-ready-for-analysis.html#cb19-3"></a>      elapsed_time <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> </span><span class="ot">NA_real_</span>,</span>
+<span id="cb19-4"><a href="making-your-data-ready-for-analysis.html#cb19-4"></a>      elapsed_time <span class="op">&gt;=</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> </span>elapsed_time))</span></code></pre></div>
+<p>Once you are done numeric screening, the data is ready for analysis.</p>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-baker2016">
+<p>Baker, M. 2016. “1500 Scientists Lift the Lid on Reproducibility.” <em>Nature</em> 533. <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.</p>
+</div>
+<div id="ref-keur2020">
+<p>Keur, Christian, and Aaron Hillegass. 2020. <em>IOS Programming: The Big Nerd Ranch Guide</em>. Pearson Technology Group.</p>
+</div>
+<div id="ref-meyer1993commitment">
+<p>Meyer, John P, Natalie J Allen, and Catherine A Smith. 1993. “Commitment to Organizations and Occupations: Extension and Test of a Three-Component Conceptualization.” <em>Journal of Applied Psychology</em> 78 (4): 538.</p>
+</div>
+<div id="ref-miyakawa2020">
+<p>Miyakawa, T. 2020. “No Raw Data, No Science: Another Possible Source of the Reproducibility Crisis.” <em>Mol Brain</em> 13 (24). <a href="https://doi.org/10.1186/s13041-020-0552-2">https://doi.org/10.1186/s13041-020-0552-2</a>.</p>
+</div>
+<div id="ref-cos2015">
+<p>Nosek. 2015. “Estimating the Reproducibility of Psychological Science.” <em>Science</em> 349 (6251). <a href="http://doi.org/10.1126/science.aac4716">http://doi.org/10.1126/science.aac4716</a>.</p>
+</div>
+<div id="ref-patil2019">
+<p>Patil P., &amp; Leek J. T, Peng R. D. 2019. “A Visual Tool for Defining Reproducibility and Replicability.” <em>Nat Hum Behav</em> 3: 650–52. <a href="https://doi.org/10.1038/s41562-019-0629-z">https://doi.org/10.1038/s41562-019-0629-z</a>.</p>
+</div>
+<div id="ref-simmons2011">
+<p>Simmons, Joseph P, Leif D Nelson, and Uri Simonsohn. 2011. “False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant.” <em>Psychological Science</em> 22 (11): 1359–66.</p>
+</div>
+<div id="ref-tidy-data">
+<p>Wickham, Hadley. 2014. “Tidy Data.” <em>The Journal of Statistical Software</em> 59 (10). <a href="http://www.jstatsoft.org/v59/i10/">http://www.jstatsoft.org/v59/i10/</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="handling-data-with-the-tidyverse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="experiment-within-one-way.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/03-enter_load.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

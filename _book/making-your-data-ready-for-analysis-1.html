@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Making your data ready for analysis | PSYC6060 Course Notes</title>
+  <meta name="description" content="Course notes for PSYC 6060" />
+  <meta name="generator" content="bookdown 0.19.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Making your data ready for analysis | PSYC6060 Course Notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course notes for PSYC 6060" />
+  <meta name="github-repo" content="dstanley4/psyc6060bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Making your data ready for analysis | PSYC6060 Course Notes" />
+  
+  <meta name="twitter:description" content="Course notes for PSYC 6060" />
+  
+
+<meta name="author" content="David J. Stanley" />
+
+
+<meta name="date" content="2020-06-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="making-your-data-ready-for-analysis.html"/>
+<link rel="next" href="more-to-say.html"/>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-the-book"><i class="fa fa-check"></i>Structure of the book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#shift-return-somewhere"><i class="fa fa-check"></i><b>1.1</b> SHIFT RETURN SOMEWHERE</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.2</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.3</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.4</b> Create an account at R Studio Cloud</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.5</b> Join the class workspace</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.6</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.6.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.6.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.7</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.7.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.7.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.7.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.7.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.7.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.7.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.7.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.7.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.7.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.8</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.8.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.9</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.9.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.9.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.9.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.9.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.9.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.9.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.9.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.10</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.10.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.10.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.10.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.10.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.10.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.11</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about-r"><i class="fa fa-check"></i><b>1.12</b> A Few Key Points About R</a><ul>
+<li class="chapter" data-level="1.12.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.12.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.13</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html"><i class="fa fa-check"></i><b>2</b> Making your data ready for analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#required-packages"><i class="fa fa-check"></i><b>2.1</b> Required Packages</a></li>
+<li class="chapter" data-level="2.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.2</b> Basic Tidyverse Commands</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#select"><i class="fa fa-check"></i><b>2.2.1</b> select()</a></li>
+<li class="chapter" data-level="2.2.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#summarise"><i class="fa fa-check"></i><b>2.2.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.2.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#filter"><i class="fa fa-check"></i><b>2.2.3</b> filter()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.3</b> Advanced Tidyverse Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html"><i class="fa fa-check"></i><b>3</b> Making your data ready for analysis</a><ul>
+<li class="chapter" data-level="3.1" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#required-packages-1"><i class="fa fa-check"></i><b>3.1</b> Required Packages</a></li>
+<li class="chapter" data-level="3.2" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#objective"><i class="fa fa-check"></i><b>3.2</b> Objective</a></li>
+<li class="chapter" data-level="3.3" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#context"><i class="fa fa-check"></i><b>3.3</b> Context</a></li>
+<li class="chapter" data-level="3.4" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>3.4</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#tidy-data-comparing-wide-vs-long-formats"><i class="fa fa-check"></i><b>3.4.1</b> tidy data: Comparing wide vs long formats</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#data-collection-and-entry"><i class="fa fa-check"></i><b>3.5</b> Data collection and entry</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#question-with-numerical-answers"><i class="fa fa-check"></i><b>3.5.1</b> Question with numerical answers</a></li>
+<li class="chapter" data-level="3.5.2" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#likert-type-items"><i class="fa fa-check"></i><b>3.5.2</b> Likert-type items</a></li>
+<li class="chapter" data-level="3.5.3" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#multi-item-scales"><i class="fa fa-check"></i><b>3.5.3</b> Multi-item scales</a></li>
+<li class="chapter" data-level="3.5.4" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#questions-with-categorical-answers"><i class="fa fa-check"></i><b>3.5.4</b> Questions with categorical answers</a></li>
+<li class="chapter" data-level="3.5.5" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#levels-of-an-independent-varible"><i class="fa fa-check"></i><b>3.5.5</b> Levels of an independent varible</a></li>
+<li class="chapter" data-level="3.5.6" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#levels-of-a-single-within-participant-variable"><i class="fa fa-check"></i><b>3.5.6</b> Levels of a single within participant variable</a></li>
+<li class="chapter" data-level="3.5.7" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#levels-of-multiple-within-participant-variables"><i class="fa fa-check"></i><b>3.5.7</b> Levels of multiple within participant variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#raw-data"><i class="fa fa-check"></i><b>3.6</b> Raw data</a></li>
+<li class="chapter" data-level="3.7" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#loading-raw-data"><i class="fa fa-check"></i><b>3.7</b> Loading raw data</a></li>
+<li class="chapter" data-level="3.8" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#initial-inspection"><i class="fa fa-check"></i><b>3.8</b> Initial inspection</a></li>
+<li class="chapter" data-level="3.9" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#handling-categorical-variables"><i class="fa fa-check"></i><b>3.9</b> Handling categorical variables</a></li>
+<li class="chapter" data-level="3.10" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#seeing-your-data"><i class="fa fa-check"></i><b>3.10</b> Seeing your data</a></li>
+<li class="chapter" data-level="3.11" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#dealing-with-reverse-key-items"><i class="fa fa-check"></i><b>3.11</b> Dealing with reverse key items</a><ul>
+<li class="chapter" data-level="3.11.1" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#scoring-items-where-the-ratings-scale-starts-with-1"><i class="fa fa-check"></i><b>3.11.1</b> Scoring items where the ratings scale starts with 1</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#creating-the-scale-score"><i class="fa fa-check"></i><b>3.12</b> Creating the scale score</a></li>
+<li class="chapter" data-level="3.13" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#creatinig-analytic-data-from-raw-data"><i class="fa fa-check"></i><b>3.13</b> Creatinig analytic data from raw data</a></li>
+<li class="chapter" data-level="3.14" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#wait-i-need-alpha"><i class="fa fa-check"></i><b>3.14</b> Wait: I need alpha!</a></li>
+<li class="chapter" data-level="3.15" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#wait-i-need-item-correlations-and-descriptive-statistics"><i class="fa fa-check"></i><b>3.15</b> Wait: I need item correlations and descriptive statistics</a></li>
+<li class="chapter" data-level="3.16" data-path="making-your-data-ready-for-analysis-1.html"><a href="making-your-data-ready-for-analysis-1.html#using-r-the-old-way-or-the-new-way-the-tidyverse-way"><i class="fa fa-check"></i><b>3.16</b> Using R the old way or the new way (the tidyverse way)</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="more-to-say.html"><a href="more-to-say.html"><i class="fa fa-check"></i><b>A</b> More to Say</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PSYC6060 Course Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="making-your-data-ready-for-analysis-1" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Making your data ready for analysis</h1>
+<div id="required-packages-1" class="section level2">
+<h2><span class="header-section-number">3.1</span> Required Packages</h2>
+<p>This chapter requires the following packages are installed:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>apaTables</td>
+</tr>
+<tr class="even">
+<td>janitor</td>
+</tr>
+<tr class="odd">
+<td>psych</td>
+</tr>
+<tr class="even">
+<td>tidyverse</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important Note:</strong> that you should NOT use library(psych) at any point. There are major conflict between the psych package and the tidyverse. We will access the psych package command by preceding each command with psych:: instead of using library(psych).</p>
+</div>
+<div id="objective" class="section level2">
+<h2><span class="header-section-number">3.2</span> Objective</h2>
+</div>
+<div id="context" class="section level2">
+<h2><span class="header-section-number">3.3</span> Context</h2>
+<p>Due to a number of high profile failure to replicate study results <span class="citation">(Nosek <a href="#ref-cos2015" role="doc-biblioref">2015</a>)</span> it’s become increasingly clear that there is a general crisis of confidence in many areas of science <span class="citation">(Baker <a href="#ref-baker2016" role="doc-biblioref">2016</a>)</span>. Statistical (and other) explanations have been offered <span class="citation">(Simmons, Nelson, and Simonsohn <a href="#ref-simmons2011" role="doc-biblioref">2011</a>)</span> for why it’s hard to replicate results across different sets of data. However, scientists are also finding it challenging to recreate the numbers in their papers using their own data. Indeed, the editor of Molecular Brain asked authors to submit the data used to create the numbers in published papers and found that the wrong data was submitted for 40 out of 41 papers <span class="citation">(Miyakawa <a href="#ref-miyakawa2020" role="doc-biblioref">2020</a>)</span>.</p>
+<p>Consequently, some researchers have suggested that it is critical to distinguish between replication and reproducibility <span class="citation">(Patil P. <a href="#ref-patil2019" role="doc-biblioref">2019</a>)</span>. Replication refers to trying to obtain the same result from a different data sets. Reproducibility refers to trying to obtain the same results from the same data set. It may seem that reproducibility should be given - but it’s not. Correspondingly, there a trend is for journals and authors to adopt Transparency and Openness Promotion (TOP) <a href="https://www.cos.io/our-services/top-guidelines">guidelines</a>. These guidelines involve such things as making your materials, data, code, and analysis scripts available on public repositories so anyone can check your data. A new open science journal rating system has even emerged called the <a href="https://topfactor.org">TOP Factor</a>.</p>
+<p>The idea is not that open science articles are more trustworthy that other types of articles – the idea is that trust doesn’t play a role. Anyone can inspect the data using the scripts and data provided by authors. It’s really just the same as making your science available for auditing the way financial records can be audited. The problems reported at Molecular Brain (doubtless is common to many journals) are avoided with open science - because the data and scripts needed to reproduce the numbers in the articles are uploaded prior to publication.</p>
+<p>The TOP open science guidelines have made an impact and some newer journals, such as Meta Psycchology, have fully embraced open science. Figure <a href="making-your-data-ready-for-analysis-1.html#fig:metapsychology">3.1</a> shows the header from an <a href="https://open.lnu.se/index.php/metapsychology/article/view/1630/2266">article</a> in Meta Psychology that clearly delineates the open science attributes of the article. Take note that the header even specifies who checked that the analyses in the article were reproducible from the scripts and data made publicly available by the authors.</p>
+<div class="figure"><span id="fig:metapsychology"></span>
+<img src="ch_score_items/images/screenshot_metapsychology.png" alt="Open science in an article header" width="100%" />
+<p class="caption">
+FIGURE 3.1: Open science in an article header
+</p>
+</div>
+<p>In Canada, the majority of university research is funded by the Federal Government’s Tri-Agency (i.e., NSERC, SSHRC, CIHR). The agency has a new draft <a href="https://www.ic.gc.ca/eic/site/063.nsf/eng/h_83F7624E.html">Data Management Policy</a> in which they state that “<em>The agencies believe that research data collected with the use of public funds belong, to the fullest extent possible, in the public domain and available for reuse by others.</em>” This perspective of the funding agency differs from that of some researchers who incorrectly believe “they own their data”. In Canada at least, the government makes it clear that tax payers fund the research so the data is public property. Additionally the Tri-Agency Data Management policy clearly indicates the responsibilities of funded researchers:</p>
+<p>"Responsibilities of researchers include:</p>
+<ul>
+<li>incorporating data management best practices into their research;</li>
+<li>developing data management plans to guide the responsible collection, formatting, preservation and sharing of their data throughout the entire lifecycle of a research project and beyond;</li>
+<li>following the requirements of applicable institutional and/or funding agency policies and professional or disciplinary standards;</li>
+<li>acknowledging and citing datasets that contribute to their research; and</li>
+<li>staying abreast of standards and expectations of their disciplinary community."</li>
+</ul>
+<p>As a result of this perspective on data, it’s important that you think about structuring your data for reuse by yourself and others before you collect it. Toward this end, you will see documentation of your data file via data codebooks is critical.</p>
+</div>
+<div id="begin-with-the-end-in-mind" class="section level2">
+<h2><span class="header-section-number">3.4</span> Begin with the end in mind</h2>
+<p>In this chapter we will walk you though the steps from data collection, data entry, loading raw data, and the creation of analytic data via preprocessing scripts. These steps are outlined in Figure <a href="making-your-data-ready-for-analysis-1.html#fig:pipeline">3.2</a>. This figure makes a clear distinction between raw data and analytic data. Raw data refers to the data as you entered it into a spreadsheet or received it from survey software. Analytic data the data the has been structured and processed so that it is ready for analyis. This pre-processing could include such things as identifying categorical variables to the computer, combining multiple items measuring the same thing into scale scale scores, among other tasks.</p>
+<p>It’s critial that you don’t think of analysis of your results as being completely removed from the data collection and data entry choices you make. Poor choices at the data collection and data entry stage can make your life substantially more complicated when it comes time to write the preprocessing script that will convert your raw data to analytic data. The mantra of this chapter is <em>begin with the end in mind</em>.</p>
+<div class="figure"><span id="fig:pipeline"></span>
+<img src="ch_enter_load/images/pipeline.png" alt="Data science pipeline by Roger Peng." width="85%" />
+<p class="caption">
+FIGURE 3.2: Data science pipeline by Roger Peng.
+</p>
+</div>
+<p>It’s difficult to being with the end in mind when you haven’t read later chapters. So here we will be provide you with some general thoughts around different approaches to structuring data files and the naming conventions you use when creating those data files.</p>
+<div id="tidy-data-comparing-wide-vs-long-formats" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> tidy data: Comparing wide vs long formats</h3>
+<p>When conducting many types of analyses it is necessary to have data in a format called tidy data <span class="citation">(Wickham <a href="#ref-tidy-data" role="doc-biblioref">2014</a>)</span>. <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">tidy data</a> as defined by Hadley involves (among other requirements) that:</p>
+<ol style="list-style-type: decimal">
+<li>Each variable forms a column.</li>
+<li>Each observation forms a row.</li>
+</ol>
+<p>The tidy data format can be initially challenging for some researchers to understand because it is based on thinking about, and structuring data, in terms of observations/measurements instead of participants. In this section we will describe common approaches to entering animal and human particpant data and how they can be done keeping the tidy data requirement in mind. It’s not essential that data be entered in a tidy data format but it is essential that you enter data in way that makes it easy to later convert data to a tidy data format. When dealing with animal or human participant data it’s common to enter data into a spreadsheet. Each row of the spreadsheet is typically used to represent a single participant and each column of the spreadshet is used to represent a variable.</p>
+<p><strong>Between participant data</strong>. Consider Table <a href="making-your-data-ready-for-analysis-1.html#tab:betweenex">3.1</a> which illustrates between particpant data for six human particpants running 5 kilometers The first column is id, which indicates there are six unique participants and provides and identification number for each of them. The id is the varible and there is one observation per row - so the id column conforms to tidy data specification. The second column is sex, which is a varible, and there is one observation per for row, so sex also conforms to the tidy data specification. Finally, there is a last column five_km_time which is a variable with one observation per row – also conforming to tidy data specification. Thus, single occasion between subject data like this conforms to the tidy data specification. There is usually nothing you need to do to convert between participant data (or cross-sectional data) to be in a tidy data format.</p>
+<table>
+<caption><span id="tab:betweenex">TABLE 3.1: </span>Between participant data entered one row per participant</caption>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">sex</th>
+<th align="right">elapsedtime</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="right">38</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="right">33</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="right">42</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="right">36</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Within participant data</strong>. Consider Table <a href="making-your-data-ready-for-analysis-1.html#tab:withinex">3.2</a> which illustrates within particpant data for six human particpants running 5 kilometers - but on three different occasions. The first column is id, which indicates there are six unique participants and provides and identification number for each of them. The id is the varible and there is one observation per row - so the id column conforms to tidy data specification. The second column is sex, which is a varible, and there is one observation per for row, so sex also conforms to the tidy data specification. Next, there are three different columns (march, may, july) representing the levels of a single variable. That is the within subject variable is occasion and the levels of that variable are march, june, and july. The march column contains the times for participants in March. The may column contians the times for particpants in May. The july column contains the times for participants in July, These three columns are not in a tidy data format.</p>
+<table>
+<caption><span id="tab:withinex">TABLE 3.2: </span>Within participant data entered one row per participant</caption>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">sex</th>
+<th align="right">march</th>
+<th align="right">may</th>
+<th align="right">july</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="right">40</td>
+<td align="right">37</td>
+<td align="right">35</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="right">35</td>
+<td align="right">32</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="right">38</td>
+<td align="right">35</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="right">33</td>
+<td align="right">30</td>
+<td align="right">28</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="right">42</td>
+<td align="right">39</td>
+<td align="right">37</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="right">36</td>
+<td align="right">33</td>
+<td align="right">31</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:withintidyex">TABLE 3.3: </span>A tidy data version of the within participant data</caption>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">sex</th>
+<th align="left">occasion</th>
+<th align="right">elapsedtime</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="left">march</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="left">may</td>
+<td align="right">37</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">male</td>
+<td align="left">july</td>
+<td align="right">35</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="left">march</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="left">may</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">female</td>
+<td align="left">july</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="left">march</td>
+<td align="right">38</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="left">may</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">male</td>
+<td align="left">july</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="left">march</td>
+<td align="right">33</td>
+</tr>
+<tr class="odd">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="left">may</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">female</td>
+<td align="left">july</td>
+<td align="right">28</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="left">march</td>
+<td align="right">42</td>
+</tr>
+<tr class="even">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="left">may</td>
+<td align="right">39</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">male</td>
+<td align="left">july</td>
+<td align="right">37</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="left">march</td>
+<td align="right">36</td>
+</tr>
+<tr class="odd">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="left">may</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">female</td>
+<td align="left">july</td>
+<td align="right">31</td>
+</tr>
+</tbody>
+</table>
+<p>The problem with the format of the data in Table <a href="making-your-data-ready-for-analysis-1.html#tab:withinex">3.2</a> is that march, may, and july are levels of single variable, occasion, that is not represented in the data. Nowhere in the Table <a href="making-your-data-ready-for-analysis-1.html#tab:withinex">3.2</a> can you see the variable occasion. This single variable is presented over three columns - a very confusing situation. Moreover, due to the way the columns are labelled it’s not clear what is being measured. Nowhere in Table <a href="making-your-data-ready-for-analysis-1.html#tab:withinex">3.2</a> can you see the variable time. Thus with the format used in <a href="making-your-data-ready-for-analysis-1.html#tab:withinex">3.2</a> you don’t know what the predictor (occassion) is nor do you know the dependent varible (time). Thus, a major problem with entering data in this format is that there are hidden variables in the data and you need insider knowledge to know the columns represent. That said, this is not necessarily a terrible way to enter your data as long as you have all of this missing information documented in a data code book.</p>
+<table>
+<colgroup>
+<col width="55%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Disadvantages one row per participant</th>
+<th>Advantages one row per participant</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1) Predictor variable (<em>occassion</em>) is hidden and spread over multiple columns</td>
+<td>1) Easy to enter this way</td>
+</tr>
+<tr class="even">
+<td>2) Unclear that each month is a level of the predictor variable <em>occasion</em></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3) Dependent variable (<em>elapsedtime</em>) is not indicated</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4) Unclear that <em>elapsedtime</em> is the measurement in each month column</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Fortunately, the problems with Table <a href="making-your-data-ready-for-analysis-1.html#tab:withinex">3.2</a> can be largely resolved by converting the data to the a tidy data format. This can be done with the pivot_long() command that we will learn about later in the chapter. Thus, we can enter the data in the easy to enter format of Table <a href="making-your-data-ready-for-analysis-1.html#tab:withinex">3.2</a> but then later convert it to a tidy data format. After this conversion the data will be appear as in Table <a href="making-your-data-ready-for-analysis-1.html#tab:withintidyex">3.3</a>. For elapsedtime variable this data is now in the tidy data format. Each row corresponds to a single elapsedtime observed. Each column corresponds to a single variable. Somewhat problematically, however, sex if repeated three times for each person (i.e., over the three rows) - and this can be confusing. However, if the focus in on analyzing elapsed time this tidy data format makes sense.</p>
+<p>Why did we walk you through this technical treatment of structuring data within the computer at this point in time? So that you pay attention to the advice the follows. You can see at this point that you may well need to restructure your data for certain analyses. The ability to do so quickly and easily depends upon you following the advice in the rest of this chapter around the naming conventions for variables and other aspects of your analyses. You can imagine the challenges for converting the data in Figure <a href="making-your-data-ready-for-analysis-1.html#tab:withinex">3.2</a> to the data in Figure <a href="making-your-data-ready-for-analysis-1.html#tab:withintidyex">3.3</a> by hand. You want to be able to automate that process and others - which is made substantially easier if you following the forthcoming advice about naming conventions in the tidyverse.</p>
+</div>
+</div>
+<div id="data-collection-and-entry" class="section level2">
+<h2><span class="header-section-number">3.5</span> Data collection and entry</h2>
+<div id="question-with-numerical-answers" class="section level3">
+<h3><span class="header-section-number">3.5.1</span> Question with numerical answers</h3>
+</div>
+<div id="likert-type-items" class="section level3">
+<h3><span class="header-section-number">3.5.2</span> Likert-type items</h3>
+<p>relate back to select function in previous chapter</p>
+</div>
+<div id="multi-item-scales" class="section level3">
+<h3><span class="header-section-number">3.5.3</span> Multi-item scales</h3>
+</div>
+<div id="questions-with-categorical-answers" class="section level3">
+<h3><span class="header-section-number">3.5.4</span> Questions with categorical answers</h3>
+<p>Avoid categorical if not really categorical
+Avoid numerical representation of categorical variables</p>
+</div>
+<div id="levels-of-an-independent-varible" class="section level3">
+<h3><span class="header-section-number">3.5.5</span> Levels of an independent varible</h3>
+</div>
+<div id="levels-of-a-single-within-participant-variable" class="section level3">
+<h3><span class="header-section-number">3.5.6</span> Levels of a single within participant variable</h3>
+</div>
+<div id="levels-of-multiple-within-participant-variables" class="section level3">
+<h3><span class="header-section-number">3.5.7</span> Levels of multiple within participant variables</h3>
+<p>relate back to select function in previous chapter</p>
+<p>Do this one first when generating above advice</p>
+<p>Surveys - use meaningful names
+- use meaningful names for subsets</p>
+<p>-sample size analysis
+-unfeasible article by lakens</p>
+<ul>
+<li>data are collected in different ways</li>
+<li>data collected by programs in the lab that require</li>
+<li>lab measurements paper and entering later</li>
+<li>paper surveys and entering later</li>
+<li>website surveys</li>
+<li>a mix of all of the above</li>
+</ul>
+<p>each trial is a row - multiple rows per person…</p>
+<p>Distinguish between entering data and not. But also think about what’s not confusing…
+talk about wide not showing DV or IV just levels of IV</p>
+<p>if you’re writing a cognitive program or making a survey think about the variable names
+think about how the data is outputted.</p>
+<p>If you have entirely within person data then tidy is the obvious choice
+If you have entirely between then wide makes sense
+If you have a mix - it’s more difficult. Different research area. Think about the problems.</p>
+<p>For example, a good data code book is essential if you have wide with repeated measures variables because there is no way to tell what the IV or DV is by inspecting the data.</p>
+<p>TIDYVERSE NAMING CONVENTION ARE IMPORTANT BECAUSE IN SOME CASES THEY ARE REQUIRED for the SCRIPTS to work. If you haven’t following the naming conventions you may be making your life quite difficult.</p>
+<p>Think about
+- missing data
+- column names
+- representation of categorical variables in the data set</p>
+<ul>
+<li>computer/web collection</li>
+</ul>
+</div>
+</div>
+<div id="raw-data" class="section level2">
+<h2><span class="header-section-number">3.6</span> Raw data</h2>
+<p>We begin by examining the data as originally entered into a spreadsheet. In Figure <a href="making-your-data-ready-for-analysis-1.html#fig:rawdataitems">3.3</a> you see a screen shot of the initial raw data as a researcher might receive it. Take careful note of the numerous -999 values used to indicate missing values. As part of creating the analytic data that we will analyze we need to indicate to the computer that the -999 are not data but codes to represent missing values.</p>
+<div class="figure"><span id="fig:rawdataitems"></span>
+<img src="ch_score_items/images/screenshot_raw_data.png" alt="Raw data for item scoring" width="85%" />
+<p class="caption">
+FIGURE 3.3: Raw data for item scoring
+</p>
+</div>
+</div>
+<div id="loading-raw-data" class="section level2">
+<h2><span class="header-section-number">3.7</span> Loading raw data</h2>
+<p>I suggest you begin every R Studio task in the following way:</p>
+<p>R Studio in the Cloud
+1. Create a new Project using the web interface
+2. Upload your data files in using the upload button in the Files pane</p>
+<p>R Studio on Your Computer
+1. Create a folder on your computer for the analysis
+2. Place your data files in that folder
+3. Use the menu item File &gt; New Project… to start the project
+4. On the window that appears select “Existing Directory”
+5. On the next screen, press the “Browse” button and find/select the folder with your data
+6. Press the Create Project Button</p>
+<p>Regardless of whether your are working from the cloud or locally you should now have an R Studio project with your data files in it. Using Projects.</p>
+<p><strong>Class note: You don’t’ need to do either of these approach. You will just “Start” each assignment in the class workspace on R Studio Cloud".</strong></p>
+<p>Create an R Studio project for this activity
+Create a new script in your project and save it quite</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="making-your-data-ready-for-analysis-1.html#cb82-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb82-2"><a href="making-your-data-ready-for-analysis-1.html#cb82-2"></a><span class="kw">library</span>(janitor)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;janitor&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     chisq.test, fisher.test</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="making-your-data-ready-for-analysis-1.html#cb85-1"></a>my_missing_value_codes &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;-999&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>)</span>
+<span id="cb85-2"><a href="making-your-data-ready-for-analysis-1.html#cb85-2"></a></span>
+<span id="cb85-3"><a href="making-your-data-ready-for-analysis-1.html#cb85-3"></a>raw_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_item_scoring.csv&quot;</span>,</span>
+<span id="cb85-4"><a href="making-your-data-ready-for-analysis-1.html#cb85-4"></a>                     <span class="dt">na =</span> my_missing_value_codes)</span></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   id = col_double(),
+##   age = col_double(),
+##   sex = col_character(),
+##   SE1 = col_double(),
+##   SE2 = col_double(),
+##   SE3 = col_double(),
+##   SE4 = col_double(),
+##   SE5 = col_double(),
+##   SE6 = col_double(),
+##   SE7 = col_double(),
+##   SE8 = col_double(),
+##   SE9 = col_double(),
+##   SE10 = col_double()
+## )</code></pre>
+</div>
+<div id="initial-inspection" class="section level2">
+<h2><span class="header-section-number">3.8</span> Initial inspection</h2>
+<p>We use glimpse to do an initial inspection of the column names in this data set. All of the column name conform to <a href="https://style.tidyverse.org">tidyverse style guidelines</a> so we do not need to run the clean_name() function from the janitor package</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="making-your-data-ready-for-analysis-1.html#cb87-1"></a><span class="kw">glimpse</span>(raw_data)</span></code></pre></div>
+<pre><code>## Rows: 300
+## Columns: 13
+## $ id   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1…
+## $ age  &lt;dbl&gt; 23, 22, 18, 23, 22, 17, 23, 22, 17, 21, 20, …
+## $ sex  &lt;chr&gt; &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, …
+## $ SE1  &lt;dbl&gt; 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 4, NA, NA, …
+## $ SE2  &lt;dbl&gt; 2, 3, 3, 2, 2, 3, 2, 3, 3, 3, 2, 2, NA, 3, 2…
+## $ SE3  &lt;dbl&gt; 4, 4, 4, 3, 4, 4, NA, 4, 4, 3, 4, 4, 4, NA, …
+## $ SE4  &lt;dbl&gt; 3, 4, 4, 3, 4, 4, 4, 4, 3, 4, NA, 4, 3, 3, 4…
+## $ SE5  &lt;dbl&gt; 4, 4, 4, 4, 4, NA, NA, 4, 4, 4, 3, 4, 4, 3, …
+## $ SE6  &lt;dbl&gt; 3, 5, 4, 3, 3, 3, 3, 5, 3, 3, 3, 4, 4, 3, 3,…
+## $ SE7  &lt;dbl&gt; 1, 1, 1, NA, 1, 1, 2, 1, 2, 2, 3, 1, 3, 2, 1…
+## $ SE8  &lt;dbl&gt; 3, NA, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3…
+## $ SE9  &lt;dbl&gt; NA, 5, 5, 4, 4, 4, 4, 5, NA, 4, NA, 5, 4, 4,…
+## $ SE10 &lt;dbl&gt; 5, NA, 5, 4, 5, 4, 4, 5, 5, 5, 4, NA, 4, 5, …</code></pre>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="making-your-data-ready-for-analysis-1.html#cb89-1"></a><span class="kw">view</span>(raw_data)</span></code></pre></div>
+<p>See Figure <a href="making-your-data-ready-for-analysis-1.html#fig:narawdataitems">3.4</a></p>
+<div class="figure"><span id="fig:narawdataitems"></span>
+<img src="ch_score_items/images/screenshot_raw_data_na.png" alt="Missing values now NA" width="85%" />
+<p class="caption">
+FIGURE 3.4: Missing values now NA
+</p>
+</div>
+</div>
+<div id="handling-categorical-variables" class="section level2">
+<h2><span class="header-section-number">3.9</span> Handling categorical variables</h2>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="making-your-data-ready-for-analysis-1.html#cb90-1"></a><span class="co"># Turn all columns that are of type character into factors</span></span>
+<span id="cb90-2"><a href="making-your-data-ready-for-analysis-1.html#cb90-2"></a>raw_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span></span>
+<span id="cb90-3"><a href="making-your-data-ready-for-analysis-1.html#cb90-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.character),</span>
+<span id="cb90-4"><a href="making-your-data-ready-for-analysis-1.html#cb90-4"></a>                <span class="dt">.fns =</span> as.factor))</span></code></pre></div>
+<p>We can see there was only one column that changes, but if there had been many columns that were characters they all would have changed.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="making-your-data-ready-for-analysis-1.html#cb91-1"></a><span class="kw">glimpse</span>(raw_data)</span></code></pre></div>
+<pre><code>## Rows: 300
+## Columns: 13
+## $ id   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1…
+## $ age  &lt;dbl&gt; 23, 22, 18, 23, 22, 17, 23, 22, 17, 21, 20, …
+## $ sex  &lt;fct&gt; male, female, male, female, male, female, ma…
+## $ SE1  &lt;dbl&gt; 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 4, NA, NA, …
+## $ SE2  &lt;dbl&gt; 2, 3, 3, 2, 2, 3, 2, 3, 3, 3, 2, 2, NA, 3, 2…
+## $ SE3  &lt;dbl&gt; 4, 4, 4, 3, 4, 4, NA, 4, 4, 3, 4, 4, 4, NA, …
+## $ SE4  &lt;dbl&gt; 3, 4, 4, 3, 4, 4, 4, 4, 3, 4, NA, 4, 3, 3, 4…
+## $ SE5  &lt;dbl&gt; 4, 4, 4, 4, 4, NA, NA, 4, 4, 4, 3, 4, 4, 3, …
+## $ SE6  &lt;dbl&gt; 3, 5, 4, 3, 3, 3, 3, 5, 3, 3, 3, 4, 4, 3, 3,…
+## $ SE7  &lt;dbl&gt; 1, 1, 1, NA, 1, 1, 2, 1, 2, 2, 3, 1, 3, 2, 1…
+## $ SE8  &lt;dbl&gt; 3, NA, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3…
+## $ SE9  &lt;dbl&gt; NA, 5, 5, 4, 4, 4, 4, 5, NA, 4, NA, 5, 4, 4,…
+## $ SE10 &lt;dbl&gt; 5, NA, 5, 4, 5, 4, 4, 5, 5, 5, 4, NA, 4, 5, …</code></pre>
+<p>It’s often helpful to has id as a factor rather than a number so we add and extra command that changes this value:</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="making-your-data-ready-for-analysis-1.html#cb93-1"></a>raw_data &lt;-raw_data <span class="op">%&gt;%</span></span>
+<span id="cb93-2"><a href="making-your-data-ready-for-analysis-1.html#cb93-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="kw">as.factor</span>(id))</span></code></pre></div>
+<p>Now it looks like our data is ready for the creation of scale scores:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="making-your-data-ready-for-analysis-1.html#cb94-1"></a><span class="kw">glimpse</span>(raw_data)</span></code></pre></div>
+<pre><code>## Rows: 300
+## Columns: 13
+## $ id   &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1…
+## $ age  &lt;dbl&gt; 23, 22, 18, 23, 22, 17, 23, 22, 17, 21, 20, …
+## $ sex  &lt;fct&gt; male, female, male, female, male, female, ma…
+## $ SE1  &lt;dbl&gt; 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 4, NA, NA, …
+## $ SE2  &lt;dbl&gt; 2, 3, 3, 2, 2, 3, 2, 3, 3, 3, 2, 2, NA, 3, 2…
+## $ SE3  &lt;dbl&gt; 4, 4, 4, 3, 4, 4, NA, 4, 4, 3, 4, 4, 4, NA, …
+## $ SE4  &lt;dbl&gt; 3, 4, 4, 3, 4, 4, 4, 4, 3, 4, NA, 4, 3, 3, 4…
+## $ SE5  &lt;dbl&gt; 4, 4, 4, 4, 4, NA, NA, 4, 4, 4, 3, 4, 4, 3, …
+## $ SE6  &lt;dbl&gt; 3, 5, 4, 3, 3, 3, 3, 5, 3, 3, 3, 4, 4, 3, 3,…
+## $ SE7  &lt;dbl&gt; 1, 1, 1, NA, 1, 1, 2, 1, 2, 2, 3, 1, 3, 2, 1…
+## $ SE8  &lt;dbl&gt; 3, NA, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3…
+## $ SE9  &lt;dbl&gt; NA, 5, 5, 4, 4, 4, 4, 5, NA, 4, NA, 5, 4, 4,…
+## $ SE10 &lt;dbl&gt; 5, NA, 5, 4, 5, 4, 4, 5, 5, 5, 4, NA, 4, 5, …</code></pre>
+</div>
+<div id="seeing-your-data" class="section level2">
+<h2><span class="header-section-number">3.10</span> Seeing your data</h2>
+<p>See the first six rows of the data with the <em>head</em> command below. If you wanted to see all of the data you would use View(raw_data). The NA values in the output indicate missing values (NA = Not Available).</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="making-your-data-ready-for-analysis-1.html#cb96-1"></a><span class="kw">head</span>(raw_data)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 13
+##   id      age sex      SE1   SE2   SE3   SE4   SE5   SE6
+##   &lt;fct&gt; &lt;dbl&gt; &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 1        23 male       3     2     4     3     4     3
+## 2 2        22 female     4     3     4     4     4     5
+## 3 3        18 male       4     3     4     4     4     4
+## 4 4        23 female     3     2     3     3     4     3
+## 5 5        22 male       3     2     4     4     4     3
+## 6 6        17 female     3     3     4     4    NA     3
+## # … with 4 more variables: SE7 &lt;dbl&gt;, SE8 &lt;dbl&gt;, SE9 &lt;dbl&gt;,
+## #   SE10 &lt;dbl&gt;</code></pre>
+</div>
+<div id="dealing-with-reverse-key-items" class="section level2">
+<h2><span class="header-section-number">3.11</span> Dealing with reverse key items</h2>
+<p>Our first step is dealing with reverse key items. The way you deal with these items depends on how you scored them. Imagine you had a 5-point scale. You could have scored the scale with the values 1, 2, 3, 4, and 5. Alternatively, you could have scored the scale with the values 0, 1, 2, 3, and 4. In this example, we scored the data using the 1 to 5 system. So we’ll use that. Later I’ll show you how to deal with the other scoring system (0 to 4).</p>
+<div id="scoring-items-where-the-ratings-scale-starts-with-1" class="section level3">
+<h3><span class="header-section-number">3.11.1</span> Scoring items where the ratings scale starts with 1</h3>
+<p>We need to take items that were reversed-key when the participant wrote them and recode those responses. We do that with using the <em>mutate</em> command from the <em>dplyr</em> package.</p>
+<p>In this data file the only reverse-key item was SE7 (we known this from when we created the survey). We use the command below to reverse key an item with response options ranging from 1 to 5. So we use 6 in the command (i.e., one higher than 5).</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="making-your-data-ready-for-analysis-1.html#cb98-1"></a>raw_data &lt;-raw_data <span class="op">%&gt;%</span></span>
+<span id="cb98-2"><a href="making-your-data-ready-for-analysis-1.html#cb98-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">SE7c =</span> <span class="dv">6</span> <span class="op">-</span><span class="st"> </span>SE7)</span></code></pre></div>
+<p>The command above creates a new column in raw_data called SE7c that has the reverse-keyed values for SE7 in it. You can see the new SE7c column using command below that displays the first six rows of the data. The SE7c column is at the far right of the data displayed.</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="making-your-data-ready-for-analysis-1.html#cb99-1"></a><span class="kw">glimpse</span>(raw_data)</span></code></pre></div>
+<pre><code>## Rows: 300
+## Columns: 14
+## $ id   &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1…
+## $ age  &lt;dbl&gt; 23, 22, 18, 23, 22, 17, 23, 22, 17, 21, 20, …
+## $ sex  &lt;fct&gt; male, female, male, female, male, female, ma…
+## $ SE1  &lt;dbl&gt; 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 4, NA, NA, …
+## $ SE2  &lt;dbl&gt; 2, 3, 3, 2, 2, 3, 2, 3, 3, 3, 2, 2, NA, 3, 2…
+## $ SE3  &lt;dbl&gt; 4, 4, 4, 3, 4, 4, NA, 4, 4, 3, 4, 4, 4, NA, …
+## $ SE4  &lt;dbl&gt; 3, 4, 4, 3, 4, 4, 4, 4, 3, 4, NA, 4, 3, 3, 4…
+## $ SE5  &lt;dbl&gt; 4, 4, 4, 4, 4, NA, NA, 4, 4, 4, 3, 4, 4, 3, …
+## $ SE6  &lt;dbl&gt; 3, 5, 4, 3, 3, 3, 3, 5, 3, 3, 3, 4, 4, 3, 3,…
+## $ SE7  &lt;dbl&gt; 1, 1, 1, NA, 1, 1, 2, 1, 2, 2, 3, 1, 3, 2, 1…
+## $ SE8  &lt;dbl&gt; 3, NA, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3…
+## $ SE9  &lt;dbl&gt; NA, 5, 5, 4, 4, 4, 4, 5, NA, 4, NA, 5, 4, 4,…
+## $ SE10 &lt;dbl&gt; 5, NA, 5, 4, 5, 4, 4, 5, 5, 5, 4, NA, 4, 5, …
+## $ SE7c &lt;dbl&gt; 5, 5, 5, NA, 5, 5, 4, 5, 4, 4, 3, 5, 3, 4, 5…</code></pre>
+<p>We have reverse keyed one item. So now when we create our scale we will use item SE7c (the c stands for correctly coded) instead of the original item SE7. That is, we will use items SE1, SE2, SE3, SE4, SE5, SE6, <strong>SE7c</strong>, SE8, SE9, and SE10 to form the scale.</p>
+<p><strong>Note for a box</strong> multiple items what it looks like</p>
+<p><strong>Note FOR A BOX </strong>. If you had used response options numbered 0 to 4 for each item you would use the command below instead. Note that we use 4 in the command this time instead of a value one higher.</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="making-your-data-ready-for-analysis-1.html#cb101-1"></a>raw_data &lt;-<span class="st"> </span><span class="kw">mutate</span>(raw_data, <span class="dt">SE7c =</span> <span class="dv">4</span> <span class="op">-</span><span class="st"> </span>SE7) </span></code></pre></div>
+</div>
+</div>
+<div id="creating-the-scale-score" class="section level2">
+<h2><span class="header-section-number">3.12</span> Creating the scale score</h2>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="making-your-data-ready-for-analysis-1.html#cb102-1"></a>raw_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb102-2"><a href="making-your-data-ready-for-analysis-1.html#cb102-2"></a><span class="st">  </span><span class="kw">rowwise</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb102-3"><a href="making-your-data-ready-for-analysis-1.html#cb102-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">self_esteem =</span> <span class="kw">mean</span>(<span class="kw">c</span>(SE1, SE2, SE3, SE4, SE5, SE6, SE7c, SE8, SE9, SE10),</span>
+<span id="cb102-4"><a href="making-your-data-ready-for-analysis-1.html#cb102-4"></a>                            <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb102-5"><a href="making-your-data-ready-for-analysis-1.html#cb102-5"></a><span class="st">  </span><span class="kw">ungroup</span>()</span></code></pre></div>
+<p>When you see ungroup() in this context you can think of it as “turn off rowwise”.</p>
+<p>We can see our data now has the self esteem column:</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="making-your-data-ready-for-analysis-1.html#cb103-1"></a><span class="kw">glimpse</span>(raw_data)</span></code></pre></div>
+<pre><code>## Rows: 300
+## Columns: 15
+## $ id          &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12…
+## $ age         &lt;dbl&gt; 23, 22, 18, 23, 22, 17, 23, 22, 17, 2…
+## $ sex         &lt;fct&gt; male, female, male, female, male, fem…
+## $ SE1         &lt;dbl&gt; 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 4, N…
+## $ SE2         &lt;dbl&gt; 2, 3, 3, 2, 2, 3, 2, 3, 3, 3, 2, 2, N…
+## $ SE3         &lt;dbl&gt; 4, 4, 4, 3, 4, 4, NA, 4, 4, 3, 4, 4, …
+## $ SE4         &lt;dbl&gt; 3, 4, 4, 3, 4, 4, 4, 4, 3, 4, NA, 4, …
+## $ SE5         &lt;dbl&gt; 4, 4, 4, 4, 4, NA, NA, 4, 4, 4, 3, 4,…
+## $ SE6         &lt;dbl&gt; 3, 5, 4, 3, 3, 3, 3, 5, 3, 3, 3, 4, 4…
+## $ SE7         &lt;dbl&gt; 1, 1, 1, NA, 1, 1, 2, 1, 2, 2, 3, 1, …
+## $ SE8         &lt;dbl&gt; 3, NA, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, …
+## $ SE9         &lt;dbl&gt; NA, 5, 5, 4, 4, 4, 4, 5, NA, 4, NA, 5…
+## $ SE10        &lt;dbl&gt; 5, NA, 5, 4, 5, 4, 4, 5, 5, 5, 4, NA,…
+## $ SE7c        &lt;dbl&gt; 5, 5, 5, NA, 5, 5, 4, 5, 4, 4, 3, 5, …
+## $ self_esteem &lt;dbl&gt; 3.556, 4.250, 4.100, 3.222, 3.700, 3.…</code></pre>
+<p>(Alternative code: removing ITEM 7 and using beings with: show full example)
+Think about this when creating names for your column</p>
+</div>
+<div id="creatinig-analytic-data-from-raw-data" class="section level2">
+<h2><span class="header-section-number">3.13</span> Creatinig analytic data from raw data</h2>
+<p>Select only the columns you will use in your analysis:</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="making-your-data-ready-for-analysis-1.html#cb105-1"></a>analytic_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span></span>
+<span id="cb105-2"><a href="making-your-data-ready-for-analysis-1.html#cb105-2"></a><span class="st">  </span><span class="kw">select</span>(id, age, sex, self_esteem)</span></code></pre></div>
+<p>We can see our new data set has only these columns of interest:</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="making-your-data-ready-for-analysis-1.html#cb106-1"></a><span class="kw">glimpse</span>(analytic_data)</span></code></pre></div>
+<pre><code>## Rows: 300
+## Columns: 4
+## $ id          &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12…
+## $ age         &lt;dbl&gt; 23, 22, 18, 23, 22, 17, 23, 22, 17, 2…
+## $ sex         &lt;fct&gt; male, female, male, female, male, fem…
+## $ self_esteem &lt;dbl&gt; 3.556, 4.250, 4.100, 3.222, 3.700, 3.…</code></pre>
+</div>
+<div id="wait-i-need-alpha" class="section level2">
+<h2><span class="header-section-number">3.14</span> Wait: I need alpha!</h2>
+<p>We return to the raw_data file that has the original item data to obtain Cronbach’s alpha which is labeled “raw alpha” in the output.</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="making-your-data-ready-for-analysis-1.html#cb108-1"></a>self_esteem_item_analysis &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span></span>
+<span id="cb108-2"><a href="making-your-data-ready-for-analysis-1.html#cb108-2"></a><span class="st">  </span><span class="kw">select</span>(SE1, SE2, SE3, SE4, SE5, SE6, SE7c, SE8, SE9, SE10) <span class="op">%&gt;%</span></span>
+<span id="cb108-3"><a href="making-your-data-ready-for-analysis-1.html#cb108-3"></a><span class="st">  </span>psych<span class="op">::</span><span class="kw">alpha</span>()</span>
+<span id="cb108-4"><a href="making-your-data-ready-for-analysis-1.html#cb108-4"></a></span>
+<span id="cb108-5"><a href="making-your-data-ready-for-analysis-1.html#cb108-5"></a><span class="kw">print</span>(self_esteem_item_analysis<span class="op">$</span>total)</span></code></pre></div>
+<pre><code>##  raw_alpha std.alpha G6(smc) average_r   S/N    ase  mean
+##     0.8278    0.8333  0.8276    0.3333 4.999 0.0143 3.656
+##      sd median_r
+##  0.3392   0.3277</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="making-your-data-ready-for-analysis-1.html#cb110-1"></a><span class="co"># To see the full item analysis use:</span></span>
+<span id="cb110-2"><a href="making-your-data-ready-for-analysis-1.html#cb110-2"></a><span class="co"># print(self_esteem_item_analysis)</span></span></code></pre></div>
+</div>
+<div id="wait-i-need-item-correlations-and-descriptive-statistics" class="section level2">
+<h2><span class="header-section-number">3.15</span> Wait: I need item correlations and descriptive statistics</h2>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="making-your-data-ready-for-analysis-1.html#cb111-1"></a>SE_items &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb111-2"><a href="making-your-data-ready-for-analysis-1.html#cb111-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;SE&quot;</span>, <span class="dt">ignore.case =</span> <span class="ot">FALSE</span>))</span>
+<span id="cb111-3"><a href="making-your-data-ready-for-analysis-1.html#cb111-3"></a></span>
+<span id="cb111-4"><a href="making-your-data-ready-for-analysis-1.html#cb111-4"></a>psych<span class="op">::</span><span class="kw">describe</span>(SE_items)</span></code></pre></div>
+<pre><code>##      vars   n mean   sd median
+## SE1     1 276 3.39 0.54      3
+## SE2     2 272 2.35 0.48      2
+## SE3     3 269 3.96 0.37      4
+## SE4     4 285 3.54 0.50      4
+## SE5     5 265 3.78 0.47      4
+## SE6     6 275 3.34 0.51      3
+## SE7     7 273 1.51 0.61      1
+## SE8     8 272 2.84 0.37      3
+## SE9     9 265 4.29 0.70      4
+## SE10   10 276 4.57 0.61      5
+## SE7c   11 273 4.49 0.61      5</code></pre>
+<p>When you run the cor command you have to indicate how the it will handle missing the data. The options are below. You can learn more about what each one of these options means by typing: <strong>?cor</strong> into the Console, this will bring up the help page for the cor command.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Missing data options for cor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>everything</td>
+</tr>
+<tr class="even">
+<td>all.obs</td>
+</tr>
+<tr class="odd">
+<td>complete.obs</td>
+</tr>
+<tr class="even">
+<td>na.or.complete</td>
+</tr>
+<tr class="odd">
+<td>pairwise.complete.obs</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="making-your-data-ready-for-analysis-1.html#cb113-1"></a>SE_items <span class="op">%&gt;%</span></span>
+<span id="cb113-2"><a href="making-your-data-ready-for-analysis-1.html#cb113-2"></a><span class="st">  </span><span class="kw">cor</span>(<span class="dt">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb113-3"><a href="making-your-data-ready-for-analysis-1.html#cb113-3"></a><span class="st">  </span><span class="kw">round</span>(<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##        SE1   SE2   SE3   SE4   SE5   SE6   SE7   SE8   SE9
+## SE1   1.00  0.31  0.20  0.34  0.34  0.33 -0.32  0.28  0.38
+## SE2   0.31  1.00  0.24  0.22  0.31  0.32 -0.29  0.29  0.36
+## SE3   0.20  0.24  1.00  0.28  0.30  0.23 -0.43  0.38  0.35
+## SE4   0.34  0.22  0.28  1.00  0.29  0.34 -0.37  0.32  0.32
+## SE5   0.34  0.31  0.30  0.29  1.00  0.39 -0.41  0.41  0.43
+## SE6   0.33  0.32  0.23  0.34  0.39  1.00 -0.32  0.24  0.34
+## SE7  -0.32 -0.29 -0.43 -0.37 -0.41 -0.32  1.00 -0.44 -0.42
+## SE8   0.28  0.29  0.38  0.32  0.41  0.24 -0.44  1.00  0.51
+## SE9   0.38  0.36  0.35  0.32  0.43  0.34 -0.42  0.51  1.00
+## SE10  0.31  0.34  0.28  0.19  0.40  0.25 -0.39  0.35  0.36
+## SE7c  0.32  0.29  0.43  0.37  0.41  0.32 -1.00  0.44  0.42
+##       SE10  SE7c
+## SE1   0.31  0.32
+## SE2   0.34  0.29
+## SE3   0.28  0.43
+## SE4   0.19  0.37
+## SE5   0.40  0.41
+## SE6   0.25  0.32
+## SE7  -0.39 -1.00
+## SE8   0.35  0.44
+## SE9   0.36  0.42
+## SE10  1.00  0.39
+## SE7c  0.39  1.00</code></pre>
+</div>
+<div id="using-r-the-old-way-or-the-new-way-the-tidyverse-way" class="section level2">
+<h2><span class="header-section-number">3.16</span> Using R the old way or the new way (the tidyverse way)</h2>
+<p>Previously we noted that there is an older way of using R (base R) and the new way of using R (the tidyverse) that we will use. Sometimes students have problems with their code when they mix and match these approaches using a bit of both. We will be using the tidyverse approach to using R but on the internet you will often see sample code that uses the older base R approach. A bit of background knowledge is helpful for understanding why we do things one way (e.g., read_csv with the tidyverse) instead of another (e.g., read.csv with base R).</p>
+<div id="tibbles-vs-data-frames-why-use-read_csv-instead-of-read.csv" class="section level4">
+<h4><span class="header-section-number">3.16.0.1</span> Tibbles vs Data Frames: Why use read_csv instead of read.csv</h4>
+<p>When you load data into R it is typically represented in one of two formats inside the computer - depending on the command you used. The original format for representing a data set in R is the data frame. You will see this term used frequently when you read about R. When you load data using read.csv your data is loaded into a data frame in the computer. That is your data is represented in the memory of the computer in particular format and structure called a data frame.</p>
+</div>
+<div id="read.csv-puts-data-into-a-data-frame" class="section level4">
+<h4><span class="header-section-number">3.16.0.2</span> read.csv puts data into a data frame</h4>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="making-your-data-ready-for-analysis-1.html#cb115-1"></a>my_dataframe &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
+<p>Notice that when you print a data frame it does NOT show you the number of rows or columns above the data like our example did with the okcupid_profiles data. It also list ALL of your data rather than just the first few rows. As a result in the output below I show only the first 10 rows of the output - because all the rows are printed in your Console (too much to show here).</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="making-your-data-ready-for-analysis-1.html#cb116-1"></a><span class="kw">print</span>(my_dataframe)</span></code></pre></div>
+<pre><code>##    age              diet height                      pets
+## 1   22 strictly anything     75 likes dogs and likes cats
+## 2   35      mostly other     70 likes dogs and likes cats
+## 3   38          anything     68                  has cats
+## 4   23        vegetarian     71                likes cats
+## 5   29              &lt;NA&gt;     66 likes dogs and likes cats
+## 6   29   mostly anything     67                likes cats
+## 7   32 strictly anything     65 likes dogs and likes cats
+## 8   31   mostly anything     65 likes dogs and likes cats
+## 9   24 strictly anything     67 likes dogs and likes cats
+## 10  37   mostly anything     65 likes dogs and likes cats
+##    sex    status
+## 1    m    single
+## 2    m    single
+## 3    m available
+## 4    m    single
+## 5    m    single
+## 6    m    single
+## 7    f    single
+## 8    f    single
+## 9    f    single
+## 10   m    single</code></pre>
+</div>
+<div id="read_csv-puts-data-into-a-tibble" class="section level4">
+<h4><span class="header-section-number">3.16.0.3</span> read_csv puts data into a tibble</h4>
+<p>When you use the read_csv command the data you load is stored in the computer as a tibble. The tibble is modern version of the data frame. Notice that when you print a tibble it DOES show you the number of rows and columns. As well, the tibble only provides the first few rows of output so it doesn’t fill your screen.</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="making-your-data-ready-for-analysis-1.html#cb118-1"></a>my_tibble &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   age = col_double(),
+##   diet = col_character(),
+##   height = col_double(),
+##   pets = col_character(),
+##   sex = col_character(),
+##   status = col_character()
+## )</code></pre>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="making-your-data-ready-for-analysis-1.html#cb120-1"></a><span class="kw">print</span>(my_tibble)</span></code></pre></div>
+<pre><code>## # A tibble: 59,946 x 6
+##      age diet         height pets              sex   status 
+##    &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt;  
+##  1    22 strictly an…     75 likes dogs and l… m     single 
+##  2    35 mostly other     70 likes dogs and l… m     single 
+##  3    38 anything         68 has cats          m     availa…
+##  4    23 vegetarian       71 likes cats        m     single 
+##  5    29 &lt;NA&gt;             66 likes dogs and l… m     single 
+##  6    29 mostly anyt…     67 likes cats        m     single 
+##  7    32 strictly an…     65 likes dogs and l… f     single 
+##  8    31 mostly anyt…     65 likes dogs and l… f     single 
+##  9    24 strictly an…     67 likes dogs and l… f     single 
+## 10    37 mostly anyt…     65 likes dogs and l… m     single 
+## # … with 59,936 more rows</code></pre>
+</div>
+<div id="deeper-differences-between-data-frames-and-tibbles" class="section level4">
+<h4><span class="header-section-number">3.16.0.4</span> Deeper differences between data frames and tibbles</h4>
+<p>In short you should always use tibbles (i.e., use read_csv) - they are simply enhanced data frames (i.e., the new version of the data frame). The differences between data frames and tibbles run deeper than the superficial output provided here. On some rare occasions an old package or command may not work with a tibble so you need to make it a data frame. You can do so with the commands below:</p>
+</div>
+<div id="converting-a-tibble-into-a-data-frame" class="section level4">
+<h4><span class="header-section-number">3.16.0.5</span> Converting a tibble into a data frame</h4>
+<p>This command creates a new data set called new_data_frame (use any name you want) from the tibble data.</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="making-your-data-ready-for-analysis-1.html#cb122-1"></a>new_dataframe &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(my_tibble)</span></code></pre></div>
+
+
+</div>
+</div>
+</div>
+
+
+
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-baker2016">
+<p>Baker, M. 2016. “1500 Scientists Lift the Lid on Reproducibility.” <em>Nature</em> 533. <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.</p>
+</div>
+<div id="ref-miyakawa2020">
+<p>Miyakawa, T. 2020. “No Raw Data, No Science: Another Possible Source of the Reproducibility Crisis.” <em>Mol Brain</em> 13 (24). <a href="https://doi.org/10.1186/s13041-020-0552-2">https://doi.org/10.1186/s13041-020-0552-2</a>.</p>
+</div>
+<div id="ref-cos2015">
+<p>Nosek. 2015. “Estimating the Reproducibility of Psychological Science.” <em>Science</em> 349 (6251). <a href="http://doi.org/10.1126/science.aac4716">http://doi.org/10.1126/science.aac4716</a>.</p>
+</div>
+<div id="ref-patil2019">
+<p>Patil P., &amp; Leek J. T, Peng R. D. 2019. “A Visual Tool for Defining Reproducibility and Replicability.” <em>Nat Hum Behav</em> 3: 650–52. <a href="https://doi.org/10.1038/s41562-019-0629-z">https://doi.org/10.1038/s41562-019-0629-z</a>.</p>
+</div>
+<div id="ref-simmons2011">
+<p>Simmons, Joseph P, Leif D Nelson, and Uri Simonsohn. 2011. “False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant.” <em>Psychological Science</em> 22 (11): 1359–66.</p>
+</div>
+<div id="ref-tidy-data">
+<p>Wickham, Hadley. 2014. “Tidy Data.” <em>The Journal of Statistical Software</em> 59 (10). <a href="http://www.jstatsoft.org/v59/i10/">http://www.jstatsoft.org/v59/i10/</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="making-your-data-ready-for-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="more-to-say.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/03-enter_load.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+--- 
+title: "Welcome!"
+author: "David J. Stanley"
+date: "`r Sys.Date()`"
+documentclass: krantz
+bibliography:
+- book.bib
+- packages.bib
+biblio-style: apalike
+link-citations: yes
+colorlinks: yes
+lot: yes
+lof: yes
+site: bookdown::bookdown_site
+description: Course notes for PSYC 6060
+github-repo: dstanley4/psyc6060bookdown
+graphics: yes
+---
+
+```{r setup, include=FALSE}
+options(
+  htmltools.dir.version = FALSE, formatR.indent = 2, width = 55, digits = 4
+)
+
+# install the packages needed by this book; you fill out c(), e.g. c('ggplot2', 'dplyr')
+lapply(c('xfun'), function(pkg) {
+  if (system.file(package = pkg) == '') install.packages(pkg)
+})
+```
+
+
+# Course: {-}
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("header_4780.png")
+```
+
+These notes are a resource for students in my PSYC*4780 class. The notes are a subset of material that I am creating for a public domain statistics book to be released sometime in the distant future.

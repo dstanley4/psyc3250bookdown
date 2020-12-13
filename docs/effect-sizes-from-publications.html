@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Effect sizes from publications | Welcome!</title>
+  <meta name="description" content="Course notes for PSYC 6060" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Effect sizes from publications | Welcome!" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course notes for PSYC 6060" />
+  <meta name="github-repo" content="dstanley4/psyc6060bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Effect sizes from publications | Welcome!" />
+  
+  <meta name="twitter:description" content="Course notes for PSYC 6060" />
+  
+
+<meta name="author" content="David J. Stanley" />
+
+
+<meta name="date" content="2020-11-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sampling-precision.html"/>
+<link rel="next" href="nhst-and-sample-size.html"/>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block/empty-anchor.js"></script>
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="libs/plotly-binding/plotly.js"></script>
+<script src="libs/typedarray/typedarray.min.js"></script>
+<link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Course Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course:</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.3</b> Create an account at R Studio Cloud</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.4</b> Join the class workspace</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.12</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
+<li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
+<li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
+<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
+<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
+<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv() and data frames</a></li>
+<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv() and tibbles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="populations.html"><a href="populations.html"><i class="fa fa-check"></i><b>3</b> Populations</a><ul>
+<li class="chapter" data-level="3.1" data-path="populations.html"><a href="populations.html#notation"><i class="fa fa-check"></i><b>3.1</b> Notation</a></li>
+<li class="chapter" data-level="3.2" data-path="populations.html"><a href="populations.html#population-vs-samples"><i class="fa fa-check"></i><b>3.2</b> Population vs samples</a></li>
+<li class="chapter" data-level="3.3" data-path="populations.html"><a href="populations.html#a-small-population"><i class="fa fa-check"></i><b>3.3</b> A small population</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="populations.html"><a href="populations.html#mean-mu"><i class="fa fa-check"></i><b>3.3.1</b> Mean (<span class="math inline">\(\mu\)</span>)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="populations.html"><a href="populations.html#variance-sigma2"><i class="fa fa-check"></i><b>3.3.2</b> Variance (<span class="math inline">\(\sigma^2\)</span>)</a></li>
+<li class="chapter" data-level="3.3.3" data-path="populations.html"><a href="populations.html#standard-deviation-sigma"><i class="fa fa-check"></i><b>3.3.3</b> Standard Deviation (<span class="math inline">\(\sigma\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="populations.html"><a href="populations.html#visualizing-populations"><i class="fa fa-check"></i><b>3.4</b> Visualizing populations</a></li>
+<li class="chapter" data-level="3.5" data-path="populations.html"><a href="populations.html#comparisons-same-sigma"><i class="fa fa-check"></i><b>3.5</b> Comparisons: Same <span class="math inline">\(\sigma\)</span></a><ul>
+<li class="chapter" data-level="3.5.1" data-path="populations.html"><a href="populations.html#standardized-units"><i class="fa fa-check"></i><b>3.5.1</b> Standardized units</a></li>
+<li class="chapter" data-level="3.5.2" data-path="populations.html"><a href="populations.html#cohens-d-units"><i class="fa fa-check"></i><b>3.5.2</b> Cohen’s <span class="math inline">\(d\)</span> units</a></li>
+<li class="chapter" data-level="3.5.3" data-path="populations.html"><a href="populations.html#cohens-d-advantages"><i class="fa fa-check"></i><b>3.5.3</b> Cohen’s <span class="math inline">\(d\)</span> advantages</a></li>
+<li class="chapter" data-level="3.5.4" data-path="populations.html"><a href="populations.html#cohens-d-caveats"><i class="fa fa-check"></i><b>3.5.4</b> Cohen’s <span class="math inline">\(d\)</span> caveats</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="populations.html"><a href="populations.html#comparisons-different-sigma"><i class="fa fa-check"></i><b>3.6</b> Comparisons: Different <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="3.7" data-path="populations.html"><a href="populations.html#comparisons-repeated-measures"><i class="fa fa-check"></i><b>3.7</b> Comparisons: Repeated Measures</a></li>
+<li class="chapter" data-level="3.8" data-path="populations.html"><a href="populations.html#comparison-benchmarks"><i class="fa fa-check"></i><b>3.8</b> Comparison Benchmarks</a></li>
+<li class="chapter" data-level="3.9" data-path="populations.html"><a href="populations.html#population-relations"><i class="fa fa-check"></i><b>3.9</b> Population relations</a></li>
+<li class="chapter" data-level="3.10" data-path="populations.html"><a href="populations.html#relation-benchmarks"><i class="fa fa-check"></i><b>3.10</b> Relation benchmarks</a></li>
+<li class="chapter" data-level="3.11" data-path="populations.html"><a href="populations.html#key-points"><i class="fa fa-check"></i><b>3.11</b> Key points</a></li>
+<li class="chapter" data-level="3.12" data-path="populations.html"><a href="populations.html#minor-points"><i class="fa fa-check"></i><b>3.12</b> Minor Points</a></li>
+<li class="chapter" data-level="3.13" data-path="populations.html"><a href="populations.html#self-assessment"><i class="fa fa-check"></i><b>3.13</b> Self Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>4</b> Graphing</a><ul>
+<li class="chapter" data-level="4.1" data-path="graphing.html"><a href="graphing.html#required-1"><i class="fa fa-check"></i><b>4.1</b> Required</a></li>
+<li class="chapter" data-level="4.2" data-path="graphing.html"><a href="graphing.html#data"><i class="fa fa-check"></i><b>4.2</b> Data</a></li>
+<li class="chapter" data-level="4.3" data-path="graphing.html"><a href="graphing.html#graph-basics"><i class="fa fa-check"></i><b>4.3</b> Graph basics</a></li>
+<li class="chapter" data-level="4.4" data-path="graphing.html"><a href="graphing.html#graphing-efficiently"><i class="fa fa-check"></i><b>4.4</b> Graphing efficiently</a></li>
+<li class="chapter" data-level="4.5" data-path="graphing.html"><a href="graphing.html#aesthetics"><i class="fa fa-check"></i><b>4.5</b> Aesthetics</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="graphing.html"><a href="graphing.html#fill-color"><i class="fa fa-check"></i><b>4.5.1</b> Fill color</a></li>
+<li class="chapter" data-level="4.5.2" data-path="graphing.html"><a href="graphing.html#overriding-aes"><i class="fa fa-check"></i><b>4.5.2</b> Overriding aes()</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="graphing.html"><a href="graphing.html#apa-style"><i class="fa fa-check"></i><b>4.6</b> APA style</a></li>
+<li class="chapter" data-level="4.7" data-path="graphing.html"><a href="graphing.html#axes"><i class="fa fa-check"></i><b>4.7</b> Axes</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="graphing.html"><a href="graphing.html#range"><i class="fa fa-check"></i><b>4.7.1</b> Range</a></li>
+<li class="chapter" data-level="4.7.2" data-path="graphing.html"><a href="graphing.html#ticks"><i class="fa fa-check"></i><b>4.7.2</b> Ticks</a></li>
+<li class="chapter" data-level="4.7.3" data-path="graphing.html"><a href="graphing.html#labels"><i class="fa fa-check"></i><b>4.7.3</b> Labels</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="graphing.html"><a href="graphing.html#axis-values"><i class="fa fa-check"></i><b>4.8</b> Axis values</a><ul>
+<li class="chapter" data-level="4.8.1" data-path="graphing.html"><a href="graphing.html#text"><i class="fa fa-check"></i><b>4.8.1</b> Text</a></li>
+<li class="chapter" data-level="4.8.2" data-path="graphing.html"><a href="graphing.html#angle"><i class="fa fa-check"></i><b>4.8.2</b> Angle</a></li>
+<li class="chapter" data-level="4.8.3" data-path="graphing.html"><a href="graphing.html#alignment"><i class="fa fa-check"></i><b>4.8.3</b> Alignment</a></li>
+<li class="chapter" data-level="4.8.4" data-path="graphing.html"><a href="graphing.html#order"><i class="fa fa-check"></i><b>4.8.4</b> Order</a></li>
+<li class="chapter" data-level="4.8.5" data-path="graphing.html"><a href="graphing.html#legend-order"><i class="fa fa-check"></i><b>4.8.5</b> Legend order</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="graphing.html"><a href="graphing.html#custom-colours"><i class="fa fa-check"></i><b>4.9</b> Custom colours</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="graphing.html"><a href="graphing.html#r-palette"><i class="fa fa-check"></i><b>4.9.1</b> R palette</a></li>
+<li class="chapter" data-level="4.9.2" data-path="graphing.html"><a href="graphing.html#hex-colours"><i class="fa fa-check"></i><b>4.9.2</b> Hex colours</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="graphing.html"><a href="graphing.html#emoji"><i class="fa fa-check"></i><b>4.10</b> Emoji</a></li>
+<li class="chapter" data-level="4.11" data-path="graphing.html"><a href="graphing.html#accessible-colors"><i class="fa fa-check"></i><b>4.11</b> Accessible Colors</a><ul>
+<li class="chapter" data-level="4.11.1" data-path="graphing.html"><a href="graphing.html#rcolorbrewer"><i class="fa fa-check"></i><b>4.11.1</b> RColorBrewer</a></li>
+<li class="chapter" data-level="4.11.2" data-path="graphing.html"><a href="graphing.html#avoid-color"><i class="fa fa-check"></i><b>4.11.2</b> Avoid color</a></li>
+</ul></li>
+<li class="chapter" data-level="4.12" data-path="graphing.html"><a href="graphing.html#saving"><i class="fa fa-check"></i><b>4.12</b> Saving</a><ul>
+<li class="chapter" data-level="4.12.1" data-path="graphing.html"><a href="graphing.html#mac"><i class="fa fa-check"></i><b>4.12.1</b> MAC</a></li>
+<li class="chapter" data-level="4.12.2" data-path="graphing.html"><a href="graphing.html#pc-or-mac"><i class="fa fa-check"></i><b>4.12.2</b> PC or MAC</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html"><i class="fa fa-check"></i><b>5</b> Sampling Accuracy</a><ul>
+<li class="chapter" data-level="5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
+<li class="chapter" data-level="5.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#data-for-the-chapter"><i class="fa fa-check"></i><b>5.2</b> Data for the chapter</a></li>
+<li class="chapter" data-level="5.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#notation-1"><i class="fa fa-check"></i><b>5.3</b> Notation</a></li>
+<li class="chapter" data-level="5.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-mu"><i class="fa fa-check"></i><b>5.4</b> Estimating <span class="math inline">\(\mu\)</span></a><ul>
+<li class="chapter" data-level="5.4.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias"><i class="fa fa-check"></i><b>5.4.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma2"><i class="fa fa-check"></i><b>5.5</b> Estimating <span class="math inline">\(\sigma^2\)</span></a><ul>
+<li class="chapter" data-level="5.5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-1"><i class="fa fa-check"></i><b>5.5.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma"><i class="fa fa-check"></i><b>5.6</b> Estimating <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-delta"><i class="fa fa-check"></i><b>5.7</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
+<li class="chapter" data-level="5.7.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#pooled-standard-deviation"><i class="fa fa-check"></i><b>5.7.1</b> Pooled standard deviation</a></li>
+<li class="chapter" data-level="5.7.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#calculating-d"><i class="fa fa-check"></i><b>5.7.2</b> Calculating <span class="math inline">\(d\)</span></a></li>
+<li class="chapter" data-level="5.7.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-2"><i class="fa fa-check"></i><b>5.7.3</b> Assessing bias</a></li>
+<li class="chapter" data-level="5.7.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#illustrating-variability"><i class="fa fa-check"></i><b>5.7.4</b> Illustrating variability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-rho"><i class="fa fa-check"></i><b>5.8</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
+<li class="chapter" data-level="5.8.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-3"><i class="fa fa-check"></i><b>5.8.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview-1"><i class="fa fa-check"></i><b>5.9</b> Overview</a></li>
+<li class="chapter" data-level="5.10" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#meta-analysis"><i class="fa fa-check"></i><b>5.10</b> Meta-analysis</a></li>
+<li class="chapter" data-level="5.11" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#a-joke"><i class="fa fa-check"></i><b>5.11</b> A joke</a></li>
+<li class="chapter" data-level="5.12" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#key-points-1"><i class="fa fa-check"></i><b>5.12</b> Key Points</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sampling-precision.html"><a href="sampling-precision.html"><i class="fa fa-check"></i><b>6</b> Sampling Precision</a><ul>
+<li class="chapter" data-level="6.1" data-path="sampling-precision.html"><a href="sampling-precision.html#overview-2"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
+<li class="chapter" data-level="6.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-individuals"><i class="fa fa-check"></i><b>6.2</b> Population / Individuals</a></li>
+<li class="chapter" data-level="6.3" data-path="sampling-precision.html"><a href="sampling-precision.html#sampling-distribution"><i class="fa fa-check"></i><b>6.3</b> Sampling distribution</a></li>
+<li class="chapter" data-level="6.4" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-indices"><i class="fa fa-check"></i><b>6.4</b> Precision indices</a></li>
+<li class="chapter" data-level="6.5" data-path="sampling-precision.html"><a href="sampling-precision.html#a-short-cut"><i class="fa fa-check"></i><b>6.5</b> A short cut</a></li>
+<li class="chapter" data-level="6.6" data-path="sampling-precision.html"><a href="sampling-precision.html#estimates-of-precision"><i class="fa fa-check"></i><b>6.6</b> Estimates of precision</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="sampling-precision.html"><a href="sampling-precision.html#a-worked-example"><i class="fa fa-check"></i><b>6.6.1</b> A worked example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="sampling-precision.html"><a href="sampling-precision.html#bias-of-precision-estimates"><i class="fa fa-check"></i><b>6.7</b> Bias of precision estimates</a></li>
+<li class="chapter" data-level="6.8" data-path="sampling-precision.html"><a href="sampling-precision.html#where-are-we"><i class="fa fa-check"></i><b>6.8</b> Where are we?</a></li>
+<li class="chapter" data-level="6.9" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-means-causes"><i class="fa fa-check"></i><b>6.9</b> Precision for means: Causes</a></li>
+<li class="chapter" data-level="6.10" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-d-values-causes"><i class="fa fa-check"></i><b>6.10</b> Precision for <span class="math inline">\(d\)</span>-values: Causes</a><ul>
+<li class="chapter" data-level="6.10.1" data-path="sampling-precision.html"><a href="sampling-precision.html#sample-size"><i class="fa fa-check"></i><b>6.10.1</b> Sample size</a></li>
+<li class="chapter" data-level="6.10.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-effect-size-delta"><i class="fa fa-check"></i><b>6.10.2</b> Population effect size (<span class="math inline">\(\delta\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-sample-correlations-r-causes"><i class="fa fa-check"></i><b>6.11</b> Precision for sample correlations (<span class="math inline">\(r\)</span>): Causes</a><ul>
+<li class="chapter" data-level="6.11.1" data-path="sampling-precision.html"><a href="sampling-precision.html#sample-size-1"><i class="fa fa-check"></i><b>6.11.1</b> Sample size</a></li>
+<li class="chapter" data-level="6.11.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-effect-size-rho"><i class="fa fa-check"></i><b>6.11.2</b> Population effect size (<span class="math inline">\(\rho\)</span>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html"><i class="fa fa-check"></i><b>7</b> Effect sizes from publications</a><ul>
+<li class="chapter" data-level="7.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#required-2"><i class="fa fa-check"></i><b>7.1</b> Required</a></li>
+<li class="chapter" data-level="7.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#objective-1"><i class="fa fa-check"></i><b>7.2</b> Objective</a></li>
+<li class="chapter" data-level="7.3" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#estimating-delta-1"><i class="fa fa-check"></i><b>7.3</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
+<li class="chapter" data-level="7.3.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#independent-groups"><i class="fa fa-check"></i><b>7.3.1</b> Independent Groups</a></li>
+<li class="chapter" data-level="7.3.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#repeated-measures"><i class="fa fa-check"></i><b>7.3.2</b> Repeated Measures</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#estimating-rho-1"><i class="fa fa-check"></i><b>7.4</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
+<li class="chapter" data-level="7.4.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#a-single-correlation"><i class="fa fa-check"></i><b>7.4.1</b> A single correlation</a></li>
+<li class="chapter" data-level="7.4.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#difference-between-two-correlations"><i class="fa fa-check"></i><b>7.4.2</b> Difference between two correlations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html"><i class="fa fa-check"></i><b>8</b> NHST and sample size</a><ul>
+<li class="chapter" data-level="8.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#required-3"><i class="fa fa-check"></i><b>8.1</b> Required</a></li>
+<li class="chapter" data-level="8.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#overview-3"><i class="fa fa-check"></i><b>8.2</b> Overview</a></li>
+<li class="chapter" data-level="8.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#goals"><i class="fa fa-check"></i><b>8.3</b> Goals</a></li>
+<li class="chapter" data-level="8.4" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#independent-groups-t-test"><i class="fa fa-check"></i><b>8.4</b> Independent groups <span class="math inline">\(t\)</span>-test</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size"><i class="fa fa-check"></i><b>8.4.1</b> Population effect size</a></li>
+<li class="chapter" data-level="8.4.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size"><i class="fa fa-check"></i><b>8.4.2</b> Determining sample size</a></li>
+<li class="chapter" data-level="8.4.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant"><i class="fa fa-check"></i><b>8.4.3</b> What will be signficant?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#repeated-measures-t-test"><i class="fa fa-check"></i><b>8.5</b> Repeated measures <span class="math inline">\(t\)</span>-test</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size-1"><i class="fa fa-check"></i><b>8.5.1</b> Population effect size</a></li>
+<li class="chapter" data-level="8.5.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size-1"><i class="fa fa-check"></i><b>8.5.2</b> Determining sample size</a></li>
+<li class="chapter" data-level="8.5.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant-1"><i class="fa fa-check"></i><b>8.5.3</b> What will be signficant?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#correlations"><i class="fa fa-check"></i><b>8.6</b> Correlations</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size-2"><i class="fa fa-check"></i><b>8.6.1</b> Population effect size</a></li>
+<li class="chapter" data-level="8.6.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size-2"><i class="fa fa-check"></i><b>8.6.2</b> Determining sample size</a></li>
+<li class="chapter" data-level="8.6.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant-2"><i class="fa fa-check"></i><b>8.6.3</b> What will be signficant?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html"><i class="fa fa-check"></i><b>9</b> Equivalence tests and sample size</a><ul>
+<li class="chapter" data-level="9.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#required-4"><i class="fa fa-check"></i><b>9.1</b> Required</a></li>
+<li class="chapter" data-level="9.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#interpreting-non-significant-findings"><i class="fa fa-check"></i><b>9.2</b> Interpreting non-significant findings</a></li>
+<li class="chapter" data-level="9.3" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#when-would-i-use-an-equivalence-test"><i class="fa fa-check"></i><b>9.3</b> When would I use an equivalence test?</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#t-test"><i class="fa fa-check"></i><b>9.3.1</b> <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="9.3.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#correlation"><i class="fa fa-check"></i><b>9.3.2</b> Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#possible-outcomes"><i class="fa fa-check"></i><b>9.4</b> Possible Outcomes</a></li>
+<li class="chapter" data-level="9.5" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#what-is-an-equivalence-test"><i class="fa fa-check"></i><b>9.5</b> What is an equivalence test</a></li>
+<li class="chapter" data-level="9.6" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#defining-a-zero-effect"><i class="fa fa-check"></i><b>9.6</b> Defining a zero effect</a></li>
+<li class="chapter" data-level="9.7" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence---repeated-measures"><i class="fa fa-check"></i><b>9.7</b> Equivalence - repeated measures</a><ul>
+<li class="chapter" data-level="9.7.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#raw-units"><i class="fa fa-check"></i><b>9.7.1</b> Raw units</a></li>
+<li class="chapter" data-level="9.7.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#standardized-units-1"><i class="fa fa-check"></i><b>9.7.2</b> Standardized units</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence---independent-groups"><i class="fa fa-check"></i><b>9.8</b> Equivalence - Independent groups</a><ul>
+<li class="chapter" data-level="9.8.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#raw-units-1"><i class="fa fa-check"></i><b>9.8.1</b> Raw units</a></li>
+<li class="chapter" data-level="9.8.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#standardized-units-2"><i class="fa fa-check"></i><b>9.8.2</b> Standardized units</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence-correlation"><i class="fa fa-check"></i><b>9.9</b> Equivalence Correlation</a></li>
+<li class="chapter" data-level="9.10" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#sample-sizes-for-equivalence-testing"><i class="fa fa-check"></i><b>9.10</b> Sample sizes for equivalence testing</a><ul>
+<li class="chapter" data-level="9.10.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#independent-t-test"><i class="fa fa-check"></i><b>9.10.1</b> Independent <em>t</em>-test</a></li>
+<li class="chapter" data-level="9.10.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#repeated-t-test"><i class="fa fa-check"></i><b>9.10.2</b> Repeated <em>t</em>-test</a></li>
+<li class="chapter" data-level="9.10.3" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#correlation-1"><i class="fa fa-check"></i><b>9.10.3</b> Correlation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html"><i class="fa fa-check"></i><b>10</b> Precision and sample size</a><ul>
+<li class="chapter" data-level="10.1" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#required-5"><i class="fa fa-check"></i><b>10.1</b> Required</a></li>
+<li class="chapter" data-level="10.2" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#overview-4"><i class="fa fa-check"></i><b>10.2</b> Overview</a></li>
+<li class="chapter" data-level="10.3" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision"><i class="fa fa-check"></i><b>10.3</b> Precision</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-independent-t-test"><i class="fa fa-check"></i><b>10.3.1</b> Precision Independent <em>t</em>-test</a></li>
+<li class="chapter" data-level="10.3.2" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-repeated-t-test"><i class="fa fa-check"></i><b>10.3.2</b> Precision Repeated <em>t</em>-test</a></li>
+<li class="chapter" data-level="10.3.3" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-correlation"><i class="fa fa-check"></i><b>10.3.3</b> Precision Correlation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="starting-your-research.html"><a href="starting-your-research.html"><i class="fa fa-check"></i><b>11</b> Starting your research</a><ul>
+<li class="chapter" data-level="11.1" data-path="starting-your-research.html"><a href="starting-your-research.html#required-packages"><i class="fa fa-check"></i><b>11.1</b> Required Packages</a></li>
+<li class="chapter" data-level="11.2" data-path="starting-your-research.html"><a href="starting-your-research.html#objective-2"><i class="fa fa-check"></i><b>11.2</b> Objective</a></li>
+<li class="chapter" data-level="11.3" data-path="starting-your-research.html"><a href="starting-your-research.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>11.3</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="starting-your-research.html"><a href="starting-your-research.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>11.3.1</b> Structuring data: Obtaining tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="starting-your-research.html"><a href="starting-your-research.html#data-collection-considerations"><i class="fa fa-check"></i><b>11.4</b> Data collection considerations</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="starting-your-research.html"><a href="starting-your-research.html#naming-conventions"><i class="fa fa-check"></i><b>11.4.1</b> Naming conventions</a></li>
+<li class="chapter" data-level="11.4.2" data-path="starting-your-research.html"><a href="starting-your-research.html#likert-type-items"><i class="fa fa-check"></i><b>11.4.2</b> Likert-type items</a></li>
+<li class="chapter" data-level="11.4.3" data-path="starting-your-research.html"><a href="starting-your-research.html#anova-between"><i class="fa fa-check"></i><b>11.4.3</b> ANOVA between</a></li>
+<li class="chapter" data-level="11.4.4" data-path="starting-your-research.html"><a href="starting-your-research.html#anova-within"><i class="fa fa-check"></i><b>11.4.4</b> ANOVA within</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="starting-your-research.html"><a href="starting-your-research.html#following-the-examples"><i class="fa fa-check"></i><b>11.5</b> Following the examples</a></li>
+<li class="chapter" data-level="11.6" data-path="starting-your-research.html"><a href="starting-your-research.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>11.6</b> Entering data into spreadsheets</a></li>
+<li class="chapter" data-level="11.7" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-between"><i class="fa fa-check"></i><b>11.7</b> Experiment: Between</a><ul>
+<li class="chapter" data-level="11.7.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors"><i class="fa fa-check"></i><b>11.7.1</b> Creating factors</a></li>
+<li class="chapter" data-level="11.7.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening"><i class="fa fa-check"></i><b>11.7.2</b> Factor screening</a></li>
+<li class="chapter" data-level="11.7.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening"><i class="fa fa-check"></i><b>11.7.3</b> Numeric screening</a></li>
+</ul></li>
+<li class="chapter" data-level="11.8" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-within-one-way"><i class="fa fa-check"></i><b>11.8</b> Experiment: Within one-way</a><ul>
+<li class="chapter" data-level="11.8.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-1"><i class="fa fa-check"></i><b>11.8.1</b> Creating factors</a></li>
+<li class="chapter" data-level="11.8.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-1"><i class="fa fa-check"></i><b>11.8.2</b> Factor screening</a></li>
+<li class="chapter" data-level="11.8.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-1"><i class="fa fa-check"></i><b>11.8.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="11.8.4" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data"><i class="fa fa-check"></i><b>11.8.4</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.9" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-within-n-way"><i class="fa fa-check"></i><b>11.9</b> Experiment: Within N-way</a><ul>
+<li class="chapter" data-level="11.9.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-2"><i class="fa fa-check"></i><b>11.9.1</b> Creating factors</a></li>
+<li class="chapter" data-level="11.9.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-2"><i class="fa fa-check"></i><b>11.9.2</b> Factor screening</a></li>
+<li class="chapter" data-level="11.9.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-2"><i class="fa fa-check"></i><b>11.9.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="11.9.4" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data-1"><i class="fa fa-check"></i><b>11.9.4</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.10" data-path="starting-your-research.html"><a href="starting-your-research.html#surveys-single-occassion"><i class="fa fa-check"></i><b>11.10</b> Surveys: Single Occassion</a><ul>
+<li class="chapter" data-level="11.10.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-3"><i class="fa fa-check"></i><b>11.10.1</b> Creating factors</a></li>
+<li class="chapter" data-level="11.10.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-3"><i class="fa fa-check"></i><b>11.10.2</b> Factor screening</a></li>
+<li class="chapter" data-level="11.10.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-3"><i class="fa fa-check"></i><b>11.10.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="11.10.4" data-path="starting-your-research.html"><a href="starting-your-research.html#scale-scores"><i class="fa fa-check"></i><b>11.10.4</b> Scale scores</a></li>
+</ul></li>
+<li class="chapter" data-level="11.11" data-path="starting-your-research.html"><a href="starting-your-research.html#surveys-multiple-occasions"><i class="fa fa-check"></i><b>11.11</b> Surveys: Multiple Occasions</a><ul>
+<li class="chapter" data-level="11.11.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-4"><i class="fa fa-check"></i><b>11.11.1</b> Creating factors</a></li>
+<li class="chapter" data-level="11.11.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-4"><i class="fa fa-check"></i><b>11.11.2</b> Factor screening</a></li>
+<li class="chapter" data-level="11.11.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-4"><i class="fa fa-check"></i><b>11.11.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="11.11.4" data-path="starting-your-research.html"><a href="starting-your-research.html#scale-scores-1"><i class="fa fa-check"></i><b>11.11.4</b> Scale scores</a></li>
+<li class="chapter" data-level="11.11.5" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data-2"><i class="fa fa-check"></i><b>11.11.5</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.12" data-path="starting-your-research.html"><a href="starting-your-research.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>11.12</b> Basic descriptive statistics</a><ul>
+<li class="chapter" data-level="11.12.1" data-path="starting-your-research.html"><a href="starting-your-research.html#skim"><i class="fa fa-check"></i><b>11.12.1</b> skim()</a></li>
+<li class="chapter" data-level="11.12.2" data-path="starting-your-research.html"><a href="starting-your-research.html#apa.cor.table"><i class="fa fa-check"></i><b>11.12.2</b> apa.cor.table()</a></li>
+<li class="chapter" data-level="11.12.3" data-path="starting-your-research.html"><a href="starting-your-research.html#tidyverse"><i class="fa fa-check"></i><b>11.12.3</b> tidyverse</a></li>
+<li class="chapter" data-level="11.12.4" data-path="starting-your-research.html"><a href="starting-your-research.html#cronbachs-alpha"><i class="fa fa-check"></i><b>11.12.4</b> Cronbach’s alpha</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html"><i class="fa fa-check"></i><b>12</b> Positive Predictive Value</a><ul>
+<li class="chapter" data-level="12.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#required-6"><i class="fa fa-check"></i><b>12.1</b> Required</a></li>
+<li class="chapter" data-level="12.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#overview-5"><i class="fa fa-check"></i><b>12.2</b> Overview</a></li>
+<li class="chapter" data-level="12.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#informal-explanation"><i class="fa fa-check"></i><b>12.3</b> Informal explanation</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#probability-of-an-effect"><i class="fa fa-check"></i><b>12.3.1</b> Probability of an effect</a></li>
+<li class="chapter" data-level="12.3.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#type-i-error"><i class="fa fa-check"></i><b>12.3.2</b> Type I Error</a></li>
+<li class="chapter" data-level="12.3.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power"><i class="fa fa-check"></i><b>12.3.3</b> Power</a></li>
+<li class="chapter" data-level="12.3.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-ppv"><i class="fa fa-check"></i><b>12.3.4</b> Calculating PPV</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#formal-explanation"><i class="fa fa-check"></i><b>12.4</b> Formal explanation</a><ul>
+<li class="chapter" data-level="12.4.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#no-effect"><i class="fa fa-check"></i><b>12.4.1</b> No effect</a></li>
+<li class="chapter" data-level="12.4.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#effect"><i class="fa fa-check"></i><b>12.4.2</b> Effect</a></li>
+<li class="chapter" data-level="12.4.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculation"><i class="fa fa-check"></i><b>12.4.3</b> Calculation</a></li>
+<li class="chapter" data-level="12.4.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#alternative-calculation"><i class="fa fa-check"></i><b>12.4.4</b> Alternative calculation</a></li>
+<li class="chapter" data-level="12.4.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#touchstone"><i class="fa fa-check"></i><b>12.4.5</b> Touchstone</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-power-for-your-study"><i class="fa fa-check"></i><b>12.5</b> Calculating power for your study</a><ul>
+<li class="chapter" data-level="12.5.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-independent-groups-t-test"><i class="fa fa-check"></i><b>12.5.1</b> Power independent groups <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="12.5.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-repeated-measures-t-test"><i class="fa fa-check"></i><b>12.5.2</b> Power repeated measures <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="12.5.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-correlations"><i class="fa fa-check"></i><b>12.5.3</b> Power correlations</a></li>
+<li class="chapter" data-level="12.5.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-independent-t-test"><i class="fa fa-check"></i><b>12.5.4</b> Equivalence independent <em>t</em>-test</a></li>
+<li class="chapter" data-level="12.5.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-repeated-t-test"><i class="fa fa-check"></i><b>12.5.5</b> Equivalence repeated <em>t</em>-test</a></li>
+<li class="chapter" data-level="12.5.6" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-correlation-1"><i class="fa fa-check"></i><b>12.5.6</b> Equivalence correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-ppv-for-your-study"><i class="fa fa-check"></i><b>12.6</b> Calculating PPV for your study</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html"><i class="fa fa-check"></i><b>13</b> Open Science Preregistration</a><ul>
+<li class="chapter" data-level="13.1" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#overview-6"><i class="fa fa-check"></i><b>13.1</b> Overview</a></li>
+<li class="chapter" data-level="13.2" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#daniel-simmons-interview"><i class="fa fa-check"></i><b>13.2</b> Daniel Simmons Interview</a></li>
+<li class="chapter" data-level="13.3" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#preregistration-impact"><i class="fa fa-check"></i><b>13.3</b> Preregistration Impact</a></li>
+<li class="chapter" data-level="13.4" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#preregistration-details"><i class="fa fa-check"></i><b>13.4</b> Preregistration Details</a></li>
+<li class="chapter" data-level="13.5" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#learn-more"><i class="fa fa-check"></i><b>13.5</b> Learn more</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="research-tools.html"><a href="research-tools.html"><i class="fa fa-check"></i><b>14</b> Research Tools</a><ul>
+<li class="chapter" data-level="14.1" data-path="research-tools.html"><a href="research-tools.html#statcheck"><i class="fa fa-check"></i><b>14.1</b> statcheck</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="research-tools.html"><a href="research-tools.html#statcheck-software"><i class="fa fa-check"></i><b>14.1.1</b> statcheck software</a></li>
+<li class="chapter" data-level="14.1.2" data-path="research-tools.html"><a href="research-tools.html#statcheck-website"><i class="fa fa-check"></i><b>14.1.2</b> statcheck website</a></li>
+<li class="chapter" data-level="14.1.3" data-path="research-tools.html"><a href="research-tools.html#statcheck-and-word"><i class="fa fa-check"></i><b>14.1.3</b> statcheck and Word</a></li>
+<li class="chapter" data-level="14.1.4" data-path="research-tools.html"><a href="research-tools.html#statcheck-process"><i class="fa fa-check"></i><b>14.1.4</b> statcheck process</a></li>
+<li class="chapter" data-level="14.1.5" data-path="research-tools.html"><a href="research-tools.html#statcheck-validity"><i class="fa fa-check"></i><b>14.1.5</b> statcheck validity</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="research-tools.html"><a href="research-tools.html#rmarkdown-bookdown"><i class="fa fa-check"></i><b>14.2</b> rmarkdown / bookdown</a></li>
+<li class="chapter" data-level="14.3" data-path="research-tools.html"><a href="research-tools.html#papaja"><i class="fa fa-check"></i><b>14.3</b> papaja</a></li>
+<li class="chapter" data-level="14.4" data-path="research-tools.html"><a href="research-tools.html#apatables"><i class="fa fa-check"></i><b>14.4</b> apaTables</a></li>
+<li class="chapter" data-level="14.5" data-path="research-tools.html"><a href="research-tools.html#retracted-articles"><i class="fa fa-check"></i><b>14.5</b> Retracted articles</a><ul>
+<li class="chapter" data-level="14.5.1" data-path="research-tools.html"><a href="research-tools.html#doi"><i class="fa fa-check"></i><b>14.5.1</b> DOI</a></li>
+<li class="chapter" data-level="14.5.2" data-path="research-tools.html"><a href="research-tools.html#retractiondatabase.org"><i class="fa fa-check"></i><b>14.5.2</b> retractiondatabase.org</a></li>
+<li class="chapter" data-level="14.5.3" data-path="research-tools.html"><a href="research-tools.html#openretractions.com"><i class="fa fa-check"></i><b>14.5.3</b> openretractions.com</a></li>
+<li class="chapter" data-level="14.5.4" data-path="research-tools.html"><a href="research-tools.html#retractcheck"><i class="fa fa-check"></i><b>14.5.4</b> retractcheck</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html"><i class="fa fa-check"></i><b>15</b> Regression and correlation</a><ul>
+<li class="chapter" data-level="15.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#population-example"><i class="fa fa-check"></i><b>15.1</b> Population example</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#no-predictor"><i class="fa fa-check"></i><b>15.1.1</b> No predictor</a></li>
+<li class="chapter" data-level="15.1.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#weak-relation"><i class="fa fa-check"></i><b>15.1.2</b> Weak relation</a></li>
+<li class="chapter" data-level="15.1.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#strong-relation"><i class="fa fa-check"></i><b>15.1.3</b> Strong relation</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#consider-a-sample"><i class="fa fa-check"></i><b>15.2</b> Consider a sample</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#regression"><i class="fa fa-check"></i><b>15.2.1</b> Regression</a></li>
+<li class="chapter" data-level="15.2.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#correlation-2"><i class="fa fa-check"></i><b>15.2.2</b> Correlation</a></li>
+<li class="chapter" data-level="15.2.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#graphing-1"><i class="fa fa-check"></i><b>15.2.3</b> Graphing</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#comparing-correlations"><i class="fa fa-check"></i><b>15.3</b> Comparing correlations</a><ul>
+<li class="chapter" data-level="15.3.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#p-values"><i class="fa fa-check"></i><b>15.3.1</b> p-values</a></li>
+<li class="chapter" data-level="15.3.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#within-a-data-set"><i class="fa fa-check"></i><b>15.3.2</b> Within a data set</a></li>
+<li class="chapter" data-level="15.3.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#between-data-sets"><i class="fa fa-check"></i><b>15.3.3</b> Between data sets</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>16</b> Multiple regression</a><ul>
+<li class="chapter" data-level="16.1" data-path="multiple-regression.html"><a href="multiple-regression.html#overview-7"><i class="fa fa-check"></i><b>16.1</b> Overview</a></li>
+<li class="chapter" data-level="16.2" data-path="multiple-regression.html"><a href="multiple-regression.html#example"><i class="fa fa-check"></i><b>16.2</b> Example</a></li>
+<li class="chapter" data-level="16.3" data-path="multiple-regression.html"><a href="multiple-regression.html#load-the-data"><i class="fa fa-check"></i><b>16.3</b> Load the data</a></li>
+<li class="chapter" data-level="16.4" data-path="multiple-regression.html"><a href="multiple-regression.html#bivariate-relations"><i class="fa fa-check"></i><b>16.4</b> Bivariate relations</a></li>
+<li class="chapter" data-level="16.5" data-path="multiple-regression.html"><a href="multiple-regression.html#single-best-predictor"><i class="fa fa-check"></i><b>16.5</b> Single best predictor</a></li>
+<li class="chapter" data-level="16.6" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-1"><i class="fa fa-check"></i><b>16.6</b> Multiple regression</a></li>
+<li class="chapter" data-level="16.7" data-path="multiple-regression.html"><a href="multiple-regression.html#b-weights"><i class="fa fa-check"></i><b>16.7</b> <em>b</em>-weights</a></li>
+<li class="chapter" data-level="16.8" data-path="multiple-regression.html"><a href="multiple-regression.html#r2"><i class="fa fa-check"></i><b>16.8</b> <span class="math inline">\(R^2\)</span></a><ul>
+<li class="chapter" data-level="16.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#method-1-ratio-approach"><i class="fa fa-check"></i><b>16.8.1</b> Method 1: Ratio Approach</a></li>
+<li class="chapter" data-level="16.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#method-2-correlation-approach"><i class="fa fa-check"></i><b>16.8.2</b> Method 2: Correlation Approach</a></li>
+<li class="chapter" data-level="16.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#r2-in-practice"><i class="fa fa-check"></i><b>16.8.3</b> <span class="math inline">\(R^2\)</span> in practice</a></li>
+</ul></li>
+<li class="chapter" data-level="16.9" data-path="multiple-regression.html"><a href="multiple-regression.html#semi-partial-sr"><i class="fa fa-check"></i><b>16.9</b> Semi-partial (<span class="math inline">\(sr\)</span>)</a><ul>
+<li class="chapter" data-level="16.9.1" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-theory"><i class="fa fa-check"></i><b>16.9.1</b> <span class="math inline">\(sr^2\)</span> in theory</a></li>
+<li class="chapter" data-level="16.9.2" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-practice"><i class="fa fa-check"></i><b>16.9.2</b> <span class="math inline">\(sr^2\)</span> in practice</a></li>
+<li class="chapter" data-level="16.9.3" data-path="multiple-regression.html"><a href="multiple-regression.html#blocks-regression"><i class="fa fa-check"></i><b>16.9.3</b> Blocks regression</a></li>
+</ul></li>
+<li class="chapter" data-level="16.10" data-path="multiple-regression.html"><a href="multiple-regression.html#beta-weights"><i class="fa fa-check"></i><b>16.10</b> Beta-weights</a><ul>
+<li class="chapter" data-level="16.10.1" data-path="multiple-regression.html"><a href="multiple-regression.html#in-practice"><i class="fa fa-check"></i><b>16.10.1</b> In practice</a></li>
+<li class="chapter" data-level="16.10.2" data-path="multiple-regression.html"><a href="multiple-regression.html#old-school"><i class="fa fa-check"></i><b>16.10.2</b> Old school</a></li>
+</ul></li>
+<li class="chapter" data-level="16.11" data-path="multiple-regression.html"><a href="multiple-regression.html#graphing-2"><i class="fa fa-check"></i><b>16.11</b> Graphing</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html"><i class="fa fa-check"></i><b>17</b> Sample size for multiple regression</a><ul>
+<li class="chapter" data-level="17.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#sample-size-using-r2"><i class="fa fa-check"></i><b>17.1</b> Sample size using <span class="math inline">\(R^2\)</span></a><ul>
+<li class="chapter" data-level="17.1.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determining-f2"><i class="fa fa-check"></i><b>17.1.1</b> Determining <span class="math inline">\(f^2\)</span></a></li>
+<li class="chapter" data-level="17.1.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-degrees-of-freedom"><i class="fa fa-check"></i><b>17.1.2</b> Determine degrees of freedom</a></li>
+<li class="chapter" data-level="17.1.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#calculate-sample-size"><i class="fa fa-check"></i><b>17.1.3</b> Calculate sample size</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#sample-size-using-sr2"><i class="fa fa-check"></i><b>17.2</b> Sample size using <span class="math inline">\(sr^2\)</span></a><ul>
+<li class="chapter" data-level="17.2.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-degrees-of-freedom-1"><i class="fa fa-check"></i><b>17.2.1</b> Determine degrees of freedom</a></li>
+<li class="chapter" data-level="17.2.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-f2"><i class="fa fa-check"></i><b>17.2.2</b> Determine <span class="math inline">\(f^2\)</span></a></li>
+<li class="chapter" data-level="17.2.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#calculate-power"><i class="fa fa-check"></i><b>17.2.3</b> Calculate power</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#power-obtained-sr2"><i class="fa fa-check"></i><b>17.3</b> Power obtained <span class="math inline">\(sr^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html"><i class="fa fa-check"></i><b>18</b> Moderated multiple regression</a><ul>
+<li class="chapter" data-level="18.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#overview-8"><i class="fa fa-check"></i><b>18.1</b> Overview</a></li>
+<li class="chapter" data-level="18.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#scenario"><i class="fa fa-check"></i><b>18.2</b> Scenario</a></li>
+<li class="chapter" data-level="18.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#overview-9"><i class="fa fa-check"></i><b>18.3</b> Overview</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#no-interaction"><i class="fa fa-check"></i><b>18.3.1</b> No interaction</a></li>
+<li class="chapter" data-level="18.3.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#interaction"><i class="fa fa-check"></i><b>18.3.2</b> Interaction</a></li>
+<li class="chapter" data-level="18.3.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#comparison"><i class="fa fa-check"></i><b>18.3.3</b> Comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#fastinteraction"><i class="fa fa-check"></i><b>18.4</b> fastInteraction</a><ul>
+<li class="chapter" data-level="18.4.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#graphing-in-3d"><i class="fa fa-check"></i><b>18.4.1</b> Graphing in 3D</a></li>
+<li class="chapter" data-level="18.4.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#unformatted-2d-graph"><i class="fa fa-check"></i><b>18.4.2</b> Unformatted 2D graph</a></li>
+<li class="chapter" data-level="18.4.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#tables"><i class="fa fa-check"></i><b>18.4.3</b> Tables</a></li>
+<li class="chapter" data-level="18.4.4" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#formatted-2d-graph"><i class="fa fa-check"></i><b>18.4.4</b> Formatted 2D graph</a></li>
+</ul></li>
+<li class="chapter" data-level="18.5" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#powersample-size-analysis"><i class="fa fa-check"></i><b>18.5</b> Power/sample size analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Welcome!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="effect-sizes-from-publications" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Effect sizes from publications</h1>
+<div id="required-2" class="section level2">
+<h2><span class="header-section-number">7.1</span> Required</h2>
+<p>The following CRAN packages must be installed:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required CRAN Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MBESS</td>
+</tr>
+<tr class="even">
+<td>cocor</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="objective-1" class="section level2">
+<h2><span class="header-section-number">7.2</span> Objective</h2>
+<p>In this chapter we focus on obtaining effect size estimates (e.g., correlation or standardized mean difference) from published articles. Often studies do not report effect sizes (e.g., <span class="math inline">\(d\)</span>-values) or if they do, they don’t report the confidence interval for that effect. We will learn more about confidence intervals in a future chapter, but for now, think of a confidence interval for a study/sample effect (e.g., <span class="math inline">\(d\)</span>-value) as providing a plausible range of values for the population parameter (e.g., <span class="math inline">\(\delta\)</span>). Below we learn the R commands needed to obtain effect sizes with confidence intervals from published articles.</p>
+<p>The ability to obtain effect size estimate from articles will be come extraordinarily important later in the course. Specifically, when it is time to engage in sample size planning (e.g., for your thesis) you will need to obtain estimates of the effects you are interested in from past research. The commands in this chapter will help you to do so.</p>
+</div>
+<div id="estimating-delta-1" class="section level2">
+<h2><span class="header-section-number">7.3</span> Estimating <span class="math inline">\(\delta\)</span></h2>
+<div id="independent-groups" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Independent Groups</h3>
+<p>When conducting an independent-groups <em>t</em>-test there are a few different ways to calculate <span class="math inline">\(d\)</span>-values. We focus on two approaches in this chapter. First, researchers may assume that any intervention (e.g., control group vs. experimental group) will only affect group means (and not group standard deviations / variances). This is the most common scenario. When researchers have this belief they use a <em>pooled variance</em> approach to calculating the <span class="math inline">\(d\)</span>-value. That is, the variances of the two groups are pooled (i.e., averaged) to create the denominator for the <span class="math inline">\(d\)</span>-value. Second, researchers may assume that the intervention (e.g., control group vs. experimental group) will affect both group means and standard deviations/variances. This is a less common situation. When researchers have this belief they use one group (e.g., a control group) as the frame of reference for the comparison. That is, the standard deviation for a single group (e.g., the control group) is used as the denominator for the <span class="math inline">\(d\)</span>-value.</p>
+<div id="d-denominator-pooled-variance" class="section level4">
+<h4><span class="header-section-number">7.3.1.1</span> <span class="math inline">\(d\)</span> denominator: Pooled variance</h4>
+<div id="reported-d-value-no-confidence-interval" class="section level5">
+<h5><span class="header-section-number">7.3.1.1.1</span> Reported <span class="math inline">\(d\)</span>-value no confidence interval</h5>
+<p>Scenario: A researcher reports a <span class="math inline">\(d\)</span>-value of 1.67 in their article and that each condition has 50 people. The researcher believed that the intervention would only influence means and not standard deviations and used a pooled-variance <span class="math inline">\(d\)</span>-value. They did not report a confidence interval. We can calculate a confidence interval for the independent groups <span class="math inline">\(d\)</span>-value (pooled variance) with the command below:</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="effect-sizes-from-publications.html#cb268-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb268-2"><a href="effect-sizes-from-publications.html#cb268-2"></a><span class="kw">ci.smd</span>(<span class="dt">sm =</span> <span class="fl">1.67</span>, <span class="dt">n.1 =</span> <span class="dv">50</span>, <span class="dt">n.2 =</span> <span class="dv">50</span>) </span></code></pre></div>
+<pre><code>## $Lower.Conf.Limit.smd
+## [1] 1.211
+## 
+## $smd
+## [1] 1.67
+## 
+## $Upper.Conf.Limit.smd
+## [1] 2.123</code></pre>
+<p>The population effect (<span class="math inline">\(\delta\)</span>) is unknown but our sample estimate is <span class="math inline">\(d\)</span> = 1.67, 95% CI [1.21, 2.12]. This <span class="math inline">\(d\)</span>-value will differ from the population effect (<span class="math inline">\(\delta\)</span>) due to sampling error. The confidence interval indicates that a plausible range for <span class="math inline">\(\delta\)</span> is 1.21 to 2.12.</p>
+</div>
+<div id="using-cell-means-only" class="section level5">
+<h5><span class="header-section-number">7.3.1.1.2</span> Using cell means only</h5>
+<p>Scenario: A researcher does not report a <span class="math inline">\(d\)</span>-value but indicates the descriptive statistics for the groups. For the first group <span class="math inline">\(M\)</span> = 5.00, <span class="math inline">\(SD\)</span> = 1.20, and <span class="math inline">\(n\)</span> = 50. For the second group, <span class="math inline">\(M\)</span> = 3.00, <span class="math inline">\(SD\)</span> = 1.00, and <span class="math inline">\(n\)</span> = 50. We can calculate the standardized mean difference (i.e., independent groups <span class="math inline">\(d\)</span>-value) using the command below:</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="effect-sizes-from-publications.html#cb270-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb270-2"><a href="effect-sizes-from-publications.html#cb270-2"></a><span class="kw">smd</span>(<span class="dt">Mean.1 =</span> <span class="dv">5</span>,</span>
+<span id="cb270-3"><a href="effect-sizes-from-publications.html#cb270-3"></a>    <span class="dt">s.1 =</span> <span class="fl">1.2</span>, </span>
+<span id="cb270-4"><a href="effect-sizes-from-publications.html#cb270-4"></a>    <span class="dt">n.1 =</span> <span class="dv">50</span>, </span>
+<span id="cb270-5"><a href="effect-sizes-from-publications.html#cb270-5"></a>    <span class="dt">Mean.2 =</span> <span class="dv">3</span>, </span>
+<span id="cb270-6"><a href="effect-sizes-from-publications.html#cb270-6"></a>    <span class="dt">s.2 =</span> <span class="fl">1.0</span>, </span>
+<span id="cb270-7"><a href="effect-sizes-from-publications.html#cb270-7"></a>    <span class="dt">n.2 =</span> <span class="dv">50</span>) </span></code></pre></div>
+<pre><code>## [1] 1.811</code></pre>
+<p>Our sample estimate of <span class="math inline">\(\delta\)</span> is <span class="math inline">\(d\)</span> = 1.81. The 95% confidence interval is obtained below:</p>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="effect-sizes-from-publications.html#cb272-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb272-2"><a href="effect-sizes-from-publications.html#cb272-2"></a><span class="kw">ci.smd</span>(<span class="dt">sm =</span> <span class="fl">1.81</span>, <span class="dt">n.1 =</span> <span class="dv">50</span>, <span class="dt">n.2 =</span> <span class="dv">50</span>) </span></code></pre></div>
+<pre><code>## $Lower.Conf.Limit.smd
+## [1] 1.34
+## 
+## $smd
+## [1] 1.81
+## 
+## $Upper.Conf.Limit.smd
+## [1] 2.273</code></pre>
+<p>The population effect (<span class="math inline">\(\delta\)</span>) is unknown but our sample estimate is <span class="math inline">\(d\)</span> = 1.81, 95% CI [1.34, 2.27]. This <span class="math inline">\(d\)</span>-value will differ from the population effect (<span class="math inline">\(\delta\)</span>) due to sampling error. The confidence interval indicates that a plausible range for <span class="math inline">\(\delta\)</span> is 1.34 to 2.27.</p>
+</div>
+<div id="t-equal-group-sizes" class="section level5">
+<h5><span class="header-section-number">7.3.1.1.3</span> t: Equal group sizes</h5>
+<p>Scenario: A researcher does not report a <span class="math inline">\(d\)</span>-value, descriptive statistics, or n per group. Fortunately, the researcher did report the <span class="math inline">\(t\)</span>-value, <span class="math inline">\(t\)</span>(98) = 8.30, and the fact that the groups were the same size. After reading the article you believe the intervention is only likely to affect the means of the groups and not the variances - so a pooled variance term for the denominator of the <span class="math inline">\(d\)</span>-value is appropriate. We can use the information provided to calculate a <span class="math inline">\(d\)</span>-value and confidence interval.</p>
+<p>To calculate the <span class="math inline">\(d\)</span>-value we need to know the number of people per group. We can obtain that information from the degrees of freedom (98) using the formula below.</p>
+<p><span class="math display">\[
+\begin{aligned}
+df &amp;= n_1 + n_2 - 2
+\end{aligned}
+\]</span></p>
+<p>Because the two groups were the same size we just use <span class="math inline">\(n\)</span> instead of <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span>. We know <span class="math inline">\(df\)</span> = 98:</p>
+<p><span class="math display">\[
+\begin{aligned}
+98 &amp;= n + n - 2\\
+98 &amp;= 2n - 2\\
+98 + 2 &amp;= 2n \\
+100 &amp;= 2n \\
+\frac{100}{2} &amp;= n \\
+50 &amp;= n \\
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="effect-sizes-from-publications.html#cb274-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb274-2"><a href="effect-sizes-from-publications.html#cb274-2"></a><span class="kw">ci.smd</span>(<span class="dt">ncp =</span> <span class="fl">8.30</span>, <span class="dt">n.1 =</span> <span class="dv">50</span>, <span class="dt">n.2 =</span> <span class="dv">50</span>) </span></code></pre></div>
+<pre><code>## $Lower.Conf.Limit.smd
+## [1] 1.201
+## 
+## $smd
+## [1] 1.66
+## 
+## $Upper.Conf.Limit.smd
+## [1] 2.112</code></pre>
+<p>The population effect (<span class="math inline">\(\delta\)</span>) is unknown but our sample estimate is <span class="math inline">\(d\)</span> = 1.66, 95% CI [1.20, 2.11]. This <span class="math inline">\(d\)</span>-value value will differ from the population effect (<span class="math inline">\(\delta\)</span>) due to sampling error. The confidence interval indicates that a plausible range for <span class="math inline">\(\delta\)</span> is 1.20 to 2.11.</p>
+</div>
+<div id="t-unequal-group-sizes" class="section level5">
+<h5><span class="header-section-number">7.3.1.1.4</span> t: Unequal group sizes</h5>
+<p>Scenario: A researcher does not report a <span class="math inline">\(d\)</span>-value or descriptive statistics. Fortunately, the researcher did report the <span class="math inline">\(t\)</span>-value, <span class="math inline">\(t\)</span>(98) = 9.36, and the fact that the groups had 65 and 35 people. After reading the article you believe the intervention is only likely to affect the means of the groups and not the variances - so a pooled variance term for the denominator of the <span class="math inline">\(d\)</span>-value is appropriate. We can use the information provided to calculate a <span class="math inline">\(d\)</span>-value and confidence interval.</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="effect-sizes-from-publications.html#cb276-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb276-2"><a href="effect-sizes-from-publications.html#cb276-2"></a><span class="kw">ci.smd</span>(<span class="dt">ncp =</span> <span class="fl">9.36</span>, <span class="dt">n.1 =</span> <span class="dv">65</span>, <span class="dt">n.2 =</span> <span class="dv">35</span>) </span></code></pre></div>
+<pre><code>## $Lower.Conf.Limit.smd
+## [1] 1.465
+## 
+## $smd
+## [1] 1.962
+## 
+## $Upper.Conf.Limit.smd
+## [1] 2.453</code></pre>
+<p>The population effect (<span class="math inline">\(\delta\)</span>) is unknown but our sample estimate is <span class="math inline">\(d\)</span> = 1.96. This value will differ from the population effect (<span class="math inline">\(\delta\)</span>) due to sampling error. The confidence interval, 95% CI [1.47, 2.45] indicates that a plausible range for <span class="math inline">\(\delta\)</span> is 1.47 to 2.45.</p>
+</div>
+</div>
+<div id="d-denominator-control-group-variance" class="section level4">
+<h4><span class="header-section-number">7.3.1.2</span> <span class="math inline">\(d\)</span> denominator: Control group variance</h4>
+<p>In this section we focus on calculating the <span class="math inline">\(d\)</span>-value when the researcher of the published article has used the standard deviation of a single group as the denominator for the <span class="math inline">\(d\)</span>-value. This is usually done when the researcher believes an experimental intervention will influence both group means and group standard deviations. Researcher who use this approach will hopefully have made it clear what they have done. If you’re not sure what a researcher has done I suggest using the pooled variance approach for the denominator above.</p>
+<div id="reported-d-value-no-confidence-interval-1" class="section level5">
+<h5><span class="header-section-number">7.3.1.2.1</span> Reported <span class="math inline">\(d\)</span>-value no confidence interval</h5>
+<p>Scenario: A researcher reports a <span class="math inline">\(d\)</span>-value of 0.85 in their article and that each condition has 50 people. The researcher believed that the intervention would influence both means and standard deviations. Therefore, when they calculated the <span class="math inline">\(d\)</span>-value they used the standard deviation of a single group (the control group). We can calculate a confidence interval for the independent groups <span class="math inline">\(d\)</span>-value (control group variance) with the command below:</p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="effect-sizes-from-publications.html#cb278-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb278-2"><a href="effect-sizes-from-publications.html#cb278-2"></a><span class="kw">ci.smd.c</span>(<span class="dt">smd.c =</span> <span class="fl">0.85</span>, <span class="dt">n.C =</span> <span class="dv">50</span>, <span class="dt">n.E =</span> <span class="dv">50</span>) </span></code></pre></div>
+<pre><code>## $Lower.Conf.Limit.smd.c
+## [1] 0.4199
+## 
+## $smd.c
+## [1] 0.85
+## 
+## $Upper.Conf.Limit.smd.c
+## [1] 1.273</code></pre>
+<p>The population effect (<span class="math inline">\(\delta\)</span>) is unknown but our sample estimate is <span class="math inline">\(d\)</span> = 0.85, 95% CI [0.42, 1.27]. This <span class="math inline">\(d\)</span>-value will differ from the population effect (<span class="math inline">\(\delta\)</span>) due to sampling error. The confidence interval indicates that a plausible range for <span class="math inline">\(\delta\)</span> is 0.42 to 1.27.</p>
+</div>
+<div id="using-cell-means" class="section level5">
+<h5><span class="header-section-number">7.3.1.2.2</span> Using cell means</h5>
+<p>Scenario: A researcher does not report a <span class="math inline">\(d\)</span>-value but indicates the descriptive statistics for the groups. For the experimental group <span class="math inline">\(M\)</span> = 5.00, <span class="math inline">\(SD\)</span> = 1.20, and <span class="math inline">\(n\)</span> = 50. For the control group, <span class="math inline">\(M\)</span> = 3.00, <span class="math inline">\(SD\)</span> = 1.40, and <span class="math inline">\(n\)</span> = 50. After reading the article you believe that intervention might well influence both means and standard deviations. Therefore, you think a control group standard deviation should be the frame of reference for the <span class="math inline">\(d\)</span>-value. You can calculate the standardized mean difference (i.e., independent groups <span class="math inline">\(d\)</span>-value) using the command below:</p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="effect-sizes-from-publications.html#cb280-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb280-2"><a href="effect-sizes-from-publications.html#cb280-2"></a><span class="kw">smd.c</span>(<span class="dt">Mean.T =</span> <span class="dv">5</span>,</span>
+<span id="cb280-3"><a href="effect-sizes-from-publications.html#cb280-3"></a>    <span class="dt">Mean.C =</span> <span class="dv">3</span>, </span>
+<span id="cb280-4"><a href="effect-sizes-from-publications.html#cb280-4"></a>    <span class="dt">s.C =</span> <span class="fl">1.4</span>, </span>
+<span id="cb280-5"><a href="effect-sizes-from-publications.html#cb280-5"></a>    <span class="dt">n.C =</span> <span class="dv">50</span>) </span></code></pre></div>
+<pre><code>## [1] 1.429</code></pre>
+<p>The confidence interval can be obtained with the command:</p>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="effect-sizes-from-publications.html#cb282-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb282-2"><a href="effect-sizes-from-publications.html#cb282-2"></a><span class="kw">ci.smd.c</span>(<span class="dt">smd.c =</span> <span class="fl">1.43</span>, <span class="dt">n.E =</span> <span class="dv">50</span>, <span class="dt">n.C =</span> <span class="dv">50</span>) </span></code></pre></div>
+<pre><code>## $Lower.Conf.Limit.smd.c
+## [1] 0.942
+## 
+## $smd.c
+## [1] 1.43
+## 
+## $Upper.Conf.Limit.smd.c
+## [1] 1.908</code></pre>
+<p>The population effect (<span class="math inline">\(\delta\)</span>) is unknown but our sample estimate is <span class="math inline">\(d\)</span> = 1.43, 95% CI [0.94, 1.91]. This <span class="math inline">\(d\)</span>-value will differ from the population effect (<span class="math inline">\(\delta\)</span>) due to sampling error. The confidence interval indicates that a plausible range for <span class="math inline">\(\delta\)</span> is 0.94 to 1.91.</p>
+</div>
+</div>
+</div>
+<div id="repeated-measures" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Repeated Measures</h3>
+<p>For a repeated measures design, different <span class="math inline">\(d\)</span>-values can be reported. We focus on the formula below for repeated measures <span class="math inline">\(d\)</span>-values. In this formula the symbol, <span class="math inline">\(\bar{x}_{diff}\)</span>, indicates the mean of the column of differences between the two times. Likewise, <span class="math inline">\(s_{diff}\)</span>, is used to indicate the standard deviation of the column of differences.</p>
+<p><span class="math display">\[
+\begin{aligned}
+d &amp; = \frac{\bar{x}_{diff}}{s_{diff}}
+\end{aligned}
+\]</span></p>
+<div id="reported-repeated-d-value-no-confidence-interval" class="section level4">
+<h4><span class="header-section-number">7.3.2.1</span> Reported repeated <span class="math inline">\(d\)</span>-value, no confidence interval</h4>
+<p>Scenario: A researcher reports a repeated-measures <span class="math inline">\(d\)</span> = .50 and <span class="math inline">\(n\)</span> = 150. The 95% confidence interval for this <span class="math inline">\(d\)</span>-value (i.e., standardized mean difference) can be obtained with the command below.</p>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="effect-sizes-from-publications.html#cb284-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb284-2"><a href="effect-sizes-from-publications.html#cb284-2"></a><span class="kw">ci.sm</span>(<span class="dt">sm =</span> <span class="fl">.50</span>, <span class="dt">N =</span> <span class="dv">150</span>) </span></code></pre></div>
+<pre><code>## [1] &quot;The 0.95 confidence limits for the standardized mean are given as:&quot;</code></pre>
+<pre><code>## $Lower.Conf.Limit.Standardized.Mean
+## [1] 0.3295
+## 
+## $Standardized.Mean
+## [1] 0.5
+## 
+## $Upper.Conf.Limit.Standardized.Mean
+## [1] 0.669</code></pre>
+<p>In this repeated measures design the population effect (<span class="math inline">\(\delta\)</span>) is unknown but our sample estimate of weight loss is <span class="math inline">\(d = 0.50\)</span>, 95% CI [0.33, 0.67]. This <span class="math inline">\(d\)</span>-value will differ from the population effect (<span class="math inline">\(\delta\)</span>) due to sampling error. The confidence interval indicates that a plausible range for <span class="math inline">\(\delta\)</span> is 0.33 to 0.67.</p>
+</div>
+<div id="using-repeated-measures-mean-difference" class="section level4">
+<h4><span class="header-section-number">7.3.2.2</span> Using repeated measures mean difference</h4>
+<p>Scenario: A researcher reports a repeated-measures design on weight loss but does not report the <span class="math inline">\(d\)</span>-value or confidence interval. He does report, however, that weights decreased on average by 3.00 lbs, SD = 6.00.</p>
+<p>In order to understand what the M = 3.00 lbs, SD = 6.00 refers to, consider the following situation. The participants “weigh in” at time 1. They diet for three months. Then they “weight out” at time 2. There are now two columns (time1, time2) with weight information - one participant per row. We can create a third column, called diff, by subtracting time 1 weight from time 2 weights. That is, diff = time 2 weight - time 1 weight. The new diff column indicates how the weights for each person have changed over the diet. The mean of the diff column is <span class="math inline">\(\bar{x}_{diff}\)</span> = 3.00 and the standard deviation of the diff column is <span class="math inline">\(s_{diff}\)</span> = 6.00.</p>
+<p>This information can be used in the formula below:</p>
+<p><span class="math display">\[
+\begin{aligned}
+d &amp; = \frac{\bar{x}_{diff}}{s_{diff}}\\
+&amp;= \frac{-3.00}{6.00} \\
+&amp;= -.50
+\end{aligned}
+\]</span>
+We tend to always report <span class="math inline">\(d\)</span>-values as positive values so <span class="math inline">\(d\)</span> = .50. We can get a confidence interval around this value with the code below.</p>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="effect-sizes-from-publications.html#cb287-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb287-2"><a href="effect-sizes-from-publications.html#cb287-2"></a><span class="kw">ci.sm</span>(<span class="dt">sm =</span> <span class="fl">.5</span>, <span class="dt">N =</span><span class="dv">150</span>) </span></code></pre></div>
+<pre><code>## [1] &quot;The 0.95 confidence limits for the standardized mean are given as:&quot;</code></pre>
+<pre><code>## $Lower.Conf.Limit.Standardized.Mean
+## [1] 0.3295
+## 
+## $Standardized.Mean
+## [1] 0.5
+## 
+## $Upper.Conf.Limit.Standardized.Mean
+## [1] 0.669</code></pre>
+<p>In this repeated measures design the population effect (<span class="math inline">\(\delta\)</span>) is unknown but our sample estimate of weight loss is <span class="math inline">\(d = 0.50\)</span>, 95% CI [0.33, 0.67]. This <span class="math inline">\(d\)</span>-value will differ from the population effect (<span class="math inline">\(\delta\)</span>) due to sampling error. The confidence interval indicates that a plausible range for <span class="math inline">\(\delta\)</span> is 0.33 to 0.67.</p>
+</div>
+<div id="using-repeated-measures-cell-information" class="section level4">
+<h4><span class="header-section-number">7.3.2.3</span> Using repeated measures cell information</h4>
+<p>Scenario: A researcher reports a repeated-measures design on weight loss but does not report the <span class="math inline">\(d\)</span>-value, mean difference, or standard deviation for the differences. He does, however, report mean and standard deviation for before and after the weight loss program. As well, he reports the correlation between before diet weights and after diet weights. The mean weight before the diet was M = 140 lbs, SD = 5 whereas after the diet the mean weight was 132 lbs, SD = 6. The correlation between time 1 and time 2 weights was <span class="math inline">\(r\)</span> =.80.</p>
+<p>In order to understand what the M = 140 lbs, SD = 5 refers to, consider the following situation. The participants “weigh in” at time 1. They diet for three months. Then they “weight out” at time 2. There are now two columns (time1, time2) with weight information. We can create a third column, called diff, by subtracting time 1 weight from time 2 weights. That is, diff = time 2 weight - time 1 weight. The new diff column indicates how the weights for each person have changed over the diet.</p>
+<p>The researcher reports descriptive statistics (M, SD) for the time 1 and time 2 columns but nothing about the diff column. We can, however, figure the the mean of the diff column, <span class="math inline">\(bar{x}_{diff}\)</span>, and the standard deviation of the diff column, <span class="math inline">\(s_{diff}\)</span>, from the information provided.</p>
+<p>Recall the formula for repeated measures <span class="math inline">\(d\)</span>-value:</p>
+<p><span class="math display">\[
+\begin{aligned}
+d &amp; = \frac{\bar{x}_{diff}}{s_{diff}}
+\end{aligned}
+\]</span></p>
+<p>We can obtain the numerator easily:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\bar{x}_{diff} &amp; = \bar{x}_1 - \bar{x}_2 \\
+&amp;= 140 - 132 \\
+&amp;= 8 \\
+\end{aligned}
+\]</span>
+Obtaining the values for the denominator is a bit more complicated. We can calculate <span class="math inline">\(s_{diff}\)</span> but it requires the standard deviations of the before weights (<span class="math inline">\(s_1\)</span> = 5) and the after weights (<span class="math inline">\(s_1\)</span> = 6) - as well as the correlation between the two times (<span class="math inline">\(r\)</span> = .80).</p>
+<p>We begin by calculating <span class="math inline">\(s_{diff}^2\)</span> which is variance of the column of differences differences:</p>
+<p><span class="math display">\[
+\begin{aligned}
+s_{diff}^2 &amp; = s_1^2 + s_2^2 + 2(s_1)(s_2)r_{12} \\
+&amp; = 5^2  + 6^2 + 2(5)(6)(.80)\\
+&amp; = 25  + 36 + 48\\
+&amp; = 109
+\end{aligned}
+\]</span></p>
+<p>We obtain <span class="math inline">\(s_{diff}\)</span> by taking the square root of <span class="math inline">\(s_{diff}^2\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+s_{diff} &amp; = \sqrt{s_{diff}^2} \\
+&amp; = \sqrt{109}\\
+&amp; = 10.44031
+\end{aligned}
+\]</span></p>
+<p>Then we calculate the <span class="math inline">\(d\)</span>-value using the numerator and denominator we calculated:</p>
+<p><span class="math display">\[
+\begin{aligned}
+d &amp; = \frac{\bar{x}_{diff}}{s_{diff}}\\
+&amp; = \frac{8}{10.44031} \\
+&amp; = 0.7662608\\
+&amp; = 0.77\\
+\end{aligned}
+\]</span>
+The <span class="math inline">\(d\)</span>-value is 0.77 but we need a confidence interval:</p>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="effect-sizes-from-publications.html#cb290-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb290-2"><a href="effect-sizes-from-publications.html#cb290-2"></a><span class="kw">ci.sm</span>(<span class="dt">sm =</span> <span class="fl">0.77</span>, <span class="dt">N =</span><span class="dv">100</span>) </span></code></pre></div>
+<pre><code>## [1] &quot;The 0.95 confidence limits for the standardized mean are given as:&quot;</code></pre>
+<pre><code>## $Lower.Conf.Limit.Standardized.Mean
+## [1] 0.5451
+## 
+## $Standardized.Mean
+## [1] 0.77
+## 
+## $Upper.Conf.Limit.Standardized.Mean
+## [1] 0.9918</code></pre>
+<p>In this repeated measures design the population effect (<span class="math inline">\(\delta\)</span>) is unknown but our sample estimate of weight loss is <span class="math inline">\(d\)</span> = 0.77, 95% CI [0.55, 0.99]. This <span class="math inline">\(d\)</span>-value will differ from the population effect (<span class="math inline">\(\delta\)</span>) due to sampling error. The confidence interval indicates that a plausible range for <span class="math inline">\(\delta\)</span> is 0.55 to 0.99.</p>
+</div>
+<div id="using-repeated-measures-t-value" class="section level4">
+<h4><span class="header-section-number">7.3.2.4</span> Using repeated measures <span class="math inline">\(t\)</span>-value</h4>
+<p>Scenario: A researcher reports a repeated-measures but does not report a d-value, mean difference with SD, or even the sample size. He does, however, report that t(40) = 6.23. The 95% confidence interval for this <span class="math inline">\(d\)</span>-value (i.e., standardized mean difference) can be obtained with the command below.</p>
+<p><span class="math display">\[
+\begin{aligned}
+df &amp;= N - 1 \\
+40 &amp;= N - 1\\
+40 + 1 &amp;= N\\
+41 &amp;= N
+\end{aligned}
+\]</span></p>
+<p>We can use the N and <span class="math inline">\(t\)</span>-value to calculate the <span class="math inline">\(d\)</span>-value and CI using the command:</p>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="effect-sizes-from-publications.html#cb293-1"></a><span class="co"># t-value for repeated measures if </span></span>
+<span id="cb293-2"><a href="effect-sizes-from-publications.html#cb293-2"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb293-3"><a href="effect-sizes-from-publications.html#cb293-3"></a><span class="kw">ci.sm</span>(<span class="dt">ncp =</span> <span class="fl">6.23</span>, <span class="dt">N =</span> <span class="dv">41</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;The 0.95 confidence limits for the standardized mean are given as:&quot;</code></pre>
+<pre><code>## $Lower.Conf.Limit.Standardized.Mean
+## [1] 0.5962
+## 
+## $Standardized.Mean
+## [1] 0.973
+## 
+## $Upper.Conf.Limit.Standardized.Mean
+## [1] 1.341</code></pre>
+<p>In this repeated measures design the population effect (<span class="math inline">\(\delta\)</span>) is unknown but our sample estimate of weight loss is <span class="math inline">\(d\)</span> = 0.97, 95% CI [0.60, 1.34]. This <span class="math inline">\(d\)</span>-value will differ from the population effect (<span class="math inline">\(\delta\)</span>) due to sampling error. The confidence interval indicates that a plausible range for <span class="math inline">\(\delta\)</span> is 0.60 to 1.34.</p>
+</div>
+</div>
+</div>
+<div id="estimating-rho-1" class="section level2">
+<h2><span class="header-section-number">7.4</span> Estimating <span class="math inline">\(\rho\)</span></h2>
+<div id="a-single-correlation" class="section level3">
+<h3><span class="header-section-number">7.4.1</span> A single correlation</h3>
+<p>Correlations are frequently reported in the literature. Less common, however, is the reporting of confidence intervals for those correlations. A confidence interval for a reported correlations (e.g., <span class="math inline">\(r\)</span> = .40) can be obtained if you also have the sample size (<span class="math inline">\(n\)</span> = 200) with the command below:</p>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="effect-sizes-from-publications.html#cb296-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb296-2"><a href="effect-sizes-from-publications.html#cb296-2"></a><span class="kw">ci.cc</span>(<span class="dt">r =</span> <span class="fl">.40</span>, <span class="dt">n =</span> <span class="dv">200</span>)</span></code></pre></div>
+<pre><code>## $Lower.Limit
+## [1] 0.2766
+## 
+## $Estimated.Correlation
+## [1] 0.4
+## 
+## $Upper.Limit
+## [1] 0.5104</code></pre>
+<p>From this output you see that <span class="math inline">\(r\)</span> = .40, 95% CI [.28, .51]. The population effect (<span class="math inline">\(\rho\)</span>) is unknown but our sample estimate of the population correlation is <span class="math inline">\(r = .30\)</span>, 95% CI [.28, .51]. This sample correlation will differ from the population correlation (<span class="math inline">\(\rho\)</span>) due to sampling error. The confidence interval indicates that a plausible range for <span class="math inline">\(\rho\)</span> is .28 to .51.</p>
+</div>
+<div id="difference-between-two-correlations" class="section level3">
+<h3><span class="header-section-number">7.4.2</span> Difference between two correlations</h3>
+<p>Sometimes a researcher will conduct two studies in the same article and compare the correlations.</p>
+<p>Scenario: A researcher reports in Study 1 he found that <span class="math inline">\(r\)</span> = .32, N = 300. But in Study 2 the he found a correlation of <span class="math inline">\(r\)</span> = .51, N = 400. You want to know the difference between the correlations and a confidence interval for that difference.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta r  &amp;= r_2 - r_1 \\
+&amp;= .51 - .32 \\
+&amp;= .19
+\end{aligned}
+\]</span>
+You can obtain a confidence interval for this difference between correlations using the code below. Note, however, that this code applies only when the two correlations are from different samples. If the correlations are from the same sample the code is more complex but possible - see the cocor package documentation for details. The code for obtaining the confidence interval for the difference between these two correlations from different samples is below. Examine the last part of the output labeled zou2007.</p>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="effect-sizes-from-publications.html#cb298-1"></a><span class="kw">library</span>(cocor)</span>
+<span id="cb298-2"><a href="effect-sizes-from-publications.html#cb298-2"></a><span class="kw">cocor.indep.groups</span>(<span class="dt">r1.jk =</span> <span class="fl">.51</span>, <span class="dt">r2.hm =</span> <span class="fl">.32</span>, <span class="dt">n1 =</span> <span class="dv">300</span>, <span class="dt">n2 =</span> <span class="dv">400</span>)</span></code></pre></div>
+<pre><code>## 
+##   Results of a comparison of two correlations based on independent groups
+## 
+## Comparison between r1.jk = 0.51 and r2.hm = 0.32
+## Difference: r1.jk - r2.hm = 0.19
+## Group sizes: n1 = 300, n2 = 400
+## Null hypothesis: r1.jk is equal to r2.hm
+## Alternative hypothesis: r1.jk is not equal to r2.hm (two-sided)
+## Alpha: 0.05
+## 
+## fisher1925: Fisher&#39;s z (1925)
+##   z = 3.0120, p-value = 0.0026
+##   Null hypothesis rejected
+## 
+## zou2007: Zou&#39;s (2007) confidence interval
+##   95% confidence interval for r1.jk - r2.hm: 0.0668 0.3105
+##   Null hypothesis rejected (Interval does not include 0)</code></pre>
+<p>From this output you see that in Study 1 <span class="math inline">\(r\)</span> = .32 and in Study 2 <span class="math inline">\(r\)</span> = .51. The difference between the correlations <span class="math inline">\(\Delta r\)</span> = .19, 95% CI [.07, .31]. Both population correlations are unknown as is the difference between the population correlations. We have a sample estimate of the difference between the two population correlations, <span class="math inline">\(\Delta r\)</span> = .19, and the confidence interval indicates that difference between the population correlations may plausibly be as small as .07 or as large as .31.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sampling-precision.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="nhst-and-sample-size.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/07-sample_estimates.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

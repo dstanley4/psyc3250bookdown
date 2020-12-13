@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Sample size analysis for NHST | Welcome!</title>
+  <meta name="description" content="Course notes for PSYC 6060" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Sample size analysis for NHST | Welcome!" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course notes for PSYC 6060" />
+  <meta name="github-repo" content="dstanley4/psyc6060bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Sample size analysis for NHST | Welcome!" />
+  
+  <meta name="twitter:description" content="Course notes for PSYC 6060" />
+  
+
+<meta name="author" content="David J. Stanley" />
+
+
+<meta name="date" content="2020-10-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="effect-sizes-from-publications.html"/>
+
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Course Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course:</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.3</b> Create an account at R Studio Cloud</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.4</b> Join the class workspace</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.12</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
+<li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
+<li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
+<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
+<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
+<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv() and data frames</a></li>
+<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv() and tibbles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="populations.html"><a href="populations.html"><i class="fa fa-check"></i><b>3</b> Populations</a><ul>
+<li class="chapter" data-level="3.1" data-path="populations.html"><a href="populations.html#notation"><i class="fa fa-check"></i><b>3.1</b> Notation</a></li>
+<li class="chapter" data-level="3.2" data-path="populations.html"><a href="populations.html#population-vs-samples"><i class="fa fa-check"></i><b>3.2</b> Population vs samples</a></li>
+<li class="chapter" data-level="3.3" data-path="populations.html"><a href="populations.html#a-small-population"><i class="fa fa-check"></i><b>3.3</b> A small population</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="populations.html"><a href="populations.html#mean-mu"><i class="fa fa-check"></i><b>3.3.1</b> Mean (<span class="math inline">\(\mu\)</span>)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="populations.html"><a href="populations.html#variance-sigma2"><i class="fa fa-check"></i><b>3.3.2</b> Variance (<span class="math inline">\(\sigma^2\)</span>)</a></li>
+<li class="chapter" data-level="3.3.3" data-path="populations.html"><a href="populations.html#standard-deviation-sigma"><i class="fa fa-check"></i><b>3.3.3</b> Standard Deviation (<span class="math inline">\(\sigma\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="populations.html"><a href="populations.html#visualizing-populations"><i class="fa fa-check"></i><b>3.4</b> Visualizing populations</a></li>
+<li class="chapter" data-level="3.5" data-path="populations.html"><a href="populations.html#comparisons-same-sigma"><i class="fa fa-check"></i><b>3.5</b> Comparisons: Same <span class="math inline">\(\sigma\)</span></a><ul>
+<li class="chapter" data-level="3.5.1" data-path="populations.html"><a href="populations.html#standardized-units"><i class="fa fa-check"></i><b>3.5.1</b> Standardized units</a></li>
+<li class="chapter" data-level="3.5.2" data-path="populations.html"><a href="populations.html#cohens-d-units"><i class="fa fa-check"></i><b>3.5.2</b> Cohen’s <span class="math inline">\(d\)</span> units</a></li>
+<li class="chapter" data-level="3.5.3" data-path="populations.html"><a href="populations.html#cohens-d-advantages"><i class="fa fa-check"></i><b>3.5.3</b> Cohen’s <span class="math inline">\(d\)</span> advantages</a></li>
+<li class="chapter" data-level="3.5.4" data-path="populations.html"><a href="populations.html#cohens-d-caveats"><i class="fa fa-check"></i><b>3.5.4</b> Cohen’s <span class="math inline">\(d\)</span> caveats</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="populations.html"><a href="populations.html#comparisons-different-sigma"><i class="fa fa-check"></i><b>3.6</b> Comparisons: Different <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="3.7" data-path="populations.html"><a href="populations.html#comparisons-repeated-measures"><i class="fa fa-check"></i><b>3.7</b> Comparisons: Repeated Measures</a></li>
+<li class="chapter" data-level="3.8" data-path="populations.html"><a href="populations.html#comparison-benchmarks"><i class="fa fa-check"></i><b>3.8</b> Comparison Benchmarks</a></li>
+<li class="chapter" data-level="3.9" data-path="populations.html"><a href="populations.html#population-relations"><i class="fa fa-check"></i><b>3.9</b> Population relations</a></li>
+<li class="chapter" data-level="3.10" data-path="populations.html"><a href="populations.html#relation-benchmarks"><i class="fa fa-check"></i><b>3.10</b> Relation benchmarks</a></li>
+<li class="chapter" data-level="3.11" data-path="populations.html"><a href="populations.html#key-points"><i class="fa fa-check"></i><b>3.11</b> Key points</a></li>
+<li class="chapter" data-level="3.12" data-path="populations.html"><a href="populations.html#minor-points"><i class="fa fa-check"></i><b>3.12</b> Minor Points</a></li>
+<li class="chapter" data-level="3.13" data-path="populations.html"><a href="populations.html#self-assessment"><i class="fa fa-check"></i><b>3.13</b> Self Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>4</b> Graphing</a><ul>
+<li class="chapter" data-level="4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>4.1</b> Required</a></li>
+<li class="chapter" data-level="4.2" data-path="graphing.html"><a href="graphing.html#data"><i class="fa fa-check"></i><b>4.2</b> Data</a></li>
+<li class="chapter" data-level="4.3" data-path="graphing.html"><a href="graphing.html#graph-basics"><i class="fa fa-check"></i><b>4.3</b> Graph basics</a></li>
+<li class="chapter" data-level="4.4" data-path="graphing.html"><a href="graphing.html#graphing-efficiently"><i class="fa fa-check"></i><b>4.4</b> Graphing efficiently</a></li>
+<li class="chapter" data-level="4.5" data-path="graphing.html"><a href="graphing.html#aesthetics"><i class="fa fa-check"></i><b>4.5</b> Aesthetics</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="graphing.html"><a href="graphing.html#fill-color"><i class="fa fa-check"></i><b>4.5.1</b> Fill color</a></li>
+<li class="chapter" data-level="4.5.2" data-path="graphing.html"><a href="graphing.html#overriding-aes"><i class="fa fa-check"></i><b>4.5.2</b> Overriding aes()</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="graphing.html"><a href="graphing.html#apa-style"><i class="fa fa-check"></i><b>4.6</b> APA style</a></li>
+<li class="chapter" data-level="4.7" data-path="graphing.html"><a href="graphing.html#axes"><i class="fa fa-check"></i><b>4.7</b> Axes</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="graphing.html"><a href="graphing.html#range"><i class="fa fa-check"></i><b>4.7.1</b> Range</a></li>
+<li class="chapter" data-level="4.7.2" data-path="graphing.html"><a href="graphing.html#ticks"><i class="fa fa-check"></i><b>4.7.2</b> Ticks</a></li>
+<li class="chapter" data-level="4.7.3" data-path="graphing.html"><a href="graphing.html#labels"><i class="fa fa-check"></i><b>4.7.3</b> Labels</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="graphing.html"><a href="graphing.html#axis-values"><i class="fa fa-check"></i><b>4.8</b> Axis values</a><ul>
+<li class="chapter" data-level="4.8.1" data-path="graphing.html"><a href="graphing.html#text"><i class="fa fa-check"></i><b>4.8.1</b> Text</a></li>
+<li class="chapter" data-level="4.8.2" data-path="graphing.html"><a href="graphing.html#angle"><i class="fa fa-check"></i><b>4.8.2</b> Angle</a></li>
+<li class="chapter" data-level="4.8.3" data-path="graphing.html"><a href="graphing.html#alignment"><i class="fa fa-check"></i><b>4.8.3</b> Alignment</a></li>
+<li class="chapter" data-level="4.8.4" data-path="graphing.html"><a href="graphing.html#order"><i class="fa fa-check"></i><b>4.8.4</b> Order</a></li>
+<li class="chapter" data-level="4.8.5" data-path="graphing.html"><a href="graphing.html#legend-order"><i class="fa fa-check"></i><b>4.8.5</b> Legend order</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="graphing.html"><a href="graphing.html#custom-colours"><i class="fa fa-check"></i><b>4.9</b> Custom colours</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="graphing.html"><a href="graphing.html#r-palette"><i class="fa fa-check"></i><b>4.9.1</b> R palette</a></li>
+<li class="chapter" data-level="4.9.2" data-path="graphing.html"><a href="graphing.html#hex-colours"><i class="fa fa-check"></i><b>4.9.2</b> Hex colours</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="graphing.html"><a href="graphing.html#emoji"><i class="fa fa-check"></i><b>4.10</b> Emoji</a></li>
+<li class="chapter" data-level="4.11" data-path="graphing.html"><a href="graphing.html#accessible-colors"><i class="fa fa-check"></i><b>4.11</b> Accessible Colors</a><ul>
+<li class="chapter" data-level="4.11.1" data-path="graphing.html"><a href="graphing.html#rcolorbrewer"><i class="fa fa-check"></i><b>4.11.1</b> RColorBrewer</a></li>
+<li class="chapter" data-level="4.11.2" data-path="graphing.html"><a href="graphing.html#avoid-color"><i class="fa fa-check"></i><b>4.11.2</b> Avoid color</a></li>
+</ul></li>
+<li class="chapter" data-level="4.12" data-path="graphing.html"><a href="graphing.html#saving"><i class="fa fa-check"></i><b>4.12</b> Saving</a><ul>
+<li class="chapter" data-level="4.12.1" data-path="graphing.html"><a href="graphing.html#mac"><i class="fa fa-check"></i><b>4.12.1</b> MAC</a></li>
+<li class="chapter" data-level="4.12.2" data-path="graphing.html"><a href="graphing.html#pc-or-mac"><i class="fa fa-check"></i><b>4.12.2</b> PC or MAC</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html"><i class="fa fa-check"></i><b>5</b> Sampling Accuracy</a><ul>
+<li class="chapter" data-level="5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
+<li class="chapter" data-level="5.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#data-for-the-chapter"><i class="fa fa-check"></i><b>5.2</b> Data for the chapter</a></li>
+<li class="chapter" data-level="5.3" data-path="populations.html"><a href="populations.html#notation"><i class="fa fa-check"></i><b>5.3</b> Notation</a></li>
+<li class="chapter" data-level="5.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-mu"><i class="fa fa-check"></i><b>5.4</b> Estimating <span class="math inline">\(\mu\)</span></a><ul>
+<li class="chapter" data-level="5.4.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias"><i class="fa fa-check"></i><b>5.4.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma2"><i class="fa fa-check"></i><b>5.5</b> Estimating <span class="math inline">\(\sigma^2\)</span></a><ul>
+<li class="chapter" data-level="5.5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-1"><i class="fa fa-check"></i><b>5.5.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma"><i class="fa fa-check"></i><b>5.6</b> Estimating <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-delta"><i class="fa fa-check"></i><b>5.7</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
+<li class="chapter" data-level="5.7.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#pooled-standard-deviation"><i class="fa fa-check"></i><b>5.7.1</b> Pooled standard deviation</a></li>
+<li class="chapter" data-level="5.7.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#calculating-d"><i class="fa fa-check"></i><b>5.7.2</b> Calculating <span class="math inline">\(d\)</span></a></li>
+<li class="chapter" data-level="5.7.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-2"><i class="fa fa-check"></i><b>5.7.3</b> Assessing bias</a></li>
+<li class="chapter" data-level="5.7.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#illustrating-variability"><i class="fa fa-check"></i><b>5.7.4</b> Illustrating variability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-rho"><i class="fa fa-check"></i><b>5.8</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
+<li class="chapter" data-level="5.8.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-3"><i class="fa fa-check"></i><b>5.8.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview-1"><i class="fa fa-check"></i><b>5.9</b> Overview</a></li>
+<li class="chapter" data-level="5.10" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#meta-analysis"><i class="fa fa-check"></i><b>5.10</b> Meta-analysis</a></li>
+<li class="chapter" data-level="5.11" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#a-joke"><i class="fa fa-check"></i><b>5.11</b> A joke</a></li>
+<li class="chapter" data-level="5.12" data-path="populations.html"><a href="populations.html#key-points"><i class="fa fa-check"></i><b>5.12</b> Key Points</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sampling-precision.html"><a href="sampling-precision.html"><i class="fa fa-check"></i><b>6</b> Sampling Precision</a><ul>
+<li class="chapter" data-level="6.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
+<li class="chapter" data-level="6.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-individuals"><i class="fa fa-check"></i><b>6.2</b> Population / Individuals</a></li>
+<li class="chapter" data-level="6.3" data-path="sampling-precision.html"><a href="sampling-precision.html#sampling-distribution"><i class="fa fa-check"></i><b>6.3</b> Sampling distribution</a></li>
+<li class="chapter" data-level="6.4" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-indices"><i class="fa fa-check"></i><b>6.4</b> Precision indices</a></li>
+<li class="chapter" data-level="6.5" data-path="sampling-precision.html"><a href="sampling-precision.html#a-short-cut"><i class="fa fa-check"></i><b>6.5</b> A short cut</a></li>
+<li class="chapter" data-level="6.6" data-path="sampling-precision.html"><a href="sampling-precision.html#estimates-of-precision"><i class="fa fa-check"></i><b>6.6</b> Estimates of precision</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="sampling-precision.html"><a href="sampling-precision.html#a-worked-example"><i class="fa fa-check"></i><b>6.6.1</b> A worked example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="sampling-precision.html"><a href="sampling-precision.html#bias-of-precision-estimates"><i class="fa fa-check"></i><b>6.7</b> Bias of precision estimates</a></li>
+<li class="chapter" data-level="6.8" data-path="sampling-precision.html"><a href="sampling-precision.html#where-are-we"><i class="fa fa-check"></i><b>6.8</b> Where are we?</a></li>
+<li class="chapter" data-level="6.9" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-means-causes"><i class="fa fa-check"></i><b>6.9</b> Precision for means: Causes</a></li>
+<li class="chapter" data-level="6.10" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-d-values-causes"><i class="fa fa-check"></i><b>6.10</b> Precision for <span class="math inline">\(d\)</span>-values: Causes</a><ul>
+<li class="chapter" data-level="6.10.1" data-path="sampling-precision.html"><a href="sampling-precision.html#sample-size"><i class="fa fa-check"></i><b>6.10.1</b> Sample size</a></li>
+<li class="chapter" data-level="6.10.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-effect-size-delta"><i class="fa fa-check"></i><b>6.10.2</b> Population effect size (<span class="math inline">\(\delta\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-sample-correlations-r-causes"><i class="fa fa-check"></i><b>6.11</b> Precision for sample correlations (<span class="math inline">\(r\)</span>): Causes</a><ul>
+<li class="chapter" data-level="6.11.1" data-path="sampling-precision.html"><a href="sampling-precision.html#sample-size-1"><i class="fa fa-check"></i><b>6.11.1</b> Sample size</a></li>
+<li class="chapter" data-level="6.11.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-effect-size-rho"><i class="fa fa-check"></i><b>6.11.2</b> Population effect size (<span class="math inline">\(\rho\)</span>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html"><i class="fa fa-check"></i><b>7</b> Effect sizes from publications</a><ul>
+<li class="chapter" data-level="7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>7.1</b> Required</a></li>
+<li class="chapter" data-level="7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>7.2</b> Objective</a></li>
+<li class="chapter" data-level="7.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-delta"><i class="fa fa-check"></i><b>7.3</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
+<li class="chapter" data-level="7.3.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#independent-groups"><i class="fa fa-check"></i><b>7.3.1</b> Independent Groups</a></li>
+<li class="chapter" data-level="7.3.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#repeated-measures"><i class="fa fa-check"></i><b>7.3.2</b> Repeated Measures</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-rho"><i class="fa fa-check"></i><b>7.4</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
+<li class="chapter" data-level="7.4.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#a-single-correlation"><i class="fa fa-check"></i><b>7.4.1</b> A single correlation</a></li>
+<li class="chapter" data-level="7.4.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#difference-between-two-correlations"><i class="fa fa-check"></i><b>7.4.2</b> Difference between two correlations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html"><i class="fa fa-check"></i><b>8</b> Sample size analysis for NHST</a><ul>
+<li class="chapter" data-level="8.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>8.1</b> Required</a></li>
+<li class="chapter" data-level="8.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview"><i class="fa fa-check"></i><b>8.2</b> Overview</a></li>
+<li class="chapter" data-level="8.3" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#goals"><i class="fa fa-check"></i><b>8.3</b> Goals</a></li>
+<li class="chapter" data-level="8.4" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#independent-groups-t-test"><i class="fa fa-check"></i><b>8.4</b> Independent Groups <span class="math inline">\(t\)</span>-test</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#population-effect-size"><i class="fa fa-check"></i><b>8.4.1</b> Population effect size</a></li>
+<li class="chapter" data-level="8.4.2" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#determining-sample-size"><i class="fa fa-check"></i><b>8.4.2</b> Determining sample size</a></li>
+<li class="chapter" data-level="8.4.3" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#what-will-be-signficant"><i class="fa fa-check"></i><b>8.4.3</b> What will be signficant?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#repeated-measures-t-test"><i class="fa fa-check"></i><b>8.5</b> Repeated Measures <span class="math inline">\(t\)</span>-test</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#population-effect-size-1"><i class="fa fa-check"></i><b>8.5.1</b> Population effect size</a></li>
+<li class="chapter" data-level="8.5.2" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#determining-sample-size-1"><i class="fa fa-check"></i><b>8.5.2</b> Determining sample size</a></li>
+<li class="chapter" data-level="8.5.3" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#what-will-be-signficant-1"><i class="fa fa-check"></i><b>8.5.3</b> What will be signficant?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#correlations"><i class="fa fa-check"></i><b>8.6</b> Correlations</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#population-effect-size-2"><i class="fa fa-check"></i><b>8.6.1</b> Population effect size</a></li>
+<li class="chapter" data-level="8.6.2" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#determining-sample-size-2"><i class="fa fa-check"></i><b>8.6.2</b> Determining sample size</a></li>
+<li class="chapter" data-level="8.6.3" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#what-will-be-signficant-2"><i class="fa fa-check"></i><b>8.6.3</b> What will be signficant?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="sample-size-analysis-for-nhst.html"><a href="sample-size-analysis-for-nhst.html#references"><i class="fa fa-check"></i><b>8.7</b> References</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Welcome!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sample-size-analysis-for-nhst" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Sample size analysis for NHST</h1>
+<div id="required" class="section level2">
+<h2><span class="header-section-number">8.1</span> Required</h2>
+<p>The following CRAN packages must be installed:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required CRAN Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MBESS</td>
+</tr>
+<tr class="even">
+<td>pwr</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="overview" class="section level2">
+<h2><span class="header-section-number">8.2</span> Overview</h2>
+<p>In this chapter we focus on statistical power – which is the probability of finding an effect if it exists. For example, if the power for your study is .90 that means you have a 90% chance of finding an effect if it exists. On the other hand, if your statistical power is below .50 that means you have less than a 50% chance of finding an effect if it exists. If your power is .50 you might well question whether it is even worth conducting your study - because the odds of finding an effect (if there is one) are so incredibly low. Low statistical power means you have a <em><strong>low</strong> chance of concluding there is an effect</em> when an effect <strong>is</strong> present.</p>
+<p>Unfortunately, many researchers only focus on statistical power with respect to failing to find an effect when it is present. In fact, low statistical power is directly related to false positive findings. That is, when statistical power is low and you obtain a significant <span class="math inline">\(p\)</span>-value, it’s likely that this is false positive finding (i.e., a falsely significant <span class="math inline">\(p\)</span>-value). Low statistical power means you have a <em><strong>high chance</strong> of concluding there is an effect</em> when an effect <strong>is not</strong> present.</p>
+<p>The two points above indicate that low statistical power is associated with untrustworthy research findings. When statistical power is low findings are not credible - regardless of whether they are significant or not. Unfortunately, power levels are typically quite low in psychology and related disciplines. Indeed, <span class="citation">(Button et al. <a href="#ref-button2013power" role="doc-biblioref">2013</a>)</span> noted in their <em>Nature Reviews Neuroscience</em> article that the “median statistical power of studies in the neuroscience field is optimistically estimated to be between ~8% and ~31%” (p. 8). This may seem surprising given the large effects sometimes observed in neuroscience, however, “the larger reported effect sizes in cognitive neuroscience may well be the consequence of effect size exaggeration due to having smaller sample sizes (as shown above) and consequential low power” <span class="citation">(p. 8, Szucs and Ioannidis <a href="#ref-szucs2017empirical" role="doc-biblioref">2017</a>)</span>. Biomedical research, more generally, appears to have a low power problem <span class="citation">(Dumas-Mallet et al. <a href="#ref-dumas2017low" role="doc-biblioref">2017</a>)</span>. That said, the power levels in the rest of psychology are only marginally higher - so the entire field has substantial problem - it is not a problem limited to neuroscience or biomedical research.</p>
+<p>Interesting, it is possible to calculate the average statistical power for a journal. Doing so allows us to examine many journals and, in particular, the relation between journal impact factor (how often they are cited) and journal statistical power. It turns out there is a negative relation between journal statistical power and journal impact factor <span class="citation">(Szucs and Ioannidis <a href="#ref-szucs2017empirical" role="doc-biblioref">2017</a>)</span>. This indicates that as the journal impact factor increases there is a corresponding decrease in statistical power – which means means that journals with high impact factors (those that are most cited) tend to have the most untrustworthy findings. This conclusion is perhaps not as counter intuitive as it might seem. High impact journals often have policies that require published findings to be surprising. The most surprising finding is one that is wrong and inconsistent with previous research – the exact type of finding you will get with low statistical power.</p>
+</div>
+<div id="goals" class="section level2">
+<h2><span class="header-section-number">8.3</span> Goals</h2>
+<p>In the rest of the chapter we focus on obtaining the desired power for our study by conducting a sample size analysis based on Null Hypothesis Significance Testing (NHST) logic. We caveat all of the subsequent advise is based on the goal of obtaining research findings that are trustworthy. Many times, however, research may be conducted with a different goal. For example, an Honours Thesis in psychology may be conducted with the primary goal being a learning experience for the student. When this is the case (as it often is in training scenarios) then the sample sizes used for the project may fall substantially short of the sample sizes suggested by power analyses below. This occurs frequently due to the fact that student theses have limited time and financial resources because the focus is on learning the research process rather than producing robust findings.</p>
+<p>Conducting a sample size analysis requires a few pieces of information before you start.</p>
+<ol style="list-style-type: decimal">
+<li><p>Desired power. Power refers to probability of obtaining a significant result (p &lt; .05) if the effect/difference exists. Often a power level of .80 or .85 is suggested when planning studies. However, a power-level of .90 is probability more advisable given how easy it is to obtain a <span class="math inline">\(p\)</span>-value less than .05. Indeed, Dr. Daniel Lakens <a href="http://daniellakens.blogspot.com/2017/05/how-power-analysis-implicitly-reveals.html">notes</a> that only individuals with power .90 or higher are eligible for funding in his Department at the Eindhoven University of Technology.</p></li>
+<li><p>Population-level effect size. To conduct a sample-size analysis you need an estimate of the population effect size you are trying to find. Most commonly, for theses, that means you needs a estimate of the population-level <span class="math inline">\(d\)</span>-value (i.e., <span class="math inline">\(\delta\)</span>) or population-level correlation (<span class="math inline">\(\rho\)</span>) that you are trying to detect.</p></li>
+</ol>
+<p>Below we present the process for conducting a sample size analysis for the independent groups <span class="math inline">\(t\)</span>-test, repeated measures <span class="math inline">\(t\)</span>-test, andcorrelations. For each of these analyses we go through three steps:</p>
+<ol style="list-style-type: decimal">
+<li>Estimating the population effect size</li>
+<li>Determining the desired sample size for your study</li>
+<li>Determining what sample-level effect sizes will be significant in your study with the desired sample size.</li>
+</ol>
+<p>As we review these steps for the analyses below we omit using subjective judgment as the basis for estimating the population effect size. Sometimes researchers are tempted to use a subjective judgment as to whether the population effect is small, medium, or large based on Cohen’s (1988) benchmarks. Unfortunately, using benchmarks of this sort as the basis for determine the smallest effect size of interest (<strong>SESOI</strong>) at the population level is problematic because it is subjective. Many researchers might be tempted to take a middle of the road approach and use a medium effect size. Yet a review of meta-analytic effect sizes (i.e., population estimates) by <span class="citation">(Hemphill <a href="#ref-hemphill2003interpreting" role="doc-biblioref">2003</a>)</span> indicated that 2/3 of the population effect sizes in psychology are lower than a medium effect. Consequently, taking a middle of the road approach and assuming a medium effect size is likely to result in low statistical power. Indeed, “[r]elying on a benchmark is the weakest possible justification of a SESOI and should be avoided.” <span class="citation">(p. 262, Lakens, Scheel, and Isager <a href="#ref-lakens2018equivalence" role="doc-biblioref">2018</a>)</span></p>
+
+<div class="rmdcaution">
+<strong>Using a sample size of previous study</strong>. One approach to sample size analysis is simply to use the sample size from a previous study conducted in that research area. This is the worst possible strategy for choosing a sample size. Richard Morey and Daniel Lakens <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwj3wvikhsPsAhVxk-AKHe5xCsYQFjAAegQIBRAC&amp;url=https%3A%2F%2Fraw.githubusercontent.com%2Fricharddmorey%2Fpsychology_resolution%2Fmaster%2Fpaper%2Fresponse.pdf&amp;usg=AOvVaw2-uqEGCGlGvLVlazweKRq2">discuss</a> how most study results in psychology are statistically unfalsifiable because the sample sizes (and corresponding power) are so low. Consequently, using a the sample size for your study based on past research is not advised. Doing so will most likely to result in a sample size that is so small any resulting findings will be untrustworthy and unfalsifiable. Conduct a proper sample size analysis.
+</div>
+
+</div>
+<div id="independent-groups-t-test" class="section level2">
+<h2><span class="header-section-number">8.4</span> Independent Groups <span class="math inline">\(t\)</span>-test</h2>
+<div id="population-effect-size" class="section level3">
+<h3><span class="header-section-number">8.4.1</span> Population effect size</h3>
+<div id="safeguard-approach" class="section level4">
+<h4><span class="header-section-number">8.4.1.1</span> Safeguard approach</h4>
+<p>The <span class="math inline">\(d\)</span>-value obtained from a previous independent groups <span class="math inline">\(t\)</span>-test study is highly influenced by sampling error and therefore a relatively poor estimate of the population <span class="math inline">\(d\)</span>-value (<span class="math inline">\(\delta\)</span>). The population <span class="math inline">\(d\)</span>-value may be substantially higher or lower than the previous study’s sample <span class="math inline">\(d\)</span>-value. If the population <span class="math inline">\(d\)</span>-value is higher than the previous study’s <span class="math inline">\(d\)</span>-value this does not create a problem for detecting the effect being studied. On the other hand, if the population <span class="math inline">\(d\)</span>-value is substantially lower than the previous study’s <span class="math inline">\(d\)</span>-value then the situation is problematic. Using the previous study’s effect size in your sample size/power analysis will produce a desired sample size for your study that is insufficient to detect the effect of interest. Consequently one approach for determining the smallest effect size of interest in your power analysis is a safeguard approach <span class="citation">(Perugini, Gallucci, and Costantini <a href="#ref-perugini2014safeguard" role="doc-biblioref">2014</a>)</span>.</p>
+<p>With this approach you use the lower bound of the 95% confidence interval as the population effect size in your power / sample size analysis. Let’s assume the effect size in the previous study was <span class="math inline">\(d\)</span> = 0.45 and there were 50 people in each group. If the previous study did not report an effect size - you can use the approaches outlined in the “Effect sizes from publications” chapter to obtain one. The confidence interval is obtained by:</p>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="sample-size-analysis-for-nhst.html#cb300-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb300-2"><a href="sample-size-analysis-for-nhst.html#cb300-2"></a><span class="kw">ci.smd</span>(<span class="dt">smd =</span> <span class="fl">.45</span> , <span class="dt">n.1 =</span> <span class="dv">50</span>, <span class="dt">n.2 =</span> <span class="dv">50</span>) </span></code></pre></div>
+<pre><code>## $Lower.Conf.Limit.smd
+## [1] 0.05187
+## 
+## $smd
+## [1] 0.45
+## 
+## $Upper.Conf.Limit.smd
+## [1] 0.8459</code></pre>
+<p>Thus, <span class="math inline">\(d\)</span> = 0.45, 95% CI [0.05, 0.85]. Therefore, with a sample <span class="math inline">\(d\)</span>-value of 0.45 (<span class="math inline">\(n_1=n_2=50\)</span>) a plausible range for the population <span class="math inline">\(d\)</span>-value (<span class="math inline">\(\delta\)</span>) is 0.05 to 0.85. That is, the population <span class="math inline">\(d\)</span>-value (<span class="math inline">\(\delta\)</span>) could be as low as 0.05. Therefore, we would use <span class="math inline">\(\delta\)</span> = 0.05 as the population effect size in next stage of the power/sample size analysis: Determining Sample Size.</p>
+</div>
+<div id="small-telescope" class="section level4">
+<h4><span class="header-section-number">8.4.1.2</span> Small telescope</h4>
+<p>The small telescope approach to determining the effect size to use in your independent groups <span class="math inline">\(t\)</span>-test power/sample size analysis is based on the analogy of a telescope <span class="citation">(Simonsohn <a href="#ref-simonsohn2015small" role="doc-biblioref">2015</a>)</span>. Imagine you are an astronomer. A previous study used a small telescope and claimed to see a new asteroid. You are the proud owner of a large telescope and decide to look for the asteroid. If the asteroid exists then you should be able to find it easily with your larger telescope. Conversely, if the you are unable to find the asteroid with your larger telescope it draws into question the original study. In this example, the size of the telescope is a proxy for statistical power. Use of this approach is based on the premise the previous study had a significant finding.</p>
+<p>We begin by assuming the previous study is a small telescope and has low statistical power. We use the cell sizes for the two groups from the previous study and assume a power of .33. Then we calculate the population effect that would produce a power of .33 using the code below:</p>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="sample-size-analysis-for-nhst.html#cb302-1"></a><span class="kw">library</span>(pwr)</span>
+<span id="cb302-2"><a href="sample-size-analysis-for-nhst.html#cb302-2"></a></span>
+<span id="cb302-3"><a href="sample-size-analysis-for-nhst.html#cb302-3"></a><span class="co"># Based on the previous study modify the settings below.</span></span>
+<span id="cb302-4"><a href="sample-size-analysis-for-nhst.html#cb302-4"></a><span class="co"># For alternative: use &quot;greater&quot; for one-sided </span></span>
+<span id="cb302-5"><a href="sample-size-analysis-for-nhst.html#cb302-5"></a><span class="co"># and &quot;two.sided&quot; for two-sided test</span></span>
+<span id="cb302-6"><a href="sample-size-analysis-for-nhst.html#cb302-6"></a><span class="co"># For n1 and n2 indicate the two group sizes</span></span>
+<span id="cb302-7"><a href="sample-size-analysis-for-nhst.html#cb302-7"></a>alternative &lt;-<span class="st"> &quot;greater&quot;</span></span>
+<span id="cb302-8"><a href="sample-size-analysis-for-nhst.html#cb302-8"></a>n1 &lt;-<span class="st"> </span><span class="dv">50</span></span>
+<span id="cb302-9"><a href="sample-size-analysis-for-nhst.html#cb302-9"></a>n2 &lt;-<span class="st"> </span><span class="dv">50</span></span>
+<span id="cb302-10"><a href="sample-size-analysis-for-nhst.html#cb302-10"></a></span>
+<span id="cb302-11"><a href="sample-size-analysis-for-nhst.html#cb302-11"></a><span class="co"># do not modify this line</span></span>
+<span id="cb302-12"><a href="sample-size-analysis-for-nhst.html#cb302-12"></a><span class="kw">pwr.t2n.test</span>(<span class="dt">power =</span> <span class="fl">.33</span>,</span>
+<span id="cb302-13"><a href="sample-size-analysis-for-nhst.html#cb302-13"></a>             <span class="dt">n1 =</span> n1, </span>
+<span id="cb302-14"><a href="sample-size-analysis-for-nhst.html#cb302-14"></a>             <span class="dt">n2 =</span> n2, </span>
+<span id="cb302-15"><a href="sample-size-analysis-for-nhst.html#cb302-15"></a>             <span class="dt">alternative =</span> alternative)</span></code></pre></div>
+<pre><code>## 
+##      t test power calculation 
+## 
+##              n1 = 50
+##              n2 = 50
+##               d = 0.2427
+##       sig.level = 0.05
+##           power = 0.33
+##     alternative = greater</code></pre>
+<p>The indicates when <span class="math inline">\(\delta\)</span> = .24 the previous study (with 50 per group) would have statistical power of .33. Therefore, we would use <span class="math inline">\(\delta\)</span> = .24 as the population effect size in next stage of the power/sample size analysis: Determining Sample Size.</p>
+</div>
+<div id="smallest-sig.-effect" class="section level4">
+<h4><span class="header-section-number">8.4.1.3</span> Smallest sig. effect</h4>
+<p>Another approach to determine the effect size using in your independent groups <span class="math inline">\(t\)</span>-test power / sample size analysis is to determine the smallest effect that would have been significant in the previous study <span class="citation">(Lakens, Scheel, and Isager <a href="#ref-lakens2018equivalence" role="doc-biblioref">2018</a>)</span>. We do that with the code below:</p>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="sample-size-analysis-for-nhst.html#cb304-1"></a><span class="co"># Based on the previous study modify the settings below.</span></span>
+<span id="cb304-2"><a href="sample-size-analysis-for-nhst.html#cb304-2"></a><span class="co"># For n1 and n2 indicate the two group sizes</span></span>
+<span id="cb304-3"><a href="sample-size-analysis-for-nhst.html#cb304-3"></a>n1 &lt;-<span class="st"> </span><span class="dv">50</span></span>
+<span id="cb304-4"><a href="sample-size-analysis-for-nhst.html#cb304-4"></a>n2 &lt;-<span class="st"> </span><span class="dv">50</span></span>
+<span id="cb304-5"><a href="sample-size-analysis-for-nhst.html#cb304-5"></a></span>
+<span id="cb304-6"><a href="sample-size-analysis-for-nhst.html#cb304-6"></a><span class="co"># Did the previous study use a direction (one-tail test)</span></span>
+<span id="cb304-7"><a href="sample-size-analysis-for-nhst.html#cb304-7"></a><span class="co"># Set p_critical accordingly</span></span>
+<span id="cb304-8"><a href="sample-size-analysis-for-nhst.html#cb304-8"></a><span class="co"># use .975 if original study was two-tail test;</span></span>
+<span id="cb304-9"><a href="sample-size-analysis-for-nhst.html#cb304-9"></a><span class="co"># use .95 if original study was one-tail test</span></span>
+<span id="cb304-10"><a href="sample-size-analysis-for-nhst.html#cb304-10"></a>p_critical &lt;-<span class="st"> </span><span class="fl">.95</span> <span class="co"># indicates one-tail test</span></span>
+<span id="cb304-11"><a href="sample-size-analysis-for-nhst.html#cb304-11"></a></span>
+<span id="cb304-12"><a href="sample-size-analysis-for-nhst.html#cb304-12"></a><span class="co"># do not modify the lines below</span></span>
+<span id="cb304-13"><a href="sample-size-analysis-for-nhst.html#cb304-13"></a>df &lt;-<span class="st"> </span>n1 <span class="op">+</span><span class="st"> </span>n2 <span class="op">-</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb304-14"><a href="sample-size-analysis-for-nhst.html#cb304-14"></a>t_critical &lt;-<span class="st"> </span><span class="kw">qt</span>(<span class="dt">p =</span> p_critical, <span class="dt">df =</span> df) </span>
+<span id="cb304-15"><a href="sample-size-analysis-for-nhst.html#cb304-15"></a>d_critical &lt;-<span class="st"> </span>t_critical <span class="op">*</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">1</span><span class="op">/</span>n1 <span class="op">+</span><span class="st"> </span><span class="dv">1</span><span class="op">/</span>n2)</span>
+<span id="cb304-16"><a href="sample-size-analysis-for-nhst.html#cb304-16"></a><span class="kw">print</span>(d_critical)</span></code></pre></div>
+<pre><code>## [1] 0.3321</code></pre>
+<p>The indicates that the smallest sample <span class="math inline">\(d\)</span>-value that would have been significant in the previous study is <span class="math inline">\(d\)</span> = 0.33. Therefore, we would use <span class="math inline">\(\delta\)</span> = .33 as the population effect size in next stage of the power/sample size analysis: Determining Sample Size.</p>
+</div>
+</div>
+<div id="determining-sample-size" class="section level3">
+<h3><span class="header-section-number">8.4.2</span> Determining sample size</h3>
+<p>To determine a sample size for your independent groups <span class="math inline">\(t\)</span>-test you need to:</p>
+<ul>
+<li><p>specify an estimate of the population effect size (see the various methods reviewed above)</p></li>
+<li><p>specify desired power (probability of a significant effect if it exists)</p></li>
+<li><p>specify if you are conducting a one-tailed or two-tailed test</p></li>
+<li><p>examine a graph to see how a greater/fewer number of participants influences power</p></li>
+<li><p>examine a graph to see how a higher/lower population effect power</p></li>
+</ul>
+<p>In the example below we use:</p>
+<ul>
+<li><p>Effect size estimate from the small telescope approach (<span class="math inline">\(\delta = .24\)</span>)</p></li>
+<li><p>Desired power of .90 - a 90% chance of finding our effect if it exists</p></li>
+<li><p>The fact the we wish to conduct a one-tail test (i.e., in our study we will have a directional alternative hypothesis)</p></li>
+</ul>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="sample-size-analysis-for-nhst.html#cb306-1"></a><span class="kw">library</span>(pwr)</span>
+<span id="cb306-2"><a href="sample-size-analysis-for-nhst.html#cb306-2"></a><span class="co"># Based on the previous study modify the settings below.</span></span>
+<span id="cb306-3"><a href="sample-size-analysis-for-nhst.html#cb306-3"></a><span class="co"># For alternative: use &quot;greater&quot; for one-sided </span></span>
+<span id="cb306-4"><a href="sample-size-analysis-for-nhst.html#cb306-4"></a><span class="co"># and &quot;two.sided&quot; for two-sided test</span></span>
+<span id="cb306-5"><a href="sample-size-analysis-for-nhst.html#cb306-5"></a>alternative &lt;-<span class="st"> &quot;greater&quot;</span></span>
+<span id="cb306-6"><a href="sample-size-analysis-for-nhst.html#cb306-6"></a>pop_d &lt;-<span class="st"> </span><span class="fl">.24</span></span>
+<span id="cb306-7"><a href="sample-size-analysis-for-nhst.html#cb306-7"></a>power &lt;-<span class="st"> </span><span class="fl">.90</span></span>
+<span id="cb306-8"><a href="sample-size-analysis-for-nhst.html#cb306-8"></a></span>
+<span id="cb306-9"><a href="sample-size-analysis-for-nhst.html#cb306-9"></a>pwr_out &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">d =</span> pop_d, </span>
+<span id="cb306-10"><a href="sample-size-analysis-for-nhst.html#cb306-10"></a>                      <span class="dt">power =</span> power,</span>
+<span id="cb306-11"><a href="sample-size-analysis-for-nhst.html#cb306-11"></a>                      <span class="dt">type =</span> <span class="st">&quot;two.sample&quot;</span>,</span>
+<span id="cb306-12"><a href="sample-size-analysis-for-nhst.html#cb306-12"></a>                      <span class="dt">alternative =</span> alternative)</span></code></pre></div>
+<p>Then we need to print our power / sample size analysis:</p>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="sample-size-analysis-for-nhst.html#cb307-1"></a><span class="kw">print</span>(pwr_out)</span></code></pre></div>
+<pre><code>## 
+##      Two-sample t test power calculation 
+## 
+##               n = 298
+##               d = 0.24
+##       sig.level = 0.05
+##           power = 0.9
+##     alternative = greater
+## 
+## NOTE: n is number in *each* group</code></pre>
+<p>This analysis reveals that a) if we assume the population effect size is .24 (<span class="math inline">\(\delta = .24\)</span>) and b) desire a 90% chance of finding our effect if it exits - we need 298 people/animals per group. So a total of 596 participants for these two cells.</p>
+<div id="a-different-number-of-participants" class="section level5">
+<h5><span class="header-section-number">8.4.2.0.1</span> A different number of participants?</h5>
+<p>But what happens to our power if we get a greater/fewer number of participants? We don’t always have control over the exact number due to non-response rates etc. We can use the graph below to see how power changes as the number of participants changes. Based on an examination of this graph, we may want to adjust the number of participants.</p>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="sample-size-analysis-for-nhst.html#cb309-1"></a><span class="kw">plot</span>(pwr_out)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-238-1.png" width="672" /></p>
+<p>We can see the information conveyed in the graph above for an independent groups <span class="math inline">\(t\)</span>-test in table form using the code below.</p>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="sample-size-analysis-for-nhst.html#cb310-1"></a><span class="co"># Specify the population effect size from your power analysis</span></span>
+<span id="cb310-2"><a href="sample-size-analysis-for-nhst.html#cb310-2"></a>pop_d &lt;-<span class="st"> </span><span class="fl">.24</span></span>
+<span id="cb310-3"><a href="sample-size-analysis-for-nhst.html#cb310-3"></a></span>
+<span id="cb310-4"><a href="sample-size-analysis-for-nhst.html#cb310-4"></a><span class="co"># Do not change code below</span></span>
+<span id="cb310-5"><a href="sample-size-analysis-for-nhst.html#cb310-5"></a>pwr_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pwr.t.test</span>(<span class="dt">d =</span> pop_d, <span class="dt">power =</span> <span class="fl">.50</span>)<span class="op">$</span>n)</span>
+<span id="cb310-6"><a href="sample-size-analysis-for-nhst.html#cb310-6"></a>pwr_<span class="dv">80</span> &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pwr.t.test</span>(<span class="dt">d =</span> pop_d, <span class="dt">power =</span> <span class="fl">.80</span>)<span class="op">$</span>n)</span>
+<span id="cb310-7"><a href="sample-size-analysis-for-nhst.html#cb310-7"></a>pwr_<span class="dv">95</span> &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pwr.t.test</span>(<span class="dt">d =</span> pop_d, <span class="dt">power =</span> <span class="fl">.95</span>)<span class="op">$</span>n)</span>
+<span id="cb310-8"><a href="sample-size-analysis-for-nhst.html#cb310-8"></a></span>
+<span id="cb310-9"><a href="sample-size-analysis-for-nhst.html#cb310-9"></a>power_labels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;dangerously low power (0 to .50)&quot;</span>,</span>
+<span id="cb310-10"><a href="sample-size-analysis-for-nhst.html#cb310-10"></a>                  <span class="st">&quot;low power (.50 to .80)&quot;</span>,</span>
+<span id="cb310-11"><a href="sample-size-analysis-for-nhst.html#cb310-11"></a>                  <span class="st">&quot;adequate power (.80 to .95)&quot;</span>,</span>
+<span id="cb310-12"><a href="sample-size-analysis-for-nhst.html#cb310-12"></a>                  <span class="st">&quot;almost certain power (&gt; .95)&quot;</span>)</span>
+<span id="cb310-13"><a href="sample-size-analysis-for-nhst.html#cb310-13"></a>  </span>
+<span id="cb310-14"><a href="sample-size-analysis-for-nhst.html#cb310-14"></a>power_table &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">power =</span> power_labels,</span>
+<span id="cb310-15"><a href="sample-size-analysis-for-nhst.html#cb310-15"></a>                          <span class="dt">n_start =</span> <span class="kw">round</span>(<span class="kw">c</span>(<span class="dv">1</span>, pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>),<span class="dv">2</span>),</span>
+<span id="cb310-16"><a href="sample-size-analysis-for-nhst.html#cb310-16"></a>                          <span class="dt">n_end =</span> <span class="kw">round</span>(<span class="kw">c</span>(pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>, <span class="ot">NA</span>),<span class="dv">2</span>))</span>
+<span id="cb310-17"><a href="sample-size-analysis-for-nhst.html#cb310-17"></a></span>
+<span id="cb310-18"><a href="sample-size-analysis-for-nhst.html#cb310-18"></a><span class="kw">print</span>(power_table)</span></code></pre></div>
+<pre><code>##                              power n_start n_end
+## 1 dangerously low power (0 to .50)       1   134
+## 2           low power (.50 to .80)     134   273
+## 3      adequate power (.80 to .95)     273   452
+## 4     almost certain power (&gt; .95)     452    NA</code></pre>
+<p>This table indicates that assuming a population effect size of <span class="math inline">\(\delta\)</span> = .24 that your statistical power will be:</p>
+<ul>
+<li><p>dangerously low if you have between 1 and 134 participants <strong>per group</strong></p></li>
+<li><p>low if you have between 134 and 273 participants <strong>per group</strong></p></li>
+<li><p>adequate if you have between 273 and 452 participants <strong>per group</strong></p></li>
+<li><p>excellent if you have 452 or more participants <strong>per group</strong></p></li>
+</ul>
+</div>
+<div id="a-different-effect-size" class="section level5">
+<h5><span class="header-section-number">8.4.2.0.2</span> A different effect size?</h5>
+<p>Sample size calculations use an estimate of the unknown population effect size. What happens to power if the population effect size is different than what we estimated. That information is conveyed in the graph below. An examination of this output might cause you to adjust your sample size.</p>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="sample-size-analysis-for-nhst.html#cb312-1"></a><span class="kw">library</span>(pwr)</span>
+<span id="cb312-2"><a href="sample-size-analysis-for-nhst.html#cb312-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb312-3"><a href="sample-size-analysis-for-nhst.html#cb312-3"></a></span>
+<span id="cb312-4"><a href="sample-size-analysis-for-nhst.html#cb312-4"></a><span class="co"># Indicate the type of test for your study.</span></span>
+<span id="cb312-5"><a href="sample-size-analysis-for-nhst.html#cb312-5"></a><span class="co"># For alternative: use &quot;greater&quot; for one-sided </span></span>
+<span id="cb312-6"><a href="sample-size-analysis-for-nhst.html#cb312-6"></a><span class="co"># and &quot;two.sided&quot; for two-sided test</span></span>
+<span id="cb312-7"><a href="sample-size-analysis-for-nhst.html#cb312-7"></a>alternative &lt;-<span class="st"> &quot;greater&quot;</span></span>
+<span id="cb312-8"><a href="sample-size-analysis-for-nhst.html#cb312-8"></a>n &lt;-<span class="st"> </span><span class="dv">298</span>  <span class="co"># N per group for two.sample test</span></span>
+<span id="cb312-9"><a href="sample-size-analysis-for-nhst.html#cb312-9"></a>max_pop_d =<span class="st"> </span><span class="fl">1.2</span>  <span class="co">#max d value on x-axis. Must be high (e.g., 3 or so) when n is low.</span></span>
+<span id="cb312-10"><a href="sample-size-analysis-for-nhst.html#cb312-10"></a></span>
+<span id="cb312-11"><a href="sample-size-analysis-for-nhst.html#cb312-11"></a></span>
+<span id="cb312-12"><a href="sample-size-analysis-for-nhst.html#cb312-12"></a><span class="co"># Do not modify code below</span></span>
+<span id="cb312-13"><a href="sample-size-analysis-for-nhst.html#cb312-13"></a>type =<span class="st"> &quot;two.sample&quot;</span> <span class="co"># Use &quot;two.sample&quot; or &quot;paired&quot;</span></span>
+<span id="cb312-14"><a href="sample-size-analysis-for-nhst.html#cb312-14"></a>pop_d &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, max_pop_d, <span class="dt">by =</span> <span class="fl">0.01</span>) </span>
+<span id="cb312-15"><a href="sample-size-analysis-for-nhst.html#cb312-15"></a>pop_d_axis_values &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, max_pop_d, <span class="dt">by =</span> <span class="fl">0.10</span>) </span>
+<span id="cb312-16"><a href="sample-size-analysis-for-nhst.html#cb312-16"></a>power_values &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">pop_d =</span> pop_d, <span class="dt">n =</span> n, <span class="dt">power =</span> <span class="ot">NA</span>)</span>
+<span id="cb312-17"><a href="sample-size-analysis-for-nhst.html#cb312-17"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(power_values)){</span>
+<span id="cb312-18"><a href="sample-size-analysis-for-nhst.html#cb312-18"></a>  pwr_analysis &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">d =</span> power_values<span class="op">$</span>pop_d[i],</span>
+<span id="cb312-19"><a href="sample-size-analysis-for-nhst.html#cb312-19"></a>                             <span class="dt">n =</span> n,</span>
+<span id="cb312-20"><a href="sample-size-analysis-for-nhst.html#cb312-20"></a>                             <span class="dt">type =</span> type,</span>
+<span id="cb312-21"><a href="sample-size-analysis-for-nhst.html#cb312-21"></a>                             <span class="dt">alternative =</span> alternative)</span>
+<span id="cb312-22"><a href="sample-size-analysis-for-nhst.html#cb312-22"></a>  power_values<span class="op">$</span>power[i] &lt;-<span class="st"> </span>pwr_analysis<span class="op">$</span>power</span>
+<span id="cb312-23"><a href="sample-size-analysis-for-nhst.html#cb312-23"></a>}</span>
+<span id="cb312-24"><a href="sample-size-analysis-for-nhst.html#cb312-24"></a></span>
+<span id="cb312-25"><a href="sample-size-analysis-for-nhst.html#cb312-25"></a></span>
+<span id="cb312-26"><a href="sample-size-analysis-for-nhst.html#cb312-26"></a>pwr_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.50</span>, <span class="dt">type =</span> type)<span class="op">$</span>d</span>
+<span id="cb312-27"><a href="sample-size-analysis-for-nhst.html#cb312-27"></a>pwr_<span class="dv">80</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.80</span>, <span class="dt">type =</span> type)<span class="op">$</span>d</span>
+<span id="cb312-28"><a href="sample-size-analysis-for-nhst.html#cb312-28"></a>pwr_<span class="dv">95</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.95</span>, <span class="dt">type =</span> type)<span class="op">$</span>d</span>
+<span id="cb312-29"><a href="sample-size-analysis-for-nhst.html#cb312-29"></a></span>
+<span id="cb312-30"><a href="sample-size-analysis-for-nhst.html#cb312-30"></a>power_plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> power_values,</span>
+<span id="cb312-31"><a href="sample-size-analysis-for-nhst.html#cb312-31"></a>                     <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> pop_d, <span class="dt">y =</span> power)) <span class="op">+</span></span>
+<span id="cb312-32"><a href="sample-size-analysis-for-nhst.html#cb312-32"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb312-33"><a href="sample-size-analysis-for-nhst.html#cb312-33"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> pop_d_axis_values) <span class="op">+</span></span>
+<span id="cb312-34"><a href="sample-size-analysis-for-nhst.html#cb312-34"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">.10</span>)) <span class="op">+</span></span>
+<span id="cb312-35"><a href="sample-size-analysis-for-nhst.html#cb312-35"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">sprintf</span>(<span class="st">&quot;Power plot for N = %g per group&quot;</span>, n),</span>
+<span id="cb312-36"><a href="sample-size-analysis-for-nhst.html#cb312-36"></a>       <span class="dt">subtitle =</span> <span class="kw">sprintf</span>(<span class="st">&quot;Alternative = %s&quot;</span>, alternative),</span>
+<span id="cb312-37"><a href="sample-size-analysis-for-nhst.html#cb312-37"></a>       <span class="dt">x =</span> <span class="st">&quot;Population d-value&quot;</span>,</span>
+<span id="cb312-38"><a href="sample-size-analysis-for-nhst.html#cb312-38"></a>       <span class="dt">y =</span> <span class="st">&quot;Power (probability of sig. effect)&quot;</span>) <span class="op">+</span></span>
+<span id="cb312-39"><a href="sample-size-analysis-for-nhst.html#cb312-39"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> <span class="dv">0</span>, <span class="dt">xmax =</span> pwr_<span class="dv">50</span>, </span>
+<span id="cb312-40"><a href="sample-size-analysis-for-nhst.html#cb312-40"></a>           <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, </span>
+<span id="cb312-41"><a href="sample-size-analysis-for-nhst.html#cb312-41"></a>           <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.5</span>) <span class="op">+</span></span>
+<span id="cb312-42"><a href="sample-size-analysis-for-nhst.html#cb312-42"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> pwr_<span class="dv">50</span>, <span class="dt">xmax =</span> pwr_<span class="dv">80</span>, </span>
+<span id="cb312-43"><a href="sample-size-analysis-for-nhst.html#cb312-43"></a>           <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, </span>
+<span id="cb312-44"><a href="sample-size-analysis-for-nhst.html#cb312-44"></a>           <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.2</span>) <span class="op">+</span></span>
+<span id="cb312-45"><a href="sample-size-analysis-for-nhst.html#cb312-45"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> pwr_<span class="dv">80</span>, <span class="dt">xmax =</span> pwr_<span class="dv">95</span>, </span>
+<span id="cb312-46"><a href="sample-size-analysis-for-nhst.html#cb312-46"></a>           <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, </span>
+<span id="cb312-47"><a href="sample-size-analysis-for-nhst.html#cb312-47"></a>           <span class="dt">fill =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.2</span>) <span class="op">+</span></span>
+<span id="cb312-48"><a href="sample-size-analysis-for-nhst.html#cb312-48"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> pwr_<span class="dv">95</span>, <span class="dt">xmax =</span> max_pop_d, </span>
+<span id="cb312-49"><a href="sample-size-analysis-for-nhst.html#cb312-49"></a>           <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, </span>
+<span id="cb312-50"><a href="sample-size-analysis-for-nhst.html#cb312-50"></a>           <span class="dt">fill =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.5</span>) <span class="op">+</span></span>
+<span id="cb312-51"><a href="sample-size-analysis-for-nhst.html#cb312-51"></a><span class="st">  </span><span class="kw">theme_classic</span>()</span>
+<span id="cb312-52"><a href="sample-size-analysis-for-nhst.html#cb312-52"></a></span>
+<span id="cb312-53"><a href="sample-size-analysis-for-nhst.html#cb312-53"></a><span class="kw">print</span>(power_plot)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-240-1.png" width="672" /></p>
+<p>We can see the information conveyed in the graph above for an independent groups <span class="math inline">\(t\)</span>-test in table form using the code below.</p>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="sample-size-analysis-for-nhst.html#cb313-1"></a><span class="co"># Specify the sample size per group from your power analysis</span></span>
+<span id="cb313-2"><a href="sample-size-analysis-for-nhst.html#cb313-2"></a>n =<span class="st"> </span><span class="dv">298</span> <span class="co"># N per group</span></span>
+<span id="cb313-3"><a href="sample-size-analysis-for-nhst.html#cb313-3"></a></span>
+<span id="cb313-4"><a href="sample-size-analysis-for-nhst.html#cb313-4"></a><span class="co"># Do not modify the code below</span></span>
+<span id="cb313-5"><a href="sample-size-analysis-for-nhst.html#cb313-5"></a>pwr_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.50</span>, <span class="dt">type =</span> <span class="st">&quot;two.sample&quot;</span>)<span class="op">$</span>d</span>
+<span id="cb313-6"><a href="sample-size-analysis-for-nhst.html#cb313-6"></a>pwr_<span class="dv">80</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.80</span>, <span class="dt">type =</span> <span class="st">&quot;two.sample&quot;</span>)<span class="op">$</span>d</span>
+<span id="cb313-7"><a href="sample-size-analysis-for-nhst.html#cb313-7"></a>pwr_<span class="dv">95</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.95</span>, <span class="dt">type =</span> <span class="st">&quot;two.sample&quot;</span>)<span class="op">$</span>d</span>
+<span id="cb313-8"><a href="sample-size-analysis-for-nhst.html#cb313-8"></a></span>
+<span id="cb313-9"><a href="sample-size-analysis-for-nhst.html#cb313-9"></a>power_labels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;dangerously low power (0 to .50)&quot;</span>,</span>
+<span id="cb313-10"><a href="sample-size-analysis-for-nhst.html#cb313-10"></a>                  <span class="st">&quot;low power (.50 to .80)&quot;</span>,</span>
+<span id="cb313-11"><a href="sample-size-analysis-for-nhst.html#cb313-11"></a>                  <span class="st">&quot;adequate power (.80 to .95)&quot;</span>,</span>
+<span id="cb313-12"><a href="sample-size-analysis-for-nhst.html#cb313-12"></a>                  <span class="st">&quot;almost certain power (&gt; .95)&quot;</span>)</span>
+<span id="cb313-13"><a href="sample-size-analysis-for-nhst.html#cb313-13"></a></span>
+<span id="cb313-14"><a href="sample-size-analysis-for-nhst.html#cb313-14"></a>power_table &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">power =</span> power_labels,</span>
+<span id="cb313-15"><a href="sample-size-analysis-for-nhst.html#cb313-15"></a>                          <span class="dt">delta_start =</span> <span class="kw">round</span>(<span class="kw">c</span>(<span class="dv">0</span>, pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>),<span class="dv">2</span>),</span>
+<span id="cb313-16"><a href="sample-size-analysis-for-nhst.html#cb313-16"></a>                          <span class="dt">delta_end =</span> <span class="kw">round</span>(<span class="kw">c</span>(pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>, <span class="ot">NA</span>),<span class="dv">2</span>))</span>
+<span id="cb313-17"><a href="sample-size-analysis-for-nhst.html#cb313-17"></a></span>
+<span id="cb313-18"><a href="sample-size-analysis-for-nhst.html#cb313-18"></a><span class="kw">print</span>(power_table)</span></code></pre></div>
+<pre><code>##                              power delta_start delta_end
+## 1 dangerously low power (0 to .50)        0.00      0.16
+## 2           low power (.50 to .80)        0.16      0.23
+## 3      adequate power (.80 to .95)        0.23      0.30
+## 4     almost certain power (&gt; .95)        0.30        NA</code></pre>
+<p>This table indicates that using 298 people <strong>per group</strong> your statistical power will be:</p>
+<ul>
+<li><p>dangerously low if the actual population effect is higher than 0 and lower than <span class="math inline">\(\delta = 0.16\)</span></p></li>
+<li><p>low if the actual population effect is between <span class="math inline">\(\delta = 0.16\)</span> and <span class="math inline">\(\delta = 0.23\)</span></p></li>
+<li><p>adequate if the actual population effect is between <span class="math inline">\(\delta = 0.23\)</span> and <span class="math inline">\(\delta = 0.30\)</span></p></li>
+<li><p>excellent if the actual population effect is higher than <span class="math inline">\(\delta = 0.30\)</span></p></li>
+</ul>
+</div>
+</div>
+<div id="what-will-be-signficant" class="section level3">
+<h3><span class="header-section-number">8.4.3</span> What will be signficant?</h3>
+<p>Let’s assume that after looking at all the graphs and tables you end up sticking with your initial sample size of 298 per group. What sample-level effect sizes will be significant when you do so?</p>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="sample-size-analysis-for-nhst.html#cb315-1"></a><span class="co"># Specify the sample size per group from your power / sample size analysis</span></span>
+<span id="cb315-2"><a href="sample-size-analysis-for-nhst.html#cb315-2"></a>n1 &lt;-<span class="st"> </span><span class="dv">298</span></span>
+<span id="cb315-3"><a href="sample-size-analysis-for-nhst.html#cb315-3"></a>n2 &lt;-<span class="st"> </span><span class="dv">298</span></span>
+<span id="cb315-4"><a href="sample-size-analysis-for-nhst.html#cb315-4"></a></span>
+<span id="cb315-5"><a href="sample-size-analysis-for-nhst.html#cb315-5"></a><span class="co"># Use .95 for one-sided and .975 for two-sided tests</span></span>
+<span id="cb315-6"><a href="sample-size-analysis-for-nhst.html#cb315-6"></a>percentile =<span class="st"> </span><span class="fl">.95</span> </span>
+<span id="cb315-7"><a href="sample-size-analysis-for-nhst.html#cb315-7"></a></span>
+<span id="cb315-8"><a href="sample-size-analysis-for-nhst.html#cb315-8"></a><span class="co"># Do not modify the code below</span></span>
+<span id="cb315-9"><a href="sample-size-analysis-for-nhst.html#cb315-9"></a>t_critical &lt;-<span class="st"> </span><span class="kw">qt</span>(percentile, <span class="dt">df =</span> (n1 <span class="op">+</span><span class="st"> </span>n2 <span class="op">-</span><span class="st"> </span><span class="dv">2</span>))</span>
+<span id="cb315-10"><a href="sample-size-analysis-for-nhst.html#cb315-10"></a>d_critical =<span class="st"> </span>t_critical <span class="op">*</span><span class="st"> </span><span class="kw">sqrt</span>((<span class="dv">1</span><span class="op">/</span>n1) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>n2))</span>
+<span id="cb315-11"><a href="sample-size-analysis-for-nhst.html#cb315-11"></a><span class="kw">print</span>(d_critical)</span></code></pre></div>
+<pre><code>## [1] 0.135</code></pre>
+<p>This indicates that with a sample size of 298 per group that only independent groups <span class="math inline">\(d\)</span>-values greater than <span class="math inline">\(d\)</span> = 0.135 will be significant.</p>
+</div>
+</div>
+<div id="repeated-measures-t-test" class="section level2">
+<h2><span class="header-section-number">8.5</span> Repeated Measures <span class="math inline">\(t\)</span>-test</h2>
+<div id="population-effect-size-1" class="section level3">
+<h3><span class="header-section-number">8.5.1</span> Population effect size</h3>
+<div id="safeguard-approach-1" class="section level4">
+<h4><span class="header-section-number">8.5.1.1</span> Safeguard approach</h4>
+<p>The <span class="math inline">\(d\)</span>-value obtained from a previous repeated measures <span class="math inline">\(t\)</span>-test study is highly influenced by sampling error and therefore a relatively poor estimate of the population <span class="math inline">\(d\)</span>-value (<span class="math inline">\(\delta\)</span>). The population <span class="math inline">\(d\)</span>-value may be substantially higher or lower than the previous study’s sample <span class="math inline">\(d\)</span>-value. If the population <span class="math inline">\(d\)</span>-value is higher than the previous study’s <span class="math inline">\(d\)</span>-value this does not create a problem for detecting the effect being studied. On the other hand, if the population <span class="math inline">\(d\)</span>-value is substantially lower than the previous study’s <span class="math inline">\(d\)</span>-value then the situation is problematic. Using the previous study’s effect size in your sample size/power analysis will produce a desired sample size for your study that is insufficient to detect the effect of interest. Consequently one approach for determining the smallest effect size of interest in your power analysis is a safeguard approach <span class="citation">(Perugini, Gallucci, and Costantini <a href="#ref-perugini2014safeguard" role="doc-biblioref">2014</a>)</span>.</p>
+<p>With this approach you use the lower bound of the 95% confidence interval as the population effect size in your power / sample size analysis. Let’s assume the effect size in the previous study was <span class="math inline">\(d\)</span> = 0.45 and there were 50 participants. If the previous study did not report an effect size - you can use the approaches outlined in the “Effect sizes from publications” chapter to obtain one. The confidence interval is obtained by:</p>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="sample-size-analysis-for-nhst.html#cb317-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb317-2"><a href="sample-size-analysis-for-nhst.html#cb317-2"></a><span class="kw">ci.sm</span>(<span class="dt">sm =</span> <span class="fl">.45</span> , <span class="dt">N =</span> <span class="dv">50</span>) </span></code></pre></div>
+<pre><code>## [1] &quot;The 0.95 confidence limits for the standardized mean are given as:&quot;</code></pre>
+<pre><code>## $Lower.Conf.Limit.Standardized.Mean
+## [1] 0.1568
+## 
+## $Standardized.Mean
+## [1] 0.45
+## 
+## $Upper.Conf.Limit.Standardized.Mean
+## [1] 0.739</code></pre>
+<p>Thus, <span class="math inline">\(d\)</span> = 0.45, 95% CI [0.16, 0.74]. Therefore, with a sample <span class="math inline">\(d\)</span>-value of 0.45 (<span class="math inline">\(N=50\)</span>) a plausible range for the population <span class="math inline">\(d\)</span>-value (<span class="math inline">\(\delta\)</span>) is 0.16 to 0.74. That is, the population <span class="math inline">\(d\)</span>-value (<span class="math inline">\(\delta\)</span>) could be as low as 0.16. Therefore, we would use <span class="math inline">\(\delta\)</span> = 0.16 as the population effect size in next stage of the power/sample size analysis: Determining Sample Size.</p>
+</div>
+<div id="small-telescope-1" class="section level4">
+<h4><span class="header-section-number">8.5.1.2</span> Small telescope</h4>
+<p>The small telescope approach to determining the effect size to use in your repeated measures <span class="math inline">\(t\)</span>-test power/sample size analysis is based on the analogy of a telescope <span class="citation">(Simonsohn <a href="#ref-simonsohn2015small" role="doc-biblioref">2015</a>)</span>. Imagine you are an astronomer. A previous study used a small telescope and claimed to see a new asteroid. You are the proud owner of a large telescope and decide to look for the asteroid. If the asteroid exists then you should be able to find it easily with your larger telescope. Conversely, if the you are unable to find the asteroid with your larger telescope it draws into question the original study. In this example, the size of the telescope is a proxy for statistical power. Use of this approach is based on the premise the previous study had a significant finding.</p>
+<p>We begin by assuming the previous study is a small telescope and has low statistical power. We use the csample size from the previous study and assume a power of .33. Then we calculate the population effect that would produce a power of .33 using the code below:</p>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="sample-size-analysis-for-nhst.html#cb320-1"></a><span class="kw">library</span>(pwr)</span>
+<span id="cb320-2"><a href="sample-size-analysis-for-nhst.html#cb320-2"></a></span>
+<span id="cb320-3"><a href="sample-size-analysis-for-nhst.html#cb320-3"></a><span class="co"># Based on the previous study modify the settings below.</span></span>
+<span id="cb320-4"><a href="sample-size-analysis-for-nhst.html#cb320-4"></a><span class="co"># For alternative: use &quot;greater&quot; for one-sided </span></span>
+<span id="cb320-5"><a href="sample-size-analysis-for-nhst.html#cb320-5"></a><span class="co"># and &quot;two.sided&quot; for two-sided test</span></span>
+<span id="cb320-6"><a href="sample-size-analysis-for-nhst.html#cb320-6"></a><span class="co"># For n indicate the sample size</span></span>
+<span id="cb320-7"><a href="sample-size-analysis-for-nhst.html#cb320-7"></a>alternative &lt;-<span class="st"> &quot;greater&quot;</span></span>
+<span id="cb320-8"><a href="sample-size-analysis-for-nhst.html#cb320-8"></a>n &lt;-<span class="st"> </span><span class="dv">50</span></span>
+<span id="cb320-9"><a href="sample-size-analysis-for-nhst.html#cb320-9"></a></span>
+<span id="cb320-10"><a href="sample-size-analysis-for-nhst.html#cb320-10"></a><span class="co"># do not modify this line</span></span>
+<span id="cb320-11"><a href="sample-size-analysis-for-nhst.html#cb320-11"></a><span class="kw">pwr.t.test</span>(<span class="dt">power =</span> <span class="fl">.33</span>,</span>
+<span id="cb320-12"><a href="sample-size-analysis-for-nhst.html#cb320-12"></a>           <span class="dt">n =</span> n, </span>
+<span id="cb320-13"><a href="sample-size-analysis-for-nhst.html#cb320-13"></a>           <span class="dt">type =</span> <span class="st">&quot;paired&quot;</span>,</span>
+<span id="cb320-14"><a href="sample-size-analysis-for-nhst.html#cb320-14"></a>           <span class="dt">alternative =</span> alternative)</span></code></pre></div>
+<pre><code>## 
+##      Paired t test power calculation 
+## 
+##               n = 50
+##               d = 0.1728
+##       sig.level = 0.05
+##           power = 0.33
+##     alternative = greater
+## 
+## NOTE: n is number of *pairs*</code></pre>
+<p>The indicates when <span class="math inline">\(\delta\)</span> = 0.17 the previous study (with 50 participants) would have statistical power of .33. Therefore, we would use <span class="math inline">\(\delta\)</span> = 0.17 as the population effect size in next stage of the power/sample size analysis: Determining Sample Size.</p>
+</div>
+<div id="smallest-sig.-effect-1" class="section level4">
+<h4><span class="header-section-number">8.5.1.3</span> Smallest sig. effect</h4>
+<p>Another approach to determine the effect size using in your repeated measures <span class="math inline">\(t\)</span>-test power / sample size analysis is to determine the smallest effect that would have been significant in the previous study <span class="citation">(Lakens, Scheel, and Isager <a href="#ref-lakens2018equivalence" role="doc-biblioref">2018</a>)</span>. We do that with the code below:</p>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="sample-size-analysis-for-nhst.html#cb322-1"></a><span class="co"># Based on the previous study modify the settings below.</span></span>
+<span id="cb322-2"><a href="sample-size-analysis-for-nhst.html#cb322-2"></a><span class="co"># For n indicate the sample size</span></span>
+<span id="cb322-3"><a href="sample-size-analysis-for-nhst.html#cb322-3"></a>n &lt;-<span class="st"> </span><span class="dv">50</span></span>
+<span id="cb322-4"><a href="sample-size-analysis-for-nhst.html#cb322-4"></a></span>
+<span id="cb322-5"><a href="sample-size-analysis-for-nhst.html#cb322-5"></a><span class="co"># Did the previous study use a direction (one-tail test)</span></span>
+<span id="cb322-6"><a href="sample-size-analysis-for-nhst.html#cb322-6"></a><span class="co"># Set p_critical accordingly</span></span>
+<span id="cb322-7"><a href="sample-size-analysis-for-nhst.html#cb322-7"></a><span class="co"># use .975 if original study was two-tail test;</span></span>
+<span id="cb322-8"><a href="sample-size-analysis-for-nhst.html#cb322-8"></a><span class="co"># use .95 if original study was one-tail test</span></span>
+<span id="cb322-9"><a href="sample-size-analysis-for-nhst.html#cb322-9"></a>p_critical &lt;-<span class="st"> </span><span class="fl">.95</span> <span class="co"># indicates one-tail test</span></span>
+<span id="cb322-10"><a href="sample-size-analysis-for-nhst.html#cb322-10"></a></span>
+<span id="cb322-11"><a href="sample-size-analysis-for-nhst.html#cb322-11"></a><span class="co"># do not modify the lines below</span></span>
+<span id="cb322-12"><a href="sample-size-analysis-for-nhst.html#cb322-12"></a>df &lt;-<span class="st"> </span>n <span class="op">-</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb322-13"><a href="sample-size-analysis-for-nhst.html#cb322-13"></a>t_critical &lt;-<span class="st"> </span><span class="kw">qt</span>(<span class="dt">p =</span> p_critical, <span class="dt">df =</span> df) </span>
+<span id="cb322-14"><a href="sample-size-analysis-for-nhst.html#cb322-14"></a>d_critical &lt;-<span class="st"> </span>t_critical <span class="op">*</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">1</span><span class="op">/</span>n)</span>
+<span id="cb322-15"><a href="sample-size-analysis-for-nhst.html#cb322-15"></a><span class="kw">print</span>(d_critical)</span></code></pre></div>
+<pre><code>## [1] 0.2371</code></pre>
+<p>The indicates that the smallest sample <span class="math inline">\(d\)</span>-value that would have been significant in the previous study is <span class="math inline">\(d\)</span> = 0.24. Therefore, we would use <span class="math inline">\(\delta\)</span> = .24 as the population effect size in next stage of the power/sample size analysis: Determining Sample Size.</p>
+</div>
+</div>
+<div id="determining-sample-size-1" class="section level3">
+<h3><span class="header-section-number">8.5.2</span> Determining sample size</h3>
+<p>To determine a sample size for your repeated measures <span class="math inline">\(t\)</span>-test you need to:</p>
+<ul>
+<li><p>specify an estimate of the population effect size (see the various methods reviewed above)</p></li>
+<li><p>specify desired power (probability of a significant effect if it exists)</p></li>
+<li><p>specify if you are conducting a one-tailed or two-tailed test</p></li>
+<li><p>examine a graph to see how a greater/fewer number of participants influences power</p></li>
+<li><p>examine a graph to see how a higher/lower population effect power</p></li>
+</ul>
+<p>In the example below we use:</p>
+<ul>
+<li><p>Effect size estimate from the small telescope approach (<span class="math inline">\(\delta = .17\)</span>)</p></li>
+<li><p>Desired power of .90 - a 90% chance of finding our effect if it exists</p></li>
+<li><p>The fact the we wish to conduct a one-tail test (i.e., in our study we will have a directional alternative hypothesis)</p></li>
+</ul>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="sample-size-analysis-for-nhst.html#cb324-1"></a><span class="kw">library</span>(pwr)</span>
+<span id="cb324-2"><a href="sample-size-analysis-for-nhst.html#cb324-2"></a><span class="co"># Based on the previous study modify the settings below.</span></span>
+<span id="cb324-3"><a href="sample-size-analysis-for-nhst.html#cb324-3"></a><span class="co"># For alternative: use &quot;greater&quot; for one-sided </span></span>
+<span id="cb324-4"><a href="sample-size-analysis-for-nhst.html#cb324-4"></a><span class="co"># and &quot;two.sided&quot; for two-sided test</span></span>
+<span id="cb324-5"><a href="sample-size-analysis-for-nhst.html#cb324-5"></a>alternative &lt;-<span class="st"> &quot;greater&quot;</span></span>
+<span id="cb324-6"><a href="sample-size-analysis-for-nhst.html#cb324-6"></a>pop_d &lt;-<span class="st"> </span><span class="fl">.17</span></span>
+<span id="cb324-7"><a href="sample-size-analysis-for-nhst.html#cb324-7"></a>power &lt;-<span class="st"> </span><span class="fl">.90</span></span>
+<span id="cb324-8"><a href="sample-size-analysis-for-nhst.html#cb324-8"></a></span>
+<span id="cb324-9"><a href="sample-size-analysis-for-nhst.html#cb324-9"></a>pwr_out &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">d =</span> pop_d, </span>
+<span id="cb324-10"><a href="sample-size-analysis-for-nhst.html#cb324-10"></a>                      <span class="dt">power =</span> power,</span>
+<span id="cb324-11"><a href="sample-size-analysis-for-nhst.html#cb324-11"></a>                      <span class="dt">type =</span> <span class="st">&quot;paired&quot;</span>,</span>
+<span id="cb324-12"><a href="sample-size-analysis-for-nhst.html#cb324-12"></a>                      <span class="dt">alternative =</span> alternative)</span></code></pre></div>
+<p>Then we need to print our power / sample size analysis:</p>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="sample-size-analysis-for-nhst.html#cb325-1"></a><span class="kw">print</span>(pwr_out)</span></code></pre></div>
+<pre><code>## 
+##      Paired t test power calculation 
+## 
+##               n = 297.7
+##               d = 0.17
+##       sig.level = 0.05
+##           power = 0.9
+##     alternative = greater
+## 
+## NOTE: n is number of *pairs*</code></pre>
+<p>This analysis reveals that a) if we assume the population effect size for our repeated measures <span class="math inline">\(t\)</span>-test is 0.17 (<span class="math inline">\(\delta = 0.17\)</span>) and b) desire a 90% chance of finding our effect if it exits - we need 298 participants.</p>
+<div id="a-different-number-of-participants-1" class="section level5">
+<h5><span class="header-section-number">8.5.2.0.1</span> A different number of participants?</h5>
+<p>But what happens to our power if we get a greater/fewer number of participants? We don’t always have control over the exact number due to non-response rates etc. We can use the graph below to see how power changes as the number of participants changes. Based on an examination of this graph, we may want to adjust the number of participants.</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="sample-size-analysis-for-nhst.html#cb327-1"></a><span class="kw">plot</span>(pwr_out)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-248-1.png" width="672" /></p>
+<p>We can see the information conveyed in the graph above for an repeated measures <span class="math inline">\(t\)</span>-test in table form using the code below.</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="sample-size-analysis-for-nhst.html#cb328-1"></a><span class="co"># Specify the population effect size from your power analysis</span></span>
+<span id="cb328-2"><a href="sample-size-analysis-for-nhst.html#cb328-2"></a>pop_d &lt;-<span class="st"> </span><span class="fl">.17</span></span>
+<span id="cb328-3"><a href="sample-size-analysis-for-nhst.html#cb328-3"></a></span>
+<span id="cb328-4"><a href="sample-size-analysis-for-nhst.html#cb328-4"></a><span class="co"># Do not change code below</span></span>
+<span id="cb328-5"><a href="sample-size-analysis-for-nhst.html#cb328-5"></a>pwr_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pwr.t.test</span>(<span class="dt">d =</span> pop_d, <span class="dt">power =</span> <span class="fl">.50</span>, <span class="dt">type =</span> <span class="st">&quot;paired&quot;</span>)<span class="op">$</span>n)</span>
+<span id="cb328-6"><a href="sample-size-analysis-for-nhst.html#cb328-6"></a>pwr_<span class="dv">80</span> &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pwr.t.test</span>(<span class="dt">d =</span> pop_d, <span class="dt">power =</span> <span class="fl">.80</span>, <span class="dt">type =</span> <span class="st">&quot;paired&quot;</span>)<span class="op">$</span>n)</span>
+<span id="cb328-7"><a href="sample-size-analysis-for-nhst.html#cb328-7"></a>pwr_<span class="dv">95</span> &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pwr.t.test</span>(<span class="dt">d =</span> pop_d, <span class="dt">power =</span> <span class="fl">.95</span>, <span class="dt">type =</span> <span class="st">&quot;paired&quot;</span>)<span class="op">$</span>n)</span>
+<span id="cb328-8"><a href="sample-size-analysis-for-nhst.html#cb328-8"></a></span>
+<span id="cb328-9"><a href="sample-size-analysis-for-nhst.html#cb328-9"></a>power_labels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;dangerously low power (0 to .50)&quot;</span>,</span>
+<span id="cb328-10"><a href="sample-size-analysis-for-nhst.html#cb328-10"></a>                  <span class="st">&quot;low power (.50 to .80)&quot;</span>,</span>
+<span id="cb328-11"><a href="sample-size-analysis-for-nhst.html#cb328-11"></a>                  <span class="st">&quot;adequate power (.80 to .95)&quot;</span>,</span>
+<span id="cb328-12"><a href="sample-size-analysis-for-nhst.html#cb328-12"></a>                  <span class="st">&quot;almost certain power (&gt; .95)&quot;</span>)</span>
+<span id="cb328-13"><a href="sample-size-analysis-for-nhst.html#cb328-13"></a>  </span>
+<span id="cb328-14"><a href="sample-size-analysis-for-nhst.html#cb328-14"></a>power_table &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">power =</span> power_labels,</span>
+<span id="cb328-15"><a href="sample-size-analysis-for-nhst.html#cb328-15"></a>                          <span class="dt">n_start =</span> <span class="kw">round</span>(<span class="kw">c</span>(<span class="dv">1</span>, pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>),<span class="dv">2</span>),</span>
+<span id="cb328-16"><a href="sample-size-analysis-for-nhst.html#cb328-16"></a>                          <span class="dt">n_end =</span> <span class="kw">round</span>(<span class="kw">c</span>(pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>, <span class="ot">NA</span>),<span class="dv">2</span>))</span>
+<span id="cb328-17"><a href="sample-size-analysis-for-nhst.html#cb328-17"></a></span>
+<span id="cb328-18"><a href="sample-size-analysis-for-nhst.html#cb328-18"></a><span class="kw">print</span>(power_table)</span></code></pre></div>
+<pre><code>##                              power n_start n_end
+## 1 dangerously low power (0 to .50)       1   135
+## 2           low power (.50 to .80)     135   274
+## 3      adequate power (.80 to .95)     274   452
+## 4     almost certain power (&gt; .95)     452    NA</code></pre>
+<p>This table indicates that assuming a population effect size of <span class="math inline">\(\delta\)</span> = .24 that your statistical power will be:</p>
+<ul>
+<li><p>dangerously low if you have between 1 and 135 participants</p></li>
+<li><p>low if you have between 135 and 274 participants</p></li>
+<li><p>adequate if you have between 274 and 452 participants</p></li>
+<li><p>excellent if you have 452 or more participants</p></li>
+</ul>
+</div>
+<div id="a-different-effect-size-1" class="section level5">
+<h5><span class="header-section-number">8.5.2.0.2</span> A different effect size?</h5>
+<p>Sample size calculations use an estimate of the unknown population effect size. What happens to power if the population effect size is different than what we estimated. That information is conveyed in the graph below. An examination of this output might cause you to adjust your sample size.</p>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="sample-size-analysis-for-nhst.html#cb330-1"></a><span class="kw">library</span>(pwr)</span>
+<span id="cb330-2"><a href="sample-size-analysis-for-nhst.html#cb330-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb330-3"><a href="sample-size-analysis-for-nhst.html#cb330-3"></a></span>
+<span id="cb330-4"><a href="sample-size-analysis-for-nhst.html#cb330-4"></a><span class="co"># Indicate the type of test for your study.</span></span>
+<span id="cb330-5"><a href="sample-size-analysis-for-nhst.html#cb330-5"></a><span class="co"># For alternative: use &quot;greater&quot; for one-sided </span></span>
+<span id="cb330-6"><a href="sample-size-analysis-for-nhst.html#cb330-6"></a><span class="co"># and &quot;two.sided&quot; for two-sided test</span></span>
+<span id="cb330-7"><a href="sample-size-analysis-for-nhst.html#cb330-7"></a>alternative &lt;-<span class="st"> &quot;greater&quot;</span></span>
+<span id="cb330-8"><a href="sample-size-analysis-for-nhst.html#cb330-8"></a>n &lt;-<span class="st"> </span><span class="dv">298</span>  <span class="co"># sample size</span></span>
+<span id="cb330-9"><a href="sample-size-analysis-for-nhst.html#cb330-9"></a>max_pop_d =<span class="st"> </span><span class="fl">1.2</span>  <span class="co">#max d value on x-axis. Must be high (e.g., 3 or so) when n is low.</span></span>
+<span id="cb330-10"><a href="sample-size-analysis-for-nhst.html#cb330-10"></a></span>
+<span id="cb330-11"><a href="sample-size-analysis-for-nhst.html#cb330-11"></a></span>
+<span id="cb330-12"><a href="sample-size-analysis-for-nhst.html#cb330-12"></a><span class="co"># Do not modify code below</span></span>
+<span id="cb330-13"><a href="sample-size-analysis-for-nhst.html#cb330-13"></a>type =<span class="st"> &quot;paired&quot;</span> <span class="co"># Use &quot;two.sample&quot; or &quot;paired&quot;</span></span>
+<span id="cb330-14"><a href="sample-size-analysis-for-nhst.html#cb330-14"></a>pop_d &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, max_pop_d, <span class="dt">by =</span> <span class="fl">0.01</span>) </span>
+<span id="cb330-15"><a href="sample-size-analysis-for-nhst.html#cb330-15"></a>pop_d_axis_values &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, max_pop_d, <span class="dt">by =</span> <span class="fl">0.10</span>) </span>
+<span id="cb330-16"><a href="sample-size-analysis-for-nhst.html#cb330-16"></a>power_values &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">pop_d =</span> pop_d, <span class="dt">n =</span> n, <span class="dt">power =</span> <span class="ot">NA</span>)</span>
+<span id="cb330-17"><a href="sample-size-analysis-for-nhst.html#cb330-17"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(power_values)){</span>
+<span id="cb330-18"><a href="sample-size-analysis-for-nhst.html#cb330-18"></a>  pwr_analysis &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">d =</span> power_values<span class="op">$</span>pop_d[i],</span>
+<span id="cb330-19"><a href="sample-size-analysis-for-nhst.html#cb330-19"></a>                             <span class="dt">n =</span> n, </span>
+<span id="cb330-20"><a href="sample-size-analysis-for-nhst.html#cb330-20"></a>                             <span class="dt">type =</span> type,</span>
+<span id="cb330-21"><a href="sample-size-analysis-for-nhst.html#cb330-21"></a>                             <span class="dt">alternative =</span> alternative)</span>
+<span id="cb330-22"><a href="sample-size-analysis-for-nhst.html#cb330-22"></a>  power_values<span class="op">$</span>power[i] &lt;-<span class="st"> </span>pwr_analysis<span class="op">$</span>power</span>
+<span id="cb330-23"><a href="sample-size-analysis-for-nhst.html#cb330-23"></a>}</span>
+<span id="cb330-24"><a href="sample-size-analysis-for-nhst.html#cb330-24"></a></span>
+<span id="cb330-25"><a href="sample-size-analysis-for-nhst.html#cb330-25"></a></span>
+<span id="cb330-26"><a href="sample-size-analysis-for-nhst.html#cb330-26"></a>pwr_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.50</span>, <span class="dt">type =</span> type)<span class="op">$</span>d</span>
+<span id="cb330-27"><a href="sample-size-analysis-for-nhst.html#cb330-27"></a>pwr_<span class="dv">80</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.80</span>, <span class="dt">type =</span> type)<span class="op">$</span>d</span>
+<span id="cb330-28"><a href="sample-size-analysis-for-nhst.html#cb330-28"></a>pwr_<span class="dv">95</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.95</span>, <span class="dt">type =</span> type)<span class="op">$</span>d</span>
+<span id="cb330-29"><a href="sample-size-analysis-for-nhst.html#cb330-29"></a></span>
+<span id="cb330-30"><a href="sample-size-analysis-for-nhst.html#cb330-30"></a>power_plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> power_values,</span>
+<span id="cb330-31"><a href="sample-size-analysis-for-nhst.html#cb330-31"></a>                     <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> pop_d, <span class="dt">y =</span> power)) <span class="op">+</span></span>
+<span id="cb330-32"><a href="sample-size-analysis-for-nhst.html#cb330-32"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb330-33"><a href="sample-size-analysis-for-nhst.html#cb330-33"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> pop_d_axis_values) <span class="op">+</span></span>
+<span id="cb330-34"><a href="sample-size-analysis-for-nhst.html#cb330-34"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">.10</span>)) <span class="op">+</span></span>
+<span id="cb330-35"><a href="sample-size-analysis-for-nhst.html#cb330-35"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">sprintf</span>(<span class="st">&quot;Power plot for N = %g&quot;</span>, n),</span>
+<span id="cb330-36"><a href="sample-size-analysis-for-nhst.html#cb330-36"></a>       <span class="dt">subtitle =</span> <span class="kw">sprintf</span>(<span class="st">&quot;Alternative = %s&quot;</span>, alternative),</span>
+<span id="cb330-37"><a href="sample-size-analysis-for-nhst.html#cb330-37"></a>       <span class="dt">x =</span> <span class="st">&quot;Population d-value&quot;</span>,</span>
+<span id="cb330-38"><a href="sample-size-analysis-for-nhst.html#cb330-38"></a>       <span class="dt">y =</span> <span class="st">&quot;Power (probability of sig. effect)&quot;</span>) <span class="op">+</span></span>
+<span id="cb330-39"><a href="sample-size-analysis-for-nhst.html#cb330-39"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> <span class="dv">0</span>, <span class="dt">xmax =</span> pwr_<span class="dv">50</span>, </span>
+<span id="cb330-40"><a href="sample-size-analysis-for-nhst.html#cb330-40"></a>           <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, </span>
+<span id="cb330-41"><a href="sample-size-analysis-for-nhst.html#cb330-41"></a>           <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.5</span>) <span class="op">+</span></span>
+<span id="cb330-42"><a href="sample-size-analysis-for-nhst.html#cb330-42"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> pwr_<span class="dv">50</span>, <span class="dt">xmax =</span> pwr_<span class="dv">80</span>, </span>
+<span id="cb330-43"><a href="sample-size-analysis-for-nhst.html#cb330-43"></a>           <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, </span>
+<span id="cb330-44"><a href="sample-size-analysis-for-nhst.html#cb330-44"></a>           <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.2</span>) <span class="op">+</span></span>
+<span id="cb330-45"><a href="sample-size-analysis-for-nhst.html#cb330-45"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> pwr_<span class="dv">80</span>, <span class="dt">xmax =</span> pwr_<span class="dv">95</span>, </span>
+<span id="cb330-46"><a href="sample-size-analysis-for-nhst.html#cb330-46"></a>           <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, </span>
+<span id="cb330-47"><a href="sample-size-analysis-for-nhst.html#cb330-47"></a>           <span class="dt">fill =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.2</span>) <span class="op">+</span></span>
+<span id="cb330-48"><a href="sample-size-analysis-for-nhst.html#cb330-48"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> pwr_<span class="dv">95</span>, <span class="dt">xmax =</span> max_pop_d, </span>
+<span id="cb330-49"><a href="sample-size-analysis-for-nhst.html#cb330-49"></a>           <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, </span>
+<span id="cb330-50"><a href="sample-size-analysis-for-nhst.html#cb330-50"></a>           <span class="dt">fill =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.5</span>) <span class="op">+</span></span>
+<span id="cb330-51"><a href="sample-size-analysis-for-nhst.html#cb330-51"></a><span class="st">  </span><span class="kw">theme_classic</span>()</span>
+<span id="cb330-52"><a href="sample-size-analysis-for-nhst.html#cb330-52"></a></span>
+<span id="cb330-53"><a href="sample-size-analysis-for-nhst.html#cb330-53"></a><span class="kw">print</span>(power_plot)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-250-1.png" width="672" /></p>
+<p>We can see the information conveyed in the graph above for an repeated measures <span class="math inline">\(t\)</span>-test in table form using the code below.</p>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="sample-size-analysis-for-nhst.html#cb331-1"></a><span class="co"># Specify the sample size from your power analysis</span></span>
+<span id="cb331-2"><a href="sample-size-analysis-for-nhst.html#cb331-2"></a>n =<span class="st"> </span><span class="dv">298</span> </span>
+<span id="cb331-3"><a href="sample-size-analysis-for-nhst.html#cb331-3"></a></span>
+<span id="cb331-4"><a href="sample-size-analysis-for-nhst.html#cb331-4"></a><span class="co"># Do not modify the code below</span></span>
+<span id="cb331-5"><a href="sample-size-analysis-for-nhst.html#cb331-5"></a>pwr_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.50</span>, <span class="dt">type =</span> <span class="st">&quot;paired&quot;</span>)<span class="op">$</span>d</span>
+<span id="cb331-6"><a href="sample-size-analysis-for-nhst.html#cb331-6"></a>pwr_<span class="dv">80</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.80</span>, <span class="dt">type =</span> <span class="st">&quot;paired&quot;</span>)<span class="op">$</span>d</span>
+<span id="cb331-7"><a href="sample-size-analysis-for-nhst.html#cb331-7"></a>pwr_<span class="dv">95</span> &lt;-<span class="st"> </span><span class="kw">pwr.t.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.95</span>, <span class="dt">type =</span> <span class="st">&quot;paired&quot;</span>)<span class="op">$</span>d</span>
+<span id="cb331-8"><a href="sample-size-analysis-for-nhst.html#cb331-8"></a></span>
+<span id="cb331-9"><a href="sample-size-analysis-for-nhst.html#cb331-9"></a>power_labels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;dangerously low power (0 to .50)&quot;</span>,</span>
+<span id="cb331-10"><a href="sample-size-analysis-for-nhst.html#cb331-10"></a>                  <span class="st">&quot;low power (.50 to .80)&quot;</span>,</span>
+<span id="cb331-11"><a href="sample-size-analysis-for-nhst.html#cb331-11"></a>                  <span class="st">&quot;adequate power (.80 to .95)&quot;</span>,</span>
+<span id="cb331-12"><a href="sample-size-analysis-for-nhst.html#cb331-12"></a>                  <span class="st">&quot;almost certain power (&gt; .95)&quot;</span>)</span>
+<span id="cb331-13"><a href="sample-size-analysis-for-nhst.html#cb331-13"></a></span>
+<span id="cb331-14"><a href="sample-size-analysis-for-nhst.html#cb331-14"></a>power_table &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">power =</span> power_labels,</span>
+<span id="cb331-15"><a href="sample-size-analysis-for-nhst.html#cb331-15"></a>                          <span class="dt">delta_start =</span> <span class="kw">round</span>(<span class="kw">c</span>(<span class="dv">0</span>, pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>),<span class="dv">2</span>),</span>
+<span id="cb331-16"><a href="sample-size-analysis-for-nhst.html#cb331-16"></a>                          <span class="dt">delta_end =</span> <span class="kw">round</span>(<span class="kw">c</span>(pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>, <span class="ot">NA</span>),<span class="dv">2</span>))</span>
+<span id="cb331-17"><a href="sample-size-analysis-for-nhst.html#cb331-17"></a></span>
+<span id="cb331-18"><a href="sample-size-analysis-for-nhst.html#cb331-18"></a><span class="kw">print</span>(power_table)</span></code></pre></div>
+<pre><code>##                              power delta_start delta_end
+## 1 dangerously low power (0 to .50)        0.00      0.11
+## 2           low power (.50 to .80)        0.11      0.16
+## 3      adequate power (.80 to .95)        0.16      0.21
+## 4     almost certain power (&gt; .95)        0.21        NA</code></pre>
+<p>This table indicates that using 298 participants your statistical power will be:</p>
+<ul>
+<li><p>dangerously low if the actual population effect is higher than 0 and lower than <span class="math inline">\(\delta = 0.11\)</span></p></li>
+<li><p>low if the actual population effect is between <span class="math inline">\(\delta = 0.11\)</span> and <span class="math inline">\(\delta = 0.16\)</span></p></li>
+<li><p>adequate if the actual population effect is between <span class="math inline">\(\delta = 0.16\)</span> and <span class="math inline">\(\delta = 0.21\)</span></p></li>
+<li><p>excellent if the actual population effect is higher than <span class="math inline">\(\delta = 0.21\)</span></p></li>
+</ul>
+</div>
+</div>
+<div id="what-will-be-signficant-1" class="section level3">
+<h3><span class="header-section-number">8.5.3</span> What will be signficant?</h3>
+<p>Let’s assume that after looking at all the graphs and tables you end up sticking with your initial sample size of 298. What sample-level effect sizes will be significant when you do so?</p>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="sample-size-analysis-for-nhst.html#cb333-1"></a><span class="co"># Specify the sample size from your power / sample size analysis</span></span>
+<span id="cb333-2"><a href="sample-size-analysis-for-nhst.html#cb333-2"></a>n &lt;-<span class="st"> </span><span class="dv">298</span></span>
+<span id="cb333-3"><a href="sample-size-analysis-for-nhst.html#cb333-3"></a></span>
+<span id="cb333-4"><a href="sample-size-analysis-for-nhst.html#cb333-4"></a><span class="co"># Use .95 for one-sided and .975 for two-sided tests</span></span>
+<span id="cb333-5"><a href="sample-size-analysis-for-nhst.html#cb333-5"></a>percentile =<span class="st"> </span><span class="fl">.95</span> </span>
+<span id="cb333-6"><a href="sample-size-analysis-for-nhst.html#cb333-6"></a></span>
+<span id="cb333-7"><a href="sample-size-analysis-for-nhst.html#cb333-7"></a><span class="co"># Do not modify the code below</span></span>
+<span id="cb333-8"><a href="sample-size-analysis-for-nhst.html#cb333-8"></a>t_critical &lt;-<span class="st"> </span><span class="kw">qt</span>(percentile, <span class="dt">df =</span> (n <span class="op">-</span><span class="st"> </span><span class="dv">1</span>))</span>
+<span id="cb333-9"><a href="sample-size-analysis-for-nhst.html#cb333-9"></a>d_critical &lt;-<span class="st"> </span>t_critical <span class="op">*</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">1</span><span class="op">/</span>n)</span>
+<span id="cb333-10"><a href="sample-size-analysis-for-nhst.html#cb333-10"></a><span class="kw">print</span>(d_critical)</span></code></pre></div>
+<pre><code>## [1] 0.09558</code></pre>
+<p>This indicates that with a sample size of 298 that only repeated measures <span class="math inline">\(d\)</span>-values greater than <span class="math inline">\(d\)</span> = 0.10 (rounded) will be significant.</p>
+</div>
+</div>
+<div id="correlations" class="section level2">
+<h2><span class="header-section-number">8.6</span> Correlations</h2>
+<div id="population-effect-size-2" class="section level3">
+<h3><span class="header-section-number">8.6.1</span> Population effect size</h3>
+<div id="safeguard-approach-2" class="section level4">
+<h4><span class="header-section-number">8.6.1.1</span> Safeguard approach</h4>
+<p>The sample correlation obtained from a previous study is highly influenced by sampling error and therefore a relatively poor estimate of the population correlation (<span class="math inline">\(\rho\)</span>). The population correlation may be substantially higher or lower than the previous study’s sample correlation. If the population correlation is higher than the previous study’s sample correlation this does not create a problem for detecting the effect being studied. On the other hand, if the population correlation is substantially lower than the previous study’s sample correlation then the situation is problematic. Using the previous study’s effect size in your sample size/power analysis will produce a desired sample size for your study that is insufficient to detect the effect of interest. Consequently one approach for determining the smallest effect size of interest in your power analysis is a safeguard approach <span class="citation">(Perugini, Gallucci, and Costantini <a href="#ref-perugini2014safeguard" role="doc-biblioref">2014</a>)</span>.</p>
+<p>With this approach you use the lower bound of the 95% confidence interval as the population effect size in your power / sample size analysis. Let’s assume the effect size in the previous study was <span class="math inline">\(r\)</span> = .35 and there were 75 people. If the previous study did not report an effect size - you can use the approaches outlined in the “Effect sizes from publications” chapter to obtain one. The confidence interval is obtained by:</p>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="sample-size-analysis-for-nhst.html#cb335-1"></a><span class="kw">library</span>(MBESS)</span>
+<span id="cb335-2"><a href="sample-size-analysis-for-nhst.html#cb335-2"></a><span class="kw">ci.cc</span>(<span class="dt">r =</span> <span class="fl">.35</span> , <span class="dt">n =</span> <span class="dv">75</span>) </span></code></pre></div>
+<pre><code>## $Lower.Limit
+## [1] 0.1337
+## 
+## $Estimated.Correlation
+## [1] 0.35
+## 
+## $Upper.Limit
+## [1] 0.5345</code></pre>
+<p>Thus, <span class="math inline">\(r\)</span> = .35, 95% CI [.13, .53]. Therefore, with a sample correlation of .35 (<span class="math inline">\(N=75\)</span>) a plausible range for the population correlation (<span class="math inline">\(\rho\)</span>) is .13 to .53. That is, the population correlation (<span class="math inline">\(\rho\)</span>) could be as low as .13. Therefore, we would use <span class="math inline">\(\rho\)</span> = .13 as the population effect size in next stage of the power/sample size analysis: Determining Sample Size.</p>
+</div>
+<div id="small-telescope-2" class="section level4">
+<h4><span class="header-section-number">8.6.1.2</span> Small telescope</h4>
+<p>The small telescope approach to determining the effect size to use in your correlation power/sample size analysis is based on the analogy of a telescope <span class="citation">(Simonsohn <a href="#ref-simonsohn2015small" role="doc-biblioref">2015</a>)</span>. Imagine you are an astronomer. A previous study used a small telescope and claimed to see a new asteroid. You are the proud owner of a large telescope and decide to look for the asteroid. If the asteroid exists then you should be able to find it easily with your larger telescope. Conversely, if the you are unable to find the asteroid with your larger telescope it draws into question the original study. In this example, the size of the telescope is a proxy for statistical power. Use of this approach is based on the premise the previous study had a significant finding.</p>
+<p>We begin by assuming the previous study is a small telescope and has low statistical power. We use the sample size from the previous study and assume a power of .33. Then we calculate the population effect that would produce a power of .33 using the code below:</p>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="sample-size-analysis-for-nhst.html#cb337-1"></a><span class="kw">library</span>(pwr)</span>
+<span id="cb337-2"><a href="sample-size-analysis-for-nhst.html#cb337-2"></a></span>
+<span id="cb337-3"><a href="sample-size-analysis-for-nhst.html#cb337-3"></a><span class="co"># Based on the previous study modify the settings below.</span></span>
+<span id="cb337-4"><a href="sample-size-analysis-for-nhst.html#cb337-4"></a><span class="co"># For alternative: use &quot;greater&quot; for one-sided </span></span>
+<span id="cb337-5"><a href="sample-size-analysis-for-nhst.html#cb337-5"></a><span class="co"># and &quot;two.sided&quot; for two-sided test</span></span>
+<span id="cb337-6"><a href="sample-size-analysis-for-nhst.html#cb337-6"></a><span class="co"># For n indicate the sample size</span></span>
+<span id="cb337-7"><a href="sample-size-analysis-for-nhst.html#cb337-7"></a>alternative &lt;-<span class="st"> &quot;two.sided&quot;</span></span>
+<span id="cb337-8"><a href="sample-size-analysis-for-nhst.html#cb337-8"></a>n &lt;-<span class="st"> </span><span class="dv">75</span></span>
+<span id="cb337-9"><a href="sample-size-analysis-for-nhst.html#cb337-9"></a></span>
+<span id="cb337-10"><a href="sample-size-analysis-for-nhst.html#cb337-10"></a><span class="co"># do not modify this line</span></span>
+<span id="cb337-11"><a href="sample-size-analysis-for-nhst.html#cb337-11"></a><span class="kw">pwr.r.test</span>(<span class="dt">n =</span> n,</span>
+<span id="cb337-12"><a href="sample-size-analysis-for-nhst.html#cb337-12"></a>           <span class="dt">power =</span> <span class="fl">.33</span>, </span>
+<span id="cb337-13"><a href="sample-size-analysis-for-nhst.html#cb337-13"></a>           <span class="dt">alternative =</span> alternative)</span></code></pre></div>
+<pre><code>## 
+##      approximate correlation power calculation (arctangh transformation) 
+## 
+##               n = 75
+##               r = 0.1762
+##       sig.level = 0.05
+##           power = 0.33
+##     alternative = two.sided</code></pre>
+<p>The indicates when the population correlation is .18 (rounded), <span class="math inline">\(\rho\)</span> = .18, the previous study (with 75 participants) would have statistical power of .33. Therefore, we would use <span class="math inline">\(\rho\)</span> = .18 as the population effect size in next stage of the power/sample size analysis: Determining Sample Size.</p>
+</div>
+<div id="smallest-sig.-effect-2" class="section level4">
+<h4><span class="header-section-number">8.6.1.3</span> Smallest sig. effect</h4>
+<p>Another approach to determine the effect size using in your correlation power / sample size analysis is to determine the smallest effect that would have been significant in the previous study <span class="citation">(Lakens, Scheel, and Isager <a href="#ref-lakens2018equivalence" role="doc-biblioref">2018</a>)</span>. We do that with the code below:</p>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="sample-size-analysis-for-nhst.html#cb339-1"></a><span class="co"># Based on the previous study modify the settings below.</span></span>
+<span id="cb339-2"><a href="sample-size-analysis-for-nhst.html#cb339-2"></a><span class="co"># For n indicate the sample size</span></span>
+<span id="cb339-3"><a href="sample-size-analysis-for-nhst.html#cb339-3"></a>n &lt;-<span class="st"> </span><span class="dv">75</span></span>
+<span id="cb339-4"><a href="sample-size-analysis-for-nhst.html#cb339-4"></a></span>
+<span id="cb339-5"><a href="sample-size-analysis-for-nhst.html#cb339-5"></a><span class="co"># Did the previous study use a direction (one-tail test)</span></span>
+<span id="cb339-6"><a href="sample-size-analysis-for-nhst.html#cb339-6"></a><span class="co"># Set p_critical accordingly</span></span>
+<span id="cb339-7"><a href="sample-size-analysis-for-nhst.html#cb339-7"></a><span class="co"># use .975 if original study was two-tail test;</span></span>
+<span id="cb339-8"><a href="sample-size-analysis-for-nhst.html#cb339-8"></a><span class="co"># use .95 if original study was one-tail test</span></span>
+<span id="cb339-9"><a href="sample-size-analysis-for-nhst.html#cb339-9"></a>p_critical &lt;-<span class="st"> </span><span class="fl">.975</span> <span class="co"># indicates two-tail test</span></span>
+<span id="cb339-10"><a href="sample-size-analysis-for-nhst.html#cb339-10"></a></span>
+<span id="cb339-11"><a href="sample-size-analysis-for-nhst.html#cb339-11"></a><span class="co"># do not modify the lines below</span></span>
+<span id="cb339-12"><a href="sample-size-analysis-for-nhst.html#cb339-12"></a>df &lt;-<span class="st"> </span>n <span class="op">-</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb339-13"><a href="sample-size-analysis-for-nhst.html#cb339-13"></a>t_critical &lt;-<span class="st"> </span><span class="kw">qt</span>(<span class="dt">p =</span> p_critical, <span class="dt">df =</span> df) </span>
+<span id="cb339-14"><a href="sample-size-analysis-for-nhst.html#cb339-14"></a>r_critical &lt;-<span class="st"> </span><span class="kw">sqrt</span>((t_critical<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(df <span class="op">+</span><span class="st"> </span>t_critical<span class="op">^</span><span class="dv">2</span>))</span>
+<span id="cb339-15"><a href="sample-size-analysis-for-nhst.html#cb339-15"></a><span class="kw">print</span>(r_critical)</span></code></pre></div>
+<pre><code>## [1] 0.2272</code></pre>
+<p>The indicates that the smallest sample correlation that would have been significant in the previous study is <span class="math inline">\(r\)</span> = 0.23. Therefore, we would use <span class="math inline">\(\rho\)</span> = .23 as the population effect size in next stage of the power/sample size analysis: Determining Sample Size.</p>
+</div>
+</div>
+<div id="determining-sample-size-2" class="section level3">
+<h3><span class="header-section-number">8.6.2</span> Determining sample size</h3>
+<p>To determine a sample size for your correlation study you need to:</p>
+<ul>
+<li><p>specify an estimate of the population effect size (see the various methods reviewed above)</p></li>
+<li><p>specify desired power (probability of a significant effect if it exists)</p></li>
+<li><p>specify if you are conducting a one-tailed or two-tailed test</p></li>
+<li><p>examine a graph to see how a greater/fewer number of participants influences power</p></li>
+<li><p>examine a graph to see how a higher/lower population effect power</p></li>
+</ul>
+<p>In the example below we use:</p>
+<ul>
+<li><p>Effect size estimate from the small telescope approach (<span class="math inline">\(\rho = .18\)</span>)</p></li>
+<li><p>Desired power of .90 - a 90% chance of finding our effect if it exists</p></li>
+<li><p>The fact the we wish to conduct a one-tail test (i.e., in our study we will have a directional alternative hypothesis)</p></li>
+</ul>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="sample-size-analysis-for-nhst.html#cb341-1"></a><span class="kw">library</span>(pwr)</span>
+<span id="cb341-2"><a href="sample-size-analysis-for-nhst.html#cb341-2"></a><span class="co"># Based on the previous study modify the settings below.</span></span>
+<span id="cb341-3"><a href="sample-size-analysis-for-nhst.html#cb341-3"></a><span class="co"># For alternative: use &quot;greater&quot; for one-sided </span></span>
+<span id="cb341-4"><a href="sample-size-analysis-for-nhst.html#cb341-4"></a><span class="co"># and &quot;two.sided&quot; for two-sided test</span></span>
+<span id="cb341-5"><a href="sample-size-analysis-for-nhst.html#cb341-5"></a>alternative &lt;-<span class="st"> &quot;greater&quot;</span></span>
+<span id="cb341-6"><a href="sample-size-analysis-for-nhst.html#cb341-6"></a>pop_r &lt;-<span class="st"> </span><span class="fl">.18</span></span>
+<span id="cb341-7"><a href="sample-size-analysis-for-nhst.html#cb341-7"></a>power &lt;-<span class="st"> </span><span class="fl">.90</span></span>
+<span id="cb341-8"><a href="sample-size-analysis-for-nhst.html#cb341-8"></a></span>
+<span id="cb341-9"><a href="sample-size-analysis-for-nhst.html#cb341-9"></a>pwr_out &lt;-<span class="st"> </span><span class="kw">pwr.r.test</span>(<span class="dt">r =</span> pop_r, </span>
+<span id="cb341-10"><a href="sample-size-analysis-for-nhst.html#cb341-10"></a>                      <span class="dt">power =</span> power,</span>
+<span id="cb341-11"><a href="sample-size-analysis-for-nhst.html#cb341-11"></a>                      <span class="dt">alternative =</span> alternative)</span></code></pre></div>
+<p>Then we need to print our power / sample size analysis:</p>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="sample-size-analysis-for-nhst.html#cb342-1"></a><span class="kw">print</span>(pwr_out)</span></code></pre></div>
+<pre><code>## 
+##      approximate correlation power calculation (arctangh transformation) 
+## 
+##               n = 260.6
+##               r = 0.18
+##       sig.level = 0.05
+##           power = 0.9
+##     alternative = greater</code></pre>
+<p>This analysis reveals that a) if we assume the population correlation is .18 (<span class="math inline">\(\rho = .18\)</span>) and b) desire a 90% chance of finding our effect if it exits - we need 261 participants.</p>
+<div id="a-different-number-of-participants-2" class="section level5">
+<h5><span class="header-section-number">8.6.2.0.1</span> A different number of participants?</h5>
+<p>But what happens to our power if we get a greater/fewer number of participants? We don’t always have control over the exact number due to non-response rates etc. We can use the graph below to see how power changes as the number of participants changes. Based on an examination of this graph, we may want to adjust the number of participants.</p>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="sample-size-analysis-for-nhst.html#cb344-1"></a><span class="kw">plot</span>(pwr_out)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-258-1.png" width="672" /></p>
+<p>We can see the information conveyed in the graph above for our proposed correlation study in table form using the code below.</p>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="sample-size-analysis-for-nhst.html#cb345-1"></a><span class="co"># Specify the population effect size from your power analysis</span></span>
+<span id="cb345-2"><a href="sample-size-analysis-for-nhst.html#cb345-2"></a>pop_r &lt;-<span class="st"> </span><span class="fl">.18</span></span>
+<span id="cb345-3"><a href="sample-size-analysis-for-nhst.html#cb345-3"></a></span>
+<span id="cb345-4"><a href="sample-size-analysis-for-nhst.html#cb345-4"></a><span class="co"># Do not change code below</span></span>
+<span id="cb345-5"><a href="sample-size-analysis-for-nhst.html#cb345-5"></a>pwr_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pwr.r.test</span>(<span class="dt">r =</span> pop_r, <span class="dt">power =</span> <span class="fl">.50</span>)<span class="op">$</span>n)</span>
+<span id="cb345-6"><a href="sample-size-analysis-for-nhst.html#cb345-6"></a>pwr_<span class="dv">80</span> &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pwr.r.test</span>(<span class="dt">r =</span> pop_r, <span class="dt">power =</span> <span class="fl">.80</span>)<span class="op">$</span>n)</span>
+<span id="cb345-7"><a href="sample-size-analysis-for-nhst.html#cb345-7"></a>pwr_<span class="dv">95</span> &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pwr.r.test</span>(<span class="dt">r =</span> pop_r, <span class="dt">power =</span> <span class="fl">.95</span>)<span class="op">$</span>n)</span>
+<span id="cb345-8"><a href="sample-size-analysis-for-nhst.html#cb345-8"></a></span>
+<span id="cb345-9"><a href="sample-size-analysis-for-nhst.html#cb345-9"></a>power_labels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;dangerously low power (0 to .50)&quot;</span>,</span>
+<span id="cb345-10"><a href="sample-size-analysis-for-nhst.html#cb345-10"></a>                  <span class="st">&quot;low power (.50 to .80)&quot;</span>,</span>
+<span id="cb345-11"><a href="sample-size-analysis-for-nhst.html#cb345-11"></a>                  <span class="st">&quot;adequate power (.80 to .95)&quot;</span>,</span>
+<span id="cb345-12"><a href="sample-size-analysis-for-nhst.html#cb345-12"></a>                  <span class="st">&quot;almost certain power (&gt; .95)&quot;</span>)</span>
+<span id="cb345-13"><a href="sample-size-analysis-for-nhst.html#cb345-13"></a>  </span>
+<span id="cb345-14"><a href="sample-size-analysis-for-nhst.html#cb345-14"></a>power_table &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">power =</span> power_labels,</span>
+<span id="cb345-15"><a href="sample-size-analysis-for-nhst.html#cb345-15"></a>                          <span class="dt">n_start =</span> <span class="kw">round</span>(<span class="kw">c</span>(<span class="dv">1</span>, pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>),<span class="dv">2</span>),</span>
+<span id="cb345-16"><a href="sample-size-analysis-for-nhst.html#cb345-16"></a>                          <span class="dt">n_end =</span> <span class="kw">round</span>(<span class="kw">c</span>(pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>, <span class="ot">NA</span>),<span class="dv">2</span>))</span>
+<span id="cb345-17"><a href="sample-size-analysis-for-nhst.html#cb345-17"></a></span>
+<span id="cb345-18"><a href="sample-size-analysis-for-nhst.html#cb345-18"></a><span class="kw">print</span>(power_table)</span></code></pre></div>
+<pre><code>##                              power n_start n_end
+## 1 dangerously low power (0 to .50)       1   118
+## 2           low power (.50 to .80)     118   239
+## 3      adequate power (.80 to .95)     239   394
+## 4     almost certain power (&gt; .95)     394    NA</code></pre>
+<p>This table indicates that assuming a population effect size of <span class="math inline">\(\rho\)</span> = .18 that your statistical power will be:</p>
+<ul>
+<li><p>dangerously low if you have between 1 and 118 participants</p></li>
+<li><p>low if you have between 118 and 239 participants</p></li>
+<li><p>adequate if you have between 239 and 394 participants</p></li>
+<li><p>excellent if you have 394 or more participants</p></li>
+</ul>
+</div>
+<div id="a-different-effect-size-2" class="section level5">
+<h5><span class="header-section-number">8.6.2.0.2</span> A different effect size?</h5>
+<p>Sample size calculations use an estimate of the unknown population effect size. What happens to power if the population effect size is different than what we estimated. That information is conveyed in the graph below. An examination of this output might cause you to adjust your sample size.</p>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="sample-size-analysis-for-nhst.html#cb347-1"></a><span class="kw">library</span>(pwr)</span>
+<span id="cb347-2"><a href="sample-size-analysis-for-nhst.html#cb347-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb347-3"><a href="sample-size-analysis-for-nhst.html#cb347-3"></a></span>
+<span id="cb347-4"><a href="sample-size-analysis-for-nhst.html#cb347-4"></a><span class="co"># Indicate the type of test for your study.</span></span>
+<span id="cb347-5"><a href="sample-size-analysis-for-nhst.html#cb347-5"></a><span class="co"># For alternative: use &quot;greater&quot; for one-sided </span></span>
+<span id="cb347-6"><a href="sample-size-analysis-for-nhst.html#cb347-6"></a><span class="co"># and &quot;two.sided&quot; for two-sided test</span></span>
+<span id="cb347-7"><a href="sample-size-analysis-for-nhst.html#cb347-7"></a>alternative &lt;-<span class="st"> &quot;greater&quot;</span></span>
+<span id="cb347-8"><a href="sample-size-analysis-for-nhst.html#cb347-8"></a>n &lt;-<span class="st"> </span><span class="dv">261</span>  <span class="co"># sample size</span></span>
+<span id="cb347-9"><a href="sample-size-analysis-for-nhst.html#cb347-9"></a></span>
+<span id="cb347-10"><a href="sample-size-analysis-for-nhst.html#cb347-10"></a></span>
+<span id="cb347-11"><a href="sample-size-analysis-for-nhst.html#cb347-11"></a><span class="co"># Do not modify code below</span></span>
+<span id="cb347-12"><a href="sample-size-analysis-for-nhst.html#cb347-12"></a>rho &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.01</span>)</span>
+<span id="cb347-13"><a href="sample-size-analysis-for-nhst.html#cb347-13"></a>rho_axis_values &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.10</span>)</span>
+<span id="cb347-14"><a href="sample-size-analysis-for-nhst.html#cb347-14"></a>power_values &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">rho =</span> rho, <span class="dt">n =</span> n, <span class="dt">power =</span> <span class="ot">NA</span>)</span>
+<span id="cb347-15"><a href="sample-size-analysis-for-nhst.html#cb347-15"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(power_values)){</span>
+<span id="cb347-16"><a href="sample-size-analysis-for-nhst.html#cb347-16"></a>  pwr_analysis &lt;-<span class="st"> </span><span class="kw">pwr.r.test</span>(<span class="dt">r =</span> power_values<span class="op">$</span>rho[i],</span>
+<span id="cb347-17"><a href="sample-size-analysis-for-nhst.html#cb347-17"></a>                             <span class="dt">n =</span> n,</span>
+<span id="cb347-18"><a href="sample-size-analysis-for-nhst.html#cb347-18"></a>                             <span class="dt">alternative =</span> alternative)</span>
+<span id="cb347-19"><a href="sample-size-analysis-for-nhst.html#cb347-19"></a>  power_values<span class="op">$</span>power[i] &lt;-<span class="st"> </span>pwr_analysis<span class="op">$</span>power</span>
+<span id="cb347-20"><a href="sample-size-analysis-for-nhst.html#cb347-20"></a>}</span>
+<span id="cb347-21"><a href="sample-size-analysis-for-nhst.html#cb347-21"></a></span>
+<span id="cb347-22"><a href="sample-size-analysis-for-nhst.html#cb347-22"></a>pwr_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">pwr.r.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.50</span>)<span class="op">$</span>r</span>
+<span id="cb347-23"><a href="sample-size-analysis-for-nhst.html#cb347-23"></a>pwr_<span class="dv">80</span> &lt;-<span class="st"> </span><span class="kw">pwr.r.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.80</span>)<span class="op">$</span>r</span>
+<span id="cb347-24"><a href="sample-size-analysis-for-nhst.html#cb347-24"></a>pwr_<span class="dv">95</span> &lt;-<span class="st"> </span><span class="kw">pwr.r.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.95</span>)<span class="op">$</span>r</span>
+<span id="cb347-25"><a href="sample-size-analysis-for-nhst.html#cb347-25"></a>power_plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> power_values,</span>
+<span id="cb347-26"><a href="sample-size-analysis-for-nhst.html#cb347-26"></a>                     <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> rho, <span class="dt">y =</span> power)) <span class="op">+</span></span>
+<span id="cb347-27"><a href="sample-size-analysis-for-nhst.html#cb347-27"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb347-28"><a href="sample-size-analysis-for-nhst.html#cb347-28"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> rho_axis_values) <span class="op">+</span></span>
+<span id="cb347-29"><a href="sample-size-analysis-for-nhst.html#cb347-29"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">.10</span>)) <span class="op">+</span></span>
+<span id="cb347-30"><a href="sample-size-analysis-for-nhst.html#cb347-30"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">sprintf</span>(<span class="st">&quot;Power plot for N = %g&quot;</span>, n),</span>
+<span id="cb347-31"><a href="sample-size-analysis-for-nhst.html#cb347-31"></a>       <span class="dt">subtitle =</span> <span class="kw">sprintf</span>(<span class="st">&quot;Alternative = %s&quot;</span>, alternative),</span>
+<span id="cb347-32"><a href="sample-size-analysis-for-nhst.html#cb347-32"></a>       <span class="dt">x =</span> <span class="st">&quot;Population Correlation&quot;</span>,</span>
+<span id="cb347-33"><a href="sample-size-analysis-for-nhst.html#cb347-33"></a>       <span class="dt">y =</span> <span class="st">&quot;Power (probability of sig. effect)&quot;</span>) <span class="op">+</span></span>
+<span id="cb347-34"><a href="sample-size-analysis-for-nhst.html#cb347-34"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> <span class="dv">0</span>, <span class="dt">xmax =</span> pwr_<span class="dv">50</span>, <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.5</span>) <span class="op">+</span></span>
+<span id="cb347-35"><a href="sample-size-analysis-for-nhst.html#cb347-35"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> pwr_<span class="dv">50</span>, <span class="dt">xmax =</span> pwr_<span class="dv">80</span>, <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.2</span>) <span class="op">+</span></span>
+<span id="cb347-36"><a href="sample-size-analysis-for-nhst.html#cb347-36"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> pwr_<span class="dv">80</span>, <span class="dt">xmax =</span> pwr_<span class="dv">95</span>, <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, <span class="dt">fill =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.2</span>) <span class="op">+</span></span>
+<span id="cb347-37"><a href="sample-size-analysis-for-nhst.html#cb347-37"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> pwr_<span class="dv">95</span>, <span class="dt">xmax =</span> <span class="dv">1</span>, <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">ymax =</span> <span class="dv">1</span>, <span class="dt">fill =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.5</span>) <span class="op">+</span></span>
+<span id="cb347-38"><a href="sample-size-analysis-for-nhst.html#cb347-38"></a><span class="st">  </span><span class="kw">theme_classic</span>()</span>
+<span id="cb347-39"><a href="sample-size-analysis-for-nhst.html#cb347-39"></a><span class="kw">print</span>(power_plot)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-260-1.png" width="672" /></p>
+<p>We can see the information conveyed in the graph above for a correlation study in table form using the code below.</p>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="sample-size-analysis-for-nhst.html#cb348-1"></a><span class="co"># Specify the sample size from your power analysis</span></span>
+<span id="cb348-2"><a href="sample-size-analysis-for-nhst.html#cb348-2"></a>n =<span class="st"> </span><span class="dv">261</span> </span>
+<span id="cb348-3"><a href="sample-size-analysis-for-nhst.html#cb348-3"></a></span>
+<span id="cb348-4"><a href="sample-size-analysis-for-nhst.html#cb348-4"></a><span class="co"># Do not modify the code below</span></span>
+<span id="cb348-5"><a href="sample-size-analysis-for-nhst.html#cb348-5"></a>pwr_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">pwr.r.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.50</span>)<span class="op">$</span>r</span>
+<span id="cb348-6"><a href="sample-size-analysis-for-nhst.html#cb348-6"></a>pwr_<span class="dv">80</span> &lt;-<span class="st"> </span><span class="kw">pwr.r.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.80</span>)<span class="op">$</span>r</span>
+<span id="cb348-7"><a href="sample-size-analysis-for-nhst.html#cb348-7"></a>pwr_<span class="dv">95</span> &lt;-<span class="st"> </span><span class="kw">pwr.r.test</span>(<span class="dt">n =</span> n, <span class="dt">power =</span> <span class="fl">.95</span>)<span class="op">$</span>r</span>
+<span id="cb348-8"><a href="sample-size-analysis-for-nhst.html#cb348-8"></a></span>
+<span id="cb348-9"><a href="sample-size-analysis-for-nhst.html#cb348-9"></a>power_labels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;dangerously low power (0 to .50)&quot;</span>,</span>
+<span id="cb348-10"><a href="sample-size-analysis-for-nhst.html#cb348-10"></a>                  <span class="st">&quot;low power (.50 to .80)&quot;</span>,</span>
+<span id="cb348-11"><a href="sample-size-analysis-for-nhst.html#cb348-11"></a>                  <span class="st">&quot;adequate power (.80 to .95)&quot;</span>,</span>
+<span id="cb348-12"><a href="sample-size-analysis-for-nhst.html#cb348-12"></a>                  <span class="st">&quot;almost certain power (&gt; .95)&quot;</span>)</span>
+<span id="cb348-13"><a href="sample-size-analysis-for-nhst.html#cb348-13"></a>  </span>
+<span id="cb348-14"><a href="sample-size-analysis-for-nhst.html#cb348-14"></a>power_table &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">power =</span> power_labels,</span>
+<span id="cb348-15"><a href="sample-size-analysis-for-nhst.html#cb348-15"></a>                          <span class="dt">rho_start =</span> <span class="kw">round</span>(<span class="kw">c</span>(<span class="dv">0</span>, pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>),<span class="dv">2</span>),</span>
+<span id="cb348-16"><a href="sample-size-analysis-for-nhst.html#cb348-16"></a>                          <span class="dt">rho_end =</span> <span class="kw">round</span>(<span class="kw">c</span>(pwr_<span class="dv">50</span>, pwr_<span class="dv">80</span>, pwr_<span class="dv">95</span>, <span class="ot">NA</span>),<span class="dv">2</span>))</span>
+<span id="cb348-17"><a href="sample-size-analysis-for-nhst.html#cb348-17"></a></span>
+<span id="cb348-18"><a href="sample-size-analysis-for-nhst.html#cb348-18"></a><span class="kw">print</span>(power_table)</span></code></pre></div>
+<pre><code>##                              power rho_start rho_end
+## 1 dangerously low power (0 to .50)      0.00    0.12
+## 2           low power (.50 to .80)      0.12    0.17
+## 3      adequate power (.80 to .95)      0.17    0.22
+## 4     almost certain power (&gt; .95)      0.22      NA</code></pre>
+<p>This table indicates that using 261 participants your statistical power will be:</p>
+<ul>
+<li><p>dangerously low if the actual population effect is higher than 0 and lower than <span class="math inline">\(\rho = .12\)</span></p></li>
+<li><p>low if the actual population effect is between <span class="math inline">\(\rho = .12\)</span> and <span class="math inline">\(\rho = .17\)</span></p></li>
+<li><p>adequate if the actual population effect is between <span class="math inline">\(\rho = 0.16\)</span> and <span class="math inline">\(\rho = 0.22\)</span></p></li>
+<li><p>excellent if the actual population effect is higher than <span class="math inline">\(\rho = 0.22\)</span></p></li>
+</ul>
+</div>
+</div>
+<div id="what-will-be-signficant-2" class="section level3">
+<h3><span class="header-section-number">8.6.3</span> What will be signficant?</h3>
+<p>Let’s assume that after looking at all the graphs and tables you end up sticking with your initial sample size of 261. What sample-level effect sizes will be significant when you do so?</p>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="sample-size-analysis-for-nhst.html#cb350-1"></a><span class="co"># Specify the sample size from your power / sample size analysis</span></span>
+<span id="cb350-2"><a href="sample-size-analysis-for-nhst.html#cb350-2"></a>n &lt;-<span class="st"> </span><span class="dv">261</span></span>
+<span id="cb350-3"><a href="sample-size-analysis-for-nhst.html#cb350-3"></a></span>
+<span id="cb350-4"><a href="sample-size-analysis-for-nhst.html#cb350-4"></a><span class="co"># Use .95 for one-sided and .975 for two-sided tests</span></span>
+<span id="cb350-5"><a href="sample-size-analysis-for-nhst.html#cb350-5"></a>percentile =<span class="st"> </span><span class="fl">.95</span> </span>
+<span id="cb350-6"><a href="sample-size-analysis-for-nhst.html#cb350-6"></a></span>
+<span id="cb350-7"><a href="sample-size-analysis-for-nhst.html#cb350-7"></a><span class="co"># Do not modify the code below</span></span>
+<span id="cb350-8"><a href="sample-size-analysis-for-nhst.html#cb350-8"></a>t_critical &lt;-<span class="st"> </span><span class="kw">qt</span>(percentile, <span class="dt">df =</span> (n <span class="op">-</span><span class="st"> </span><span class="dv">2</span>))</span>
+<span id="cb350-9"><a href="sample-size-analysis-for-nhst.html#cb350-9"></a>t2 &lt;-<span class="st"> </span>t_critical<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb350-10"><a href="sample-size-analysis-for-nhst.html#cb350-10"></a>r_critical =<span class="st"> </span><span class="kw">sqrt</span>(t2 <span class="op">/</span><span class="st"> </span>(t2 <span class="op">+</span><span class="st"> </span>(n<span class="dv">-2</span>)))</span>
+<span id="cb350-11"><a href="sample-size-analysis-for-nhst.html#cb350-11"></a><span class="kw">print</span>(r_critical)</span></code></pre></div>
+<pre><code>## [1] 0.102</code></pre>
+<p>This indicates that with a sample size of 261 that only sample correlations greater than <span class="math inline">\(r\)</span> = .10 (rounded) will be significant.</p>
+</div>
+</div>
+<div id="references" class="section level2">
+<h2><span class="header-section-number">8.7</span> References</h2>
+
+<div id="refs" class="references">
+<div>
+<p>Button, Katherine S, John PA Ioannidis, Claire Mokrysz, Brian A Nosek, Jonathan Flint, Emma SJ Robinson, and Marcus R Munafò. 2013. “Power Failure: Why Small Sample Size Undermines the Reliability of Neuroscience.” <em>Nature Reviews Neuroscience</em> 14 (5): 365–76.</p>
+</div>
+<div>
+<p>Cohen, Jacob. 1988. <em>Statistical Power Analysis for the Behavioral Sciences</em>. Academic press.</p>
+</div>
+<div>
+<p>Dumas-Mallet, Estelle, Katherine S Button, Thomas Boraud, Francois Gonon, and Marcus R Munafò. 2017. “Low Statistical Power in Biomedical Science: A Review of Three Human Research Domains.” <em>Royal Society Open Science</em> 4 (2): 160254.</p>
+</div>
+<div>
+<p>Hays, William. 1994. <em>Statistics</em>. 5th ed. Cengage Learning.</p>
+</div>
+<div>
+<p>Hemphill, James F. 2003. “Interpreting the Magnitudes of Correlation Coefficients.”</p>
+</div>
+<div>
+<p>Lakens, Daniël, Anne M Scheel, and Peder M Isager. 2018. “Equivalence Testing for Psychological Research: A Tutorial.” <em>Advances in Methods and Practices in Psychological Science</em> 1 (2): 259–69.</p>
+</div>
+<div>
+<p>Lee Rodgers, Joseph, and W Alan Nicewander. 1988. “Thirteen Ways to Look at the Correlation Coefficient.” <em>The American Statistician</em> 42 (1): 59–66.</p>
+</div>
+<div>
+<p>Margulis, Dan. 2005. <em>Photoshop Lab Color: The Canyon Conundrum and Other Adventures in the Most Powerful Colorspace</em>. Peachpit Press.</p>
+</div>
+<div>
+<p>Perugini, Marco, Marcello Gallucci, and Giulio Costantini. 2014. “Safeguard Power as a Protection Against Imprecise Power Estimates.” <em>Perspectives on Psychological Science</em> 9 (3): 319–32.</p>
+</div>
+<div>
+<p>Schäfer, Thomas, and Marcus A Schwarz. 2019. “The Meaningfulness of Effect Sizes in Psychological Research: Differences Between Sub-Disciplines and the Impact of Potential Biases.” <em>Frontiers in Psychology</em> 10: 813. <a href="https://doi.org/10.3389/fpsyg.2019.00813">https://doi.org/10.3389/fpsyg.2019.00813</a>.</p>
+</div>
+<div>
+<p>Schmidt, Frank L, and John E Hunter. 2014. <em>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</em>. Sage.</p>
+</div>
+<div>
+<p>Simonsohn, Uri. 2015. “Small Telescopes: Detectability and the Evaluation of Replication Results.” <em>Psychological Science</em> 26 (5): 559–69.</p>
+</div>
+<div>
+<p>Szucs, Denes, and John PA Ioannidis. 2017. “Empirical Assessment of Published Effect Sizes and Power in the Recent Cognitive Neuroscience and Psychology Literature.” <em>PLoS Biology</em> 15 (3): e2000797.</p>
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-button2013power">
+<p>Button, Katherine S, John PA Ioannidis, Claire Mokrysz, Brian A Nosek, Jonathan Flint, Emma SJ Robinson, and Marcus R Munafò. 2013. “Power Failure: Why Small Sample Size Undermines the Reliability of Neuroscience.” <em>Nature Reviews Neuroscience</em> 14 (5): 365–76.</p>
+</div>
+<div id="ref-dumas2017low">
+<p>Dumas-Mallet, Estelle, Katherine S Button, Thomas Boraud, Francois Gonon, and Marcus R Munafò. 2017. “Low Statistical Power in Biomedical Science: A Review of Three Human Research Domains.” <em>Royal Society Open Science</em> 4 (2): 160254.</p>
+</div>
+<div id="ref-hemphill2003interpreting">
+<p>Hemphill, James F. 2003. “Interpreting the Magnitudes of Correlation Coefficients.”</p>
+</div>
+<div id="ref-lakens2018equivalence">
+<p>Lakens, Daniël, Anne M Scheel, and Peder M Isager. 2018. “Equivalence Testing for Psychological Research: A Tutorial.” <em>Advances in Methods and Practices in Psychological Science</em> 1 (2): 259–69.</p>
+</div>
+<div id="ref-perugini2014safeguard">
+<p>Perugini, Marco, Marcello Gallucci, and Giulio Costantini. 2014. “Safeguard Power as a Protection Against Imprecise Power Estimates.” <em>Perspectives on Psychological Science</em> 9 (3): 319–32.</p>
+</div>
+<div id="ref-simonsohn2015small">
+<p>Simonsohn, Uri. 2015. “Small Telescopes: Detectability and the Evaluation of Replication Results.” <em>Psychological Science</em> 26 (5): 559–69.</p>
+</div>
+<div id="ref-szucs2017empirical">
+<p>Szucs, Denes, and John PA Ioannidis. 2017. “Empirical Assessment of Published Effect Sizes and Power in the Recent Cognitive Neuroscience and Psychology Literature.” <em>PLoS Biology</em> 15 (3): e2000797.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="effect-sizes-from-publications.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/08-power_effect_size.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

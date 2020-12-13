@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introduction | PSYC6060 Course Notes</title>
+  <meta name="description" content="Course notes for PSYC 6060" />
+  <meta name="generator" content="bookdown 0.19.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introduction | PSYC6060 Course Notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course notes for PSYC 6060" />
+  <meta name="github-repo" content="dstanley4/psyc6060bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introduction | PSYC6060 Course Notes" />
+  
+  <meta name="twitter:description" content="Course notes for PSYC 6060" />
+  
+
+<meta name="author" content="David J. Stanley" />
+
+
+<meta name="date" content="2020-07-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="about-the-author.html"/>
+<link rel="next" href="handling-data-with-the-tidyverse.html"/>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-the-book"><i class="fa fa-check"></i>Structure of the book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.3</b> Create an account at R Studio Cloud</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.4</b> Join the class workspace</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.12</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
+<li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
+<li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
+<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
+<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
+<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv and data frames</a></li>
+<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv and tibbles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html"><i class="fa fa-check"></i><b>3</b> Making your data ready for analysis</a><ul>
+<li class="chapter" data-level="3.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#required-packages"><i class="fa fa-check"></i><b>3.1</b> Required Packages</a></li>
+<li class="chapter" data-level="3.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#objective-1"><i class="fa fa-check"></i><b>3.2</b> Objective</a></li>
+<li class="chapter" data-level="3.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#context"><i class="fa fa-check"></i><b>3.3</b> Context</a></li>
+<li class="chapter" data-level="3.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>3.4</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>3.4.1</b> Structuring data: Obtaining tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>3.5</b> Data collection considerations</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#naming-conventions"><i class="fa fa-check"></i><b>3.5.1</b> Naming conventions</a></li>
+<li class="chapter" data-level="3.5.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#likert-type-items"><i class="fa fa-check"></i><b>3.5.2</b> Likert-type items</a></li>
+<li class="chapter" data-level="3.5.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#anova-between"><i class="fa fa-check"></i><b>3.5.3</b> ANOVA between</a></li>
+<li class="chapter" data-level="3.5.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#anova-within"><i class="fa fa-check"></i><b>3.5.4</b> ANOVA within</a></li>
+<li class="chapter" data-level="3.5.5" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#other-information"><i class="fa fa-check"></i><b>3.5.5</b> Other information</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#following-the-examples"><i class="fa fa-check"></i><b>3.6</b> Following the examples</a></li>
+<li class="chapter" data-level="3.7" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>3.7</b> Entering data into spreadsheets</a></li>
+<li class="chapter" data-level="3.8" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#experiment-between"><i class="fa fa-check"></i><b>3.8</b> Experiment: Between</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors"><i class="fa fa-check"></i><b>3.8.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.8.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening"><i class="fa fa-check"></i><b>3.8.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.8.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening"><i class="fa fa-check"></i><b>3.8.3</b> Numeric screening</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#experiment-within-one-way"><i class="fa fa-check"></i><b>3.9</b> Experiment: Within one-way</a><ul>
+<li class="chapter" data-level="3.9.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-1"><i class="fa fa-check"></i><b>3.9.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.9.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening-1"><i class="fa fa-check"></i><b>3.9.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.9.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-1"><i class="fa fa-check"></i><b>3.9.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.9.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#pivot-to-tidy-data"><i class="fa fa-check"></i><b>3.9.4</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#experiment-within-n-way"><i class="fa fa-check"></i><b>3.10</b> Experiment: Within N-way</a><ul>
+<li class="chapter" data-level="3.10.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-2"><i class="fa fa-check"></i><b>3.10.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.10.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening-2"><i class="fa fa-check"></i><b>3.10.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.10.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-2"><i class="fa fa-check"></i><b>3.10.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.10.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#pivot-to-tidy-data-1"><i class="fa fa-check"></i><b>3.10.4</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#surveys-single-occassion"><i class="fa fa-check"></i><b>3.11</b> Surveys: Single Occassion</a><ul>
+<li class="chapter" data-level="3.11.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-3"><i class="fa fa-check"></i><b>3.11.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.11.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening-3"><i class="fa fa-check"></i><b>3.11.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.11.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-3"><i class="fa fa-check"></i><b>3.11.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.11.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#scale-scores"><i class="fa fa-check"></i><b>3.11.4</b> Scale scores</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#surveys-multiple-occasions"><i class="fa fa-check"></i><b>3.12</b> Surveys: Multiple Occasions</a><ul>
+<li class="chapter" data-level="3.12.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-4"><i class="fa fa-check"></i><b>3.12.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.12.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#screening-factors"><i class="fa fa-check"></i><b>3.12.2</b> Screening factors</a></li>
+<li class="chapter" data-level="3.12.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-4"><i class="fa fa-check"></i><b>3.12.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.12.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#scale-scores-1"><i class="fa fa-check"></i><b>3.12.4</b> Scale scores</a></li>
+<li class="chapter" data-level="3.12.5" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#pivot-to-tidy-data-2"><i class="fa fa-check"></i><b>3.12.5</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.13" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.13</b> Basic descriptive statistics</a><ul>
+<li class="chapter" data-level="3.13.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#skim"><i class="fa fa-check"></i><b>3.13.1</b> skim()</a></li>
+<li class="chapter" data-level="3.13.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#apa.cor.table"><i class="fa fa-check"></i><b>3.13.2</b> apa.cor.table()</a></li>
+<li class="chapter" data-level="3.13.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#tidyverse"><i class="fa fa-check"></i><b>3.13.3</b> tidyverse</a></li>
+<li class="chapter" data-level="3.13.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#cronbachs-alpha"><i class="fa fa-check"></i><b>3.13.4</b> Cronbach’s alpha</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="more-to-say.html"><a href="more-to-say.html"><i class="fa fa-check"></i><b>A</b> More to Say</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PSYC6060 Course Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<p>Welcome! In this guide, we will teach you about statistics using the statistical software R with the interface provided by R Studio. The purpose of this chapter to is provide you with a set of activities that get you up-and-running in R quickly so get a sense of how it works. In later chatpers we will revisit these same topics in more detail.</p>
+<div id="a-focus-on-workflow" class="section level2">
+<h2><span class="header-section-number">1.1</span> A focus on workflow</h2>
+<p>An important part of this guide is training you in a workflow that will avoid many problems than can occur when using R.</p>
+</div>
+<div id="r-works-with-plug-ins" class="section level2">
+<h2><span class="header-section-number">1.2</span> R works with plug-ins</h2>
+<p>R is a statistical language with many plug-ins called <strong>packages</strong> that you will use for analyses. You can think of R as being like your smartphone. To do things with your phone you need <strong>an App</strong> (R equivalent: a <em>package</em>) from the App Store (R equivalent: <em>CRAN</em>). Apps need to be <strong>downloaded</strong> (R equivalent: <em>install.packages</em>) before you can use them. To use the app you need <strong>Open</strong> it (R equivalent: <em>library command</em>). These similarities are illustrated in Table <a href="introduction.html#tab:appstore">1.1</a> below.</p>
+<table>
+<caption><span id="tab:appstore">TABLE 1.1: </span>R packages are similar to smart phone apps (Kim, 2018)</caption>
+<thead>
+<tr class="header">
+<th align="left">Smart Phone Terminology</th>
+<th align="left">R Terminology</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">App</td>
+<td align="left">package</td>
+</tr>
+<tr class="even">
+<td align="left">App Store</td>
+<td align="left">CRAN</td>
+</tr>
+<tr class="odd">
+<td align="left">Download App from App Store</td>
+<td align="left">install.packages(“apaTables”, dependencies = TRUE)</td>
+</tr>
+<tr class="even">
+<td align="left">Open App</td>
+<td align="left">library(“apaTables”)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="create-an-account-at-r-studio-cloud" class="section level2">
+<h2><span class="header-section-number">1.3</span> Create an account at R Studio Cloud</h2>
+<p><a href="http://www.rstudio.cloud">R Studio Cloud</a> accounts are free and required for this guide. Please go to the website and set up a new account.</p>
+</div>
+<div id="join-the-class-workspace" class="section level2">
+<h2><span class="header-section-number">1.4</span> Join the class workspace</h2>
+<p>To do the assignment required for this class you need to join the class workspace on R Studio Cloud. To do so:</p>
+<ol style="list-style-type: decimal">
+<li><p>Log into R Studio Cloud (if you haven’t already done so).</p></li>
+<li><p>Go to your university email account and find the message with the subject “R Studio Workspace Invitation”. In this message there is a link to the class R Studio Cloud workspace.</p></li>
+<li><p>Click on the workspace link in the email or paste it into your web browser. You should see a screen like the one below in Figure <a href="introduction.html#fig:join">1.1</a>. Click on the Join button.</p></li>
+</ol>
+<div class="figure"><span id="fig:join"></span>
+<img src="ch_introduction/images/screenshot_join.png" alt="Screen shot of workspace join message." width="70%" />
+<p class="caption">
+FIGURE 1.1: Screen shot of workspace join message.
+</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>Then you should see the welcome message illustrated in Figure <a href="introduction.html#fig:welcome">1.2</a>. Above this message is the Projects menu option. Click on the word Project.</li>
+</ol>
+<div class="figure"><span id="fig:welcome"></span>
+<img src="ch_introduction/images/screenshot_welcome.png" alt="Screen shot of welcome messag" width="70%" />
+<p class="caption">
+FIGURE 1.2: Screen shot of welcome messag
+</p>
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>You should now see the First Project displayed as in <a href="introduction.html#fig:assignment">1.3</a>. Click the Start button. You will then move to a view of R Studio.</li>
+</ol>
+<div class="figure"><span id="fig:assignment"></span>
+<img src="ch_introduction/images/screenshot_assignment.png" alt="Screen shot of starting first assignment" width="70%" />
+<p class="caption">
+FIGURE 1.3: Screen shot of starting first assignment
+</p>
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>In R Studio it is essential you use projects to keep your files organized and in the same spot. For this course, when your start an assignment on R Studio Cloud and the project will already have been made for you. Later you will learn to make your own R Studio Projects.</li>
+</ol>
+</div>
+<div id="exploring-the-r-studio-interface" class="section level2">
+<h2><span class="header-section-number">1.5</span> Exploring the R Studio Interface</h2>
+<p>Once you have opened (or created) a Project folder, you are presented with the R Studio interface. There are a few key elements to the user interface that are illustrated in Figure <a href="introduction.html#fig:interface">1.4</a> In the lower right of the screen you can see the a panel with several tabs (i.e., Files, Plots, Packages, etc) that I will refer to as the Files pane. You look in this pane to see all the files associated with your project. On the left side of the screen is the Console which is an interactive pane where you type and obtain results in real time. I’ve placed two large grey blocks on the screen with text to more clearly identify the Console and Files panes. Not shown in this figure is the Script panel where we can store our commands for later reuse.</p>
+<div class="figure"><span id="fig:interface"></span>
+<img src="ch_introduction/images/screenshot_interface.png" alt="R Studio interface" width="70%" />
+<p class="caption">
+FIGURE 1.4: R Studio interface
+</p>
+</div>
+<div id="console-panel" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> Console panel</h3>
+<p>When you first start R, the Console panel is on the left side of the screen. Sometimes there are two panels on the left side (one above the other); if so, the Console panel is the lower one (and labeled accordingly). We can use R a bit like a calculator. Try typing the following into the Console window: 8 + 6 + 7 + 5. You can see that R immediately produced the result on a line preceded by two hashtags (##).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introduction.html#cb3-1"></a><span class="dv">8</span> <span class="op">+</span><span class="st"> </span><span class="dv">6</span> <span class="op">+</span><span class="st"> </span><span class="dv">7</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span></span></code></pre></div>
+<pre><code>## [1] 26</code></pre>
+<p>We can also put the result into a variable to store it. Later we can use the print command to see that result. In the example below we add the numbers 3, 0, and 9 and store the result in the variable my_sum. The text “&lt;-” indicate you are putting what is on the right side of the arrow into the variable on the left side of the arrow. You can think of a variable as cup into which you can put different things. In this case, imagine a real-world cup with my_sum written on the outside and inside the cup we have stored the sum of 3, 0, and 9 (i.e., 12).</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introduction.html#cb5-1"></a>my_sum &lt;-<span class="st"> </span><span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span> <span class="op">+</span><span class="st"> </span><span class="dv">9</span></span></code></pre></div>
+<p>We can inspect the contents of the my_sum variable (i.e., my_sum cup) with the print command:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="introduction.html#cb6-1"></a><span class="kw">print</span>(my_sum)</span></code></pre></div>
+<pre><code>## [1] 12</code></pre>
+<p>Variable are very useful in R. We will use them to store a single number, an entire data set,
+the results of an analysis, or anything else.</p>
+</div>
+<div id="script-panel" class="section level3">
+<h3><span class="header-section-number">1.5.2</span> Script Panel</h3>
+<p>Although you can use R with just with the Console panel, it’s a better idea to use scripts via the Script panel - not visible yet. Scripts are just text files with the commands you use stored in them. You can run a script (as you will see below) using the Run or Source buttons located in the top right of the Script panel.</p>
+<p>Scripts are valuable because if you need to run an analysis a second time you don’t have to type the command in a second time. You can run the script again and again without retyping your commands. More importantly though, the script provides a record of your analyses.</p>
+<p>A common problem in science is that after an article is published, the authors can’t reproduce the numbers in the paper. You can read more about the important problem in a surprising article in the journal <a href="https://molecularbrain.biomedcentral.com/articles/10.1186/s13041-020-0552-2">Molecular Brain</a>. In this article an editor reports how a request for the data underlying articles resulted in the wrong data for 40 out of 41 papers. Long story short – keep track of the data and scripts you use for your paper. In a later chapter, it’s generally poor practice to manipulate or modify or analyze your data using any menu driven software because this approach does not provide a record of what you have done.</p>
+</div>
+</div>
+<div id="writing-your-first-script" class="section level2">
+<h2><span class="header-section-number">1.6</span> Writing your first script</h2>
+<div id="create-the-script-file" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Create the script file</h3>
+<p>Create a script in your R Studio project by using the menu File &gt; New File &gt; R Script.</p>
+<p>Save the file with an appropriate name using the File menu. The file will be saved in your Project folder. A common, and good, convention for naming is to start all script names with the word “script” and separate words with an underscore. You might save this first script file with the name “script_my_first_one.R”. The advantage of beginning all script files with the word script is that when you look at your list of files alphabetically, all the script files will cluster together. Likewise, it’s a good idea to save all data files such that they begin with “data_”. This way all the data files will cluster together in your directory view as well. You can see there is already a data file with this convention called “data_okcupid.csv”.</p>
+<p>You can see as discussed previously, we are trying to instill an effective workflow as you learn R. Using a good naming convention (that is consistent with what others use) is part of the workflow. When you write your scripts it’s a good idea to follow the <a href="https://style.tidyverse.org">tidyverse style guide</a> for script names, variable name, file names, and more.</p>
+</div>
+<div id="add-a-comment-to-your-script" class="section level3">
+<h3><span class="header-section-number">1.6.2</span> Add a comment to your script</h3>
+<p>In the previous section you created your first script. We begin by adding a comment to the script. A comment is something that will be read by humans rather than the computer/R. You make comments for other people that will read your code and need to understand what you have done. However, realize that you are also making comments for your future self as illustrated in an <a href="https://xkcd.com/1421/">XKCD cartoon</a>.</p>
+<p>A good way to start every script is with a comment that includes the date of your script (or even better when you installed your packages, more on this later). Like smartphone apps, packages are updated regularly. Sometimes after a package is updated it will no longer work with an older script. Fortunately, the <a href="https://cran.r-project.org/web/packages/checkpoint/index.html">checkpoint package</a> lets users role back the clock and use older versions of packages. Adding a comment with the date of your script will help future users (including you) to use your script with the same version of the package used when you wrote the script. Dating your script is an important part of an effective and reproducible workflow.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introduction.html#cb8-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
+<span id="cb8-2"><a href="introduction.html#cb8-2"></a><span class="co"># By: John Smith</span></span></code></pre></div>
+<p>Note that in the above comment I used the internationally accepted date format order Year/Month/Day. Some people use the mnemonic <em>Your My Dream</em> to remember this order. Wikipedia provides more information about the <a href="https://en.wikipedia.org/wiki/ISO_8601">Internationally Date Format ISO 8601</a>.</p>
+<p>Moving forward, I suggest you use comments to make your own personal notes in your own code as your write it.</p>
+</div>
+<div id="background-about-the-tidyverse" class="section level3">
+<h3><span class="header-section-number">1.6.3</span> Background about the tidyverse</h3>
+<p>There are generally two broad ways of using R, the older way and the newer way. Using R the older way is refered to as using base R. A more modern approach to using R is the tidyverse. The tidyverse represents a collection of packages the work together to give R a modern workflow. These packages do many things to help the data analyst (loading data, rearranging data, graphing, etc.). We will use the tidyverse approach to R in this guide.</p>
+<p>A noted the tidyverse is a collection of packges. Each package adds new commands to R. The number of packges and correspondingly the number of new commands added to R by the tidyverse is large. Below is a list of the tidyverse packages:</p>
+<pre><code>##  [1] &quot;broom&quot;      &quot;cli&quot;        &quot;crayon&quot;     &quot;dbplyr&quot;    
+##  [5] &quot;dplyr&quot;      &quot;forcats&quot;    &quot;ggplot2&quot;    &quot;haven&quot;     
+##  [9] &quot;hms&quot;        &quot;httr&quot;       &quot;jsonlite&quot;   &quot;lubridate&quot; 
+## [13] &quot;magrittr&quot;   &quot;modelr&quot;     &quot;pillar&quot;     &quot;purrr&quot;     
+## [17] &quot;readr&quot;      &quot;readxl&quot;     &quot;reprex&quot;     &quot;rlang&quot;     
+## [21] &quot;rstudioapi&quot; &quot;rvest&quot;      &quot;stringr&quot;    &quot;tibble&quot;    
+## [25] &quot;tidyr&quot;      &quot;xml2&quot;       &quot;tidyverse&quot;</code></pre>
+<p>Before you can use a package it needs to be installed – this is the same as downloading an app from the App Store. Normally, you can install a <strong>single</strong> packages with the install.packages command. Previously, you needed run an install.package command for every package in the tidyverse as illustrated below (though we no longer use this approach).</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introduction.html#cb10-1"></a><span class="co"># The old way of installing the tidyverse packages</span></span>
+<span id="cb10-2"><a href="introduction.html#cb10-2"></a><span class="co"># Like downloading apps from the app store</span></span>
+<span id="cb10-3"><a href="introduction.html#cb10-3"></a></span>
+<span id="cb10-4"><a href="introduction.html#cb10-4"></a><span class="kw">install.packages</span>(<span class="st">&quot;broom&quot;</span>, <span class="dt">dep =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb10-5"><a href="introduction.html#cb10-5"></a><span class="kw">install.packages</span>(<span class="st">&quot;cli&quot;</span>, <span class="dt">dep =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb10-6"><a href="introduction.html#cb10-6"></a><span class="kw">install.packages</span>(<span class="st">&quot;ggplot&quot;</span>, <span class="dt">dep =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb10-7"><a href="introduction.html#cb10-7"></a><span class="co"># etc</span></span></code></pre></div>
+<p>Fortunately, the tidyverse packages can now by installed with a single install.packages command. Specifically, the install.packages command below will install all of the packages listed above.</p>
+<p><strong>Class note: For the “First Lab”, I’ve done the install.packages for you. So there is no need to use the install.packages command below in this first lab.</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introduction.html#cb11-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="dt">dep =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="add-librarytidyverse-to-your-script" class="section level3">
+<h3><span class="header-section-number">1.6.4</span> Add library(tidyverse) to your script</h3>
+<p>The tidyverse is now installed, so we need to activate it. We do that with the library command. Put the library line below at the top of your script file (below your comment):</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="introduction.html#cb12-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
+<span id="cb12-2"><a href="introduction.html#cb12-2"></a><span class="co"># By: John Smith</span></span>
+<span id="cb12-3"><a href="introduction.html#cb12-3"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+</div>
+<div id="activate-tidyverse-auto-complete-for-your-script" class="section level3">
+<h3><span class="header-section-number">1.6.5</span> Activate tidyverse auto-complete for your script</h3>
+<p>Select the library(tidyverse) text with your mouse/track-pad so that it is highlighted. Then click the Run button in the upper right of the Script panel. Doing this “runs” the selected text. After you click the Run button you should see text like the following the Console panel:</p>
+<pre><code>## ── Attaching packages ─────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.1     ✓ purrr   0.3.4
+## ✓ tibble  3.0.1     ✓ dplyr   1.0.0
+## ✓ tidyr   1.1.0     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<p>When you use library(tidyverse) to activate the tidyverse you activate the most commonly used subset of the tidyverse packages. In the output you see checkmarks beside names of the tidyverse packages you have activated.</p>
+<p>By activating these packages you have added new commands to R that you will use. Sometimes these packages replace older versions of commands in R. The “Conflicts” section in the output shows you where the packages you activated replaced older R commands with newer R commands. You can activate the other tidyverse package by running a library command for each package – if needed. No need to do so now.</p>
+<p>Most importantly, running the library(tidyverse) prior to entering the rest of your script allows R Studio to present auto-complete options when typing your text. Remember to start each script with the library(tidyverse) command and then Run it so you get the autocomplete options for the rest of the commands your enter.</p>
+</div>
+</div>
+<div id="loading-your-data" class="section level2">
+<h2><span class="header-section-number">1.7</span> Loading your data</h2>
+<div id="use-read_csv-not-read.csv-to-open-files." class="section level3">
+<h3><span class="header-section-number">1.7.1</span> Use read_csv (not read.csv) to open files.</h3>
+<p>If you inspect the Files pane on the right of the screen you see the <strong>data_okcupid.csv</strong> data file in our project directory. We will load this data with the commands below. If you followed the steps above, you should have auto-complete for the tidyverse commands you type for now in – in the current R session. Enter the command below into your script. As your start to type read_csv you will likely be presented with an auto-complete option. You can use the arrow keys to move up and down the list of options to select the one you want - then press tab to select it.</p>
+<p>Once your command looks like the one below select the text and click on the “Run” button.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="introduction.html#cb16-1"></a>okcupid_profiles &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   age = col_double(),
+##   diet = col_character(),
+##   height = col_double(),
+##   pets = col_character(),
+##   sex = col_character(),
+##   status = col_character()
+## )</code></pre>
+<p>The output indicates that you have loaded a data file and the type of data in each column. The sex column is of type col_character which indicates it contains text/letters. Most of the columns are of the type character. The age and height columns contain numbers are correspondingly indicated to be the type col_double. The label col_double indicates that a column of numbers represented in R with <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">high precision</a>. There are other ways of representing numbers in R but this is the type we will see/use most often.</p>
+</div>
+</div>
+<div id="checking-out-your-data" class="section level2">
+<h2><span class="header-section-number">1.8</span> Checking out your data</h2>
+<p>There many ways of viewing the actual data you loaded. A few of these are illustrated now.</p>
+<div id="view-see-a-spreadsheet-view-of-your-data" class="section level3">
+<h3><span class="header-section-number">1.8.1</span> view(): See a spreadsheet view of your data</h3>
+<p>You can inspect your data in a spreadsheet view by using the view command. Do NOT add this command to your script file – EVER. Adding it to the script can cause substantial problems. Type this command in the Console.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="introduction.html#cb18-1"></a><span class="kw">view</span>(okcupid_profiles)</span></code></pre></div>
+</div>
+<div id="print-see-you-data-in-the-console" class="section level3">
+<h3><span class="header-section-number">1.8.2</span> print(): See you data in the Console</h3>
+<p>You can inspect the first few rows of your data with the print() command. It is OK to add a print command to your script. Try the print() command below in the Console:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="introduction.html#cb19-1"></a><span class="kw">print</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## # A tibble: 59,946 x 6
+##      age diet         height pets              sex   status 
+##    &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt;  
+##  1    22 strictly an…     75 likes dogs and l… m     single 
+##  2    35 mostly other     70 likes dogs and l… m     single 
+##  3    38 anything         68 has cats          m     availa…
+##  4    23 vegetarian       71 likes cats        m     single 
+##  5    29 &lt;NA&gt;             66 likes dogs and l… m     single 
+##  6    29 mostly anyt…     67 likes cats        m     single 
+##  7    32 strictly an…     65 likes dogs and l… f     single 
+##  8    31 mostly anyt…     65 likes dogs and l… f     single 
+##  9    24 strictly an…     67 likes dogs and l… f     single 
+## 10    37 mostly anyt…     65 likes dogs and l… m     single 
+## # … with 59,936 more rows</code></pre>
+</div>
+<div id="head-check-out-the-first-few-rows-of-data" class="section level3">
+<h3><span class="header-section-number">1.8.3</span> head(): Check out the first few rows of data</h3>
+<p>You can inspect the first few rows of your data with the head() command. Try the command below in the Console:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="introduction.html#cb21-1"></a><span class="kw">head</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 6
+##     age diet          height pets              sex   status 
+##   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt;  
+## 1    22 strictly any…     75 likes dogs and l… m     single 
+## 2    35 mostly other      70 likes dogs and l… m     single 
+## 3    38 anything          68 has cats          m     availa…
+## 4    23 vegetarian        71 likes cats        m     single 
+## 5    29 &lt;NA&gt;              66 likes dogs and l… m     single 
+## 6    29 mostly anyth…     67 likes cats        m     single</code></pre>
+<p>You can be even more specific and indicate you only want the first three row of your data with the head() command. Try the command below in the Console:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="introduction.html#cb23-1"></a><span class="kw">head</span>(okcupid_profiles, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 6
+##     age diet          height pets              sex   status 
+##   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt;  
+## 1    22 strictly any…     75 likes dogs and l… m     single 
+## 2    35 mostly other      70 likes dogs and l… m     single 
+## 3    38 anything          68 has cats          m     availa…</code></pre>
+</div>
+<div id="tail-check-out-the-last-few-rows-of-data" class="section level3">
+<h3><span class="header-section-number">1.8.4</span> tail(): Check out the last few rows of data</h3>
+<p>You can inspect the last few rows of your data with the tail() command. Try the command below in the Console:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="introduction.html#cb25-1"></a><span class="kw">tail</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 6
+##     age diet         height pets                sex   status
+##   &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt; 
+## 1    31 &lt;NA&gt;             62 likes dogs          f     single
+## 2    59 &lt;NA&gt;             62 has dogs            f     single
+## 3    24 mostly anyt…     72 likes dogs and lik… m     single
+## 4    42 mostly anyt…     71 &lt;NA&gt;                m     single
+## 5    27 mostly anyt…     73 likes dogs and lik… m     single
+## 6    39 &lt;NA&gt;             68 likes dogs and lik… m     single</code></pre>
+<p>You can be even more specific and indicate you only want the last three row of your data with the tail() command. Try the command below in the Console:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="introduction.html#cb27-1"></a><span class="kw">tail</span>(okcupid_profiles, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 6
+##     age diet         height pets                sex   status
+##   &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt; 
+## 1    42 mostly anyt…     71 &lt;NA&gt;                m     single
+## 2    27 mostly anyt…     73 likes dogs and lik… m     single
+## 3    39 &lt;NA&gt;             68 likes dogs and lik… m     single</code></pre>
+</div>
+<div id="summary-quick-summaries" class="section level3">
+<h3><span class="header-section-number">1.8.5</span> summary(): Quick summaries</h3>
+<p>You can a short summary of your data with the summary() command. Note that we will use the summary() command in many places in the guide. The output of the summary() command changes depending on what you give it - that is put inside the brackets. You can give the summary() command many things such as data, the results of a regression analysis, etc.</p>
+<p>Try the command below in the Console. You will see that summary() give the mean and median for each of the numeric variables (age and height).</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="introduction.html#cb29-1"></a><span class="kw">summary</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>##       age            diet               height    
+##  Min.   : 18.0   Length:59946       Min.   : 1.0  
+##  1st Qu.: 26.0   Class :character   1st Qu.:66.0  
+##  Median : 30.0   Mode  :character   Median :68.0  
+##  Mean   : 32.3                      Mean   :68.3  
+##  3rd Qu.: 37.0                      3rd Qu.:71.0  
+##  Max.   :110.0                      Max.   :95.0  
+##                                     NA&#39;s   :3     
+##      pets               sex               status         
+##  Length:59946       Length:59946       Length:59946      
+##  Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character  
+##                                                          
+##                                                          
+##                                                          
+## </code></pre>
+</div>
+</div>
+<div id="run-vs.-source-with-echo-vs.-source" class="section level2">
+<h2><span class="header-section-number">1.9</span> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</h2>
+<p>There are different ways of running commands in R. So far you have used two of these. You can enter them into the Console as we have done already. Or you can put them in your script select the text and clickk the Run button. There are four ways of running commands in your script.</p>
+<p>You can:</p>
+<ol style="list-style-type: decimal">
+<li>Console: Enter commands directly</li>
+<li>Script: Select the command(s) and press the Run button.</li>
+<li>Script: Source (Without Echo)</li>
+<li>Script: Source With Echo</li>
+</ol>
+<p>Two of these approaches involve using the Source button, see Figure <a href="introduction.html#fig:sourcebutton">1.5</a>. You bring up the options for the Source button, illustrated in this figure, by clicking on the small arrow to the right of the word Source.</p>
+<div class="figure"><span id="fig:sourcebutton"></span>
+<img src="ch_introduction/images/screenshot_source.png" alt="Source button options" width="35%" />
+<p class="caption">
+FIGURE 1.5: Source button options
+</p>
+</div>
+<div id="run-select-text" class="section level3">
+<h3><span class="header-section-number">1.9.1</span> Run select text</h3>
+<p>The Run button will run the text you highlight and present the relevant output. You have used this command a fair amount already.</p>
+<p>I strongly suggest you ONLY use the Run button when testing a command to make sure it works or to debug a script. Or to run library(tidyverse) as you start working on your script so that you get the autocomplete options.</p>
+<p>In general, you should always try to execute your R Scripts using the Source with Echo command (preceded by a Restart, see below). This ensures your script will work beginning to end for you in the future and for others that attempt to use it. Using the Run button in an ad lib basis can create output that is not reproducible.</p>
+</div>
+<div id="source-without-echo" class="section level3">
+<h3><span class="header-section-number">1.9.2</span> Source (without Echo)</h3>
+<p>Source (without Echo) is not designed for the typical analysis workflow. It is mostly helpful when you run simulations. When you run Source (without Echo) much of the output you would wish to read is suppressed. In general, avoid this option. If you use it, you often won’t see what you want to see in the output.</p>
+</div>
+<div id="source-with-echo" class="section level3">
+<h3><span class="header-section-number">1.9.3</span> Source with Echo</h3>
+<p>The Source with Echo command runs all of the contents of a script and presents the output in the R console. This is the approach you should use to running your scripts in most cases.</p>
+<p>Prior to running Source with Echo (or just Source), it’s always a good idea to restart R. This makes sure you clear the computer memory of any errors from any previous runs.</p>
+<p>So you should do the following EVERY time you run your script.</p>
+<ol style="list-style-type: decimal">
+<li>Use the menu item: <strong>Session &gt; Restart R</strong></li>
+<li>Click the down arrow beside the Source button, and click on Source With Echo</li>
+</ol>
+<p>This will clear potentially problematic previous stats, run the script commands, and display the output in the Console. Moving forward we will use this approach for running scripts. Once you have used Source wiht Echo once, you can just click the Source button and it will use Source with Echo automatically (without the need to use the pull down option for selecting Source with Echo).</p>
+
+<div class="rmdcaution">
+Using Restart R before you run a script, or R code in general, is a critical workflow tip.
+</div>
+
+</div>
+</div>
+<div id="trying-source-with-echo" class="section level2">
+<h2><span class="header-section-number">1.10</span> Trying Source with Echo</h2>
+<p>Put the head(), tail(), and summary() command we used previously into your script. Then save your script using using the File &gt; Save menu. You script should appear as below.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="introduction.html#cb31-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
+<span id="cb31-2"><a href="introduction.html#cb31-2"></a><span class="co"># By: John Smith</span></span>
+<span id="cb31-3"><a href="introduction.html#cb31-3"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb31-4"><a href="introduction.html#cb31-4"></a></span>
+<span id="cb31-5"><a href="introduction.html#cb31-5"></a>okcupid_profiles &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span>
+<span id="cb31-6"><a href="introduction.html#cb31-6"></a></span>
+<span id="cb31-7"><a href="introduction.html#cb31-7"></a><span class="kw">head</span>(okcupid_profiles)</span>
+<span id="cb31-8"><a href="introduction.html#cb31-8"></a></span>
+<span id="cb31-9"><a href="introduction.html#cb31-9"></a><span class="kw">tail</span>(okcupid_profiles)</span>
+<span id="cb31-10"><a href="introduction.html#cb31-10"></a></span>
+<span id="cb31-11"><a href="introduction.html#cb31-11"></a><span class="kw">summary</span>(okcupid_profiles)</span></code></pre></div>
+<p>Now do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Use the menu item: <strong>Session &gt; Restart R</strong></li>
+<li>Click the down arrow beside the Source button, and click on Source With Echo</li>
+</ol>
+<p>You should see the output below:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="introduction.html#cb32-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
+<span id="cb32-2"><a href="introduction.html#cb32-2"></a><span class="co"># By: John Smith</span></span>
+<span id="cb32-3"><a href="introduction.html#cb32-3"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb32-4"><a href="introduction.html#cb32-4"></a></span>
+<span id="cb32-5"><a href="introduction.html#cb32-5"></a>okcupid_profiles &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   age = col_double(),
+##   diet = col_character(),
+##   height = col_double(),
+##   pets = col_character(),
+##   sex = col_character(),
+##   status = col_character()
+## )</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="introduction.html#cb34-1"></a><span class="kw">head</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 6
+##     age diet          height pets              sex   status 
+##   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt;  
+## 1    22 strictly any…     75 likes dogs and l… m     single 
+## 2    35 mostly other      70 likes dogs and l… m     single 
+## 3    38 anything          68 has cats          m     availa…
+## 4    23 vegetarian        71 likes cats        m     single 
+## 5    29 &lt;NA&gt;              66 likes dogs and l… m     single 
+## 6    29 mostly anyth…     67 likes cats        m     single</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="introduction.html#cb36-1"></a><span class="kw">tail</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 6
+##     age diet         height pets                sex   status
+##   &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt; 
+## 1    31 &lt;NA&gt;             62 likes dogs          f     single
+## 2    59 &lt;NA&gt;             62 has dogs            f     single
+## 3    24 mostly anyt…     72 likes dogs and lik… m     single
+## 4    42 mostly anyt…     71 &lt;NA&gt;                m     single
+## 5    27 mostly anyt…     73 likes dogs and lik… m     single
+## 6    39 &lt;NA&gt;             68 likes dogs and lik… m     single</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="introduction.html#cb38-1"></a><span class="kw">summary</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>##       age            diet               height    
+##  Min.   : 18.0   Length:59946       Min.   : 1.0  
+##  1st Qu.: 26.0   Class :character   1st Qu.:66.0  
+##  Median : 30.0   Mode  :character   Median :68.0  
+##  Mean   : 32.3                      Mean   :68.3  
+##  3rd Qu.: 37.0                      3rd Qu.:71.0  
+##  Max.   :110.0                      Max.   :95.0  
+##                                     NA&#39;s   :3     
+##      pets               sex               status         
+##  Length:59946       Length:59946       Length:59946      
+##  Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character  
+##                                                          
+##                                                          
+##                                                          
+## </code></pre>
+<p>Congratulations you just ran your first script!</p>
+</div>
+<div id="a-few-key-points-about" class="section level2">
+<h2><span class="header-section-number">1.11</span> A few key points about</h2>
+<p>Sometimes you will need to send a command additional information. Moreover, that information often needs to be grouped together into a vector or a list before you can send it to the command. We’ll learn more about doing so in the future but here is a quick over view of vectors and lists to provide a foundation for future chapters.</p>
+<div id="vector-of-numbers" class="section level4">
+<h4><span class="header-section-number">1.11.0.1</span> Vector of numbers</h4>
+<p>We can create a vector of only numbers using the “c” function - which you can think of as being short for “combine” (or concatenate). In the commands below we create a vector of a few even numbers called “even_numbers”.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="introduction.html#cb40-1"></a>even_numbers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="introduction.html#cb41-1"></a><span class="kw">print</span>(even_numbers)</span></code></pre></div>
+<pre><code>## [1]  2  4  6  8 10</code></pre>
+<p>We can obtain the second number in the vector using the following notation:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="introduction.html#cb43-1"></a><span class="kw">print</span>(even_numbers[<span class="dv">2</span>])</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+</div>
+<div id="vector-of-characters" class="section level4">
+<h4><span class="header-section-number">1.11.0.2</span> Vector of characters</h4>
+<p>We can also create vectors using only characters. Note that I use <strong>SHIFT RETURN</strong> after each comma to move to the next line.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="introduction.html#cb45-1"></a>favourite_things &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;copper kettles&quot;</span>,</span>
+<span id="cb45-2"><a href="introduction.html#cb45-2"></a>                      <span class="st">&quot;woolen mittens&quot;</span>,</span>
+<span id="cb45-3"><a href="introduction.html#cb45-3"></a>                      <span class="st">&quot;brown paper packages&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="introduction.html#cb46-1"></a><span class="kw">print</span>(favourite_things)</span></code></pre></div>
+<pre><code>## [1] &quot;copper kettles&quot;       &quot;woolen mittens&quot;      
+## [3] &quot;brown paper packages&quot;</code></pre>
+<p>As before, can obtain the second item in the vector using the following notation:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="introduction.html#cb48-1"></a><span class="kw">print</span>(favourite_things[<span class="dv">2</span>])</span></code></pre></div>
+<pre><code>## [1] &quot;woolen mittens&quot;</code></pre>
+</div>
+<div id="lists" class="section level3">
+<h3><span class="header-section-number">1.11.1</span> Lists</h3>
+<p>Lists are similar to vectors in that you can create them and access items by their numeric position. Vectors must be all characters or all numbers. Lists can be a mix of characters or numbers. Most importantly items in lists can be accessed by their label. Note that I use <strong>SHIFT RETURN</strong> after each comma to move to the next line in the code below.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="introduction.html#cb50-1"></a>my_list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">last_name =</span> <span class="st">&quot;Smith&quot;</span>,</span>
+<span id="cb50-2"><a href="introduction.html#cb50-2"></a>                <span class="dt">first_name =</span> <span class="st">&quot;John&quot;</span>,</span>
+<span id="cb50-3"><a href="introduction.html#cb50-3"></a>                <span class="dt">office_number =</span> <span class="dv">1913</span>)</span>
+<span id="cb50-4"><a href="introduction.html#cb50-4"></a></span>
+<span id="cb50-5"><a href="introduction.html#cb50-5"></a><span class="kw">print</span>(my_list)</span></code></pre></div>
+<pre><code>## $last_name
+## [1] &quot;Smith&quot;
+## 
+## $first_name
+## [1] &quot;John&quot;
+## 
+## $office_number
+## [1] 1913</code></pre>
+<p>You can access an item in a list using double brackets:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="introduction.html#cb52-1"></a><span class="kw">print</span>(my_list[<span class="dv">2</span>])</span></code></pre></div>
+<pre><code>## $first_name
+## [1] &quot;John&quot;</code></pre>
+<p>You can access an item in a list by its label/name using the dollar sign:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="introduction.html#cb54-1"></a><span class="kw">print</span>(my_list<span class="op">$</span>last_name)</span></code></pre></div>
+<pre><code>## [1] &quot;Smith&quot;</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="introduction.html#cb56-1"></a><span class="kw">print</span>(my_list<span class="op">$</span>office_number)</span></code></pre></div>
+<pre><code>## [1] 1913</code></pre>
+</div>
+</div>
+<div id="thats-it" class="section level2">
+<h2><span class="header-section-number">1.12</span> That’s it!</h2>
+<p>Congratulations! You’ve reached the end of the introduction to R. Take a break, have a cookie, and read some more about R tomorrow!</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="about-the-author.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="handling-data-with-the-tidyverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/01-introduction.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

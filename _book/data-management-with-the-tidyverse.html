@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Data Management with the Tidyverse | PSYC6060 Course Notes</title>
+  <meta name="description" content="Course notes for PSYC 6060" />
+  <meta name="generator" content="bookdown 0.19.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Data Management with the Tidyverse | PSYC6060 Course Notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course notes for PSYC 6060" />
+  <meta name="github-repo" content="dstanley4/psyc6060bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Data Management with the Tidyverse | PSYC6060 Course Notes" />
+  
+  <meta name="twitter:description" content="Course notes for PSYC 6060" />
+  
+
+<meta name="author" content="David J. Stanley" />
+
+
+<meta name="date" content="2020-06-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="making-your-data-ready-for-analysis.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-the-book"><i class="fa fa-check"></i>Structure of the book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#shift-return-somewhere"><i class="fa fa-check"></i><b>1.1</b> SHIFT RETURN SOMEWHERE</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.2</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.3</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.4</b> Create an account at R Studio Cloud</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.5</b> Join the class workspace</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.6</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.6.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.6.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.7</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.7.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.7.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.7.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.7.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.7.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.7.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.7.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.7.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.7.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.8</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.8.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.9</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.9.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.9.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.9.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.9.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.9.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.9.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.9.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.10</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.10.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.10.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.10.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.10.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.10.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.11</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about-r"><i class="fa fa-check"></i><b>1.12</b> A Few Key Points About R</a><ul>
+<li class="chapter" data-level="1.12.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.12.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.13</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-management-with-the-tidyverse.html"><a href="data-management-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Data Management with the Tidyverse</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-management-with-the-tidyverse.html"><a href="data-management-with-the-tidyverse.html#required-packages"><i class="fa fa-check"></i><b>2.1</b> Required Packages</a></li>
+<li class="chapter" data-level="2.2" data-path="data-management-with-the-tidyverse.html"><a href="data-management-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.2</b> Basic Tidyverse Commands</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="data-management-with-the-tidyverse.html"><a href="data-management-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.2.1</b> select()</a></li>
+<li class="chapter" data-level="2.2.2" data-path="data-management-with-the-tidyverse.html"><a href="data-management-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.2.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.2.3" data-path="data-management-with-the-tidyverse.html"><a href="data-management-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.2.3</b> filter()</a></li>
+<li class="chapter" data-level="2.2.4" data-path="data-management-with-the-tidyverse.html"><a href="data-management-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.2.4</b> group_by()</a></li>
+<li class="chapter" data-level="2.2.5" data-path="data-management-with-the-tidyverse.html"><a href="data-management-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.2.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data-management-with-the-tidyverse.html"><a href="data-management-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.3</b> Advanced Tidyverse Commands</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="data-management-with-the-tidyverse.html"><a href="data-management-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.3.1</b> select()</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html"><i class="fa fa-check"></i><b>3</b> Making your data ready for analysis</a><ul>
+<li class="chapter" data-level="3.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#required-packages-1"><i class="fa fa-check"></i><b>3.1</b> Required Packages</a></li>
+<li class="chapter" data-level="3.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#objective"><i class="fa fa-check"></i><b>3.2</b> Objective</a></li>
+<li class="chapter" data-level="3.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#context"><i class="fa fa-check"></i><b>3.3</b> Context</a></li>
+<li class="chapter" data-level="3.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>3.4</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#tidy-data-comparing-wide-vs-long-formats"><i class="fa fa-check"></i><b>3.4.1</b> tidy data: Comparing wide vs long formats</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#data-collection-and-entry"><i class="fa fa-check"></i><b>3.5</b> Data collection and entry</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#question-with-numerical-answers"><i class="fa fa-check"></i><b>3.5.1</b> Question with numerical answers</a></li>
+<li class="chapter" data-level="3.5.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#likert-type-items"><i class="fa fa-check"></i><b>3.5.2</b> Likert-type items</a></li>
+<li class="chapter" data-level="3.5.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#multi-item-scales"><i class="fa fa-check"></i><b>3.5.3</b> Multi-item scales</a></li>
+<li class="chapter" data-level="3.5.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#questions-with-categorical-answers"><i class="fa fa-check"></i><b>3.5.4</b> Questions with categorical answers</a></li>
+<li class="chapter" data-level="3.5.5" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#levels-of-an-independent-varible"><i class="fa fa-check"></i><b>3.5.5</b> Levels of an independent varible</a></li>
+<li class="chapter" data-level="3.5.6" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#levels-of-a-single-within-participant-variable"><i class="fa fa-check"></i><b>3.5.6</b> Levels of a single within participant variable</a></li>
+<li class="chapter" data-level="3.5.7" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#levels-of-multiple-within-participant-variables"><i class="fa fa-check"></i><b>3.5.7</b> Levels of multiple within participant variables</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#raw-data"><i class="fa fa-check"></i><b>3.6</b> Raw data</a></li>
+<li class="chapter" data-level="3.7" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#loading-raw-data"><i class="fa fa-check"></i><b>3.7</b> Loading raw data</a></li>
+<li class="chapter" data-level="3.8" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#initial-inspection"><i class="fa fa-check"></i><b>3.8</b> Initial inspection</a></li>
+<li class="chapter" data-level="3.9" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#handling-categorical-variables"><i class="fa fa-check"></i><b>3.9</b> Handling categorical variables</a></li>
+<li class="chapter" data-level="3.10" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#seeing-your-data"><i class="fa fa-check"></i><b>3.10</b> Seeing your data</a></li>
+<li class="chapter" data-level="3.11" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#dealing-with-reverse-key-items"><i class="fa fa-check"></i><b>3.11</b> Dealing with reverse key items</a><ul>
+<li class="chapter" data-level="3.11.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#scoring-items-where-the-ratings-scale-starts-with-1"><i class="fa fa-check"></i><b>3.11.1</b> Scoring items where the ratings scale starts with 1</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-the-scale-score"><i class="fa fa-check"></i><b>3.12</b> Creating the scale score</a></li>
+<li class="chapter" data-level="3.13" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creatinig-analytic-data-from-raw-data"><i class="fa fa-check"></i><b>3.13</b> Creatinig analytic data from raw data</a></li>
+<li class="chapter" data-level="3.14" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#wait-i-need-alpha"><i class="fa fa-check"></i><b>3.14</b> Wait: I need alpha!</a></li>
+<li class="chapter" data-level="3.15" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#wait-i-need-item-correlations-and-descriptive-statistics"><i class="fa fa-check"></i><b>3.15</b> Wait: I need item correlations and descriptive statistics</a></li>
+<li class="chapter" data-level="3.16" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#using-r-the-old-way-or-the-new-way-the-tidyverse-way"><i class="fa fa-check"></i><b>3.16</b> Using R the old way or the new way (the tidyverse way)</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="more-to-say.html"><a href="more-to-say.html"><i class="fa fa-check"></i><b>A</b> More to Say</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PSYC6060 Course Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-management-with-the-tidyverse" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Data Management with the Tidyverse</h1>
+<div id="required-packages" class="section level2">
+<h2><span class="header-section-number">2.1</span> Required Packages</h2>
+<p>This chapter requires the following packages are installed:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tidyverse</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="basic-tidyverse-commands" class="section level2">
+<h2><span class="header-section-number">2.2</span> Basic Tidyverse Commands</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-management-with-the-tidyverse.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="data-management-with-the-tidyverse.html#cb1-2"></a>okcupid_profiles &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
+<p>You can see the first few rows of the data set using the print() command:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-management-with-the-tidyverse.html#cb2-1"></a><span class="kw">print</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## # A tibble: 59,946 x 6
+##      age diet              height pets                      sex   status   
+##    &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;                     &lt;chr&gt; &lt;chr&gt;    
+##  1    22 strictly anything     75 likes dogs and likes cats m     single   
+##  2    35 mostly other          70 likes dogs and likes cats m     single   
+##  3    38 anything              68 has cats                  m     available
+##  4    23 vegetarian            71 likes cats                m     single   
+##  5    29 &lt;NA&gt;                  66 likes dogs and likes cats m     single   
+##  6    29 mostly anything       67 likes cats                m     single   
+##  7    32 strictly anything     65 likes dogs and likes cats f     single   
+##  8    31 mostly anything       65 likes dogs and likes cats f     single   
+##  9    24 strictly anything     67 likes dogs and likes cats f     single   
+## 10    37 mostly anything       65 likes dogs and likes cats m     single   
+## # … with 59,936 more rows</code></pre>
+<p>But it’s also helpful just to see a list of the columns in the data set with the glimpse() command:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-management-with-the-tidyverse.html#cb4-1"></a><span class="kw">glimpse</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## Rows: 59,946
+## Columns: 6
+## $ age    &lt;dbl&gt; 22, 35, 38, 23, 29, 29, 32, 31, 24, 37, 35, 28, 24, 30, 29, 39…
+## $ diet   &lt;chr&gt; &quot;strictly anything&quot;, &quot;mostly other&quot;, &quot;anything&quot;, &quot;vegetarian&quot;,…
+## $ height &lt;dbl&gt; 75, 70, 68, 71, 66, 67, 65, 65, 67, 65, 70, 72, 72, 66, 62, 65…
+## $ pets   &lt;chr&gt; &quot;likes dogs and likes cats&quot;, &quot;likes dogs and likes cats&quot;, &quot;has…
+## $ sex    &lt;chr&gt; &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m…
+## $ status &lt;chr&gt; &quot;single&quot;, &quot;single&quot;, &quot;available&quot;, &quot;single&quot;, &quot;single&quot;, &quot;single&quot;,…</code></pre>
+<div id="select" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> select()</h3>
+<p>The select() command allows you to obtain a subset of the columns in your data. The command below obtains can be used to obtain the age and height columns. You can read the command as: take the okcupid_profiles data and then select the age and height columns. You can see that this prints out the data with just the age and height columns.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-management-with-the-tidyverse.html#cb6-1"></a>okcupid_profiles <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(age, height)</span></code></pre></div>
+<pre><code>## # A tibble: 59,946 x 2
+##      age height
+##    &lt;dbl&gt;  &lt;dbl&gt;
+##  1    22     75
+##  2    35     70
+##  3    38     68
+##  4    23     71
+##  5    29     66
+##  6    29     67
+##  7    32     65
+##  8    31     65
+##  9    24     67
+## 10    37     65
+## # … with 59,936 more rows</code></pre>
+<p>Of course, it’s usually of little help to just print the subset of the data. It’s better to store it in a new data set. In the command below we store the resulting data set in a data set called new_data.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-management-with-the-tidyverse.html#cb8-1"></a>new_data &lt;-<span class="st"> </span>okcupid_profiles <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(age, height)</span></code></pre></div>
+<p>The glimpse() command shows us that only the age and height columns are in new_data.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-management-with-the-tidyverse.html#cb9-1"></a><span class="kw">glimpse</span>(new_data)</span></code></pre></div>
+<pre><code>## Rows: 59,946
+## Columns: 2
+## $ age    &lt;dbl&gt; 22, 35, 38, 23, 29, 29, 32, 31, 24, 37, 35, 28, 24, 30, 29, 39…
+## $ height &lt;dbl&gt; 75, 70, 68, 71, 66, 67, 65, 65, 67, 65, 70, 72, 72, 66, 62, 65…</code></pre>
+<p>In the above example we indicated the columns we wanted to retain from the okcupid_profiles data in the select() command. However, we also indicate the columns we want to drop from the data set my using a minus sign (-) in front of the columns we specify in the select() command.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-management-with-the-tidyverse.html#cb11-1"></a>new_data &lt;-<span class="st"> </span>okcupid_profiles <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>age, <span class="op">-</span>height)</span></code></pre></div>
+<p>The glimpse() command shows us that we kept all the columns except the age and height columns when we created new_data.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-management-with-the-tidyverse.html#cb12-1"></a><span class="kw">glimpse</span>(new_data)</span></code></pre></div>
+<pre><code>## Rows: 59,946
+## Columns: 4
+## $ diet   &lt;chr&gt; &quot;strictly anything&quot;, &quot;mostly other&quot;, &quot;anything&quot;, &quot;vegetarian&quot;,…
+## $ pets   &lt;chr&gt; &quot;likes dogs and likes cats&quot;, &quot;likes dogs and likes cats&quot;, &quot;has…
+## $ sex    &lt;chr&gt; &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m…
+## $ status &lt;chr&gt; &quot;single&quot;, &quot;single&quot;, &quot;available&quot;, &quot;single&quot;, &quot;single&quot;, &quot;single&quot;,…</code></pre>
+</div>
+<div id="summarise" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> summarise()</h3>
+<p>The summarise() command can be used to generate descriptive statistics for a specified column. You can easily calculate column descriptives using the corresponding commands for mean(), sd(), min(), max(), among others. In the example below we calculate the mean for the age column. To move to the next line while typing this command press SHIFT and ENTER (or RETURN) at the same time.</p>
+<p>In code below mean(age, na.rm = TRUE) indicates that to R that it should calculate the mean of the age column. The na.rm indicates how missing values should be handled. The na stands for not available; in R missing values are classified as Not Available or NA. The rm stands for remove. Consequently, na.rm is asking should we remove missing values when calculating the mean. The TRUE indicates that yes, missing values should be removed when calculating the mean. The result of this calculation is place into a variable labelled age_mean, though we could have used any label we wanted instead of age_mean. We see that the mean of the age column is, with rounding, 32.3.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-management-with-the-tidyverse.html#cb14-1"></a>okcupid_profiles <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb14-2"><a href="data-management-with-the-tidyverse.html#cb14-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">age_mean =</span> <span class="kw">mean</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##   age_mean
+##      &lt;dbl&gt;
+## 1     32.3</code></pre>
+<p>More than one calculation can occur in the same summarise() command. You can easily add the calculation for the stanard deviation with the sd() command.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-management-with-the-tidyverse.html#cb16-1"></a>okcupid_profiles <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb16-2"><a href="data-management-with-the-tidyverse.html#cb16-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">age_mean =</span> <span class="kw">mean</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb16-3"><a href="data-management-with-the-tidyverse.html#cb16-3"></a>            <span class="dt">age_sd =</span> <span class="kw">sd</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 2
+##   age_mean age_sd
+##      &lt;dbl&gt;  &lt;dbl&gt;
+## 1     32.3   9.45</code></pre>
+<p>We can use the n() command to also display the number of participants in the calculation:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-management-with-the-tidyverse.html#cb18-1"></a>okcupid_profiles <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb18-2"><a href="data-management-with-the-tidyverse.html#cb18-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">age_mean =</span> <span class="kw">mean</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb18-3"><a href="data-management-with-the-tidyverse.html#cb18-3"></a>            <span class="dt">age_sd =</span> <span class="kw">sd</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb18-4"><a href="data-management-with-the-tidyverse.html#cb18-4"></a>            <span class="dt">n =</span> <span class="kw">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 3
+##   age_mean age_sd     n
+##      &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;
+## 1     32.3   9.45 59946</code></pre>
+</div>
+<div id="filter" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> filter()</h3>
+<p>The filter() command allows you to obtain a subset of the rows in your data. In the example below we create a new data sets with just the males from the original data set.</p>
+<p>Notice the structure of the original data set below in the glimpse() output. There is a column called sex that used m and f to indicate male and female, respectively. Also notice that there are 59946 rows in the okcupid_profiles data set.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-management-with-the-tidyverse.html#cb20-1"></a><span class="kw">glimpse</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## Rows: 59,946
+## Columns: 6
+## $ age    &lt;dbl&gt; 22, 35, 38, 23, 29, 29, 32, 31, 24, 37, 35, 28, 24, 30, 29, 39…
+## $ diet   &lt;chr&gt; &quot;strictly anything&quot;, &quot;mostly other&quot;, &quot;anything&quot;, &quot;vegetarian&quot;,…
+## $ height &lt;dbl&gt; 75, 70, 68, 71, 66, 67, 65, 65, 67, 65, 70, 72, 72, 66, 62, 65…
+## $ pets   &lt;chr&gt; &quot;likes dogs and likes cats&quot;, &quot;likes dogs and likes cats&quot;, &quot;has…
+## $ sex    &lt;chr&gt; &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m…
+## $ status &lt;chr&gt; &quot;single&quot;, &quot;single&quot;, &quot;available&quot;, &quot;single&quot;, &quot;single&quot;, &quot;single&quot;,…</code></pre>
+<p>We use the the filter command to select a subset of the rows based on the contents of any column. In this case the sex column. Notice the use of the the double equals sign to indicate “equal to”. The reason a double equals sign is used here it to distinguish it from the use of the equals in the summarise command above were it was used to indicate “assign to” age_mean after the mean was calculated. Single equals sign indicates “assign to” whereas a double equals sign indicates “is equal to”.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-management-with-the-tidyverse.html#cb22-1"></a>okcupid_males &lt;-<span class="st"> </span>okcupid_profiles <span class="op">%&gt;%</span></span>
+<span id="cb22-2"><a href="data-management-with-the-tidyverse.html#cb22-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;m&quot;</span>)</span></code></pre></div>
+<p>We use glimpse() to inspect this all male data set. Notice that only the letter m is in the sex column. Also notice that there are 35829 rows in the okcupid_males data set; fewer people because only the males are in this data set.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data-management-with-the-tidyverse.html#cb23-1"></a><span class="kw">glimpse</span>(okcupid_males)</span></code></pre></div>
+<pre><code>## Rows: 35,829
+## Columns: 6
+## $ age    &lt;dbl&gt; 22, 35, 38, 23, 29, 29, 37, 35, 28, 24, 33, 31, 33, 30, 30, 33…
+## $ diet   &lt;chr&gt; &quot;strictly anything&quot;, &quot;mostly other&quot;, &quot;anything&quot;, &quot;vegetarian&quot;,…
+## $ height &lt;dbl&gt; 75, 70, 68, 71, 66, 67, 65, 70, 72, 72, 70, 71, 72, 69, 71, 73…
+## $ pets   &lt;chr&gt; &quot;likes dogs and likes cats&quot;, &quot;likes dogs and likes cats&quot;, &quot;has…
+## $ sex    &lt;chr&gt; &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m&quot;, &quot;m…
+## $ status &lt;chr&gt; &quot;single&quot;, &quot;single&quot;, &quot;available&quot;, &quot;single&quot;, &quot;single&quot;, &quot;single&quot;,…</code></pre>
+<p>The filter command can be commbined with the summarise command to get the descriptive statistics for males without the hassle of creating a new data set. This is done using the %&gt;% “and then” operator.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-management-with-the-tidyverse.html#cb25-1"></a>okcupid_profiles <span class="op">%&gt;%</span></span>
+<span id="cb25-2"><a href="data-management-with-the-tidyverse.html#cb25-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;m&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb25-3"><a href="data-management-with-the-tidyverse.html#cb25-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">age_mean =</span> <span class="kw">mean</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb25-4"><a href="data-management-with-the-tidyverse.html#cb25-4"></a>            <span class="dt">age_sd =</span> <span class="kw">sd</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb25-5"><a href="data-management-with-the-tidyverse.html#cb25-5"></a>            <span class="dt">n =</span> <span class="kw">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 3
+##   age_mean age_sd     n
+##      &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;
+## 1     32.0   9.03 35829</code></pre>
+<p>We see that for the 35829 females the mean age is 32.0 and the standard deviation is 9.0.</p>
+<p>Likewise, we can obtain the descriptive statistics for females with only a slight modification, changing m to f in the filter command:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-management-with-the-tidyverse.html#cb27-1"></a>okcupid_profiles <span class="op">%&gt;%</span></span>
+<span id="cb27-2"><a href="data-management-with-the-tidyverse.html#cb27-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;f&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb27-3"><a href="data-management-with-the-tidyverse.html#cb27-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">age_mean =</span> <span class="kw">mean</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb27-4"><a href="data-management-with-the-tidyverse.html#cb27-4"></a>            <span class="dt">age_sd =</span> <span class="kw">sd</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb27-5"><a href="data-management-with-the-tidyverse.html#cb27-5"></a>            <span class="dt">n =</span> <span class="kw">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 3
+##   age_mean age_sd     n
+##      &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;
+## 1     32.8   10.0 24117</code></pre>
+<p>We see that for the 24117 females the mean age is 32.8 and the standard deviation is 10.0.</p>
+</div>
+<div id="group_by" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> group_by()</h3>
+<p>The process we used with the filter command would quickly become onerous if we had many subgroups for a column. Consequently, it’s often better to use the group() command to calculate descriptives for the levels of a variable. By telling the computer to group_by() sex the summarise command is run separately for every level of sex (i.e., m and f).</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-management-with-the-tidyverse.html#cb29-1"></a>okcupid_profiles <span class="op">%&gt;%</span></span>
+<span id="cb29-2"><a href="data-management-with-the-tidyverse.html#cb29-2"></a><span class="st">  </span><span class="kw">group_by</span>(sex) <span class="op">%&gt;%</span></span>
+<span id="cb29-3"><a href="data-management-with-the-tidyverse.html#cb29-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">age_mean =</span> <span class="kw">mean</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb29-4"><a href="data-management-with-the-tidyverse.html#cb29-4"></a>            <span class="dt">age_sd =</span> <span class="kw">sd</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb29-5"><a href="data-management-with-the-tidyverse.html#cb29-5"></a>            <span class="dt">n =</span> <span class="kw">n</span>()) </span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 2 x 4
+##   sex   age_mean age_sd     n
+##   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;
+## 1 f         32.8  10.0  24117
+## 2 m         32.0   9.03 35829</code></pre>
+<p>Fortunately, it’s possible to use more than one grouping varible with the group_by() command. In the code below we group by sex and status (i.e., dating status).</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-management-with-the-tidyverse.html#cb32-1"></a>okcupid_profiles <span class="op">%&gt;%</span></span>
+<span id="cb32-2"><a href="data-management-with-the-tidyverse.html#cb32-2"></a><span class="st">  </span><span class="kw">group_by</span>(sex, status) <span class="op">%&gt;%</span></span>
+<span id="cb32-3"><a href="data-management-with-the-tidyverse.html#cb32-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">age_mean =</span> <span class="kw">mean</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb32-4"><a href="data-management-with-the-tidyverse.html#cb32-4"></a>            <span class="dt">age_sd =</span> <span class="kw">sd</span>(age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb32-5"><a href="data-management-with-the-tidyverse.html#cb32-5"></a>            <span class="dt">n =</span> <span class="kw">n</span>()) </span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;sex&#39; (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 10 x 5
+## # Groups:   sex [2]
+##    sex   status         age_mean age_sd     n
+##    &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;
+##  1 f     available          32.2   8.54   656
+##  2 f     married            33.7   8.13   135
+##  3 f     seeing someone     28.1   6.44  1003
+##  4 f     single             33.0  10.2  22319
+##  5 f     unknown            27.8   5.91     4
+##  6 m     available          34.8   9.40  1209
+##  7 m     married            38.7  10.1    175
+##  8 m     seeing someone     30.8   7.06  1061
+##  9 m     single             31.9   9.04 33378
+## 10 m     unknown            40.7   8.87     6</code></pre>
+<p>The resulting output provide for age the mean and standard deviation for every combination of sex and dating status. The first five rows provide output for females at every level of dating status whereas the subsequent five rows provide output for males at every level of dating status.</p>
+</div>
+<div id="mutate" class="section level3">
+<h3><span class="header-section-number">2.2.5</span> mutate()</h3>
+<p>The mutate() command can be used to calculate a new column in the data set.</p>
+</div>
+</div>
+<div id="advanced-tidyverse-commands" class="section level2">
+<h2><span class="header-section-number">2.3</span> Advanced Tidyverse Commands</h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data-management-with-the-tidyverse.html#cb35-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb35-2"><a href="data-management-with-the-tidyverse.html#cb35-2"></a>data_exp &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data_experiment.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   id = col_double(),
+##   sex = col_character(),
+##   time1_vomit = col_double(),
+##   time1_aggression = col_double(),
+##   time2_vomit = col_double(),
+##   time2_aggression = col_double()
+## )</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-management-with-the-tidyverse.html#cb37-1"></a><span class="kw">glimpse</span>(data_exp)</span></code></pre></div>
+<pre><code>## Rows: 6
+## Columns: 6
+## $ id               &lt;dbl&gt; 1, 2, 3, 4, 5, 6
+## $ sex              &lt;chr&gt; &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;
+## $ time1_vomit      &lt;dbl&gt; 3, 2, 0, 3, 2, 1
+## $ time1_aggression &lt;dbl&gt; 5, 6, 4, 7, 3, 8
+## $ time2_vomit      &lt;dbl&gt; 2, 1, 1, 2, 1, 2
+## $ time2_aggression &lt;dbl&gt; 6, 7, 6, 7, 5, 8</code></pre>
+<div id="select-1" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> select()</h3>
+<div id="select-using-where" class="section level4">
+<h4><span class="header-section-number">2.3.1.1</span> select() using where()</h4>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-management-with-the-tidyverse.html#cb39-1"></a>data_numeric_columns &lt;-<span class="st"> </span>data_exp <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb39-2"><a href="data-management-with-the-tidyverse.html#cb39-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">where</span>(is.numeric))</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-management-with-the-tidyverse.html#cb40-1"></a><span class="kw">glimpse</span>(data_numeric_columns)</span></code></pre></div>
+<pre><code>## Rows: 6
+## Columns: 5
+## $ id               &lt;dbl&gt; 1, 2, 3, 4, 5, 6
+## $ time1_vomit      &lt;dbl&gt; 3, 2, 0, 3, 2, 1
+## $ time1_aggression &lt;dbl&gt; 5, 6, 4, 7, 3, 8
+## $ time2_vomit      &lt;dbl&gt; 2, 1, 1, 2, 1, 2
+## $ time2_aggression &lt;dbl&gt; 6, 7, 6, 7, 5, 8</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-management-with-the-tidyverse.html#cb42-1"></a>data_character_columns &lt;-<span class="st"> </span>data_exp <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb42-2"><a href="data-management-with-the-tidyverse.html#cb42-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">where</span>(is.character))</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="data-management-with-the-tidyverse.html#cb43-1"></a><span class="kw">glimpse</span>(data_character_columns)</span></code></pre></div>
+<pre><code>## Rows: 6
+## Columns: 1
+## $ sex &lt;chr&gt; &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;</code></pre>
+</div>
+<div id="select-using-starts_with" class="section level4">
+<h4><span class="header-section-number">2.3.1.2</span> select() using starts_with()</h4>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="data-management-with-the-tidyverse.html#cb45-1"></a>data_time1 &lt;-<span class="st"> </span>data_exp <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb45-2"><a href="data-management-with-the-tidyverse.html#cb45-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;time1_&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data-management-with-the-tidyverse.html#cb46-1"></a><span class="kw">glimpse</span>(data_time1)</span></code></pre></div>
+<pre><code>## Rows: 6
+## Columns: 2
+## $ time1_vomit      &lt;dbl&gt; 3, 2, 0, 3, 2, 1
+## $ time1_aggression &lt;dbl&gt; 5, 6, 4, 7, 3, 8</code></pre>
+</div>
+<div id="select-using-starts_with-1" class="section level4">
+<h4><span class="header-section-number">2.3.1.3</span> select() using starts_with()</h4>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-management-with-the-tidyverse.html#cb48-1"></a>data_aggression &lt;-<span class="st"> </span>data_exp <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb48-2"><a href="data-management-with-the-tidyverse.html#cb48-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">ends_with</span>(<span class="st">&quot;_aggression&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-management-with-the-tidyverse.html#cb49-1"></a><span class="kw">glimpse</span>(data_aggression)</span></code></pre></div>
+<pre><code>## Rows: 6
+## Columns: 2
+## $ time1_aggression &lt;dbl&gt; 5, 6, 4, 7, 3, 8
+## $ time2_aggression &lt;dbl&gt; 6, 7, 6, 7, 5, 8</code></pre>
+</div>
+<div id="select-using-matches" class="section level4">
+<h4><span class="header-section-number">2.3.1.4</span> select() using matches()</h4>
+<p>It’s also possible to use <em>regex</em> (regular expressiona) to select columns. Regex is a powerful way to indicating search/matching requirements for text - in this case the text of column names. You can learn about regex at <a href="https://regexone.com">RegexOne</a> and test your regex at <a href="https://regex101.com">Regex101</a>. Ideally though, as we discuss in the next chapter, you can use naming conventions are sufficiently considered you don’t need regex or only rarely. The reason for this is that regex can be challenging to use. As Twitter user @ThatJenPerson noted “Regex is like tequila: use it to try to solve a problem and now you have two problems.” Nonetheless, at one or two points in the future we will use regex to solve a problem (but not tequila).</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="making-your-data-ready-for-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/02-tidy_intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

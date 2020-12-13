@@ -1,0 +1,296 @@
+{\rtf1\ansi\deff0 {\fonttbl {\f0 Times New Roman;}}
+\paperw15840 \paperh12240 \margl1440 \margr1440 \margt1440 \margb1440 \landscape 
+{\pard Table 1 \par}
+{\pard  \par}
+{\pard\i Moderated regression results using endurance as the criterion, age as the predictor, and exercise as the moderator
+\par}
+{\pard  \par}
+{
+\trowd \trgaph100
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2051 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx3347 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx5399 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx6091 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx7732 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx8596 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx10648 
+\pard\sa0\sb0\intbl\qr{Predictor}\cell
+\pard\sa0\sb0\intbl\qc{{\i b}}\cell
+\pard\sa0\sb0\intbl\qc{{\i b \par 95% CI\par[LL, UL]}}\cell
+\pard\sa0\sb0\intbl\qc{{\i sr\super 2 \nosupersub}}\cell
+\pard\sa0\sb0\intbl\qc{{\i sr\super 2 \nosupersub \par 95% CI\par[LL, UL]}}\cell
+\pard\sa0\sb0\intbl\qc{{\i p}}\cell
+\pard\sa0\sb0\intbl\qc{Fit}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2051 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx3347 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx5399 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx6091 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx7732 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx8596 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx10648 
+\pard\sa0\sb0\intbl\qr{(Intercept)}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx518{25.89**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{[24.61, 27.16]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx104{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx246{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{0.000}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx2051 
+\clvertalc\cellx3347 
+\clvertalc\cellx5399 
+\clvertalc\cellx6091 
+\clvertalc\cellx7732 
+\clvertalc\cellx8596 
+\clvertalc\cellx10648 
+\pard\sa0\sb0\intbl\qr{age}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx518{-0.26**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{[-0.39, -0.14]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx104{.05}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx246{[.00, .11]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{0.000}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx2051 
+\clvertalc\cellx3347 
+\clvertalc\cellx5399 
+\clvertalc\cellx6091 
+\clvertalc\cellx7732 
+\clvertalc\cellx8596 
+\clvertalc\cellx10648 
+\pard\sa0\sb0\intbl\qr{exercise}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx518{0.97**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{[0.70, 1.24]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx104{.17}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx246{[.08, .25]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{0.000}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx2051 
+\clvertalc\cellx3347 
+\clvertalc\cellx5399 
+\clvertalc\cellx6091 
+\clvertalc\cellx7732 
+\clvertalc\cellx8596 
+\clvertalc\cellx10648 
+\pard\sa0\sb0\intbl\qr{age:exercise}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx518{0.05**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{[0.02, 0.07]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx104{.04}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx246{[-.00, .08]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{0.001}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx2051 
+\clvertalc\cellx3347 
+\clvertalc\cellx5399 
+\clvertalc\cellx6091 
+\clvertalc\cellx7732 
+\clvertalc\cellx8596 
+\clvertalc\cellx10648 
+\pard\sa0\sb0\intbl\qr{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx518{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx104{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx246{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{R2 = .206**}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx2051 
+\clvertalc\cellx3347 
+\clvertalc\cellx5399 
+\clvertalc\cellx6091 
+\clvertalc\cellx7732 
+\clvertalc\cellx8596 
+\clvertalc\cellx10648 
+\pard\sa0\sb0\intbl\qr{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx518{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx104{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx246{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{95% CI[.12,.28]}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx2051 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx3347 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx5399 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx6091 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx7732 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx8596 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx10648 
+\pard\sa0\sb0\intbl\qr{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx518{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx104{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx246{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx308{}\cell
+\row
+}
+{\pard \par}{\pard{\i Note.} A significant {\i b}-weight indicates the semi-partial correlation is also significant. {\i b} represents unstandardized regression weights. {\i sr\super 2\nosupersub} represents the semi-partial correlation squared. LL and UL indicate the lower and upper limits of a confidence interval, respectively. {\i p} indicates the {\i p}-value. \par * {\i p} indicates {\i p} < .05. ** indicates {\i p} < .01.\par}
+\page
+{\pard Table 2 \par}
+{\pard  \par}
+{\pard\i Simple slope regression results using endurance as the criterion, age as the predictor, and exercise as the moderator
+\par}
+{\pard  \par}
+{
+\trowd \trgaph100
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2051 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx3693 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx4557 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx5421 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx6285 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx7408 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx8272 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx9136 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx10000 
+\pard\sa0\sb0\intbl\qr{Moderator}\cell
+\pard\sa0\sb0\intbl\qc{Moderator Value}\cell
+\pard\sa0\sb0\intbl\qc{{\i b\sub 1 \nosupersub slope}}\cell
+\pard\sa0\sb0\intbl\qc{{\i b\sub 1 \nosupersub \par LL}}\cell
+\pard\sa0\sb0\intbl\qc{{\i b\sub 1 \nosupersub \par UL}}\cell
+\pard\sa0\sb0\intbl\qc{{\i b\sub 0 \nosupersub \par intercept}}\cell
+\pard\sa0\sb0\intbl\qc{{\i b\sub 1 \nosupersub SE}}\cell
+\pard\sa0\sb0\intbl\qc{{\i t}}\cell
+\pard\sa0\sb0\intbl\qc{{\i p}}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2051 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx3693 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx4557 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx5421 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx6285 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx7408 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx8272 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx9136 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx10000 
+\pard\sa0\sb0\intbl\qr{-1 SD exercise}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx657{-4.775}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{-0.487}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{-0.669}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{-0.306}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx168{21.24}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{0.092}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{-5.289}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{0.0000}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clvertalc\cellx2051 
+\clvertalc\cellx3693 
+\clvertalc\cellx4557 
+\clvertalc\cellx5421 
+\clvertalc\cellx6285 
+\clvertalc\cellx7408 
+\clvertalc\cellx8272 
+\clvertalc\cellx9136 
+\clvertalc\cellx10000 
+\pard\sa0\sb0\intbl\qr{Mean exercise}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx657{ 0.000}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{-0.262}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{-0.388}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{-0.135}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx168{25.89}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{0.064}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{-4.085}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{0.0001}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx2051 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx3693 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx4557 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx5421 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx6285 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx7408 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx8272 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx9136 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx10000 
+\pard\sa0\sb0\intbl\qr{+1 SD exercise}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx657{ 4.775}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{-0.036}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{-0.214}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{ 0.142}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx168{30.53}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{0.090}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{-0.400}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{0.6896}\cell
+\row
+}
+{\pard \par}{\pard{\i Note.} {\i b\sub 1\nosupersub} represents the slope. {\i b\sub 0\nosupersub} represents the intercept. SE represents standard error. LL and UL indicate the lower and upper limits of a confidence interval, respectively. {\i t} represents the {\i t}-obtained value. {\i p} represents the {\i p}-value. \par * {\i p} indicates {\i p} < .05. ** indicates {\i p} < .01.\par}
+}

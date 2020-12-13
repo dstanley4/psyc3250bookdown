@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Populations and samples | PSYC6060 Course Notes</title>
+  <meta name="description" content="Course notes for PSYC 6060" />
+  <meta name="generator" content="bookdown 0.19.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Populations and samples | PSYC6060 Course Notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course notes for PSYC 6060" />
+  <meta name="github-repo" content="dstanley4/psyc6060bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Populations and samples | PSYC6060 Course Notes" />
+  
+  <meta name="twitter:description" content="Course notes for PSYC 6060" />
+  
+
+<meta name="author" content="David J. Stanley" />
+
+
+<meta name="date" content="2020-07-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="making-your-data-ready-for-analysis.html"/>
+<link rel="next" href="more-to-say.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-the-book"><i class="fa fa-check"></i>Structure of the book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.3</b> Create an account at R Studio Cloud</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.4</b> Join the class workspace</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.12</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
+<li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
+<li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
+<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
+<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
+<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv and data frames</a></li>
+<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv and tibbles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html"><i class="fa fa-check"></i><b>3</b> Making your data ready for analysis</a><ul>
+<li class="chapter" data-level="3.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#required-packages"><i class="fa fa-check"></i><b>3.1</b> Required Packages</a></li>
+<li class="chapter" data-level="3.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#objective-1"><i class="fa fa-check"></i><b>3.2</b> Objective</a></li>
+<li class="chapter" data-level="3.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#context"><i class="fa fa-check"></i><b>3.3</b> Context</a></li>
+<li class="chapter" data-level="3.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>3.4</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>3.4.1</b> Structuring data: Obtaining tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>3.5</b> Data collection considerations</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#naming-conventions"><i class="fa fa-check"></i><b>3.5.1</b> Naming conventions</a></li>
+<li class="chapter" data-level="3.5.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#likert-type-items"><i class="fa fa-check"></i><b>3.5.2</b> Likert-type items</a></li>
+<li class="chapter" data-level="3.5.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#anova-between"><i class="fa fa-check"></i><b>3.5.3</b> ANOVA between</a></li>
+<li class="chapter" data-level="3.5.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#anova-within"><i class="fa fa-check"></i><b>3.5.4</b> ANOVA within</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#following-the-examples"><i class="fa fa-check"></i><b>3.6</b> Following the examples</a></li>
+<li class="chapter" data-level="3.7" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>3.7</b> Entering data into spreadsheets</a></li>
+<li class="chapter" data-level="3.8" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#experiment-between"><i class="fa fa-check"></i><b>3.8</b> Experiment: Between</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors"><i class="fa fa-check"></i><b>3.8.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.8.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening"><i class="fa fa-check"></i><b>3.8.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.8.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening"><i class="fa fa-check"></i><b>3.8.3</b> Numeric screening</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#experiment-within-one-way"><i class="fa fa-check"></i><b>3.9</b> Experiment: Within one-way</a><ul>
+<li class="chapter" data-level="3.9.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-1"><i class="fa fa-check"></i><b>3.9.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.9.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening-1"><i class="fa fa-check"></i><b>3.9.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.9.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-1"><i class="fa fa-check"></i><b>3.9.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.9.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#pivot-to-tidy-data"><i class="fa fa-check"></i><b>3.9.4</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#experiment-within-n-way"><i class="fa fa-check"></i><b>3.10</b> Experiment: Within N-way</a><ul>
+<li class="chapter" data-level="3.10.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-2"><i class="fa fa-check"></i><b>3.10.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.10.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening-2"><i class="fa fa-check"></i><b>3.10.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.10.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-2"><i class="fa fa-check"></i><b>3.10.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.10.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#pivot-to-tidy-data-1"><i class="fa fa-check"></i><b>3.10.4</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#surveys-single-occassion"><i class="fa fa-check"></i><b>3.11</b> Surveys: Single Occassion</a><ul>
+<li class="chapter" data-level="3.11.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-3"><i class="fa fa-check"></i><b>3.11.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.11.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening-3"><i class="fa fa-check"></i><b>3.11.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.11.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-3"><i class="fa fa-check"></i><b>3.11.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.11.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#scale-scores"><i class="fa fa-check"></i><b>3.11.4</b> Scale scores</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#surveys-multiple-occasions"><i class="fa fa-check"></i><b>3.12</b> Surveys: Multiple Occasions</a><ul>
+<li class="chapter" data-level="3.12.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#creating-factors-4"><i class="fa fa-check"></i><b>3.12.1</b> Creating factors</a></li>
+<li class="chapter" data-level="3.12.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#factor-screening-4"><i class="fa fa-check"></i><b>3.12.2</b> Factor screening</a></li>
+<li class="chapter" data-level="3.12.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#numeric-screening-4"><i class="fa fa-check"></i><b>3.12.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="3.12.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#scale-scores-1"><i class="fa fa-check"></i><b>3.12.4</b> Scale scores</a></li>
+<li class="chapter" data-level="3.12.5" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#pivot-to-tidy-data-2"><i class="fa fa-check"></i><b>3.12.5</b> Pivot to tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.13" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.13</b> Basic descriptive statistics</a><ul>
+<li class="chapter" data-level="3.13.1" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#skim"><i class="fa fa-check"></i><b>3.13.1</b> skim()</a></li>
+<li class="chapter" data-level="3.13.2" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#apa.cor.table"><i class="fa fa-check"></i><b>3.13.2</b> apa.cor.table()</a></li>
+<li class="chapter" data-level="3.13.3" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#tidyverse"><i class="fa fa-check"></i><b>3.13.3</b> tidyverse</a></li>
+<li class="chapter" data-level="3.13.4" data-path="making-your-data-ready-for-analysis.html"><a href="making-your-data-ready-for-analysis.html#cronbachs-alpha"><i class="fa fa-check"></i><b>3.13.4</b> Cronbach’s alpha</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="populations-and-samples.html"><a href="populations-and-samples.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a><ul>
+<li class="chapter" data-level="4.1" data-path="populations-and-samples.html"><a href="populations-and-samples.html#required-packages-1"><i class="fa fa-check"></i><b>4.1</b> Required Packages</a></li>
+<li class="chapter" data-level="4.2" data-path="populations-and-samples.html"><a href="populations-and-samples.html#notation"><i class="fa fa-check"></i><b>4.2</b> Notation</a></li>
+<li class="chapter" data-level="4.3" data-path="populations-and-samples.html"><a href="populations-and-samples.html#population-vs-samples"><i class="fa fa-check"></i><b>4.3</b> Population vs samples</a></li>
+<li class="chapter" data-level="4.4" data-path="populations-and-samples.html"><a href="populations-and-samples.html#a-small-population"><i class="fa fa-check"></i><b>4.4</b> A small population</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="populations-and-samples.html"><a href="populations-and-samples.html#mean"><i class="fa fa-check"></i><b>4.4.1</b> Mean</a></li>
+<li class="chapter" data-level="4.4.2" data-path="populations-and-samples.html"><a href="populations-and-samples.html#variance"><i class="fa fa-check"></i><b>4.4.2</b> Variance</a></li>
+<li class="chapter" data-level="4.4.3" data-path="populations-and-samples.html"><a href="populations-and-samples.html#standard-deviation"><i class="fa fa-check"></i><b>4.4.3</b> Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="populations-and-samples.html"><a href="populations-and-samples.html#visualizing-populations"><i class="fa fa-check"></i><b>4.5</b> Visualizing populations</a></li>
+<li class="chapter" data-level="4.6" data-path="populations-and-samples.html"><a href="populations-and-samples.html#comparing-populations"><i class="fa fa-check"></i><b>4.6</b> Comparing populations</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="populations-and-samples.html"><a href="populations-and-samples.html#d-value-units"><i class="fa fa-check"></i><b>4.6.1</b> <span class="math inline">\(d\)</span>-value units</a></li>
+<li class="chapter" data-level="4.6.2" data-path="populations-and-samples.html"><a href="populations-and-samples.html#d-value-advantages"><i class="fa fa-check"></i><b>4.6.2</b> <span class="math inline">\(d\)</span>-value advantages</a></li>
+<li class="chapter" data-level="4.6.3" data-path="populations-and-samples.html"><a href="populations-and-samples.html#d-value-caveats"><i class="fa fa-check"></i><b>4.6.3</b> <span class="math inline">\(d\)</span>-value caveats</a></li>
+<li class="chapter" data-level="4.6.4" data-path="populations-and-samples.html"><a href="populations-and-samples.html#benchmarks"><i class="fa fa-check"></i><b>4.6.4</b> Benchmarks</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="populations-and-samples.html"><a href="populations-and-samples.html#key-ponts"><i class="fa fa-check"></i><b>4.7</b> Key ponts</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="more-to-say.html"><a href="more-to-say.html"><i class="fa fa-check"></i><b>A</b> More to Say</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PSYC6060 Course Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="populations-and-samples" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Populations and samples</h1>
+<div id="required-packages-1" class="section level2">
+<h2><span class="header-section-number">4.1</span> Required Packages</h2>
+<p>The following packages must be installed before starting this chapter.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tidyverse</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="notation" class="section level2">
+<h2><span class="header-section-number">4.2</span> Notation</h2>
+<p>In this chapter we will use summation notation. If you are not familiar with summation notation, we present a brief overview here.</p>
+<p>Consider a scenario where we have the IQ data for three participants We use the N symbol to represent the number of participants. Because we have three participants N = 3. The data for these participants is illustrated in Figure <a href="populations-and-samples.html#fig:notationdata">4.1</a>.</p>
+<p>Notice how each person in the data set can be represent by the variable X. The first person by X_1, the second by X2, and the third by X_3. Often we refer to individuals in a data set by using the variable X accompanied by a subscript (e.g., 1, 2, 3, etc.).</p>
+<div class="figure"><span id="fig:notationdata"></span>
+<img src="ch_populations/images/screenshot_data_n6.png" alt="Data for understanding summation notation" width="55%" />
+<p class="caption">
+FIGURE 4.1: Data for understanding summation notation
+</p>
+</div>
+<p>Referring to participants using the variable X and subscript is valuable because it can be used in conjunction with the sigma (i.e., <span class="math inline">\(\Sigma\)</span>) symbol for summation. Consider the example below in which we use the summation notation to indicate that we want to add all the X values (representing IQ) for the participants. We use a lower case <span class="math inline">\(i\)</span> to represent all possible subscript values. The notation below the <span class="math inline">\(\Sigma\)</span>, <span class="math inline">\(i\)</span> = 1, indicates that we should start with participant 1. The notation below the <span class="math inline">\(\Sigma\)</span>, N, indicates that we should iterate <span class="math inline">\(i\)</span> up to the value indicated by N; in this case 3, because there are three participants.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum_{i=1}^{N} X_i &amp;=  X_1 + X_2 + X_3\\ 
+&amp;= 110 + 120 + 100 \\
+&amp;= 330
+\end{aligned} 
+\]</span></p>
+<p>Sometimes, to simplify the notation, the numbers above and below the <span class="math inline">\(\Sigma\)</span> symbol are omitted. Likewise, the <span class="math inline">\(i\)</span> subscript is omitted. There is a general understanding that these components of the notation are omitted that the version of the notation above is implied.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum{X} &amp;= X_1 + X_2 + X_3\\ 
+&amp;= 110 + 120 + 100\\
+&amp;= 330
+\end{aligned} 
+\]</span></p>
+<p>The full version of the notation can be used to indicate how a mean is calculated.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\bar{X} &amp;= \frac{\sum_{i=1}^{N} X_i}{N} \\
+&amp;= \frac{X_1 + X_2 + X_3}{3}\\ 
+&amp;= \frac{110 + 120 + 100}{3}\\
+&amp;= \frac{330}{3}\\
+&amp;= 110\\
+\end{aligned} 
+\]</span></p>
+<p>Likewise, the concise version of the notation can be used to indicate how a mean is calculated.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\bar{X} &amp;= \frac{\sum{X}}{N} \\
+&amp;= \frac{X_1 + X_2 + X_3}{3}\\ 
+&amp;= \frac{110 + 120 + 100}{3}\\
+&amp;= \frac{330}{3}\\
+&amp;= 110\\
+\end{aligned} 
+\]</span></p>
+<p>A common task in statistics is to calculate 1) the squared distance between each person and the mean, and 2) add up those squared differences. This calculation is easily expressed with the full version of the notation.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum_{i=1}^{N}{(X_i - \bar{X})^2} &amp;= (X_1-\bar{X})^2 + (X_2-\bar{X})^2 + (X_3-\bar{X})^2\\ 
+&amp;= (110-110)^2 + (120-110)^2 + (100-110)^2\\
+&amp;= (0)^2 + (10)^2 (-10)^2 \\
+&amp;= 0 + 100 + 100 \\
+&amp;= 200
+\end{aligned} 
+\]</span></p>
+<p>Likewise, the sum of the squared deviations from the mean can be expressed using the concise version of the notation.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum{(X - \bar{X})^2} &amp;= (X_1-\bar{X})^2 + (X_2-\bar{X})^2 + (X_3-\bar{X})^2\\ 
+&amp;= (110-110)^2 + (120-110)^2 + (100-110)^2\\
+&amp;= (0)^2 + (10)^2 (-10)^2 \\
+&amp;= 0 + 100 + 100 \\
+&amp;= 200
+\end{aligned} 
+\]</span></p>
+</div>
+<div id="population-vs-samples" class="section level2">
+<h2><span class="header-section-number">4.3</span> Population vs samples</h2>
+<p>As we move closer to conducting our own research it is critical to make a distinction between populations and samples. A populations is the complete set of people/animals about which we want to make conclusions. Samples are a subset of the total number of people/animals in the population. In most scenarios it is impractical to work with an entire population and, for practical reasons, we study a subset of the population called a sample.</p>
+<p>Researchers, and consumers of research, typically have little interest in making conclusions at the sample level. In general, we care about conclusions that generalize to the population not conclusions that only apply to specific individuals in the sample. Consider the case of COVID-19. Imagine a team of researchers creates a vaccine that they hope creates immunity to COVID-19. We care very little if the immunity only works for the specific individuals in the study. However, we care a great deal with if the immunity works, or is likely to work, for all Canadians or all humans. Thus, we study samples but typically wish to make conclusions that apply to the population.</p>
+<p>Statistic tests are means of helping researchers use sample data to make conclusions at the population level. When we calculate numbers based on all of the people/animals in the population we refer to those numbers as <strong>parameters</strong>. We calculate numbers based on the people/animals in the sample we refer to those numbers as <strong>statistics</strong>. In general, statistics are used to estimate parameters.</p>
+</div>
+<div id="a-small-population" class="section level2">
+<h2><span class="header-section-number">4.4</span> A small population</h2>
+<p>Populations are typically quite large, but, for the purpose or reviewing how we typically describe populations we focus on a population of just three chocolate chip cookies. We refer to the three cookies as <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, and <span class="math inline">\(X_3\)</span>. The cookies have the weights of 8, 10, and 12 grams, respectively.</p>
+<div id="mean" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Mean</h3>
+<p>It can be helpful to create a model of our data such that each observation represents a deviation from a model describing the entire set of observations. That is we can think of our three cookies using the approach:</p>
+<p><span class="math display">\[
+\begin{aligned} 
+X_i &amp;= model + error_i \\
+\end{aligned} 
+\]</span></p>
+<p>We can create a model for our data using many different approaches. A simple model for our data is the mean:</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\bar{X} &amp;= \frac{\sum{X}}{N} \\
+&amp;= \frac{X_1 + X_2 + X_3}{3}\\ 
+&amp;= \frac{8 + 10 + 12}{3}\\
+&amp;= \frac{30}{3}\\
+&amp;= 10\\
+\end{aligned} 
+\]</span></p>
+<p>Then we can think of this “mean cookie” our model as:</p>
+<p><span class="math display">\[
+\begin{aligned} 
+X_i &amp;= \bar{X} + error_i \\
+\end{aligned} 
+\]</span></p>
+<p>The model, above is just concise way of describing the following:</p>
+<p><span class="math display">\[
+\begin{aligned} 
+X_1 &amp;= \bar{X} + error_1 \\
+X_2 &amp;= \bar{X} + error_2 \\
+X_3 &amp;= \bar{X} + error_3 \\
+\end{aligned} 
+\]</span></p>
+<p>That is the weights of the three cookies (<span class="math inline">\(X_1 = 8\)</span>, <span class="math inline">\(X_2 = 10\)</span>, and <span class="math inline">\(X_3 = 12\)</span>) can be conceptualized as:</p>
+<p><span class="math display">\[
+\begin{aligned} 
+X_1 &amp;= 10 + (-2) \\
+X_2 &amp;= 10 + 0 \\
+X_3 &amp;= 10 + 2 \\
+\end{aligned} 
+\]</span></p>
+<p>The mean of the population, <span class="math inline">\(\bar{X} = 10\)</span>, is a parameter that serves as model for the data. When we calculate a model for our data, it’s helpful to have an index of how well the model fits the data.</p>
+</div>
+<div id="variance" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Variance</h3>
+<p>Variance is a simple way of calculating how well the model fits our data. We can think of there being a conceptual “mean cookie” that describes our data. Then we want to see the extent to which the data differs from our “mean cookie” model.</p>
+<div class="figure"><span id="fig:meancookie"></span>
+<img src="ch_populations/images/cookie.png" alt="Variance as a fit index for the mean" width="60%" />
+<p class="caption">
+FIGURE 4.2: Variance as a fit index for the mean
+</p>
+</div>
+<p>Variance is a simple approach to assessing the fit of the model. With this approach we determine the extent to which data point deviates from our model (our mean cookie), see Figure <a href="populations-and-samples.html#fig:meancookie">4.2</a>. The deviation between each data point and the model is referred to as error.</p>
+<p><strong>Why use squared errors?</strong> Error, the extent to the data deviates from the model, is calculated using squared differences. That is, take each data point, subtract the model value, and then square the resulting number (e.g., <span class="math inline">\((8 - 10)^2 = 4\)</span>). It probably strikes you as an odd choice to square the difference between each data point and the model. Why not just take the difference (e.g., <span class="math inline">\((8 - 10) = -2\)</span>) or take the absolute difference (e.g., <span class="math inline">\(|8 - 10|= 2\)</span>)? The answer is somewhat complex, but it relates to the more general situation in statistics of trying to find models that minimize error. When we use error as the squared difference it is easier to apply calculus, via derivatives, to calculate a model that minimizes the errors (i.e., obtains the best fit). Long story short, complex statistical reasons, we use squared differs to index error rather than other approaches.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Cookie Mass</th>
+<th>Model</th>
+<th>Error = Squared Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(X_1 = 8\)</span></td>
+<td><span class="math inline">\(\bar{X} = 10\)</span></td>
+<td><span class="math inline">\((X_1 - \bar{X})^2 =(8 - 10)^2= 4\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(X_2 = 10\)</span></td>
+<td><span class="math inline">\(\bar{X} = 10\)</span></td>
+<td><span class="math inline">\((X_2 - \bar{X})^2 =(10 - 10)^2= 0\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(X_3 = 12\)</span></td>
+<td><span class="math inline">\(\bar{X} = 10\)</span></td>
+<td><span class="math inline">\((X_3 - \bar{X})^2 =(12 - 10)^2= 4\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>You can see in the table above that we can calculate the squared difference for data points 1 through 3. The squared differences are 4, 0, and 4, respectively. We combine these numbers into a single index by taking an average. This calculation, <span class="math inline">\((4 + 0 + 4)/3 = 2.67\)</span>, tell us the average of the squared deviations from the model is 2.67 grams<span class="math inline">\(^2\)</span>. We refer to the this value as variance.</p>
+<p>Recall the formula for calculating an average:</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\bar{X} &amp;= \frac{\sum{X}}{N} \\
+\end{aligned} 
+\]</span></p>
+<p>You can see from the formula for variance below that variance is just an average. The average of the squared errors.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+var(X) &amp;= \frac{\sum{(X - \bar{X})^2}}{N}\\
+&amp;= \frac{(X_1-\bar{X})^2 + (X_2-\bar{X})^2 + (X_3-\bar{X})^2}{N}  \\ 
+&amp;= \frac{(8-10)^2 + (10-10)^2 + (12-10)^2}{3}\\
+&amp;= \frac{(-2)^2 + (0)^2 (2)^2}{3} \\
+&amp;= \frac{4 + 0 + 4}{3} \\
+&amp;= \frac{8}{3} \\
+&amp;= 2.67 grams^2 \\
+\end{aligned} 
+\]</span></p>
+<p><strong>Variance by any other name</strong>. Variance is used in many places in inferential statistics. Unfortunately, it often goes by other name. Some of those names are listed below.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variance synonyms</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean Squared Error</td>
+</tr>
+<tr class="even">
+<td>MSE</td>
+</tr>
+<tr class="odd">
+<td>Pooled variance</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(s_{pooled}^2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(s_{p}^2\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(s_{residual}^2\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="standard-deviation" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> Standard Deviation</h3>
+<p>Variance is easy to interpret as a the average of the squared differences between the model and the data. However, variance presents an answer in squared units (e.g., 2.67 grams<span class="math inline">\(2\)</span>). Consequently, some people prefer to take the square root of this value and call it standard deviation.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+sd(X) &amp;= \sqrt{var(X)} \\
+&amp;= \sqrt{2.67} \\
+&amp;= 1.63 grams\\
+\end{aligned} 
+\]</span></p>
+<p>Unfortunately, although variance has a straight forward interpretation, standard deviation does not. Consider what happens when you take the square root of variance. Standard deviation can be thought of as the sum of the absolute deviations from the mean divided by the square root of the number of observations. Standard deviation is not an average - because you are dividing by the square root of N instead of just N. As a result, it’s much harder to describe what standard deviation means.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+sd(X) &amp;= \sqrt{\frac{\sum{(X - \bar{X})^2}}{N}}\\
+ &amp;= \frac{\sum{|X - \bar{X}|}}{\sqrt{N}}\\
+\end{aligned} 
+\]</span></p>
+<p>We encourage you to think primarily in terms of variance rather than standard deviation due to the fact the interpretation of variance is more straightforward. Additionally, variance is foundational in the language used to describe regression and analysis of variance. That said, standard deviation is used in the calculation of some standardized effect sizes - so it is important to know and understand both indices.</p>
+</div>
+</div>
+<div id="visualizing-populations" class="section level2">
+<h2><span class="header-section-number">4.5</span> Visualizing populations</h2>
+<p>Three different ways</p>
+<ul>
+<li><p>histotext</p></li>
+<li><p>histogram</p></li>
+<li><p>density curve</p></li>
+</ul>
+</div>
+<div id="comparing-populations" class="section level2">
+<h2><span class="header-section-number">4.6</span> Comparing populations</h2>
+<div id="d-value-units" class="section level3">
+<h3><span class="header-section-number">4.6.1</span> <span class="math inline">\(d\)</span>-value units</h3>
+<p>Here is a bunch of text comparing population. For this text see Figure <a href="populations-and-samples.html#fig:dex1">4.3</a>.</p>
+<div class="figure"><span id="fig:dex1"></span>
+<img src="ch_populations/images/dvalue_ex1.png" alt="The difference between two population means can be expressed in the original units as indicated by $\Delta M$. Alternatively, the difference can be expressed using a Standardized Mean Difference (SMD). The SMD index is also know as the population-level $d$-value and is represented by the symbol $\delta$. The SMD is a way of expressing the difference between population means without using the original units. " width="100%" />
+<p class="caption">
+FIGURE 4.3: The difference between two population means can be expressed in the original units as indicated by <span class="math inline">\(\Delta M\)</span>. Alternatively, the difference can be expressed using a Standardized Mean Difference (SMD). The SMD index is also know as the population-level <span class="math inline">\(d\)</span>-value and is represented by the symbol <span class="math inline">\(\delta\)</span>. The SMD is a way of expressing the difference between population means without using the original units.
+</p>
+</div>
+</div>
+<div id="d-value-advantages" class="section level3">
+<h3><span class="header-section-number">4.6.2</span> <span class="math inline">\(d\)</span>-value advantages</h3>
+<p>Here is a bunch of text comparing population. For this text see Figure <a href="populations-and-samples.html#fig:dex2">4.4</a>.</p>
+<div class="figure"><span id="fig:dex2"></span>
+<img src="ch_populations/images/dvalue_ex2.png" alt="An advantage of using the Standardized Mean Difference (SMD) to index the difference between two population means (i.e., $\delta$) is that it takes the population standard deviation into account. In these three examples, the difference between the populations means is the same using the original/raw units of centimeters. However, the standard deviation of the populations varies across scenarios A, B, and C. The SMD illustrates that these three scenarios are different. If you only looked the difference in the original units (i.e., $\Delta M$) you would conclude the effect is the same across the three scenarios. However, by using SMD, indexed by $\delta$ - the population $d$-value, you see that the effect is progressively stronger from scenario A, to B, to C. This is illustrated by the fact that there is progressively less overlap between the distributions as you move from scenario A to C." width="100%" />
+<p class="caption">
+FIGURE 4.4: An advantage of using the Standardized Mean Difference (SMD) to index the difference between two population means (i.e., <span class="math inline">\(\delta\)</span>) is that it takes the population standard deviation into account. In these three examples, the difference between the populations means is the same using the original/raw units of centimeters. However, the standard deviation of the populations varies across scenarios A, B, and C. The SMD illustrates that these three scenarios are different. If you only looked the difference in the original units (i.e., <span class="math inline">\(\Delta M\)</span>) you would conclude the effect is the same across the three scenarios. However, by using SMD, indexed by <span class="math inline">\(\delta\)</span> - the population <span class="math inline">\(d\)</span>-value, you see that the effect is progressively stronger from scenario A, to B, to C. This is illustrated by the fact that there is progressively less overlap between the distributions as you move from scenario A to C.
+</p>
+</div>
+</div>
+<div id="d-value-caveats" class="section level3">
+<h3><span class="header-section-number">4.6.3</span> <span class="math inline">\(d\)</span>-value caveats</h3>
+<p>Here is a bunch of text comparing population. For this text see Figure <a href="populations-and-samples.html#fig:dex3">4.5</a>.</p>
+<div class="figure"><span id="fig:dex3"></span>
+<img src="ch_populations/images/dvalue_ex3.png" alt="The three scenarios in this figure illustrate that a Standardized Mean Difference (i.e., population $d$-value or $\delta$) can remain constant across scenarios when there is a change in the raw difference (i.e., $\Delta M$) between the population means. This constant SMD occurs because the standard deviations also changes across the three scenarios." width="100%" />
+<p class="caption">
+FIGURE 4.5: The three scenarios in this figure illustrate that a Standardized Mean Difference (i.e., population <span class="math inline">\(d\)</span>-value or <span class="math inline">\(\delta\)</span>) can remain constant across scenarios when there is a change in the raw difference (i.e., <span class="math inline">\(\Delta M\)</span>) between the population means. This constant SMD occurs because the standard deviations also changes across the three scenarios.
+</p>
+</div>
+</div>
+<div id="benchmarks" class="section level3">
+<h3><span class="header-section-number">4.6.4</span> Benchmarks</h3>
+<div class="figure"><span id="fig:dex4"></span>
+<img src="ch_populations/images/dvalue_ex4.png" alt="Cohen's (1988) effect size benchmarks." width="100%" />
+<p class="caption">
+FIGURE 4.6: Cohen’s (1988) effect size benchmarks.
+</p>
+</div>
+</div>
+</div>
+<div id="key-ponts" class="section level2">
+<h2><span class="header-section-number">4.7</span> Key ponts</h2>
+<ul>
+<li><p>Populations are described using numbers called parameters.</p></li>
+<li><p>Commonly used parameters include mean (<span class="math inline">\(\mu\)</span> or <span class="math inline">\(\bar{X}\)</span>), variance (<span class="math inline">\(\sigma^2\)</span>), or standard deviation (<span class="math inline">\(\sigma\)</span>). Population level parameters are often represented using Greek letter.</p></li>
+<li><p>Population differences can be described in original raw units or standardized units called the standardized mean difference (SMD).</p></li>
+<li><p>SMD is an effect size.</p></li>
+<li><p>SMD is a useful for comparing means.</p></li>
+<li><p>SMD is based on the premise that the two population being compared have the same standard deviation</p></li>
+<li><p>SMD (i.e,. Cohen’s d) represents the number of standard deviations between two population means. Recall both populations have the same standard deviation.</p></li>
+<li><p>SMD is indicated at the population level using the greek letter delta (<span class="math inline">\(\delta\)</span>). At the sample level we tend to use the term “<span class="math inline">\(d\)</span>-value” or “Cohen’s <span class="math inline">\(d\)</span>”.</p></li>
+</ul>
+
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="making-your-data-ready-for-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="more-to-say.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/04-populations.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
