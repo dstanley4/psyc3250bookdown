@@ -32,7 +32,7 @@ lapply(c('xfun'), function(pkg) {
 # Course: {-}
 
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("header_4780.png")
+knitr::include_graphics("header_3250.png")
 ```
 
-These notes are a resource for students in my PSYC*4780 class. The notes are a subset of material that I am creating for a public domain statistics book to be released sometime in the distant future.
+These notes are a resource for students in my PSYC*3250 class.
