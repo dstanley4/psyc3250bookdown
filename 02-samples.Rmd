@@ -426,8 +426,6 @@ In this chapter we have illustrated how population parameters can be estimated b
 |          |     |  $s_{pooled}^2  = \frac{(n_1 -1)s_1^2 + (n_2 -1)s_2^2}{n_1 + n_2-2}$|
 | Standard deviation |$\sigma = \sqrt{\frac{\sum{(X - \mu)^2}}{N}}$  | $s =\sqrt{\frac{\sum{(x - \bar{x})^2}}{n-1}}$ |
 |          |     |  $s_{pooled}  = \sqrt{\frac{(n_1 -1)s_1^2 + (n_2 -1)s_2^2}{n_1 + n_2-2}}$|
-| Cohen's $d$ or SMD|$\delta= \frac{\mu_{1} - \mu_{2}}{\sigma}$ | $d  = \frac{\bar{x}_{1} - \bar{x}_{2}}{s_{pooled}}$    |
-|          |     | $d_{unbiased}  = \frac{\bar{x}_{1} - \bar{x}_{2}}{s_{pooled}}  \times [1 - \frac{3}{4(n_1 + n_2)-9}]$ |
 | Correlation | $\rho =  \frac{\Sigma (X - \mu_X)(Y - \mu_Y)}{\sqrt{\Sigma (X - \mu_X)^2\Sigma (Y - \mu_Y)^2}}$ | $r =  \frac{\Sigma (x - \bar{x})(y - \bar{y})}{\sqrt{\Sigma (x - \bar{x})^2\Sigma (y - \bar{y})^2}}$ |
 
 \singlespacing
