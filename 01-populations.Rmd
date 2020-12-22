@@ -885,39 +885,7 @@ In this case, the numerator is the extent to which Ian is taller than the mean h
 
 2. Population-level parameters are often represented using Greek letter.
 
-3. Commonly used parameters include mean ($\mu$ or $\bar{X}$), variance ($\sigma^2$), or standard deviation ($\sigma$).
+3. Commonly used parameters include mean ($\mu$ or $\bar{X}$), variance ($\sigma^2$), standard deviation ($\sigma$), correlation ($\rho$).
 
 4. Individual scores can be expressed in standardized units.
-
-5. Population differences can be described in original raw units or standardized units called the standardized mean difference (SMD).
-
-6. SMD is based on the premise that the two population being compared have the same standard deviation.
-
-7. SMD is a ratio that compares two numbers (the numerator and the denominator).
-
-8. Make sure you understand what is represented by both the numerator and denominator in the SMD ratio.
-
-9. SMD (i.e., Cohen's d) represents the number of standard deviations between two population means. Recall both populations have the same standard deviation.
-
-10. SMD is indicated at the population level using the Greek letter delta ($\delta$). At the sample level we tend to use the term "$d$-value" or "Cohen's $d$".
-
-## Minor Points
-
-1. Standardized mean differences are reported with a leading zero: $\delta$ = 0.50.
-
-2. Correlations are reported *without* a leading zero: $\rho$ = .30.
-
-3. The difference in reporting is an APA-style issue. Values that are bounded between 0 and 1 (or between -1 and +1) are reported without a leading zero (e.g., $\rho$ and $r$). Values that are not bounded are reported with the leading zero (e.g., $\delta$ and $d$).
-
-## Self Assessment 
-
-1. What is the difference between parameters and statistics?
-
-2. Are the formulas (excluding notation differences) always the same for parameters and statistics? If not, explain why not? 
-
-3. Grade 4 students in Ontario are taller than the Grade 3 students. Specifically, $\delta$ = 0.30. How would you describe what this value means to an audience of experts at a conference? How would you describe what this values means to community members during a talk at the local public library?
-
-4. We reviewed three different ways of calculating a standardized mean different ($\delta$). What is the appropriate circumstance to use each formula? Describe a concrete scenario for each one.
-
-5. There is a strong relation between two variables that follows and upside-down U-shape. Would you expect there to be a strong correlation between these two variables? Why or why not?
 
