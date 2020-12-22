@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 16 Multiple regression | Welcome!</title>
-  <meta name="description" content="Course notes for PSYC 6060" />
+  <title>Chapter 4 Multiple regression | Welcome!</title>
+  <meta name="description" content="Course notes for PSYC 3250" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 16 Multiple regression | Welcome!" />
+  <meta property="og:title" content="Chapter 4 Multiple regression | Welcome!" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Course notes for PSYC 6060" />
-  <meta name="github-repo" content="dstanley4/psyc6060bookdown" />
+  <meta property="og:description" content="Course notes for PSYC 3250" />
+  <meta name="github-repo" content="dstanley4/psyc3250bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 16 Multiple regression | Welcome!" />
+  <meta name="twitter:title" content="Chapter 4 Multiple regression | Welcome!" />
   
-  <meta name="twitter:description" content="Course notes for PSYC 6060" />
+  <meta name="twitter:description" content="Course notes for PSYC 3250" />
   
 
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2020-12-13" />
+<meta name="date" content="2020-12-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="regression-and-correlation.html"/>
-<link rel="next" href="sample-size-for-multiple-regression.html"/>
+<link rel="next" href="introduction.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -145,409 +145,216 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course:</a></li>
 <li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.3</b> Create an account at R Studio Cloud</a></li>
-<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.4</b> Join the class workspace</a></li>
-<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
-<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
-<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
-</ul></li>
-<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
-<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
-<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
-<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
-<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
-</ul></li>
-<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
-<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
-</ul></li>
-<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
-<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
-<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
-<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
-<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
-<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
-</ul></li>
-<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
-<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
-<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
-<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
-</ul></li>
-<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
-<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
-<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
-</ul></li>
-<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.12</b> That’s it!</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
-<li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
-<li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
-<li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
-<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
-<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
-<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
-<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
-<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
-</ul></li>
-<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
-<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
-<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
-<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
-</ul></li>
-<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
-<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
-<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
-<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv() and data frames</a></li>
-<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv() and tibbles</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="populations.html"><a href="populations.html"><i class="fa fa-check"></i><b>3</b> Populations</a><ul>
-<li class="chapter" data-level="3.1" data-path="populations.html"><a href="populations.html#notation"><i class="fa fa-check"></i><b>3.1</b> Notation</a></li>
-<li class="chapter" data-level="3.2" data-path="populations.html"><a href="populations.html#population-vs-samples"><i class="fa fa-check"></i><b>3.2</b> Population vs samples</a></li>
-<li class="chapter" data-level="3.3" data-path="populations.html"><a href="populations.html#a-small-population"><i class="fa fa-check"></i><b>3.3</b> A small population</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="populations.html"><a href="populations.html#mean-mu"><i class="fa fa-check"></i><b>3.3.1</b> Mean (<span class="math inline">\(\mu\)</span>)</a></li>
-<li class="chapter" data-level="3.3.2" data-path="populations.html"><a href="populations.html#variance-sigma2"><i class="fa fa-check"></i><b>3.3.2</b> Variance (<span class="math inline">\(\sigma^2\)</span>)</a></li>
-<li class="chapter" data-level="3.3.3" data-path="populations.html"><a href="populations.html#standard-deviation-sigma"><i class="fa fa-check"></i><b>3.3.3</b> Standard Deviation (<span class="math inline">\(\sigma\)</span>)</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="populations.html"><a href="populations.html#visualizing-populations"><i class="fa fa-check"></i><b>3.4</b> Visualizing populations</a></li>
-<li class="chapter" data-level="3.5" data-path="populations.html"><a href="populations.html#comparisons-same-sigma"><i class="fa fa-check"></i><b>3.5</b> Comparisons: Same <span class="math inline">\(\sigma\)</span></a><ul>
-<li class="chapter" data-level="3.5.1" data-path="populations.html"><a href="populations.html#standardized-units"><i class="fa fa-check"></i><b>3.5.1</b> Standardized units</a></li>
-<li class="chapter" data-level="3.5.2" data-path="populations.html"><a href="populations.html#cohens-d-units"><i class="fa fa-check"></i><b>3.5.2</b> Cohen’s <span class="math inline">\(d\)</span> units</a></li>
-<li class="chapter" data-level="3.5.3" data-path="populations.html"><a href="populations.html#cohens-d-advantages"><i class="fa fa-check"></i><b>3.5.3</b> Cohen’s <span class="math inline">\(d\)</span> advantages</a></li>
-<li class="chapter" data-level="3.5.4" data-path="populations.html"><a href="populations.html#cohens-d-caveats"><i class="fa fa-check"></i><b>3.5.4</b> Cohen’s <span class="math inline">\(d\)</span> caveats</a></li>
-</ul></li>
-<li class="chapter" data-level="3.6" data-path="populations.html"><a href="populations.html#comparisons-different-sigma"><i class="fa fa-check"></i><b>3.6</b> Comparisons: Different <span class="math inline">\(\sigma\)</span></a></li>
-<li class="chapter" data-level="3.7" data-path="populations.html"><a href="populations.html#comparisons-repeated-measures"><i class="fa fa-check"></i><b>3.7</b> Comparisons: Repeated Measures</a></li>
-<li class="chapter" data-level="3.8" data-path="populations.html"><a href="populations.html#comparison-benchmarks"><i class="fa fa-check"></i><b>3.8</b> Comparison Benchmarks</a></li>
-<li class="chapter" data-level="3.9" data-path="populations.html"><a href="populations.html#population-relations"><i class="fa fa-check"></i><b>3.9</b> Population relations</a></li>
-<li class="chapter" data-level="3.10" data-path="populations.html"><a href="populations.html#relation-benchmarks"><i class="fa fa-check"></i><b>3.10</b> Relation benchmarks</a></li>
-<li class="chapter" data-level="3.11" data-path="populations.html"><a href="populations.html#key-points"><i class="fa fa-check"></i><b>3.11</b> Key points</a></li>
-<li class="chapter" data-level="3.12" data-path="populations.html"><a href="populations.html#minor-points"><i class="fa fa-check"></i><b>3.12</b> Minor Points</a></li>
-<li class="chapter" data-level="3.13" data-path="populations.html"><a href="populations.html#self-assessment"><i class="fa fa-check"></i><b>3.13</b> Self Assessment</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>4</b> Graphing</a><ul>
-<li class="chapter" data-level="4.1" data-path="graphing.html"><a href="graphing.html#required-1"><i class="fa fa-check"></i><b>4.1</b> Required</a></li>
-<li class="chapter" data-level="4.2" data-path="graphing.html"><a href="graphing.html#data"><i class="fa fa-check"></i><b>4.2</b> Data</a></li>
-<li class="chapter" data-level="4.3" data-path="graphing.html"><a href="graphing.html#graph-basics"><i class="fa fa-check"></i><b>4.3</b> Graph basics</a></li>
-<li class="chapter" data-level="4.4" data-path="graphing.html"><a href="graphing.html#graphing-efficiently"><i class="fa fa-check"></i><b>4.4</b> Graphing efficiently</a></li>
-<li class="chapter" data-level="4.5" data-path="graphing.html"><a href="graphing.html#aesthetics"><i class="fa fa-check"></i><b>4.5</b> Aesthetics</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="graphing.html"><a href="graphing.html#fill-color"><i class="fa fa-check"></i><b>4.5.1</b> Fill color</a></li>
-<li class="chapter" data-level="4.5.2" data-path="graphing.html"><a href="graphing.html#overriding-aes"><i class="fa fa-check"></i><b>4.5.2</b> Overriding aes()</a></li>
-</ul></li>
-<li class="chapter" data-level="4.6" data-path="graphing.html"><a href="graphing.html#apa-style"><i class="fa fa-check"></i><b>4.6</b> APA style</a></li>
-<li class="chapter" data-level="4.7" data-path="graphing.html"><a href="graphing.html#axes"><i class="fa fa-check"></i><b>4.7</b> Axes</a><ul>
-<li class="chapter" data-level="4.7.1" data-path="graphing.html"><a href="graphing.html#range"><i class="fa fa-check"></i><b>4.7.1</b> Range</a></li>
-<li class="chapter" data-level="4.7.2" data-path="graphing.html"><a href="graphing.html#ticks"><i class="fa fa-check"></i><b>4.7.2</b> Ticks</a></li>
-<li class="chapter" data-level="4.7.3" data-path="graphing.html"><a href="graphing.html#labels"><i class="fa fa-check"></i><b>4.7.3</b> Labels</a></li>
-</ul></li>
-<li class="chapter" data-level="4.8" data-path="graphing.html"><a href="graphing.html#axis-values"><i class="fa fa-check"></i><b>4.8</b> Axis values</a><ul>
-<li class="chapter" data-level="4.8.1" data-path="graphing.html"><a href="graphing.html#text"><i class="fa fa-check"></i><b>4.8.1</b> Text</a></li>
-<li class="chapter" data-level="4.8.2" data-path="graphing.html"><a href="graphing.html#angle"><i class="fa fa-check"></i><b>4.8.2</b> Angle</a></li>
-<li class="chapter" data-level="4.8.3" data-path="graphing.html"><a href="graphing.html#alignment"><i class="fa fa-check"></i><b>4.8.3</b> Alignment</a></li>
-<li class="chapter" data-level="4.8.4" data-path="graphing.html"><a href="graphing.html#order"><i class="fa fa-check"></i><b>4.8.4</b> Order</a></li>
-<li class="chapter" data-level="4.8.5" data-path="graphing.html"><a href="graphing.html#legend-order"><i class="fa fa-check"></i><b>4.8.5</b> Legend order</a></li>
-</ul></li>
-<li class="chapter" data-level="4.9" data-path="graphing.html"><a href="graphing.html#custom-colours"><i class="fa fa-check"></i><b>4.9</b> Custom colours</a><ul>
-<li class="chapter" data-level="4.9.1" data-path="graphing.html"><a href="graphing.html#r-palette"><i class="fa fa-check"></i><b>4.9.1</b> R palette</a></li>
-<li class="chapter" data-level="4.9.2" data-path="graphing.html"><a href="graphing.html#hex-colours"><i class="fa fa-check"></i><b>4.9.2</b> Hex colours</a></li>
-</ul></li>
-<li class="chapter" data-level="4.10" data-path="graphing.html"><a href="graphing.html#emoji"><i class="fa fa-check"></i><b>4.10</b> Emoji</a></li>
-<li class="chapter" data-level="4.11" data-path="graphing.html"><a href="graphing.html#accessible-colors"><i class="fa fa-check"></i><b>4.11</b> Accessible Colors</a><ul>
-<li class="chapter" data-level="4.11.1" data-path="graphing.html"><a href="graphing.html#rcolorbrewer"><i class="fa fa-check"></i><b>4.11.1</b> RColorBrewer</a></li>
-<li class="chapter" data-level="4.11.2" data-path="graphing.html"><a href="graphing.html#avoid-color"><i class="fa fa-check"></i><b>4.11.2</b> Avoid color</a></li>
-</ul></li>
-<li class="chapter" data-level="4.12" data-path="graphing.html"><a href="graphing.html#saving"><i class="fa fa-check"></i><b>4.12</b> Saving</a><ul>
-<li class="chapter" data-level="4.12.1" data-path="graphing.html"><a href="graphing.html#mac"><i class="fa fa-check"></i><b>4.12.1</b> MAC</a></li>
-<li class="chapter" data-level="4.12.2" data-path="graphing.html"><a href="graphing.html#pc-or-mac"><i class="fa fa-check"></i><b>4.12.2</b> PC or MAC</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html"><i class="fa fa-check"></i><b>5</b> Sampling Accuracy</a><ul>
-<li class="chapter" data-level="5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
-<li class="chapter" data-level="5.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#data-for-the-chapter"><i class="fa fa-check"></i><b>5.2</b> Data for the chapter</a></li>
-<li class="chapter" data-level="5.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#notation-1"><i class="fa fa-check"></i><b>5.3</b> Notation</a></li>
-<li class="chapter" data-level="5.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-mu"><i class="fa fa-check"></i><b>5.4</b> Estimating <span class="math inline">\(\mu\)</span></a><ul>
-<li class="chapter" data-level="5.4.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias"><i class="fa fa-check"></i><b>5.4.1</b> Assessing bias</a></li>
-</ul></li>
-<li class="chapter" data-level="5.5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma2"><i class="fa fa-check"></i><b>5.5</b> Estimating <span class="math inline">\(\sigma^2\)</span></a><ul>
-<li class="chapter" data-level="5.5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-1"><i class="fa fa-check"></i><b>5.5.1</b> Assessing bias</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma"><i class="fa fa-check"></i><b>5.6</b> Estimating <span class="math inline">\(\sigma\)</span></a></li>
-<li class="chapter" data-level="5.7" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-delta"><i class="fa fa-check"></i><b>5.7</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
-<li class="chapter" data-level="5.7.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#pooled-standard-deviation"><i class="fa fa-check"></i><b>5.7.1</b> Pooled standard deviation</a></li>
-<li class="chapter" data-level="5.7.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#calculating-d"><i class="fa fa-check"></i><b>5.7.2</b> Calculating <span class="math inline">\(d\)</span></a></li>
-<li class="chapter" data-level="5.7.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-2"><i class="fa fa-check"></i><b>5.7.3</b> Assessing bias</a></li>
-<li class="chapter" data-level="5.7.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#illustrating-variability"><i class="fa fa-check"></i><b>5.7.4</b> Illustrating variability</a></li>
-</ul></li>
-<li class="chapter" data-level="5.8" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-rho"><i class="fa fa-check"></i><b>5.8</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
-<li class="chapter" data-level="5.8.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-3"><i class="fa fa-check"></i><b>5.8.1</b> Assessing bias</a></li>
-</ul></li>
-<li class="chapter" data-level="5.9" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview-1"><i class="fa fa-check"></i><b>5.9</b> Overview</a></li>
-<li class="chapter" data-level="5.10" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#meta-analysis"><i class="fa fa-check"></i><b>5.10</b> Meta-analysis</a></li>
-<li class="chapter" data-level="5.11" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#a-joke"><i class="fa fa-check"></i><b>5.11</b> A joke</a></li>
-<li class="chapter" data-level="5.12" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#key-points-1"><i class="fa fa-check"></i><b>5.12</b> Key Points</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="sampling-precision.html"><a href="sampling-precision.html"><i class="fa fa-check"></i><b>6</b> Sampling Precision</a><ul>
-<li class="chapter" data-level="6.1" data-path="sampling-precision.html"><a href="sampling-precision.html#overview-2"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
-<li class="chapter" data-level="6.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-individuals"><i class="fa fa-check"></i><b>6.2</b> Population / Individuals</a></li>
-<li class="chapter" data-level="6.3" data-path="sampling-precision.html"><a href="sampling-precision.html#sampling-distribution"><i class="fa fa-check"></i><b>6.3</b> Sampling distribution</a></li>
-<li class="chapter" data-level="6.4" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-indices"><i class="fa fa-check"></i><b>6.4</b> Precision indices</a></li>
-<li class="chapter" data-level="6.5" data-path="sampling-precision.html"><a href="sampling-precision.html#a-short-cut"><i class="fa fa-check"></i><b>6.5</b> A short cut</a></li>
-<li class="chapter" data-level="6.6" data-path="sampling-precision.html"><a href="sampling-precision.html#estimates-of-precision"><i class="fa fa-check"></i><b>6.6</b> Estimates of precision</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="sampling-precision.html"><a href="sampling-precision.html#a-worked-example"><i class="fa fa-check"></i><b>6.6.1</b> A worked example</a></li>
-</ul></li>
-<li class="chapter" data-level="6.7" data-path="sampling-precision.html"><a href="sampling-precision.html#bias-of-precision-estimates"><i class="fa fa-check"></i><b>6.7</b> Bias of precision estimates</a></li>
-<li class="chapter" data-level="6.8" data-path="sampling-precision.html"><a href="sampling-precision.html#where-are-we"><i class="fa fa-check"></i><b>6.8</b> Where are we?</a></li>
-<li class="chapter" data-level="6.9" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-means-causes"><i class="fa fa-check"></i><b>6.9</b> Precision for means: Causes</a></li>
-<li class="chapter" data-level="6.10" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-d-values-causes"><i class="fa fa-check"></i><b>6.10</b> Precision for <span class="math inline">\(d\)</span>-values: Causes</a><ul>
-<li class="chapter" data-level="6.10.1" data-path="sampling-precision.html"><a href="sampling-precision.html#sample-size"><i class="fa fa-check"></i><b>6.10.1</b> Sample size</a></li>
-<li class="chapter" data-level="6.10.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-effect-size-delta"><i class="fa fa-check"></i><b>6.10.2</b> Population effect size (<span class="math inline">\(\delta\)</span>)</a></li>
-</ul></li>
-<li class="chapter" data-level="6.11" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-sample-correlations-r-causes"><i class="fa fa-check"></i><b>6.11</b> Precision for sample correlations (<span class="math inline">\(r\)</span>): Causes</a><ul>
-<li class="chapter" data-level="6.11.1" data-path="sampling-precision.html"><a href="sampling-precision.html#sample-size-1"><i class="fa fa-check"></i><b>6.11.1</b> Sample size</a></li>
-<li class="chapter" data-level="6.11.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-effect-size-rho"><i class="fa fa-check"></i><b>6.11.2</b> Population effect size (<span class="math inline">\(\rho\)</span>)</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html"><i class="fa fa-check"></i><b>7</b> Effect sizes from publications</a><ul>
-<li class="chapter" data-level="7.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#required-2"><i class="fa fa-check"></i><b>7.1</b> Required</a></li>
-<li class="chapter" data-level="7.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#objective-1"><i class="fa fa-check"></i><b>7.2</b> Objective</a></li>
-<li class="chapter" data-level="7.3" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#estimating-delta-1"><i class="fa fa-check"></i><b>7.3</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
-<li class="chapter" data-level="7.3.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#independent-groups"><i class="fa fa-check"></i><b>7.3.1</b> Independent Groups</a></li>
-<li class="chapter" data-level="7.3.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#repeated-measures"><i class="fa fa-check"></i><b>7.3.2</b> Repeated Measures</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#estimating-rho-1"><i class="fa fa-check"></i><b>7.4</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
-<li class="chapter" data-level="7.4.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#a-single-correlation"><i class="fa fa-check"></i><b>7.4.1</b> A single correlation</a></li>
-<li class="chapter" data-level="7.4.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#difference-between-two-correlations"><i class="fa fa-check"></i><b>7.4.2</b> Difference between two correlations</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html"><i class="fa fa-check"></i><b>8</b> NHST and sample size</a><ul>
-<li class="chapter" data-level="8.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#required-3"><i class="fa fa-check"></i><b>8.1</b> Required</a></li>
-<li class="chapter" data-level="8.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#overview-3"><i class="fa fa-check"></i><b>8.2</b> Overview</a></li>
-<li class="chapter" data-level="8.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#goals"><i class="fa fa-check"></i><b>8.3</b> Goals</a></li>
-<li class="chapter" data-level="8.4" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#independent-groups-t-test"><i class="fa fa-check"></i><b>8.4</b> Independent groups <span class="math inline">\(t\)</span>-test</a><ul>
-<li class="chapter" data-level="8.4.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size"><i class="fa fa-check"></i><b>8.4.1</b> Population effect size</a></li>
-<li class="chapter" data-level="8.4.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size"><i class="fa fa-check"></i><b>8.4.2</b> Determining sample size</a></li>
-<li class="chapter" data-level="8.4.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant"><i class="fa fa-check"></i><b>8.4.3</b> What will be signficant?</a></li>
-</ul></li>
-<li class="chapter" data-level="8.5" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#repeated-measures-t-test"><i class="fa fa-check"></i><b>8.5</b> Repeated measures <span class="math inline">\(t\)</span>-test</a><ul>
-<li class="chapter" data-level="8.5.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size-1"><i class="fa fa-check"></i><b>8.5.1</b> Population effect size</a></li>
-<li class="chapter" data-level="8.5.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size-1"><i class="fa fa-check"></i><b>8.5.2</b> Determining sample size</a></li>
-<li class="chapter" data-level="8.5.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant-1"><i class="fa fa-check"></i><b>8.5.3</b> What will be signficant?</a></li>
-</ul></li>
-<li class="chapter" data-level="8.6" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#correlations"><i class="fa fa-check"></i><b>8.6</b> Correlations</a><ul>
-<li class="chapter" data-level="8.6.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size-2"><i class="fa fa-check"></i><b>8.6.1</b> Population effect size</a></li>
-<li class="chapter" data-level="8.6.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size-2"><i class="fa fa-check"></i><b>8.6.2</b> Determining sample size</a></li>
-<li class="chapter" data-level="8.6.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant-2"><i class="fa fa-check"></i><b>8.6.3</b> What will be signficant?</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html"><i class="fa fa-check"></i><b>9</b> Equivalence tests and sample size</a><ul>
-<li class="chapter" data-level="9.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#required-4"><i class="fa fa-check"></i><b>9.1</b> Required</a></li>
-<li class="chapter" data-level="9.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#interpreting-non-significant-findings"><i class="fa fa-check"></i><b>9.2</b> Interpreting non-significant findings</a></li>
-<li class="chapter" data-level="9.3" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#when-would-i-use-an-equivalence-test"><i class="fa fa-check"></i><b>9.3</b> When would I use an equivalence test?</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#t-test"><i class="fa fa-check"></i><b>9.3.1</b> <span class="math inline">\(t\)</span>-test</a></li>
-<li class="chapter" data-level="9.3.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#correlation"><i class="fa fa-check"></i><b>9.3.2</b> Correlation</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#possible-outcomes"><i class="fa fa-check"></i><b>9.4</b> Possible Outcomes</a></li>
-<li class="chapter" data-level="9.5" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#what-is-an-equivalence-test"><i class="fa fa-check"></i><b>9.5</b> What is an equivalence test</a></li>
-<li class="chapter" data-level="9.6" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#defining-a-zero-effect"><i class="fa fa-check"></i><b>9.6</b> Defining a zero effect</a></li>
-<li class="chapter" data-level="9.7" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence---repeated-measures"><i class="fa fa-check"></i><b>9.7</b> Equivalence - repeated measures</a><ul>
-<li class="chapter" data-level="9.7.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#raw-units"><i class="fa fa-check"></i><b>9.7.1</b> Raw units</a></li>
-<li class="chapter" data-level="9.7.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#standardized-units-1"><i class="fa fa-check"></i><b>9.7.2</b> Standardized units</a></li>
-</ul></li>
-<li class="chapter" data-level="9.8" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence---independent-groups"><i class="fa fa-check"></i><b>9.8</b> Equivalence - Independent groups</a><ul>
-<li class="chapter" data-level="9.8.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#raw-units-1"><i class="fa fa-check"></i><b>9.8.1</b> Raw units</a></li>
-<li class="chapter" data-level="9.8.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#standardized-units-2"><i class="fa fa-check"></i><b>9.8.2</b> Standardized units</a></li>
-</ul></li>
-<li class="chapter" data-level="9.9" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence-correlation"><i class="fa fa-check"></i><b>9.9</b> Equivalence Correlation</a></li>
-<li class="chapter" data-level="9.10" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#sample-sizes-for-equivalence-testing"><i class="fa fa-check"></i><b>9.10</b> Sample sizes for equivalence testing</a><ul>
-<li class="chapter" data-level="9.10.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#independent-t-test"><i class="fa fa-check"></i><b>9.10.1</b> Independent <em>t</em>-test</a></li>
-<li class="chapter" data-level="9.10.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#repeated-t-test"><i class="fa fa-check"></i><b>9.10.2</b> Repeated <em>t</em>-test</a></li>
-<li class="chapter" data-level="9.10.3" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#correlation-1"><i class="fa fa-check"></i><b>9.10.3</b> Correlation</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html"><i class="fa fa-check"></i><b>10</b> Precision and sample size</a><ul>
-<li class="chapter" data-level="10.1" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#required-5"><i class="fa fa-check"></i><b>10.1</b> Required</a></li>
-<li class="chapter" data-level="10.2" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#overview-4"><i class="fa fa-check"></i><b>10.2</b> Overview</a></li>
-<li class="chapter" data-level="10.3" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision"><i class="fa fa-check"></i><b>10.3</b> Precision</a><ul>
-<li class="chapter" data-level="10.3.1" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-independent-t-test"><i class="fa fa-check"></i><b>10.3.1</b> Precision Independent <em>t</em>-test</a></li>
-<li class="chapter" data-level="10.3.2" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-repeated-t-test"><i class="fa fa-check"></i><b>10.3.2</b> Precision Repeated <em>t</em>-test</a></li>
-<li class="chapter" data-level="10.3.3" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-correlation"><i class="fa fa-check"></i><b>10.3.3</b> Precision Correlation</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="starting-your-research.html"><a href="starting-your-research.html"><i class="fa fa-check"></i><b>11</b> Starting your research</a><ul>
-<li class="chapter" data-level="11.1" data-path="starting-your-research.html"><a href="starting-your-research.html#required-packages"><i class="fa fa-check"></i><b>11.1</b> Required Packages</a></li>
-<li class="chapter" data-level="11.2" data-path="starting-your-research.html"><a href="starting-your-research.html#objective-2"><i class="fa fa-check"></i><b>11.2</b> Objective</a></li>
-<li class="chapter" data-level="11.3" data-path="starting-your-research.html"><a href="starting-your-research.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>11.3</b> Begin with the end in mind</a><ul>
-<li class="chapter" data-level="11.3.1" data-path="starting-your-research.html"><a href="starting-your-research.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>11.3.1</b> Structuring data: Obtaining tidy data</a></li>
-</ul></li>
-<li class="chapter" data-level="11.4" data-path="starting-your-research.html"><a href="starting-your-research.html#data-collection-considerations"><i class="fa fa-check"></i><b>11.4</b> Data collection considerations</a><ul>
-<li class="chapter" data-level="11.4.1" data-path="starting-your-research.html"><a href="starting-your-research.html#naming-conventions"><i class="fa fa-check"></i><b>11.4.1</b> Naming conventions</a></li>
-<li class="chapter" data-level="11.4.2" data-path="starting-your-research.html"><a href="starting-your-research.html#likert-type-items"><i class="fa fa-check"></i><b>11.4.2</b> Likert-type items</a></li>
-<li class="chapter" data-level="11.4.3" data-path="starting-your-research.html"><a href="starting-your-research.html#anova-between"><i class="fa fa-check"></i><b>11.4.3</b> ANOVA between</a></li>
-<li class="chapter" data-level="11.4.4" data-path="starting-your-research.html"><a href="starting-your-research.html#anova-within"><i class="fa fa-check"></i><b>11.4.4</b> ANOVA within</a></li>
-</ul></li>
-<li class="chapter" data-level="11.5" data-path="starting-your-research.html"><a href="starting-your-research.html#following-the-examples"><i class="fa fa-check"></i><b>11.5</b> Following the examples</a></li>
-<li class="chapter" data-level="11.6" data-path="starting-your-research.html"><a href="starting-your-research.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>11.6</b> Entering data into spreadsheets</a></li>
-<li class="chapter" data-level="11.7" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-between"><i class="fa fa-check"></i><b>11.7</b> Experiment: Between</a><ul>
-<li class="chapter" data-level="11.7.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors"><i class="fa fa-check"></i><b>11.7.1</b> Creating factors</a></li>
-<li class="chapter" data-level="11.7.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening"><i class="fa fa-check"></i><b>11.7.2</b> Factor screening</a></li>
-<li class="chapter" data-level="11.7.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening"><i class="fa fa-check"></i><b>11.7.3</b> Numeric screening</a></li>
-</ul></li>
-<li class="chapter" data-level="11.8" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-within-one-way"><i class="fa fa-check"></i><b>11.8</b> Experiment: Within one-way</a><ul>
-<li class="chapter" data-level="11.8.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-1"><i class="fa fa-check"></i><b>11.8.1</b> Creating factors</a></li>
-<li class="chapter" data-level="11.8.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-1"><i class="fa fa-check"></i><b>11.8.2</b> Factor screening</a></li>
-<li class="chapter" data-level="11.8.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-1"><i class="fa fa-check"></i><b>11.8.3</b> Numeric screening</a></li>
-<li class="chapter" data-level="11.8.4" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data"><i class="fa fa-check"></i><b>11.8.4</b> Pivot to tidy data</a></li>
-</ul></li>
-<li class="chapter" data-level="11.9" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-within-n-way"><i class="fa fa-check"></i><b>11.9</b> Experiment: Within N-way</a><ul>
-<li class="chapter" data-level="11.9.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-2"><i class="fa fa-check"></i><b>11.9.1</b> Creating factors</a></li>
-<li class="chapter" data-level="11.9.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-2"><i class="fa fa-check"></i><b>11.9.2</b> Factor screening</a></li>
-<li class="chapter" data-level="11.9.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-2"><i class="fa fa-check"></i><b>11.9.3</b> Numeric screening</a></li>
-<li class="chapter" data-level="11.9.4" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data-1"><i class="fa fa-check"></i><b>11.9.4</b> Pivot to tidy data</a></li>
-</ul></li>
-<li class="chapter" data-level="11.10" data-path="starting-your-research.html"><a href="starting-your-research.html#surveys-single-occassion"><i class="fa fa-check"></i><b>11.10</b> Surveys: Single Occassion</a><ul>
-<li class="chapter" data-level="11.10.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-3"><i class="fa fa-check"></i><b>11.10.1</b> Creating factors</a></li>
-<li class="chapter" data-level="11.10.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-3"><i class="fa fa-check"></i><b>11.10.2</b> Factor screening</a></li>
-<li class="chapter" data-level="11.10.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-3"><i class="fa fa-check"></i><b>11.10.3</b> Numeric screening</a></li>
-<li class="chapter" data-level="11.10.4" data-path="starting-your-research.html"><a href="starting-your-research.html#scale-scores"><i class="fa fa-check"></i><b>11.10.4</b> Scale scores</a></li>
-</ul></li>
-<li class="chapter" data-level="11.11" data-path="starting-your-research.html"><a href="starting-your-research.html#surveys-multiple-occasions"><i class="fa fa-check"></i><b>11.11</b> Surveys: Multiple Occasions</a><ul>
-<li class="chapter" data-level="11.11.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-4"><i class="fa fa-check"></i><b>11.11.1</b> Creating factors</a></li>
-<li class="chapter" data-level="11.11.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-4"><i class="fa fa-check"></i><b>11.11.2</b> Factor screening</a></li>
-<li class="chapter" data-level="11.11.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-4"><i class="fa fa-check"></i><b>11.11.3</b> Numeric screening</a></li>
-<li class="chapter" data-level="11.11.4" data-path="starting-your-research.html"><a href="starting-your-research.html#scale-scores-1"><i class="fa fa-check"></i><b>11.11.4</b> Scale scores</a></li>
-<li class="chapter" data-level="11.11.5" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data-2"><i class="fa fa-check"></i><b>11.11.5</b> Pivot to tidy data</a></li>
-</ul></li>
-<li class="chapter" data-level="11.12" data-path="starting-your-research.html"><a href="starting-your-research.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>11.12</b> Basic descriptive statistics</a><ul>
-<li class="chapter" data-level="11.12.1" data-path="starting-your-research.html"><a href="starting-your-research.html#skim"><i class="fa fa-check"></i><b>11.12.1</b> skim()</a></li>
-<li class="chapter" data-level="11.12.2" data-path="starting-your-research.html"><a href="starting-your-research.html#apa.cor.table"><i class="fa fa-check"></i><b>11.12.2</b> apa.cor.table()</a></li>
-<li class="chapter" data-level="11.12.3" data-path="starting-your-research.html"><a href="starting-your-research.html#tidyverse"><i class="fa fa-check"></i><b>11.12.3</b> tidyverse</a></li>
-<li class="chapter" data-level="11.12.4" data-path="starting-your-research.html"><a href="starting-your-research.html#cronbachs-alpha"><i class="fa fa-check"></i><b>11.12.4</b> Cronbach’s alpha</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html"><i class="fa fa-check"></i><b>12</b> Positive Predictive Value</a><ul>
-<li class="chapter" data-level="12.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#required-6"><i class="fa fa-check"></i><b>12.1</b> Required</a></li>
-<li class="chapter" data-level="12.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#overview-5"><i class="fa fa-check"></i><b>12.2</b> Overview</a></li>
-<li class="chapter" data-level="12.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#informal-explanation"><i class="fa fa-check"></i><b>12.3</b> Informal explanation</a><ul>
-<li class="chapter" data-level="12.3.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#probability-of-an-effect"><i class="fa fa-check"></i><b>12.3.1</b> Probability of an effect</a></li>
-<li class="chapter" data-level="12.3.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#type-i-error"><i class="fa fa-check"></i><b>12.3.2</b> Type I Error</a></li>
-<li class="chapter" data-level="12.3.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power"><i class="fa fa-check"></i><b>12.3.3</b> Power</a></li>
-<li class="chapter" data-level="12.3.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-ppv"><i class="fa fa-check"></i><b>12.3.4</b> Calculating PPV</a></li>
-</ul></li>
-<li class="chapter" data-level="12.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#formal-explanation"><i class="fa fa-check"></i><b>12.4</b> Formal explanation</a><ul>
-<li class="chapter" data-level="12.4.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#no-effect"><i class="fa fa-check"></i><b>12.4.1</b> No effect</a></li>
-<li class="chapter" data-level="12.4.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#effect"><i class="fa fa-check"></i><b>12.4.2</b> Effect</a></li>
-<li class="chapter" data-level="12.4.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculation"><i class="fa fa-check"></i><b>12.4.3</b> Calculation</a></li>
-<li class="chapter" data-level="12.4.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#alternative-calculation"><i class="fa fa-check"></i><b>12.4.4</b> Alternative calculation</a></li>
-<li class="chapter" data-level="12.4.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#touchstone"><i class="fa fa-check"></i><b>12.4.5</b> Touchstone</a></li>
-</ul></li>
-<li class="chapter" data-level="12.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-power-for-your-study"><i class="fa fa-check"></i><b>12.5</b> Calculating power for your study</a><ul>
-<li class="chapter" data-level="12.5.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-independent-groups-t-test"><i class="fa fa-check"></i><b>12.5.1</b> Power independent groups <span class="math inline">\(t\)</span>-test</a></li>
-<li class="chapter" data-level="12.5.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-repeated-measures-t-test"><i class="fa fa-check"></i><b>12.5.2</b> Power repeated measures <span class="math inline">\(t\)</span>-test</a></li>
-<li class="chapter" data-level="12.5.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-correlations"><i class="fa fa-check"></i><b>12.5.3</b> Power correlations</a></li>
-<li class="chapter" data-level="12.5.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-independent-t-test"><i class="fa fa-check"></i><b>12.5.4</b> Equivalence independent <em>t</em>-test</a></li>
-<li class="chapter" data-level="12.5.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-repeated-t-test"><i class="fa fa-check"></i><b>12.5.5</b> Equivalence repeated <em>t</em>-test</a></li>
-<li class="chapter" data-level="12.5.6" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-correlation-1"><i class="fa fa-check"></i><b>12.5.6</b> Equivalence correlation</a></li>
-</ul></li>
-<li class="chapter" data-level="12.6" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-ppv-for-your-study"><i class="fa fa-check"></i><b>12.6</b> Calculating PPV for your study</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html"><i class="fa fa-check"></i><b>13</b> Open Science Preregistration</a><ul>
-<li class="chapter" data-level="13.1" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#overview-6"><i class="fa fa-check"></i><b>13.1</b> Overview</a></li>
-<li class="chapter" data-level="13.2" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#daniel-simmons-interview"><i class="fa fa-check"></i><b>13.2</b> Daniel Simmons Interview</a></li>
-<li class="chapter" data-level="13.3" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#preregistration-impact"><i class="fa fa-check"></i><b>13.3</b> Preregistration Impact</a></li>
-<li class="chapter" data-level="13.4" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#preregistration-details"><i class="fa fa-check"></i><b>13.4</b> Preregistration Details</a></li>
-<li class="chapter" data-level="13.5" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#learn-more"><i class="fa fa-check"></i><b>13.5</b> Learn more</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="research-tools.html"><a href="research-tools.html"><i class="fa fa-check"></i><b>14</b> Research Tools</a><ul>
-<li class="chapter" data-level="14.1" data-path="research-tools.html"><a href="research-tools.html#statcheck"><i class="fa fa-check"></i><b>14.1</b> statcheck</a><ul>
-<li class="chapter" data-level="14.1.1" data-path="research-tools.html"><a href="research-tools.html#statcheck-software"><i class="fa fa-check"></i><b>14.1.1</b> statcheck software</a></li>
-<li class="chapter" data-level="14.1.2" data-path="research-tools.html"><a href="research-tools.html#statcheck-website"><i class="fa fa-check"></i><b>14.1.2</b> statcheck website</a></li>
-<li class="chapter" data-level="14.1.3" data-path="research-tools.html"><a href="research-tools.html#statcheck-and-word"><i class="fa fa-check"></i><b>14.1.3</b> statcheck and Word</a></li>
-<li class="chapter" data-level="14.1.4" data-path="research-tools.html"><a href="research-tools.html#statcheck-process"><i class="fa fa-check"></i><b>14.1.4</b> statcheck process</a></li>
-<li class="chapter" data-level="14.1.5" data-path="research-tools.html"><a href="research-tools.html#statcheck-validity"><i class="fa fa-check"></i><b>14.1.5</b> statcheck validity</a></li>
-</ul></li>
-<li class="chapter" data-level="14.2" data-path="research-tools.html"><a href="research-tools.html#rmarkdown-bookdown"><i class="fa fa-check"></i><b>14.2</b> rmarkdown / bookdown</a></li>
-<li class="chapter" data-level="14.3" data-path="research-tools.html"><a href="research-tools.html#papaja"><i class="fa fa-check"></i><b>14.3</b> papaja</a></li>
-<li class="chapter" data-level="14.4" data-path="research-tools.html"><a href="research-tools.html#apatables"><i class="fa fa-check"></i><b>14.4</b> apaTables</a></li>
-<li class="chapter" data-level="14.5" data-path="research-tools.html"><a href="research-tools.html#retracted-articles"><i class="fa fa-check"></i><b>14.5</b> Retracted articles</a><ul>
-<li class="chapter" data-level="14.5.1" data-path="research-tools.html"><a href="research-tools.html#doi"><i class="fa fa-check"></i><b>14.5.1</b> DOI</a></li>
-<li class="chapter" data-level="14.5.2" data-path="research-tools.html"><a href="research-tools.html#retractiondatabase.org"><i class="fa fa-check"></i><b>14.5.2</b> retractiondatabase.org</a></li>
-<li class="chapter" data-level="14.5.3" data-path="research-tools.html"><a href="research-tools.html#openretractions.com"><i class="fa fa-check"></i><b>14.5.3</b> openretractions.com</a></li>
-<li class="chapter" data-level="14.5.4" data-path="research-tools.html"><a href="research-tools.html#retractcheck"><i class="fa fa-check"></i><b>14.5.4</b> retractcheck</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html"><i class="fa fa-check"></i><b>15</b> Regression and correlation</a><ul>
-<li class="chapter" data-level="15.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#population-example"><i class="fa fa-check"></i><b>15.1</b> Population example</a><ul>
-<li class="chapter" data-level="15.1.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#no-predictor"><i class="fa fa-check"></i><b>15.1.1</b> No predictor</a></li>
-<li class="chapter" data-level="15.1.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#weak-relation"><i class="fa fa-check"></i><b>15.1.2</b> Weak relation</a></li>
-<li class="chapter" data-level="15.1.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#strong-relation"><i class="fa fa-check"></i><b>15.1.3</b> Strong relation</a></li>
-</ul></li>
-<li class="chapter" data-level="15.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#consider-a-sample"><i class="fa fa-check"></i><b>15.2</b> Consider a sample</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#regression"><i class="fa fa-check"></i><b>15.2.1</b> Regression</a></li>
-<li class="chapter" data-level="15.2.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#correlation-2"><i class="fa fa-check"></i><b>15.2.2</b> Correlation</a></li>
-<li class="chapter" data-level="15.2.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#graphing-1"><i class="fa fa-check"></i><b>15.2.3</b> Graphing</a></li>
-</ul></li>
-<li class="chapter" data-level="15.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#comparing-correlations"><i class="fa fa-check"></i><b>15.3</b> Comparing correlations</a><ul>
-<li class="chapter" data-level="15.3.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#p-values"><i class="fa fa-check"></i><b>15.3.1</b> p-values</a></li>
-<li class="chapter" data-level="15.3.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#within-a-data-set"><i class="fa fa-check"></i><b>15.3.2</b> Within a data set</a></li>
-<li class="chapter" data-level="15.3.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#between-data-sets"><i class="fa fa-check"></i><b>15.3.3</b> Between data sets</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>16</b> Multiple regression</a><ul>
-<li class="chapter" data-level="16.1" data-path="multiple-regression.html"><a href="multiple-regression.html#overview-7"><i class="fa fa-check"></i><b>16.1</b> Overview</a></li>
-<li class="chapter" data-level="16.2" data-path="multiple-regression.html"><a href="multiple-regression.html#example"><i class="fa fa-check"></i><b>16.2</b> Example</a></li>
-<li class="chapter" data-level="16.3" data-path="multiple-regression.html"><a href="multiple-regression.html#load-the-data"><i class="fa fa-check"></i><b>16.3</b> Load the data</a></li>
-<li class="chapter" data-level="16.4" data-path="multiple-regression.html"><a href="multiple-regression.html#bivariate-relations"><i class="fa fa-check"></i><b>16.4</b> Bivariate relations</a></li>
-<li class="chapter" data-level="16.5" data-path="multiple-regression.html"><a href="multiple-regression.html#single-best-predictor"><i class="fa fa-check"></i><b>16.5</b> Single best predictor</a></li>
-<li class="chapter" data-level="16.6" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-1"><i class="fa fa-check"></i><b>16.6</b> Multiple regression</a></li>
-<li class="chapter" data-level="16.7" data-path="multiple-regression.html"><a href="multiple-regression.html#b-weights"><i class="fa fa-check"></i><b>16.7</b> <em>b</em>-weights</a></li>
-<li class="chapter" data-level="16.8" data-path="multiple-regression.html"><a href="multiple-regression.html#r2"><i class="fa fa-check"></i><b>16.8</b> <span class="math inline">\(R^2\)</span></a><ul>
-<li class="chapter" data-level="16.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#method-1-ratio-approach"><i class="fa fa-check"></i><b>16.8.1</b> Method 1: Ratio Approach</a></li>
-<li class="chapter" data-level="16.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#method-2-correlation-approach"><i class="fa fa-check"></i><b>16.8.2</b> Method 2: Correlation Approach</a></li>
-<li class="chapter" data-level="16.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#r2-in-practice"><i class="fa fa-check"></i><b>16.8.3</b> <span class="math inline">\(R^2\)</span> in practice</a></li>
-</ul></li>
-<li class="chapter" data-level="16.9" data-path="multiple-regression.html"><a href="multiple-regression.html#semi-partial-sr"><i class="fa fa-check"></i><b>16.9</b> Semi-partial (<span class="math inline">\(sr\)</span>)</a><ul>
-<li class="chapter" data-level="16.9.1" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-theory"><i class="fa fa-check"></i><b>16.9.1</b> <span class="math inline">\(sr^2\)</span> in theory</a></li>
-<li class="chapter" data-level="16.9.2" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-practice"><i class="fa fa-check"></i><b>16.9.2</b> <span class="math inline">\(sr^2\)</span> in practice</a></li>
-<li class="chapter" data-level="16.9.3" data-path="multiple-regression.html"><a href="multiple-regression.html#blocks-regression"><i class="fa fa-check"></i><b>16.9.3</b> Blocks regression</a></li>
-</ul></li>
-<li class="chapter" data-level="16.10" data-path="multiple-regression.html"><a href="multiple-regression.html#beta-weights"><i class="fa fa-check"></i><b>16.10</b> Beta-weights</a><ul>
-<li class="chapter" data-level="16.10.1" data-path="multiple-regression.html"><a href="multiple-regression.html#in-practice"><i class="fa fa-check"></i><b>16.10.1</b> In practice</a></li>
-<li class="chapter" data-level="16.10.2" data-path="multiple-regression.html"><a href="multiple-regression.html#old-school"><i class="fa fa-check"></i><b>16.10.2</b> Old school</a></li>
-</ul></li>
-<li class="chapter" data-level="16.11" data-path="multiple-regression.html"><a href="multiple-regression.html#graphing-2"><i class="fa fa-check"></i><b>16.11</b> Graphing</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html"><i class="fa fa-check"></i><b>17</b> Sample size for multiple regression</a><ul>
-<li class="chapter" data-level="17.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#sample-size-using-r2"><i class="fa fa-check"></i><b>17.1</b> Sample size using <span class="math inline">\(R^2\)</span></a><ul>
-<li class="chapter" data-level="17.1.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determining-f2"><i class="fa fa-check"></i><b>17.1.1</b> Determining <span class="math inline">\(f^2\)</span></a></li>
-<li class="chapter" data-level="17.1.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-degrees-of-freedom"><i class="fa fa-check"></i><b>17.1.2</b> Determine degrees of freedom</a></li>
-<li class="chapter" data-level="17.1.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#calculate-sample-size"><i class="fa fa-check"></i><b>17.1.3</b> Calculate sample size</a></li>
-</ul></li>
-<li class="chapter" data-level="17.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#sample-size-using-sr2"><i class="fa fa-check"></i><b>17.2</b> Sample size using <span class="math inline">\(sr^2\)</span></a><ul>
-<li class="chapter" data-level="17.2.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-degrees-of-freedom-1"><i class="fa fa-check"></i><b>17.2.1</b> Determine degrees of freedom</a></li>
-<li class="chapter" data-level="17.2.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-f2"><i class="fa fa-check"></i><b>17.2.2</b> Determine <span class="math inline">\(f^2\)</span></a></li>
-<li class="chapter" data-level="17.2.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#calculate-power"><i class="fa fa-check"></i><b>17.2.3</b> Calculate power</a></li>
-</ul></li>
-<li class="chapter" data-level="17.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#power-obtained-sr2"><i class="fa fa-check"></i><b>17.3</b> Power obtained <span class="math inline">\(sr^2\)</span></a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html"><i class="fa fa-check"></i><b>18</b> Moderated multiple regression</a><ul>
-<li class="chapter" data-level="18.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#overview-8"><i class="fa fa-check"></i><b>18.1</b> Overview</a></li>
-<li class="chapter" data-level="18.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#scenario"><i class="fa fa-check"></i><b>18.2</b> Scenario</a></li>
-<li class="chapter" data-level="18.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#overview-9"><i class="fa fa-check"></i><b>18.3</b> Overview</a><ul>
-<li class="chapter" data-level="18.3.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#no-interaction"><i class="fa fa-check"></i><b>18.3.1</b> No interaction</a></li>
-<li class="chapter" data-level="18.3.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#interaction"><i class="fa fa-check"></i><b>18.3.2</b> Interaction</a></li>
-<li class="chapter" data-level="18.3.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#comparison"><i class="fa fa-check"></i><b>18.3.3</b> Comparison</a></li>
-</ul></li>
-<li class="chapter" data-level="18.4" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#fastinteraction"><i class="fa fa-check"></i><b>18.4</b> fastInteraction</a><ul>
-<li class="chapter" data-level="18.4.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#graphing-in-3d"><i class="fa fa-check"></i><b>18.4.1</b> Graphing in 3D</a></li>
-<li class="chapter" data-level="18.4.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#unformatted-2d-graph"><i class="fa fa-check"></i><b>18.4.2</b> Unformatted 2D graph</a></li>
-<li class="chapter" data-level="18.4.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#tables"><i class="fa fa-check"></i><b>18.4.3</b> Tables</a></li>
-<li class="chapter" data-level="18.4.4" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#formatted-2d-graph"><i class="fa fa-check"></i><b>18.4.4</b> Formatted 2D graph</a></li>
-</ul></li>
-<li class="chapter" data-level="18.5" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#powersample-size-analysis"><i class="fa fa-check"></i><b>18.5</b> Power/sample size analysis</a></li>
+<li class="chapter" data-level="1" data-path="populations.html"><a href="populations.html"><i class="fa fa-check"></i><b>1</b> Populations</a><ul>
+<li class="chapter" data-level="1.1" data-path="populations.html"><a href="populations.html#notation"><i class="fa fa-check"></i><b>1.1</b> Notation</a></li>
+<li class="chapter" data-level="1.2" data-path="populations.html"><a href="populations.html#population-vs-samples"><i class="fa fa-check"></i><b>1.2</b> Population vs samples</a></li>
+<li class="chapter" data-level="1.3" data-path="populations.html"><a href="populations.html#a-small-population"><i class="fa fa-check"></i><b>1.3</b> A small population</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="populations.html"><a href="populations.html#mean-mu"><i class="fa fa-check"></i><b>1.3.1</b> Mean (<span class="math inline">\(\mu\)</span>)</a></li>
+<li class="chapter" data-level="1.3.2" data-path="populations.html"><a href="populations.html#variance-sigma2"><i class="fa fa-check"></i><b>1.3.2</b> Variance (<span class="math inline">\(\sigma^2\)</span>)</a></li>
+<li class="chapter" data-level="1.3.3" data-path="populations.html"><a href="populations.html#standard-deviation-sigma"><i class="fa fa-check"></i><b>1.3.3</b> Standard Deviation (<span class="math inline">\(\sigma\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="populations.html"><a href="populations.html#visualizing-populations"><i class="fa fa-check"></i><b>1.4</b> Visualizing populations</a></li>
+<li class="chapter" data-level="1.5" data-path="populations.html"><a href="populations.html#comparisons-same-sigma"><i class="fa fa-check"></i><b>1.5</b> Comparisons: Same <span class="math inline">\(\sigma\)</span></a><ul>
+<li class="chapter" data-level="1.5.1" data-path="populations.html"><a href="populations.html#standardized-units"><i class="fa fa-check"></i><b>1.5.1</b> Standardized units</a></li>
+<li class="chapter" data-level="1.5.2" data-path="populations.html"><a href="populations.html#cohens-d-units"><i class="fa fa-check"></i><b>1.5.2</b> Cohen’s <span class="math inline">\(d\)</span> units</a></li>
+<li class="chapter" data-level="1.5.3" data-path="populations.html"><a href="populations.html#cohens-d-advantages"><i class="fa fa-check"></i><b>1.5.3</b> Cohen’s <span class="math inline">\(d\)</span> advantages</a></li>
+<li class="chapter" data-level="1.5.4" data-path="populations.html"><a href="populations.html#cohens-d-caveats"><i class="fa fa-check"></i><b>1.5.4</b> Cohen’s <span class="math inline">\(d\)</span> caveats</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="populations.html"><a href="populations.html#comparisons-different-sigma"><i class="fa fa-check"></i><b>1.6</b> Comparisons: Different <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="1.7" data-path="populations.html"><a href="populations.html#comparisons-repeated-measures"><i class="fa fa-check"></i><b>1.7</b> Comparisons: Repeated Measures</a></li>
+<li class="chapter" data-level="1.8" data-path="populations.html"><a href="populations.html#comparison-benchmarks"><i class="fa fa-check"></i><b>1.8</b> Comparison Benchmarks</a></li>
+<li class="chapter" data-level="1.9" data-path="populations.html"><a href="populations.html#population-relations"><i class="fa fa-check"></i><b>1.9</b> Population relations</a></li>
+<li class="chapter" data-level="1.10" data-path="populations.html"><a href="populations.html#relation-benchmarks"><i class="fa fa-check"></i><b>1.10</b> Relation benchmarks</a></li>
+<li class="chapter" data-level="1.11" data-path="populations.html"><a href="populations.html#key-points"><i class="fa fa-check"></i><b>1.11</b> Key points</a></li>
+<li class="chapter" data-level="1.12" data-path="populations.html"><a href="populations.html#minor-points"><i class="fa fa-check"></i><b>1.12</b> Minor Points</a></li>
+<li class="chapter" data-level="1.13" data-path="populations.html"><a href="populations.html#self-assessment"><i class="fa fa-check"></i><b>1.13</b> Self Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html"><i class="fa fa-check"></i><b>2</b> Sampling Accuracy</a><ul>
+<li class="chapter" data-level="2.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#data-for-the-chapter"><i class="fa fa-check"></i><b>2.2</b> Data for the chapter</a></li>
+<li class="chapter" data-level="2.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#notation-1"><i class="fa fa-check"></i><b>2.3</b> Notation</a></li>
+<li class="chapter" data-level="2.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-mu"><i class="fa fa-check"></i><b>2.4</b> Estimating <span class="math inline">\(\mu\)</span></a><ul>
+<li class="chapter" data-level="2.4.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias"><i class="fa fa-check"></i><b>2.4.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma2"><i class="fa fa-check"></i><b>2.5</b> Estimating <span class="math inline">\(\sigma^2\)</span></a><ul>
+<li class="chapter" data-level="2.5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-1"><i class="fa fa-check"></i><b>2.5.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma"><i class="fa fa-check"></i><b>2.6</b> Estimating <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="2.7" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-delta"><i class="fa fa-check"></i><b>2.7</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
+<li class="chapter" data-level="2.7.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#pooled-standard-deviation"><i class="fa fa-check"></i><b>2.7.1</b> Pooled standard deviation</a></li>
+<li class="chapter" data-level="2.7.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#calculating-d"><i class="fa fa-check"></i><b>2.7.2</b> Calculating <span class="math inline">\(d\)</span></a></li>
+<li class="chapter" data-level="2.7.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-2"><i class="fa fa-check"></i><b>2.7.3</b> Assessing bias</a></li>
+<li class="chapter" data-level="2.7.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#illustrating-variability"><i class="fa fa-check"></i><b>2.7.4</b> Illustrating variability</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-rho"><i class="fa fa-check"></i><b>2.8</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
+<li class="chapter" data-level="2.8.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-3"><i class="fa fa-check"></i><b>2.8.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview-1"><i class="fa fa-check"></i><b>2.9</b> Overview</a></li>
+<li class="chapter" data-level="2.10" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#meta-analysis"><i class="fa fa-check"></i><b>2.10</b> Meta-analysis</a></li>
+<li class="chapter" data-level="2.11" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#a-joke"><i class="fa fa-check"></i><b>2.11</b> A joke</a></li>
+<li class="chapter" data-level="2.12" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#key-points-1"><i class="fa fa-check"></i><b>2.12</b> Key Points</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html"><i class="fa fa-check"></i><b>3</b> Regression and correlation</a><ul>
+<li class="chapter" data-level="3.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#population-example"><i class="fa fa-check"></i><b>3.1</b> Population example</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#no-predictor"><i class="fa fa-check"></i><b>3.1.1</b> No predictor</a></li>
+<li class="chapter" data-level="3.1.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#weak-relation"><i class="fa fa-check"></i><b>3.1.2</b> Weak relation</a></li>
+<li class="chapter" data-level="3.1.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#strong-relation"><i class="fa fa-check"></i><b>3.1.3</b> Strong relation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#consider-a-sample"><i class="fa fa-check"></i><b>3.2</b> Consider a sample</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#regression"><i class="fa fa-check"></i><b>3.2.1</b> Regression</a></li>
+<li class="chapter" data-level="3.2.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#correlation"><i class="fa fa-check"></i><b>3.2.2</b> Correlation</a></li>
+<li class="chapter" data-level="3.2.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#graphing"><i class="fa fa-check"></i><b>3.2.3</b> Graphing</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#comparing-correlations"><i class="fa fa-check"></i><b>3.3</b> Comparing correlations</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#p-values"><i class="fa fa-check"></i><b>3.3.1</b> p-values</a></li>
+<li class="chapter" data-level="3.3.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#within-a-data-set"><i class="fa fa-check"></i><b>3.3.2</b> Within a data set</a></li>
+<li class="chapter" data-level="3.3.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#between-data-sets"><i class="fa fa-check"></i><b>3.3.3</b> Between data sets</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>4</b> Multiple regression</a><ul>
+<li class="chapter" data-level="4.1" data-path="multiple-regression.html"><a href="multiple-regression.html#overview-2"><i class="fa fa-check"></i><b>4.1</b> Overview</a></li>
+<li class="chapter" data-level="4.2" data-path="multiple-regression.html"><a href="multiple-regression.html#example"><i class="fa fa-check"></i><b>4.2</b> Example</a></li>
+<li class="chapter" data-level="4.3" data-path="multiple-regression.html"><a href="multiple-regression.html#load-the-data"><i class="fa fa-check"></i><b>4.3</b> Load the data</a></li>
+<li class="chapter" data-level="4.4" data-path="multiple-regression.html"><a href="multiple-regression.html#bivariate-relations"><i class="fa fa-check"></i><b>4.4</b> Bivariate relations</a></li>
+<li class="chapter" data-level="4.5" data-path="multiple-regression.html"><a href="multiple-regression.html#single-best-predictor"><i class="fa fa-check"></i><b>4.5</b> Single best predictor</a></li>
+<li class="chapter" data-level="4.6" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-1"><i class="fa fa-check"></i><b>4.6</b> Multiple regression</a></li>
+<li class="chapter" data-level="4.7" data-path="multiple-regression.html"><a href="multiple-regression.html#b-weights"><i class="fa fa-check"></i><b>4.7</b> <em>b</em>-weights</a></li>
+<li class="chapter" data-level="4.8" data-path="multiple-regression.html"><a href="multiple-regression.html#r2"><i class="fa fa-check"></i><b>4.8</b> <span class="math inline">\(R^2\)</span></a><ul>
+<li class="chapter" data-level="4.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#method-1-ratio-approach"><i class="fa fa-check"></i><b>4.8.1</b> Method 1: Ratio Approach</a></li>
+<li class="chapter" data-level="4.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#method-2-correlation-approach"><i class="fa fa-check"></i><b>4.8.2</b> Method 2: Correlation Approach</a></li>
+<li class="chapter" data-level="4.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#r2-in-practice"><i class="fa fa-check"></i><b>4.8.3</b> <span class="math inline">\(R^2\)</span> in practice</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="multiple-regression.html"><a href="multiple-regression.html#semi-partial-sr"><i class="fa fa-check"></i><b>4.9</b> Semi-partial (<span class="math inline">\(sr\)</span>)</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-theory"><i class="fa fa-check"></i><b>4.9.1</b> <span class="math inline">\(sr^2\)</span> in theory</a></li>
+<li class="chapter" data-level="4.9.2" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-practice"><i class="fa fa-check"></i><b>4.9.2</b> <span class="math inline">\(sr^2\)</span> in practice</a></li>
+<li class="chapter" data-level="4.9.3" data-path="multiple-regression.html"><a href="multiple-regression.html#blocks-regression"><i class="fa fa-check"></i><b>4.9.3</b> Blocks regression</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="multiple-regression.html"><a href="multiple-regression.html#beta-weights"><i class="fa fa-check"></i><b>4.10</b> Beta-weights</a><ul>
+<li class="chapter" data-level="4.10.1" data-path="multiple-regression.html"><a href="multiple-regression.html#in-practice"><i class="fa fa-check"></i><b>4.10.1</b> In practice</a></li>
+<li class="chapter" data-level="4.10.2" data-path="multiple-regression.html"><a href="multiple-regression.html#old-school"><i class="fa fa-check"></i><b>4.10.2</b> Old school</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="multiple-regression.html"><a href="multiple-regression.html#graphing-1"><i class="fa fa-check"></i><b>4.11</b> Graphing</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>5</b> Introduction</a><ul>
+<li class="chapter" data-level="5.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>5.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="5.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>5.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="5.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>5.3</b> Create an account at R Studio Cloud</a></li>
+<li class="chapter" data-level="5.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>5.4</b> Join the class workspace</a></li>
+<li class="chapter" data-level="5.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>5.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>5.5.1</b> Console panel</a></li>
+<li class="chapter" data-level="5.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>5.5.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>5.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>5.6.1</b> Create the script file</a></li>
+<li class="chapter" data-level="5.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>5.6.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="5.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>5.6.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="5.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>5.6.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="5.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>5.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>5.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>5.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>5.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>5.8.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="5.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>5.8.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="5.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>5.8.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="5.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>5.8.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="5.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>5.8.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>5.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>5.9.1</b> Run select text</a></li>
+<li class="chapter" data-level="5.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>5.9.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="5.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>5.9.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>5.10</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="5.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>5.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="5.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>5.11.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>5.12</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>6</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="6.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>6.1</b> Required</a></li>
+<li class="chapter" data-level="6.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>6.2</b> Objective</a></li>
+<li class="chapter" data-level="6.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>6.3</b> Using the Console</a></li>
+<li class="chapter" data-level="6.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>6.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>6.4.1</b> select()</a></li>
+<li class="chapter" data-level="6.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>6.4.2</b> summarise()</a></li>
+<li class="chapter" data-level="6.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>6.4.3</b> filter()</a></li>
+<li class="chapter" data-level="6.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>6.4.4</b> group_by()</a></li>
+<li class="chapter" data-level="6.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>6.4.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>6.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>6.5.1</b> select()</a></li>
+<li class="chapter" data-level="6.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>6.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="6.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>6.5.3</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>6.6</b> Using help</a></li>
+<li class="chapter" data-level="6.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>6.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>6.7.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="6.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>6.7.2</b> read.csv() and data frames</a></li>
+<li class="chapter" data-level="6.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>6.7.3</b> read_csv() and tibbles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>7</b> Data Entry/Analysis</a><ul>
+<li class="chapter" data-level="7.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#required-packages"><i class="fa fa-check"></i><b>7.1</b> Required Packages</a></li>
+<li class="chapter" data-level="7.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#objective-1"><i class="fa fa-check"></i><b>7.2</b> Objective</a></li>
+<li class="chapter" data-level="7.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>7.3</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>7.3.1</b> Structuring data: Obtaining tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>7.4</b> Data collection considerations</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#naming-conventions"><i class="fa fa-check"></i><b>7.4.1</b> Naming conventions</a></li>
+<li class="chapter" data-level="7.4.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#likert-type-items"><i class="fa fa-check"></i><b>7.4.2</b> Likert-type items</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#following-the-examples"><i class="fa fa-check"></i><b>7.5</b> Following the examples</a></li>
+<li class="chapter" data-level="7.6" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>7.6</b> Entering data into spreadsheets</a></li>
+<li class="chapter" data-level="7.7" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#surveys-single-occassion"><i class="fa fa-check"></i><b>7.7</b> Surveys: Single Occassion</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#creating-factors"><i class="fa fa-check"></i><b>7.7.1</b> Creating factors</a></li>
+<li class="chapter" data-level="7.7.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#factor-screening"><i class="fa fa-check"></i><b>7.7.2</b> Factor screening</a></li>
+<li class="chapter" data-level="7.7.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#numeric-screening"><i class="fa fa-check"></i><b>7.7.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="7.7.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#scale-scores"><i class="fa fa-check"></i><b>7.7.4</b> Scale scores</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>7.8</b> Basic descriptive statistics</a><ul>
+<li class="chapter" data-level="7.8.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#skim"><i class="fa fa-check"></i><b>7.8.1</b> skim()</a></li>
+<li class="chapter" data-level="7.8.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#apa.cor.table"><i class="fa fa-check"></i><b>7.8.2</b> apa.cor.table()</a></li>
+<li class="chapter" data-level="7.8.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#tidyverse"><i class="fa fa-check"></i><b>7.8.3</b> tidyverse</a></li>
+<li class="chapter" data-level="7.8.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#cronbachs-alpha"><i class="fa fa-check"></i><b>7.8.4</b> Cronbach’s alpha</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="graphing-2.html"><a href="graphing-2.html"><i class="fa fa-check"></i><b>8</b> Graphing</a><ul>
+<li class="chapter" data-level="8.1" data-path="graphing-2.html"><a href="graphing-2.html#required-1"><i class="fa fa-check"></i><b>8.1</b> Required</a></li>
+<li class="chapter" data-level="8.2" data-path="graphing-2.html"><a href="graphing-2.html#data"><i class="fa fa-check"></i><b>8.2</b> Data</a></li>
+<li class="chapter" data-level="8.3" data-path="graphing-2.html"><a href="graphing-2.html#graph-basics"><i class="fa fa-check"></i><b>8.3</b> Graph basics</a></li>
+<li class="chapter" data-level="8.4" data-path="graphing-2.html"><a href="graphing-2.html#graphing-efficiently"><i class="fa fa-check"></i><b>8.4</b> Graphing efficiently</a></li>
+<li class="chapter" data-level="8.5" data-path="graphing-2.html"><a href="graphing-2.html#aesthetics"><i class="fa fa-check"></i><b>8.5</b> Aesthetics</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="graphing-2.html"><a href="graphing-2.html#fill-color"><i class="fa fa-check"></i><b>8.5.1</b> Fill color</a></li>
+<li class="chapter" data-level="8.5.2" data-path="graphing-2.html"><a href="graphing-2.html#overriding-aes"><i class="fa fa-check"></i><b>8.5.2</b> Overriding aes()</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="graphing-2.html"><a href="graphing-2.html#apa-style"><i class="fa fa-check"></i><b>8.6</b> APA style</a></li>
+<li class="chapter" data-level="8.7" data-path="graphing-2.html"><a href="graphing-2.html#axes"><i class="fa fa-check"></i><b>8.7</b> Axes</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="graphing-2.html"><a href="graphing-2.html#range"><i class="fa fa-check"></i><b>8.7.1</b> Range</a></li>
+<li class="chapter" data-level="8.7.2" data-path="graphing-2.html"><a href="graphing-2.html#ticks"><i class="fa fa-check"></i><b>8.7.2</b> Ticks</a></li>
+<li class="chapter" data-level="8.7.3" data-path="graphing-2.html"><a href="graphing-2.html#labels"><i class="fa fa-check"></i><b>8.7.3</b> Labels</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="graphing-2.html"><a href="graphing-2.html#axis-values"><i class="fa fa-check"></i><b>8.8</b> Axis values</a><ul>
+<li class="chapter" data-level="8.8.1" data-path="graphing-2.html"><a href="graphing-2.html#text"><i class="fa fa-check"></i><b>8.8.1</b> Text</a></li>
+<li class="chapter" data-level="8.8.2" data-path="graphing-2.html"><a href="graphing-2.html#angle"><i class="fa fa-check"></i><b>8.8.2</b> Angle</a></li>
+<li class="chapter" data-level="8.8.3" data-path="graphing-2.html"><a href="graphing-2.html#alignment"><i class="fa fa-check"></i><b>8.8.3</b> Alignment</a></li>
+<li class="chapter" data-level="8.8.4" data-path="graphing-2.html"><a href="graphing-2.html#order"><i class="fa fa-check"></i><b>8.8.4</b> Order</a></li>
+<li class="chapter" data-level="8.8.5" data-path="graphing-2.html"><a href="graphing-2.html#legend-order"><i class="fa fa-check"></i><b>8.8.5</b> Legend order</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="graphing-2.html"><a href="graphing-2.html#custom-colours"><i class="fa fa-check"></i><b>8.9</b> Custom colours</a><ul>
+<li class="chapter" data-level="8.9.1" data-path="graphing-2.html"><a href="graphing-2.html#r-palette"><i class="fa fa-check"></i><b>8.9.1</b> R palette</a></li>
+<li class="chapter" data-level="8.9.2" data-path="graphing-2.html"><a href="graphing-2.html#hex-colours"><i class="fa fa-check"></i><b>8.9.2</b> Hex colours</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="graphing-2.html"><a href="graphing-2.html#emoji"><i class="fa fa-check"></i><b>8.10</b> Emoji</a></li>
+<li class="chapter" data-level="8.11" data-path="graphing-2.html"><a href="graphing-2.html#accessible-colors"><i class="fa fa-check"></i><b>8.11</b> Accessible Colors</a><ul>
+<li class="chapter" data-level="8.11.1" data-path="graphing-2.html"><a href="graphing-2.html#rcolorbrewer"><i class="fa fa-check"></i><b>8.11.1</b> RColorBrewer</a></li>
+<li class="chapter" data-level="8.11.2" data-path="graphing-2.html"><a href="graphing-2.html#avoid-color"><i class="fa fa-check"></i><b>8.11.2</b> Avoid color</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="graphing-2.html"><a href="graphing-2.html#saving"><i class="fa fa-check"></i><b>8.12</b> Saving</a><ul>
+<li class="chapter" data-level="8.12.1" data-path="graphing-2.html"><a href="graphing-2.html#mac"><i class="fa fa-check"></i><b>8.12.1</b> MAC</a></li>
+<li class="chapter" data-level="8.12.2" data-path="graphing-2.html"><a href="graphing-2.html#pc-or-mac"><i class="fa fa-check"></i><b>8.12.2</b> PC or MAC</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -571,7 +378,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="multiple-regression" class="section level1">
-<h1><span class="header-section-number">Chapter 16</span> Multiple regression</h1>
+<h1><span class="header-section-number">Chapter 4</span> Multiple regression</h1>
 <p>The following CRAN packages must be installed:</p>
 <table>
 <thead>
@@ -611,43 +418,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>After the remotes package is installed, it can be used to install a package from GitHub:</p>
-<div class="sourceCode" id="cb616"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb616-1"><a href="multiple-regression.html#cb616-1"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;dstanley4/fastInteraction&quot;</span>)</span></code></pre></div>
-<div id="overview-7" class="section level2">
-<h2><span class="header-section-number">16.1</span> Overview</h2>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="multiple-regression.html#cb85-1"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;dstanley4/fastInteraction&quot;</span>)</span></code></pre></div>
+<div id="overview-2" class="section level2">
+<h2><span class="header-section-number">4.1</span> Overview</h2>
 <p>Multiple regression is a means relating multiple predictor variables to a single criterion variable. We can determine the amount of variance in the criterion accounted for by the set of predictors (<span class="math inline">\(R^2\)</span>), a single predictor on it’s own (<span class="math inline">\(r^2\)</span>), or the extent to which a single predictor accounts for unique variance account for in the criterion that is not accounted for by any of the other predictors (<span class="math inline">\(sr^2\)</span>).</p>
 </div>
 <div id="example" class="section level2">
-<h2><span class="header-section-number">16.2</span> Example</h2>
+<h2><span class="header-section-number">4.2</span> Example</h2>
 <p>In this chapter, we examine the extent to video game scores are predicted by age and IQ for people who live in the City of Guelph. As before, we treat citizens of Guelph as our population – though in this chapter we move straight to the sample data (without showing the population-level data).</p>
 <p>We are interested in using both IQ and age to predict video game scores so we refer to these variables as <strong>predictor</strong> variables. The value being predicted is video game score and we refer to that variable as the <strong>criterion</strong> (i.e., the dependent variable).</p>
 <p>You can think of the multiple regression problem using a venn diagram:</p>
 <p><code>{r. echo = FALSE} knitr::include_graphics("ch_multiple_regression/images/mr_venn.png")</code></p>
 </div>
 <div id="load-the-data" class="section level2">
-<h2><span class="header-section-number">16.3</span> Load the data</h2>
+<h2><span class="header-section-number">4.3</span> Load the data</h2>
 <p>We use a data set called “data_mr_ex.csv” in this example. The data can be loaded with the command:</p>
-<div class="sourceCode" id="cb617"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb617-1"><a href="multiple-regression.html#cb617-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb617-2"><a href="multiple-regression.html#cb617-2"></a><span class="kw">library</span>(janitor)</span>
-<span id="cb617-3"><a href="multiple-regression.html#cb617-3"></a></span>
-<span id="cb617-4"><a href="multiple-regression.html#cb617-4"></a>my_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data_mr_ex.csv&quot;</span>)</span>
-<span id="cb617-5"><a href="multiple-regression.html#cb617-5"></a></span>
-<span id="cb617-6"><a href="multiple-regression.html#cb617-6"></a><span class="co"># ensure column names match desired naming convention</span></span>
-<span id="cb617-7"><a href="multiple-regression.html#cb617-7"></a>my_data &lt;-<span class="st"> </span>my_data <span class="op">%&gt;%</span></span>
-<span id="cb617-8"><a href="multiple-regression.html#cb617-8"></a><span class="st">  </span><span class="kw">clean_names</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="multiple-regression.html#cb86-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb86-2"><a href="multiple-regression.html#cb86-2"></a><span class="kw">library</span>(janitor)</span>
+<span id="cb86-3"><a href="multiple-regression.html#cb86-3"></a></span>
+<span id="cb86-4"><a href="multiple-regression.html#cb86-4"></a>my_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data_mr_ex.csv&quot;</span>)</span>
+<span id="cb86-5"><a href="multiple-regression.html#cb86-5"></a></span>
+<span id="cb86-6"><a href="multiple-regression.html#cb86-6"></a><span class="co"># ensure column names match desired naming convention</span></span>
+<span id="cb86-7"><a href="multiple-regression.html#cb86-7"></a>my_data &lt;-<span class="st"> </span>my_data <span class="op">%&gt;%</span></span>
+<span id="cb86-8"><a href="multiple-regression.html#cb86-8"></a><span class="st">  </span><span class="kw">clean_names</span>()</span></code></pre></div>
 <p>We see the structure of the data with the glimpse() command:</p>
-<div class="sourceCode" id="cb618"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb618-1"><a href="multiple-regression.html#cb618-1"></a><span class="kw">glimpse</span>(my_data)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="multiple-regression.html#cb87-1"></a><span class="kw">glimpse</span>(my_data)</span></code></pre></div>
 <pre><code>## Rows: 200
 ## Columns: 3
-## $ video_game &lt;dbl&gt; 122.0, 108.7, 130.4, 123.4, 121.5, 125…
-## $ iq         &lt;dbl&gt; 107.6, 100.9, 89.0, 90.3, 97.1, 108.1,…
-## $ age        &lt;dbl&gt; 41.1, 55.1, 43.9, 46.7, 42.1, 41.2, 41…</code></pre>
+## $ video_game &lt;dbl&gt; 122.0, 108.7, 130.4, 123.4, 121.5…
+## $ iq         &lt;dbl&gt; 107.6, 100.9, 89.0, 90.3, 97.1, 1…
+## $ age        &lt;dbl&gt; 41.1, 55.1, 43.9, 46.7, 42.1, 41.…</code></pre>
 </div>
 <div id="bivariate-relations" class="section level2">
-<h2><span class="header-section-number">16.4</span> Bivariate relations</h2>
+<h2><span class="header-section-number">4.4</span> Bivariate relations</h2>
 <p>When you conduct multiple regression analyses you should always report a correlation matrix with your predictors and criterion.</p>
-<div class="sourceCode" id="cb620"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb620-1"><a href="multiple-regression.html#cb620-1"></a><span class="kw">library</span>(apaTables)</span>
-<span id="cb620-2"><a href="multiple-regression.html#cb620-2"></a></span>
-<span id="cb620-3"><a href="multiple-regression.html#cb620-3"></a><span class="kw">apa.cor.table</span>(my_data)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="multiple-regression.html#cb89-1"></a><span class="kw">library</span>(apaTables)</span>
+<span id="cb89-2"><a href="multiple-regression.html#cb89-2"></a></span>
+<span id="cb89-3"><a href="multiple-regression.html#cb89-3"></a><span class="kw">apa.cor.table</span>(my_data)</span></code></pre></div>
 <pre><code>## 
 ## 
 ## Means, standard deviations, and correlations with confidence intervals
@@ -670,29 +477,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## * indicates p &lt; .05. ** indicates p &lt; .01.
 ## </code></pre>
 <p>You should always check for curvilinear relations when reporting correlations via a graph. We quickly create a graph for doing so with the code below. In this case we don’t see any curvilinear relations.</p>
-<div class="sourceCode" id="cb622"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb622-1"><a href="multiple-regression.html#cb622-1"></a><span class="kw">library</span>(GGally)</span>
-<span id="cb622-2"><a href="multiple-regression.html#cb622-2"></a></span>
-<span id="cb622-3"><a href="multiple-regression.html#cb622-3"></a><span class="kw">ggpairs</span>(my_data)</span></code></pre></div>
-<p><img src="bookdown_files/figure-html/unnamed-chunk-468-1.png" width="672" /></p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="multiple-regression.html#cb91-1"></a><span class="kw">library</span>(GGally)</span>
+<span id="cb91-2"><a href="multiple-regression.html#cb91-2"></a></span>
+<span id="cb91-3"><a href="multiple-regression.html#cb91-3"></a><span class="kw">ggpairs</span>(my_data)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
 <p>You can think of each bivariate correlation as the shaded areas on the figure below. In this type of figure the degree of overlap between two circles is determined by the correlation squared (i.r., <span class="math inline">\(r^2\)</span>). The value you obtain for <span class="math inline">\(r^2\)</span> indicates the proportion of the criterion that is covered by the predictor. For example, if <span class="math inline">\(r\)</span> = .50 then <span class="math inline">\(r^2\)</span> = .25 which indicates 25% of the criterion should be covered by the circle representing that predictor.</p>
 <p><img src="ch_multiple_regression/images/mr_venn_r.png" width="100%" /></p>
 </div>
 <div id="single-best-predictor" class="section level2">
-<h2><span class="header-section-number">16.5</span> Single best predictor</h2>
+<h2><span class="header-section-number">4.5</span> Single best predictor</h2>
 <p>What is the best predictor of video_game? Many researchers incorrectly believe you need multiple regression to answer this question - you do not. To determine the single best predictor in a set of predictors just look at the correlation matrix above - no need for regression (or beta-weights). The strongest correlation is the best predictor. In our current example, video_game_score is predicted by iq (<em>r</em> = .50) and age (<em>r</em> = -.30). The best predictor of video_game_score is iq because it has the strongest correlation (using absolute values .50 is larger than .30).</p>
 </div>
 <div id="multiple-regression-1" class="section level2">
-<h2><span class="header-section-number">16.6</span> Multiple regression</h2>
+<h2><span class="header-section-number">4.6</span> Multiple regression</h2>
 <p>Multiple regression is frequently used to ask two questions:</p>
 <ul>
 <li><p>How well we can predict the criterion using a set of predictors (see <span class="math inline">\(R^2\)</span>)?</p></li>
 <li><p>What is the unique contribution of a single variable in a set or predictors? In other words, how much does one variable predict the criterion above and beyond another variable? For example, does study time predict exam grades above and beyond iq? Or phrased differently: Does study time predict unique variance in exam grades that is not accounted for by iq? (see <span class="math inline">\(sr^2\)</span>).</p></li>
 </ul>
 <p>We want to use age and IQ to predict video game score (<span class="math inline">\(Y\)</span>). More specifically, we want to combine age and IQ to create a new variable (<span class="math inline">\(\widehat{Y}\)</span>) that correlates as highly as possible with video game score. We do with the code below:</p>
-<div class="sourceCode" id="cb623"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb623-1"><a href="multiple-regression.html#cb623-1"></a>lm_object &lt;-<span class="st"> </span><span class="kw">lm</span>(video_game <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>iq,</span>
-<span id="cb623-2"><a href="multiple-regression.html#cb623-2"></a>                    <span class="dt">data =</span> my_data)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="multiple-regression.html#cb92-1"></a>lm_object &lt;-<span class="st"> </span><span class="kw">lm</span>(video_game <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>iq,</span>
+<span id="cb92-2"><a href="multiple-regression.html#cb92-2"></a>                    <span class="dt">data =</span> my_data)</span></code></pre></div>
 <p>Now look at the brief output:</p>
-<div class="sourceCode" id="cb624"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb624-1"><a href="multiple-regression.html#cb624-1"></a><span class="kw">print</span>(lm_object)</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="multiple-regression.html#cb93-1"></a><span class="kw">print</span>(lm_object)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = video_game ~ age + iq, data = my_data)
@@ -705,14 +512,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math inline">\(\widehat{Y} = 102.233 - 0.0371(age) + 0.328(iq)\)</span></p>
 <p>The slopes for age and iq are -0.0371 and 0.328, respectively. These are also referred to as the <em>b</em>-weights or unstandardized regression coefficients. The computer picks these weight so that predicted video game scores (<span class="math inline">\(\widehat{Y}\)</span>) will corresponds as closely as possible to actual video game scores.</p>
 <p>A quick way to get more comprehensive regression output is to use the <em>apa.reg.table</em> function in the apaTables package.</p>
-<div class="sourceCode" id="cb626"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb626-1"><a href="multiple-regression.html#cb626-1"></a><span class="kw">library</span>(apaTables)</span>
-<span id="cb626-2"><a href="multiple-regression.html#cb626-2"></a></span>
-<span id="cb626-3"><a href="multiple-regression.html#cb626-3"></a><span class="kw">apa.reg.table</span>(lm_object,</span>
-<span id="cb626-4"><a href="multiple-regression.html#cb626-4"></a>              <span class="dt">filename =</span> <span class="st">&quot;table_regression.doc&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="multiple-regression.html#cb95-1"></a><span class="kw">library</span>(apaTables)</span>
+<span id="cb95-2"><a href="multiple-regression.html#cb95-2"></a></span>
+<span id="cb95-3"><a href="multiple-regression.html#cb95-3"></a><span class="kw">apa.reg.table</span>(lm_object,</span>
+<span id="cb95-4"><a href="multiple-regression.html#cb95-4"></a>              <span class="dt">filename =</span> <span class="st">&quot;table_regression.doc&quot;</span>)</span></code></pre></div>
 <p><img src="ch_multiple_regression/images/mr_table.png" width="90%" /></p>
 </div>
 <div id="b-weights" class="section level2">
-<h2><span class="header-section-number">16.7</span> <em>b</em>-weights</h2>
+<h2><span class="header-section-number">4.7</span> <em>b</em>-weights</h2>
 <p>An inspection of the <em>b</em> column in the above table reveals the <em>b</em>-weights we previously discussed. The <em>b</em>-weights are also known as the slopes or the unstandardized regression weights. The <em>b</em>-weights are used to create predicted/estimated video game score via the regression equation:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -735,20 +542,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You can interpret the <em>b</em>-weights as indicating how much the criterion changes when a predictor changes – <strong>holding the other predictors constant</strong>. In this context, a 0.3285 <em>b</em>-weight for IQ indicates that for each one-unit increase in IQ video game score will increase 0.3285 points – holding the effect of age constant. Don’t forget the <em>b</em>-weight can only be interpreting in context of that specific regression equation. If you replaced the age predictor with, say, height as a predictor, then the <em>b</em>-weight for IQ would change. Context matters when interpreting <em>b</em>-weights.</p>
 </div>
 <div id="r2" class="section level2">
-<h2><span class="header-section-number">16.8</span> <span class="math inline">\(R^2\)</span></h2>
+<h2><span class="header-section-number">4.8</span> <span class="math inline">\(R^2\)</span></h2>
 <p>How effective is the set of predictors? We can calculate <span class="math inline">\(R^2\)</span> to determine the proportion of variance the criterion that is accounted for by the set of predictors. This value is illustrated graphically below:</p>
 <p><img src="ch_multiple_regression/images/mr_venn_R2.png" width="26%" /></p>
 <p>You will simply obtain <span class="math inline">\(R^2\)</span> from computer output. But how is <span class="math inline">\(R^2\)</span> calculated? Understanding how <span class="math inline">\(R^2\)</span> is calculated can help you to understand how to interpret it. There are two methods for doing so - that produce the same number:</p>
 <div id="method-1-ratio-approach" class="section level3">
-<h3><span class="header-section-number">16.8.1</span> Method 1: Ratio Approach</h3>
+<h3><span class="header-section-number">4.8.1</span> Method 1: Ratio Approach</h3>
 <p>What does the <span class="math inline">\(R^2\)</span> mean? It is the proportion variability in criterion scores (<span class="math inline">\(Y\)</span>) accounted for by (<span class="math inline">\(\widehat{Y}\)</span>). In other words, it is the proportion of the variability in criterion scores that can be accounted for by (a linear combination of) iq and age.</p>
 <p>We begin by obtaining predicted video game scores (<span class="math inline">\(\widehat{Y}\)</span>) using the regression:</p>
 <p><span class="math inline">\(\widehat{Y} = 102.233 + 0.3285(iq) - 0.3712(age)\)</span></p>
 <p>predicted_video_game_scores <span class="math inline">\(= 102.233 + 0.3285(iq) - 0.3712(age)\)</span></p>
 <p>The code below uses the above equation to calculate predicted video game score for each person:</p>
-<div class="sourceCode" id="cb627"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb627-1"><a href="multiple-regression.html#cb627-1"></a>predicted_video_game_scores  &lt;-<span class="st"> </span><span class="kw">predict</span>(lm_object)</span>
-<span id="cb627-2"><a href="multiple-regression.html#cb627-2"></a></span>
-<span id="cb627-3"><a href="multiple-regression.html#cb627-3"></a>actual_video_game_scores &lt;-<span class="st"> </span>my_data<span class="op">$</span>video_game</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="multiple-regression.html#cb96-1"></a>predicted_video_game_scores  &lt;-<span class="st"> </span><span class="kw">predict</span>(lm_object)</span>
+<span id="cb96-2"><a href="multiple-regression.html#cb96-2"></a></span>
+<span id="cb96-3"><a href="multiple-regression.html#cb96-3"></a>actual_video_game_scores &lt;-<span class="st"> </span>my_data<span class="op">$</span>video_game</span></code></pre></div>
 <p>Recall the formula for <span class="math inline">\(R^2\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -756,17 +563,17 @@ R^2 = \frac{\text{Variance of predicted scores}}{\text{Variance of actual scores
 \end{aligned}
 \]</span></p>
 <p>We implement this formula using the code below:</p>
-<div class="sourceCode" id="cb628"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb628-1"><a href="multiple-regression.html#cb628-1"></a>var_predicted_video_game_scores &lt;-<span class="st"> </span><span class="kw">var</span>(predicted_video_game_scores ) </span>
-<span id="cb628-2"><a href="multiple-regression.html#cb628-2"></a>var_actual_video_game_scores   &lt;-<span class="st">  </span><span class="kw">var</span>(actual_video_game_scores)</span>
-<span id="cb628-3"><a href="multiple-regression.html#cb628-3"></a></span>
-<span id="cb628-4"><a href="multiple-regression.html#cb628-4"></a>R2 &lt;-<span class="st"> </span>var_predicted_video_game_scores <span class="op">/</span><span class="st"> </span>var_actual_video_game_scores</span>
-<span id="cb628-5"><a href="multiple-regression.html#cb628-5"></a></span>
-<span id="cb628-6"><a href="multiple-regression.html#cb628-6"></a><span class="kw">print</span>(R2)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="multiple-regression.html#cb97-1"></a>var_predicted_video_game_scores &lt;-<span class="st"> </span><span class="kw">var</span>(predicted_video_game_scores ) </span>
+<span id="cb97-2"><a href="multiple-regression.html#cb97-2"></a>var_actual_video_game_scores   &lt;-<span class="st">  </span><span class="kw">var</span>(actual_video_game_scores)</span>
+<span id="cb97-3"><a href="multiple-regression.html#cb97-3"></a></span>
+<span id="cb97-4"><a href="multiple-regression.html#cb97-4"></a>R2 &lt;-<span class="st"> </span>var_predicted_video_game_scores <span class="op">/</span><span class="st"> </span>var_actual_video_game_scores</span>
+<span id="cb97-5"><a href="multiple-regression.html#cb97-5"></a></span>
+<span id="cb97-6"><a href="multiple-regression.html#cb97-6"></a><span class="kw">print</span>(R2)</span></code></pre></div>
 <pre><code>## [1] 0.2911</code></pre>
 <p>Thus, 29% of the variability in video game scores is predicted by the combination of age and IQ.</p>
 </div>
 <div id="method-2-correlation-approach" class="section level3">
-<h3><span class="header-section-number">16.8.2</span> Method 2: Correlation Approach</h3>
+<h3><span class="header-section-number">4.8.2</span> Method 2: Correlation Approach</h3>
 <p>An alternative way of thinking about <span class="math inline">\(R^2\)</span> is as the squared correlation between predicted criterion scores and actual criterion scores:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -775,18 +582,18 @@ R^2 &amp;= r^2_{\hat{Y}, Y}\\
 \end{aligned}
 \]</span></p>
 <p>We implement this formula with the code below and obtain the same value:</p>
-<div class="sourceCode" id="cb630"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb630-1"><a href="multiple-regression.html#cb630-1"></a>R &lt;-<span class="st"> </span><span class="kw">cor</span>(predicted_video_game_scores, actual_video_game_scores)</span>
-<span id="cb630-2"><a href="multiple-regression.html#cb630-2"></a></span>
-<span id="cb630-3"><a href="multiple-regression.html#cb630-3"></a>R2 &lt;-<span class="st"> </span>R <span class="op">*</span><span class="st"> </span>R</span>
-<span id="cb630-4"><a href="multiple-regression.html#cb630-4"></a><span class="kw">print</span>(R2)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="multiple-regression.html#cb99-1"></a>R &lt;-<span class="st"> </span><span class="kw">cor</span>(predicted_video_game_scores, actual_video_game_scores)</span>
+<span id="cb99-2"><a href="multiple-regression.html#cb99-2"></a></span>
+<span id="cb99-3"><a href="multiple-regression.html#cb99-3"></a>R2 &lt;-<span class="st"> </span>R <span class="op">*</span><span class="st"> </span>R</span>
+<span id="cb99-4"><a href="multiple-regression.html#cb99-4"></a><span class="kw">print</span>(R2)</span></code></pre></div>
 <pre><code>## [1] 0.2911</code></pre>
 </div>
 <div id="r2-in-practice" class="section level3">
-<h3><span class="header-section-number">16.8.3</span> <span class="math inline">\(R^2\)</span> in practice</h3>
+<h3><span class="header-section-number">4.8.3</span> <span class="math inline">\(R^2\)</span> in practice</h3>
 <p>In practice we simply look at the apa.reg.table() output and obtain the <span class="math inline">\(R^2\)</span> value and 95% CI from this output:</p>
 <p><img src="ch_multiple_regression/images/mr_table.png" width="90%" /></p>
 <p>From this table we determine: <span class="math inline">\(R^2\)</span> = .29, 95% CI [.19, .38]. to obtain the required <em>p</em>-value we use the summary() command on the previously calculated lm_object:</p>
-<div class="sourceCode" id="cb632"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb632-1"><a href="multiple-regression.html#cb632-1"></a><span class="kw">summary</span>(lm_object)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="multiple-regression.html#cb101-1"></a><span class="kw">summary</span>(lm_object)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = video_game ~ age + iq, data = my_data)
@@ -811,17 +618,17 @@ R^2 &amp;= r^2_{\hat{Y}, Y}\\
 </div>
 </div>
 <div id="semi-partial-sr" class="section level2">
-<h2><span class="header-section-number">16.9</span> Semi-partial (<span class="math inline">\(sr\)</span>)</h2>
+<h2><span class="header-section-number">4.9</span> Semi-partial (<span class="math inline">\(sr\)</span>)</h2>
 <p>A semi-partial correlation is represented by the symbol <span class="math inline">\(sr\)</span> and correspondingly a squared semi-partial correlation is represented by the symbol <span class="math inline">\(sr^2\)</span>. What is a squared semi-partial correlation and why is it useful?</p>
 <p>Semi-partial correlations are a way of determining the unique contribution of a variable to predicting the criterion (in the context of the other predictors). The semi-partial correlation is the correlation of one predictor (with all the other predictors removed) with the criterion. The semi-partial correlation squared is the amount <span class="math inline">\(R^2\)</span> would drop by if that variable was removed from the regression. It is the percentage of variability in criterion scores that is uniquely accounted for by a predictor. This is illustrated in the venn diagram below:</p>
 <p><img src="ch_multiple_regression/images/mr_venn_sr.png" width="63%" /></p>
 <div id="sr2-in-theory" class="section level3">
-<h3><span class="header-section-number">16.9.1</span> <span class="math inline">\(sr^2\)</span> in theory</h3>
+<h3><span class="header-section-number">4.9.1</span> <span class="math inline">\(sr^2\)</span> in theory</h3>
 <p>In the text below we go “inside the black box” to show you how semi-partial correlations are computed. In practice, they are just displayed in R output - but understanding the text below where we calculate them “old school” will help with you interpret <span class="math inline">\(sr^2\)</span>.</p>
 <p>Overall, squared semi-partial correlations provide an index of how much that predictor contributes to the overall <span class="math inline">\(R^2\)</span> (with the effect of the other predictors removed). We calculate <span class="math inline">\(sr^2\)</span> for IQ (removing the effect of age) to demonstrate this fact. We do this with a regression equation in which <strong>we make IQ the criterion (<span class="math inline">\(Y\)</span>)</strong>. Then we predict IQ with age. This produces my_iq_regression which has inside of it a predictor version of IQ, <span class="math inline">\(\widehat{Y_{iq}}\)</span>, which in this case represents a best guess of IQ based on age.</p>
-<div class="sourceCode" id="cb634"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb634-1"><a href="multiple-regression.html#cb634-1"></a>my_iq_regression &lt;-<span class="st"> </span><span class="kw">lm</span>(iq <span class="op">~</span><span class="st"> </span>age, <span class="dt">data =</span> my_data)</span>
-<span id="cb634-2"><a href="multiple-regression.html#cb634-2"></a></span>
-<span id="cb634-3"><a href="multiple-regression.html#cb634-3"></a><span class="kw">print</span>(my_iq_regression)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="multiple-regression.html#cb103-1"></a>my_iq_regression &lt;-<span class="st"> </span><span class="kw">lm</span>(iq <span class="op">~</span><span class="st"> </span>age, <span class="dt">data =</span> my_data)</span>
+<span id="cb103-2"><a href="multiple-regression.html#cb103-2"></a></span>
+<span id="cb103-3"><a href="multiple-regression.html#cb103-3"></a><span class="kw">print</span>(my_iq_regression)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = iq ~ age, data = my_data)
@@ -838,15 +645,15 @@ Thus, we find: <span class="math inline">\(\widehat{Y_{iq}} = 124.763 - 0.506(ag
 <p>iq_without_age = <span class="math inline">\(Y_{iq}\)</span> - <span class="math inline">\(\widehat{Y_{iq}}\)</span></p>
 <p>iq_without_age = iq - (124.763 - 0.506(age) )</p>
 <p>We do this below:</p>
-<div class="sourceCode" id="cb636"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb636-1"><a href="multiple-regression.html#cb636-1"></a>iq_without_age &lt;-<span class="st"> </span><span class="kw">resid</span>(my_iq_regression) </span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="multiple-regression.html#cb105-1"></a>iq_without_age &lt;-<span class="st"> </span><span class="kw">resid</span>(my_iq_regression) </span></code></pre></div>
 <p>Then we correlate IQ without age (i.e., iq_without_age) with video game scores (i.e., video_game). This tells us how IQ correlates with video game scores when the effects of age have been removed from IQ; that is, the semi-partial correlation (i.e., <span class="math inline">\(sr\)</span>). Once again refer to the venn diagram above illustrating <span class="math inline">\(sr^2\)</span>.</p>
-<div class="sourceCode" id="cb637"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb637-1"><a href="multiple-regression.html#cb637-1"></a><span class="co"># apa.reg.table does this for you - this is for learning/illustration only.</span></span>
-<span id="cb637-2"><a href="multiple-regression.html#cb637-2"></a></span>
-<span id="cb637-3"><a href="multiple-regression.html#cb637-3"></a>sr  &lt;-<span class="st"> </span><span class="kw">cor</span>(iq_without_age, my_data<span class="op">$</span>video_game)</span>
-<span id="cb637-4"><a href="multiple-regression.html#cb637-4"></a>sr2 &lt;-<span class="st"> </span>sr <span class="op">*</span><span class="st"> </span>sr</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="multiple-regression.html#cb106-1"></a><span class="co"># apa.reg.table does this for you - this is for learning/illustration only.</span></span>
+<span id="cb106-2"><a href="multiple-regression.html#cb106-2"></a></span>
+<span id="cb106-3"><a href="multiple-regression.html#cb106-3"></a>sr  &lt;-<span class="st"> </span><span class="kw">cor</span>(iq_without_age, my_data<span class="op">$</span>video_game)</span>
+<span id="cb106-4"><a href="multiple-regression.html#cb106-4"></a>sr2 &lt;-<span class="st"> </span>sr <span class="op">*</span><span class="st"> </span>sr</span></code></pre></div>
 </div>
 <div id="sr2-in-practice" class="section level3">
-<h3><span class="header-section-number">16.9.2</span> <span class="math inline">\(sr^2\)</span> in practice</h3>
+<h3><span class="header-section-number">4.9.2</span> <span class="math inline">\(sr^2\)</span> in practice</h3>
 <p>The <span class="math inline">\(sr^2\)</span> values with confidence intervals are reported in apa.reg.table() output:</p>
 <p><img src="ch_multiple_regression/images/mr_table.png" width="90%" /></p>
 <p>From this table we determine:</p>
@@ -855,7 +662,7 @@ Thus, we find: <span class="math inline">\(\widehat{Y_{iq}} = 124.763 - 0.506(ag
 <li><p>iq: <span class="math inline">\(sr^2\)</span> = .20, 95% CI [.11, .30]</p></li>
 </ul>
 <p>However, to obtain the <em>p</em>-value for each <span class="math inline">\(sr^2\)</span> value we need to use the summary() command:</p>
-<div class="sourceCode" id="cb638"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb638-1"><a href="multiple-regression.html#cb638-1"></a><span class="kw">summary</span>(lm_object)</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="multiple-regression.html#cb107-1"></a><span class="kw">summary</span>(lm_object)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = video_game ~ age + iq, data = my_data)
@@ -884,36 +691,36 @@ Thus, we find: <span class="math inline">\(\widehat{Y_{iq}} = 124.763 - 0.506(ag
 <p>If a predictor is significant, this indicates that the predictor contributes unique variance to <span class="math inline">\(\widehat{Y_{video game}}\)</span> that can not be contributed by any of the other predictors. The amount of unique variance contributed by a predictor is indicated by <span class="math inline">\(sr^2\)</span> (semi-partial correlation squared).</p>
 </div>
 <div id="blocks-regression" class="section level3">
-<h3><span class="header-section-number">16.9.3</span> Blocks regression</h3>
+<h3><span class="header-section-number">4.9.3</span> Blocks regression</h3>
 <p>Some researchers are unfamiliar with semi-partial correlations and prefer to think in term of how the <span class="math inline">\(R^2\)</span> value changes over two different regression. This approach is just an indirect way of calculating <span class="math inline">\(sr^2\)</span>.</p>
 <p>Consider the example below where the researcher conducts the first regression, block 1, in which age is the predictor. Then he conducts a second regression, block 2, in which both age and iq are the predictors.</p>
-<div class="sourceCode" id="cb640"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb640-1"><a href="multiple-regression.html#cb640-1"></a><span class="co"># apa.reg.table does this for you - this is for learning/illustration only.</span></span>
-<span id="cb640-2"><a href="multiple-regression.html#cb640-2"></a></span>
-<span id="cb640-3"><a href="multiple-regression.html#cb640-3"></a>block1 &lt;-<span class="st"> </span><span class="kw">lm</span>(video_game <span class="op">~</span><span class="st"> </span>age,</span>
-<span id="cb640-4"><a href="multiple-regression.html#cb640-4"></a>             <span class="dt">data =</span> my_data)</span>
-<span id="cb640-5"><a href="multiple-regression.html#cb640-5"></a></span>
-<span id="cb640-6"><a href="multiple-regression.html#cb640-6"></a>block2 &lt;-<span class="st"> </span><span class="kw">lm</span>(video_game <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>iq,</span>
-<span id="cb640-7"><a href="multiple-regression.html#cb640-7"></a>             <span class="dt">data =</span> my_data)</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="multiple-regression.html#cb109-1"></a><span class="co"># apa.reg.table does this for you - this is for learning/illustration only.</span></span>
+<span id="cb109-2"><a href="multiple-regression.html#cb109-2"></a></span>
+<span id="cb109-3"><a href="multiple-regression.html#cb109-3"></a>block1 &lt;-<span class="st"> </span><span class="kw">lm</span>(video_game <span class="op">~</span><span class="st"> </span>age,</span>
+<span id="cb109-4"><a href="multiple-regression.html#cb109-4"></a>             <span class="dt">data =</span> my_data)</span>
+<span id="cb109-5"><a href="multiple-regression.html#cb109-5"></a></span>
+<span id="cb109-6"><a href="multiple-regression.html#cb109-6"></a>block2 &lt;-<span class="st"> </span><span class="kw">lm</span>(video_game <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>iq,</span>
+<span id="cb109-7"><a href="multiple-regression.html#cb109-7"></a>             <span class="dt">data =</span> my_data)</span></code></pre></div>
 <p>The goal is to examine the <span class="math inline">\(R^2\)</span> when only age is the predictor and see how much it increases when you have both age and iq as predictors. The resulting difference, <span class="math inline">\(\Delta R^2\)</span> tells you how much iq predicted video game score beyond age alone. Examine the output below.</p>
-<div class="sourceCode" id="cb641"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb641-1"><a href="multiple-regression.html#cb641-1"></a><span class="kw">apa.reg.table</span>(block1, block2,</span>
-<span id="cb641-2"><a href="multiple-regression.html#cb641-2"></a>              <span class="dt">filename =</span> <span class="st">&quot;table_mr_blocks.doc&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="multiple-regression.html#cb110-1"></a><span class="kw">apa.reg.table</span>(block1, block2,</span>
+<span id="cb110-2"><a href="multiple-regression.html#cb110-2"></a>              <span class="dt">filename =</span> <span class="st">&quot;table_mr_blocks.doc&quot;</span>)</span></code></pre></div>
 <p><img src="ch_multiple_regression/images/mr_table_blocks.png" width="90%" /></p>
 <p>This table illustrates that for the first regression when just age was a predictor that <span class="math inline">\(R^2\)</span> = .09. When both age and iq were predictors <span class="math inline">\(R^2\)</span> = .29. That indicates that <span class="math inline">\(R^2\)</span> increased by .20 when we added iq as a predictor. Thus, <span class="math inline">\(\Delta R^2\)</span> = .20. This is the amount <span class="math inline">\(R^2\)</span> increased by due to adding iq as predictor. Conceptually, and mathematically, this is identical to the <span class="math inline">\(sr^2\)</span> value for iq. Indeed, if you look at this output in detail you see that for iq <span class="math inline">\(sr^2\)</span> = .20.</p>
 </div>
 </div>
 <div id="beta-weights" class="section level2">
-<h2><span class="header-section-number">16.10</span> Beta-weights</h2>
+<h2><span class="header-section-number">4.10</span> Beta-weights</h2>
 <p><em>Beta-weights</em> are often referred to as <em>standardized regression weights</em>. This is a poor description that makes beta weights hard to understand. A better description of <em>beta-weights</em> is the regression weights for standardized variables; that is variables with a mean of 0 and a standard deviation of 1.0.</p>
 <div id="in-practice" class="section level3">
-<h3><span class="header-section-number">16.10.1</span> In practice</h3>
+<h3><span class="header-section-number">4.10.1</span> In practice</h3>
 <p>Recall we ran a regression with the command below. This command used the original/raw form of the variables.</p>
-<div class="sourceCode" id="cb642"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb642-1"><a href="multiple-regression.html#cb642-1"></a>lm_object &lt;-<span class="st"> </span><span class="kw">lm</span>(video_game <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>iq,</span>
-<span id="cb642-2"><a href="multiple-regression.html#cb642-2"></a>                    <span class="dt">data =</span> my_data)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="multiple-regression.html#cb111-1"></a>lm_object &lt;-<span class="st"> </span><span class="kw">lm</span>(video_game <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>iq,</span>
+<span id="cb111-2"><a href="multiple-regression.html#cb111-2"></a>                    <span class="dt">data =</span> my_data)</span></code></pre></div>
 <p>From lm_object created we used apa.reg.table() to obtain this output:</p>
 <p><img src="ch_multiple_regression/images/mr_table.png" width="90%" /></p>
 <p>Notice the beta column in this output. It reports beta weights of -.21 and .46 for age and iq, respectively. Where did these values come from?</p>
 <p>To answer this question, we need to start with the lm_object. The apa.reg.table() command just formats the information contained in the lm_object. We can see an unformatted version of this information with the summary() command:</p>
-<div class="sourceCode" id="cb643"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb643-1"><a href="multiple-regression.html#cb643-1"></a><span class="kw">summary</span>(lm_object)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="multiple-regression.html#cb112-1"></a><span class="kw">summary</span>(lm_object)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = video_game ~ age + iq, data = my_data)
@@ -937,7 +744,7 @@ Thus, we find: <span class="math inline">\(\widehat{Y_{iq}} = 124.763 - 0.506(ag
 <p>Notice that the values in the Estimates column correspond to the b-weights column in the apa.reg.table() output. We will use this fact to create beta-weights.</p>
 </div>
 <div id="old-school" class="section level3">
-<h3><span class="header-section-number">16.10.2</span> Old school</h3>
+<h3><span class="header-section-number">4.10.2</span> Old school</h3>
 <p>To obtain beta-weights there are two steps. First, we create standardized score versions of each column. Second, we run a normal regression using those columns.</p>
 <p>A set of standardized scores have a mean of 0 and a standard deviation of 1.0. To create the standardized score versions of each column in the regression we use the z-score formula:</p>
 <p><span class="math display">\[
@@ -946,18 +753,18 @@ Thus, we find: <span class="math inline">\(\widehat{Y_{iq}} = 124.763 - 0.506(ag
 \end{aligned}
 \]</span></p>
 <p>Consider the age column. We can calculate the mean for this column, mean(age), and the standard deviation for this column, sd(age). Then for every value in the age column we subtract the column mean and then divide by the column standard deviation. We do so with the calculation: (age-mean(age))/sd(age). The code below creates standardized score versions of the iq, age, and video_game columns called z_iq, z_age, and z_video_game, respectively.</p>
-<div class="sourceCode" id="cb645"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb645-1"><a href="multiple-regression.html#cb645-1"></a>my_data &lt;-<span class="st"> </span>my_data <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb645-2"><a href="multiple-regression.html#cb645-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_iq =</span> (iq<span class="op">-</span><span class="kw">mean</span>(iq))<span class="op">/</span><span class="kw">sd</span>(iq),</span>
-<span id="cb645-3"><a href="multiple-regression.html#cb645-3"></a>         <span class="dt">z_age =</span> (age<span class="op">-</span><span class="kw">mean</span>(age))<span class="op">/</span><span class="kw">sd</span>(age),</span>
-<span id="cb645-4"><a href="multiple-regression.html#cb645-4"></a>         <span class="dt">z_video_game =</span> (video_game<span class="op">-</span><span class="kw">mean</span>(video_game))<span class="op">/</span><span class="kw">sd</span>(video_game))</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="multiple-regression.html#cb114-1"></a>my_data &lt;-<span class="st"> </span>my_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb114-2"><a href="multiple-regression.html#cb114-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_iq =</span> (iq<span class="op">-</span><span class="kw">mean</span>(iq))<span class="op">/</span><span class="kw">sd</span>(iq),</span>
+<span id="cb114-3"><a href="multiple-regression.html#cb114-3"></a>         <span class="dt">z_age =</span> (age<span class="op">-</span><span class="kw">mean</span>(age))<span class="op">/</span><span class="kw">sd</span>(age),</span>
+<span id="cb114-4"><a href="multiple-regression.html#cb114-4"></a>         <span class="dt">z_video_game =</span> (video_game<span class="op">-</span><span class="kw">mean</span>(video_game))<span class="op">/</span><span class="kw">sd</span>(video_game))</span></code></pre></div>
 <p>We can confirm a mean of 0 and a standard deviation of 1.0 for these new columns with the skim command:</p>
-<div class="sourceCode" id="cb646"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb646-1"><a href="multiple-regression.html#cb646-1"></a><span class="kw">library</span>(skimr)</span>
-<span id="cb646-2"><a href="multiple-regression.html#cb646-2"></a><span class="kw">skim</span>(my_data)</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="multiple-regression.html#cb115-1"></a><span class="kw">library</span>(skimr)</span>
+<span id="cb115-2"><a href="multiple-regression.html#cb115-2"></a><span class="kw">skim</span>(my_data)</span></code></pre></div>
 <p>Now we conduct the regression again with standardized variables (i.e., z-score versions).</p>
-<div class="sourceCode" id="cb647"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb647-1"><a href="multiple-regression.html#cb647-1"></a>lm_object_zscores &lt;-<span class="st"> </span><span class="kw">lm</span>(z_video_game <span class="op">~</span><span class="st"> </span>z_iq <span class="op">+</span><span class="st"> </span>z_age,</span>
-<span id="cb647-2"><a href="multiple-regression.html#cb647-2"></a>                        <span class="dt">data =</span> my_data)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="multiple-regression.html#cb116-1"></a>lm_object_zscores &lt;-<span class="st"> </span><span class="kw">lm</span>(z_video_game <span class="op">~</span><span class="st"> </span>z_iq <span class="op">+</span><span class="st"> </span>z_age,</span>
+<span id="cb116-2"><a href="multiple-regression.html#cb116-2"></a>                        <span class="dt">data =</span> my_data)</span></code></pre></div>
 <p>We can obtain the regression weights for analysis using these standardized scores with the summary() command:</p>
-<div class="sourceCode" id="cb648"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb648-1"><a href="multiple-regression.html#cb648-1"></a><span class="kw">summary</span>(lm_object_zscores) </span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="multiple-regression.html#cb117-1"></a><span class="kw">summary</span>(lm_object_zscores) </span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = z_video_game ~ z_iq + z_age, data = my_data)
@@ -983,31 +790,37 @@ Thus, we find: <span class="math inline">\(\widehat{Y_{iq}} = 124.763 - 0.506(ag
 <p>Hopefully, this description has made it clear that although beta-weights are often referred to as <em>standardized regression weights</em>; it would be more accurate to describe them as the <strong>weights for standardized variables</strong>.</p>
 </div>
 </div>
-<div id="graphing-2" class="section level2">
-<h2><span class="header-section-number">16.11</span> Graphing</h2>
+<div id="graphing-1" class="section level2">
+<h2><span class="header-section-number">4.11</span> Graphing</h2>
 <p>Let’s take a minute to consider the nature of the data we have so far - examine the first few rows of the data below (that includes the predicted value for each person).</p>
 <p><img src="ch_multiple_regression/images/mr_reg_data_figure.png" width="50%" /></p>
 <p>You can see that each person has three measured variables associated with them: video_game_score, iq, and age. These columns are in blue to indicate the fact they are measured variables. Because we have three measured variables we can’t create a typical 2D scatter plot. That type of plot only work when there is one predictor and one criterion. Now we have two predictors and one criterion. Consequently, we need make a 3D scatter plot.</p>
 <p>Correspondingly, because we have two predictors, we can’t obtain a regression line (i.e., best-fit line). A regression line is only possible when there is one predictor. Now we have two predictors. Consequently, a regression surface is required to show the predicted values for combinations of age and iq. In this case, when there are two predictor variables, the regression surface is a plane.</p>
 <p>Let’s create the 3D scatter plot with a regression surface. You recall we previously created the lm_object when we ran our regression:</p>
-<div class="sourceCode" id="cb650"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb650-1"><a href="multiple-regression.html#cb650-1"></a>lm_object &lt;-<span class="st"> </span><span class="kw">lm</span>(video_game <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>iq,</span>
-<span id="cb650-2"><a href="multiple-regression.html#cb650-2"></a>                    <span class="dt">data =</span> my_data)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="multiple-regression.html#cb119-1"></a>lm_object &lt;-<span class="st"> </span><span class="kw">lm</span>(video_game <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>iq,</span>
+<span id="cb119-2"><a href="multiple-regression.html#cb119-2"></a>                    <span class="dt">data =</span> my_data)</span></code></pre></div>
 <p>The lm_object has the three data point for each person (age, iq, video_game) embedded inside it. So we can use the lm_object to create the scatter plot with regression plane. We do so using the fastInteraction package. More specifically, we use the fast.plot command as illustrated below.Note: The fast.plot command uses the argument “moderator” which is not appropriate in our context. When you see moderator in the command below just think of it as another predictor.</p>
-<div class="sourceCode" id="cb651"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb651-1"><a href="multiple-regression.html#cb651-1"></a><span class="kw">library</span>(fastInteraction)</span>
-<span id="cb651-2"><a href="multiple-regression.html#cb651-2"></a></span>
-<span id="cb651-3"><a href="multiple-regression.html#cb651-3"></a>surface_plot &lt;-<span class="st"> </span><span class="kw">fast.plot</span>(lm_object,</span>
-<span id="cb651-4"><a href="multiple-regression.html#cb651-4"></a>                          <span class="dt">criterion =</span> video_game,</span>
-<span id="cb651-5"><a href="multiple-regression.html#cb651-5"></a>                          <span class="dt">predictor =</span> iq,</span>
-<span id="cb651-6"><a href="multiple-regression.html#cb651-6"></a>                          <span class="dt">moderator =</span> age)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="multiple-regression.html#cb120-1"></a><span class="kw">library</span>(fastInteraction)</span>
+<span id="cb120-2"><a href="multiple-regression.html#cb120-2"></a></span>
+<span id="cb120-3"><a href="multiple-regression.html#cb120-3"></a>surface_plot &lt;-<span class="st"> </span><span class="kw">fast.plot</span>(lm_object,</span>
+<span id="cb120-4"><a href="multiple-regression.html#cb120-4"></a>                          <span class="dt">criterion =</span> video_game,</span>
+<span id="cb120-5"><a href="multiple-regression.html#cb120-5"></a>                          <span class="dt">predictor =</span> iq,</span>
+<span id="cb120-6"><a href="multiple-regression.html#cb120-6"></a>                          <span class="dt">moderator =</span> age)</span></code></pre></div>
 <p>Then just type:</p>
-<div class="sourceCode" id="cb652"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb652-1"><a href="multiple-regression.html#cb652-1"></a>surface_plot</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="multiple-regression.html#cb121-1"></a>surface_plot</span></code></pre></div>
 <p>You can see the graph below:</p>
 <p><img src="ch_multiple_regression/images/mr_3d_snapshot.png" width="90%" /></p>
 <p>All of the predicted scores fall on the regression surface. You can think of the regression surface as a best-fit plane. In some sense you can think of the plane as a collection of best-fit lines. Indeed, two illustrative best-fit lines are place on this surface. For all the best-fit lines on the plane the slopes are the same - just the intercepts differ. You can see the people relative to the predicted surface/plane by looking at the dots. Each dot represents a person.</p>
 <p>Try the interactive version of the graph below. Caveat, sometimes it doesn’t appear correctly on the web. If the graph appears incorrectly (e.g., no data points or no surface) try using the Chrome browser. Safari sometimes has problems with this web object. You can rotate the graph to see a better view of the surface. The graph illustrates that predicted video game scores (i.e., the surface) change as a function of both age and iq.</p>
-<div class="sourceCode" id="cb653"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb653-1"><a href="multiple-regression.html#cb653-1"></a>surface_plot</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="multiple-regression.html#cb122-1"></a>surface_plot</span></code></pre></div>
+<pre><code>## Warning: `arrange_()` is deprecated as of dplyr 0.7.0.
+## Please use `arrange()` instead.
+## See vignette(&#39;programming&#39;) for more help
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
 <div id="htmlwidget-7d58abce2053a2454929" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7d58abce2053a2454929">{"x":{"visdat":{"af57d0a7948":["function () ","plotlyVisDat"]},"cur_data":"af57d0a7948","attrs":{"af57d0a7948":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"z":[[113.631892680739,118.559248602204,123.486604523669,128.413960445134,133.341316366599],[111.405887918904,116.333243840369,121.260599761834,126.187955683299,131.115311604764],[109.17988315707,114.107239078535,119.034595,123.961950921465,128.88930684293],[106.953878395236,111.881234316701,116.808590238166,121.735946159631,126.663302081096],[104.727873633401,109.655229554866,114.582585476331,119.509941397796,124.437297319261]],"type":"surface","x":[72,87,102,117,132],"y":[33,39,45,51,57],"opacity":0.9,"colors":["#d1d1d1","#555555"],"inherit":true},"af57d0a7948.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[107.6,100.9,89,90.3,97.1,108.1,120.4,90.5,118.9,107.9,114.6,117.8,85.8,77.3,98.7,104.4,96.6,92.4,110.4,84.7,86.6,112.8,113,99.5,98.7,100.2,126.8,109,125.8,95.6,113,88.4,103.1,104.7,67.1,80.8,81.9,83.3,119.4,107.8,105.1,117.6,90.2,107.7,93.1,111.1,101.1,138.6,97.1,111,95.4,73.3,90.2,114.5,98.5,84.5,109.9,87.4,106.4,118.9,101.3,114.4,82.2,102.9,84.1,78.4,97.7,98.1,116.2,111.9,99.7,122.7,121.8,98.7,112.5,100.5,77.5,120.6,93,93.3,112.2,102.8,103.3,120.9,124.7,101.4,101.3,93.6,115.3,95.4,93.3,90.3,119.1,110.6,126.9,93.1,71.6,82.2,97.4,95.7,101.8,107.3,108.3,111.9,110.9,102.9,107.4,142.7,92.5,80.3,93.4,85.7,94.9,108.1,81.9,105.9,97.5,109.8,132.8,126.4,75.8,65.4,116.2,73.9,105.7,106.1,126.3,99.9,77.7,115,100.7,93.5,91.6,73.3,106.6,78.7,105.4,130.5,76,103.9,103.7,96,118.2,103.5,114.4,124.1,95.4,92.7,92.9,99.2,103.3,99.1,109.9,83.4,133.7,89.8,116.9,99.5,105.7,108.7,92.6,95.1,142.8,108.8,102.6,114,95.3,103.7,120.1,78.8,104.9,124.6,96.3,126.3,107.2,77.4,68.8,100.4,97.5,115.2,127.9,101.9,101.8,82.5,83.1,106,117.3,108.5,78.8,104.8,88,90.3,109.9,95.6,100.5,113.1,91,115.1,111,124.6],"y":[41.1,55.1,43.9,46.7,42.1,41.2,41.7,48.3,48.2,48.1,40.6,51.9,47.3,43.8,49.5,43.9,45.2,50.3,40.7,46.5,48.8,45.6,41.8,55.4,49.5,48.4,49.9,40.3,49.1,40.6,38.2,47.7,44.7,42.2,45.9,42,51.6,43.8,50.9,52.6,38.6,43.1,41.3,46.6,49.9,64.8,41.1,43.1,45.4,42.1,53.9,48.7,37.5,40.3,52.4,57.4,44,47.4,35,43.3,49,45.8,52.2,50.4,47.4,54.5,45.1,51.8,46,45.9,46.2,45.3,35.6,42.2,43.7,54.6,56.2,53.9,29.7,39.1,41.3,48.9,50.3,39.1,33.9,53.6,48.3,46.2,53.6,42.7,46.9,37.2,44.8,40.6,51,48.2,55.7,41.2,41.1,52.1,41.9,49.1,43.1,36.4,42.2,51.6,48.5,45.3,44,48.4,41.8,37.5,46.2,43.8,60.9,49.8,54.7,47.4,40.3,34.3,36.1,46,46,40.4,41.1,39.4,41.8,53.2,45.4,42.9,50,50.6,37.7,51.7,51.5,44.3,29,42.2,47.3,49,37.6,44.2,41.2,48.5,40.1,39.4,51.9,43.6,45.8,43.7,44.3,45,51.8,49.7,36.7,35.7,50.9,29.9,35.6,45.2,47.1,48.7,37,50,45.7,38.9,42.4,41.3,42.1,46.9,50.1,39.6,49.8,37.9,39.4,44.5,45,41.8,27.8,43.2,48.8,31.8,41.6,47.4,31.5,37.9,41.1,47.4,52.1,53.9,47.9,51,41.9,48.2,36.1,36.3,46.7,45,38.2,49.7],"z":[122.02,108.67,130.44,123.38,121.49,125.67,122.88,109.64,118.21,118.39,114.15,138.5,110.37,114.68,112.17,107.08,117.89,116.99,136.83,117.26,108.29,137.64,133.58,117.47,103.43,115.11,118.28,123.04,117.13,124.88,124.31,106.24,109.57,111.85,114.41,116.47,120.14,86.679,114.97,133.67,108.27,130.27,123.85,119.68,122.01,102.78,119.07,137.64,121.08,120.46,111.92,119.66,122.56,124.69,115.9,117.4,142.26,95.158,144.52,123.71,131,101.69,113.51,116.94,124.65,101.63,125.19,106.66,120.73,127.18,123.6,131.91,131.07,112.84,122.83,109.61,105.46,130.17,120,119.4,130.02,126.54,123.85,133.75,130.23,122.64,112.41,112.83,133.11,102.27,119.73,98.563,131.23,129.48,120.01,119.22,92.651,126.39,95.883,94.488,120.88,109.57,124.53,127.45,129.44,112.4,124.94,121.11,129.09,125.9,129.88,118.55,118.38,131.09,96.64,114.45,106.02,115.79,127.14,129.08,108.84,114.82,121.51,116.79,123.32,124.4,109.77,118.05,96.547,132.6,113.08,106.76,117.21,104.28,119.77,113.83,143.96,132.52,92.534,124.85,104.62,117.19,121.81,128.23,117,137.34,114.71,123.6,127.31,120.94,129.69,123.56,111.37,100.14,140.44,113.35,121.14,126.19,121.25,110.05,114.86,118.63,136.27,110.53,128.63,123.39,117.43,108.37,116.87,119.05,103.84,122.11,110.95,118.96,123.7,110.05,116.83,123.85,99.806,131.4,146.67,130.55,116.53,124.71,108.6,140.66,130.35,128.66,110.37,123.52,113.86,116.57,113.73,108.72,110,117.69,101.31,126.68,118.7,127.69],"type":"scatter3d","mode":"markers","color":"black","size":5,"name":"Data points","inherit":true},"af57d0a7948.2":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[71.9963276551667,86.9979138275833,101.9995,117.001086172417,132.002672344833],"y":[39.0004212590605,39.0004212590605,39.0004212590605,39.0004212590605,39.0004212590605],"z":[111.405887918904,116.333243840369,121.260599761834,126.187955683299,131.115311604764],"type":"scatter3d","mode":"lines","line":{"color":"black","width":10,"dash":"dash"},"name":"-1 SD line","inherit":true},"af57d0a7948.3":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[71.9963276551667,86.9979138275833,101.9995,117.001086172417,132.002672344833],"y":[50.9955787409395,50.9955787409395,50.9955787409395,50.9955787409395,50.9955787409395],"z":[106.953878395236,111.881234316701,116.808590238166,121.735946159631,126.663302081096],"type":"scatter3d","mode":"lines","line":{"color":"black","width":10,"dash":"dash"},"name":"+1 SD line","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"iq","range":[72,132],"ticktype":"array","tickvals":[72,87,102,117,132]},"yaxis":{"title":"age","range":[33,57],"ticktype":"array","tickvals":[33,39,45,51,57]},"zaxis":{"title":"video_game"},"aspectmode":"cube","aspectratio":{"x":1,"y":1,"z":0.95},"showlegend":true},"hovermode":"closest","showlegend":true,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"showSendToCloud":false},"data":[{"colorbar":{"title":"","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(209,209,209,1)"],["0.0416666666666667","rgba(203,203,203,1)"],["0.0833333333333333","rgba(198,198,198,1)"],["0.125","rgba(192,192,192,1)"],["0.166666666666667","rgba(187,187,187,1)"],["0.208333333333333","rgba(182,182,182,1)"],["0.25","rgba(176,176,176,1)"],["0.291666666666667","rgba(171,171,171,1)"],["0.333333333333333","rgba(166,166,166,1)"],["0.375","rgba(160,160,160,1)"],["0.416666666666667","rgba(155,155,155,1)"],["0.458333333333333","rgba(150,150,150,1)"],["0.5","rgba(145,145,145,1)"],["0.541666666666667","rgba(139,139,139,1)"],["0.583333333333333","rgba(134,134,134,1)"],["0.625","rgba(129,129,129,1)"],["0.666666666666667","rgba(124,124,124,1)"],["0.708333333333333","rgba(119,119,119,1)"],["0.75","rgba(114,114,114,1)"],["0.791666666666667","rgba(109,109,109,1)"],["0.833333333333333","rgba(104,104,104,1)"],["0.875","rgba(99,99,99,1)"],["0.916666666666667","rgba(95,95,95,1)"],["0.958333333333333","rgba(90,90,90,1)"],["1","rgba(85,85,85,1)"]],"showscale":true,"z":[[113.631892680739,118.559248602204,123.486604523669,128.413960445134,133.341316366599],[111.405887918904,116.333243840369,121.260599761834,126.187955683299,131.115311604764],[109.17988315707,114.107239078535,119.034595,123.961950921465,128.88930684293],[106.953878395236,111.881234316701,116.808590238166,121.735946159631,126.663302081096],[104.727873633401,109.655229554866,114.582585476331,119.509941397796,124.437297319261]],"type":"surface","x":[72,87,102,117,132],"y":[33,39,45,51,57],"opacity":0.9,"frame":null},{"x":[107.6,100.9,89,90.3,97.1,108.1,120.4,90.5,118.9,107.9,114.6,117.8,85.8,77.3,98.7,104.4,96.6,92.4,110.4,84.7,86.6,112.8,113,99.5,98.7,100.2,126.8,109,125.8,95.6,113,88.4,103.1,104.7,67.1,80.8,81.9,83.3,119.4,107.8,105.1,117.6,90.2,107.7,93.1,111.1,101.1,138.6,97.1,111,95.4,73.3,90.2,114.5,98.5,84.5,109.9,87.4,106.4,118.9,101.3,114.4,82.2,102.9,84.1,78.4,97.7,98.1,116.2,111.9,99.7,122.7,121.8,98.7,112.5,100.5,77.5,120.6,93,93.3,112.2,102.8,103.3,120.9,124.7,101.4,101.3,93.6,115.3,95.4,93.3,90.3,119.1,110.6,126.9,93.1,71.6,82.2,97.4,95.7,101.8,107.3,108.3,111.9,110.9,102.9,107.4,142.7,92.5,80.3,93.4,85.7,94.9,108.1,81.9,105.9,97.5,109.8,132.8,126.4,75.8,65.4,116.2,73.9,105.7,106.1,126.3,99.9,77.7,115,100.7,93.5,91.6,73.3,106.6,78.7,105.4,130.5,76,103.9,103.7,96,118.2,103.5,114.4,124.1,95.4,92.7,92.9,99.2,103.3,99.1,109.9,83.4,133.7,89.8,116.9,99.5,105.7,108.7,92.6,95.1,142.8,108.8,102.6,114,95.3,103.7,120.1,78.8,104.9,124.6,96.3,126.3,107.2,77.4,68.8,100.4,97.5,115.2,127.9,101.9,101.8,82.5,83.1,106,117.3,108.5,78.8,104.8,88,90.3,109.9,95.6,100.5,113.1,91,115.1,111,124.6],"y":[41.1,55.1,43.9,46.7,42.1,41.2,41.7,48.3,48.2,48.1,40.6,51.9,47.3,43.8,49.5,43.9,45.2,50.3,40.7,46.5,48.8,45.6,41.8,55.4,49.5,48.4,49.9,40.3,49.1,40.6,38.2,47.7,44.7,42.2,45.9,42,51.6,43.8,50.9,52.6,38.6,43.1,41.3,46.6,49.9,64.8,41.1,43.1,45.4,42.1,53.9,48.7,37.5,40.3,52.4,57.4,44,47.4,35,43.3,49,45.8,52.2,50.4,47.4,54.5,45.1,51.8,46,45.9,46.2,45.3,35.6,42.2,43.7,54.6,56.2,53.9,29.7,39.1,41.3,48.9,50.3,39.1,33.9,53.6,48.3,46.2,53.6,42.7,46.9,37.2,44.8,40.6,51,48.2,55.7,41.2,41.1,52.1,41.9,49.1,43.1,36.4,42.2,51.6,48.5,45.3,44,48.4,41.8,37.5,46.2,43.8,60.9,49.8,54.7,47.4,40.3,34.3,36.1,46,46,40.4,41.1,39.4,41.8,53.2,45.4,42.9,50,50.6,37.7,51.7,51.5,44.3,29,42.2,47.3,49,37.6,44.2,41.2,48.5,40.1,39.4,51.9,43.6,45.8,43.7,44.3,45,51.8,49.7,36.7,35.7,50.9,29.9,35.6,45.2,47.1,48.7,37,50,45.7,38.9,42.4,41.3,42.1,46.9,50.1,39.6,49.8,37.9,39.4,44.5,45,41.8,27.8,43.2,48.8,31.8,41.6,47.4,31.5,37.9,41.1,47.4,52.1,53.9,47.9,51,41.9,48.2,36.1,36.3,46.7,45,38.2,49.7],"z":[122.02,108.67,130.44,123.38,121.49,125.67,122.88,109.64,118.21,118.39,114.15,138.5,110.37,114.68,112.17,107.08,117.89,116.99,136.83,117.26,108.29,137.64,133.58,117.47,103.43,115.11,118.28,123.04,117.13,124.88,124.31,106.24,109.57,111.85,114.41,116.47,120.14,86.679,114.97,133.67,108.27,130.27,123.85,119.68,122.01,102.78,119.07,137.64,121.08,120.46,111.92,119.66,122.56,124.69,115.9,117.4,142.26,95.158,144.52,123.71,131,101.69,113.51,116.94,124.65,101.63,125.19,106.66,120.73,127.18,123.6,131.91,131.07,112.84,122.83,109.61,105.46,130.17,120,119.4,130.02,126.54,123.85,133.75,130.23,122.64,112.41,112.83,133.11,102.27,119.73,98.563,131.23,129.48,120.01,119.22,92.651,126.39,95.883,94.488,120.88,109.57,124.53,127.45,129.44,112.4,124.94,121.11,129.09,125.9,129.88,118.55,118.38,131.09,96.64,114.45,106.02,115.79,127.14,129.08,108.84,114.82,121.51,116.79,123.32,124.4,109.77,118.05,96.547,132.6,113.08,106.76,117.21,104.28,119.77,113.83,143.96,132.52,92.534,124.85,104.62,117.19,121.81,128.23,117,137.34,114.71,123.6,127.31,120.94,129.69,123.56,111.37,100.14,140.44,113.35,121.14,126.19,121.25,110.05,114.86,118.63,136.27,110.53,128.63,123.39,117.43,108.37,116.87,119.05,103.84,122.11,110.95,118.96,123.7,110.05,116.83,123.85,99.806,131.4,146.67,130.55,116.53,124.71,108.6,140.66,130.35,128.66,110.37,123.52,113.86,116.57,113.73,108.72,110,117.69,101.31,126.68,118.7,127.69],"type":"scatter3d","mode":"markers","name":"Data points","marker":{"color":"rgba(145,145,145,1)","size":[55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55],"sizemode":"area","line":{"color":"rgba(145,145,145,1)"}},"textfont":{"color":"rgba(145,145,145,1)","size":55},"error_y":{"color":"rgba(145,145,145,1)","width":55},"error_x":{"color":"rgba(145,145,145,1)","width":55},"line":{"color":"rgba(145,145,145,1)","width":55},"frame":null},{"x":[71.9963276551667,86.9979138275833,101.9995,117.001086172417,132.002672344833],"y":[39.0004212590605,39.0004212590605,39.0004212590605,39.0004212590605,39.0004212590605],"z":[111.405887918904,116.333243840369,121.260599761834,126.187955683299,131.115311604764],"type":"scatter3d","mode":"lines","line":{"color":"black","width":10,"dash":"dash"},"name":"-1 SD line","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"frame":null},{"x":[71.9963276551667,86.9979138275833,101.9995,117.001086172417,132.002672344833],"y":[50.9955787409395,50.9955787409395,50.9955787409395,50.9955787409395,50.9955787409395],"z":[106.953878395236,111.881234316701,116.808590238166,121.735946159631,126.663302081096],"type":"scatter3d","mode":"lines","line":{"color":"black","width":10,"dash":"dash"},"name":"+1 SD line","marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-7d58abce2053a2454929">{"x":{"visdat":{"cee37c079f8":["function () ","plotlyVisDat"]},"cur_data":"cee37c079f8","attrs":{"cee37c079f8":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"z":[[113.631892680739,118.559248602204,123.486604523669,128.413960445134,133.341316366599],[111.405887918904,116.333243840369,121.260599761834,126.187955683299,131.115311604764],[109.17988315707,114.107239078535,119.034595,123.961950921465,128.88930684293],[106.953878395236,111.881234316701,116.808590238166,121.735946159631,126.663302081096],[104.727873633401,109.655229554866,114.582585476331,119.509941397796,124.437297319261]],"type":"surface","x":[72,87,102,117,132],"y":[33,39,45,51,57],"opacity":0.9,"colors":["#d1d1d1","#555555"],"inherit":true},"cee37c079f8.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[107.6,100.9,89,90.3,97.1,108.1,120.4,90.5,118.9,107.9,114.6,117.8,85.8,77.3,98.7,104.4,96.6,92.4,110.4,84.7,86.6,112.8,113,99.5,98.7,100.2,126.8,109,125.8,95.6,113,88.4,103.1,104.7,67.1,80.8,81.9,83.3,119.4,107.8,105.1,117.6,90.2,107.7,93.1,111.1,101.1,138.6,97.1,111,95.4,73.3,90.2,114.5,98.5,84.5,109.9,87.4,106.4,118.9,101.3,114.4,82.2,102.9,84.1,78.4,97.7,98.1,116.2,111.9,99.7,122.7,121.8,98.7,112.5,100.5,77.5,120.6,93,93.3,112.2,102.8,103.3,120.9,124.7,101.4,101.3,93.6,115.3,95.4,93.3,90.3,119.1,110.6,126.9,93.1,71.6,82.2,97.4,95.7,101.8,107.3,108.3,111.9,110.9,102.9,107.4,142.7,92.5,80.3,93.4,85.7,94.9,108.1,81.9,105.9,97.5,109.8,132.8,126.4,75.8,65.4,116.2,73.9,105.7,106.1,126.3,99.9,77.7,115,100.7,93.5,91.6,73.3,106.6,78.7,105.4,130.5,76,103.9,103.7,96,118.2,103.5,114.4,124.1,95.4,92.7,92.9,99.2,103.3,99.1,109.9,83.4,133.7,89.8,116.9,99.5,105.7,108.7,92.6,95.1,142.8,108.8,102.6,114,95.3,103.7,120.1,78.8,104.9,124.6,96.3,126.3,107.2,77.4,68.8,100.4,97.5,115.2,127.9,101.9,101.8,82.5,83.1,106,117.3,108.5,78.8,104.8,88,90.3,109.9,95.6,100.5,113.1,91,115.1,111,124.6],"y":[41.1,55.1,43.9,46.7,42.1,41.2,41.7,48.3,48.2,48.1,40.6,51.9,47.3,43.8,49.5,43.9,45.2,50.3,40.7,46.5,48.8,45.6,41.8,55.4,49.5,48.4,49.9,40.3,49.1,40.6,38.2,47.7,44.7,42.2,45.9,42,51.6,43.8,50.9,52.6,38.6,43.1,41.3,46.6,49.9,64.8,41.1,43.1,45.4,42.1,53.9,48.7,37.5,40.3,52.4,57.4,44,47.4,35,43.3,49,45.8,52.2,50.4,47.4,54.5,45.1,51.8,46,45.9,46.2,45.3,35.6,42.2,43.7,54.6,56.2,53.9,29.7,39.1,41.3,48.9,50.3,39.1,33.9,53.6,48.3,46.2,53.6,42.7,46.9,37.2,44.8,40.6,51,48.2,55.7,41.2,41.1,52.1,41.9,49.1,43.1,36.4,42.2,51.6,48.5,45.3,44,48.4,41.8,37.5,46.2,43.8,60.9,49.8,54.7,47.4,40.3,34.3,36.1,46,46,40.4,41.1,39.4,41.8,53.2,45.4,42.9,50,50.6,37.7,51.7,51.5,44.3,29,42.2,47.3,49,37.6,44.2,41.2,48.5,40.1,39.4,51.9,43.6,45.8,43.7,44.3,45,51.8,49.7,36.7,35.7,50.9,29.9,35.6,45.2,47.1,48.7,37,50,45.7,38.9,42.4,41.3,42.1,46.9,50.1,39.6,49.8,37.9,39.4,44.5,45,41.8,27.8,43.2,48.8,31.8,41.6,47.4,31.5,37.9,41.1,47.4,52.1,53.9,47.9,51,41.9,48.2,36.1,36.3,46.7,45,38.2,49.7],"z":[122.02,108.67,130.44,123.38,121.49,125.67,122.88,109.64,118.21,118.39,114.15,138.5,110.37,114.68,112.17,107.08,117.89,116.99,136.83,117.26,108.29,137.64,133.58,117.47,103.43,115.11,118.28,123.04,117.13,124.88,124.31,106.24,109.57,111.85,114.41,116.47,120.14,86.679,114.97,133.67,108.27,130.27,123.85,119.68,122.01,102.78,119.07,137.64,121.08,120.46,111.92,119.66,122.56,124.69,115.9,117.4,142.26,95.158,144.52,123.71,131,101.69,113.51,116.94,124.65,101.63,125.19,106.66,120.73,127.18,123.6,131.91,131.07,112.84,122.83,109.61,105.46,130.17,120,119.4,130.02,126.54,123.85,133.75,130.23,122.64,112.41,112.83,133.11,102.27,119.73,98.563,131.23,129.48,120.01,119.22,92.651,126.39,95.883,94.488,120.88,109.57,124.53,127.45,129.44,112.4,124.94,121.11,129.09,125.9,129.88,118.55,118.38,131.09,96.64,114.45,106.02,115.79,127.14,129.08,108.84,114.82,121.51,116.79,123.32,124.4,109.77,118.05,96.547,132.6,113.08,106.76,117.21,104.28,119.77,113.83,143.96,132.52,92.534,124.85,104.62,117.19,121.81,128.23,117,137.34,114.71,123.6,127.31,120.94,129.69,123.56,111.37,100.14,140.44,113.35,121.14,126.19,121.25,110.05,114.86,118.63,136.27,110.53,128.63,123.39,117.43,108.37,116.87,119.05,103.84,122.11,110.95,118.96,123.7,110.05,116.83,123.85,99.806,131.4,146.67,130.55,116.53,124.71,108.6,140.66,130.35,128.66,110.37,123.52,113.86,116.57,113.73,108.72,110,117.69,101.31,126.68,118.7,127.69],"type":"scatter3d","mode":"markers","color":"black","size":5,"name":"Data points","inherit":true},"cee37c079f8.2":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[71.9963276551667,86.9979138275833,101.9995,117.001086172417,132.002672344833],"y":[39.0004212590605,39.0004212590605,39.0004212590605,39.0004212590605,39.0004212590605],"z":[111.405887918904,116.333243840369,121.260599761834,126.187955683299,131.115311604764],"type":"scatter3d","mode":"lines","line":{"color":"black","width":10,"dash":"dash"},"name":"-1 SD line","inherit":true},"cee37c079f8.3":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[71.9963276551667,86.9979138275833,101.9995,117.001086172417,132.002672344833],"y":[50.9955787409395,50.9955787409395,50.9955787409395,50.9955787409395,50.9955787409395],"z":[106.953878395236,111.881234316701,116.808590238166,121.735946159631,126.663302081096],"type":"scatter3d","mode":"lines","line":{"color":"black","width":10,"dash":"dash"},"name":"+1 SD line","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"iq","range":[72,132],"ticktype":"array","tickvals":[72,87,102,117,132]},"yaxis":{"title":"age","range":[33,57],"ticktype":"array","tickvals":[33,39,45,51,57]},"zaxis":{"title":"video_game"},"aspectmode":"cube","aspectratio":{"x":1,"y":1,"z":0.95},"showlegend":true},"hovermode":"closest","showlegend":true,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"showSendToCloud":false},"data":[{"colorbar":{"title":"","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(209,209,209,1)"],["0.0416666666666667","rgba(203,203,203,1)"],["0.0833333333333333","rgba(198,198,198,1)"],["0.125","rgba(192,192,192,1)"],["0.166666666666667","rgba(187,187,187,1)"],["0.208333333333333","rgba(182,182,182,1)"],["0.25","rgba(176,176,176,1)"],["0.291666666666667","rgba(171,171,171,1)"],["0.333333333333333","rgba(166,166,166,1)"],["0.375","rgba(160,160,160,1)"],["0.416666666666667","rgba(155,155,155,1)"],["0.458333333333333","rgba(150,150,150,1)"],["0.5","rgba(145,145,145,1)"],["0.541666666666667","rgba(139,139,139,1)"],["0.583333333333333","rgba(134,134,134,1)"],["0.625","rgba(129,129,129,1)"],["0.666666666666667","rgba(124,124,124,1)"],["0.708333333333333","rgba(119,119,119,1)"],["0.75","rgba(114,114,114,1)"],["0.791666666666667","rgba(109,109,109,1)"],["0.833333333333333","rgba(104,104,104,1)"],["0.875","rgba(99,99,99,1)"],["0.916666666666667","rgba(95,95,95,1)"],["0.958333333333333","rgba(90,90,90,1)"],["1","rgba(85,85,85,1)"]],"showscale":true,"z":[[113.631892680739,118.559248602204,123.486604523669,128.413960445134,133.341316366599],[111.405887918904,116.333243840369,121.260599761834,126.187955683299,131.115311604764],[109.17988315707,114.107239078535,119.034595,123.961950921465,128.88930684293],[106.953878395236,111.881234316701,116.808590238166,121.735946159631,126.663302081096],[104.727873633401,109.655229554866,114.582585476331,119.509941397796,124.437297319261]],"type":"surface","x":[72,87,102,117,132],"y":[33,39,45,51,57],"opacity":0.9,"frame":null},{"x":[107.6,100.9,89,90.3,97.1,108.1,120.4,90.5,118.9,107.9,114.6,117.8,85.8,77.3,98.7,104.4,96.6,92.4,110.4,84.7,86.6,112.8,113,99.5,98.7,100.2,126.8,109,125.8,95.6,113,88.4,103.1,104.7,67.1,80.8,81.9,83.3,119.4,107.8,105.1,117.6,90.2,107.7,93.1,111.1,101.1,138.6,97.1,111,95.4,73.3,90.2,114.5,98.5,84.5,109.9,87.4,106.4,118.9,101.3,114.4,82.2,102.9,84.1,78.4,97.7,98.1,116.2,111.9,99.7,122.7,121.8,98.7,112.5,100.5,77.5,120.6,93,93.3,112.2,102.8,103.3,120.9,124.7,101.4,101.3,93.6,115.3,95.4,93.3,90.3,119.1,110.6,126.9,93.1,71.6,82.2,97.4,95.7,101.8,107.3,108.3,111.9,110.9,102.9,107.4,142.7,92.5,80.3,93.4,85.7,94.9,108.1,81.9,105.9,97.5,109.8,132.8,126.4,75.8,65.4,116.2,73.9,105.7,106.1,126.3,99.9,77.7,115,100.7,93.5,91.6,73.3,106.6,78.7,105.4,130.5,76,103.9,103.7,96,118.2,103.5,114.4,124.1,95.4,92.7,92.9,99.2,103.3,99.1,109.9,83.4,133.7,89.8,116.9,99.5,105.7,108.7,92.6,95.1,142.8,108.8,102.6,114,95.3,103.7,120.1,78.8,104.9,124.6,96.3,126.3,107.2,77.4,68.8,100.4,97.5,115.2,127.9,101.9,101.8,82.5,83.1,106,117.3,108.5,78.8,104.8,88,90.3,109.9,95.6,100.5,113.1,91,115.1,111,124.6],"y":[41.1,55.1,43.9,46.7,42.1,41.2,41.7,48.3,48.2,48.1,40.6,51.9,47.3,43.8,49.5,43.9,45.2,50.3,40.7,46.5,48.8,45.6,41.8,55.4,49.5,48.4,49.9,40.3,49.1,40.6,38.2,47.7,44.7,42.2,45.9,42,51.6,43.8,50.9,52.6,38.6,43.1,41.3,46.6,49.9,64.8,41.1,43.1,45.4,42.1,53.9,48.7,37.5,40.3,52.4,57.4,44,47.4,35,43.3,49,45.8,52.2,50.4,47.4,54.5,45.1,51.8,46,45.9,46.2,45.3,35.6,42.2,43.7,54.6,56.2,53.9,29.7,39.1,41.3,48.9,50.3,39.1,33.9,53.6,48.3,46.2,53.6,42.7,46.9,37.2,44.8,40.6,51,48.2,55.7,41.2,41.1,52.1,41.9,49.1,43.1,36.4,42.2,51.6,48.5,45.3,44,48.4,41.8,37.5,46.2,43.8,60.9,49.8,54.7,47.4,40.3,34.3,36.1,46,46,40.4,41.1,39.4,41.8,53.2,45.4,42.9,50,50.6,37.7,51.7,51.5,44.3,29,42.2,47.3,49,37.6,44.2,41.2,48.5,40.1,39.4,51.9,43.6,45.8,43.7,44.3,45,51.8,49.7,36.7,35.7,50.9,29.9,35.6,45.2,47.1,48.7,37,50,45.7,38.9,42.4,41.3,42.1,46.9,50.1,39.6,49.8,37.9,39.4,44.5,45,41.8,27.8,43.2,48.8,31.8,41.6,47.4,31.5,37.9,41.1,47.4,52.1,53.9,47.9,51,41.9,48.2,36.1,36.3,46.7,45,38.2,49.7],"z":[122.02,108.67,130.44,123.38,121.49,125.67,122.88,109.64,118.21,118.39,114.15,138.5,110.37,114.68,112.17,107.08,117.89,116.99,136.83,117.26,108.29,137.64,133.58,117.47,103.43,115.11,118.28,123.04,117.13,124.88,124.31,106.24,109.57,111.85,114.41,116.47,120.14,86.679,114.97,133.67,108.27,130.27,123.85,119.68,122.01,102.78,119.07,137.64,121.08,120.46,111.92,119.66,122.56,124.69,115.9,117.4,142.26,95.158,144.52,123.71,131,101.69,113.51,116.94,124.65,101.63,125.19,106.66,120.73,127.18,123.6,131.91,131.07,112.84,122.83,109.61,105.46,130.17,120,119.4,130.02,126.54,123.85,133.75,130.23,122.64,112.41,112.83,133.11,102.27,119.73,98.563,131.23,129.48,120.01,119.22,92.651,126.39,95.883,94.488,120.88,109.57,124.53,127.45,129.44,112.4,124.94,121.11,129.09,125.9,129.88,118.55,118.38,131.09,96.64,114.45,106.02,115.79,127.14,129.08,108.84,114.82,121.51,116.79,123.32,124.4,109.77,118.05,96.547,132.6,113.08,106.76,117.21,104.28,119.77,113.83,143.96,132.52,92.534,124.85,104.62,117.19,121.81,128.23,117,137.34,114.71,123.6,127.31,120.94,129.69,123.56,111.37,100.14,140.44,113.35,121.14,126.19,121.25,110.05,114.86,118.63,136.27,110.53,128.63,123.39,117.43,108.37,116.87,119.05,103.84,122.11,110.95,118.96,123.7,110.05,116.83,123.85,99.806,131.4,146.67,130.55,116.53,124.71,108.6,140.66,130.35,128.66,110.37,123.52,113.86,116.57,113.73,108.72,110,117.69,101.31,126.68,118.7,127.69],"type":"scatter3d","mode":"markers","name":"Data points","marker":{"color":"rgba(145,145,145,1)","size":[55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55],"sizemode":"area","line":{"color":"rgba(145,145,145,1)"}},"textfont":{"color":"rgba(145,145,145,1)","size":55},"error_y":{"color":"rgba(145,145,145,1)","width":55},"error_x":{"color":"rgba(145,145,145,1)","width":55},"line":{"color":"rgba(145,145,145,1)","width":55},"frame":null},{"x":[71.9963276551667,86.9979138275833,101.9995,117.001086172417,132.002672344833],"y":[39.0004212590605,39.0004212590605,39.0004212590605,39.0004212590605,39.0004212590605],"z":[111.405887918904,116.333243840369,121.260599761834,126.187955683299,131.115311604764],"type":"scatter3d","mode":"lines","line":{"color":"black","width":10,"dash":"dash"},"name":"-1 SD line","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"frame":null},{"x":[71.9963276551667,86.9979138275833,101.9995,117.001086172417,132.002672344833],"y":[50.9955787409395,50.9955787409395,50.9955787409395,50.9955787409395,50.9955787409395],"z":[106.953878395236,111.881234316701,116.808590238166,121.735946159631,126.663302081096],"type":"scatter3d","mode":"lines","line":{"color":"black","width":10,"dash":"dash"},"name":"+1 SD line","marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+
 
 </div>
 </div>
@@ -1017,7 +830,7 @@ Thus, we find: <span class="math inline">\(\widehat{Y_{iq}} = 124.763 - 0.506(ag
         </div>
       </div>
 <a href="regression-and-correlation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sample-size-for-multiple-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -1048,7 +861,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-crc/edit/master/16-multiple_regression.Rmd",
+"link": "https://github.com/yihui/bookdown-crc/edit/master/04-multiple_regression.Rmd",
 "text": "Edit"
 },
 "history": {

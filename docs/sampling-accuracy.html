@@ -4,35 +4,35 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Sampling Accuracy | Welcome!</title>
-  <meta name="description" content="Course notes for PSYC 6060" />
+  <title>Chapter 2 Sampling Accuracy | Welcome!</title>
+  <meta name="description" content="Course notes for PSYC 3250" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Sampling Accuracy | Welcome!" />
+  <meta property="og:title" content="Chapter 2 Sampling Accuracy | Welcome!" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Course notes for PSYC 6060" />
-  <meta name="github-repo" content="dstanley4/psyc6060bookdown" />
+  <meta property="og:description" content="Course notes for PSYC 3250" />
+  <meta name="github-repo" content="dstanley4/psyc3250bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Sampling Accuracy | Welcome!" />
+  <meta name="twitter:title" content="Chapter 2 Sampling Accuracy | Welcome!" />
   
-  <meta name="twitter:description" content="Course notes for PSYC 6060" />
+  <meta name="twitter:description" content="Course notes for PSYC 3250" />
   
 
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2020-12-13" />
+<meta name="date" content="2020-12-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="graphing.html"/>
-<link rel="next" href="sampling-precision.html"/>
+<link rel="prev" href="populations.html"/>
+<link rel="next" href="regression-and-correlation.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -145,409 +145,216 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course:</a></li>
 <li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>1.3</b> Create an account at R Studio Cloud</a></li>
-<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>1.4</b> Join the class workspace</a></li>
-<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
-<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
-<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
-</ul></li>
-<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
-<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
-<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
-<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
-<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
-</ul></li>
-<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
-<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
-</ul></li>
-<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
-<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
-<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
-<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
-<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
-<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
-</ul></li>
-<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
-<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
-<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
-<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
-</ul></li>
-<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
-<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
-<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
-</ul></li>
-<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.12</b> That’s it!</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
-<li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
-<li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
-<li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
-<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
-<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
-<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
-<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
-<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
-</ul></li>
-<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
-<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
-<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
-<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
-</ul></li>
-<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
-<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
-<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
-<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv() and data frames</a></li>
-<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv() and tibbles</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="populations.html"><a href="populations.html"><i class="fa fa-check"></i><b>3</b> Populations</a><ul>
-<li class="chapter" data-level="3.1" data-path="populations.html"><a href="populations.html#notation"><i class="fa fa-check"></i><b>3.1</b> Notation</a></li>
-<li class="chapter" data-level="3.2" data-path="populations.html"><a href="populations.html#population-vs-samples"><i class="fa fa-check"></i><b>3.2</b> Population vs samples</a></li>
-<li class="chapter" data-level="3.3" data-path="populations.html"><a href="populations.html#a-small-population"><i class="fa fa-check"></i><b>3.3</b> A small population</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="populations.html"><a href="populations.html#mean-mu"><i class="fa fa-check"></i><b>3.3.1</b> Mean (<span class="math inline">\(\mu\)</span>)</a></li>
-<li class="chapter" data-level="3.3.2" data-path="populations.html"><a href="populations.html#variance-sigma2"><i class="fa fa-check"></i><b>3.3.2</b> Variance (<span class="math inline">\(\sigma^2\)</span>)</a></li>
-<li class="chapter" data-level="3.3.3" data-path="populations.html"><a href="populations.html#standard-deviation-sigma"><i class="fa fa-check"></i><b>3.3.3</b> Standard Deviation (<span class="math inline">\(\sigma\)</span>)</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="populations.html"><a href="populations.html#visualizing-populations"><i class="fa fa-check"></i><b>3.4</b> Visualizing populations</a></li>
-<li class="chapter" data-level="3.5" data-path="populations.html"><a href="populations.html#comparisons-same-sigma"><i class="fa fa-check"></i><b>3.5</b> Comparisons: Same <span class="math inline">\(\sigma\)</span></a><ul>
-<li class="chapter" data-level="3.5.1" data-path="populations.html"><a href="populations.html#standardized-units"><i class="fa fa-check"></i><b>3.5.1</b> Standardized units</a></li>
-<li class="chapter" data-level="3.5.2" data-path="populations.html"><a href="populations.html#cohens-d-units"><i class="fa fa-check"></i><b>3.5.2</b> Cohen’s <span class="math inline">\(d\)</span> units</a></li>
-<li class="chapter" data-level="3.5.3" data-path="populations.html"><a href="populations.html#cohens-d-advantages"><i class="fa fa-check"></i><b>3.5.3</b> Cohen’s <span class="math inline">\(d\)</span> advantages</a></li>
-<li class="chapter" data-level="3.5.4" data-path="populations.html"><a href="populations.html#cohens-d-caveats"><i class="fa fa-check"></i><b>3.5.4</b> Cohen’s <span class="math inline">\(d\)</span> caveats</a></li>
-</ul></li>
-<li class="chapter" data-level="3.6" data-path="populations.html"><a href="populations.html#comparisons-different-sigma"><i class="fa fa-check"></i><b>3.6</b> Comparisons: Different <span class="math inline">\(\sigma\)</span></a></li>
-<li class="chapter" data-level="3.7" data-path="populations.html"><a href="populations.html#comparisons-repeated-measures"><i class="fa fa-check"></i><b>3.7</b> Comparisons: Repeated Measures</a></li>
-<li class="chapter" data-level="3.8" data-path="populations.html"><a href="populations.html#comparison-benchmarks"><i class="fa fa-check"></i><b>3.8</b> Comparison Benchmarks</a></li>
-<li class="chapter" data-level="3.9" data-path="populations.html"><a href="populations.html#population-relations"><i class="fa fa-check"></i><b>3.9</b> Population relations</a></li>
-<li class="chapter" data-level="3.10" data-path="populations.html"><a href="populations.html#relation-benchmarks"><i class="fa fa-check"></i><b>3.10</b> Relation benchmarks</a></li>
-<li class="chapter" data-level="3.11" data-path="populations.html"><a href="populations.html#key-points"><i class="fa fa-check"></i><b>3.11</b> Key points</a></li>
-<li class="chapter" data-level="3.12" data-path="populations.html"><a href="populations.html#minor-points"><i class="fa fa-check"></i><b>3.12</b> Minor Points</a></li>
-<li class="chapter" data-level="3.13" data-path="populations.html"><a href="populations.html#self-assessment"><i class="fa fa-check"></i><b>3.13</b> Self Assessment</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>4</b> Graphing</a><ul>
-<li class="chapter" data-level="4.1" data-path="graphing.html"><a href="graphing.html#required-1"><i class="fa fa-check"></i><b>4.1</b> Required</a></li>
-<li class="chapter" data-level="4.2" data-path="graphing.html"><a href="graphing.html#data"><i class="fa fa-check"></i><b>4.2</b> Data</a></li>
-<li class="chapter" data-level="4.3" data-path="graphing.html"><a href="graphing.html#graph-basics"><i class="fa fa-check"></i><b>4.3</b> Graph basics</a></li>
-<li class="chapter" data-level="4.4" data-path="graphing.html"><a href="graphing.html#graphing-efficiently"><i class="fa fa-check"></i><b>4.4</b> Graphing efficiently</a></li>
-<li class="chapter" data-level="4.5" data-path="graphing.html"><a href="graphing.html#aesthetics"><i class="fa fa-check"></i><b>4.5</b> Aesthetics</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="graphing.html"><a href="graphing.html#fill-color"><i class="fa fa-check"></i><b>4.5.1</b> Fill color</a></li>
-<li class="chapter" data-level="4.5.2" data-path="graphing.html"><a href="graphing.html#overriding-aes"><i class="fa fa-check"></i><b>4.5.2</b> Overriding aes()</a></li>
-</ul></li>
-<li class="chapter" data-level="4.6" data-path="graphing.html"><a href="graphing.html#apa-style"><i class="fa fa-check"></i><b>4.6</b> APA style</a></li>
-<li class="chapter" data-level="4.7" data-path="graphing.html"><a href="graphing.html#axes"><i class="fa fa-check"></i><b>4.7</b> Axes</a><ul>
-<li class="chapter" data-level="4.7.1" data-path="graphing.html"><a href="graphing.html#range"><i class="fa fa-check"></i><b>4.7.1</b> Range</a></li>
-<li class="chapter" data-level="4.7.2" data-path="graphing.html"><a href="graphing.html#ticks"><i class="fa fa-check"></i><b>4.7.2</b> Ticks</a></li>
-<li class="chapter" data-level="4.7.3" data-path="graphing.html"><a href="graphing.html#labels"><i class="fa fa-check"></i><b>4.7.3</b> Labels</a></li>
-</ul></li>
-<li class="chapter" data-level="4.8" data-path="graphing.html"><a href="graphing.html#axis-values"><i class="fa fa-check"></i><b>4.8</b> Axis values</a><ul>
-<li class="chapter" data-level="4.8.1" data-path="graphing.html"><a href="graphing.html#text"><i class="fa fa-check"></i><b>4.8.1</b> Text</a></li>
-<li class="chapter" data-level="4.8.2" data-path="graphing.html"><a href="graphing.html#angle"><i class="fa fa-check"></i><b>4.8.2</b> Angle</a></li>
-<li class="chapter" data-level="4.8.3" data-path="graphing.html"><a href="graphing.html#alignment"><i class="fa fa-check"></i><b>4.8.3</b> Alignment</a></li>
-<li class="chapter" data-level="4.8.4" data-path="graphing.html"><a href="graphing.html#order"><i class="fa fa-check"></i><b>4.8.4</b> Order</a></li>
-<li class="chapter" data-level="4.8.5" data-path="graphing.html"><a href="graphing.html#legend-order"><i class="fa fa-check"></i><b>4.8.5</b> Legend order</a></li>
-</ul></li>
-<li class="chapter" data-level="4.9" data-path="graphing.html"><a href="graphing.html#custom-colours"><i class="fa fa-check"></i><b>4.9</b> Custom colours</a><ul>
-<li class="chapter" data-level="4.9.1" data-path="graphing.html"><a href="graphing.html#r-palette"><i class="fa fa-check"></i><b>4.9.1</b> R palette</a></li>
-<li class="chapter" data-level="4.9.2" data-path="graphing.html"><a href="graphing.html#hex-colours"><i class="fa fa-check"></i><b>4.9.2</b> Hex colours</a></li>
-</ul></li>
-<li class="chapter" data-level="4.10" data-path="graphing.html"><a href="graphing.html#emoji"><i class="fa fa-check"></i><b>4.10</b> Emoji</a></li>
-<li class="chapter" data-level="4.11" data-path="graphing.html"><a href="graphing.html#accessible-colors"><i class="fa fa-check"></i><b>4.11</b> Accessible Colors</a><ul>
-<li class="chapter" data-level="4.11.1" data-path="graphing.html"><a href="graphing.html#rcolorbrewer"><i class="fa fa-check"></i><b>4.11.1</b> RColorBrewer</a></li>
-<li class="chapter" data-level="4.11.2" data-path="graphing.html"><a href="graphing.html#avoid-color"><i class="fa fa-check"></i><b>4.11.2</b> Avoid color</a></li>
-</ul></li>
-<li class="chapter" data-level="4.12" data-path="graphing.html"><a href="graphing.html#saving"><i class="fa fa-check"></i><b>4.12</b> Saving</a><ul>
-<li class="chapter" data-level="4.12.1" data-path="graphing.html"><a href="graphing.html#mac"><i class="fa fa-check"></i><b>4.12.1</b> MAC</a></li>
-<li class="chapter" data-level="4.12.2" data-path="graphing.html"><a href="graphing.html#pc-or-mac"><i class="fa fa-check"></i><b>4.12.2</b> PC or MAC</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html"><i class="fa fa-check"></i><b>5</b> Sampling Accuracy</a><ul>
-<li class="chapter" data-level="5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
-<li class="chapter" data-level="5.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#data-for-the-chapter"><i class="fa fa-check"></i><b>5.2</b> Data for the chapter</a></li>
-<li class="chapter" data-level="5.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#notation-1"><i class="fa fa-check"></i><b>5.3</b> Notation</a></li>
-<li class="chapter" data-level="5.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-mu"><i class="fa fa-check"></i><b>5.4</b> Estimating <span class="math inline">\(\mu\)</span></a><ul>
-<li class="chapter" data-level="5.4.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias"><i class="fa fa-check"></i><b>5.4.1</b> Assessing bias</a></li>
-</ul></li>
-<li class="chapter" data-level="5.5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma2"><i class="fa fa-check"></i><b>5.5</b> Estimating <span class="math inline">\(\sigma^2\)</span></a><ul>
-<li class="chapter" data-level="5.5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-1"><i class="fa fa-check"></i><b>5.5.1</b> Assessing bias</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma"><i class="fa fa-check"></i><b>5.6</b> Estimating <span class="math inline">\(\sigma\)</span></a></li>
-<li class="chapter" data-level="5.7" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-delta"><i class="fa fa-check"></i><b>5.7</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
-<li class="chapter" data-level="5.7.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#pooled-standard-deviation"><i class="fa fa-check"></i><b>5.7.1</b> Pooled standard deviation</a></li>
-<li class="chapter" data-level="5.7.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#calculating-d"><i class="fa fa-check"></i><b>5.7.2</b> Calculating <span class="math inline">\(d\)</span></a></li>
-<li class="chapter" data-level="5.7.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-2"><i class="fa fa-check"></i><b>5.7.3</b> Assessing bias</a></li>
-<li class="chapter" data-level="5.7.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#illustrating-variability"><i class="fa fa-check"></i><b>5.7.4</b> Illustrating variability</a></li>
-</ul></li>
-<li class="chapter" data-level="5.8" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-rho"><i class="fa fa-check"></i><b>5.8</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
-<li class="chapter" data-level="5.8.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-3"><i class="fa fa-check"></i><b>5.8.1</b> Assessing bias</a></li>
-</ul></li>
-<li class="chapter" data-level="5.9" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview-1"><i class="fa fa-check"></i><b>5.9</b> Overview</a></li>
-<li class="chapter" data-level="5.10" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#meta-analysis"><i class="fa fa-check"></i><b>5.10</b> Meta-analysis</a></li>
-<li class="chapter" data-level="5.11" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#a-joke"><i class="fa fa-check"></i><b>5.11</b> A joke</a></li>
-<li class="chapter" data-level="5.12" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#key-points-1"><i class="fa fa-check"></i><b>5.12</b> Key Points</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="sampling-precision.html"><a href="sampling-precision.html"><i class="fa fa-check"></i><b>6</b> Sampling Precision</a><ul>
-<li class="chapter" data-level="6.1" data-path="sampling-precision.html"><a href="sampling-precision.html#overview-2"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
-<li class="chapter" data-level="6.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-individuals"><i class="fa fa-check"></i><b>6.2</b> Population / Individuals</a></li>
-<li class="chapter" data-level="6.3" data-path="sampling-precision.html"><a href="sampling-precision.html#sampling-distribution"><i class="fa fa-check"></i><b>6.3</b> Sampling distribution</a></li>
-<li class="chapter" data-level="6.4" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-indices"><i class="fa fa-check"></i><b>6.4</b> Precision indices</a></li>
-<li class="chapter" data-level="6.5" data-path="sampling-precision.html"><a href="sampling-precision.html#a-short-cut"><i class="fa fa-check"></i><b>6.5</b> A short cut</a></li>
-<li class="chapter" data-level="6.6" data-path="sampling-precision.html"><a href="sampling-precision.html#estimates-of-precision"><i class="fa fa-check"></i><b>6.6</b> Estimates of precision</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="sampling-precision.html"><a href="sampling-precision.html#a-worked-example"><i class="fa fa-check"></i><b>6.6.1</b> A worked example</a></li>
-</ul></li>
-<li class="chapter" data-level="6.7" data-path="sampling-precision.html"><a href="sampling-precision.html#bias-of-precision-estimates"><i class="fa fa-check"></i><b>6.7</b> Bias of precision estimates</a></li>
-<li class="chapter" data-level="6.8" data-path="sampling-precision.html"><a href="sampling-precision.html#where-are-we"><i class="fa fa-check"></i><b>6.8</b> Where are we?</a></li>
-<li class="chapter" data-level="6.9" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-means-causes"><i class="fa fa-check"></i><b>6.9</b> Precision for means: Causes</a></li>
-<li class="chapter" data-level="6.10" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-d-values-causes"><i class="fa fa-check"></i><b>6.10</b> Precision for <span class="math inline">\(d\)</span>-values: Causes</a><ul>
-<li class="chapter" data-level="6.10.1" data-path="sampling-precision.html"><a href="sampling-precision.html#sample-size"><i class="fa fa-check"></i><b>6.10.1</b> Sample size</a></li>
-<li class="chapter" data-level="6.10.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-effect-size-delta"><i class="fa fa-check"></i><b>6.10.2</b> Population effect size (<span class="math inline">\(\delta\)</span>)</a></li>
-</ul></li>
-<li class="chapter" data-level="6.11" data-path="sampling-precision.html"><a href="sampling-precision.html#precision-for-sample-correlations-r-causes"><i class="fa fa-check"></i><b>6.11</b> Precision for sample correlations (<span class="math inline">\(r\)</span>): Causes</a><ul>
-<li class="chapter" data-level="6.11.1" data-path="sampling-precision.html"><a href="sampling-precision.html#sample-size-1"><i class="fa fa-check"></i><b>6.11.1</b> Sample size</a></li>
-<li class="chapter" data-level="6.11.2" data-path="sampling-precision.html"><a href="sampling-precision.html#population-effect-size-rho"><i class="fa fa-check"></i><b>6.11.2</b> Population effect size (<span class="math inline">\(\rho\)</span>)</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html"><i class="fa fa-check"></i><b>7</b> Effect sizes from publications</a><ul>
-<li class="chapter" data-level="7.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#required-2"><i class="fa fa-check"></i><b>7.1</b> Required</a></li>
-<li class="chapter" data-level="7.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#objective-1"><i class="fa fa-check"></i><b>7.2</b> Objective</a></li>
-<li class="chapter" data-level="7.3" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#estimating-delta-1"><i class="fa fa-check"></i><b>7.3</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
-<li class="chapter" data-level="7.3.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#independent-groups"><i class="fa fa-check"></i><b>7.3.1</b> Independent Groups</a></li>
-<li class="chapter" data-level="7.3.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#repeated-measures"><i class="fa fa-check"></i><b>7.3.2</b> Repeated Measures</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#estimating-rho-1"><i class="fa fa-check"></i><b>7.4</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
-<li class="chapter" data-level="7.4.1" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#a-single-correlation"><i class="fa fa-check"></i><b>7.4.1</b> A single correlation</a></li>
-<li class="chapter" data-level="7.4.2" data-path="effect-sizes-from-publications.html"><a href="effect-sizes-from-publications.html#difference-between-two-correlations"><i class="fa fa-check"></i><b>7.4.2</b> Difference between two correlations</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html"><i class="fa fa-check"></i><b>8</b> NHST and sample size</a><ul>
-<li class="chapter" data-level="8.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#required-3"><i class="fa fa-check"></i><b>8.1</b> Required</a></li>
-<li class="chapter" data-level="8.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#overview-3"><i class="fa fa-check"></i><b>8.2</b> Overview</a></li>
-<li class="chapter" data-level="8.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#goals"><i class="fa fa-check"></i><b>8.3</b> Goals</a></li>
-<li class="chapter" data-level="8.4" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#independent-groups-t-test"><i class="fa fa-check"></i><b>8.4</b> Independent groups <span class="math inline">\(t\)</span>-test</a><ul>
-<li class="chapter" data-level="8.4.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size"><i class="fa fa-check"></i><b>8.4.1</b> Population effect size</a></li>
-<li class="chapter" data-level="8.4.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size"><i class="fa fa-check"></i><b>8.4.2</b> Determining sample size</a></li>
-<li class="chapter" data-level="8.4.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant"><i class="fa fa-check"></i><b>8.4.3</b> What will be signficant?</a></li>
-</ul></li>
-<li class="chapter" data-level="8.5" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#repeated-measures-t-test"><i class="fa fa-check"></i><b>8.5</b> Repeated measures <span class="math inline">\(t\)</span>-test</a><ul>
-<li class="chapter" data-level="8.5.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size-1"><i class="fa fa-check"></i><b>8.5.1</b> Population effect size</a></li>
-<li class="chapter" data-level="8.5.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size-1"><i class="fa fa-check"></i><b>8.5.2</b> Determining sample size</a></li>
-<li class="chapter" data-level="8.5.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant-1"><i class="fa fa-check"></i><b>8.5.3</b> What will be signficant?</a></li>
-</ul></li>
-<li class="chapter" data-level="8.6" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#correlations"><i class="fa fa-check"></i><b>8.6</b> Correlations</a><ul>
-<li class="chapter" data-level="8.6.1" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#population-effect-size-2"><i class="fa fa-check"></i><b>8.6.1</b> Population effect size</a></li>
-<li class="chapter" data-level="8.6.2" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#determining-sample-size-2"><i class="fa fa-check"></i><b>8.6.2</b> Determining sample size</a></li>
-<li class="chapter" data-level="8.6.3" data-path="nhst-and-sample-size.html"><a href="nhst-and-sample-size.html#what-will-be-signficant-2"><i class="fa fa-check"></i><b>8.6.3</b> What will be signficant?</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html"><i class="fa fa-check"></i><b>9</b> Equivalence tests and sample size</a><ul>
-<li class="chapter" data-level="9.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#required-4"><i class="fa fa-check"></i><b>9.1</b> Required</a></li>
-<li class="chapter" data-level="9.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#interpreting-non-significant-findings"><i class="fa fa-check"></i><b>9.2</b> Interpreting non-significant findings</a></li>
-<li class="chapter" data-level="9.3" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#when-would-i-use-an-equivalence-test"><i class="fa fa-check"></i><b>9.3</b> When would I use an equivalence test?</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#t-test"><i class="fa fa-check"></i><b>9.3.1</b> <span class="math inline">\(t\)</span>-test</a></li>
-<li class="chapter" data-level="9.3.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#correlation"><i class="fa fa-check"></i><b>9.3.2</b> Correlation</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#possible-outcomes"><i class="fa fa-check"></i><b>9.4</b> Possible Outcomes</a></li>
-<li class="chapter" data-level="9.5" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#what-is-an-equivalence-test"><i class="fa fa-check"></i><b>9.5</b> What is an equivalence test</a></li>
-<li class="chapter" data-level="9.6" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#defining-a-zero-effect"><i class="fa fa-check"></i><b>9.6</b> Defining a zero effect</a></li>
-<li class="chapter" data-level="9.7" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence---repeated-measures"><i class="fa fa-check"></i><b>9.7</b> Equivalence - repeated measures</a><ul>
-<li class="chapter" data-level="9.7.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#raw-units"><i class="fa fa-check"></i><b>9.7.1</b> Raw units</a></li>
-<li class="chapter" data-level="9.7.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#standardized-units-1"><i class="fa fa-check"></i><b>9.7.2</b> Standardized units</a></li>
-</ul></li>
-<li class="chapter" data-level="9.8" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence---independent-groups"><i class="fa fa-check"></i><b>9.8</b> Equivalence - Independent groups</a><ul>
-<li class="chapter" data-level="9.8.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#raw-units-1"><i class="fa fa-check"></i><b>9.8.1</b> Raw units</a></li>
-<li class="chapter" data-level="9.8.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#standardized-units-2"><i class="fa fa-check"></i><b>9.8.2</b> Standardized units</a></li>
-</ul></li>
-<li class="chapter" data-level="9.9" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#equivalence-correlation"><i class="fa fa-check"></i><b>9.9</b> Equivalence Correlation</a></li>
-<li class="chapter" data-level="9.10" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#sample-sizes-for-equivalence-testing"><i class="fa fa-check"></i><b>9.10</b> Sample sizes for equivalence testing</a><ul>
-<li class="chapter" data-level="9.10.1" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#independent-t-test"><i class="fa fa-check"></i><b>9.10.1</b> Independent <em>t</em>-test</a></li>
-<li class="chapter" data-level="9.10.2" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#repeated-t-test"><i class="fa fa-check"></i><b>9.10.2</b> Repeated <em>t</em>-test</a></li>
-<li class="chapter" data-level="9.10.3" data-path="equivalence-tests-and-sample-size.html"><a href="equivalence-tests-and-sample-size.html#correlation-1"><i class="fa fa-check"></i><b>9.10.3</b> Correlation</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html"><i class="fa fa-check"></i><b>10</b> Precision and sample size</a><ul>
-<li class="chapter" data-level="10.1" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#required-5"><i class="fa fa-check"></i><b>10.1</b> Required</a></li>
-<li class="chapter" data-level="10.2" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#overview-4"><i class="fa fa-check"></i><b>10.2</b> Overview</a></li>
-<li class="chapter" data-level="10.3" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision"><i class="fa fa-check"></i><b>10.3</b> Precision</a><ul>
-<li class="chapter" data-level="10.3.1" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-independent-t-test"><i class="fa fa-check"></i><b>10.3.1</b> Precision Independent <em>t</em>-test</a></li>
-<li class="chapter" data-level="10.3.2" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-repeated-t-test"><i class="fa fa-check"></i><b>10.3.2</b> Precision Repeated <em>t</em>-test</a></li>
-<li class="chapter" data-level="10.3.3" data-path="precision-and-sample-size.html"><a href="precision-and-sample-size.html#precision-correlation"><i class="fa fa-check"></i><b>10.3.3</b> Precision Correlation</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="starting-your-research.html"><a href="starting-your-research.html"><i class="fa fa-check"></i><b>11</b> Starting your research</a><ul>
-<li class="chapter" data-level="11.1" data-path="starting-your-research.html"><a href="starting-your-research.html#required-packages"><i class="fa fa-check"></i><b>11.1</b> Required Packages</a></li>
-<li class="chapter" data-level="11.2" data-path="starting-your-research.html"><a href="starting-your-research.html#objective-2"><i class="fa fa-check"></i><b>11.2</b> Objective</a></li>
-<li class="chapter" data-level="11.3" data-path="starting-your-research.html"><a href="starting-your-research.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>11.3</b> Begin with the end in mind</a><ul>
-<li class="chapter" data-level="11.3.1" data-path="starting-your-research.html"><a href="starting-your-research.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>11.3.1</b> Structuring data: Obtaining tidy data</a></li>
-</ul></li>
-<li class="chapter" data-level="11.4" data-path="starting-your-research.html"><a href="starting-your-research.html#data-collection-considerations"><i class="fa fa-check"></i><b>11.4</b> Data collection considerations</a><ul>
-<li class="chapter" data-level="11.4.1" data-path="starting-your-research.html"><a href="starting-your-research.html#naming-conventions"><i class="fa fa-check"></i><b>11.4.1</b> Naming conventions</a></li>
-<li class="chapter" data-level="11.4.2" data-path="starting-your-research.html"><a href="starting-your-research.html#likert-type-items"><i class="fa fa-check"></i><b>11.4.2</b> Likert-type items</a></li>
-<li class="chapter" data-level="11.4.3" data-path="starting-your-research.html"><a href="starting-your-research.html#anova-between"><i class="fa fa-check"></i><b>11.4.3</b> ANOVA between</a></li>
-<li class="chapter" data-level="11.4.4" data-path="starting-your-research.html"><a href="starting-your-research.html#anova-within"><i class="fa fa-check"></i><b>11.4.4</b> ANOVA within</a></li>
-</ul></li>
-<li class="chapter" data-level="11.5" data-path="starting-your-research.html"><a href="starting-your-research.html#following-the-examples"><i class="fa fa-check"></i><b>11.5</b> Following the examples</a></li>
-<li class="chapter" data-level="11.6" data-path="starting-your-research.html"><a href="starting-your-research.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>11.6</b> Entering data into spreadsheets</a></li>
-<li class="chapter" data-level="11.7" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-between"><i class="fa fa-check"></i><b>11.7</b> Experiment: Between</a><ul>
-<li class="chapter" data-level="11.7.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors"><i class="fa fa-check"></i><b>11.7.1</b> Creating factors</a></li>
-<li class="chapter" data-level="11.7.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening"><i class="fa fa-check"></i><b>11.7.2</b> Factor screening</a></li>
-<li class="chapter" data-level="11.7.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening"><i class="fa fa-check"></i><b>11.7.3</b> Numeric screening</a></li>
-</ul></li>
-<li class="chapter" data-level="11.8" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-within-one-way"><i class="fa fa-check"></i><b>11.8</b> Experiment: Within one-way</a><ul>
-<li class="chapter" data-level="11.8.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-1"><i class="fa fa-check"></i><b>11.8.1</b> Creating factors</a></li>
-<li class="chapter" data-level="11.8.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-1"><i class="fa fa-check"></i><b>11.8.2</b> Factor screening</a></li>
-<li class="chapter" data-level="11.8.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-1"><i class="fa fa-check"></i><b>11.8.3</b> Numeric screening</a></li>
-<li class="chapter" data-level="11.8.4" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data"><i class="fa fa-check"></i><b>11.8.4</b> Pivot to tidy data</a></li>
-</ul></li>
-<li class="chapter" data-level="11.9" data-path="starting-your-research.html"><a href="starting-your-research.html#experiment-within-n-way"><i class="fa fa-check"></i><b>11.9</b> Experiment: Within N-way</a><ul>
-<li class="chapter" data-level="11.9.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-2"><i class="fa fa-check"></i><b>11.9.1</b> Creating factors</a></li>
-<li class="chapter" data-level="11.9.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-2"><i class="fa fa-check"></i><b>11.9.2</b> Factor screening</a></li>
-<li class="chapter" data-level="11.9.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-2"><i class="fa fa-check"></i><b>11.9.3</b> Numeric screening</a></li>
-<li class="chapter" data-level="11.9.4" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data-1"><i class="fa fa-check"></i><b>11.9.4</b> Pivot to tidy data</a></li>
-</ul></li>
-<li class="chapter" data-level="11.10" data-path="starting-your-research.html"><a href="starting-your-research.html#surveys-single-occassion"><i class="fa fa-check"></i><b>11.10</b> Surveys: Single Occassion</a><ul>
-<li class="chapter" data-level="11.10.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-3"><i class="fa fa-check"></i><b>11.10.1</b> Creating factors</a></li>
-<li class="chapter" data-level="11.10.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-3"><i class="fa fa-check"></i><b>11.10.2</b> Factor screening</a></li>
-<li class="chapter" data-level="11.10.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-3"><i class="fa fa-check"></i><b>11.10.3</b> Numeric screening</a></li>
-<li class="chapter" data-level="11.10.4" data-path="starting-your-research.html"><a href="starting-your-research.html#scale-scores"><i class="fa fa-check"></i><b>11.10.4</b> Scale scores</a></li>
-</ul></li>
-<li class="chapter" data-level="11.11" data-path="starting-your-research.html"><a href="starting-your-research.html#surveys-multiple-occasions"><i class="fa fa-check"></i><b>11.11</b> Surveys: Multiple Occasions</a><ul>
-<li class="chapter" data-level="11.11.1" data-path="starting-your-research.html"><a href="starting-your-research.html#creating-factors-4"><i class="fa fa-check"></i><b>11.11.1</b> Creating factors</a></li>
-<li class="chapter" data-level="11.11.2" data-path="starting-your-research.html"><a href="starting-your-research.html#factor-screening-4"><i class="fa fa-check"></i><b>11.11.2</b> Factor screening</a></li>
-<li class="chapter" data-level="11.11.3" data-path="starting-your-research.html"><a href="starting-your-research.html#numeric-screening-4"><i class="fa fa-check"></i><b>11.11.3</b> Numeric screening</a></li>
-<li class="chapter" data-level="11.11.4" data-path="starting-your-research.html"><a href="starting-your-research.html#scale-scores-1"><i class="fa fa-check"></i><b>11.11.4</b> Scale scores</a></li>
-<li class="chapter" data-level="11.11.5" data-path="starting-your-research.html"><a href="starting-your-research.html#pivot-to-tidy-data-2"><i class="fa fa-check"></i><b>11.11.5</b> Pivot to tidy data</a></li>
-</ul></li>
-<li class="chapter" data-level="11.12" data-path="starting-your-research.html"><a href="starting-your-research.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>11.12</b> Basic descriptive statistics</a><ul>
-<li class="chapter" data-level="11.12.1" data-path="starting-your-research.html"><a href="starting-your-research.html#skim"><i class="fa fa-check"></i><b>11.12.1</b> skim()</a></li>
-<li class="chapter" data-level="11.12.2" data-path="starting-your-research.html"><a href="starting-your-research.html#apa.cor.table"><i class="fa fa-check"></i><b>11.12.2</b> apa.cor.table()</a></li>
-<li class="chapter" data-level="11.12.3" data-path="starting-your-research.html"><a href="starting-your-research.html#tidyverse"><i class="fa fa-check"></i><b>11.12.3</b> tidyverse</a></li>
-<li class="chapter" data-level="11.12.4" data-path="starting-your-research.html"><a href="starting-your-research.html#cronbachs-alpha"><i class="fa fa-check"></i><b>11.12.4</b> Cronbach’s alpha</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html"><i class="fa fa-check"></i><b>12</b> Positive Predictive Value</a><ul>
-<li class="chapter" data-level="12.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#required-6"><i class="fa fa-check"></i><b>12.1</b> Required</a></li>
-<li class="chapter" data-level="12.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#overview-5"><i class="fa fa-check"></i><b>12.2</b> Overview</a></li>
-<li class="chapter" data-level="12.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#informal-explanation"><i class="fa fa-check"></i><b>12.3</b> Informal explanation</a><ul>
-<li class="chapter" data-level="12.3.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#probability-of-an-effect"><i class="fa fa-check"></i><b>12.3.1</b> Probability of an effect</a></li>
-<li class="chapter" data-level="12.3.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#type-i-error"><i class="fa fa-check"></i><b>12.3.2</b> Type I Error</a></li>
-<li class="chapter" data-level="12.3.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power"><i class="fa fa-check"></i><b>12.3.3</b> Power</a></li>
-<li class="chapter" data-level="12.3.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-ppv"><i class="fa fa-check"></i><b>12.3.4</b> Calculating PPV</a></li>
-</ul></li>
-<li class="chapter" data-level="12.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#formal-explanation"><i class="fa fa-check"></i><b>12.4</b> Formal explanation</a><ul>
-<li class="chapter" data-level="12.4.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#no-effect"><i class="fa fa-check"></i><b>12.4.1</b> No effect</a></li>
-<li class="chapter" data-level="12.4.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#effect"><i class="fa fa-check"></i><b>12.4.2</b> Effect</a></li>
-<li class="chapter" data-level="12.4.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculation"><i class="fa fa-check"></i><b>12.4.3</b> Calculation</a></li>
-<li class="chapter" data-level="12.4.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#alternative-calculation"><i class="fa fa-check"></i><b>12.4.4</b> Alternative calculation</a></li>
-<li class="chapter" data-level="12.4.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#touchstone"><i class="fa fa-check"></i><b>12.4.5</b> Touchstone</a></li>
-</ul></li>
-<li class="chapter" data-level="12.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-power-for-your-study"><i class="fa fa-check"></i><b>12.5</b> Calculating power for your study</a><ul>
-<li class="chapter" data-level="12.5.1" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-independent-groups-t-test"><i class="fa fa-check"></i><b>12.5.1</b> Power independent groups <span class="math inline">\(t\)</span>-test</a></li>
-<li class="chapter" data-level="12.5.2" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-repeated-measures-t-test"><i class="fa fa-check"></i><b>12.5.2</b> Power repeated measures <span class="math inline">\(t\)</span>-test</a></li>
-<li class="chapter" data-level="12.5.3" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#power-correlations"><i class="fa fa-check"></i><b>12.5.3</b> Power correlations</a></li>
-<li class="chapter" data-level="12.5.4" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-independent-t-test"><i class="fa fa-check"></i><b>12.5.4</b> Equivalence independent <em>t</em>-test</a></li>
-<li class="chapter" data-level="12.5.5" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-repeated-t-test"><i class="fa fa-check"></i><b>12.5.5</b> Equivalence repeated <em>t</em>-test</a></li>
-<li class="chapter" data-level="12.5.6" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#equivalence-correlation-1"><i class="fa fa-check"></i><b>12.5.6</b> Equivalence correlation</a></li>
-</ul></li>
-<li class="chapter" data-level="12.6" data-path="positive-predictive-value.html"><a href="positive-predictive-value.html#calculating-ppv-for-your-study"><i class="fa fa-check"></i><b>12.6</b> Calculating PPV for your study</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html"><i class="fa fa-check"></i><b>13</b> Open Science Preregistration</a><ul>
-<li class="chapter" data-level="13.1" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#overview-6"><i class="fa fa-check"></i><b>13.1</b> Overview</a></li>
-<li class="chapter" data-level="13.2" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#daniel-simmons-interview"><i class="fa fa-check"></i><b>13.2</b> Daniel Simmons Interview</a></li>
-<li class="chapter" data-level="13.3" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#preregistration-impact"><i class="fa fa-check"></i><b>13.3</b> Preregistration Impact</a></li>
-<li class="chapter" data-level="13.4" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#preregistration-details"><i class="fa fa-check"></i><b>13.4</b> Preregistration Details</a></li>
-<li class="chapter" data-level="13.5" data-path="open-science-preregistration.html"><a href="open-science-preregistration.html#learn-more"><i class="fa fa-check"></i><b>13.5</b> Learn more</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="research-tools.html"><a href="research-tools.html"><i class="fa fa-check"></i><b>14</b> Research Tools</a><ul>
-<li class="chapter" data-level="14.1" data-path="research-tools.html"><a href="research-tools.html#statcheck"><i class="fa fa-check"></i><b>14.1</b> statcheck</a><ul>
-<li class="chapter" data-level="14.1.1" data-path="research-tools.html"><a href="research-tools.html#statcheck-software"><i class="fa fa-check"></i><b>14.1.1</b> statcheck software</a></li>
-<li class="chapter" data-level="14.1.2" data-path="research-tools.html"><a href="research-tools.html#statcheck-website"><i class="fa fa-check"></i><b>14.1.2</b> statcheck website</a></li>
-<li class="chapter" data-level="14.1.3" data-path="research-tools.html"><a href="research-tools.html#statcheck-and-word"><i class="fa fa-check"></i><b>14.1.3</b> statcheck and Word</a></li>
-<li class="chapter" data-level="14.1.4" data-path="research-tools.html"><a href="research-tools.html#statcheck-process"><i class="fa fa-check"></i><b>14.1.4</b> statcheck process</a></li>
-<li class="chapter" data-level="14.1.5" data-path="research-tools.html"><a href="research-tools.html#statcheck-validity"><i class="fa fa-check"></i><b>14.1.5</b> statcheck validity</a></li>
-</ul></li>
-<li class="chapter" data-level="14.2" data-path="research-tools.html"><a href="research-tools.html#rmarkdown-bookdown"><i class="fa fa-check"></i><b>14.2</b> rmarkdown / bookdown</a></li>
-<li class="chapter" data-level="14.3" data-path="research-tools.html"><a href="research-tools.html#papaja"><i class="fa fa-check"></i><b>14.3</b> papaja</a></li>
-<li class="chapter" data-level="14.4" data-path="research-tools.html"><a href="research-tools.html#apatables"><i class="fa fa-check"></i><b>14.4</b> apaTables</a></li>
-<li class="chapter" data-level="14.5" data-path="research-tools.html"><a href="research-tools.html#retracted-articles"><i class="fa fa-check"></i><b>14.5</b> Retracted articles</a><ul>
-<li class="chapter" data-level="14.5.1" data-path="research-tools.html"><a href="research-tools.html#doi"><i class="fa fa-check"></i><b>14.5.1</b> DOI</a></li>
-<li class="chapter" data-level="14.5.2" data-path="research-tools.html"><a href="research-tools.html#retractiondatabase.org"><i class="fa fa-check"></i><b>14.5.2</b> retractiondatabase.org</a></li>
-<li class="chapter" data-level="14.5.3" data-path="research-tools.html"><a href="research-tools.html#openretractions.com"><i class="fa fa-check"></i><b>14.5.3</b> openretractions.com</a></li>
-<li class="chapter" data-level="14.5.4" data-path="research-tools.html"><a href="research-tools.html#retractcheck"><i class="fa fa-check"></i><b>14.5.4</b> retractcheck</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html"><i class="fa fa-check"></i><b>15</b> Regression and correlation</a><ul>
-<li class="chapter" data-level="15.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#population-example"><i class="fa fa-check"></i><b>15.1</b> Population example</a><ul>
-<li class="chapter" data-level="15.1.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#no-predictor"><i class="fa fa-check"></i><b>15.1.1</b> No predictor</a></li>
-<li class="chapter" data-level="15.1.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#weak-relation"><i class="fa fa-check"></i><b>15.1.2</b> Weak relation</a></li>
-<li class="chapter" data-level="15.1.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#strong-relation"><i class="fa fa-check"></i><b>15.1.3</b> Strong relation</a></li>
-</ul></li>
-<li class="chapter" data-level="15.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#consider-a-sample"><i class="fa fa-check"></i><b>15.2</b> Consider a sample</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#regression"><i class="fa fa-check"></i><b>15.2.1</b> Regression</a></li>
-<li class="chapter" data-level="15.2.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#correlation-2"><i class="fa fa-check"></i><b>15.2.2</b> Correlation</a></li>
-<li class="chapter" data-level="15.2.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#graphing-1"><i class="fa fa-check"></i><b>15.2.3</b> Graphing</a></li>
-</ul></li>
-<li class="chapter" data-level="15.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#comparing-correlations"><i class="fa fa-check"></i><b>15.3</b> Comparing correlations</a><ul>
-<li class="chapter" data-level="15.3.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#p-values"><i class="fa fa-check"></i><b>15.3.1</b> p-values</a></li>
-<li class="chapter" data-level="15.3.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#within-a-data-set"><i class="fa fa-check"></i><b>15.3.2</b> Within a data set</a></li>
-<li class="chapter" data-level="15.3.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#between-data-sets"><i class="fa fa-check"></i><b>15.3.3</b> Between data sets</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>16</b> Multiple regression</a><ul>
-<li class="chapter" data-level="16.1" data-path="multiple-regression.html"><a href="multiple-regression.html#overview-7"><i class="fa fa-check"></i><b>16.1</b> Overview</a></li>
-<li class="chapter" data-level="16.2" data-path="multiple-regression.html"><a href="multiple-regression.html#example"><i class="fa fa-check"></i><b>16.2</b> Example</a></li>
-<li class="chapter" data-level="16.3" data-path="multiple-regression.html"><a href="multiple-regression.html#load-the-data"><i class="fa fa-check"></i><b>16.3</b> Load the data</a></li>
-<li class="chapter" data-level="16.4" data-path="multiple-regression.html"><a href="multiple-regression.html#bivariate-relations"><i class="fa fa-check"></i><b>16.4</b> Bivariate relations</a></li>
-<li class="chapter" data-level="16.5" data-path="multiple-regression.html"><a href="multiple-regression.html#single-best-predictor"><i class="fa fa-check"></i><b>16.5</b> Single best predictor</a></li>
-<li class="chapter" data-level="16.6" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-1"><i class="fa fa-check"></i><b>16.6</b> Multiple regression</a></li>
-<li class="chapter" data-level="16.7" data-path="multiple-regression.html"><a href="multiple-regression.html#b-weights"><i class="fa fa-check"></i><b>16.7</b> <em>b</em>-weights</a></li>
-<li class="chapter" data-level="16.8" data-path="multiple-regression.html"><a href="multiple-regression.html#r2"><i class="fa fa-check"></i><b>16.8</b> <span class="math inline">\(R^2\)</span></a><ul>
-<li class="chapter" data-level="16.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#method-1-ratio-approach"><i class="fa fa-check"></i><b>16.8.1</b> Method 1: Ratio Approach</a></li>
-<li class="chapter" data-level="16.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#method-2-correlation-approach"><i class="fa fa-check"></i><b>16.8.2</b> Method 2: Correlation Approach</a></li>
-<li class="chapter" data-level="16.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#r2-in-practice"><i class="fa fa-check"></i><b>16.8.3</b> <span class="math inline">\(R^2\)</span> in practice</a></li>
-</ul></li>
-<li class="chapter" data-level="16.9" data-path="multiple-regression.html"><a href="multiple-regression.html#semi-partial-sr"><i class="fa fa-check"></i><b>16.9</b> Semi-partial (<span class="math inline">\(sr\)</span>)</a><ul>
-<li class="chapter" data-level="16.9.1" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-theory"><i class="fa fa-check"></i><b>16.9.1</b> <span class="math inline">\(sr^2\)</span> in theory</a></li>
-<li class="chapter" data-level="16.9.2" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-practice"><i class="fa fa-check"></i><b>16.9.2</b> <span class="math inline">\(sr^2\)</span> in practice</a></li>
-<li class="chapter" data-level="16.9.3" data-path="multiple-regression.html"><a href="multiple-regression.html#blocks-regression"><i class="fa fa-check"></i><b>16.9.3</b> Blocks regression</a></li>
-</ul></li>
-<li class="chapter" data-level="16.10" data-path="multiple-regression.html"><a href="multiple-regression.html#beta-weights"><i class="fa fa-check"></i><b>16.10</b> Beta-weights</a><ul>
-<li class="chapter" data-level="16.10.1" data-path="multiple-regression.html"><a href="multiple-regression.html#in-practice"><i class="fa fa-check"></i><b>16.10.1</b> In practice</a></li>
-<li class="chapter" data-level="16.10.2" data-path="multiple-regression.html"><a href="multiple-regression.html#old-school"><i class="fa fa-check"></i><b>16.10.2</b> Old school</a></li>
-</ul></li>
-<li class="chapter" data-level="16.11" data-path="multiple-regression.html"><a href="multiple-regression.html#graphing-2"><i class="fa fa-check"></i><b>16.11</b> Graphing</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html"><i class="fa fa-check"></i><b>17</b> Sample size for multiple regression</a><ul>
-<li class="chapter" data-level="17.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#sample-size-using-r2"><i class="fa fa-check"></i><b>17.1</b> Sample size using <span class="math inline">\(R^2\)</span></a><ul>
-<li class="chapter" data-level="17.1.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determining-f2"><i class="fa fa-check"></i><b>17.1.1</b> Determining <span class="math inline">\(f^2\)</span></a></li>
-<li class="chapter" data-level="17.1.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-degrees-of-freedom"><i class="fa fa-check"></i><b>17.1.2</b> Determine degrees of freedom</a></li>
-<li class="chapter" data-level="17.1.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#calculate-sample-size"><i class="fa fa-check"></i><b>17.1.3</b> Calculate sample size</a></li>
-</ul></li>
-<li class="chapter" data-level="17.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#sample-size-using-sr2"><i class="fa fa-check"></i><b>17.2</b> Sample size using <span class="math inline">\(sr^2\)</span></a><ul>
-<li class="chapter" data-level="17.2.1" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-degrees-of-freedom-1"><i class="fa fa-check"></i><b>17.2.1</b> Determine degrees of freedom</a></li>
-<li class="chapter" data-level="17.2.2" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#determine-f2"><i class="fa fa-check"></i><b>17.2.2</b> Determine <span class="math inline">\(f^2\)</span></a></li>
-<li class="chapter" data-level="17.2.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#calculate-power"><i class="fa fa-check"></i><b>17.2.3</b> Calculate power</a></li>
-</ul></li>
-<li class="chapter" data-level="17.3" data-path="sample-size-for-multiple-regression.html"><a href="sample-size-for-multiple-regression.html#power-obtained-sr2"><i class="fa fa-check"></i><b>17.3</b> Power obtained <span class="math inline">\(sr^2\)</span></a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html"><i class="fa fa-check"></i><b>18</b> Moderated multiple regression</a><ul>
-<li class="chapter" data-level="18.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#overview-8"><i class="fa fa-check"></i><b>18.1</b> Overview</a></li>
-<li class="chapter" data-level="18.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#scenario"><i class="fa fa-check"></i><b>18.2</b> Scenario</a></li>
-<li class="chapter" data-level="18.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#overview-9"><i class="fa fa-check"></i><b>18.3</b> Overview</a><ul>
-<li class="chapter" data-level="18.3.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#no-interaction"><i class="fa fa-check"></i><b>18.3.1</b> No interaction</a></li>
-<li class="chapter" data-level="18.3.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#interaction"><i class="fa fa-check"></i><b>18.3.2</b> Interaction</a></li>
-<li class="chapter" data-level="18.3.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#comparison"><i class="fa fa-check"></i><b>18.3.3</b> Comparison</a></li>
-</ul></li>
-<li class="chapter" data-level="18.4" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#fastinteraction"><i class="fa fa-check"></i><b>18.4</b> fastInteraction</a><ul>
-<li class="chapter" data-level="18.4.1" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#graphing-in-3d"><i class="fa fa-check"></i><b>18.4.1</b> Graphing in 3D</a></li>
-<li class="chapter" data-level="18.4.2" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#unformatted-2d-graph"><i class="fa fa-check"></i><b>18.4.2</b> Unformatted 2D graph</a></li>
-<li class="chapter" data-level="18.4.3" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#tables"><i class="fa fa-check"></i><b>18.4.3</b> Tables</a></li>
-<li class="chapter" data-level="18.4.4" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#formatted-2d-graph"><i class="fa fa-check"></i><b>18.4.4</b> Formatted 2D graph</a></li>
-</ul></li>
-<li class="chapter" data-level="18.5" data-path="moderated-multiple-regression.html"><a href="moderated-multiple-regression.html#powersample-size-analysis"><i class="fa fa-check"></i><b>18.5</b> Power/sample size analysis</a></li>
+<li class="chapter" data-level="1" data-path="populations.html"><a href="populations.html"><i class="fa fa-check"></i><b>1</b> Populations</a><ul>
+<li class="chapter" data-level="1.1" data-path="populations.html"><a href="populations.html#notation"><i class="fa fa-check"></i><b>1.1</b> Notation</a></li>
+<li class="chapter" data-level="1.2" data-path="populations.html"><a href="populations.html#population-vs-samples"><i class="fa fa-check"></i><b>1.2</b> Population vs samples</a></li>
+<li class="chapter" data-level="1.3" data-path="populations.html"><a href="populations.html#a-small-population"><i class="fa fa-check"></i><b>1.3</b> A small population</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="populations.html"><a href="populations.html#mean-mu"><i class="fa fa-check"></i><b>1.3.1</b> Mean (<span class="math inline">\(\mu\)</span>)</a></li>
+<li class="chapter" data-level="1.3.2" data-path="populations.html"><a href="populations.html#variance-sigma2"><i class="fa fa-check"></i><b>1.3.2</b> Variance (<span class="math inline">\(\sigma^2\)</span>)</a></li>
+<li class="chapter" data-level="1.3.3" data-path="populations.html"><a href="populations.html#standard-deviation-sigma"><i class="fa fa-check"></i><b>1.3.3</b> Standard Deviation (<span class="math inline">\(\sigma\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="populations.html"><a href="populations.html#visualizing-populations"><i class="fa fa-check"></i><b>1.4</b> Visualizing populations</a></li>
+<li class="chapter" data-level="1.5" data-path="populations.html"><a href="populations.html#comparisons-same-sigma"><i class="fa fa-check"></i><b>1.5</b> Comparisons: Same <span class="math inline">\(\sigma\)</span></a><ul>
+<li class="chapter" data-level="1.5.1" data-path="populations.html"><a href="populations.html#standardized-units"><i class="fa fa-check"></i><b>1.5.1</b> Standardized units</a></li>
+<li class="chapter" data-level="1.5.2" data-path="populations.html"><a href="populations.html#cohens-d-units"><i class="fa fa-check"></i><b>1.5.2</b> Cohen’s <span class="math inline">\(d\)</span> units</a></li>
+<li class="chapter" data-level="1.5.3" data-path="populations.html"><a href="populations.html#cohens-d-advantages"><i class="fa fa-check"></i><b>1.5.3</b> Cohen’s <span class="math inline">\(d\)</span> advantages</a></li>
+<li class="chapter" data-level="1.5.4" data-path="populations.html"><a href="populations.html#cohens-d-caveats"><i class="fa fa-check"></i><b>1.5.4</b> Cohen’s <span class="math inline">\(d\)</span> caveats</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="populations.html"><a href="populations.html#comparisons-different-sigma"><i class="fa fa-check"></i><b>1.6</b> Comparisons: Different <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="1.7" data-path="populations.html"><a href="populations.html#comparisons-repeated-measures"><i class="fa fa-check"></i><b>1.7</b> Comparisons: Repeated Measures</a></li>
+<li class="chapter" data-level="1.8" data-path="populations.html"><a href="populations.html#comparison-benchmarks"><i class="fa fa-check"></i><b>1.8</b> Comparison Benchmarks</a></li>
+<li class="chapter" data-level="1.9" data-path="populations.html"><a href="populations.html#population-relations"><i class="fa fa-check"></i><b>1.9</b> Population relations</a></li>
+<li class="chapter" data-level="1.10" data-path="populations.html"><a href="populations.html#relation-benchmarks"><i class="fa fa-check"></i><b>1.10</b> Relation benchmarks</a></li>
+<li class="chapter" data-level="1.11" data-path="populations.html"><a href="populations.html#key-points"><i class="fa fa-check"></i><b>1.11</b> Key points</a></li>
+<li class="chapter" data-level="1.12" data-path="populations.html"><a href="populations.html#minor-points"><i class="fa fa-check"></i><b>1.12</b> Minor Points</a></li>
+<li class="chapter" data-level="1.13" data-path="populations.html"><a href="populations.html#self-assessment"><i class="fa fa-check"></i><b>1.13</b> Self Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html"><i class="fa fa-check"></i><b>2</b> Sampling Accuracy</a><ul>
+<li class="chapter" data-level="2.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#data-for-the-chapter"><i class="fa fa-check"></i><b>2.2</b> Data for the chapter</a></li>
+<li class="chapter" data-level="2.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#notation-1"><i class="fa fa-check"></i><b>2.3</b> Notation</a></li>
+<li class="chapter" data-level="2.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-mu"><i class="fa fa-check"></i><b>2.4</b> Estimating <span class="math inline">\(\mu\)</span></a><ul>
+<li class="chapter" data-level="2.4.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias"><i class="fa fa-check"></i><b>2.4.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma2"><i class="fa fa-check"></i><b>2.5</b> Estimating <span class="math inline">\(\sigma^2\)</span></a><ul>
+<li class="chapter" data-level="2.5.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-1"><i class="fa fa-check"></i><b>2.5.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-sigma"><i class="fa fa-check"></i><b>2.6</b> Estimating <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="2.7" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-delta"><i class="fa fa-check"></i><b>2.7</b> Estimating <span class="math inline">\(\delta\)</span></a><ul>
+<li class="chapter" data-level="2.7.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#pooled-standard-deviation"><i class="fa fa-check"></i><b>2.7.1</b> Pooled standard deviation</a></li>
+<li class="chapter" data-level="2.7.2" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#calculating-d"><i class="fa fa-check"></i><b>2.7.2</b> Calculating <span class="math inline">\(d\)</span></a></li>
+<li class="chapter" data-level="2.7.3" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-2"><i class="fa fa-check"></i><b>2.7.3</b> Assessing bias</a></li>
+<li class="chapter" data-level="2.7.4" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#illustrating-variability"><i class="fa fa-check"></i><b>2.7.4</b> Illustrating variability</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#estimating-rho"><i class="fa fa-check"></i><b>2.8</b> Estimating <span class="math inline">\(\rho\)</span></a><ul>
+<li class="chapter" data-level="2.8.1" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#assessing-bias-3"><i class="fa fa-check"></i><b>2.8.1</b> Assessing bias</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#overview-1"><i class="fa fa-check"></i><b>2.9</b> Overview</a></li>
+<li class="chapter" data-level="2.10" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#meta-analysis"><i class="fa fa-check"></i><b>2.10</b> Meta-analysis</a></li>
+<li class="chapter" data-level="2.11" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#a-joke"><i class="fa fa-check"></i><b>2.11</b> A joke</a></li>
+<li class="chapter" data-level="2.12" data-path="sampling-accuracy.html"><a href="sampling-accuracy.html#key-points-1"><i class="fa fa-check"></i><b>2.12</b> Key Points</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html"><i class="fa fa-check"></i><b>3</b> Regression and correlation</a><ul>
+<li class="chapter" data-level="3.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#population-example"><i class="fa fa-check"></i><b>3.1</b> Population example</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#no-predictor"><i class="fa fa-check"></i><b>3.1.1</b> No predictor</a></li>
+<li class="chapter" data-level="3.1.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#weak-relation"><i class="fa fa-check"></i><b>3.1.2</b> Weak relation</a></li>
+<li class="chapter" data-level="3.1.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#strong-relation"><i class="fa fa-check"></i><b>3.1.3</b> Strong relation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#consider-a-sample"><i class="fa fa-check"></i><b>3.2</b> Consider a sample</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#regression"><i class="fa fa-check"></i><b>3.2.1</b> Regression</a></li>
+<li class="chapter" data-level="3.2.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#correlation"><i class="fa fa-check"></i><b>3.2.2</b> Correlation</a></li>
+<li class="chapter" data-level="3.2.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#graphing"><i class="fa fa-check"></i><b>3.2.3</b> Graphing</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#comparing-correlations"><i class="fa fa-check"></i><b>3.3</b> Comparing correlations</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#p-values"><i class="fa fa-check"></i><b>3.3.1</b> p-values</a></li>
+<li class="chapter" data-level="3.3.2" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#within-a-data-set"><i class="fa fa-check"></i><b>3.3.2</b> Within a data set</a></li>
+<li class="chapter" data-level="3.3.3" data-path="regression-and-correlation.html"><a href="regression-and-correlation.html#between-data-sets"><i class="fa fa-check"></i><b>3.3.3</b> Between data sets</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>4</b> Multiple regression</a><ul>
+<li class="chapter" data-level="4.1" data-path="multiple-regression.html"><a href="multiple-regression.html#overview-2"><i class="fa fa-check"></i><b>4.1</b> Overview</a></li>
+<li class="chapter" data-level="4.2" data-path="multiple-regression.html"><a href="multiple-regression.html#example"><i class="fa fa-check"></i><b>4.2</b> Example</a></li>
+<li class="chapter" data-level="4.3" data-path="multiple-regression.html"><a href="multiple-regression.html#load-the-data"><i class="fa fa-check"></i><b>4.3</b> Load the data</a></li>
+<li class="chapter" data-level="4.4" data-path="multiple-regression.html"><a href="multiple-regression.html#bivariate-relations"><i class="fa fa-check"></i><b>4.4</b> Bivariate relations</a></li>
+<li class="chapter" data-level="4.5" data-path="multiple-regression.html"><a href="multiple-regression.html#single-best-predictor"><i class="fa fa-check"></i><b>4.5</b> Single best predictor</a></li>
+<li class="chapter" data-level="4.6" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-1"><i class="fa fa-check"></i><b>4.6</b> Multiple regression</a></li>
+<li class="chapter" data-level="4.7" data-path="multiple-regression.html"><a href="multiple-regression.html#b-weights"><i class="fa fa-check"></i><b>4.7</b> <em>b</em>-weights</a></li>
+<li class="chapter" data-level="4.8" data-path="multiple-regression.html"><a href="multiple-regression.html#r2"><i class="fa fa-check"></i><b>4.8</b> <span class="math inline">\(R^2\)</span></a><ul>
+<li class="chapter" data-level="4.8.1" data-path="multiple-regression.html"><a href="multiple-regression.html#method-1-ratio-approach"><i class="fa fa-check"></i><b>4.8.1</b> Method 1: Ratio Approach</a></li>
+<li class="chapter" data-level="4.8.2" data-path="multiple-regression.html"><a href="multiple-regression.html#method-2-correlation-approach"><i class="fa fa-check"></i><b>4.8.2</b> Method 2: Correlation Approach</a></li>
+<li class="chapter" data-level="4.8.3" data-path="multiple-regression.html"><a href="multiple-regression.html#r2-in-practice"><i class="fa fa-check"></i><b>4.8.3</b> <span class="math inline">\(R^2\)</span> in practice</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="multiple-regression.html"><a href="multiple-regression.html#semi-partial-sr"><i class="fa fa-check"></i><b>4.9</b> Semi-partial (<span class="math inline">\(sr\)</span>)</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-theory"><i class="fa fa-check"></i><b>4.9.1</b> <span class="math inline">\(sr^2\)</span> in theory</a></li>
+<li class="chapter" data-level="4.9.2" data-path="multiple-regression.html"><a href="multiple-regression.html#sr2-in-practice"><i class="fa fa-check"></i><b>4.9.2</b> <span class="math inline">\(sr^2\)</span> in practice</a></li>
+<li class="chapter" data-level="4.9.3" data-path="multiple-regression.html"><a href="multiple-regression.html#blocks-regression"><i class="fa fa-check"></i><b>4.9.3</b> Blocks regression</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="multiple-regression.html"><a href="multiple-regression.html#beta-weights"><i class="fa fa-check"></i><b>4.10</b> Beta-weights</a><ul>
+<li class="chapter" data-level="4.10.1" data-path="multiple-regression.html"><a href="multiple-regression.html#in-practice"><i class="fa fa-check"></i><b>4.10.1</b> In practice</a></li>
+<li class="chapter" data-level="4.10.2" data-path="multiple-regression.html"><a href="multiple-regression.html#old-school"><i class="fa fa-check"></i><b>4.10.2</b> Old school</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="multiple-regression.html"><a href="multiple-regression.html#graphing-1"><i class="fa fa-check"></i><b>4.11</b> Graphing</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>5</b> Introduction</a><ul>
+<li class="chapter" data-level="5.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>5.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="5.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>5.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="5.3" data-path="introduction.html"><a href="introduction.html#create-an-account-at-r-studio-cloud"><i class="fa fa-check"></i><b>5.3</b> Create an account at R Studio Cloud</a></li>
+<li class="chapter" data-level="5.4" data-path="introduction.html"><a href="introduction.html#join-the-class-workspace"><i class="fa fa-check"></i><b>5.4</b> Join the class workspace</a></li>
+<li class="chapter" data-level="5.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>5.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>5.5.1</b> Console panel</a></li>
+<li class="chapter" data-level="5.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>5.5.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>5.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>5.6.1</b> Create the script file</a></li>
+<li class="chapter" data-level="5.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>5.6.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="5.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>5.6.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="5.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>5.6.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="5.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>5.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>5.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>5.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>5.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>5.8.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="5.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>5.8.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="5.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>5.8.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="5.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>5.8.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="5.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>5.8.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>5.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>5.9.1</b> Run select text</a></li>
+<li class="chapter" data-level="5.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>5.9.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="5.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>5.9.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>5.10</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="5.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>5.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="5.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>5.11.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>5.12</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>6</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="6.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>6.1</b> Required</a></li>
+<li class="chapter" data-level="6.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>6.2</b> Objective</a></li>
+<li class="chapter" data-level="6.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>6.3</b> Using the Console</a></li>
+<li class="chapter" data-level="6.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>6.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>6.4.1</b> select()</a></li>
+<li class="chapter" data-level="6.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>6.4.2</b> summarise()</a></li>
+<li class="chapter" data-level="6.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>6.4.3</b> filter()</a></li>
+<li class="chapter" data-level="6.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>6.4.4</b> group_by()</a></li>
+<li class="chapter" data-level="6.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>6.4.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>6.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>6.5.1</b> select()</a></li>
+<li class="chapter" data-level="6.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>6.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="6.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>6.5.3</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>6.6</b> Using help</a></li>
+<li class="chapter" data-level="6.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>6.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>6.7.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="6.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>6.7.2</b> read.csv() and data frames</a></li>
+<li class="chapter" data-level="6.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>6.7.3</b> read_csv() and tibbles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>7</b> Data Entry/Analysis</a><ul>
+<li class="chapter" data-level="7.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#required-packages"><i class="fa fa-check"></i><b>7.1</b> Required Packages</a></li>
+<li class="chapter" data-level="7.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#objective-1"><i class="fa fa-check"></i><b>7.2</b> Objective</a></li>
+<li class="chapter" data-level="7.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>7.3</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>7.3.1</b> Structuring data: Obtaining tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>7.4</b> Data collection considerations</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#naming-conventions"><i class="fa fa-check"></i><b>7.4.1</b> Naming conventions</a></li>
+<li class="chapter" data-level="7.4.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#likert-type-items"><i class="fa fa-check"></i><b>7.4.2</b> Likert-type items</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#following-the-examples"><i class="fa fa-check"></i><b>7.5</b> Following the examples</a></li>
+<li class="chapter" data-level="7.6" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>7.6</b> Entering data into spreadsheets</a></li>
+<li class="chapter" data-level="7.7" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#surveys-single-occassion"><i class="fa fa-check"></i><b>7.7</b> Surveys: Single Occassion</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#creating-factors"><i class="fa fa-check"></i><b>7.7.1</b> Creating factors</a></li>
+<li class="chapter" data-level="7.7.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#factor-screening"><i class="fa fa-check"></i><b>7.7.2</b> Factor screening</a></li>
+<li class="chapter" data-level="7.7.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#numeric-screening"><i class="fa fa-check"></i><b>7.7.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="7.7.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#scale-scores"><i class="fa fa-check"></i><b>7.7.4</b> Scale scores</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>7.8</b> Basic descriptive statistics</a><ul>
+<li class="chapter" data-level="7.8.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#skim"><i class="fa fa-check"></i><b>7.8.1</b> skim()</a></li>
+<li class="chapter" data-level="7.8.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#apa.cor.table"><i class="fa fa-check"></i><b>7.8.2</b> apa.cor.table()</a></li>
+<li class="chapter" data-level="7.8.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#tidyverse"><i class="fa fa-check"></i><b>7.8.3</b> tidyverse</a></li>
+<li class="chapter" data-level="7.8.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#cronbachs-alpha"><i class="fa fa-check"></i><b>7.8.4</b> Cronbach’s alpha</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="graphing-2.html"><a href="graphing-2.html"><i class="fa fa-check"></i><b>8</b> Graphing</a><ul>
+<li class="chapter" data-level="8.1" data-path="graphing-2.html"><a href="graphing-2.html#required-1"><i class="fa fa-check"></i><b>8.1</b> Required</a></li>
+<li class="chapter" data-level="8.2" data-path="graphing-2.html"><a href="graphing-2.html#data"><i class="fa fa-check"></i><b>8.2</b> Data</a></li>
+<li class="chapter" data-level="8.3" data-path="graphing-2.html"><a href="graphing-2.html#graph-basics"><i class="fa fa-check"></i><b>8.3</b> Graph basics</a></li>
+<li class="chapter" data-level="8.4" data-path="graphing-2.html"><a href="graphing-2.html#graphing-efficiently"><i class="fa fa-check"></i><b>8.4</b> Graphing efficiently</a></li>
+<li class="chapter" data-level="8.5" data-path="graphing-2.html"><a href="graphing-2.html#aesthetics"><i class="fa fa-check"></i><b>8.5</b> Aesthetics</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="graphing-2.html"><a href="graphing-2.html#fill-color"><i class="fa fa-check"></i><b>8.5.1</b> Fill color</a></li>
+<li class="chapter" data-level="8.5.2" data-path="graphing-2.html"><a href="graphing-2.html#overriding-aes"><i class="fa fa-check"></i><b>8.5.2</b> Overriding aes()</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="graphing-2.html"><a href="graphing-2.html#apa-style"><i class="fa fa-check"></i><b>8.6</b> APA style</a></li>
+<li class="chapter" data-level="8.7" data-path="graphing-2.html"><a href="graphing-2.html#axes"><i class="fa fa-check"></i><b>8.7</b> Axes</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="graphing-2.html"><a href="graphing-2.html#range"><i class="fa fa-check"></i><b>8.7.1</b> Range</a></li>
+<li class="chapter" data-level="8.7.2" data-path="graphing-2.html"><a href="graphing-2.html#ticks"><i class="fa fa-check"></i><b>8.7.2</b> Ticks</a></li>
+<li class="chapter" data-level="8.7.3" data-path="graphing-2.html"><a href="graphing-2.html#labels"><i class="fa fa-check"></i><b>8.7.3</b> Labels</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="graphing-2.html"><a href="graphing-2.html#axis-values"><i class="fa fa-check"></i><b>8.8</b> Axis values</a><ul>
+<li class="chapter" data-level="8.8.1" data-path="graphing-2.html"><a href="graphing-2.html#text"><i class="fa fa-check"></i><b>8.8.1</b> Text</a></li>
+<li class="chapter" data-level="8.8.2" data-path="graphing-2.html"><a href="graphing-2.html#angle"><i class="fa fa-check"></i><b>8.8.2</b> Angle</a></li>
+<li class="chapter" data-level="8.8.3" data-path="graphing-2.html"><a href="graphing-2.html#alignment"><i class="fa fa-check"></i><b>8.8.3</b> Alignment</a></li>
+<li class="chapter" data-level="8.8.4" data-path="graphing-2.html"><a href="graphing-2.html#order"><i class="fa fa-check"></i><b>8.8.4</b> Order</a></li>
+<li class="chapter" data-level="8.8.5" data-path="graphing-2.html"><a href="graphing-2.html#legend-order"><i class="fa fa-check"></i><b>8.8.5</b> Legend order</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="graphing-2.html"><a href="graphing-2.html#custom-colours"><i class="fa fa-check"></i><b>8.9</b> Custom colours</a><ul>
+<li class="chapter" data-level="8.9.1" data-path="graphing-2.html"><a href="graphing-2.html#r-palette"><i class="fa fa-check"></i><b>8.9.1</b> R palette</a></li>
+<li class="chapter" data-level="8.9.2" data-path="graphing-2.html"><a href="graphing-2.html#hex-colours"><i class="fa fa-check"></i><b>8.9.2</b> Hex colours</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="graphing-2.html"><a href="graphing-2.html#emoji"><i class="fa fa-check"></i><b>8.10</b> Emoji</a></li>
+<li class="chapter" data-level="8.11" data-path="graphing-2.html"><a href="graphing-2.html#accessible-colors"><i class="fa fa-check"></i><b>8.11</b> Accessible Colors</a><ul>
+<li class="chapter" data-level="8.11.1" data-path="graphing-2.html"><a href="graphing-2.html#rcolorbrewer"><i class="fa fa-check"></i><b>8.11.1</b> RColorBrewer</a></li>
+<li class="chapter" data-level="8.11.2" data-path="graphing-2.html"><a href="graphing-2.html#avoid-color"><i class="fa fa-check"></i><b>8.11.2</b> Avoid color</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="graphing-2.html"><a href="graphing-2.html#saving"><i class="fa fa-check"></i><b>8.12</b> Saving</a><ul>
+<li class="chapter" data-level="8.12.1" data-path="graphing-2.html"><a href="graphing-2.html#mac"><i class="fa fa-check"></i><b>8.12.1</b> MAC</a></li>
+<li class="chapter" data-level="8.12.2" data-path="graphing-2.html"><a href="graphing-2.html#pc-or-mac"><i class="fa fa-check"></i><b>8.12.2</b> PC or MAC</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -571,7 +378,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="sampling-accuracy" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Sampling Accuracy</h1>
+<h1><span class="header-section-number">Chapter 2</span> Sampling Accuracy</h1>
 <p>The following CRAN packages must be installed:</p>
 <table>
 <thead>
@@ -602,9 +409,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>A GitHub package can be installed using the code below:</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="sampling-accuracy.html#cb202-1"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;dstanley4/learnsampling&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="sampling-accuracy.html#cb1-1"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;dstanley4/learnsampling&quot;</span>)</span></code></pre></div>
 <div id="overview" class="section level2">
-<h2><span class="header-section-number">5.1</span> Overview</h2>
+<h2><span class="header-section-number">2.1</span> Overview</h2>
 <p>Researchers are usually interested in describing the attributes of a population; numbers that describe the population are called parameters. Two parameters that are frequently of interest are the mean and variance of the population. Unfortunately, it’s rarely possible to obtain information from every member of a population to calculate a parameter. Consequently, researchers use subsets of the population called samples to estimate parameters. Numbers calculated from sample data are called statistics. Typically, sample statistics are used to estimate population parameters.</p>
 <p>Sample statistics, however, often differ from population parameters. The difference between a sample statistic and the population parameter occurs because the sample data is random subset of the population data — with correspondingly fewer observations. This difference is typically refered to as <strong>sampling error</strong>.</p>
 <p>Sometimes a sample statistic will be higher than the population parameter; other times the sample statistic will be lower than the population parameter. Because random sampling is used to select the sample data the direction and magnitude of the difference between the sample statistic and the population parameter will vary randomly.</p>
@@ -613,14 +420,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Also keep in mind that, even if you conduct experiments, the distinction between samples and populations is relevant to you. Consider a scenario where you run an experiment to test the effectiveness of a particular drug. Half the rats are assigned to a placebo condition (e.g., saline injection) whereas the other half of the rats are assigned to the drug condition (e.g., drug injection). Recognize that the placebo-condition rats are considered a sample from a much larger population of all rats who could have received the placebo. Likewise, the drug-condition rats are considered a sample of a much large population of all rats who could have received the drug. Indeed, when you conduct your analyses on this experiment the results do not tell you about the rats in your study - rather they tell you about rats in general (i.e., the larger populations of rats). Therefore, when we discuss the importance of estimating a population parameter from a sample realize that it applies to both experimental and survey research.</p>
 </div>
 <div id="data-for-the-chapter" class="section level2">
-<h2><span class="header-section-number">5.2</span> Data for the chapter</h2>
+<h2><span class="header-section-number">2.2</span> Data for the chapter</h2>
 <p>In this chapter we will use a population of heights to learn about random sampling. To engage in the learning activities you need to activate the required packages:</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="sampling-accuracy.html#cb203-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb203-2"><a href="sampling-accuracy.html#cb203-2"></a><span class="kw">library</span>(learnSampling)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="sampling-accuracy.html#cb2-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="sampling-accuracy.html#cb2-2"></a><span class="kw">library</span>(learnSampling)</span></code></pre></div>
 <p>Next, we create a large population with 100,000 people using the get_height_population() command:</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="sampling-accuracy.html#cb204-1"></a>pop_data &lt;-<span class="st"> </span><span class="kw">get_height_population</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="sampling-accuracy.html#cb3-1"></a>pop_data &lt;-<span class="st"> </span><span class="kw">get_height_population</span>() </span></code></pre></div>
 <p>The print() command can be used to confirm that the population contains 100,000 people. We see that each row in pop_data represents a single person. There is a column called height that contains the heights for everyone in the population.</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="sampling-accuracy.html#cb205-1"></a><span class="kw">print</span>(pop_data)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="sampling-accuracy.html#cb4-1"></a><span class="kw">print</span>(pop_data)</span></code></pre></div>
 <pre><code>## # A tibble: 100,000 x 3
 ##       id sex    height
 ##    &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;
@@ -637,47 +444,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 99,990 more rows</code></pre>
 </div>
 <div id="notation-1" class="section level2">
-<h2><span class="header-section-number">5.3</span> Notation</h2>
+<h2><span class="header-section-number">2.3</span> Notation</h2>
 <p>In the formulas below, when we refer to the population, we use uppercase letters to indicate members (<span class="math inline">\(X\)</span>) or the size (<span class="math inline">\(N\)</span>). The population mean is indicated by the symbol <span class="math inline">\(\mu\)</span>. In contrast, when we refer to the sample, we use lowercase letters to indicate members (<span class="math inline">\(x\)</span>) or the size (<span class="math inline">\(n\)</span>). The sample mean is indicated by the symbol <span class="math inline">\(\bar{x}\)</span>. A single bar above a letter indicates a mean. If we calculate the average of several sample means we indicate this with the symbol <span class="math inline">\(\bar{\bar{x}}\)</span>. A double bar above a letter indicates a mean of means. Make sure you notice the similarities between subsequent population and sample formulas even though the notation often differs.</p>
 </div>
 <div id="estimating-mu" class="section level2">
-<h2><span class="header-section-number">5.4</span> Estimating <span class="math inline">\(\mu\)</span></h2>
-<p>We are interested in the sample mean (<span class="math inline">\(\bar{x}\)</span>) to the extent that it provides an accurate estimate of the population mean (<span class="math inline">\(\mu\)</span>). The population mean is calculated using Formula <a href="sampling-accuracy.html#eq:popmeanch5">(5.1)</a>. In this formula, the letter <span class="math inline">\(N\)</span> corresponds to the number of people in the population.</p>
+<h2><span class="header-section-number">2.4</span> Estimating <span class="math inline">\(\mu\)</span></h2>
+<p>We are interested in the sample mean (<span class="math inline">\(\bar{x}\)</span>) to the extent that it provides an accurate estimate of the population mean (<span class="math inline">\(\mu\)</span>). The population mean is calculated using Formula <a href="sampling-accuracy.html#eq:popmeanch5">(2.1)</a>. In this formula, the letter <span class="math inline">\(N\)</span> corresponds to the number of people in the population.</p>
 <p><span class="math display" id="eq:popmeanch5">\[\begin{equation} 
 \mu = \frac{\sum{X}}{N}
-      \tag{5.1}
+      \tag{2.1}
 \end{equation}\]</span></p>
-<p>We can calculate the population mean for the height column of pop_data using the summarise() and mean() commands. The mean() command uses Formula <a href="sampling-accuracy.html#eq:popmeanch5">(5.1)</a>. We see in the output that the population mean is 172.48 (<span class="math inline">\(\mu = 172.48\)</span>).</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="sampling-accuracy.html#cb207-1"></a>pop_data <span class="op">%&gt;%</span></span>
-<span id="cb207-2"><a href="sampling-accuracy.html#cb207-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">pop_mean =</span> <span class="kw">mean</span>(height)) <span class="op">%&gt;%</span></span>
-<span id="cb207-3"><a href="sampling-accuracy.html#cb207-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<p>We can calculate the population mean for the height column of pop_data using the summarise() and mean() commands. The mean() command uses Formula <a href="sampling-accuracy.html#eq:popmeanch5">(2.1)</a>. We see in the output that the population mean is 172.48 (<span class="math inline">\(\mu = 172.48\)</span>).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="sampling-accuracy.html#cb6-1"></a>pop_data <span class="op">%&gt;%</span></span>
+<span id="cb6-2"><a href="sampling-accuracy.html#cb6-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">pop_mean =</span> <span class="kw">mean</span>(height)) <span class="op">%&gt;%</span></span>
+<span id="cb6-3"><a href="sampling-accuracy.html#cb6-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##   pop_mean
 ## 1    172.5</code></pre>
-<p>As noted previously, we rarely have access to data from an entire population. Consequently, we use the sample mean as an estimate of the population mean. The sample mean, <span class="math inline">\(\bar{x}\)</span>, is a statistic calculated using the using Formula <a href="sampling-accuracy.html#eq:samplemeanch5">(5.2)</a> below. The bar above the <span class="math inline">\(x\)</span>, indicates that it is a mean. Notice that Formula <a href="sampling-accuracy.html#eq:popmeanch5">(5.1)</a> and Formula <a href="sampling-accuracy.html#eq:samplemeanch5">(5.2)</a> are the same - even though they use different notation. In this formula, the letter <span class="math inline">\(n\)</span> corresponds to the number of people in the sample.</p>
+<p>As noted previously, we rarely have access to data from an entire population. Consequently, we use the sample mean as an estimate of the population mean. The sample mean, <span class="math inline">\(\bar{x}\)</span>, is a statistic calculated using the using Formula <a href="sampling-accuracy.html#eq:samplemeanch5">(2.2)</a> below. The bar above the <span class="math inline">\(x\)</span>, indicates that it is a mean. Notice that Formula <a href="sampling-accuracy.html#eq:popmeanch5">(2.1)</a> and Formula <a href="sampling-accuracy.html#eq:samplemeanch5">(2.2)</a> are the same - even though they use different notation. In this formula, the letter <span class="math inline">\(n\)</span> corresponds to the number of people in the sample.</p>
 <p><span class="math display" id="eq:samplemeanch5">\[\begin{equation} 
 \bar{x} = \frac{\sum{x}}{n}
-      \tag{5.2}
+      \tag{2.2}
 \end{equation}\]</span></p>
-<p>Because a sample mean (a statistic) is calculated using a random subset of the population it is likely to differ from the population mean (a parameter). If you, inaccurately, believe that you can learn something meaningful from a single study, this fact may be disconcerting. Statisticians know, however, that rarely can you learn anything from a single study, or even a small set of studies. Consequently, they are more interested in the extent to which sample means are right, on average. That is, they are interested in the extent to which the mean of many sample means (<span class="math inline">\(\bar{\bar{x}}\)</span>) corresponds to the population mean (<span class="math inline">\(\mu\)</span>). The mean of many sample means can be calculated using Formula <a href="sampling-accuracy.html#eq:samplemeanmeanch5">(5.3)</a> below. In this formula, the letter <span class="math inline">\(k\)</span> corresponds to the number of sample means.</p>
+<p>Because a sample mean (a statistic) is calculated using a random subset of the population it is likely to differ from the population mean (a parameter). If you, inaccurately, believe that you can learn something meaningful from a single study, this fact may be disconcerting. Statisticians know, however, that rarely can you learn anything from a single study, or even a small set of studies. Consequently, they are more interested in the extent to which sample means are right, on average. That is, they are interested in the extent to which the mean of many sample means (<span class="math inline">\(\bar{\bar{x}}\)</span>) corresponds to the population mean (<span class="math inline">\(\mu\)</span>). The mean of many sample means can be calculated using Formula <a href="sampling-accuracy.html#eq:samplemeanmeanch5">(2.3)</a> below. In this formula, the letter <span class="math inline">\(k\)</span> corresponds to the number of sample means.</p>
 <p><span class="math display" id="eq:samplemeanmeanch5">\[\begin{equation} 
 \bar{\bar{x}} = \frac{\sum{\bar{x}}}{k}
-      \tag{5.3}
+      \tag{2.3}
 \end{equation}\]</span></p>
-<p>If the mean of the sample means, <span class="math inline">\(\bar{\bar{x}}\)</span>, equals the population mean, <span class="math inline">\(\mu\)</span>, then the sample mean is an unbiased (or accurate) estimate of the population mean. Figure <a href="sampling-accuracy.html#fig:showbias">5.1</a> illustrates the concept of accuracy/bias with a distribution of sample means (i.e., <span class="math inline">\(\bar{x}\)</span>). Accuracy/bias is an index of the extent to which the mean of many sample means, <span class="math inline">\(\bar{\bar{x}}\)</span>, deviates from the population mean, <span class="math inline">\(\mu\)</span>.</p>
+<p>If the mean of the sample means, <span class="math inline">\(\bar{\bar{x}}\)</span>, equals the population mean, <span class="math inline">\(\mu\)</span>, then the sample mean is an unbiased (or accurate) estimate of the population mean. Figure <a href="sampling-accuracy.html#fig:showbias">2.1</a> illustrates the concept of accuracy/bias with a distribution of sample means (i.e., <span class="math inline">\(\bar{x}\)</span>). Accuracy/bias is an index of the extent to which the mean of many sample means, <span class="math inline">\(\bar{\bar{x}}\)</span>, deviates from the population mean, <span class="math inline">\(\mu\)</span>.</p>
 <div class="figure"><span id="fig:showbias"></span>
 <img src="ch_samples/images/sampling_accuracy.png" alt="Sampling accuracy and precision" width="80%" />
 <p class="caption">
-FIGURE 5.1: Sampling accuracy and precision
+FIGURE 2.1: Sampling accuracy and precision
 </p>
 </div>
 <p>We can assess bias, as illustrated in the above figure by drawing a large number of samples from a population with the code below. Our goal is calculate a mean for each sample so that we have a sampling distribution of means. In theory, we should take an infinite number of samples, however, to be practical we will take 50000 samples to create an approximate sampling distribution of means. We use the code below to do so:</p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="sampling-accuracy.html#cb209-1"></a>many_samples &lt;-<span class="st"> </span><span class="kw">get_M_samples</span>(<span class="dt">pop.data =</span> pop_data, </span>
-<span id="cb209-2"><a href="sampling-accuracy.html#cb209-2"></a>                              <span class="dt">pop.column.name =</span> height,</span>
-<span id="cb209-3"><a href="sampling-accuracy.html#cb209-3"></a>                              <span class="dt">n =</span> <span class="dv">10</span>,</span>
-<span id="cb209-4"><a href="sampling-accuracy.html#cb209-4"></a>                              <span class="dt">number.of.samples =</span> <span class="dv">50000</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="sampling-accuracy.html#cb210-1"></a>many_samples &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;ch_samples/many_samples_n10.RDS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="sampling-accuracy.html#cb8-1"></a>many_samples &lt;-<span class="st"> </span><span class="kw">get_M_samples</span>(<span class="dt">pop.data =</span> pop_data, </span>
+<span id="cb8-2"><a href="sampling-accuracy.html#cb8-2"></a>                              <span class="dt">pop.column.name =</span> height,</span>
+<span id="cb8-3"><a href="sampling-accuracy.html#cb8-3"></a>                              <span class="dt">n =</span> <span class="dv">10</span>,</span>
+<span id="cb8-4"><a href="sampling-accuracy.html#cb8-4"></a>                              <span class="dt">number.of.samples =</span> <span class="dv">50000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="sampling-accuracy.html#cb9-1"></a>many_samples &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;ch_samples/many_samples_n10.RDS&quot;</span>)</span></code></pre></div>
 <p>We use the print() command to see the first few rows of the 50000 samples:</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="sampling-accuracy.html#cb211-1"></a><span class="kw">print</span>(many_samples)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="sampling-accuracy.html#cb10-1"></a><span class="kw">print</span>(many_samples)</span></code></pre></div>
 <pre><code>## # A tibble: 50,000 x 5
 ##    study     n sample_mean sample_var_n sample_var_n_1
 ##    &lt;int&gt; &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;          &lt;dbl&gt;
@@ -696,36 +503,36 @@ FIGURE 5.1: Sampling accuracy and precision
 <div class="figure"><span id="fig:bothdist"></span>
 <img src="ch_samples/images/sampling_dist.png" alt="Sampling distribution of the mean. The population of individuals is presented at the top and filled with X's to remind you they are individuals. There are more individuals than X's. The sampling distribution of means is presented in the bottom part of the graph. The sampling distribution of means is filled with $\bar{x}$'s to remind you that it is sample means being graphed. There are more means than $\bar{x}$'s. The population mean (green line) and the mean of sample means (blue line) are in the same spot, indicating high accuracy (i.e., no bias)." width="80%" />
 <p class="caption">
-FIGURE 5.2: Sampling distribution of the mean. The population of individuals is presented at the top and filled with X’s to remind you they are individuals. There are more individuals than X’s. The sampling distribution of means is presented in the bottom part of the graph. The sampling distribution of means is filled with <span class="math inline">\(\bar{x}\)</span>’s to remind you that it is sample means being graphed. There are more means than <span class="math inline">\(\bar{x}\)</span>’s. The population mean (green line) and the mean of sample means (blue line) are in the same spot, indicating high accuracy (i.e., no bias).
+FIGURE 2.2: Sampling distribution of the mean. The population of individuals is presented at the top and filled with X’s to remind you they are individuals. There are more individuals than X’s. The sampling distribution of means is presented in the bottom part of the graph. The sampling distribution of means is filled with <span class="math inline">\(\bar{x}\)</span>’s to remind you that it is sample means being graphed. There are more means than <span class="math inline">\(\bar{x}\)</span>’s. The population mean (green line) and the mean of sample means (blue line) are in the same spot, indicating high accuracy (i.e., no bias).
 </p>
 </div>
-<p>Above, in Figure <a href="sampling-accuracy.html#fig:bothdist">5.2</a>, we present a graph comparing the distribution of peoples heights (i.e., the population) to the distribution of sample means based on those heights (i.e., the sampling distribution). The sample means plotted are the 50000 sample means, from the sample_mean column. Recall the population mean for heights is <span class="math inline">\(\mu = 172.48\)</span> cm. Notice that most of the sample means cluster around this value. Also notice that there is considerable variability about this value. Any given sample mean (<span class="math inline">\(\bar{x}\)</span>) may differ substantially from the population mean (<span class="math inline">\(\mu = 172.48\)</span>). This variability illustrates the challenges with learning something from a single study - particularly a study with a small sample size. Many of the sample means fall quite far from the population mean.</p>
+<p>Above, in Figure <a href="sampling-accuracy.html#fig:bothdist">2.2</a>, we present a graph comparing the distribution of peoples heights (i.e., the population) to the distribution of sample means based on those heights (i.e., the sampling distribution). The sample means plotted are the 50000 sample means, from the sample_mean column. Recall the population mean for heights is <span class="math inline">\(\mu = 172.48\)</span> cm. Notice that most of the sample means cluster around this value. Also notice that there is considerable variability about this value. Any given sample mean (<span class="math inline">\(\bar{x}\)</span>) may differ substantially from the population mean (<span class="math inline">\(\mu = 172.48\)</span>). This variability illustrates the challenges with learning something from a single study - particularly a study with a small sample size. Many of the sample means fall quite far from the population mean.</p>
 <div id="assessing-bias" class="section level3">
-<h3><span class="header-section-number">5.4.1</span> Assessing bias</h3>
+<h3><span class="header-section-number">2.4.1</span> Assessing bias</h3>
 <p>Statisticians, recognizing the limitations of a single study, are not particularly concerned if a single sample mean deviates from the population mean. That said, statisticians are very concerned as to whether or not the results of a large number of studies are correct – on average. That is, does the average of many sample means correspond to the population mean? If, on average, the sample mean does corresponds to the population mean, it is accurate and we refer to it as an unbiased estimator. Visually, this appears to be the case. But in the code below we confirm it numerically.</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="sampling-accuracy.html#cb213-1"></a>many_samples <span class="op">%&gt;%</span></span>
-<span id="cb213-2"><a href="sampling-accuracy.html#cb213-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_of_sample_mean =</span> <span class="kw">mean</span>(sample_mean)) <span class="op">%&gt;%</span></span>
-<span id="cb213-3"><a href="sampling-accuracy.html#cb213-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="sampling-accuracy.html#cb12-1"></a>many_samples <span class="op">%&gt;%</span></span>
+<span id="cb12-2"><a href="sampling-accuracy.html#cb12-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_of_sample_mean =</span> <span class="kw">mean</span>(sample_mean)) <span class="op">%&gt;%</span></span>
+<span id="cb12-3"><a href="sampling-accuracy.html#cb12-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##   mean_of_sample_mean
 ## 1               172.5</code></pre>
-<p>We find that the average of the 50000 sample means is 172.47 which is very close to the population mean of 172.48. Note that when we did this, we used the same formula to calculate the sample mean (Formula <a href="sampling-accuracy.html#eq:samplemeanch5">(5.2)</a>) as we did the population mean (Formula <a href="sampling-accuracy.html#eq:popmeanch5">(5.1)</a>), although the notations differed. The average of the sample means was not identical to the population mean but it was very close - it would have been exactly the same with many more samples (i.e., an infinite number of samples). Therefore, we conclude the sample mean provides an unbiased estimate of the population mean. In other words, it makes sense to use the sample mean as an estimate of the population mean. If we try to estimate the population mean with a sample mean we will, on average, be correct; although any given sample/study mean might be “wrong”.</p>
+<p>We find that the average of the 50000 sample means is 172.47 which is very close to the population mean of 172.48. Note that when we did this, we used the same formula to calculate the sample mean (Formula <a href="sampling-accuracy.html#eq:samplemeanch5">(2.2)</a>) as we did the population mean (Formula <a href="sampling-accuracy.html#eq:popmeanch5">(2.1)</a>), although the notations differed. The average of the sample means was not identical to the population mean but it was very close - it would have been exactly the same with many more samples (i.e., an infinite number of samples). Therefore, we conclude the sample mean provides an unbiased estimate of the population mean. In other words, it makes sense to use the sample mean as an estimate of the population mean. If we try to estimate the population mean with a sample mean we will, on average, be correct; although any given sample/study mean might be “wrong”.</p>
 </div>
 </div>
 <div id="estimating-sigma2" class="section level2">
-<h2><span class="header-section-number">5.5</span> Estimating <span class="math inline">\(\sigma^2\)</span></h2>
-<p>We are interested in the sample variance (<span class="math inline">\(s^2\)</span>) to the extent that it provides an estimate of the population variance (<span class="math inline">\(\sigma^2\)</span>). We begin by reviewing population variance. The population variance is calculated using Formula <a href="sampling-accuracy.html#eq:popvarch5">(5.4)</a>:</p>
+<h2><span class="header-section-number">2.5</span> Estimating <span class="math inline">\(\sigma^2\)</span></h2>
+<p>We are interested in the sample variance (<span class="math inline">\(s^2\)</span>) to the extent that it provides an estimate of the population variance (<span class="math inline">\(\sigma^2\)</span>). We begin by reviewing population variance. The population variance is calculated using Formula <a href="sampling-accuracy.html#eq:popvarch5">(2.4)</a>:</p>
 <p><span class="math display" id="eq:popvarch5">\[\begin{equation} 
 \sigma^2 = \frac{\sum{(X - \mu)^2}}{N}
-      \tag{5.4}
+      \tag{2.4}
 \end{equation}\]</span></p>
-<p>We can calculate the population variance for the height column of pop_data using the summarise() and var.pop() commands. The var.pop() command uses Formula <a href="sampling-accuracy.html#eq:popvarch5">(5.4)</a>. We see in the output that the population variance is 157.5 (<span class="math inline">\(\sigma^2 = 157.5\)</span>).</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="sampling-accuracy.html#cb215-1"></a>pop_data <span class="op">%&gt;%</span></span>
-<span id="cb215-2"><a href="sampling-accuracy.html#cb215-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">pop_var =</span> <span class="kw">var.pop</span>(height)) <span class="op">%&gt;%</span></span>
-<span id="cb215-3"><a href="sampling-accuracy.html#cb215-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<p>We can calculate the population variance for the height column of pop_data using the summarise() and var.pop() commands. The var.pop() command uses Formula <a href="sampling-accuracy.html#eq:popvarch5">(2.4)</a>. We see in the output that the population variance is 157.5 (<span class="math inline">\(\sigma^2 = 157.5\)</span>).</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="sampling-accuracy.html#cb14-1"></a>pop_data <span class="op">%&gt;%</span></span>
+<span id="cb14-2"><a href="sampling-accuracy.html#cb14-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">pop_var =</span> <span class="kw">var.pop</span>(height)) <span class="op">%&gt;%</span></span>
+<span id="cb14-3"><a href="sampling-accuracy.html#cb14-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##   pop_var
 ## 1   157.5</code></pre>
 <div id="assessing-bias-1" class="section level3">
-<h3><span class="header-section-number">5.5.1</span> Assessing bias</h3>
+<h3><span class="header-section-number">2.5.1</span> Assessing bias</h3>
 <p>The formula for sample variance with an <span class="math inline">\(n\)</span> in the denominator is, unfortunately, a biased estimator of population variance (formula below).</p>
 <p><span class="math display">\[
 \begin{aligned} 
@@ -733,21 +540,21 @@ s^2 = \frac{\sum{(x - \bar{x})^2}}{n}
 \end{aligned} 
 \]</span></p>
 <p>Estimates of the population variance are systematically too low when you use a sample variance formula with an <span class="math inline">\(n\)</span> in the denominator. We can see that this is true by examining the many_samples data. In these data, the column sample_var_n contains the variance for the sample calculated with the above formula. Below we use code to obtain the average of the sample_var_n column over the 50000 samples. If this average equals the population variance of 157.5 then variance, using <span class="math inline">\(n\)</span> in the denominator, is an unbiased estimator of the population variance.</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="sampling-accuracy.html#cb217-1"></a>many_samples <span class="op">%&gt;%</span></span>
-<span id="cb217-2"><a href="sampling-accuracy.html#cb217-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_of_var_n =</span> <span class="kw">mean</span>(sample_var_n)) <span class="op">%&gt;%</span></span>
-<span id="cb217-3"><a href="sampling-accuracy.html#cb217-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="sampling-accuracy.html#cb16-1"></a>many_samples <span class="op">%&gt;%</span></span>
+<span id="cb16-2"><a href="sampling-accuracy.html#cb16-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_of_var_n =</span> <span class="kw">mean</span>(sample_var_n)) <span class="op">%&gt;%</span></span>
+<span id="cb16-3"><a href="sampling-accuracy.html#cb16-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##   mean_of_var_n
 ## 1         141.5</code></pre>
 <p>You can see the average of sample_var_n column (141.54) is much smaller than the population variance (157.5). That is, the average of the sample variances, using <span class="math inline">\(n\)</span> in the denominator, was smaller than the population variance. Consequently, sample variance (using <span class="math inline">\(n\)</span> in the denominator) provides a biased estimate of the population variance. If we try to estimate the population variance with sample variance (using <span class="math inline">\(n\)</span> in the denominator) we will, on average, be wrong.</p>
-<p>Fortunately, there is a sample-level formula that estimates the population variance without bias (see Hayes). An unbiased estimate of the population variance can be obtained if we calculate the sample variance but divide by <span class="math inline">\(n - 1\)</span> instead of <span class="math inline">\(n\)</span>. The unbiased estimate is calculated using Formula <a href="sampling-accuracy.html#eq:samplevarn1ch5">(5.5)</a>.</p>
+<p>Fortunately, there is a sample-level formula that estimates the population variance without bias (see Hayes). An unbiased estimate of the population variance can be obtained if we calculate the sample variance but divide by <span class="math inline">\(n - 1\)</span> instead of <span class="math inline">\(n\)</span>. The unbiased estimate is calculated using Formula <a href="sampling-accuracy.html#eq:samplevarn1ch5">(2.5)</a>.</p>
 <p><span class="math display" id="eq:samplevarn1ch5">\[\begin{equation} 
 s^2 = \frac{\sum{(x - \bar{x})^2}}{n-1}
-      \tag{5.5}
+      \tag{2.5}
 \end{equation}\]</span></p>
-<p>In the many_samples data, the column sample_var_n_1 was generated using Formula <a href="sampling-accuracy.html#eq:samplevarn1ch5">(5.5)</a>. We can evaluate the quality of Formula <a href="sampling-accuracy.html#eq:samplevarn1ch5">(5.5)</a>, using <span class="math inline">\(n-1\)</span>, by averaging the values in the sample_var_n_1 column.</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="sampling-accuracy.html#cb219-1"></a>many_samples <span class="op">%&gt;%</span></span>
-<span id="cb219-2"><a href="sampling-accuracy.html#cb219-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_of_var_n_1 =</span> <span class="kw">mean</span>(sample_var_n_<span class="dv">1</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb219-3"><a href="sampling-accuracy.html#cb219-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<p>In the many_samples data, the column sample_var_n_1 was generated using Formula <a href="sampling-accuracy.html#eq:samplevarn1ch5">(2.5)</a>. We can evaluate the quality of Formula <a href="sampling-accuracy.html#eq:samplevarn1ch5">(2.5)</a>, using <span class="math inline">\(n-1\)</span>, by averaging the values in the sample_var_n_1 column.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="sampling-accuracy.html#cb18-1"></a>many_samples <span class="op">%&gt;%</span></span>
+<span id="cb18-2"><a href="sampling-accuracy.html#cb18-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_of_var_n_1 =</span> <span class="kw">mean</span>(sample_var_n_<span class="dv">1</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb18-3"><a href="sampling-accuracy.html#cb18-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##   mean_of_var_n_1
 ## 1           157.3</code></pre>
 <p>We see that the average of the 50000 values using <span class="math inline">\(n-1\)</span> in the denominator is 157.27 which is very close to the population variance of 157.46. These numbers would have been identical with an infinite number of samples. Consequently, when we use <span class="math inline">\(n-1\)</span> in the denominator we have an unbiased estimate of the population variance. If we try to estimate the population variance with a sample variance, using <span class="math inline">\(n-1\)</span> in the denominator, we will, on average, be right.</p>
@@ -755,42 +562,42 @@ s^2 = \frac{\sum{(x - \bar{x})^2}}{n-1}
 </div>
 </div>
 <div id="estimating-sigma" class="section level2">
-<h2><span class="header-section-number">5.6</span> Estimating <span class="math inline">\(\sigma\)</span></h2>
-<p>The population standard deviation is calculated using Formula <a href="sampling-accuracy.html#eq:popsdch5">(5.6)</a> below.</p>
+<h2><span class="header-section-number">2.6</span> Estimating <span class="math inline">\(\sigma\)</span></h2>
+<p>The population standard deviation is calculated using Formula <a href="sampling-accuracy.html#eq:popsdch5">(2.6)</a> below.</p>
 <p><span class="math display" id="eq:popsdch5">\[\begin{equation} 
 \sigma = \sqrt{\frac{\sum{(X- \mu)^2}}{N}}
-      \tag{5.6}
+      \tag{2.6}
 \end{equation}\]</span></p>
-<p>Due to the above findings for variance, we estimate the population standard deviation using Formula <a href="sampling-accuracy.html#eq:samplesd1ch5">(5.7)</a> below.</p>
+<p>Due to the above findings for variance, we estimate the population standard deviation using Formula <a href="sampling-accuracy.html#eq:samplesd1ch5">(2.7)</a> below.</p>
 <p><span class="math display" id="eq:samplesd1ch5">\[\begin{equation} 
 s = \sqrt{\frac{\sum{(x - \bar{x})^2}}{n-1}}
-      \tag{5.7}
+      \tag{2.7}
 \end{equation}\]</span></p>
 </div>
 <div id="estimating-delta" class="section level2">
-<h2><span class="header-section-number">5.7</span> Estimating <span class="math inline">\(\delta\)</span></h2>
-<p>We are interested in the sample standardized mean difference (<span class="math inline">\(d\)</span>) to the extent that it provides an estimate of the population standardized mean difference (<span class="math inline">\(\delta\)</span>). The population standardized mean difference is calculated using Formula <a href="sampling-accuracy.html#eq:popsmdch5">(5.8)</a> when we work for the assumption that the two population have the same variance / standard deviation:</p>
+<h2><span class="header-section-number">2.7</span> Estimating <span class="math inline">\(\delta\)</span></h2>
+<p>We are interested in the sample standardized mean difference (<span class="math inline">\(d\)</span>) to the extent that it provides an estimate of the population standardized mean difference (<span class="math inline">\(\delta\)</span>). The population standardized mean difference is calculated using Formula <a href="sampling-accuracy.html#eq:popsmdch5">(2.8)</a> when we work for the assumption that the two population have the same variance / standard deviation:</p>
 <p><span class="math display" id="eq:popsmdch5">\[\begin{equation} 
 \delta  = \frac{\mu_{1} - \mu_{2}}{\sigma} 
-      \tag{5.8}
+      \tag{2.8}
 \end{equation}\]</span></p>
 <p>We can calculate the population standardized mean difference for men and women once we have the respective population means and standard deviations. Recall the initial data mixed males and females. We begin by creating separate data sets for males and females:</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="sampling-accuracy.html#cb221-1"></a>male_population_heights &lt;-<span class="st"> </span>pop_data <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb221-2"><a href="sampling-accuracy.html#cb221-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;male&quot;</span>) </span>
-<span id="cb221-3"><a href="sampling-accuracy.html#cb221-3"></a></span>
-<span id="cb221-4"><a href="sampling-accuracy.html#cb221-4"></a>female_population_heights &lt;-<span class="st"> </span>pop_data <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb221-5"><a href="sampling-accuracy.html#cb221-5"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;female&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="sampling-accuracy.html#cb20-1"></a>male_population_heights &lt;-<span class="st"> </span>pop_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-2"><a href="sampling-accuracy.html#cb20-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;male&quot;</span>) </span>
+<span id="cb20-3"><a href="sampling-accuracy.html#cb20-3"></a></span>
+<span id="cb20-4"><a href="sampling-accuracy.html#cb20-4"></a>female_population_heights &lt;-<span class="st"> </span>pop_data <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-5"><a href="sampling-accuracy.html#cb20-5"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;female&quot;</span>) </span></code></pre></div>
 <p>Next, we calculate the mean and standard deviation of each population:</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="sampling-accuracy.html#cb222-1"></a>male_population_heights <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb222-2"><a href="sampling-accuracy.html#cb222-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(height),</span>
-<span id="cb222-3"><a href="sampling-accuracy.html#cb222-3"></a>            <span class="dt">sd =</span> <span class="kw">sd.pop</span>(height))</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="sampling-accuracy.html#cb21-1"></a>male_population_heights <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-2"><a href="sampling-accuracy.html#cb21-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(height),</span>
+<span id="cb21-3"><a href="sampling-accuracy.html#cb21-3"></a>            <span class="dt">sd =</span> <span class="kw">sd.pop</span>(height))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
 ##    mean    sd
 ##   &lt;dbl&gt; &lt;dbl&gt;
 ## 1  180.  10.1</code></pre>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="sampling-accuracy.html#cb224-1"></a>female_population_heights <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb224-2"><a href="sampling-accuracy.html#cb224-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(height),</span>
-<span id="cb224-3"><a href="sampling-accuracy.html#cb224-3"></a>            <span class="dt">sd =</span> <span class="kw">sd.pop</span>(height))</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="sampling-accuracy.html#cb23-1"></a>female_population_heights <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb23-2"><a href="sampling-accuracy.html#cb23-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(height),</span>
+<span id="cb23-3"><a href="sampling-accuracy.html#cb23-3"></a>            <span class="dt">sd =</span> <span class="kw">sd.pop</span>(height))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
 ##    mean    sd
 ##   &lt;dbl&gt; &lt;dbl&gt;
@@ -803,7 +610,7 @@ s = \sqrt{\frac{\sum{(x - \bar{x})^2}}{n-1}}
 \sigma = \sigma_{female} = \sigma_{male} &amp;= 10.1\\
 \end{aligned} 
 \]</span></p>
-<p>Likewise, as calculated below, the population-level standardized mean difference (<span class="math inline">\(\delta\)</span>) is 1.49. We can see this population-level difference illustrated in Figure <a href="sampling-accuracy.html#fig:sexpop">5.3</a>.</p>
+<p>Likewise, as calculated below, the population-level standardized mean difference (<span class="math inline">\(\delta\)</span>) is 1.49. We can see this population-level difference illustrated in Figure <a href="sampling-accuracy.html#fig:sexpop">2.3</a>.</p>
 <p><span class="math display">\[
 \begin{aligned} 
 \delta  &amp;= \frac{\mu_{male} - \mu_{female}}{\sigma} \\
@@ -815,23 +622,23 @@ s = \sqrt{\frac{\sum{(x - \bar{x})^2}}{n-1}}
 <div class="figure"><span id="fig:sexpop"></span>
 <img src="ch_samples/images/sex_pops.png" alt="Illustration of the standardized mean difference of 1.49 for male and female heights. The solid black vertical line indicates the mean for males; whereas the dotted vertical line indicates the mean for females." width="95%" />
 <p class="caption">
-FIGURE 5.3: Illustration of the standardized mean difference of 1.49 for male and female heights. The solid black vertical line indicates the mean for males; whereas the dotted vertical line indicates the mean for females.
+FIGURE 2.3: Illustration of the standardized mean difference of 1.49 for male and female heights. The solid black vertical line indicates the mean for males; whereas the dotted vertical line indicates the mean for females.
 </p>
 </div>
-<p>We typically need to estimate the population-level standardized mean difference from sample data because we rarely have access to data for an entire population. Many researchers estimate the population standardized mean difference from sample data using the Formula <a href="sampling-accuracy.html#eq:samplesmdch5">(5.9)</a> below – when we assume the populations have equal variances. This value is known by many other names: <span class="math inline">\(d\)</span>, Cohen’s <span class="math inline">\(d\)</span>, and Hedges’ <span class="math inline">\(g\)</span>. Notice that the sample-level formula, Formula <a href="sampling-accuracy.html#eq:samplesmdch5">(5.9)</a>, below, is the same as the population-level formula, Formula <a href="sampling-accuracy.html#eq:popsmdch5">(5.8)</a>, above, only the notation differs.</p>
+<p>We typically need to estimate the population-level standardized mean difference from sample data because we rarely have access to data for an entire population. Many researchers estimate the population standardized mean difference from sample data using the Formula <a href="sampling-accuracy.html#eq:samplesmdch5">(2.9)</a> below – when we assume the populations have equal variances. This value is known by many other names: <span class="math inline">\(d\)</span>, Cohen’s <span class="math inline">\(d\)</span>, and Hedges’ <span class="math inline">\(g\)</span>. Notice that the sample-level formula, Formula <a href="sampling-accuracy.html#eq:samplesmdch5">(2.9)</a>, below, is the same as the population-level formula, Formula <a href="sampling-accuracy.html#eq:popsmdch5">(2.8)</a>, above, only the notation differs.</p>
 <p><span class="math display" id="eq:samplesmdch5">\[\begin{equation} 
 d  = \frac{\bar{x}_{1} - \bar{x}_{2}}{s_{pooled}} 
-      \tag{5.9}
+      \tag{2.9}
 \end{equation}\]</span></p>
-<p>Unfortunately, Formula <a href="sampling-accuracy.html#eq:samplesmdch5">(5.9)</a> provides a biased estimate of the population standardized mean difference for small sample sizes. That is, on average, Formula <a href="sampling-accuracy.html#eq:samplesmdch5">(5.9)</a>, provides <span class="math inline">\(d\)</span>-values that overestimate the size of the population standardize mean difference (<span class="math inline">\(\delta\)</span>). Fortunately, we can obtain an unbiased estimate of the population-level standardized mean difference from sample data using Formula <a href="sampling-accuracy.html#eq:samplesmdunbiasedch5">(5.10)</a>. This is one approach to calculating <span class="math inline">\(d_{unbiased}\)</span> – there are others.</p>
+<p>Unfortunately, Formula <a href="sampling-accuracy.html#eq:samplesmdch5">(2.9)</a> provides a biased estimate of the population standardized mean difference for small sample sizes. That is, on average, Formula <a href="sampling-accuracy.html#eq:samplesmdch5">(2.9)</a>, provides <span class="math inline">\(d\)</span>-values that overestimate the size of the population standardize mean difference (<span class="math inline">\(\delta\)</span>). Fortunately, we can obtain an unbiased estimate of the population-level standardized mean difference from sample data using Formula <a href="sampling-accuracy.html#eq:samplesmdunbiasedch5">(2.10)</a>. This is one approach to calculating <span class="math inline">\(d_{unbiased}\)</span> – there are others.</p>
 <p><span class="math display" id="eq:samplesmdunbiasedch5">\[\begin{equation} 
 d_{unbiased}  = \frac{\bar{x}_{1} - \bar{x}_{2}}{s_{pooled}} \times [1 - \frac{3}{4(n_1 + n_2)-9}]
-      \tag{5.10}
+      \tag{2.10}
 \end{equation}\]</span></p>
-<p>If we try to apply either <span class="math inline">\(d\)</span>-value formula (<a href="sampling-accuracy.html#eq:samplesmdch5">(5.9)</a> or <a href="sampling-accuracy.html#eq:samplesmdunbiasedch5">(5.10)</a>) to real data we quickly encounter a problem. We don’t have the pooled standard deviation, <span class="math inline">\(s_{pooled}\)</span></p>
+<p>If we try to apply either <span class="math inline">\(d\)</span>-value formula (<a href="sampling-accuracy.html#eq:samplesmdch5">(2.9)</a> or <a href="sampling-accuracy.html#eq:samplesmdunbiasedch5">(2.10)</a>) to real data we quickly encounter a problem. We don’t have the pooled standard deviation, <span class="math inline">\(s_{pooled}\)</span></p>
 <div id="pooled-standard-deviation" class="section level3">
-<h3><span class="header-section-number">5.7.1</span> Pooled standard deviation</h3>
-<p>When we calculated the population-level standardized mean difference we knew the population variances where the same. Consequently, there was only one standard deviation (i.e., only one variance). More specifically, the male and female populations both had a standard deviation but it was the same for both populations. The population-level formula for the standardized mean difference, Formula <a href="sampling-accuracy.html#eq:popsmdch5">(5.8)</a>, has only one standard deviation in it. This is because calculation of the standardized mean difference explicitly depends on the fact that both populations have the same standard deviation.</p>
+<h3><span class="header-section-number">2.7.1</span> Pooled standard deviation</h3>
+<p>When we calculated the population-level standardized mean difference we knew the population variances where the same. Consequently, there was only one standard deviation (i.e., only one variance). More specifically, the male and female populations both had a standard deviation but it was the same for both populations. The population-level formula for the standardized mean difference, Formula <a href="sampling-accuracy.html#eq:popsmdch5">(2.8)</a>, has only one standard deviation in it. This is because calculation of the standardized mean difference explicitly depends on the fact that both populations have the same standard deviation.</p>
 <p>Let’s consider hypothetical sample data to make the situation clear. More specifically, we will examine the sample-level statistics below for males and females. Notice that we have two standard deviations – one for males and one for females. Moreover, these two sample-level standard deviations (using <span class="math inline">\(n\)</span>-1) are not the same - they are different from each other. This initially seems problematic - calculation of standardized mean difference requires that population standard deviations are identical.</p>
 <p><span class="math display">\[
 \begin{aligned} 
@@ -850,37 +657,37 @@ s_{females} &amp;= 8.2 \\
 \]</span></p>
 <p>Fortunately, this is sample-level data and not population-level data. Sample-level standard deviations may differ even when the population-level standard deviations are the same. In fact, sample-level standard deviations are <em>likely</em> to differ from the population-level standard deviation due to sampling error. Consequently, we are <em>likely</em> to get two different sample-level standard deviations even if the population-level standard deviations are identical for males and females.</p>
 <p>How do we resolve this situation of having two sample-level standard deviations? The first step is to switch to thinking in terms of variance rather than standard deviation. Due to the way the math works, life becomes very complicated, very quickly, if we continue to think in terms of standard deviations. Therefore, we reframe the problem into a variance problem. Variances are preferable to standard deviations because we can add and subtract variances - but not standard deviations.</p>
-<p>We have a sample variance for males (92.2) and a sample variance for females (66.8). We view each of these sample variances as an estimate of the respective population variances (see Figure <a href="sampling-accuracy.html#fig:pool1">5.4</a>). That is, the male sample variance is an estimate of the male population variance. Likewise, the female sample variance is an estimate of the female population variance. However, we also <strong>assume</strong> that the population variances for males and females are the same. Consequently, the male sample variance and the female sample variance are both estimates of the same value (see Figure <a href="sampling-accuracy.html#fig:pool2">5.5</a>). Because the two sample variances are estimates of the same population variance, we can (when the sample sizes are equal) calculate a new variance by averaging them together. This new variance, the average of the sample variances, provides us with a better estimate of the single population variance. The logic behind this approach is similar to averaging two measurements of the same distance to reduce error. We call this new variance pooled variance; and represent it with the symbol <span class="math inline">\(s_{pooled}^2\)</span>.</p>
+<p>We have a sample variance for males (92.2) and a sample variance for females (66.8). We view each of these sample variances as an estimate of the respective population variances (see Figure <a href="sampling-accuracy.html#fig:pool1">2.4</a>). That is, the male sample variance is an estimate of the male population variance. Likewise, the female sample variance is an estimate of the female population variance. However, we also <strong>assume</strong> that the population variances for males and females are the same. Consequently, the male sample variance and the female sample variance are both estimates of the same value (see Figure <a href="sampling-accuracy.html#fig:pool2">2.5</a>). Because the two sample variances are estimates of the same population variance, we can (when the sample sizes are equal) calculate a new variance by averaging them together. This new variance, the average of the sample variances, provides us with a better estimate of the single population variance. The logic behind this approach is similar to averaging two measurements of the same distance to reduce error. We call this new variance pooled variance; and represent it with the symbol <span class="math inline">\(s_{pooled}^2\)</span>.</p>
 <div style="page-break-after: always;"></div>
 <div class="figure"><span id="fig:pool1"></span>
 <img src="ch_samples/images/pool1.png" alt="Estimating population variances with sample variances. The male sample variance (n-1) is an estimate of male population variance. Likewise, the female sample variance (n-1) is an estimate of the female population variance. " width="80%" />
 <p class="caption">
-FIGURE 5.4: Estimating population variances with sample variances. The male sample variance (n-1) is an estimate of male population variance. Likewise, the female sample variance (n-1) is an estimate of the female population variance.
+FIGURE 2.4: Estimating population variances with sample variances. The male sample variance (n-1) is an estimate of male population variance. Likewise, the female sample variance (n-1) is an estimate of the female population variance.
 </p>
 </div>
 
 <div class="figure"><span id="fig:pool2"></span>
 <img src="ch_samples/images/pool2.png" alt="Two estimates of a single population variance. We assume the population variances are the same. Therefore, the male and female sample variances are both estimates of the same population variance." width="80%" />
 <p class="caption">
-FIGURE 5.5: Two estimates of a single population variance. We assume the population variances are the same. Therefore, the male and female sample variances are both estimates of the same population variance.
+FIGURE 2.5: Two estimates of a single population variance. We assume the population variances are the same. Therefore, the male and female sample variances are both estimates of the same population variance.
 </p>
 </div>
 <div style="page-break-after: always;"></div>
 <div class="figure"><span id="fig:pool3"></span>
 <img src="ch_samples/images/pool3.png" alt="Pooled variance from the samples estimates population variance. The population variance is estimated by averaging two sample variances into a single estimate called pooled variance ($s_{pooled}^2$). When sample sizes are equal, the pooled variance is just the regular/simple average of the two sample variances (both using n-1 in the denominator). When the sample sizes are unequal (i.e., different numbers of males and females), however, we need to use a more sophisticated averaging formula to obtain the pooled variance." width="80%" />
 <p class="caption">
-FIGURE 5.6: Pooled variance from the samples estimates population variance. The population variance is estimated by averaging two sample variances into a single estimate called pooled variance (<span class="math inline">\(s_{pooled}^2\)</span>). When sample sizes are equal, the pooled variance is just the regular/simple average of the two sample variances (both using n-1 in the denominator). When the sample sizes are unequal (i.e., different numbers of males and females), however, we need to use a more sophisticated averaging formula to obtain the pooled variance.
+FIGURE 2.6: Pooled variance from the samples estimates population variance. The population variance is estimated by averaging two sample variances into a single estimate called pooled variance (<span class="math inline">\(s_{pooled}^2\)</span>). When sample sizes are equal, the pooled variance is just the regular/simple average of the two sample variances (both using n-1 in the denominator). When the sample sizes are unequal (i.e., different numbers of males and females), however, we need to use a more sophisticated averaging formula to obtain the pooled variance.
 </p>
 </div>
-<p>When the sample sizes for males and females are the same (i.e., <span class="math inline">\(n_{males} =n_{females}\)</span>) we can use the Formula <a href="sampling-accuracy.html#eq:poolvarequalch5">(5.11)</a> below to calculate the pooled variance.</p>
+<p>When the sample sizes for males and females are the same (i.e., <span class="math inline">\(n_{males} =n_{females}\)</span>) we can use the Formula <a href="sampling-accuracy.html#eq:poolvarequalch5">(2.11)</a> below to calculate the pooled variance.</p>
 <p><span class="math display" id="eq:poolvarequalch5">\[\begin{equation} 
 s_{pooled}^2  = \frac{s_{1}^2 + s_{2}^2}{2} 
-      \tag{5.11}
+      \tag{2.11}
 \end{equation}\]</span></p>
-<p>When the sample sizes for males and females are the different (i.e., <span class="math inline">\(n_{males} \ne n_{females}\)</span>) we can use the Formula <a href="sampling-accuracy.html#eq:poolvarch5">(5.12)</a> below to calculate the pooled variance. This formula can be used all of the time. We only show Formula <a href="sampling-accuracy.html#eq:poolvarequalch5">(5.11)</a>, above, to make it clear that Formula <a href="sampling-accuracy.html#eq:poolvarch5">(5.12)</a> below is basically just averaging the variances in a way that takes sample size into account.</p>
+<p>When the sample sizes for males and females are the different (i.e., <span class="math inline">\(n_{males} \ne n_{females}\)</span>) we can use the Formula <a href="sampling-accuracy.html#eq:poolvarch5">(2.12)</a> below to calculate the pooled variance. This formula can be used all of the time. We only show Formula <a href="sampling-accuracy.html#eq:poolvarequalch5">(2.11)</a>, above, to make it clear that Formula <a href="sampling-accuracy.html#eq:poolvarch5">(2.12)</a> below is basically just averaging the variances in a way that takes sample size into account.</p>
 <p><span class="math display" id="eq:poolvarch5">\[\begin{equation} 
 s_{pooled}^2  = \frac{(n_1 -1)s_1^2 + (n_2 -1)s_2^2}{n_1 + n_2-2}
-      \tag{5.12}
+      \tag{2.12}
 \end{equation}\]</span></p>
 <p>We get the single standard deviation, <span class="math inline">\(s_{pooled}\)</span>, by taking the square root of the variance, <span class="math inline">\(s_{pooled}^2\)</span>.</p>
 <p><span class="math display">\[
@@ -888,7 +695,7 @@ s_{pooled}^2  = \frac{(n_1 -1)s_1^2 + (n_2 -1)s_2^2}{n_1 + n_2-2}
 s_{pooled}  &amp;= \sqrt{s_{pooled}^2} \\
 \end{aligned} 
 \]</span></p>
-<p>We apply the pooled standard variance, Formula <a href="sampling-accuracy.html#eq:poolvarch5">(5.12)</a>, to the sample data:</p>
+<p>We apply the pooled standard variance, Formula <a href="sampling-accuracy.html#eq:poolvarch5">(2.12)</a>, to the sample data:</p>
 <p><span class="math display">\[
 \begin{aligned}
 s_{pooled}^2 &amp;= \frac{(n_{male} -1)s_{male}^2 + (n_{female} -1)s_{female}^2}{n_{male} + n_{female}-2} \\
@@ -905,8 +712,8 @@ s_{pooled}  &amp;= \sqrt{79.5} \\
 \]</span></p>
 </div>
 <div id="calculating-d" class="section level3">
-<h3><span class="header-section-number">5.7.2</span> Calculating <span class="math inline">\(d\)</span></h3>
-<p>Now that we have the pooled standard deviation, <span class="math inline">\(s_{pooled}\)</span>, we can calculate the standardized mean difference. We do so below using unbiased formula, Formula <a href="sampling-accuracy.html#eq:samplesmdunbiasedch5">(5.10)</a> below.</p>
+<h3><span class="header-section-number">2.7.2</span> Calculating <span class="math inline">\(d\)</span></h3>
+<p>Now that we have the pooled standard deviation, <span class="math inline">\(s_{pooled}\)</span>, we can calculate the standardized mean difference. We do so below using unbiased formula, Formula <a href="sampling-accuracy.html#eq:samplesmdunbiasedch5">(2.10)</a> below.</p>
 <p><span class="math display">\[
 \begin{aligned}
 d_{unbiased}  &amp;= d \times [1 - \frac{3}{4(n_{males} + n_{females})-9}] \\
@@ -918,39 +725,40 @@ d_{unbiased}  &amp;= d \times [1 - \frac{3}{4(n_{males} + n_{females})-9}] \\
 \]</span></p>
 </div>
 <div id="assessing-bias-2" class="section level3">
-<h3><span class="header-section-number">5.7.3</span> Assessing bias</h3>
+<h3><span class="header-section-number">2.7.3</span> Assessing bias</h3>
 <p>Sample-level <span class="math inline">\(d_{unbiased}\)</span>-values, calculated above, often differ from the population-level standardized mean difference (i.e., <span class="math inline">\(\delta\)</span>) due to sampling error. We can confirm that <span class="math inline">\(d_{unbiased}\)</span>-values are actually unbiased with a simulation. That is, we can confirm that the average of many <span class="math inline">\(d_{unbiased}\)</span>-values equals the population standardized mean difference (i.e., <span class="math inline">\(\delta\)</span>) using a simulation.</p>
 <p>First, we obtain the heights from the male and female populations and place them into male_heights and female_heights, respectively.</p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="sampling-accuracy.html#cb226-1"></a>male_heights &lt;-<span class="st"> </span>male_population_heights <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb226-2"><a href="sampling-accuracy.html#cb226-2"></a><span class="st">  </span><span class="kw">pull</span>(height)</span>
-<span id="cb226-3"><a href="sampling-accuracy.html#cb226-3"></a></span>
-<span id="cb226-4"><a href="sampling-accuracy.html#cb226-4"></a>female_heights &lt;-<span class="st"> </span>female_population_heights <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb226-5"><a href="sampling-accuracy.html#cb226-5"></a><span class="st">  </span><span class="kw">pull</span>(height)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="sampling-accuracy.html#cb25-1"></a>male_heights &lt;-<span class="st"> </span>male_population_heights <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb25-2"><a href="sampling-accuracy.html#cb25-2"></a><span class="st">  </span><span class="kw">pull</span>(height)</span>
+<span id="cb25-3"><a href="sampling-accuracy.html#cb25-3"></a></span>
+<span id="cb25-4"><a href="sampling-accuracy.html#cb25-4"></a>female_heights &lt;-<span class="st"> </span>female_population_heights <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb25-5"><a href="sampling-accuracy.html#cb25-5"></a><span class="st">  </span><span class="kw">pull</span>(height)</span></code></pre></div>
 <p>Next, we obtain a large number of samples from each population and place them in many_samples.</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="sampling-accuracy.html#cb227-1"></a>many_samples&lt;-<span class="st">  </span><span class="kw">get_d_samples_from_population_data</span>(<span class="dt">pop1 =</span> male_heights,</span>
-<span id="cb227-2"><a href="sampling-accuracy.html#cb227-2"></a>                                   <span class="dt">pop2 =</span> female_heights,</span>
-<span id="cb227-3"><a href="sampling-accuracy.html#cb227-3"></a>                                   <span class="dt">cell.n =</span> <span class="dv">10</span>,</span>
-<span id="cb227-4"><a href="sampling-accuracy.html#cb227-4"></a>                                   <span class="dt">number.of.samples =</span> <span class="dv">50000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="sampling-accuracy.html#cb26-1"></a>many_samples&lt;-<span class="st">  </span><span class="kw">get_d_samples_from_population_data</span>(<span class="dt">pop1 =</span> male_heights,</span>
+<span id="cb26-2"><a href="sampling-accuracy.html#cb26-2"></a>                                   <span class="dt">pop2 =</span> female_heights,</span>
+<span id="cb26-3"><a href="sampling-accuracy.html#cb26-3"></a>                                   <span class="dt">cell.n =</span> <span class="dv">10</span>,</span>
+<span id="cb26-4"><a href="sampling-accuracy.html#cb26-4"></a>                                   <span class="dt">number.of.samples =</span> <span class="dv">50000</span>)</span></code></pre></div>
 <p>We can examine the contents of many_samples using the print() command. Each row of many_samples represents a single study. Each study has two samples: 10 males and 10 females. For both males and females we calculate the mean and variance. As well, we calculate the <span class="math inline">\(d\)</span> and <span class="math inline">\(d_{unbiased}\)</span> for each row. If you examine the first row carefully you see that the data in this row corresponds to the hand calculation example.</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="sampling-accuracy.html#cb228-1"></a><span class="kw">print</span>(many_samples)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="sampling-accuracy.html#cb27-1"></a><span class="kw">print</span>(many_samples)</span></code></pre></div>
 <pre><code>## # A tibble: 50,000 x 7
-##    n_per_cell mean1 var1_n_1 mean2 var2_n_1     d d_unbiased
-##         &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;
-##  1         10  187.     92.2  160.     66.8  3.04       2.91
-##  2         10  183     107.   166      77.8  1.77       1.69
-##  3         10  181      39.8  169.    144.   1.27       1.22
-##  4         10  175.     80.3  162.     89.4  1.4        1.34
-##  5         10  184.     91.0  164.     28.9  2.65       2.54
-##  6         10  182.     96.4  166.    106.   1.61       1.54
-##  7         10  177.     97.2  167     162.   0.84       0.81
-##  8         10  188     212.   161.    205.   1.89       1.81
-##  9         10  185.     54.7  166.     91.5  2.28       2.18
-## 10         10  179.     69.3  162.     55.4  2.2        2.11
-## # … with 49,990 more rows</code></pre>
+##    n_per_cell mean1 var1_n_1 mean2 var2_n_1     d
+##         &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+##  1         10  187.     92.2  160.     66.8  3.04
+##  2         10  183     107.   166      77.8  1.77
+##  3         10  181      39.8  169.    144.   1.27
+##  4         10  175.     80.3  162.     89.4  1.4 
+##  5         10  184.     91.0  164.     28.9  2.65
+##  6         10  182.     96.4  166.    106.   1.61
+##  7         10  177.     97.2  167     162.   0.84
+##  8         10  188     212.   161.    205.   1.89
+##  9         10  185.     54.7  166.     91.5  2.28
+## 10         10  179.     69.3  162.     55.4  2.2 
+## # … with 49,990 more rows, and 1 more variable:
+## #   d_unbiased &lt;dbl&gt;</code></pre>
 <p>Recall the population-level standardized mean difference, <span class="math inline">\(\delta\)</span>, was 1.49. We can see the extent to which the average of the sample-level <span class="math inline">\(d\)</span> and <span class="math inline">\(d_{unbiased}\)</span> values compare to this population-level value.</p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="sampling-accuracy.html#cb230-1"></a>many_samples <span class="op">%&gt;%</span></span>
-<span id="cb230-2"><a href="sampling-accuracy.html#cb230-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_d =</span> <span class="kw">mean</span>(d),</span>
-<span id="cb230-3"><a href="sampling-accuracy.html#cb230-3"></a>            <span class="dt">mean_d_unbiased =</span> <span class="kw">mean</span>(d_unbiased))</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="sampling-accuracy.html#cb29-1"></a>many_samples <span class="op">%&gt;%</span></span>
+<span id="cb29-2"><a href="sampling-accuracy.html#cb29-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_d =</span> <span class="kw">mean</span>(d),</span>
+<span id="cb29-3"><a href="sampling-accuracy.html#cb29-3"></a>            <span class="dt">mean_d_unbiased =</span> <span class="kw">mean</span>(d_unbiased))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
 ##   mean_d mean_d_unbiased
 ##    &lt;dbl&gt;           &lt;dbl&gt;
@@ -958,18 +766,18 @@ d_{unbiased}  &amp;= d \times [1 - \frac{3}{4(n_{males} + n_{females})-9}] \\
 <p>You can see that the mean of the sample-level <span class="math inline">\(d\)</span> values is 1.56 which is higher than the population-level standardized mean difference (<span class="math inline">\(\delta\)</span> = 1.49). In contrast, you can see that the mean of the sample-level <span class="math inline">\(d_{unbiased}\)</span> values is 1.49 which corresponds to the population-level standardized mean difference (<span class="math inline">\(\delta\)</span> = 1.49).</p>
 </div>
 <div id="illustrating-variability" class="section level3">
-<h3><span class="header-section-number">5.7.4</span> Illustrating variability</h3>
+<h3><span class="header-section-number">2.7.4</span> Illustrating variability</h3>
 <p>An inspection of the first few rows of the many_samples data, above, illustrates that many of the <span class="math inline">\(d_{unbiased}\)</span> values differed from the population-level standardized mean difference of <span class="math inline">\(\delta = 1.49\)</span>. We can see the variability in sample-level <span class="math inline">\(d_{unbiased}\)</span> values in the histogram below.</p>
 <div class="figure"><span id="fig:ddist"></span>
 <img src="ch_samples/images/d_dist.png" alt="Histogram of $d_{unbiased}$ when $\delta = 1.49$" width="95%" />
 <p class="caption">
-FIGURE 5.7: Histogram of <span class="math inline">\(d_{unbiased}\)</span> when <span class="math inline">\(\delta = 1.49\)</span>
+FIGURE 2.7: Histogram of <span class="math inline">\(d_{unbiased}\)</span> when <span class="math inline">\(\delta = 1.49\)</span>
 </p>
 </div>
 <p>We can calculate the full range of sample-level <span class="math inline">\(d_{unbiased}\)</span> values with the commands below:</p>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="sampling-accuracy.html#cb232-1"></a>many_samples <span class="op">%&gt;%</span></span>
-<span id="cb232-2"><a href="sampling-accuracy.html#cb232-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">d_min =</span> <span class="kw">min</span>(d_unbiased),</span>
-<span id="cb232-3"><a href="sampling-accuracy.html#cb232-3"></a>            <span class="dt">d_max =</span> <span class="kw">max</span>(d_unbiased))</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="sampling-accuracy.html#cb31-1"></a>many_samples <span class="op">%&gt;%</span></span>
+<span id="cb31-2"><a href="sampling-accuracy.html#cb31-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">d_min =</span> <span class="kw">min</span>(d_unbiased),</span>
+<span id="cb31-3"><a href="sampling-accuracy.html#cb31-3"></a>            <span class="dt">d_max =</span> <span class="kw">max</span>(d_unbiased))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
 ##   d_min d_max
 ##   &lt;dbl&gt; &lt;dbl&gt;
@@ -978,24 +786,24 @@ FIGURE 5.7: Histogram of <span class="math inline">\(d_{unbiased}\)</span> when 
 </div>
 </div>
 <div id="estimating-rho" class="section level2">
-<h2><span class="header-section-number">5.8</span> Estimating <span class="math inline">\(\rho\)</span></h2>
-<p>The population-level correlation, <span class="math inline">\(\rho\)</span>, is estimated by the sample-level correlation, <span class="math inline">\(r\)</span>. The value for <span class="math inline">\(r\)</span> can be calculated using Formula <a href="sampling-accuracy.html#eq:sampler5">(5.13)</a> below.</p>
+<h2><span class="header-section-number">2.8</span> Estimating <span class="math inline">\(\rho\)</span></h2>
+<p>The population-level correlation, <span class="math inline">\(\rho\)</span>, is estimated by the sample-level correlation, <span class="math inline">\(r\)</span>. The value for <span class="math inline">\(r\)</span> can be calculated using Formula <a href="sampling-accuracy.html#eq:sampler5">(2.13)</a> below.</p>
 <p><span class="math display" id="eq:sampler5">\[\begin{equation} 
 r =  \frac{\Sigma (x - \bar{x})(y - \bar{y})}{\sqrt{\Sigma (x - \bar{x})^2\Sigma (y - \bar{y})^2}}
-      \tag{5.13}
+      \tag{2.13}
 \end{equation}\]</span></p>
 <p>Sample-level correlations, <span class="math inline">\(r\)</span>, often differ from the population-level correlation (<span class="math inline">\(\rho\)</span>) due to sampling error. We can confirm that sample correlations are not substantially biased with a simulation. That is, we can confirm that the average of many sample correlations (<span class="math inline">\(r\)</span>) roughly equals the population correlation (<span class="math inline">\(\rho\)</span>) using a simulation. We say “roughly equal” because <span class="math inline">\(r\)</span> is technically a biased estimator of <span class="math inline">\(\rho\)</span> but the bias is sufficiently small that it can be ignored <span class="citation">(Schmidt and Hunter <a href="#ref-schmidt2014methods" role="doc-biblioref">2014</a>)</span>.</p>
 <p>We have the height and weight for 300000 people that comprise our population (fictious data). This data can be loaded with the command below.</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="sampling-accuracy.html#cb234-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb234-2"><a href="sampling-accuracy.html#cb234-2"></a>pop_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_cor_pop.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="sampling-accuracy.html#cb33-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb33-2"><a href="sampling-accuracy.html#cb33-2"></a>pop_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_cor_pop.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## 
-## ── Column specification ────────────────────────────────────
+## ── Column specification ───────────────────────────────
 ## cols(
 ##   weight = col_double(),
 ##   height = col_double()
 ## )</code></pre>
 <p>The print() command reveals there are 300000 rows and two columns (weight and height). Each row represents a different person in the population.</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="sampling-accuracy.html#cb236-1"></a><span class="kw">print</span>(pop_data)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="sampling-accuracy.html#cb35-1"></a><span class="kw">print</span>(pop_data)</span></code></pre></div>
 <pre><code>## # A tibble: 300,000 x 2
 ##    weight height
 ##     &lt;dbl&gt;  &lt;dbl&gt;
@@ -1011,18 +819,18 @@ r =  \frac{\Sigma (x - \bar{x})(y - \bar{y})}{\sqrt{\Sigma (x - \bar{x})^2\Sigma
 ## 10   146.   167.
 ## # … with 299,990 more rows</code></pre>
 <p>We can obtain the population correlation, <span class="math inline">\(\rho\)</span>, by correlating the weight and height columns:</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="sampling-accuracy.html#cb238-1"></a><span class="kw">cor</span>(pop_data)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="sampling-accuracy.html#cb37-1"></a><span class="kw">cor</span>(pop_data)</span></code></pre></div>
 <pre><code>##        weight height
 ## weight    1.0    0.5
 ## height    0.5    1.0</code></pre>
-<p>We see from this matrix that the population correlation (<em>N</em> = 300000) between weight and height is <span class="math inline">\(\rho\)</span> = .50 (with rounding), see Figure <a href="sampling-accuracy.html#fig:rdistplot">5.8</a>A.</p>
+<p>We see from this matrix that the population correlation (<em>N</em> = 300000) between weight and height is <span class="math inline">\(\rho\)</span> = .50 (with rounding), see Figure <a href="sampling-accuracy.html#fig:rdistplot">2.8</a>A.</p>
 <p>To examine the extent to which this population correlation, <span class="math inline">\(\rho\)</span> = .50, is estimated by the sample statistic, <span class="math inline">\(r\)</span>, we need to take a large number of samples. Therefore, we take 50000 samples (each <em>n</em> = 75) and calculate the correlation for each:</p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="sampling-accuracy.html#cb240-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb240-2"><a href="sampling-accuracy.html#cb240-2"></a>many_samples &lt;-<span class="st"> </span><span class="kw">get_r_samples_from_population_data</span>(<span class="dt">data =</span> pop_data,</span>
-<span id="cb240-3"><a href="sampling-accuracy.html#cb240-3"></a>                                                   <span class="dt">n =</span> <span class="dv">75</span>,</span>
-<span id="cb240-4"><a href="sampling-accuracy.html#cb240-4"></a>                                                   <span class="dt">number.of.samples =</span> <span class="dv">50000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="sampling-accuracy.html#cb39-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb39-2"><a href="sampling-accuracy.html#cb39-2"></a>many_samples &lt;-<span class="st"> </span><span class="kw">get_r_samples_from_population_data</span>(<span class="dt">data =</span> pop_data,</span>
+<span id="cb39-3"><a href="sampling-accuracy.html#cb39-3"></a>                                                   <span class="dt">n =</span> <span class="dv">75</span>,</span>
+<span id="cb39-4"><a href="sampling-accuracy.html#cb39-4"></a>                                                   <span class="dt">number.of.samples =</span> <span class="dv">50000</span>)</span></code></pre></div>
 <p>We can examine the first few rows of many_samples using the print() command. There are 50000 rows and each row represent a different sample of 75 people. The correlation between height and weight for each sample is presented in the <span class="math inline">\(r\)</span> column.</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="sampling-accuracy.html#cb241-1"></a><span class="kw">print</span>(many_samples)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="sampling-accuracy.html#cb40-1"></a><span class="kw">print</span>(many_samples)</span></code></pre></div>
 <pre><code>## # A tibble: 50,000 x 3
 ##    sample.number     n     r
 ##            &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -1037,20 +845,20 @@ r =  \frac{\Sigma (x - \bar{x})(y - \bar{y})}{\sqrt{\Sigma (x - \bar{x})^2\Sigma
 ##  9             9    75 0.59 
 ## 10            10    75 0.5  
 ## # … with 49,990 more rows</code></pre>
-<p>If you examine the first row carefully you see a sample correlation of <span class="math inline">\(r = .38\)</span> based on <span class="math inline">\(n\)</span> = 75. This sample correlation is illustrated in Figure <a href="sampling-accuracy.html#fig:rdistplot">5.8</a>B and it is just one of the 50000 sample correlations. The distribution of the 50000 sample correlations is illustrated in in Figure <a href="sampling-accuracy.html#fig:rdistplot">5.8</a>C.</p>
+<p>If you examine the first row carefully you see a sample correlation of <span class="math inline">\(r = .38\)</span> based on <span class="math inline">\(n\)</span> = 75. This sample correlation is illustrated in Figure <a href="sampling-accuracy.html#fig:rdistplot">2.8</a>B and it is just one of the 50000 sample correlations. The distribution of the 50000 sample correlations is illustrated in in Figure <a href="sampling-accuracy.html#fig:rdistplot">2.8</a>C.</p>
 <p>Even though the population correlation is <span class="math inline">\(\rho = .50\)</span> there is considerable variability in the sample correlations, <span class="math inline">\(r\)</span>. Each sample correlation is based on a subset of the population data (i.e., 75 of the 300000 rows). Consequently, the sample correlations differ from the population correlation due to sampling error. The differences among the sample correlations can be quite large. Indeed, as the code below reveals, some sample correlation were as low as <span class="math inline">\(r = .06\)</span> and as high as <span class="math inline">\(r = .77\)</span> – even though the population correlation was <span class="math inline">\(\rho = .50\)</span>.</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="sampling-accuracy.html#cb243-1"></a>many_samples <span class="op">%&gt;%</span></span>
-<span id="cb243-2"><a href="sampling-accuracy.html#cb243-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">min_r =</span> <span class="kw">min</span>(r),</span>
-<span id="cb243-3"><a href="sampling-accuracy.html#cb243-3"></a>            <span class="dt">max_r =</span> <span class="kw">max</span>(r))</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="sampling-accuracy.html#cb42-1"></a>many_samples <span class="op">%&gt;%</span></span>
+<span id="cb42-2"><a href="sampling-accuracy.html#cb42-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">min_r =</span> <span class="kw">min</span>(r),</span>
+<span id="cb42-3"><a href="sampling-accuracy.html#cb42-3"></a>            <span class="dt">max_r =</span> <span class="kw">max</span>(r))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
 ##   min_r max_r
 ##   &lt;dbl&gt; &lt;dbl&gt;
 ## 1  0.06  0.77</code></pre>
 <div id="assessing-bias-3" class="section level3">
-<h3><span class="header-section-number">5.8.1</span> Assessing bias</h3>
+<h3><span class="header-section-number">2.8.1</span> Assessing bias</h3>
 <p>Even though the sample correlations usually differed from the population correlation we are not concerned. We recognize that there is little to be learned from a single study. We are more concerned as to whether the average of a large number of sample correlations is correct. We assess this with the code below.</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="sampling-accuracy.html#cb245-1"></a>many_samples <span class="op">%&gt;%</span></span>
-<span id="cb245-2"><a href="sampling-accuracy.html#cb245-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_r =</span> <span class="kw">mean</span>(r))</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="sampling-accuracy.html#cb44-1"></a>many_samples <span class="op">%&gt;%</span></span>
+<span id="cb44-2"><a href="sampling-accuracy.html#cb44-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_r =</span> <span class="kw">mean</span>(r))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   mean_r
 ##    &lt;dbl&gt;
@@ -1059,13 +867,13 @@ r =  \frac{\Sigma (x - \bar{x})(y - \bar{y})}{\sqrt{\Sigma (x - \bar{x})^2\Sigma
 <div class="figure"><span id="fig:rdistplot"></span>
 <img src="ch_samples/images/r_sampling_dist_edit.png" alt="Correlation sampling distribution" width="70%" height="70%" />
 <p class="caption">
-FIGURE 5.8: Correlation sampling distribution
+FIGURE 2.8: Correlation sampling distribution
 </p>
 </div>
 </div>
 </div>
 <div id="overview-1" class="section level2">
-<h2><span class="header-section-number">5.9</span> Overview</h2>
+<h2><span class="header-section-number">2.9</span> Overview</h2>
 <p>In this chapter we have illustrated how population parameters can be estimated by sample statistics; these are summarized below:</p>
 
 <table>
@@ -1127,18 +935,18 @@ FIGURE 5.8: Correlation sampling distribution
 
 </div>
 <div id="meta-analysis" class="section level2">
-<h2><span class="header-section-number">5.10</span> Meta-analysis</h2>
+<h2><span class="header-section-number">2.10</span> Meta-analysis</h2>
 <p>It may seem odd that we used so many simulations to investigate the properties of statistics. Surely, researchers don’t do that “in the real world”. In fact, researchers who are aware of the enormous impact of sampling error know that single studies have little informational value. They recognize that any single study has a high probability of being misleading. Consequently, these individuals survey the literature and find all the studies on a single topic (possibly thousands of studies). An average of the results of all of the thousands of studies can then be calculated and reported. This process is referred to as conducting a meta-analysis; and it perfectly corresponds to the process we used in the simulations. A meta-analysis finds “the truth” of what is happening at the population level by averaging all of the studies on that topic.</p>
 </div>
 <div id="a-joke" class="section level2">
-<h2><span class="header-section-number">5.11</span> A joke</h2>
+<h2><span class="header-section-number">2.11</span> A joke</h2>
 <p>Now that you understand the logic for assessing bias, we present an old statistics joke.</p>
 <blockquote>
 <p>“A physicist, a chemist, and a statistician go hunting. The physicist shoots at a deer and misses by 2 meters to the left. The chemist shoots and misses by 2 meters to the right. The statistician immediately yells”We got it!"</p>
 </blockquote>
 </div>
 <div id="key-points-1" class="section level2">
-<h2><span class="header-section-number">5.12</span> Key Points</h2>
+<h2><span class="header-section-number">2.12</span> Key Points</h2>
 <ol style="list-style-type: decimal">
 <li><p>Samples are of interest because they help us estimate attributes of a population.</p></li>
 <li><p>Sample <em>statistics</em> estimate population <em>parameters</em>.</p></li>
@@ -1161,8 +969,8 @@ FIGURE 5.8: Correlation sampling distribution
           </div>
         </div>
       </div>
-<a href="graphing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sampling-precision.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="populations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regression-and-correlation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -1193,7 +1001,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-crc/edit/master/05-samples.Rmd",
+"link": "https://github.com/yihui/bookdown-crc/edit/master/02-samples.Rmd",
 "text": "Edit"
 },
 "history": {
