@@ -51,8 +51,6 @@ population-relations
 relation-benchmarks
 standardized-scores
 key-points
-minor-points
-self-assessment
 sampling-accuracy
 overview
 data-for-the-chapter
