@@ -2,7 +2,7 @@
 
 # Introduction
 
-Welcome! In this guide, we will teach you about statistics using the statistical software R with the interface provided by R Studio.  The purpose of this chapter to is provide you with a set of activities that get you up-and-running in R quickly so get a sense of how it works. In later chatpers we will revisit these same topics in more detail. 
+Welcome! In this guide, we will teach you about statistics using the statistical software R with the interface provided by R Studio. The purpose of this chapter to is provide you with a set of activities that get you up-and-running in R quickly so get a sense of how it works. In later chatpers we will revisit these same topics in more detail. 
 
 ## A focus on workflow
 
@@ -23,38 +23,17 @@ knitr::kable(
 ```
 
 
-## Create an account at R Studio Cloud
+## Software Choice
 
-[R Studio Cloud](http://www.rstudio.cloud) accounts are free and required for this guide. Please go to the website and set up a new account. 
+If you are concurrently taking PSYC 3290 you can use R as you do in that course - move to the next section.
+
+If you are not taking PSYC 3290 we have instructions for installing R and RStudio (both are needed) on your computer below. If you do not have a Mac or PC but instead are working with a tablet - contact the instructor during office hours.
+
+### Mac
 
 
-## Join the class workspace
+### PC
 
-To do the assignment required for this class you need to join the class workspace on R Studio Cloud\index{R Studio Cloud}. To do so:
-
-1. Log into R Studio Cloud (if you haven't already done so).
-
-2. Go to your university email account and find the message with the subject "R Studio Workspace Invitation". In this message there is a link to the class R Studio Cloud workspace. 
-
-3. Click on the workspace link in the email or paste it into your web browser. You should see a screen like the one below in Figure \@ref(fig:join). Click on the Join button.
-
-```{r join, fig.cap="Screenshot of workspace join message", echo = FALSE, out.width="70%"}
-knitr::include_graphics("ch_introduction/images/screenshot_join.png")
-```
-
-4. Then you should see the welcome message illustrated in Figure \@ref(fig:welcome). Above this message is the Projects menu option. Click on the word Project.
-
-```{r welcome, fig.cap="Screenshot of welcome message", echo = FALSE, out.width="70%"}
-knitr::include_graphics("ch_introduction/images/screenshot_welcome.png")
-```
-
-5. You should now see the First Project displayed as in \@ref(fig:assignment). Click the Start button. You will then move to a view of R Studio.
-
-```{r assignment, fig.cap="Screenshot of starting first assignment", echo = FALSE, out.width="70%"}
-knitr::include_graphics("ch_introduction/images/screenshot_assignment.png")
-```
-
-5. In R Studio it is essential you use projects to keep your files organized and in the same spot. For this course, when your start an assignment on R Studio Cloud and the project will already have been made for you. Later you will learn to make your own R Studio Projects.
 
 
 ## Exploring the R Studio Interface
