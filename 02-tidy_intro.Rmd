@@ -6,12 +6,13 @@ library(tidyverse)
 
 ## Required
 
-The data files below are used in this chapter. The files are available at: https://github.com/dstanley4/psyc3250bookdown
+The data files below are used in this chapter. The files are available at: https://github.com/dstanley4/psyc3250bookdown. You can right click each file below to download it - use "Save "Link As".
+
 
 | Required Data |
 |-------------------|
-|data_okcupid.csv   |
-|data_experiment.csv   |
+|[data_okcupid.csv](https://raw.githubusercontent.com/dstanley4/psyc3250bookdown/main/data_okcupid.csv)   |
+|[data_experiment.csv](https://raw.githubusercontent.com/dstanley4/psyc3250bookdown/main/data_experiment.csv)   |
 
 
 The following CRAN packages must be installed:
