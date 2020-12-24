@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Scaling | Welcome!</title>
+  <meta name="description" content="Course notes for PSYC 3250" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Scaling | Welcome!" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course notes for PSYC 3250" />
+  <meta name="github-repo" content="dstanley4/psyc3250bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Scaling | Welcome!" />
+  
+  <meta name="twitter:description" content="Course notes for PSYC 3250" />
+  
+
+<meta name="author" content="David J. Stanley" />
+
+
+<meta name="date" content="2020-12-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="handling-data-with-the-tidyverse.html"/>
+<link rel="next" href="data-entryanalysis.html"/>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block/empty-anchor.js"></script>
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Course Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course:</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#software-choice"><i class="fa fa-check"></i><b>1.3</b> Software Choice</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#mac"><i class="fa fa-check"></i><b>1.3.1</b> Mac</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#pc"><i class="fa fa-check"></i><b>1.3.2</b> PC</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#begin-each-session-with-an-rstudio-project"><i class="fa fa-check"></i><b>1.4</b> Begin each session with an RStudio Project</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.12</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
+<li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
+<li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
+<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
+<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
+<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv() and data frames</a></li>
+<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv() and tibbles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="scaling.html"><a href="scaling.html"><i class="fa fa-check"></i><b>3</b> Scaling</a><ul>
+<li class="chapter" data-level="3.1" data-path="scaling.html"><a href="scaling.html#notation"><i class="fa fa-check"></i><b>3.1</b> Notation</a></li>
+<li class="chapter" data-level="3.2" data-path="scaling.html"><a href="scaling.html#measurement-notation"><i class="fa fa-check"></i><b>3.2</b> Measurement Notation</a></li>
+<li class="chapter" data-level="3.3" data-path="scaling.html"><a href="scaling.html#data-entry"><i class="fa fa-check"></i><b>3.3</b> Data entry</a></li>
+<li class="chapter" data-level="3.4" data-path="scaling.html"><a href="scaling.html#loading-data"><i class="fa fa-check"></i><b>3.4</b> Loading data</a></li>
+<li class="chapter" data-level="3.5" data-path="scaling.html"><a href="scaling.html#viewing-data"><i class="fa fa-check"></i><b>3.5</b> Viewing data</a></li>
+<li class="chapter" data-level="3.6" data-path="scaling.html"><a href="scaling.html#summary-statistics"><i class="fa fa-check"></i><b>3.6</b> Summary statistics</a></li>
+<li class="chapter" data-level="3.7" data-path="scaling.html"><a href="scaling.html#converting-units"><i class="fa fa-check"></i><b>3.7</b> Converting units</a></li>
+<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#inches"><i class="fa fa-check"></i><b>3.8</b> Inches</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="scaling.html"><a href="scaling.html#hand-calculation"><i class="fa fa-check"></i><b>3.8.1</b> Hand calculation</a></li>
+<li class="chapter" data-level="3.8.2" data-path="scaling.html"><a href="scaling.html#r-calculation"><i class="fa fa-check"></i><b>3.8.2</b> R calculation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="scaling.html"><a href="scaling.html#z-scores"><i class="fa fa-check"></i><b>3.9</b> z-scores</a></li>
+<li class="chapter" data-level="3.10" data-path="scaling.html"><a href="scaling.html#t-scores"><i class="fa fa-check"></i><b>3.10</b> T-scores</a></li>
+<li class="chapter" data-level="3.11" data-path="scaling.html"><a href="scaling.html#comparing-scores"><i class="fa fa-check"></i><b>3.11</b> Comparing scores</a></li>
+<li class="chapter" data-level="3.12" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.12</b> Frame of references</a><ul>
+<li class="chapter" data-level="3.12.1" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.12.1</b> All participants</a></li>
+<li class="chapter" data-level="3.12.2" data-path="scaling.html"><a href="scaling.html#male-participants"><i class="fa fa-check"></i><b>3.12.2</b> Male participants</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>4</b> Data Entry/Analysis</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#required-packages"><i class="fa fa-check"></i><b>4.1</b> Required Packages</a></li>
+<li class="chapter" data-level="4.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#objective-1"><i class="fa fa-check"></i><b>4.2</b> Objective</a></li>
+<li class="chapter" data-level="4.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>4.3</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>4.3.1</b> Structuring data: Obtaining tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>4.4</b> Data collection considerations</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#naming-conventions"><i class="fa fa-check"></i><b>4.4.1</b> Naming conventions</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#likert-type-items"><i class="fa fa-check"></i><b>4.4.2</b> Likert-type items</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#following-the-examples"><i class="fa fa-check"></i><b>4.5</b> Following the examples</a></li>
+<li class="chapter" data-level="4.6" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>4.6</b> Entering data into spreadsheets</a></li>
+<li class="chapter" data-level="4.7" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#surveys-single-occassion"><i class="fa fa-check"></i><b>4.7</b> Surveys: Single Occassion</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#creating-factors"><i class="fa fa-check"></i><b>4.7.1</b> Creating factors</a></li>
+<li class="chapter" data-level="4.7.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#factor-screening"><i class="fa fa-check"></i><b>4.7.2</b> Factor screening</a></li>
+<li class="chapter" data-level="4.7.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#numeric-screening"><i class="fa fa-check"></i><b>4.7.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="4.7.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#scale-scores"><i class="fa fa-check"></i><b>4.7.4</b> Scale scores</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>4.8</b> Basic descriptive statistics</a><ul>
+<li class="chapter" data-level="4.8.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#skim"><i class="fa fa-check"></i><b>4.8.1</b> skim()</a></li>
+<li class="chapter" data-level="4.8.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#apa.cor.table"><i class="fa fa-check"></i><b>4.8.2</b> apa.cor.table()</a></li>
+<li class="chapter" data-level="4.8.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#tidyverse"><i class="fa fa-check"></i><b>4.8.3</b> tidyverse</a></li>
+<li class="chapter" data-level="4.8.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#cronbachs-alpha"><i class="fa fa-check"></i><b>4.8.4</b> Cronbach’s alpha</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Welcome!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="scaling" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Scaling</h1>
+<div id="notation" class="section level2">
+<h2><span class="header-section-number">3.1</span> Notation</h2>
+<p>In this chapter we will use summation notation. If you are not familiar with summation notation, we present a brief overview here.</p>
+<p>Consider a scenario where we have the IQ data for three participants We use the N symbol to represent the number of participants. Because we have three participants N = 3. The data for these participants is illustrated in Figure <a href="scaling.html#fig:notationdata">3.1</a>.</p>
+<p>Notice how each person in the data set can be represented by the variable X: the first person by <span class="math inline">\(X_1\)</span>, the second by <span class="math inline">\(X_2\)</span>, and the third by <span class="math inline">\(X_3\)</span>. Often we refer to individuals in a data set by using the variable X accompanied by a subscript (e.g., 1, 2, 3, etc.).</p>
+<div class="figure"><span id="fig:notationdata"></span>
+<img src="ch_scaling/images/screenshot_data_n6.png" alt="Data for understanding summation notation" width="40%" />
+<p class="caption">
+FIGURE 3.1: Data for understanding summation notation
+</p>
+</div>
+<p>Referring to participants using the variable X and subscript is valuable because it can be used in conjunction with the sigma (i.e., <span class="math inline">\(\Sigma\)</span>) symbol for summation. Consider the example below in which we use the summation notation to indicate that we want to add all the X values (representing IQ) for the participants. We use a lower case <span class="math inline">\(i\)</span> to represent all possible subscript values. The notation, <span class="math inline">\(i\)</span> = 1, below the <span class="math inline">\(\Sigma\)</span> symbol indicates that we should start with participant 1. The notation, N, above the <span class="math inline">\(\Sigma\)</span> symbol indicates that we should iterate <span class="math inline">\(i\)</span> up to the value indicated by N; in this case 3, because there are three participants.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum_{i=1}^{N} X_i &amp;=  X_1 + X_2 + X_3\\ 
+&amp;= 110 + 120 + 100 \\
+&amp;= 330
+\end{aligned} 
+\]</span></p>
+<p>Sometimes, to simplify the notation, the numbers above and below the <span class="math inline">\(\Sigma\)</span> symbol are omitted. Likewise, the <span class="math inline">\(i\)</span> subscript is omitted. There is a general understanding that when these components of the notation are omitted the version of the notation above is implied.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum{X} &amp;= X_1 + X_2 + X_3\\ 
+&amp;= 110 + 120 + 100\\
+&amp;= 330
+\end{aligned} 
+\]</span></p>
+<p><strong>Calculating a mean</strong>. The full version of the notation can be used to indicate how an average/mean is calculated.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\bar{X} &amp;= \frac{\sum_{i=1}^{N} X_i}{N} \\
+&amp;= \frac{X_1 + X_2 + X_3}{3}\\ 
+&amp;= \frac{110 + 120 + 100}{3}\\
+&amp;= \frac{330}{3}\\
+&amp;= 110\\
+\end{aligned} 
+\]</span></p>
+<p>Likewise, the concise version of the notation can be used to indicate how an average/mean is calculated.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\bar{X} &amp;= \frac{\sum{X}}{N} \\
+&amp;= \frac{X_1 + X_2 + X_3}{3}\\ 
+&amp;= \frac{110 + 120 + 100}{3}\\
+&amp;= \frac{330}{3}\\
+&amp;= 110\\
+\end{aligned} 
+\]</span></p>
+<p><strong>Calculating squared differences</strong>.A common task in statistics is to calculate 1) the squared difference between each person and the mean, and 2) add up those squared differences. This calculation is easily expressed with the full version of the notation.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum_{i=1}^{N}{(X_i - \bar{X})^2} &amp;= (X_1-\bar{X})^2 + (X_2-\bar{X})^2 + (X_3-\bar{X})^2\\ 
+&amp;= (110-110)^2 + (120-110)^2 + (100-110)^2\\
+&amp;= (0)^2 + (10)^2 (-10)^2 \\
+&amp;= 0 + 100 + 100 \\
+&amp;= 200
+\end{aligned} 
+\]</span></p>
+<p>Likewise, the sum of the squared differences from the mean can be expressed using the concise version of the notation.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum{(X - \bar{X})^2} &amp;= (X_1-\bar{X})^2 + (X_2-\bar{X})^2 + (X_3-\bar{X})^2\\ 
+&amp;= (110-110)^2 + (120-110)^2 + (100-110)^2\\
+&amp;= (0)^2 + (10)^2 (-10)^2 \\
+&amp;= 0 + 100 + 100 \\
+&amp;= 200
+\end{aligned} 
+\]</span></p>
+</div>
+<div id="measurement-notation" class="section level2">
+<h2><span class="header-section-number">3.2</span> Measurement Notation</h2>
+<p>Previously we examined the notation typically used when making inferences from a sample to a popuulation. Unfortunately, the notation used in Psychological Measurement is different - similar but different. For the purposes of this course we use the notation and fomulas below. Notice that we use N in the denominator - that is we use the population-level variance formula - even though we are working with sample data. Typically, measurement theory treats the sample as our population of interest. This difference is often a source of confusion for students.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{X} &amp;= \frac{\sum{X}}{N} \\
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+S^2_X &amp;= \frac{\sum{(X - \overline{X})^2}}{N} \\
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
+\end{aligned}
+\]</span></p>
+</div>
+<div id="data-entry" class="section level2">
+<h2><span class="header-section-number">3.3</span> Data entry</h2>
+<p>We begin by entering data into Excel (or any other spreadsheet) as per below. Notice how we use the first row as a header for the column names. Once we enter the data this way we need to save it as a .CSV file (comma separated values). You do so using the Save As menu item in Excel. Once the Save window appears - you will notice a File Format pull-down buttom. Use the button to select the CSV (comma delimited) option. Indicate a file name of “data_heights.csv” and save the file.</p>
+<p><img src="ch_scaling/images/scaling_data_excel.png" width="35%" /></p>
+<p>What is a .CSV file? It’s just a text file where the columns are separated by commas. If you were to open the file in TextEdit on a Mac (or Notepad on Windows) you would see something like the image below. You don’t need to do this step - but if you did, it would just show you how the file is saved on disk.</p>
+<p><img src="ch_scaling/images/scaling_data_text.png" width="25%" /></p>
+</div>
+<div id="loading-data" class="section level2">
+<h2><span class="header-section-number">3.4</span> Loading data</h2>
+<p>Begin by creating a Project in RStudio on your computer (or via RStudio Cloud). Place the “data_heights.csv” in the Project folder. If you are using R Studio Cloud this means uploading the file via the Upload button the File tab (see picture below):</p>
+<p><img src="ch_scaling/images/upload_button.png" width="50%" /></p>
+<p>Prior to loading the data we have to install the tidyverse and sjstats packages. This only needs to be done once if you are using RStudio your computer. If you are using RStudio in the Cloud you need to do it once for each project/workspace. You install these packages by typing the command below in the CONSOLE. Do NOT put these commands in your script. It will take some time to run. Don’t worry about all the text feedback you see on the screen.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="scaling.html#cb154-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="dt">dep =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb154-2"><a href="scaling.html#cb154-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;sjstats&quot;</span>, <span class="dt">dep =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p>From this point on place all the R commands into your script. We begin by activating the tidyverse and sjstats packages with the library() command. Then we load the data using read_csv(). Notice how use indicate missing values using the <strong>na</strong> argument of the read_csv() command; if the computer see nothing in the column or -999 it puts in a missing value place holder.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="scaling.html#cb155-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb155-2"><a href="scaling.html#cb155-2"></a><span class="kw">library</span>(sjstats)</span>
+<span id="cb155-3"><a href="scaling.html#cb155-3"></a></span>
+<span id="cb155-4"><a href="scaling.html#cb155-4"></a>height_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data_heights.csv&quot;</span>, <span class="dt">na =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;-999&quot;</span>))</span></code></pre></div>
+<p>We can see the columns in the data we loaded using the glimpse() command:</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="scaling.html#cb156-1"></a><span class="kw">glimpse</span>(height_data)</span></code></pre></div>
+<pre><code>## Rows: 20
+## Columns: 4
+## $ part_id   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, …
+## $ name      &lt;chr&gt; &quot;John&quot;, &quot;Jim&quot;, &quot;Steve&quot;, &quot;Jamal&quot;, &quot;Eli&quot;,…
+## $ sex       &lt;chr&gt; &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;,…
+## $ cm_height &lt;dbl&gt; 190, 179, 165, 179, 174, 179, 185, 180,…</code></pre>
+<p>The sex and part_id (participant identification number) columns are categorical varibles. We need to let the R know this fact. We do so by converting them to “factor” columns with the command below.</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="scaling.html#cb158-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
+<span id="cb158-2"><a href="scaling.html#cb158-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">part_id =</span> <span class="kw">as_factor</span>(part_id),</span>
+<span id="cb158-3"><a href="scaling.html#cb158-3"></a>         <span class="dt">sex =</span> <span class="kw">as_factor</span>(sex))</span></code></pre></div>
+<p>Using glimpse() again we see these columns have fct after them indicating that they are factors (i.e., categorical variables):</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="scaling.html#cb159-1"></a><span class="kw">glimpse</span>(height_data)</span></code></pre></div>
+<pre><code>## Rows: 20
+## Columns: 4
+## $ part_id   &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, …
+## $ name      &lt;chr&gt; &quot;John&quot;, &quot;Jim&quot;, &quot;Steve&quot;, &quot;Jamal&quot;, &quot;Eli&quot;,…
+## $ sex       &lt;fct&gt; male, male, male, male, male, male, mal…
+## $ cm_height &lt;dbl&gt; 190, 179, 165, 179, 174, 179, 185, 180,…</code></pre>
+</div>
+<div id="viewing-data" class="section level2">
+<h2><span class="header-section-number">3.5</span> Viewing data</h2>
+<p>We can view all of the data we entered with the command below:</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="scaling.html#cb161-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##    part_id     name    sex cm_height
+## 1        1     John   male       190
+## 2        2      Jim   male       179
+## 3        3    Steve   male       165
+## 4        4    Jamal   male       179
+## 5        5      Eli   male       174
+## 6        6     Sean   male       179
+## 7        7  Basheer   male       185
+## 8        8     Matt   male       180
+## 9        9      Tim   male       173
+## 10      10     Rick   male       183
+## 11      11     Jane female       174
+## 12      12    Nancy female       161
+## 13      13      Sue female       174
+## 14      14    Maggy female       169
+## 15      15    Aisha female       161
+## 16      16     Saba female       172
+## 17      17     Katy female       173
+## 18      18 Jennifer female       169
+## 19      19  Natalie female       165
+## 20      20    Megan female       161</code></pre>
+</div>
+<div id="summary-statistics" class="section level2">
+<h2><span class="header-section-number">3.6</span> Summary statistics</h2>
+<p>To obtain the mean for each column in the data set we use the commands below. These are fulling explained in the previous “Handling data with the tidyverse” chapter.</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="scaling.html#cb163-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb163-2"><a href="scaling.html#cb163-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
+<span id="cb163-3"><a href="scaling.html#cb163-3"></a>                     <span class="dt">.fns =</span> mean,</span>
+<span id="cb163-4"><a href="scaling.html#cb163-4"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb163-5"><a href="scaling.html#cb163-5"></a>                     <span class="dt">.names =</span> <span class="st">&quot;mean_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb163-6"><a href="scaling.html#cb163-6"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   mean_cm_height
+## 1          173.3</code></pre>
+<p>Likewise, we can obtain the standard deviation (population formula) using the commands below:</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="scaling.html#cb165-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb165-2"><a href="scaling.html#cb165-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
+<span id="cb165-3"><a href="scaling.html#cb165-3"></a>                     <span class="dt">.fns =</span> sd_pop,</span>
+<span id="cb165-4"><a href="scaling.html#cb165-4"></a>                     <span class="dt">.names =</span> <span class="st">&quot;sd_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb165-5"><a href="scaling.html#cb165-5"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   sd_cm_height
+## 1        8.013</code></pre>
+</div>
+<div id="converting-units" class="section level2">
+<h2><span class="header-section-number">3.7</span> Converting units</h2>
+</div>
+<div id="inches" class="section level2">
+<h2><span class="header-section-number">3.8</span> Inches</h2>
+<p>In the previous sections we have examined participant heights using centimeters (cm). We can, however, express participants heights using inches. It’s a simple process to convert cm to inches - we simply divide by 2.54. If you examine the rule below you can see that 2.54 cm corresponds to 1 inch.</p>
+<p><img src="ch_scaling/images/ruler.png" width="50%" /></p>
+<div id="hand-calculation" class="section level3">
+<h3><span class="header-section-number">3.8.1</span> Hand calculation</h3>
+<p>We can express this conversion more formally with equations below. In this Equation we use <span class="math inline">\(X_i\)</span> to indicate the height (in cm) of the <span class="math inline">\(i^{th}\)</span> person in a set of N people.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{height in inches for the ith person} = \frac{X_i}{2.54}\\
+\end{aligned}
+\]</span></p>
+<p>In the context of our data we can convert John’s height of 190 cm to inches using this process:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{height in inches for the ith person} &amp;= \frac{X_i}{2.54}\\
+&amp;= \frac{\text{John&#39;s height in cm}}{2.54}\\
+&amp;= \frac{190}{2.54}\\
+&amp;= 74.80315
+\end{aligned}
+\]</span></p>
+<p>Thus, John is 190 cm tall or 74.8 inches tall. Of course, John’s height has not changed because we are now expressing it in inches. All that has changed is the units we use to designate his height.</p>
+</div>
+<div id="r-calculation" class="section level3">
+<h3><span class="header-section-number">3.8.2</span> R calculation</h3>
+<p>We can create a new column in our data set that has the height of everyone in inches using the code below:</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="scaling.html#cb167-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
+<span id="cb167-2"><a href="scaling.html#cb167-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">inches_height =</span> cm_height <span class="op">/</span><span class="st"> </span><span class="fl">2.54</span>)</span></code></pre></div>
+<p>We can see the new column (inches) with the code below.</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="scaling.html#cb168-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##    part_id     name    sex cm_height inches_height
+## 1        1     John   male       190         74.80
+## 2        2      Jim   male       179         70.47
+## 3        3    Steve   male       165         64.96
+## 4        4    Jamal   male       179         70.47
+## 5        5      Eli   male       174         68.50
+## 6        6     Sean   male       179         70.47
+## 7        7  Basheer   male       185         72.83
+## 8        8     Matt   male       180         70.87
+## 9        9      Tim   male       173         68.11
+## 10      10     Rick   male       183         72.05
+## 11      11     Jane female       174         68.50
+## 12      12    Nancy female       161         63.39
+## 13      13      Sue female       174         68.50
+## 14      14    Maggy female       169         66.54
+## 15      15    Aisha female       161         63.39
+## 16      16     Saba female       172         67.72
+## 17      17     Katy female       173         68.11
+## 18      18 Jennifer female       169         66.54
+## 19      19  Natalie female       165         64.96
+## 20      20    Megan female       161         63.39</code></pre>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="scaling.html#cb170-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb170-2"><a href="scaling.html#cb170-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
+<span id="cb170-3"><a href="scaling.html#cb170-3"></a>                     <span class="dt">.fns =</span> mean,</span>
+<span id="cb170-4"><a href="scaling.html#cb170-4"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb170-5"><a href="scaling.html#cb170-5"></a>                     <span class="dt">.names =</span> <span class="st">&quot;mean_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb170-6"><a href="scaling.html#cb170-6"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   mean_cm_height mean_inches_height
+## 1          173.3              68.23</code></pre>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="scaling.html#cb172-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb172-2"><a href="scaling.html#cb172-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
+<span id="cb172-3"><a href="scaling.html#cb172-3"></a>                     <span class="dt">.fns =</span> sd_pop,</span>
+<span id="cb172-4"><a href="scaling.html#cb172-4"></a>                     <span class="dt">.names =</span> <span class="st">&quot;sd_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb172-5"><a href="scaling.html#cb172-5"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   sd_cm_height sd_inches_height
+## 1        8.013            3.155</code></pre>
+</div>
+</div>
+<div id="z-scores" class="section level2">
+<h2><span class="header-section-number">3.9</span> z-scores</h2>
+<p>Recall:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{X} &amp;= 173.3 \\
+S_X &amp;= 8.013114 \\
+\end{aligned}
+\]</span></p>
+<p>In general:</p>
+<p><span class="math display">\[
+\begin{aligned}
+z_i = \frac{X_i - \overline{X}}{S_X}\\
+\end{aligned}
+\]</span></p>
+<p>A specific example:</p>
+<p><span class="math display">\[
+\begin{aligned}
+z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
+&amp;= \frac{\text{(John&#39;s height in cm)} - \overline{X}}{S_X}\\
+&amp;= \frac{190 - 173.3}{8.013114}\\
+&amp;= \frac{16.7}{8.013114}\\
+&amp;= 2.084084\\
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="scaling.html#cb174-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
+<span id="cb174-2"><a href="scaling.html#cb174-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_height =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(cm_height))<span class="op">/</span><span class="kw">sd_pop</span>(cm_height)  )</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="scaling.html#cb175-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##    part_id     name    sex cm_height inches_height z_height
+## 1        1     John   male       190         74.80  2.08408
+## 2        2      Jim   male       179         70.47  0.71133
+## 3        3    Steve   male       165         64.96 -1.03580
+## 4        4    Jamal   male       179         70.47  0.71133
+## 5        5      Eli   male       174         68.50  0.08736
+## 6        6     Sean   male       179         70.47  0.71133
+## 7        7  Basheer   male       185         72.83  1.46011
+## 8        8     Matt   male       180         70.87  0.83613
+## 9        9      Tim   male       173         68.11 -0.03744
+## 10      10     Rick   male       183         72.05  1.21052
+## 11      11     Jane female       174         68.50  0.08736
+## 12      12    Nancy female       161         63.39 -1.53498
+## 13      13      Sue female       174         68.50  0.08736
+## 14      14    Maggy female       169         66.54 -0.53662
+## 15      15    Aisha female       161         63.39 -1.53498
+## 16      16     Saba female       172         67.72 -0.16223
+## 17      17     Katy female       173         68.11 -0.03744
+## 18      18 Jennifer female       169         66.54 -0.53662
+## 19      19  Natalie female       165         64.96 -1.03580
+## 20      20    Megan female       161         63.39 -1.53498</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="scaling.html#cb177-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb177-2"><a href="scaling.html#cb177-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
+<span id="cb177-3"><a href="scaling.html#cb177-3"></a>                     <span class="dt">.fns =</span> mean,</span>
+<span id="cb177-4"><a href="scaling.html#cb177-4"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb177-5"><a href="scaling.html#cb177-5"></a>                     <span class="dt">.names =</span> <span class="st">&quot;mean_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb177-6"><a href="scaling.html#cb177-6"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   mean_cm_height mean_inches_height mean_z_height
+## 1          173.3              68.23    -1.414e-15</code></pre>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="scaling.html#cb179-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb179-2"><a href="scaling.html#cb179-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
+<span id="cb179-3"><a href="scaling.html#cb179-3"></a>                     <span class="dt">.fns =</span> sd_pop,</span>
+<span id="cb179-4"><a href="scaling.html#cb179-4"></a>                     <span class="dt">.names =</span> <span class="st">&quot;sd_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb179-5"><a href="scaling.html#cb179-5"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   sd_cm_height sd_inches_height sd_z_height
+## 1        8.013            3.155           1</code></pre>
+</div>
+<div id="t-scores" class="section level2">
+<h2><span class="header-section-number">3.10</span> T-scores</h2>
+<p>In general:</p>
+<p><span class="math display">\[
+\begin{aligned}
+T_i = z_i \times 10 + 50\\
+\end{aligned}
+\]</span></p>
+<p>A specific example:</p>
+<p><span class="math display">\[
+\begin{aligned}
+T_i &amp;= z_i \times 10 + 50\\
+&amp;= \text{(John&#39;s height as a z-score)} \times 10 + 50\\
+&amp;= 2.084084 * 10 + 50\\
+&amp;= 70.84084\\
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="scaling.html#cb181-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
+<span id="cb181-2"><a href="scaling.html#cb181-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">T_height =</span>  z_height <span class="op">*</span><span class="st"> </span><span class="dv">10</span> <span class="op">+</span><span class="st"> </span><span class="dv">50</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="scaling.html#cb182-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##    part_id     name    sex cm_height inches_height z_height
+## 1        1     John   male       190         74.80  2.08408
+## 2        2      Jim   male       179         70.47  0.71133
+## 3        3    Steve   male       165         64.96 -1.03580
+## 4        4    Jamal   male       179         70.47  0.71133
+## 5        5      Eli   male       174         68.50  0.08736
+## 6        6     Sean   male       179         70.47  0.71133
+## 7        7  Basheer   male       185         72.83  1.46011
+## 8        8     Matt   male       180         70.87  0.83613
+## 9        9      Tim   male       173         68.11 -0.03744
+## 10      10     Rick   male       183         72.05  1.21052
+## 11      11     Jane female       174         68.50  0.08736
+## 12      12    Nancy female       161         63.39 -1.53498
+## 13      13      Sue female       174         68.50  0.08736
+## 14      14    Maggy female       169         66.54 -0.53662
+## 15      15    Aisha female       161         63.39 -1.53498
+## 16      16     Saba female       172         67.72 -0.16223
+## 17      17     Katy female       173         68.11 -0.03744
+## 18      18 Jennifer female       169         66.54 -0.53662
+## 19      19  Natalie female       165         64.96 -1.03580
+## 20      20    Megan female       161         63.39 -1.53498
+##    T_height
+## 1     70.84
+## 2     57.11
+## 3     39.64
+## 4     57.11
+## 5     50.87
+## 6     57.11
+## 7     64.60
+## 8     58.36
+## 9     49.63
+## 10    62.11
+## 11    50.87
+## 12    34.65
+## 13    50.87
+## 14    44.63
+## 15    34.65
+## 16    48.38
+## 17    49.63
+## 18    44.63
+## 19    39.64
+## 20    34.65</code></pre>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="scaling.html#cb184-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb184-2"><a href="scaling.html#cb184-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
+<span id="cb184-3"><a href="scaling.html#cb184-3"></a>                     <span class="dt">.fns =</span> mean,</span>
+<span id="cb184-4"><a href="scaling.html#cb184-4"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb184-5"><a href="scaling.html#cb184-5"></a>                     <span class="dt">.names =</span> <span class="st">&quot;mean_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb184-6"><a href="scaling.html#cb184-6"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   mean_cm_height mean_inches_height mean_z_height
+## 1          173.3              68.23    -1.414e-15
+##   mean_T_height
+## 1            50</code></pre>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="scaling.html#cb186-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb186-2"><a href="scaling.html#cb186-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
+<span id="cb186-3"><a href="scaling.html#cb186-3"></a>                     <span class="dt">.fns =</span> sd_pop,</span>
+<span id="cb186-4"><a href="scaling.html#cb186-4"></a>                     <span class="dt">.names =</span> <span class="st">&quot;sd_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb186-5"><a href="scaling.html#cb186-5"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   sd_cm_height sd_inches_height sd_z_height sd_T_height
+## 1        8.013            3.155           1          10</code></pre>
+</div>
+<div id="comparing-scores" class="section level2">
+<h2><span class="header-section-number">3.11</span> Comparing scores</h2>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="scaling.html#cb188-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb188-2"><a href="scaling.html#cb188-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
+<span id="cb188-3"><a href="scaling.html#cb188-3"></a>                     <span class="dt">.fns =</span> mean,</span>
+<span id="cb188-4"><a href="scaling.html#cb188-4"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb188-5"><a href="scaling.html#cb188-5"></a>                     <span class="dt">.names =</span> <span class="st">&quot;mean_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb188-6"><a href="scaling.html#cb188-6"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   mean_cm_height mean_inches_height mean_z_height
+## 1          173.3              68.23    -1.414e-15
+##   mean_T_height
+## 1            50</code></pre>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="scaling.html#cb190-1"></a>height_data_sorted &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
+<span id="cb190-2"><a href="scaling.html#cb190-2"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="scaling.html#cb191-1"></a>height_data_sorted <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##    part_id     name    sex cm_height inches_height z_height
+## 1       12    Nancy female       161         63.39 -1.53498
+## 2       15    Aisha female       161         63.39 -1.53498
+## 3       20    Megan female       161         63.39 -1.53498
+## 4        3    Steve   male       165         64.96 -1.03580
+## 5       19  Natalie female       165         64.96 -1.03580
+## 6       14    Maggy female       169         66.54 -0.53662
+## 7       18 Jennifer female       169         66.54 -0.53662
+## 8       16     Saba female       172         67.72 -0.16223
+## 9        9      Tim   male       173         68.11 -0.03744
+## 10      17     Katy female       173         68.11 -0.03744
+## 11       5      Eli   male       174         68.50  0.08736
+## 12      11     Jane female       174         68.50  0.08736
+## 13      13      Sue female       174         68.50  0.08736
+## 14       2      Jim   male       179         70.47  0.71133
+## 15       4    Jamal   male       179         70.47  0.71133
+## 16       6     Sean   male       179         70.47  0.71133
+## 17       8     Matt   male       180         70.87  0.83613
+## 18      10     Rick   male       183         72.05  1.21052
+## 19       7  Basheer   male       185         72.83  1.46011
+## 20       1     John   male       190         74.80  2.08408
+##    T_height
+## 1     34.65
+## 2     34.65
+## 3     34.65
+## 4     39.64
+## 5     39.64
+## 6     44.63
+## 7     44.63
+## 8     48.38
+## 9     49.63
+## 10    49.63
+## 11    50.87
+## 12    50.87
+## 13    50.87
+## 14    57.11
+## 15    57.11
+## 16    57.11
+## 17    58.36
+## 18    62.11
+## 19    64.60
+## 20    70.84</code></pre>
+</div>
+<div id="frame-of-references" class="section level2">
+<h2><span class="header-section-number">3.12</span> Frame of references</h2>
+<div id="all-participants" class="section level3">
+<h3><span class="header-section-number">3.12.1</span> All participants</h3>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="scaling.html#cb193-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb193-2"><a href="scaling.html#cb193-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb193-3"><a href="scaling.html#cb193-3"></a>                     <span class="dt">.fns =</span> mean,</span>
+<span id="cb193-4"><a href="scaling.html#cb193-4"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb193-5"><a href="scaling.html#cb193-5"></a>                     <span class="dt">.names =</span> <span class="st">&quot;mean_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb193-6"><a href="scaling.html#cb193-6"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   mean_cm_height
+## 1          173.3</code></pre>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="scaling.html#cb195-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb195-2"><a href="scaling.html#cb195-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb195-3"><a href="scaling.html#cb195-3"></a>                     <span class="dt">.fns =</span> sd_pop,</span>
+<span id="cb195-4"><a href="scaling.html#cb195-4"></a>                     <span class="dt">.names =</span> <span class="st">&quot;sd_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb195-5"><a href="scaling.html#cb195-5"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   sd_cm_height
+## 1        8.013</code></pre>
+<p>For all participants</p>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{X} &amp;= 173.3 \\
+S_X &amp;= 8.013114 \\
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
+&amp;= \frac{\text{(John&#39;s height in cm)} - \overline{X}}{S_X}\\
+&amp;= \frac{190 - 173.3}{8.013114}\\
+&amp;= \frac{16.7}{8.013114}\\
+&amp;= 2.084084\\
+\end{aligned}
+\]</span></p>
+</div>
+<div id="male-participants" class="section level3">
+<h3><span class="header-section-number">3.12.2</span> Male participants</h3>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="scaling.html#cb197-1"></a>male_height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
+<span id="cb197-2"><a href="scaling.html#cb197-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;male&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb197-3"><a href="scaling.html#cb197-3"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>T_height, <span class="op">-</span>inches_height)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="scaling.html#cb198-1"></a>male_height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##    part_id    name  sex cm_height z_height
+## 1        1    John male       190  2.08408
+## 2        2     Jim male       179  0.71133
+## 3        3   Steve male       165 -1.03580
+## 4        4   Jamal male       179  0.71133
+## 5        5     Eli male       174  0.08736
+## 6        6    Sean male       179  0.71133
+## 7        7 Basheer male       185  1.46011
+## 8        8    Matt male       180  0.83613
+## 9        9     Tim male       173 -0.03744
+## 10      10    Rick male       183  1.21052</code></pre>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="scaling.html#cb200-1"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb200-2"><a href="scaling.html#cb200-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb200-3"><a href="scaling.html#cb200-3"></a>                     <span class="dt">.fns =</span> mean,</span>
+<span id="cb200-4"><a href="scaling.html#cb200-4"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb200-5"><a href="scaling.html#cb200-5"></a>                     <span class="dt">.names =</span> <span class="st">&quot;mean_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb200-6"><a href="scaling.html#cb200-6"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   mean_cm_height
+## 1          178.7</code></pre>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="scaling.html#cb202-1"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb202-2"><a href="scaling.html#cb202-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb202-3"><a href="scaling.html#cb202-3"></a>                     <span class="dt">.fns =</span> sd_pop,</span>
+<span id="cb202-4"><a href="scaling.html#cb202-4"></a>                     <span class="dt">.names =</span> <span class="st">&quot;sd_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb202-5"><a href="scaling.html#cb202-5"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   sd_cm_height
+## 1        6.558</code></pre>
+<p>For male participants</p>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{X_{males}} &amp;= 178.7 \\
+S_{males} &amp;= 6.558201 \\
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+z_i &amp;= \frac{X_i - \overline{X_{males}}}{S_{males}}\\
+&amp;= \frac{190 - 178.7}{6.558201}\\
+&amp;= \frac{11.3}{6.558201}\\
+&amp;= 1.723033\\
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="scaling.html#cb204-1"></a>male_height_data &lt;-<span class="st"> </span>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb204-2"><a href="scaling.html#cb204-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_males_height =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(cm_height))<span class="op">/</span><span class="kw">sd_pop</span>(cm_height)  )</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="scaling.html#cb205-1"></a>male_height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##    part_id    name  sex cm_height z_height z_males_height
+## 1        1    John male       190  2.08408        1.72303
+## 2        2     Jim male       179  0.71133        0.04574
+## 3        3   Steve male       165 -1.03580       -2.08899
+## 4        4   Jamal male       179  0.71133        0.04574
+## 5        5     Eli male       174  0.08736       -0.71666
+## 6        6    Sean male       179  0.71133        0.04574
+## 7        7 Basheer male       185  1.46011        0.96063
+## 8        8    Matt male       180  0.83613        0.19823
+## 9        9     Tim male       173 -0.03744       -0.86914
+## 10      10    Rick male       183  1.21052        0.65567</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="handling-data-with-the-tidyverse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-entryanalysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/03-scaling.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
