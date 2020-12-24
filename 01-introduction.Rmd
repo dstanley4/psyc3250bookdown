@@ -25,13 +25,13 @@ knitr::kable(
 
 ## Software Choice
 
-If you are concurrently taking PSYC 3290 you can use R as you do in that course - move to the next section.
+If you are concurrently taking PSYC 3290 you can use RStudio as you do in that course - move to the next section.
 
-If you are not taking PSYC 3290 we have instructions for installing R and RStudio (both are needed) on your computer below. If you do not have a Mac or PC but instead are working with a tablet - contact the instructor during office hours.
+If you are not currently taking PSYC 3290 we have instructions for installing R and RStudio (both are needed) on your computer below. The software is free. If you do not have a Mac or PC but instead are working with a tablet - contact the instructor during office hours.
 
 ### Mac
 
-On a Mac you need to download and install R and RStudio. The RStudio software is a "frontend" for using R. Although you need to download and install both - you will only every load RStudio.
+On a Mac you need to download and install R and RStudio. The RStudio software is a "frontend" for using R. Although you need to download and install both - you will only ever load RStudio.
 
 #### Mac Download R
 
