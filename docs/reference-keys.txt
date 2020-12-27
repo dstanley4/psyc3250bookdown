@@ -20,7 +20,7 @@ mac-download-rstudio
 pc
 pc-download-r
 pc-download-rstudio
-begin-each-session-with-an-rstudio-project
+begin-with-an-rstudio-project
 exploring-the-r-studio-interface
 console-panel
 script-panel

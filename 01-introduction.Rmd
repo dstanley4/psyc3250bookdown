@@ -119,10 +119,35 @@ knitr::include_graphics("ch_introduction/images/screenshot_rstudio.png")
 * In the future you will only use RStudio to access use R.
 
 
-## Begin each session with an RStudio Project
+## Begin with an RStudio Project
+
+It can be hard to keep track of files you use and create when using RStudio. Therefore, you should always use an RStudio Project to keep track of things. This is basically just a Folder on your computer that RStudio associates with a particular task. Later in this introduction to RStudio we will use the file data_okcupid.csv. Right now we will set up a Project to make it easier to use that file.
 
 
+1. Create a folder on your computer called "psyc3250_project_1". Be sure you know where you create this folder so you can find it again easily.
 
+2. Download the data_okcupid.csv file, linked: [here](https://github.com/dstanley4/psyc3250bookdown/raw/main/data_okcupid.csv) (Right click link to download file)
+
+3. Place the data_okcupid.csv file into the psyc3250_project_1 folder.
+
+4. Load RStudio.
+
+5. Go to the File menu and select "New Project..."
+
+6. You will see the window below. Select "Existing Directory".
+
+```{r, echo = FALSE, out.width="50%"}
+knitr::include_graphics("ch_introduction/images/screenshot_new_project.png")
+```
+
+7. You will see the window below. Click the "Browse" button and then locate the folder you created. Once this is done click the "Create Project" button.
+
+```{r, echo = FALSE, out.width="50%"}
+knitr::include_graphics("ch_introduction/images/screenshot_create_project.png")
+```
+
+
+8. You're ready to begin. Follow this process of creating an RStudio project for each class project/activity.
 
 
 ## Exploring the R Studio Interface
