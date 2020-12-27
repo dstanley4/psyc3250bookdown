@@ -86,8 +86,6 @@ $$
 
 ## Measurement Notation
 
-
-
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
@@ -97,7 +95,7 @@ height_data <- read_csv("data_heights.csv", na = c("", "-999"))
 
 ```
 
-Previously we examined the notation typically used when making inferences from a sample to a popuulation. Unfortunately, the notation used in Psychological Measurement is different - similar but different. For the purposes of this course we use the notation and fomulas below. Notice that we use N in the denominator - that is we use the population-level variance formula - even though we are working with sample data. Typically, measurement theory treats the sample as our population of interest. This difference is often a source of confusion for students.
+You may be familiar with the notation typically used when making inferences from a sample to a population. Unfortunately, the notation used in Psychological Measurement is different - similar but different. For the purposes of this course we use the notation and formulas below. Notice that we use N in the denominator - that is we use the population-level variance formula - even though we are working with sample data. Typically, measurement textbooks treat the sample as our population of interest. This difference is often a source of confusion for students.
 
 
 $$
@@ -124,7 +122,7 @@ $$
 
 ## Data entry
 
-We begin by entering data into Excel (or any other spreadsheet) as per below. Notice how we use the first row as a header for the column names. Once we enter the data this way we need to save it as a .CSV file (comma separated values). You do so using the Save As menu item in Excel. Once the Save window appears - you will notice a File Format pull-down buttom. Use the button to select the CSV (comma delimited) option. Indicate a file name of "data_heights.csv" and save the file.
+We begin by entering data into Excel (or any other spreadsheet) as per below. Notice how we use the first row as a header for the column names. Once we enter the data this way we need to save it as a .CSV file (comma separated values). You do so using the Save As menu item in Excel. Once the Save window appears - you will notice a File Format pull-down button. Use the button to select the CSV (comma delimited) option. Indicate a file name of "data_heights.csv" and save the file.
 
 ```{r, echo=FALSE, out.width="35%"}
 knitr::include_graphics("ch_scaling/images/scaling_data_excel.png")
@@ -170,7 +168,7 @@ We can see the columns in the data we loaded using the glimpse() command:
 glimpse(height_data)
 ```
 
-The sex and part_id (participant identification number) columns are categorical varibles. We need to let the R know this fact. We do so by converting them to "factor" columns with the command below.
+The sex and part_id (participant identification number) columns are categorical variables. We need to let the R know this fact. We do so by converting them to "factor" columns with the command below.
 
 ```{r}
 height_data <- height_data %>%

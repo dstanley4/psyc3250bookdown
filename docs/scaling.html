@@ -339,7 +339,7 @@ FIGURE 3.1: Data for understanding summation notation
 </div>
 <div id="measurement-notation" class="section level2">
 <h2><span class="header-section-number">3.2</span> Measurement Notation</h2>
-<p>Previously we examined the notation typically used when making inferences from a sample to a popuulation. Unfortunately, the notation used in Psychological Measurement is different - similar but different. For the purposes of this course we use the notation and fomulas below. Notice that we use N in the denominator - that is we use the population-level variance formula - even though we are working with sample data. Typically, measurement theory treats the sample as our population of interest. This difference is often a source of confusion for students.</p>
+<p>You may be familiar with the notation typically used when making inferences from a sample to a population. Unfortunately, the notation used in Psychological Measurement is different - similar but different. For the purposes of this course we use the notation and formulas below. Notice that we use N in the denominator - that is we use the population-level variance formula - even though we are working with sample data. Typically, measurement textbooks treat the sample as our population of interest. This difference is often a source of confusion for students.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \overline{X} &amp;= \frac{\sum{X}}{N} \\
@@ -358,7 +358,7 @@ S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
 </div>
 <div id="data-entry" class="section level2">
 <h2><span class="header-section-number">3.3</span> Data entry</h2>
-<p>We begin by entering data into Excel (or any other spreadsheet) as per below. Notice how we use the first row as a header for the column names. Once we enter the data this way we need to save it as a .CSV file (comma separated values). You do so using the Save As menu item in Excel. Once the Save window appears - you will notice a File Format pull-down buttom. Use the button to select the CSV (comma delimited) option. Indicate a file name of “data_heights.csv” and save the file.</p>
+<p>We begin by entering data into Excel (or any other spreadsheet) as per below. Notice how we use the first row as a header for the column names. Once we enter the data this way we need to save it as a .CSV file (comma separated values). You do so using the Save As menu item in Excel. Once the Save window appears - you will notice a File Format pull-down button. Use the button to select the CSV (comma delimited) option. Indicate a file name of “data_heights.csv” and save the file.</p>
 <p><img src="ch_scaling/images/scaling_data_excel.png" width="35%" /></p>
 <p>What is a .CSV file? It’s just a text file where the columns are separated by commas. If you were to open the file in TextEdit on a Mac (or Notepad on Windows) you would see something like the image below. You don’t need to do this step - but if you did, it would just show you how the file is saved on disk.</p>
 <p><img src="ch_scaling/images/scaling_data_text.png" width="25%" /></p>
@@ -383,7 +383,7 @@ S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
 ## $ name      &lt;chr&gt; &quot;John&quot;, &quot;Jim&quot;, &quot;Steve&quot;, &quot;Jamal&quot;, &quot;Eli&quot;,…
 ## $ sex       &lt;chr&gt; &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;,…
 ## $ cm_height &lt;dbl&gt; 190, 179, 165, 179, 174, 179, 185, 180,…</code></pre>
-<p>The sex and part_id (participant identification number) columns are categorical varibles. We need to let the R know this fact. We do so by converting them to “factor” columns with the command below.</p>
+<p>The sex and part_id (participant identification number) columns are categorical variables. We need to let the R know this fact. We do so by converting them to “factor” columns with the command below.</p>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="scaling.html#cb158-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb158-2"><a href="scaling.html#cb158-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">part_id =</span> <span class="kw">as_factor</span>(part_id),</span>
 <span id="cb158-3"><a href="scaling.html#cb158-3"></a>         <span class="dt">sex =</span> <span class="kw">as_factor</span>(sex))</span></code></pre></div>

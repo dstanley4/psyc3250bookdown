@@ -2,7 +2,7 @@
 
 # Introduction
 
-Welcome! In this guide, we will teach you about statistics using the statistical software R with the interface provided by R Studio. The purpose of this chapter to is provide you with a set of activities that get you up-and-running in R quickly so get a sense of how it works. In later chatpers we will revisit these same topics in more detail. 
+Welcome! In this guide, we will teach you about statistics using the statistical software R with the interface provided by R Studio. The purpose of this chapter to is provide you with a set of activities that get you up-and-running in R quickly so get a sense of how it works. In later chapters we will revisit these same topics in more detail. 
 
 ## A focus on workflow
 
@@ -224,9 +224,9 @@ knitr::include_graphics("ch_introduction/images/iso8601.png")
 
 ### Background about the tidyverse
 
-There are generally two broad ways of using R, the older way and the newer way. Using R the older way is refered to as using base R. A more modern approach to using R is the tidyverse\index{tidyverse}. The tidyverse represents a collection of packages the work together to give R a modern workflow. These packages do many things to help the data analyst (loading data, rearranging data, graphing, etc.). We will use the tidyverse approach to R in this guide.
+There are generally two broad ways of using R, the older way and the newer way. Using R the older way is referred to as using base R. A more modern approach to using R is the tidyverse\index{tidyverse}. The tidyverse represents a collection of packages the work together to give R a modern workflow. These packages do many things to help the data analyst (loading data, rearranging data, graphing, etc.). We will use the tidyverse approach to R in this guide.
 
-A noted the tidyverse is a collection of packges. Each package adds new commands to R. The number of packges and correspondingly the number of new commands added to R by the tidyverse is large. Below is a list of the tidyverse packages:
+A noted the tidyverse is a collection of packages. Each package adds new commands to R. The number of packages and correspondingly the number of new commands added to R by the tidyverse is large. Below is a list of the tidyverse packages:
 
 ```{r, echo = FALSE}
 tidyverse::tidyverse_packages(include_self = TRUE)
@@ -352,7 +352,7 @@ summary(okcupid_profiles)
 
 ## Run *vs.* Source with Echo *vs.* Source 
 
-There are different ways of running commands in R.  So far you have used two of these. You can enter them into the Console as we have done already. Or you can put them in your script select the text and clickk the Run button. There are four ways of running commands in your script. 
+There are different ways of running commands in R.  So far you have used two of these. You can enter them into the Console as we have done already. Or you can put them in your script select the text and click the Run button. There are four ways of running commands in your script. 
 
 You can:
 
@@ -390,7 +390,7 @@ So you should do the following EVERY time you run your script.
 1.  Use the menu item: **Session > Restart R**
 2.  Click the down arrow beside the Source button, and click on Source With Echo
 
-This will clear potentially problematic previous stats, run the script commands, and display the output in the Console.  Moving forward we will use this approach for running scripts. Once you have used Source wiht Echo once, you can just click the Source button and it will use Source with Echo automatically (without the need to use the pull down option for selecting Source with Echo).
+This will clear potentially problematic previous stats, run the script commands, and display the output in the Console.  Moving forward we will use this approach for running scripts. Once you have used Source with Echo once, you can just click the Source button and it will use Source with Echo automatically (without the need to use the pull down option for selecting Source with Echo).
 
 
 ```{block2, type='rmdcaution'}
