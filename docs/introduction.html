@@ -315,7 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If you are not currently taking PSYC 3290 we have instructions for installing R and RStudio (both are needed) on your computer below. The software is free. If you do not have a Mac or PC but instead are working with a tablet - contact the instructor during office hours.</p>
 <div id="mac" class="section level3">
 <h3><span class="header-section-number">1.3.1</span> Mac</h3>
-<p>On a Mac you need to download and install R and RStudio. The RStudio software is a “frontend” for using R. Although you need to download and install both - you will only ever load RStudio.</p>
+<p>On a Mac you need to download and install R and RStudio. The RStudio software is a “front end” for using R. Although you need to download and install both - you will only ever load RStudio.</p>
 <div id="mac-download-r" class="section level4">
 <h4><span class="header-section-number">1.3.1.1</span> Mac Download R</h4>
 <ul>
@@ -326,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>Run the file you just downloaded to install R.</p></li>
 <li><p>Remember you will never run R - you just need it installed so you can use RStudio.</p></li>
-<li><p>Now install RStudio</p></li>
+<li><p>Now install RStudio (see below)</p></li>
 </ul>
 </div>
 <div id="mac-download-rstudio" class="section level4">
@@ -346,7 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><img src="ch_introduction/images/screenshot_applications.png" width="35%" /></p>
 <ul>
-<li>In the Applications folder there is now an RStudio icon. Click this icon to run RStudio each time you use it. You can also drag the RStudio icon in the Applications folder to the Dock for easy access if your prefer.</li>
+<li>In the Applications folder there is now an RStudio icon. Click this icon to run RStudio each time you use it. You can also drag the RStudio icon in the Applications folder to the Dock for easy access if you prefer.</li>
 </ul>
 </div>
 </div>
@@ -471,7 +471,6 @@ the results of an analysis, or anything else.</p>
 <span id="cb8-6"><a href="introduction.html#cb8-6"></a><span class="kw">install.packages</span>(<span class="st">&quot;ggplot&quot;</span>, <span class="dt">dep =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb8-7"><a href="introduction.html#cb8-7"></a><span class="co"># etc</span></span></code></pre></div>
 <p>Fortunately, the tidyverse packages can now by installed with a single install.packages command. Specifically, the install.packages command below will install all of the packages listed above.</p>
-<p><strong>Class note: For the “First Lab”, I’ve done the install.packages for you. So there is no need to use the install.packages command below in this first lab.</strong></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introduction.html#cb9-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="dt">dep =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 </div>
 <div id="add-librarytidyverse-to-your-script" class="section level3">
@@ -503,7 +502,6 @@ the results of an analysis, or anything else.</p>
 <h3><span class="header-section-number">1.7.1</span> Use read_csv (not read.csv) to open files.</h3>
 <p>If you inspect the Files pane on the right of the screen you see the <strong>data_okcupid.csv</strong> data file in our project directory. We will load this data with the commands below. If you followed the steps above, you should have auto-complete for the tidyverse commands you type for now in – in the current R session. Enter the command below into your script. As your start to type read_csv you will likely be presented with an auto-complete option. You can use the arrow keys to move up and down the list of options to select the one you want - then press tab to select it.</p>
 <p>Once your command looks like the one below select the text and click on the “Run” button.</p>
-<p>Note: If you are not in the class, the data file is available from: <a href="https://github.com/dstanley4/psyc3250bookdown" class="uri">https://github.com/dstanley4/psyc3250bookdown</a></p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introduction.html#cb14-1"></a>okcupid_profiles &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## ── Column specification ────────────────────────────────────

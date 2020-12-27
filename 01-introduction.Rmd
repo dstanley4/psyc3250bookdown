@@ -31,7 +31,7 @@ If you are not currently taking PSYC 3290 we have instructions for installing R 
 
 ### Mac
 
-On a Mac you need to download and install R and RStudio. The RStudio software is a "frontend" for using R. Although you need to download and install both - you will only ever load RStudio.
+On a Mac you need to download and install R and RStudio. The RStudio software is a "front end" for using R. Although you need to download and install both - you will only ever load RStudio.
 
 #### Mac Download R
 
@@ -47,7 +47,7 @@ knitr::include_graphics("ch_introduction/images/screenshot_mac_r.png")
 
 * Remember you will never run R - you just need it installed so you can use RStudio.
 
-* Now install RStudio
+* Now install RStudio (see below)
 
 #### Mac Download RStudio
 
@@ -73,8 +73,7 @@ knitr::include_graphics("ch_introduction/images/screenshot_dmg.png")
 knitr::include_graphics("ch_introduction/images/screenshot_applications.png")
 ```
 
-* In the Applications folder there is now an RStudio icon. Click this icon to run RStudio each time you use it. You can also drag the RStudio icon in the Applications folder to the Dock for easy access if your prefer.
-
+* In the Applications folder there is now an RStudio icon. Click this icon to run RStudio each time you use it. You can also drag the RStudio icon in the Applications folder to the Dock for easy access if you prefer.
 
 ### PC
 
@@ -248,8 +247,6 @@ install.packages("ggplot", dep = TRUE)
 
 Fortunately, the tidyverse packages can now by installed with a single install.packages command. Specifically, the install.packages command below will install all of the packages listed above.
 
-**Class note: For the "First Lab", I've done the install.packages for you. So there is no need to use the install.packages command below in this first lab.**
-
 ```{r, eval = FALSE}
 install.packages("tidyverse", dep = TRUE)
 ```
@@ -285,8 +282,6 @@ Most importantly, running the library(tidyverse) prior to entering the rest of y
 If you inspect the Files pane on the right of the screen you see the  **data_okcupid.csv** data file in our project directory. We will load this data with the commands below. If you followed the steps above, you should have auto-complete for the tidyverse commands you type for now in -- in the current R session. Enter the command below into your script. As your start to type read_csv you will likely be presented with an auto-complete option. You can use the arrow keys to move up and down the list of options to select the one you want - then press tab to select it.
 
 Once your command looks like the one below select the text and click on the "Run" button.
-
-Note: If you are not in the class, the data file is available from: https://github.com/dstanley4/psyc3250bookdown
 
 
 ```{r firstread}
