@@ -155,7 +155,7 @@ install.packages("sjstats", dep = TRUE)
 
 From this point on place all the R commands into your script. We begin by activating the tidyverse and sjstats packages with the library() command. Then we load the data using read_csv(). Notice how use indicate missing values using the **na** argument of the read_csv() command; if the computer see nothing in the column or -999 it puts in a missing value place holder.
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 library(tidyverse)
 library(sjstats)
 

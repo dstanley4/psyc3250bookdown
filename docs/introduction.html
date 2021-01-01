@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2020-12-27" />
+<meta name="date" content="2021-01-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,7 +176,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
 <li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.12</b> That’s it!</a></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#revisiting-read_csv"><i class="fa fa-check"></i><b>1.12</b> Revisiting read_csv()</a></li>
+<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.13</b> That’s it!</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
 <li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
@@ -781,8 +782,15 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 <pre><code>## [1] 1913</code></pre>
 </div>
 </div>
+<div id="revisiting-read_csv" class="section level2">
+<h2><span class="header-section-number">1.12</span> Revisiting read_csv()</h2>
+<p>In the text above we learned about vectors of characters. This information can be used handle missing values in the read_csv() command. Consider a data set where for many participants we did not get a response to a question. We might have that represented in various ways within the data file. The value for that question might simply be omitted (i.e., represented by nothing – ""), represented by NA for not available, or maybe simply be something like -777.</p>
+<p>When we load data with read_csv() we can indicate to the computer how missing values are represented. This ensures the computer sees something like -777 as a missing value rather than an actual value. We do so in the read_csv() command below using the <strong>na</strong> argument (not available). Note: use SHIFT-RETURN or SHIFT-ENTER to move the next line within the read_csv() command. Failure to indicate the missing value codes within read_csv() will result in incorrect answers in most scenarios with missing data.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="introduction.html#cb56-1"></a>okcupid_profiles &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>,</span>
+<span id="cb56-2"><a href="introduction.html#cb56-2"></a>                             <span class="dt">na =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>, <span class="st">&quot;-777&quot;</span>))</span></code></pre></div>
+</div>
 <div id="thats-it" class="section level2">
-<h2><span class="header-section-number">1.12</span> That’s it!</h2>
+<h2><span class="header-section-number">1.13</span> That’s it!</h2>
 <p>Congratulations! You’ve reached the end of the introduction to R. Take a break, have a cookie, and read some more about R tomorrow!</p>
 
 </div>
