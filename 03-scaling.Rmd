@@ -219,7 +219,7 @@ height_data %>%
 ## Converting units
 
 
-## Inches
+### Inches
 
 In the previous sections we have examined participant heights using centimeters (cm). We can, however, express participants heights using inches. It's a simple process to convert cm to inches - we simply divide by 2.54. If you examine the rule below you can see that 2.54 cm corresponds to 1 inch.
 
@@ -227,7 +227,7 @@ In the previous sections we have examined participant heights using centimeters 
 knitr::include_graphics("ch_scaling/images/ruler.png")
 ```
 
-### Hand calculation
+#### Hand calculation
 
 We can express this conversion more formally with equations below. In this Equation we use $X_i$ to indicate the height (in cm) of the $i^{th}$ person in a set of N people.
 
@@ -253,7 +253,7 @@ $$
 Thus, John is 190 cm tall or 74.8 inches tall. Of course, John's height has not changed because we are now expressing it in inches. All that has changed is the units we use to designate his height.
 
 
-### R calculation
+#### R calculation
 
 We can create a new column in our data set that has the height of everyone in inches using the code below:
 
@@ -269,7 +269,7 @@ We can see the new column (inches) with the code below.
 height_data %>% as.data.frame()
 ```
 
-
+We can obtain the mean for the cm and inches columns with the command below:
 
 ```{r}
 height_data %>%
@@ -281,6 +281,8 @@ height_data %>%
 ```
 
 
+We can obtain the standard deviation (population formula) for the cm and inches columns with the command below:
+
 ```{r}
 height_data %>%
     summarise(across(.cols = where(is.numeric),
@@ -289,7 +291,51 @@ height_data %>%
   as.data.frame()
 ```
 
-## z-scores
+
+#### Summary
+
+```{r, echo = FALSE}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  sd_pop = ~sd_pop(.x),
+  N = ~sum(!is.na(.x))
+)
+
+row_sum <- height_data %>% 
+  summarise(across(.cols = where(is.numeric),
+                   .fns =  desired_descriptives,
+                   .names = "{col}___{fn}"))
+
+long_summary <- row_sum %>%
+  pivot_longer(cols = everything(),
+               names_to = c("unit", "stat"),
+               names_sep = c("___"),
+               values_to = "value")
+
+summary_table <- long_summary %>% 
+  pivot_wider(names_from = stat,
+              values_from = value)
+
+# round to 3 decimals
+summary_table_rounded <- summary_table %>%
+  mutate(across(.cols = where(is.numeric),
+                .fns= round,
+                digits = 3)) %>%
+  as.data.frame()
+
+kableExtra::kable(summary_table_rounded)
+```
+
+
+Examine the summary table above. By converting heights in cm to heights in inches we simply changed the units used to represent those heights. The conversion did not change anyone's actual height. Nor this type of conversion change the height of one person relative to another person all we did was change the units used to represent that height.
+
+Both inches and centimeters are ratio-scale scale heights. The zero point on the measurement scale is meaningful and not arbitrary. There are bennefits to this approach it's the zero point is defined independent of the data. Below we examine two approaches to representing heights (z-scores and T-scores) for which the zero-point depends on the nature of the data. This initially seems like an odd approach - but you will that there are many bennefits to expressing heights in this manner. 
+
+
+
+### z-scores
+
+#### Hand calculation
 
 
 Recall:
@@ -323,6 +369,9 @@ z_i &= \frac{X_i - \overline{X}}{S_X}\\
 $$
 
 
+#### R calculation
+
+
 ```{r}
 
 height_data <- height_data %>%
@@ -353,8 +402,44 @@ height_data %>%
 ```
 
 
-## T-scores
+#### Summary
 
+```{r, echo = FALSE}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  sd_pop = ~sd_pop(.x),
+  N = ~sum(!is.na(.x))
+)
+
+row_sum <- height_data %>% 
+  summarise(across(.cols = where(is.numeric),
+                   .fns =  desired_descriptives,
+                   .names = "{col}___{fn}"))
+
+long_summary <- row_sum %>%
+  pivot_longer(cols = everything(),
+               names_to = c("unit", "stat"),
+               names_sep = c("___"),
+               values_to = "value")
+
+summary_table <- long_summary %>% 
+  pivot_wider(names_from = stat,
+              values_from = value)
+
+# round to 3 decimals
+summary_table_rounded <- summary_table %>%
+  mutate(across(.cols = where(is.numeric),
+                .fns= round,
+                digits = 3)) %>%
+  as.data.frame()
+
+kableExtra::kable(summary_table_rounded)
+```
+
+### T-scores
+
+
+#### Hand calculation
 
 In general:
 
@@ -375,6 +460,8 @@ T_i &= z_i \times 10 + 50\\
 &= 70.84084\\
 \end{aligned}
 $$
+
+#### R calculation
 
 
 ```{r}
@@ -404,6 +491,40 @@ height_data %>%
                      .fns = sd_pop,
                      .names = "sd_{col}")) %>%
   as.data.frame()
+```
+
+#### Summary
+
+```{r, echo = FALSE}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  sd_pop = ~sd_pop(.x),
+  N = ~sum(!is.na(.x))
+)
+
+row_sum <- height_data %>% 
+  summarise(across(.cols = where(is.numeric),
+                   .fns =  desired_descriptives,
+                   .names = "{col}___{fn}"))
+
+long_summary <- row_sum %>%
+  pivot_longer(cols = everything(),
+               names_to = c("unit", "stat"),
+               names_sep = c("___"),
+               values_to = "value")
+
+summary_table <- long_summary %>% 
+  pivot_wider(names_from = stat,
+              values_from = value)
+
+# round to 3 decimals
+summary_table_rounded <- summary_table %>%
+  mutate(across(.cols = where(is.numeric),
+                .fns= round,
+                digits = 3)) %>%
+  as.data.frame()
+
+kableExtra::kable(summary_table_rounded)
 ```
 
 

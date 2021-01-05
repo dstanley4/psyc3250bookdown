@@ -88,8 +88,15 @@ converting-units
 inches
 hand-calculation
 r-calculation
+summary
 z-scores
+hand-calculation-1
+r-calculation-1
+summary-1
 t-scores
+hand-calculation-2
+r-calculation-2
+summary-2
 comparing-scores
 frame-of-references
 all-participants

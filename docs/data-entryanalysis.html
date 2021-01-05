@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2021-01-01" />
+<meta name="date" content="2021-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -209,17 +209,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="scaling.html"><a href="scaling.html#loading-data"><i class="fa fa-check"></i><b>3.4</b> Loading data</a></li>
 <li class="chapter" data-level="3.5" data-path="scaling.html"><a href="scaling.html#viewing-data"><i class="fa fa-check"></i><b>3.5</b> Viewing data</a></li>
 <li class="chapter" data-level="3.6" data-path="scaling.html"><a href="scaling.html#summary-statistics"><i class="fa fa-check"></i><b>3.6</b> Summary statistics</a></li>
-<li class="chapter" data-level="3.7" data-path="scaling.html"><a href="scaling.html#converting-units"><i class="fa fa-check"></i><b>3.7</b> Converting units</a></li>
-<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#inches"><i class="fa fa-check"></i><b>3.8</b> Inches</a><ul>
-<li class="chapter" data-level="3.8.1" data-path="scaling.html"><a href="scaling.html#hand-calculation"><i class="fa fa-check"></i><b>3.8.1</b> Hand calculation</a></li>
-<li class="chapter" data-level="3.8.2" data-path="scaling.html"><a href="scaling.html#r-calculation"><i class="fa fa-check"></i><b>3.8.2</b> R calculation</a></li>
+<li class="chapter" data-level="3.7" data-path="scaling.html"><a href="scaling.html#converting-units"><i class="fa fa-check"></i><b>3.7</b> Converting units</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="scaling.html"><a href="scaling.html#inches"><i class="fa fa-check"></i><b>3.7.1</b> Inches</a></li>
+<li class="chapter" data-level="3.7.2" data-path="scaling.html"><a href="scaling.html#z-scores"><i class="fa fa-check"></i><b>3.7.2</b> z-scores</a></li>
+<li class="chapter" data-level="3.7.3" data-path="scaling.html"><a href="scaling.html#t-scores"><i class="fa fa-check"></i><b>3.7.3</b> T-scores</a></li>
 </ul></li>
-<li class="chapter" data-level="3.9" data-path="scaling.html"><a href="scaling.html#z-scores"><i class="fa fa-check"></i><b>3.9</b> z-scores</a></li>
-<li class="chapter" data-level="3.10" data-path="scaling.html"><a href="scaling.html#t-scores"><i class="fa fa-check"></i><b>3.10</b> T-scores</a></li>
-<li class="chapter" data-level="3.11" data-path="scaling.html"><a href="scaling.html#comparing-scores"><i class="fa fa-check"></i><b>3.11</b> Comparing scores</a></li>
-<li class="chapter" data-level="3.12" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.12</b> Frame of references</a><ul>
-<li class="chapter" data-level="3.12.1" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.12.1</b> All participants</a></li>
-<li class="chapter" data-level="3.12.2" data-path="scaling.html"><a href="scaling.html#male-participants"><i class="fa fa-check"></i><b>3.12.2</b> Male participants</a></li>
+<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#comparing-scores"><i class="fa fa-check"></i><b>3.8</b> Comparing scores</a></li>
+<li class="chapter" data-level="3.9" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.9</b> Frame of references</a><ul>
+<li class="chapter" data-level="3.9.1" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.9.1</b> All participants</a></li>
+<li class="chapter" data-level="3.9.2" data-path="scaling.html"><a href="scaling.html#male-participants"><i class="fa fa-check"></i><b>3.9.2</b> Male participants</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>4</b> Data Entry/Analysis</a><ul>
@@ -361,222 +359,492 @@ FIGURE 4.2: Data science pipeline by Roger Peng
 <p>The tidy data format can be initially challenging for some researchers to understand because it is based on thinking about, and structuring data, in terms of observations/measurements instead of participants. In this section we will describe common approaches to entering animal and human participant data and how they can be done keeping the tidy data requirement in mind. It’s not essential that data be entered in a tidy data format but it is essential that you enter data in a manner that makes it easy to later convert data to a tidy data format. When dealing with animal or human participant data it’s common to enter data into a spreadsheet. Each row of the spreadsheet is typically used to represent a single participant and each column of the spreadsheet is used to represent a variable.</p>
 <p><strong>Between participant data</strong>. Consider Table <a href="data-entryanalysis.html#tab:betweenex">4.1</a> which illustrates between participant data for six human participants running 5 kilometers. The first column is id, which indicates there are six unique participants and provides and identification number for each of them. The second column is sex, which is a variable, and there is one observation per for row, so sex also conforms to the tidy data specification. Finally, there is a last column five_km_time which is a variable with one observation per row – also conforming to tidy data specification. Thus, single occasion between subject data like this conforms to the tidy data specification. There is usually nothing you need to do to convert between participant data (or cross-sectional data) to be in a tidy data format.</p>
 <table>
-<caption><span id="tab:betweenex">TABLE 4.1: </span>Between participant data entered one row per participant</caption>
+<caption>
+<span id="tab:betweenex">TABLE 4.1: </span>Between participant data entered one row per participant
+</caption>
 <thead>
-<tr class="header">
-<th align="right">id</th>
-<th align="left">sex</th>
-<th align="right">elapsed_time</th>
+<tr>
+<th style="text-align:right;">
+id
+</th>
+<th style="text-align:left;">
+sex
+</th>
+<th style="text-align:right;">
+elapsed_time
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">male</td>
-<td align="right">40</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+40
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">female</td>
-<td align="right">35</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:right;">
+35
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="left">male</td>
-<td align="right">38</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+38
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="left">female</td>
-<td align="right">33</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:right;">
+33
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="left">male</td>
-<td align="right">42</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+42
+</td>
 </tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="left">female</td>
-<td align="right">36</td>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:right;">
+36
+</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Within participant data</strong>. Consider Table <a href="data-entryanalysis.html#tab:withinex">4.2</a> which illustrates within participant data for six human participants running 5 kilometers - but on three different occasions. The first column is id, which indicates there are six unique participants and provides and identification number for each of them. The second column is sex, which is a variable, and there is one observation per for row, so sex also conforms to the tidy data specification. Next, there are three different columns (march, may, july) each of which contains elapsed time (in minutes) for the runner in a different month. Elapsed run times are spread out over three columns so elapse_time is not in a tidy data format. Moreover, it’s not clear from the data file that march, may, and july are levels of a variable called occasion. Nor is it clear that elapsed_times are recorded in each of those columns (i.e., the dependent variable is unknown/not labeled). Although this format is fine as a data entry format it clearly has problems associated with it when it comes time to analyze your data.</p>
 <table>
-<caption><span id="tab:withinex">TABLE 4.2: </span>Within participant data entered one row per participant</caption>
+<caption>
+<span id="tab:withinex">TABLE 4.2: </span>Within participant data entered one row per participant
+</caption>
 <thead>
-<tr class="header">
-<th align="right">id</th>
-<th align="left">sex</th>
-<th align="right">march</th>
-<th align="right">may</th>
-<th align="right">july</th>
+<tr>
+<th style="text-align:right;">
+id
+</th>
+<th style="text-align:left;">
+sex
+</th>
+<th style="text-align:right;">
+march
+</th>
+<th style="text-align:right;">
+may
+</th>
+<th style="text-align:right;">
+july
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">male</td>
-<td align="right">40</td>
-<td align="right">37</td>
-<td align="right">35</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+35
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">female</td>
-<td align="right">35</td>
-<td align="right">32</td>
-<td align="right">30</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+30
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="left">male</td>
-<td align="right">38</td>
-<td align="right">35</td>
-<td align="right">33</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+33
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="left">female</td>
-<td align="right">33</td>
-<td align="right">30</td>
-<td align="right">28</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+28
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="left">male</td>
-<td align="right">42</td>
-<td align="right">39</td>
-<td align="right">37</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+37
+</td>
 </tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="left">female</td>
-<td align="right">36</td>
-<td align="right">33</td>
-<td align="right">31</td>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+31
+</td>
 </tr>
 </tbody>
 </table>
 <table>
-<caption><span id="tab:withintidyex">TABLE 4.3: </span>A tidy data version of the within participant data</caption>
+<caption>
+<span id="tab:withintidyex">TABLE 4.3: </span>A tidy data version of the within participant data
+</caption>
 <thead>
-<tr class="header">
-<th align="right">id</th>
-<th align="left">sex</th>
-<th align="left">occasion</th>
-<th align="right">elapsed_time</th>
+<tr>
+<th style="text-align:right;">
+id
+</th>
+<th style="text-align:left;">
+sex
+</th>
+<th style="text-align:left;">
+occasion
+</th>
+<th style="text-align:right;">
+elapsed_time
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">male</td>
-<td align="left">march</td>
-<td align="right">40</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+march
+</td>
+<td style="text-align:right;">
+40
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">male</td>
-<td align="left">may</td>
-<td align="right">37</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+may
+</td>
+<td style="text-align:right;">
+37
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">male</td>
-<td align="left">july</td>
-<td align="right">35</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+july
+</td>
+<td style="text-align:right;">
+35
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">female</td>
-<td align="left">march</td>
-<td align="right">35</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+march
+</td>
+<td style="text-align:right;">
+35
+</td>
 </tr>
-<tr class="odd">
-<td align="right">2</td>
-<td align="left">female</td>
-<td align="left">may</td>
-<td align="right">32</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+may
+</td>
+<td style="text-align:right;">
+32
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">female</td>
-<td align="left">july</td>
-<td align="right">30</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+july
+</td>
+<td style="text-align:right;">
+30
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="left">male</td>
-<td align="left">march</td>
-<td align="right">38</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+march
+</td>
+<td style="text-align:right;">
+38
+</td>
 </tr>
-<tr class="even">
-<td align="right">3</td>
-<td align="left">male</td>
-<td align="left">may</td>
-<td align="right">35</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+may
+</td>
+<td style="text-align:right;">
+35
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="left">male</td>
-<td align="left">july</td>
-<td align="right">33</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+july
+</td>
+<td style="text-align:right;">
+33
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="left">female</td>
-<td align="left">march</td>
-<td align="right">33</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+march
+</td>
+<td style="text-align:right;">
+33
+</td>
 </tr>
-<tr class="odd">
-<td align="right">4</td>
-<td align="left">female</td>
-<td align="left">may</td>
-<td align="right">30</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+may
+</td>
+<td style="text-align:right;">
+30
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="left">female</td>
-<td align="left">july</td>
-<td align="right">28</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+july
+</td>
+<td style="text-align:right;">
+28
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="left">male</td>
-<td align="left">march</td>
-<td align="right">42</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+march
+</td>
+<td style="text-align:right;">
+42
+</td>
 </tr>
-<tr class="even">
-<td align="right">5</td>
-<td align="left">male</td>
-<td align="left">may</td>
-<td align="right">39</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+may
+</td>
+<td style="text-align:right;">
+39
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="left">male</td>
-<td align="left">july</td>
-<td align="right">37</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+july
+</td>
+<td style="text-align:right;">
+37
+</td>
 </tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="left">female</td>
-<td align="left">march</td>
-<td align="right">36</td>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+march
+</td>
+<td style="text-align:right;">
+36
+</td>
 </tr>
-<tr class="odd">
-<td align="right">6</td>
-<td align="left">female</td>
-<td align="left">may</td>
-<td align="right">33</td>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+may
+</td>
+<td style="text-align:right;">
+33
+</td>
 </tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="left">female</td>
-<td align="left">july</td>
-<td align="right">31</td>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+july
+</td>
+<td style="text-align:right;">
+31
+</td>
 </tr>
 </tbody>
 </table>

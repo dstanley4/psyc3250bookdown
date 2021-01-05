@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2021-01-01" />
+<meta name="date" content="2021-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -209,17 +209,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="scaling.html"><a href="scaling.html#loading-data"><i class="fa fa-check"></i><b>3.4</b> Loading data</a></li>
 <li class="chapter" data-level="3.5" data-path="scaling.html"><a href="scaling.html#viewing-data"><i class="fa fa-check"></i><b>3.5</b> Viewing data</a></li>
 <li class="chapter" data-level="3.6" data-path="scaling.html"><a href="scaling.html#summary-statistics"><i class="fa fa-check"></i><b>3.6</b> Summary statistics</a></li>
-<li class="chapter" data-level="3.7" data-path="scaling.html"><a href="scaling.html#converting-units"><i class="fa fa-check"></i><b>3.7</b> Converting units</a></li>
-<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#inches"><i class="fa fa-check"></i><b>3.8</b> Inches</a><ul>
-<li class="chapter" data-level="3.8.1" data-path="scaling.html"><a href="scaling.html#hand-calculation"><i class="fa fa-check"></i><b>3.8.1</b> Hand calculation</a></li>
-<li class="chapter" data-level="3.8.2" data-path="scaling.html"><a href="scaling.html#r-calculation"><i class="fa fa-check"></i><b>3.8.2</b> R calculation</a></li>
+<li class="chapter" data-level="3.7" data-path="scaling.html"><a href="scaling.html#converting-units"><i class="fa fa-check"></i><b>3.7</b> Converting units</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="scaling.html"><a href="scaling.html#inches"><i class="fa fa-check"></i><b>3.7.1</b> Inches</a></li>
+<li class="chapter" data-level="3.7.2" data-path="scaling.html"><a href="scaling.html#z-scores"><i class="fa fa-check"></i><b>3.7.2</b> z-scores</a></li>
+<li class="chapter" data-level="3.7.3" data-path="scaling.html"><a href="scaling.html#t-scores"><i class="fa fa-check"></i><b>3.7.3</b> T-scores</a></li>
 </ul></li>
-<li class="chapter" data-level="3.9" data-path="scaling.html"><a href="scaling.html#z-scores"><i class="fa fa-check"></i><b>3.9</b> z-scores</a></li>
-<li class="chapter" data-level="3.10" data-path="scaling.html"><a href="scaling.html#t-scores"><i class="fa fa-check"></i><b>3.10</b> T-scores</a></li>
-<li class="chapter" data-level="3.11" data-path="scaling.html"><a href="scaling.html#comparing-scores"><i class="fa fa-check"></i><b>3.11</b> Comparing scores</a></li>
-<li class="chapter" data-level="3.12" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.12</b> Frame of references</a><ul>
-<li class="chapter" data-level="3.12.1" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.12.1</b> All participants</a></li>
-<li class="chapter" data-level="3.12.2" data-path="scaling.html"><a href="scaling.html#male-participants"><i class="fa fa-check"></i><b>3.12.2</b> Male participants</a></li>
+<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#comparing-scores"><i class="fa fa-check"></i><b>3.8</b> Comparing scores</a></li>
+<li class="chapter" data-level="3.9" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.9</b> Frame of references</a><ul>
+<li class="chapter" data-level="3.9.1" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.9.1</b> All participants</a></li>
+<li class="chapter" data-level="3.9.2" data-path="scaling.html"><a href="scaling.html#male-participants"><i class="fa fa-check"></i><b>3.9.2</b> Male participants</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>4</b> Data Entry/Analysis</a><ul>
@@ -453,13 +451,12 @@ S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
 </div>
 <div id="converting-units" class="section level2">
 <h2><span class="header-section-number">3.7</span> Converting units</h2>
-</div>
-<div id="inches" class="section level2">
-<h2><span class="header-section-number">3.8</span> Inches</h2>
+<div id="inches" class="section level3">
+<h3><span class="header-section-number">3.7.1</span> Inches</h3>
 <p>In the previous sections we have examined participant heights using centimeters (cm). We can, however, express participants heights using inches. It’s a simple process to convert cm to inches - we simply divide by 2.54. If you examine the rule below you can see that 2.54 cm corresponds to 1 inch.</p>
 <p><img src="ch_scaling/images/ruler.png" width="50%" /></p>
-<div id="hand-calculation" class="section level3">
-<h3><span class="header-section-number">3.8.1</span> Hand calculation</h3>
+<div id="hand-calculation" class="section level4">
+<h4><span class="header-section-number">3.7.1.1</span> Hand calculation</h4>
 <p>We can express this conversion more formally with equations below. In this Equation we use <span class="math inline">\(X_i\)</span> to indicate the height (in cm) of the <span class="math inline">\(i^{th}\)</span> person in a set of N people.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -477,8 +474,8 @@ S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
 \]</span></p>
 <p>Thus, John is 190 cm tall or 74.8 inches tall. Of course, John’s height has not changed because we are now expressing it in inches. All that has changed is the units we use to designate his height.</p>
 </div>
-<div id="r-calculation" class="section level3">
-<h3><span class="header-section-number">3.8.2</span> R calculation</h3>
+<div id="r-calculation" class="section level4">
+<h4><span class="header-section-number">3.7.1.2</span> R calculation</h4>
 <p>We can create a new column in our data set that has the height of everyone in inches using the code below:</p>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="scaling.html#cb169-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb169-2"><a href="scaling.html#cb169-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">inches_height =</span> cm_height <span class="op">/</span><span class="st"> </span><span class="fl">2.54</span>)</span></code></pre></div>
@@ -505,6 +502,7 @@ S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
 ## 18      18 Jennifer female       169         66.54
 ## 19      19  Natalie female       165         64.96
 ## 20      20    Megan female       161         63.39</code></pre>
+<p>We can obtain the mean for the cm and inches columns with the command below:</p>
 <div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="scaling.html#cb172-1"></a>height_data <span class="op">%&gt;%</span></span>
 <span id="cb172-2"><a href="scaling.html#cb172-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
 <span id="cb172-3"><a href="scaling.html#cb172-3"></a>                     <span class="dt">.fns =</span> mean,</span>
@@ -513,6 +511,7 @@ S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
 <span id="cb172-6"><a href="scaling.html#cb172-6"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##   mean_cm_height mean_inches_height
 ## 1          173.3              68.23</code></pre>
+<p>We can obtain the standard deviation (population formula) for the cm and inches columns with the command below:</p>
 <div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="scaling.html#cb174-1"></a>height_data <span class="op">%&gt;%</span></span>
 <span id="cb174-2"><a href="scaling.html#cb174-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
 <span id="cb174-3"><a href="scaling.html#cb174-3"></a>                     <span class="dt">.fns =</span> sd_pop,</span>
@@ -521,9 +520,64 @@ S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
 <pre><code>##   sd_cm_height sd_inches_height
 ## 1        8.013            3.155</code></pre>
 </div>
+<div id="summary" class="section level4">
+<h4><span class="header-section-number">3.7.1.3</span> Summary</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+unit
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd_pop
+</th>
+<th style="text-align:right;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+cm_height
+</td>
+<td style="text-align:right;">
+173.30
+</td>
+<td style="text-align:right;">
+8.013
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+inches_height
+</td>
+<td style="text-align:right;">
+68.23
+</td>
+<td style="text-align:right;">
+3.155
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+</tbody>
+</table>
+<p>Examine the summary table above. By converting heights in cm to heights in inches we simply changed the units used to represent those heights. The conversion did not change anyone’s actual height. Nor this type of conversion change the height of one person relative to another person all we did was change the units used to represent that height.</p>
+<p>Both inches and centimeters are ratio-scale scale heights. The zero point on the measurement scale is meaningful and not arbitrary. There are bennefits to this approach it’s the zero point is defined independent of the data. Below we examine two approaches to representing heights (z-scores and T-scores) for which the zero-point depends on the nature of the data. This initially seems like an odd approach - but you will that there are many bennefits to expressing heights in this manner.</p>
 </div>
-<div id="z-scores" class="section level2">
-<h2><span class="header-section-number">3.9</span> z-scores</h2>
+</div>
+<div id="z-scores" class="section level3">
+<h3><span class="header-section-number">3.7.2</span> z-scores</h3>
+<div id="hand-calculation-1" class="section level4">
+<h4><span class="header-section-number">3.7.2.1</span> Hand calculation</h4>
 <p>Recall:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -547,6 +601,9 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 &amp;= 2.084084\\
 \end{aligned}
 \]</span></p>
+</div>
+<div id="r-calculation-1" class="section level4">
+<h4><span class="header-section-number">3.7.2.2</span> R calculation</h4>
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="scaling.html#cb176-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb176-2"><a href="scaling.html#cb176-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_height =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(cm_height))<span class="op">/</span><span class="kw">sd_pop</span>(cm_height)  )</span></code></pre></div>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="scaling.html#cb177-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
@@ -587,8 +644,76 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 <pre><code>##   sd_cm_height sd_inches_height sd_z_height
 ## 1        8.013            3.155           1</code></pre>
 </div>
-<div id="t-scores" class="section level2">
-<h2><span class="header-section-number">3.10</span> T-scores</h2>
+<div id="summary-1" class="section level4">
+<h4><span class="header-section-number">3.7.2.3</span> Summary</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+unit
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd_pop
+</th>
+<th style="text-align:right;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+cm_height
+</td>
+<td style="text-align:right;">
+173.30
+</td>
+<td style="text-align:right;">
+8.013
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+inches_height
+</td>
+<td style="text-align:right;">
+68.23
+</td>
+<td style="text-align:right;">
+3.155
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+z_height
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="t-scores" class="section level3">
+<h3><span class="header-section-number">3.7.3</span> T-scores</h3>
+<div id="hand-calculation-2" class="section level4">
+<h4><span class="header-section-number">3.7.3.1</span> Hand calculation</h4>
 <p>In general:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -604,6 +729,9 @@ T_i &amp;= z_i \times 10 + 50\\
 &amp;= 70.84084\\
 \end{aligned}
 \]</span></p>
+</div>
+<div id="r-calculation-2" class="section level4">
+<h4><span class="header-section-number">3.7.3.2</span> R calculation</h4>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="scaling.html#cb183-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb183-2"><a href="scaling.html#cb183-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">T_height =</span>  z_height <span class="op">*</span><span class="st"> </span><span class="dv">10</span> <span class="op">+</span><span class="st"> </span><span class="dv">50</span> )</span></code></pre></div>
 <div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="scaling.html#cb184-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
@@ -667,8 +795,89 @@ T_i &amp;= z_i \times 10 + 50\\
 <pre><code>##   sd_cm_height sd_inches_height sd_z_height sd_T_height
 ## 1        8.013            3.155           1          10</code></pre>
 </div>
+<div id="summary-2" class="section level4">
+<h4><span class="header-section-number">3.7.3.3</span> Summary</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+unit
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd_pop
+</th>
+<th style="text-align:right;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+cm_height
+</td>
+<td style="text-align:right;">
+173.30
+</td>
+<td style="text-align:right;">
+8.013
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+inches_height
+</td>
+<td style="text-align:right;">
+68.23
+</td>
+<td style="text-align:right;">
+3.155
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+z_height
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+T_height
+</td>
+<td style="text-align:right;">
+50.00
+</td>
+<td style="text-align:right;">
+10.000
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 <div id="comparing-scores" class="section level2">
-<h2><span class="header-section-number">3.11</span> Comparing scores</h2>
+<h2><span class="header-section-number">3.8</span> Comparing scores</h2>
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="scaling.html#cb190-1"></a>height_data <span class="op">%&gt;%</span></span>
 <span id="cb190-2"><a href="scaling.html#cb190-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
 <span id="cb190-3"><a href="scaling.html#cb190-3"></a>                     <span class="dt">.fns =</span> mean,</span>
@@ -726,9 +935,9 @@ T_i &amp;= z_i \times 10 + 50\\
 ## 20    70.84</code></pre>
 </div>
 <div id="frame-of-references" class="section level2">
-<h2><span class="header-section-number">3.12</span> Frame of references</h2>
+<h2><span class="header-section-number">3.9</span> Frame of references</h2>
 <div id="all-participants" class="section level3">
-<h3><span class="header-section-number">3.12.1</span> All participants</h3>
+<h3><span class="header-section-number">3.9.1</span> All participants</h3>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="scaling.html#cb195-1"></a>height_data <span class="op">%&gt;%</span></span>
 <span id="cb195-2"><a href="scaling.html#cb195-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;cm&quot;</span>),</span>
 <span id="cb195-3"><a href="scaling.html#cb195-3"></a>                     <span class="dt">.fns =</span> mean,</span>
@@ -762,7 +971,7 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 \]</span></p>
 </div>
 <div id="male-participants" class="section level3">
-<h3><span class="header-section-number">3.12.2</span> Male participants</h3>
+<h3><span class="header-section-number">3.9.2</span> Male participants</h3>
 <div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="scaling.html#cb199-1"></a>male_height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb199-2"><a href="scaling.html#cb199-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;male&quot;</span>) <span class="op">%&gt;%</span></span>
 <span id="cb199-3"><a href="scaling.html#cb199-3"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>T_height, <span class="op">-</span>inches_height)</span></code></pre></div>
