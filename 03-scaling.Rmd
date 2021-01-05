@@ -260,7 +260,7 @@ We can create a new column in our data set that has the height of everyone in in
 ```{r}
 
 height_data <- height_data %>%
-  mutate(inches_height = cm_height / 2.54)
+  mutate(inch_height = cm_height / 2.54)
 ```
 
 We can see the new column (inches) with the code below.
@@ -574,6 +574,26 @@ Notice in the output above how all the people with heights below the mean of 173
 
 ## Frame of references
 
+
+
+
+
+### Reset
+
+For the next few exercises lets do a bit of reset and get rid of a few columns.
+
+```{r, eval=F}
+height_data <- height_data %>%
+  select(-sex, -inch_height, -T_height)
+```
+
+And we can see that we have fewer columns now:
+
+```{r}
+height_data %>% as.data.frame()
+```
+
+
 ### All participants
 
 ```{r}
@@ -619,8 +639,7 @@ $$
 
 ```{r}
 male_height_data <- height_data %>%
-  filter(sex == "male") %>%
-  select(-T_height, -inches_height)
+  filter(sex == "male") 
 ```
 
 ```{r}
@@ -669,7 +688,7 @@ $$
 ```{r}
 
 male_height_data <- male_height_data %>%
-  mutate(z_males_height = (cm_height - mean(cm_height))/sd_pop(cm_height)  )
+  mutate(z_males = (cm_height - mean(cm_height))/sd_pop(cm_height)  )
 ```
 
 ```{r}

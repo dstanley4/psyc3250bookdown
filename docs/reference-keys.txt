@@ -99,6 +99,7 @@ r-calculation-2
 summary-2
 comparing-scores
 frame-of-references
+reset
 all-participants
 male-participants
 data-entryanalysis
