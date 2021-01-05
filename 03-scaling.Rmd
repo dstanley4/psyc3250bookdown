@@ -194,26 +194,21 @@ height_data %>% as.data.frame()
 
 ## Summary statistics
 
-To obtain the mean for each column in the data set we use the commands below. These are fulling explained in the previous "Handling data with the tidyverse" chapter.
+To obtain the mean and standard deviation (population formula) for each column in the data set we use the commands below. These are fulling explained in the previous "Handling data with the tidyverse" chapter.
 
 ```{r}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  sd_pop = ~sd_pop(.x)
+)
+
 height_data %>%
     summarise(across(.cols = where(is.numeric),
-                     .fns = mean,
-                     na.rm = TRUE,
-                     .names = "mean_{col}")) %>%
+                     .fns = desired_descriptives,
+                     na.rm = TRUE)) %>%
   as.data.frame()
 ```
 
-Likewise, we can obtain the standard deviation (population formula) using the commands below:
-
-```{r}
-height_data %>%
-    summarise(across(.cols = where(is.numeric),
-                     .fns = sd_pop,
-                     .names = "sd_{col}")) %>%
-  as.data.frame()
-```
 
 
 ## Converting units
@@ -269,26 +264,19 @@ We can see the new column (inches) with the code below.
 height_data %>% as.data.frame()
 ```
 
-We can obtain the mean for the cm and inches columns with the command below:
+We can obtain the mean and standard deviation (population formula) for the cm and inches columns with the command below. Note that we added "%>% t()" in this version - this simply transposes the row to a column to it doesn't go off the side of your screen as it gets longer.
 
 ```{r}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  sd_pop = ~sd_pop(.x)
+)
+
 height_data %>%
     summarise(across(.cols = where(is.numeric),
-                     .fns = mean,
-                     na.rm = TRUE,
-                     .names = "mean_{col}")) %>%
-  as.data.frame()
-```
-
-
-We can obtain the standard deviation (population formula) for the cm and inches columns with the command below:
-
-```{r}
-height_data %>%
-    summarise(across(.cols = where(is.numeric),
-                     .fns = sd_pop,
-                     .names = "sd_{col}")) %>%
-  as.data.frame()
+                     .fns = desired_descriptives,
+                     na.rm = TRUE)) %>%
+  as.data.frame() %>% t()
 ```
 
 
@@ -377,12 +365,12 @@ $$
 
 #### R calculation
 
-We can do the same in R with the code below:
+We can do the same in R with the code below. Where you see mean(cm_height) the computer substitutes the mean of cm_height column (i.e., 173.3). ?Likewise, where you see sd_pop(cm_height) the computer substitutes the standard deviation of cm_height column (i.e., 8.013114).
 
 ```{r}
 
 height_data <- height_data %>%
-  mutate(z_height = (cm_height - mean(cm_height))/sd_pop(cm_height)  )
+  mutate(z_height = (  cm_height - mean(cm_height)  )  /  sd_pop(cm_height)  )
 ```
 
 Notice that we now have a new column in R with this information:
@@ -394,25 +382,20 @@ height_data %>% as.data.frame()
 
 We can obtain the mean for the cm, inches, and *z*-score columns with the command below:
 
-```{r}
-height_data %>%
-    summarise(across(.cols = where(is.numeric),
-                     .fns = mean,
-                     na.rm = TRUE,
-                     .names = "mean_{col}")) %>%
-  as.data.frame()
-```
-
-
-We can obtain the standard deviation (population formula) for the cm, inches, and *z*-score columns with the command below:
 
 ```{r}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  sd_pop = ~sd_pop(.x)
+)
+
 height_data %>%
     summarise(across(.cols = where(is.numeric),
-                     .fns = sd_pop,
-                     .names = "sd_{col}")) %>%
-  as.data.frame()
+                     .fns = desired_descriptives,
+                     na.rm = TRUE)) %>%
+  as.data.frame() %>% t()
 ```
+
 
 #### Summary
 
@@ -500,24 +483,18 @@ height_data %>% as.data.frame()
 We can obtain the mean for the cm, inches, *z*-score, and T-score columns with the command below:
 
 ```{r}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  sd_pop = ~sd_pop(.x)
+)
+
 height_data %>%
     summarise(across(.cols = where(is.numeric),
-                     .fns = mean,
-                     na.rm = TRUE,
-                     .names = "mean_{col}")) %>%
-  as.data.frame()
+                     .fns = desired_descriptives,
+                     na.rm = TRUE)) %>%
+  as.data.frame() %>% t()
 ```
 
-
-We can obtain the standard deviation (population formula) for the cm, inches, *z*-score, and T-score columns with the command below:
-
-```{r}
-height_data %>%
-    summarise(across(.cols = where(is.numeric),
-                     .fns = sd_pop,
-                     .names = "sd_{col}")) %>%
-  as.data.frame()
-```
 
 #### Summary
 
