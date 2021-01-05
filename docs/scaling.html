@@ -949,51 +949,30 @@ T_height
 <h3><span class="header-section-number">3.9.1</span> Reset</h3>
 <p>For the next few exercises lets do a bit of reset and get rid of a few columns.</p>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="scaling.html#cb193-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
-<span id="cb193-2"><a href="scaling.html#cb193-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>sex, <span class="op">-</span>inch_height, <span class="op">-</span>T_height)</span></code></pre></div>
+<span id="cb193-2"><a href="scaling.html#cb193-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>inch_height, <span class="op">-</span>T_height)</span></code></pre></div>
 <p>And we can see that we have fewer columns now:</p>
 <div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="scaling.html#cb194-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##    part_id     name    sex cm_height inch_height z_height
-## 1        1     John   male       190       74.80  2.08408
-## 2        2      Jim   male       179       70.47  0.71133
-## 3        3    Steve   male       165       64.96 -1.03580
-## 4        4    Jamal   male       179       70.47  0.71133
-## 5        5      Eli   male       174       68.50  0.08736
-## 6        6     Sean   male       179       70.47  0.71133
-## 7        7  Basheer   male       185       72.83  1.46011
-## 8        8     Matt   male       180       70.87  0.83613
-## 9        9      Tim   male       173       68.11 -0.03744
-## 10      10     Rick   male       183       72.05  1.21052
-## 11      11     Jane female       174       68.50  0.08736
-## 12      12    Nancy female       161       63.39 -1.53498
-## 13      13      Sue female       174       68.50  0.08736
-## 14      14    Maggy female       169       66.54 -0.53662
-## 15      15    Aisha female       161       63.39 -1.53498
-## 16      16     Saba female       172       67.72 -0.16223
-## 17      17     Katy female       173       68.11 -0.03744
-## 18      18 Jennifer female       169       66.54 -0.53662
-## 19      19  Natalie female       165       64.96 -1.03580
-## 20      20    Megan female       161       63.39 -1.53498
-##    T_height
-## 1     70.84
-## 2     57.11
-## 3     39.64
-## 4     57.11
-## 5     50.87
-## 6     57.11
-## 7     64.60
-## 8     58.36
-## 9     49.63
-## 10    62.11
-## 11    50.87
-## 12    34.65
-## 13    50.87
-## 14    44.63
-## 15    34.65
-## 16    48.38
-## 17    49.63
-## 18    44.63
-## 19    39.64
-## 20    34.65</code></pre>
+<pre><code>##    part_id     name    sex cm_height z_height
+## 1        1     John   male       190  2.08408
+## 2        2      Jim   male       179  0.71133
+## 3        3    Steve   male       165 -1.03580
+## 4        4    Jamal   male       179  0.71133
+## 5        5      Eli   male       174  0.08736
+## 6        6     Sean   male       179  0.71133
+## 7        7  Basheer   male       185  1.46011
+## 8        8     Matt   male       180  0.83613
+## 9        9      Tim   male       173 -0.03744
+## 10      10     Rick   male       183  1.21052
+## 11      11     Jane female       174  0.08736
+## 12      12    Nancy female       161 -1.53498
+## 13      13      Sue female       174  0.08736
+## 14      14    Maggy female       169 -0.53662
+## 15      15    Aisha female       161 -1.53498
+## 16      16     Saba female       172 -0.16223
+## 17      17     Katy female       173 -0.03744
+## 18      18 Jennifer female       169 -0.53662
+## 19      19  Natalie female       165 -1.03580
+## 20      20    Megan female       161 -1.53498</code></pre>
 </div>
 <div id="all-participants" class="section level3">
 <h3><span class="header-section-number">3.9.2</span> All participants</h3>
@@ -1034,28 +1013,17 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 <div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="scaling.html#cb200-1"></a>male_height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb200-2"><a href="scaling.html#cb200-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;male&quot;</span>) </span></code></pre></div>
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="scaling.html#cb201-1"></a>male_height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##    part_id    name  sex cm_height inch_height z_height
-## 1        1    John male       190       74.80  2.08408
-## 2        2     Jim male       179       70.47  0.71133
-## 3        3   Steve male       165       64.96 -1.03580
-## 4        4   Jamal male       179       70.47  0.71133
-## 5        5     Eli male       174       68.50  0.08736
-## 6        6    Sean male       179       70.47  0.71133
-## 7        7 Basheer male       185       72.83  1.46011
-## 8        8    Matt male       180       70.87  0.83613
-## 9        9     Tim male       173       68.11 -0.03744
-## 10      10    Rick male       183       72.05  1.21052
-##    T_height
-## 1     70.84
-## 2     57.11
-## 3     39.64
-## 4     57.11
-## 5     50.87
-## 6     57.11
-## 7     64.60
-## 8     58.36
-## 9     49.63
-## 10    62.11</code></pre>
+<pre><code>##    part_id    name  sex cm_height z_height
+## 1        1    John male       190  2.08408
+## 2        2     Jim male       179  0.71133
+## 3        3   Steve male       165 -1.03580
+## 4        4   Jamal male       179  0.71133
+## 5        5     Eli male       174  0.08736
+## 6        6    Sean male       179  0.71133
+## 7        7 Basheer male       185  1.46011
+## 8        8    Matt male       180  0.83613
+## 9        9     Tim male       173 -0.03744
+## 10      10    Rick male       183  1.21052</code></pre>
 <div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="scaling.html#cb203-1"></a>male_height_data <span class="op">%&gt;%</span></span>
 <span id="cb203-2"><a href="scaling.html#cb203-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;cm&quot;</span>),</span>
 <span id="cb203-3"><a href="scaling.html#cb203-3"></a>                     <span class="dt">.fns =</span> mean,</span>
@@ -1089,28 +1057,17 @@ z_i &amp;= \frac{X_i - \overline{X_{males}}}{S_{males}}\\
 <div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="scaling.html#cb207-1"></a>male_height_data &lt;-<span class="st"> </span>male_height_data <span class="op">%&gt;%</span></span>
 <span id="cb207-2"><a href="scaling.html#cb207-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_males =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(cm_height))<span class="op">/</span><span class="kw">sd_pop</span>(cm_height)  )</span></code></pre></div>
 <div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="scaling.html#cb208-1"></a>male_height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##    part_id    name  sex cm_height inch_height z_height
-## 1        1    John male       190       74.80  2.08408
-## 2        2     Jim male       179       70.47  0.71133
-## 3        3   Steve male       165       64.96 -1.03580
-## 4        4   Jamal male       179       70.47  0.71133
-## 5        5     Eli male       174       68.50  0.08736
-## 6        6    Sean male       179       70.47  0.71133
-## 7        7 Basheer male       185       72.83  1.46011
-## 8        8    Matt male       180       70.87  0.83613
-## 9        9     Tim male       173       68.11 -0.03744
-## 10      10    Rick male       183       72.05  1.21052
-##    T_height  z_males
-## 1     70.84  1.72303
-## 2     57.11  0.04574
-## 3     39.64 -2.08899
-## 4     57.11  0.04574
-## 5     50.87 -0.71666
-## 6     57.11  0.04574
-## 7     64.60  0.96063
-## 8     58.36  0.19823
-## 9     49.63 -0.86914
-## 10    62.11  0.65567</code></pre>
+<pre><code>##    part_id    name  sex cm_height z_height  z_males
+## 1        1    John male       190  2.08408  1.72303
+## 2        2     Jim male       179  0.71133  0.04574
+## 3        3   Steve male       165 -1.03580 -2.08899
+## 4        4   Jamal male       179  0.71133  0.04574
+## 5        5     Eli male       174  0.08736 -0.71666
+## 6        6    Sean male       179  0.71133  0.04574
+## 7        7 Basheer male       185  1.46011  0.96063
+## 8        8    Matt male       180  0.83613  0.19823
+## 9        9     Tim male       173 -0.03744 -0.86914
+## 10      10    Rick male       183  1.21052  0.65567</code></pre>
 
 </div>
 </div>

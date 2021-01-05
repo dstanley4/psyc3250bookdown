@@ -582,9 +582,9 @@ Notice in the output above how all the people with heights below the mean of 173
 
 For the next few exercises lets do a bit of reset and get rid of a few columns.
 
-```{r, eval=F}
+```{r}
 height_data <- height_data %>%
-  select(-sex, -inch_height, -T_height)
+  select(-inch_height, -T_height)
 ```
 
 And we can see that we have fewer columns now:
@@ -596,25 +596,9 @@ height_data %>% as.data.frame()
 
 ### All participants
 
-```{r}
-height_data %>%
-    summarise(across(.cols = starts_with("cm"),
-                     .fns = mean,
-                     na.rm = TRUE,
-                     .names = "mean_{col}")) %>%
-  as.data.frame()
-```
+In the above data, the z_score column was calculated using the mean and standard deviation for all participants.
 
-
-```{r}
-height_data %>%
-    summarise(across(.cols = starts_with("cm"),
-                     .fns = sd_pop,
-                     .names = "sd_{col}")) %>%
-  as.data.frame()
-```
-
-For all participants
+Specifically, all participants in this data set the mean and standard deviation are:
 
 $$
 \begin{aligned}
@@ -623,6 +607,7 @@ S_X &= 8.013114 \\
 \end{aligned}
 $$
 
+These mean and standard deviation values were used to calculate John's z-score (and everyone elses z-score too):
 
 $$
 \begin{aligned}
@@ -636,6 +621,11 @@ $$
 
 
 ### Male participants
+
+
+
+
+
 
 ```{r}
 male_height_data <- height_data %>%
