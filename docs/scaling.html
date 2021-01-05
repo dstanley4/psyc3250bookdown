@@ -603,7 +603,7 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 </div>
 <div id="r-calculation-1" class="section level4">
 <h4><span class="header-section-number">3.7.2.2</span> R calculation</h4>
-<p>We can do the same in R with the code below. Where you see mean(cm_height) the computer substitutes the mean of cm_height column (i.e., 173.3). ?Likewise, where you see sd_pop(cm_height) the computer substitutes the standard deviation of cm_height column (i.e., 8.013114).</p>
+<p>We can do the same in R with the code below. Where you see <strong>mean(cm_height)</strong> the computer substitutes the mean of cm_height column (i.e., 173.3). Likewise, where you see <strong>sd_pop(cm_height)</strong> the computer substitutes the standard deviation of cm_height column (i.e., 8.013114).</p>
 <div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="scaling.html#cb172-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb172-2"><a href="scaling.html#cb172-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_height =</span> (  cm_height <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(cm_height)  )  <span class="op">/</span><span class="st">  </span><span class="kw">sd_pop</span>(cm_height)  )</span></code></pre></div>
 <p>Notice that we now have a new column in R with this information:</p>

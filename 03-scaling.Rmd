@@ -365,7 +365,7 @@ $$
 
 #### R calculation
 
-We can do the same in R with the code below. Where you see mean(cm_height) the computer substitutes the mean of cm_height column (i.e., 173.3). ?Likewise, where you see sd_pop(cm_height) the computer substitutes the standard deviation of cm_height column (i.e., 8.013114).
+We can do the same in R with the code below. Where you see **mean(cm_height)** the computer substitutes the mean of cm_height column (i.e., 173.3). Likewise, where you see **sd_pop(cm_height)** the computer substitutes the standard deviation of cm_height column (i.e., 8.013114).
 
 ```{r}
 
