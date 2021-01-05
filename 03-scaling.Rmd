@@ -474,7 +474,7 @@ Using the actual z-score for John:
 $$
 \begin{aligned}
 T_i &= z_i \times 10 + 50\\
-&= \text{(John's height as a *z*-score)} \times 10 + 50\\
+&= \text{(John's height as a z-score)} \times 10 + 50\\
 &= 2.084084 * 10 + 50\\
 &= 70.84084\\
 \end{aligned}
