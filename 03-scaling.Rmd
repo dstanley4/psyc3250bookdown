@@ -327,22 +327,22 @@ kableExtra::kable(summary_table_rounded)
 ```
 
 
-Examine the summary table above. By converting heights in cm to heights in inches we simply changed the units used to represent those heights. The conversion did not change anyone's actual height. Nor this type of conversion change the height of one person relative to another person all we did was change the units used to represent that height.
+Examine the summary table above. By converting heights in cm to heights in inches we simply changed the units used to represent those heights. The conversion did not change anyone's actual height. Nor this type of conversion change the height of one person relative to another person -- all we did was change the units used to represent that height.
 
-Both inches and centimeters are ratio-scale scale heights. The zero point on the measurement scale is meaningful and not arbitrary. There are bennefits to this approach it's the zero point is defined independent of the data. Below we examine two approaches to representing heights (z-scores and T-scores) for which the zero-point depends on the nature of the data. This initially seems like an odd approach - but you will that there are many bennefits to expressing heights in this manner. 
+Both inches and centimeters are ratio-scale scale heights. The zero point on the measurement scale is meaningful and not arbitrary. Below we examine two approaches to representing heights (*z*-scores and T-scores) for which the zero-point depends on the nature of the data. This initially seems like an odd approach - but you will that there are many benefits to expressing scores/heights in this manner. 
 
 
 
-### z-scores
+### *z*-scores
 
-An alternative way to reprsenting scores is using z-scores. An advantage of z-scores is that when scores are expressed in this manner the mean of a column is 0 and the standard deviation (population formula) is 1.0. The advtange of using this approach is that by simplying looking a someone's z-score we can tell if they are above or below the average for that group (i.e., the group the mean and standard deviation were obtained from). Specifically, when z-scores are positive this indicates that they are above the mean; likewise, when z-score are negative this indicates that they are below the mean. The value of the z-score indicates how far a person is from the mean in standard deviation units. 
+An alternative approach to representing scores is using *z*-scores. An advantage of *z*-scores is that when scores are expressed in this manner the mean of a column is 0 and the standard deviation (population formula) is 1.0. The advantage of using this approach is that by simply looking a someone's *z*-score we can tell if they are above or below the average for that group (i.e., the group the mean and standard deviation were obtained from). Specifically, when *z*-scores are positive this indicates that they are above the mean; likewise, when *z*-score are negative this indicates that they are below the mean. The value of the *z*-score indicates how far a person is from the mean in standard deviation units. 
 
-In our data John's height can be expressed as a z-score of 2.08408360. Because this is a positive value we know John is taller than the average person. Likewise, the value of 2.08408360 indicates that John is 2.08408360 standard deviations taller than the average person. This means that John is quite tall.
+In our data John's height can be expressed as a *z*-score of 2.08408360. Because this is a positive value we know John is taller than the average person. Likewise, the value of 2.08408360 indicates that John is 2.08408360 standard deviations taller than the average person. This means that John is quite tall.
 
 
 #### Hand calculation
 
-We can convert an entire column of numbers to z-scores with a simple calculation. However, before we begin, we need to know the mean and standard deviation (population formula) for the original column.
+We can convert an entire column of numbers to *z*-scores with a simple calculation. However, before we begin, we need to know the mean and standard deviation (population formula) for the original column.
 
 Recall the heights in centimeters:
 
@@ -353,7 +353,7 @@ S_X &= 8.013114 \\
 \end{aligned}
 $$
 
-In general we use the formula below to convert a person's score in the original units to their z-score:
+In general we use the formula below to convert a person's score in the original units to their *z*-score:
 
 $$
 \begin{aligned}
@@ -392,7 +392,7 @@ height_data %>% as.data.frame()
 ```
 
 
-We can obtain the mean for the cm, inches, and z-score columns with the command below:
+We can obtain the mean for the cm, inches, and *z*-score columns with the command below:
 
 ```{r}
 height_data %>%
@@ -404,7 +404,7 @@ height_data %>%
 ```
 
 
-We can obtain the standard deviation (population formula) for the cm, inches, and z-score columns with the command below:
+We can obtain the standard deviation (population formula) for the cm, inches, and *z*-score columns with the command below:
 
 ```{r}
 height_data %>%
@@ -416,7 +416,7 @@ height_data %>%
 
 #### Summary
 
-We can see this information presented in table form below. You can see that z-scores are simply a ways of representing heights with a different type of unit. By converting heights to z-scores we have not changed anyone's actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.
+We can see this information presented in table form below. You can see that *z*-scores are simply a ways of representing heights with a different type of unit. By converting heights to *z*-scores we have not changed anyone's actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.
 
 ```{r, echo = FALSE}
 desired_descriptives <- list(
@@ -452,10 +452,15 @@ kableExtra::kable(summary_table_rounded)
 
 ### T-scores
 
+T-scores are simply another unit for representing scores. Do not confuse the T-score with the *t*-value in inferential statistics (a very different number).
+
+T-scores are very similar to *z*-scores - except that they have a different mean and standard deviation. With T-scores the mean of a column is 50 and the standard deviation is 10. When T-scores are greater than 50 this indicates that a person is above the mean; likewise, when a T-scores os less than 50 this indicates that a person is below the mean. Every difference of 10 units from 50 represents a standard deviation. Thus, a person with a T-score of 60 is one standard deviation above the mean.
+
+In our data John's height can be expressed as a T-score of 70.84084. Because this value is greater than 50 we know John is taller than the average person. Likewise, the value of 70.84084 is roughly 20 higher (i.e.,, 2*10 higher) than 50 we know John is about 2 standard deviations above the mean height.
 
 #### Hand calculation
 
-In general:
+In our data John's height can be expressed as a *z*-score of 2.08408360. We can easily convert that z-score to a T-score using the formula below:
 
 $$
 \begin{aligned}
@@ -464,12 +469,12 @@ T_i = z_i \times 10 + 50\\
 $$
 
 
-A specific example:
+Using the actual z-score for John:
 
 $$
 \begin{aligned}
 T_i &= z_i \times 10 + 50\\
-&= \text{(John's height as a z-score)} \times 10 + 50\\
+&= \text{(John's height as a *z*-score)} \times 10 + 50\\
 &= 2.084084 * 10 + 50\\
 &= 70.84084\\
 \end{aligned}
@@ -477,6 +482,7 @@ $$
 
 #### R calculation
 
+We can use this same approach in R to convert all of the *z*-scores to T-scores.
 
 ```{r}
 
@@ -484,10 +490,14 @@ height_data <- height_data %>%
   mutate(T_height =  z_height * 10 + 50 )
 ```
 
+You can see everyone's height as a T-score with this code:
+
 ```{r}
 height_data %>% as.data.frame()
 ```
 
+
+We can obtain the mean for the cm, inches, *z*-score, and T-score columns with the command below:
 
 ```{r}
 height_data %>%
@@ -498,6 +508,8 @@ height_data %>%
   as.data.frame()
 ```
 
+
+We can obtain the standard deviation (population formula) for the cm, inches, *z*-score, and T-score columns with the command below:
 
 ```{r}
 height_data %>%
@@ -544,24 +556,20 @@ kableExtra::kable(summary_table_rounded)
 
 ## Comparing scores
 
-
-```{r}
-height_data %>%
-    summarise(across(.cols = where(is.numeric),
-                     .fns = mean,
-                     na.rm = TRUE,
-                     .names = "mean_{col}")) %>%
-  as.data.frame()
-```
+We sort the scores by height with the command below:
 
 ```{r}
 height_data_sorted <- height_data %>%
   arrange(cm_height)
 ```
 
+You can see the sorted scores with the command below.
+
 ```{r}
 height_data_sorted %>% as.data.frame()
 ```
+
+Notice in the output above how all the people with heights below the mean of 173.3 cm have z-scores less than 0 and T-scores less than 50.
 
 
 ## Frame of references
