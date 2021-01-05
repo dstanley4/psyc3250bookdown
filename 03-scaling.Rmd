@@ -335,10 +335,16 @@ Both inches and centimeters are ratio-scale scale heights. The zero point on the
 
 ### z-scores
 
+An alternative way to reprsenting scores is using z-scores. An advantage of z-scores is that when scores are expressed in this manner the mean of a column is 0 and the standard deviation (population formula) is 1.0. The advtange of using this approach is that by simplying looking a someone's z-score we can tell if they are above or below the average for that group (i.e., the group the mean and standard deviation were obtained from). Specifically, when z-scores are positive this indicates that they are above the mean; likewise, when z-score are negative this indicates that they are below the mean. The value of the z-score indicates how far a person is from the mean in standard deviation units. 
+
+In our data John's height can be expressed as a z-score of 2.08408360. Because this is a positive value we know John is taller than the average person. Likewise, the value of 2.08408360 indicates that John is 2.08408360 standard deviations taller than the average person. This means that John is quite tall.
+
+
 #### Hand calculation
 
+We can convert an entire column of numbers to z-scores with a simple calculation. However, before we begin, we need to know the mean and standard deviation (population formula) for the original column.
 
-Recall:
+Recall the heights in centimeters:
 
 $$
 \begin{aligned}
@@ -347,7 +353,7 @@ S_X &= 8.013114 \\
 \end{aligned}
 $$
 
-In general:
+In general we use the formula below to convert a person's score in the original units to their z-score:
 
 $$
 \begin{aligned}
@@ -356,7 +362,7 @@ z_i = \frac{X_i - \overline{X}}{S_X}\\
 $$
 
 
-A specific example:
+Here is an example calculation for John:
 
 $$
 \begin{aligned}
@@ -371,6 +377,7 @@ $$
 
 #### R calculation
 
+We can do the same in R with the code below:
 
 ```{r}
 
@@ -378,10 +385,14 @@ height_data <- height_data %>%
   mutate(z_height = (cm_height - mean(cm_height))/sd_pop(cm_height)  )
 ```
 
+Notice that we now have a new column in R with this information:
+
 ```{r}
 height_data %>% as.data.frame()
 ```
 
+
+We can obtain the mean for the cm, inches, and z-score columns with the command below:
 
 ```{r}
 height_data %>%
@@ -393,6 +404,8 @@ height_data %>%
 ```
 
 
+We can obtain the standard deviation (population formula) for the cm, inches, and z-score columns with the command below:
+
 ```{r}
 height_data %>%
     summarise(across(.cols = where(is.numeric),
@@ -401,8 +414,9 @@ height_data %>%
   as.data.frame()
 ```
 
-
 #### Summary
+
+We can see this information presented in table form below. You can see that z-scores are simply a ways of representing heights with a different type of unit. By converting heights to z-scores we have not changed anyone's actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.
 
 ```{r, echo = FALSE}
 desired_descriptives <- list(

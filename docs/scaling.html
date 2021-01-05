@@ -576,22 +576,25 @@ inches_height
 </div>
 <div id="z-scores" class="section level3">
 <h3><span class="header-section-number">3.7.2</span> z-scores</h3>
+<p>An alternative way to reprsenting scores is using z-scores. An advantage of z-scores is that when scores are expressed in this manner the mean of a column is 0 and the standard deviation (population formula) is 1.0. The advtange of using this approach is that by simplying looking a someone’s z-score we can tell if they are above or below the average for that group (i.e., the group the mean and standard deviation were obtained from). Specifically, when z-scores are positive this indicates that they are above the mean; likewise, when z-score are negative this indicates that they are below the mean. The value of the z-score indicates how far a person is from the mean in standard deviation units.</p>
+<p>In our data John’s height can be expressed as a z-score of 2.08408360. Because this is a positive value we know John is taller than the average person. Likewise, the value of 2.08408360 indicates that John is 2.08408360 standard deviations taller than the average person. This means that John is quite tall.</p>
 <div id="hand-calculation-1" class="section level4">
 <h4><span class="header-section-number">3.7.2.1</span> Hand calculation</h4>
-<p>Recall:</p>
+<p>We can convert an entire column of numbers to z-scores with a simple calculation. However, before we begin, we need to know the mean and standard deviation (population formula) for the original column.</p>
+<p>Recall the heights in centimeters:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \overline{X} &amp;= 173.3 \\
 S_X &amp;= 8.013114 \\
 \end{aligned}
 \]</span></p>
-<p>In general:</p>
+<p>In general we use the formula below to convert a person’s score in the original units to their z-score:</p>
 <p><span class="math display">\[
 \begin{aligned}
 z_i = \frac{X_i - \overline{X}}{S_X}\\
 \end{aligned}
 \]</span></p>
-<p>A specific example:</p>
+<p>Here is an example calculation for John:</p>
 <p><span class="math display">\[
 \begin{aligned}
 z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
@@ -604,8 +607,10 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 </div>
 <div id="r-calculation-1" class="section level4">
 <h4><span class="header-section-number">3.7.2.2</span> R calculation</h4>
+<p>We can do the same in R with the code below:</p>
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="scaling.html#cb176-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb176-2"><a href="scaling.html#cb176-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_height =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(cm_height))<span class="op">/</span><span class="kw">sd_pop</span>(cm_height)  )</span></code></pre></div>
+<p>Notice that we now have a new column in R with this information:</p>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="scaling.html#cb177-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##    part_id     name    sex cm_height inches_height z_height
 ## 1        1     John   male       190         74.80  2.08408
@@ -628,6 +633,7 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 ## 18      18 Jennifer female       169         66.54 -0.53662
 ## 19      19  Natalie female       165         64.96 -1.03580
 ## 20      20    Megan female       161         63.39 -1.53498</code></pre>
+<p>We can obtain the mean for the cm, inches, and z-score columns with the command below:</p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="scaling.html#cb179-1"></a>height_data <span class="op">%&gt;%</span></span>
 <span id="cb179-2"><a href="scaling.html#cb179-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
 <span id="cb179-3"><a href="scaling.html#cb179-3"></a>                     <span class="dt">.fns =</span> mean,</span>
@@ -636,6 +642,7 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 <span id="cb179-6"><a href="scaling.html#cb179-6"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##   mean_cm_height mean_inches_height mean_z_height
 ## 1          173.3              68.23    -1.414e-15</code></pre>
+<p>We can obtain the standard deviation (population formula) for the cm, inches, and z-score columns with the command below:</p>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="scaling.html#cb181-1"></a>height_data <span class="op">%&gt;%</span></span>
 <span id="cb181-2"><a href="scaling.html#cb181-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
 <span id="cb181-3"><a href="scaling.html#cb181-3"></a>                     <span class="dt">.fns =</span> sd_pop,</span>
@@ -646,6 +653,7 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 </div>
 <div id="summary-1" class="section level4">
 <h4><span class="header-section-number">3.7.2.3</span> Summary</h4>
+<p>We can see this information presented in table form below. You can see that z-scores are simply a ways of representing heights with a different type of unit. By converting heights to z-scores we have not changed anyone’s actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.</p>
 <table>
 <thead>
 <tr>
