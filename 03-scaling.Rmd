@@ -245,7 +245,7 @@ $$
 $$
 
 
-Thus, John is 190 cm tall or 74.8 inches tall. Of course, John's height has not changed because we are now expressing it in inches. All that has changed is the units we use to designate his height.
+Thus, John is 190 cm tall or 74.8 inches tall. Of course, John's height has not changed because we are now expressing it in inches. All that has changed is the units we use to indicate his height.
 
 
 #### R calculation
@@ -264,7 +264,7 @@ We can see the new column (inches) with the code below.
 height_data %>% as.data.frame()
 ```
 
-We can obtain the mean and standard deviation (population formula) for the cm and inches columns with the command below. Note that we added "%>% t()" in this version - this simply transposes the row to a column to it doesn't go off the side of your screen as it gets longer.
+We can obtain the mean and standard deviation (population formula) for the cm and inches columns with the command below. Note that we added "%>% t()" in this version - this simply transposes the row to a column so the results don't go off the right side of your screen.
 
 ```{r}
 desired_descriptives <- list(
@@ -315,7 +315,7 @@ kableExtra::kable(summary_table_rounded)
 ```
 
 
-Examine the summary table above. By converting heights in cm to heights in inches we simply changed the units used to represent those heights. The conversion did not change anyone's actual height. Nor this type of conversion change the height of one person relative to another person -- all we did was change the units used to represent that height.
+Examine the summary table above. By converting heights in cm to heights in inches we simply changed the units used to represent those heights. The conversion did not change anyone's actual height. Nor did this conversion change the height of one person relative to another person -- all we did was change the units used to represent the heights.
 
 Both inches and centimeters are ratio-scale scale heights. The zero point on the measurement scale is meaningful and not arbitrary. Below we examine two approaches to representing heights (*z*-scores and T-scores) for which the zero-point depends on the nature of the data. This initially seems like an odd approach - but you will that there are many benefits to expressing scores/heights in this manner. 
 
@@ -323,14 +323,18 @@ Both inches and centimeters are ratio-scale scale heights. The zero point on the
 
 ### *z*-scores
 
-An alternative approach to representing scores is using *z*-scores. An advantage of *z*-scores is that when scores are expressed in this manner the mean of a column is 0 and the standard deviation (population formula) is 1.0. The advantage of using this approach is that by simply looking a someone's *z*-score we can tell if they are above or below the average for that group (i.e., the group the mean and standard deviation were obtained from). Specifically, when *z*-scores are positive this indicates that they are above the mean; likewise, when *z*-score are negative this indicates that they are below the mean. The value of the *z*-score indicates how far a person is from the mean in standard deviation units. 
+One alternative approach to representing scores, or more specifically heights, is using *z*-scores. With *z*-scores each person's score (i.e., height) is represented relative to a frame of reference. More specifically, scores are represented relative to a particular mean and standard deviation. Often the frame of reference (i.e., mean and standard deviation) used to calculate *z*-scores is the mean and standard deviation of all the participants in a data set - though we will see later other frames of reference are possible.
 
-In our data John's height can be expressed as a *z*-score of 2.08408360. Because this is a positive value we know John is taller than the average person. Likewise, the value of 2.08408360 indicates that John is 2.08408360 standard deviations taller than the average person. This means that John is quite tall.
+The advantage of *z*-scores is that by simply looking a person's *z*-score we can tell if they are above or below the mean for the frame of reference. Specifically, when *z*-scores are positive this indicates that a person is above the mean for the frame of reference; likewise, when *z*-score are negative this indicates that the person is below the mean for the frame of reference. The magnitude of the *z*-score indicates how distant that person is from the mean of the frame of reference in standard deviation units. 
+
+In we example our data we find that John has a height of 190 cm. We use the heights of the people in our data set as a frame of reference. Specifically, we calculate a mean height of 173.3 cm and a standard deviation (population formula) of 8.013114 cm. We use these values as a frame of reference when calculating John's *z*-score. Using this frame of reference John's height of 190 cm can be expressed as a *z*-score of 2.08408360 (calculation below). Because this is a positive value we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the *z*-score, 2.08408360, indicates that John is 2.08408360 standard deviations taller than the average person in our frame of reference (i.e., our data set). This means that John is quite tall - **relative** to the other people in our data set. The key word here is **relative** - *z*-scores provide information about a person's score relative to some frame of reference. In this example, the frame of reference was all of the people in the data set.
 
 
 #### Hand calculation
 
-We can convert an entire column of numbers to *z*-scores with a simple calculation. However, before we begin, we need to know the mean and standard deviation (population formula) for the original column.
+We can convert an entire column of numbers to *z*-scores with a simple calculation.
+
+However, before we begin, we need to know the mean and standard deviation (population formula) for the original column.
 
 Recall the heights in centimeters:
 
@@ -537,7 +541,14 @@ We sort the scores by height with the command below:
 
 ```{r}
 height_data_sorted <- height_data %>%
-  arrange(cm_height)
+  arrange(cm_height) 
+```
+
+We remove the sex column with this command (just so the data isn't too wide for your screen).
+
+```{r}
+height_data_sorted <- height_data_sorted %>%
+  select(-sex) 
 ```
 
 You can see the sorted scores with the command below.
@@ -573,9 +584,7 @@ height_data %>% as.data.frame()
 
 ### All participants
 
-In the above data, the z_score column was calculated using the mean and standard deviation for all participants.
-
-Specifically, all participants in this data set the mean and standard deviation are:
+In the above data, the z_height column was calculated using the mean and standard deviation for all participants. Specifically, for all participants in this data set the mean and standard deviation are:
 
 $$
 \begin{aligned}
@@ -584,7 +593,7 @@ S_X &= 8.013114 \\
 \end{aligned}
 $$
 
-These mean and standard deviation values were used to calculate John's z-score (and everyone elses z-score too):
+These mean and standard deviation values were used to calculate John's z-score (and everyone else's z-scores too):
 
 $$
 \begin{aligned}
