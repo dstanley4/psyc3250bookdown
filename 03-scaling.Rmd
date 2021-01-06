@@ -332,11 +332,9 @@ In we example our data we find that John has a height of 190 cm. We use the heig
 
 #### Hand calculation
 
-We can convert an entire column of numbers to *z*-scores with a simple calculation.
+Let's walk through converting John's height from cm to a *z*-score. The first step is determine the frame of reference we want to use to calculate the *z*-score. We decide to use the entire data set a frame of reference.
 
-However, before we begin, we need to know the mean and standard deviation (population formula) for the original column.
-
-Recall the heights in centimeters:
+We find that the for the entire data set we have the mean and standard deviation (population formula) below that will serve as a frame of reference.
 
 $$
 \begin{aligned}
@@ -345,7 +343,8 @@ S_X &= 8.013114 \\
 \end{aligned}
 $$
 
-In general we use the formula below to convert a person's score in the original units to their *z*-score:
+
+To convert a person's original score to a *z*-score we use the formula below. Notice that the formula contains their original score (i.e., $X_i$) as well and the mean (i.e., $\overline{X}$) and standard deviation (i.e., $S_X$) of the frame of reference.
 
 $$
 \begin{aligned}
@@ -354,7 +353,7 @@ z_i = \frac{X_i - \overline{X}}{S_X}\\
 $$
 
 
-Here is an example calculation for John:
+Here is the calculation for John:
 
 $$
 \begin{aligned}
