@@ -752,7 +752,7 @@ T_i &amp;= z_i \times 10 + 50\\
 <p>We can use this same approach in R to convert all of the <em>z</em>-scores to T-scores. Notice how the mutate() command below is just the R version of the above formula for converting <em>z</em>-scores to T-scores.</p>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="scaling.html#cb177-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb177-2"><a href="scaling.html#cb177-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">T_height =</span>  z_height <span class="op">*</span><span class="st"> </span><span class="dv">10</span> <span class="op">+</span><span class="st"> </span><span class="dv">50</span> )</span></code></pre></div>
-<p>After running the above command, you can see everyone’s height as a T-score with this code. We omit the sex column from the output (using the select() command) so there are not too many columns on your screen.</p>
+<p>After running the above command, you can see everyone’s height as a T-score with the code below. We omit the sex column from the output (using the select() command) so there are not too many columns on your screen.</p>
 <div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="scaling.html#cb178-1"></a>height_data <span class="op">%&gt;%</span></span>
 <span id="cb178-2"><a href="scaling.html#cb178-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>sex) <span class="op">%&gt;%</span></span>
 <span id="cb178-3"><a href="scaling.html#cb178-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
@@ -777,6 +777,7 @@ T_i &amp;= z_i \times 10 + 50\\
 ## 18      18 Jennifer       169       66.54 -0.53662    44.63
 ## 19      19  Natalie       165       64.96 -1.03580    39.64
 ## 20      20    Megan       161       63.39 -1.53498    34.65</code></pre>
+<p>When you examined the output above did you notice correspondence between <em>z</em>-scores and T-scores. Whenever a <em>z</em>-score was less than 0 the corresponding T-score for that person was less than 50. Both of these values indicate a person had a height lower than the mean for the reference group (the entire data set).</p>
 </div>
 <div id="summary-2" class="section level4">
 <h4><span class="header-section-number">3.7.3.3</span> Summary</h4>

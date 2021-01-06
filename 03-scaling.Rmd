@@ -493,13 +493,16 @@ height_data <- height_data %>%
   mutate(T_height =  z_height * 10 + 50 )
 ```
 
-After running the above command, you can see everyone's height as a T-score with this code. We omit the sex column from the output (using the select() command) so there are not too many columns on your screen.
+After running the above command, you can see everyone's height as a T-score with the code below. We omit the sex column from the output (using the select() command) so there are not too many columns on your screen.
 
 ```{r}
 height_data %>%
   select(-sex) %>%
   as.data.frame()
 ```
+
+
+When you examined the output above did you notice correspondence between *z*-scores and T-scores. Whenever a *z*-score was less than 0 the corresponding T-score for that person was less than 50. Both of these values indicate a person had a height lower than the mean for the reference group (the entire data set).
 
 
 #### Summary
