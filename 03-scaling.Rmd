@@ -370,7 +370,7 @@ As noted previously: Because this is a positive value we know John is taller tha
 
 #### R calculation
 
-We can do the same in R with the code below. Where you see **mean(cm_height)** the computer substitutes the mean of cm_height column (i.e., 173.3). Likewise, where you see **sd_pop(cm_height)** the computer substitutes the standard deviation of cm_height column (i.e., 8.013114).
+We can use R to calculate the *z*-score for everyone in our data set. Because we are using the data set itself as the frame of refrence we can use to code to represent the mean and standard deviation for the data set - our frame of reference. Specifically,  where you see **mean(cm_height)** in the code below computer substitutes the mean of cm_height column (i.e., 173.3) - our frame of reference. Likewise, where you see **sd_pop(cm_height)** the computer substitutes the standard deviation of cm_height column (i.e., 8.013114) - our frame of reference. You can see the formula in the mutate command below is the same as the formula used above in the hand calculation - just expressed differently.
 
 ```{r}
 
@@ -378,12 +378,16 @@ height_data <- height_data %>%
   mutate(z_height = (  cm_height - mean(cm_height)  )  /  sd_pop(cm_height)  )
 ```
 
-Notice that we now have a new column in R with this information:
+Use the code below to see the data with the new column. 
 
 ```{r}
 height_data %>% as.data.frame()
 ```
 
+Notice that each person now has a *z*-score. Just by looking at the positive/negative sign for the *z*-score we can tell if a person is taller/shorter than the mean for the data set (our frame of reference).
+
+
+#### Summary
 
 We can obtain the mean for the cm, inches, and *z*-score columns with the command below:
 
@@ -401,10 +405,11 @@ height_data %>%
   as.data.frame() %>% t()
 ```
 
-
-#### Summary
-
 We can see this information presented in table form below. You can see that *z*-scores are simply a ways of representing heights with a different type of unit. By converting heights to *z*-scores we have not changed anyone's actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.
+
+A special case: Also notice that when use the data set itself as the frame of reference something interesting happens with *z*-scores. Specifically, the *z*-score column has a mean of zero and a standard deviation of 1.0. This won't always be the case. If we use a frame of reference other than our data set, the mean and standard deviation of z-scores in our data set will not necessarily be equal to 0 and 1, respectively.
+
+
 
 ```{r, echo = FALSE}
 desired_descriptives <- list(
