@@ -370,7 +370,7 @@ As noted previously: Because this is a positive value we know John is taller tha
 
 #### R calculation
 
-We can use R to calculate the *z*-score for everyone in our data set. Because we are using the data set itself as the frame of refrence we can use to code to represent the mean and standard deviation for the data set - our frame of reference. Specifically,  where you see **mean(cm_height)** in the code below computer substitutes the mean of cm_height column (i.e., 173.3) - our frame of reference. Likewise, where you see **sd_pop(cm_height)** the computer substitutes the standard deviation of cm_height column (i.e., 8.013114) - our frame of reference. You can see the formula in the mutate command below is the same as the formula used above in the hand calculation - just expressed differently.
+We can use R to calculate the *z*-score for everyone in our data set. Because we are using the data set itself as the frame of reference we can use to code to represent the mean and standard deviation for the data set - our frame of reference. Specifically,  where you see **mean(cm_height)** in the code below computer substitutes the mean of cm_height column (i.e., 173.3) - our frame of reference. Likewise, where you see **sd_pop(cm_height)** the computer substitutes the standard deviation of cm_height column (i.e., 8.013114) - our frame of reference. You can see the formula in the mutate command below is the same as the formula used above in the hand calculation - just expressed differently.
 
 ```{r}
 
@@ -407,7 +407,7 @@ height_data %>%
 
 This output may be confusing. Consider the cm_height_mean of 1.733e+02 the e+02 means move the decimal two places to the right. Likewise, consider the z_height_mean of -1.414e-15 the e-15 means move the decimal 15 places to the left.
 
-We can see this information presented in table form below (decimals adjusted). You can see that *z*-scores are simply a ways of representing heights with a different type of unit. By converting heights to *z*-scores we have not changed anyone's actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.
+We can see this information presented in table form below (decimals adjusted). You can see that *z*-scores are simply a way of representing heights with a different type of unit. By converting heights to *z*-scores we have not changed anyone's actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.
 
 A special case: Also notice that when we use the data set itself as the frame of reference something interesting happens with *z*-scores. Specifically, the *z*-score column has a mean of zero and a standard deviation of 1.0. This won't always be the case. If we use a frame of reference other than our data set, the mean and standard deviation of *z*-scores in our data set will not necessarily be equal to 0 and 1, respectively.
 
@@ -449,7 +449,7 @@ kableExtra::kable(summary_table_rounded)
 
 T-scores are simply another unit for representing scores. Do not confuse the T-score with the *t*-value in inferential statistics (a very different number).
 
-T-scores are very similar to *z*-scores - they scores relative to a frame of reference. With z-scores we use 0 to indicate the mean of the frame of reference and 1.0 to indicate the standard deviation of the frame of reference. With T-scores we use 50 to indicate the mean of the frame of reference and 10 to indicate the standard deviation of the frame of reference.
+T-scores are very similar to *z*-scores - they scores relative to a frame of reference. With *z*-scores we use 0 to indicate the mean of the frame of reference and 1.0 to indicate the standard deviation of the frame of reference. With T-scores we use 50 to indicate the mean of the frame of reference and 10 to indicate the standard deviation of the frame of reference.
 
 When T-scores are greater than 50 this indicates that a person is above the mean of the frame of reference; likewise, when a T-scores is less than 50 this indicates that a person is below the mean of the frame of reference. Every difference of 10 units from 50 represents a standard deviation. Thus, a person with a T-score of 60 is one standard deviation above the mean of the frame of reference.
 
@@ -458,7 +458,9 @@ In we example our data we find that John has a height of 190 cm. We use the heig
 
 #### Hand calculation
 
-In our data John's height can be expressed as a *z*-score of 2.08408360. We can easily convert that z-score to a T-score using the formula below:
+Let's walk through converting John's height as a *z*-score to a T-score. The score used our entire data set as the frame of reference - so that will be the frame of reference for the T-score as well.
+
+The generic formula for converting *z*-scores to T-scores is below. You can see that we simply multiply a *z*-score by 10 and add 50 to get a T-score for that same frame of reference.
 
 $$
 \begin{aligned}
@@ -467,7 +469,7 @@ T_i = z_i \times 10 + 50\\
 $$
 
 
-Using the actual z-score for John:
+Here is the calculation for John:
 
 $$
 \begin{aligned}
@@ -478,9 +480,12 @@ T_i &= z_i \times 10 + 50\\
 \end{aligned}
 $$
 
+
+As noted previously: Because this T-score if greater than 50 we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the T-score is roughly 20 higher (i.e., 2* 10 higher) than 50 we know John is about 2 standard deviations taller than the mean for the frame of reference.
+
 #### R calculation
 
-We can use this same approach in R to convert all of the *z*-scores to T-scores.
+We can use this same approach in R to convert all of the *z*-scores to T-scores. Notice how the mutate() command below is just the R version of the above formula for converting *z*-scores to T-scores.
 
 ```{r}
 
@@ -488,12 +493,14 @@ height_data <- height_data %>%
   mutate(T_height =  z_height * 10 + 50 )
 ```
 
-You can see everyone's height as a T-score with this code:
+After running the above command, you can see everyone's height as a T-score with this code:
 
 ```{r}
 height_data %>% as.data.frame()
 ```
 
+
+#### Summary
 
 We can obtain the mean for the cm, inches, *z*-score, and T-score columns with the command below:
 
@@ -510,8 +517,11 @@ height_data %>%
   as.data.frame() %>% t()
 ```
 
+We can see this information presented in table form below (decimals adjusted). You can see that T-scores are simply a way of representing heights with a different type of unit. By converting heights to T-scores we have not changed anyone's actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.
 
-#### Summary
+A special case: Also notice that when we use the data set itself as the frame of reference something interesting happens with T-scores. Specifically, the T-score column has a mean of 50 and a standard deviation of 10. This won't always be the case. If we use a frame of reference other than our data set, the mean and standard deviation of T-scores in our data set will not necessarily be equal to 50 and 10, respectively.
+
+
 
 ```{r, echo = FALSE}
 desired_descriptives <- list(
@@ -568,7 +578,7 @@ You can see the sorted scores with the command below.
 height_data_sorted %>% as.data.frame()
 ```
 
-Notice in the output above how all the people with heights below the mean of 173.3 cm have z-scores less than 0 and T-scores less than 50.
+Notice in the output above how all the people with heights below the mean of 173.3 cm have *z*-scores less than 0 and T-scores less than 50.
 
 
 ## Frame of references
@@ -604,7 +614,7 @@ S_X &= 8.013114 \\
 \end{aligned}
 $$
 
-These mean and standard deviation values were used to calculate John's z-score (and everyone else's z-scores too):
+These mean and standard deviation values were used to calculate John's *z*-score (and everyone else's *z*-scores too):
 
 $$
 \begin{aligned}

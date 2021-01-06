@@ -605,7 +605,7 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 </div>
 <div id="r-calculation-1" class="section level4">
 <h4><span class="header-section-number">3.7.2.2</span> R calculation</h4>
-<p>We can use R to calculate the <em>z</em>-score for everyone in our data set. Because we are using the data set itself as the frame of refrence we can use to code to represent the mean and standard deviation for the data set - our frame of reference. Specifically, where you see <strong>mean(cm_height)</strong> in the code below computer substitutes the mean of cm_height column (i.e., 173.3) - our frame of reference. Likewise, where you see <strong>sd_pop(cm_height)</strong> the computer substitutes the standard deviation of cm_height column (i.e., 8.013114) - our frame of reference. You can see the formula in the mutate command below is the same as the formula used above in the hand calculation - just expressed differently.</p>
+<p>We can use R to calculate the <em>z</em>-score for everyone in our data set. Because we are using the data set itself as the frame of reference we can use to code to represent the mean and standard deviation for the data set - our frame of reference. Specifically, where you see <strong>mean(cm_height)</strong> in the code below computer substitutes the mean of cm_height column (i.e., 173.3) - our frame of reference. Likewise, where you see <strong>sd_pop(cm_height)</strong> the computer substitutes the standard deviation of cm_height column (i.e., 8.013114) - our frame of reference. You can see the formula in the mutate command below is the same as the formula used above in the hand calculation - just expressed differently.</p>
 <div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="scaling.html#cb172-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb172-2"><a href="scaling.html#cb172-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_height =</span> (  cm_height <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(cm_height)  )  <span class="op">/</span><span class="st">  </span><span class="kw">sd_pop</span>(cm_height)  )</span></code></pre></div>
 <p>Use the code below to see the data with the new column.</p>
@@ -654,7 +654,7 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 ## z_height_mean      -1.414e-15
 ## z_height_sd_pop     1.000e+00</code></pre>
 <p>This output may be confusing. Consider the cm_height_mean of 1.733e+02 the e+02 means move the decimal two places to the right. Likewise, consider the z_height_mean of -1.414e-15 the e-15 means move the decimal 15 places to the left.</p>
-<p>We can see this information presented in table form below (decimals adjusted). You can see that <em>z</em>-scores are simply a ways of representing heights with a different type of unit. By converting heights to <em>z</em>-scores we have not changed anyone’s actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.</p>
+<p>We can see this information presented in table form below (decimals adjusted). You can see that <em>z</em>-scores are simply a way of representing heights with a different type of unit. By converting heights to <em>z</em>-scores we have not changed anyone’s actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.</p>
 <p>A special case: Also notice that when we use the data set itself as the frame of reference something interesting happens with <em>z</em>-scores. Specifically, the <em>z</em>-score column has a mean of zero and a standard deviation of 1.0. This won’t always be the case. If we use a frame of reference other than our data set, the mean and standard deviation of <em>z</em>-scores in our data set will not necessarily be equal to 0 and 1, respectively.</p>
 <table>
 <thead>
@@ -723,17 +723,20 @@ z_height
 <div id="t-scores" class="section level3">
 <h3><span class="header-section-number">3.7.3</span> T-scores</h3>
 <p>T-scores are simply another unit for representing scores. Do not confuse the T-score with the <em>t</em>-value in inferential statistics (a very different number).</p>
-<p>T-scores are very similar to <em>z</em>-scores - except that they have a different mean and standard deviation. With T-scores the mean of a column is 50 and the standard deviation is 10. When T-scores are greater than 50 this indicates that a person is above the mean; likewise, when a T-scores os less than 50 this indicates that a person is below the mean. Every difference of 10 units from 50 represents a standard deviation. Thus, a person with a T-score of 60 is one standard deviation above the mean.</p>
-<p>In our data John’s height can be expressed as a T-score of 70.84084. Because this value is greater than 50 we know John is taller than the average person. Likewise, the value of 70.84084 is roughly 20 higher (i.e.,, 2*10 higher) than 50 we know John is about 2 standard deviations above the mean height.</p>
+<p>T-scores are very similar to <em>z</em>-scores - they scores relative to a frame of reference. With <em>z</em>-scores we use 0 to indicate the mean of the frame of reference and 1.0 to indicate the standard deviation of the frame of reference. With T-scores we use 50 to indicate the mean of the frame of reference and 10 to indicate the standard deviation of the frame of reference.</p>
+<p>When T-scores are greater than 50 this indicates that a person is above the mean of the frame of reference; likewise, when a T-scores is less than 50 this indicates that a person is below the mean of the frame of reference. Every difference of 10 units from 50 represents a standard deviation. Thus, a person with a T-score of 60 is one standard deviation above the mean of the frame of reference.</p>
+<p>In we example our data we find that John has a height of 190 cm. We use the heights of the people in our data set as a frame of reference. To create a T-score for John we first need to convert his height in cm to a <em>z</em>-score. Following this, we convert his <em>z</em>-score to a T-score. Fortunately, we’ve already calculated John’s height in <em>z</em>-score form for this frame of reference as 2.084084. We convert that number (calculation below) to a T-score of
+70.84084. Because this T-score if greater than 50 we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the T-score is roughly 20 higher (i.e., 2* 10 higher) than 50 we know John is about 2 standard deviations taller than the mean for the frame of reference.</p>
 <div id="hand-calculation-2" class="section level4">
 <h4><span class="header-section-number">3.7.3.1</span> Hand calculation</h4>
-<p>In our data John’s height can be expressed as a <em>z</em>-score of 2.08408360. We can easily convert that z-score to a T-score using the formula below:</p>
+<p>Let’s walk through converting John’s height as a <em>z</em>-score to a T-score. The score used our entire data set as the frame of reference - so that will be the frame of reference for the T-score as well.</p>
+<p>The generic formula for converting <em>z</em>-scores to T-scores is below. You can see that we simply multiply a <em>z</em>-score by 10 and add 50 to get a T-score for that same frame of reference.</p>
 <p><span class="math display">\[
 \begin{aligned}
 T_i = z_i \times 10 + 50\\
 \end{aligned}
 \]</span></p>
-<p>Using the actual z-score for John:</p>
+<p>Here is the calculation for John:</p>
 <p><span class="math display">\[
 \begin{aligned}
 T_i &amp;= z_i \times 10 + 50\\
@@ -742,13 +745,14 @@ T_i &amp;= z_i \times 10 + 50\\
 &amp;= 70.84084\\
 \end{aligned}
 \]</span></p>
+<p>As noted previously: Because this T-score if greater than 50 we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the T-score is roughly 20 higher (i.e., 2* 10 higher) than 50 we know John is about 2 standard deviations taller than the mean for the frame of reference.</p>
 </div>
 <div id="r-calculation-2" class="section level4">
 <h4><span class="header-section-number">3.7.3.2</span> R calculation</h4>
-<p>We can use this same approach in R to convert all of the <em>z</em>-scores to T-scores.</p>
+<p>We can use this same approach in R to convert all of the <em>z</em>-scores to T-scores. Notice how the mutate() command below is just the R version of the above formula for converting <em>z</em>-scores to T-scores.</p>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="scaling.html#cb177-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb177-2"><a href="scaling.html#cb177-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">T_height =</span>  z_height <span class="op">*</span><span class="st"> </span><span class="dv">10</span> <span class="op">+</span><span class="st"> </span><span class="dv">50</span> )</span></code></pre></div>
-<p>You can see everyone’s height as a T-score with this code:</p>
+<p>After running the above command, you can see everyone’s height as a T-score with this code:</p>
 <div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="scaling.html#cb178-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##    part_id     name    sex cm_height inch_height z_height
 ## 1        1     John   male       190       74.80  2.08408
@@ -792,6 +796,9 @@ T_i &amp;= z_i \times 10 + 50\\
 ## 18    44.63
 ## 19    39.64
 ## 20    34.65</code></pre>
+</div>
+<div id="summary-2" class="section level4">
+<h4><span class="header-section-number">3.7.3.3</span> Summary</h4>
 <p>We can obtain the mean for the cm, inches, <em>z</em>-score, and T-score columns with the command below:</p>
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="scaling.html#cb180-1"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
 <span id="cb180-2"><a href="scaling.html#cb180-2"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
@@ -812,9 +819,8 @@ T_i &amp;= z_i \times 10 + 50\\
 ## z_height_sd_pop     1.000e+00
 ## T_height_mean       5.000e+01
 ## T_height_sd_pop     1.000e+01</code></pre>
-</div>
-<div id="summary-2" class="section level4">
-<h4><span class="header-section-number">3.7.3.3</span> Summary</h4>
+<p>We can see this information presented in table form below (decimals adjusted). You can see that T-scores are simply a way of representing heights with a different type of unit. By converting heights to T-scores we have not changed anyone’s actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.</p>
+<p>A special case: Also notice that when we use the data set itself as the frame of reference something interesting happens with T-scores. Specifically, the T-score column has a mean of 50 and a standard deviation of 10. This won’t always be the case. If we use a frame of reference other than our data set, the mean and standard deviation of T-scores in our data set will not necessarily be equal to 50 and 10, respectively.</p>
 <table>
 <thead>
 <tr>
@@ -925,7 +931,7 @@ T_height
 ## 18      10     Rick       183       72.05  1.21052    62.11
 ## 19       7  Basheer       185       72.83  1.46011    64.60
 ## 20       1     John       190       74.80  2.08408    70.84</code></pre>
-<p>Notice in the output above how all the people with heights below the mean of 173.3 cm have z-scores less than 0 and T-scores less than 50.</p>
+<p>Notice in the output above how all the people with heights below the mean of 173.3 cm have <em>z</em>-scores less than 0 and T-scores less than 50.</p>
 </div>
 <div id="frame-of-references" class="section level2">
 <h2><span class="header-section-number">3.9</span> Frame of references</h2>
@@ -967,7 +973,7 @@ T_height
 S_X &amp;= 8.013114 \\
 \end{aligned}
 \]</span></p>
-<p>These mean and standard deviation values were used to calculate John’s z-score (and everyone else’s z-scores too):</p>
+<p>These mean and standard deviation values were used to calculate John’s <em>z</em>-score (and everyone else’s <em>z</em>-scores too):</p>
 <p><span class="math display">\[
 \begin{aligned}
 z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
