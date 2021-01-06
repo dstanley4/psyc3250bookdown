@@ -449,9 +449,12 @@ kableExtra::kable(summary_table_rounded)
 
 T-scores are simply another unit for representing scores. Do not confuse the T-score with the *t*-value in inferential statistics (a very different number).
 
-T-scores are very similar to *z*-scores - except that they have a different mean and standard deviation. With T-scores the mean of a column is 50 and the standard deviation is 10. When T-scores are greater than 50 this indicates that a person is above the mean; likewise, when a T-scores os less than 50 this indicates that a person is below the mean. Every difference of 10 units from 50 represents a standard deviation. Thus, a person with a T-score of 60 is one standard deviation above the mean.
+T-scores are very similar to *z*-scores - they scores relative to a frame of reference. With z-scores we use 0 to indicate the mean of the frame of reference and 1.0 to indicate the standard deviation of the frame of reference. With T-scores we use 50 to indicate the mean of the frame of reference and 10 to indicate the standard deviation of the frame of reference.
 
-In our data John's height can be expressed as a T-score of 70.84084. Because this value is greater than 50 we know John is taller than the average person. Likewise, the value of 70.84084 is roughly 20 higher (i.e.,, 2*10 higher) than 50 we know John is about 2 standard deviations above the mean height.
+When T-scores are greater than 50 this indicates that a person is above the mean of the frame of reference; likewise, when a T-scores is less than 50 this indicates that a person is below the mean of the frame of reference. Every difference of 10 units from 50 represents a standard deviation. Thus, a person with a T-score of 60 is one standard deviation above the mean of the frame of reference.
+
+In we example our data we find that John has a height of 190 cm. We use the heights of the people in our data set as a frame of reference. To create a T-score for John we first need to convert his height in cm to a *z*-score. Following this, we convert his *z*-score to a T-score. Fortunately, we've already calculated John's height in *z*-score form for this frame of reference as 2.084084. We convert that number (calculation below) to a T-score of 
+70.84084. Because this T-score if greater than 50 we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the T-score is roughly 20 higher (i.e., 2* 10 higher) than 50 we know John is about 2 standard deviations taller than the mean for the frame of reference.
 
 #### Hand calculation
 
