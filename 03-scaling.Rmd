@@ -405,7 +405,9 @@ height_data %>%
   as.data.frame() %>% t()
 ```
 
-We can see this information presented in table form below. You can see that *z*-scores are simply a ways of representing heights with a different type of unit. By converting heights to *z*-scores we have not changed anyone's actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.
+This output may be confusing. Consider the cm_height_mean of 1.733e+02 the e+02 means move the decimal two places to the right. Likewise, consider the z_height_mean of -1.414e-15 the e-15 means move the decimal 15 places to the left.
+
+We can see this information presented in table form below (decimals adjusted). You can see that *z*-scores are simply a ways of representing heights with a different type of unit. By converting heights to *z*-scores we have not changed anyone's actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.
 
 A special case: Also notice that when we use the data set itself as the frame of reference something interesting happens with *z*-scores. Specifically, the *z*-score column has a mean of zero and a standard deviation of 1.0. This won't always be the case. If we use a frame of reference other than our data set, the mean and standard deviation of *z*-scores in our data set will not necessarily be equal to 0 and 1, respectively.
 
