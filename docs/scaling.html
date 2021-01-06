@@ -752,50 +752,31 @@ T_i &amp;= z_i \times 10 + 50\\
 <p>We can use this same approach in R to convert all of the <em>z</em>-scores to T-scores. Notice how the mutate() command below is just the R version of the above formula for converting <em>z</em>-scores to T-scores.</p>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="scaling.html#cb177-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb177-2"><a href="scaling.html#cb177-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">T_height =</span>  z_height <span class="op">*</span><span class="st"> </span><span class="dv">10</span> <span class="op">+</span><span class="st"> </span><span class="dv">50</span> )</span></code></pre></div>
-<p>After running the above command, you can see everyone’s height as a T-score with this code:</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="scaling.html#cb178-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##    part_id     name    sex cm_height inch_height z_height
-## 1        1     John   male       190       74.80  2.08408
-## 2        2      Jim   male       179       70.47  0.71133
-## 3        3    Steve   male       165       64.96 -1.03580
-## 4        4    Jamal   male       179       70.47  0.71133
-## 5        5      Eli   male       174       68.50  0.08736
-## 6        6     Sean   male       179       70.47  0.71133
-## 7        7  Basheer   male       185       72.83  1.46011
-## 8        8     Matt   male       180       70.87  0.83613
-## 9        9      Tim   male       173       68.11 -0.03744
-## 10      10     Rick   male       183       72.05  1.21052
-## 11      11     Jane female       174       68.50  0.08736
-## 12      12    Nancy female       161       63.39 -1.53498
-## 13      13      Sue female       174       68.50  0.08736
-## 14      14    Maggy female       169       66.54 -0.53662
-## 15      15    Aisha female       161       63.39 -1.53498
-## 16      16     Saba female       172       67.72 -0.16223
-## 17      17     Katy female       173       68.11 -0.03744
-## 18      18 Jennifer female       169       66.54 -0.53662
-## 19      19  Natalie female       165       64.96 -1.03580
-## 20      20    Megan female       161       63.39 -1.53498
-##    T_height
-## 1     70.84
-## 2     57.11
-## 3     39.64
-## 4     57.11
-## 5     50.87
-## 6     57.11
-## 7     64.60
-## 8     58.36
-## 9     49.63
-## 10    62.11
-## 11    50.87
-## 12    34.65
-## 13    50.87
-## 14    44.63
-## 15    34.65
-## 16    48.38
-## 17    49.63
-## 18    44.63
-## 19    39.64
-## 20    34.65</code></pre>
+<p>After running the above command, you can see everyone’s height as a T-score with this code. We omit the sex column from the output (using the select() command) so there are not too many columns on your screen.</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="scaling.html#cb178-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb178-2"><a href="scaling.html#cb178-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>sex) <span class="op">%&gt;%</span></span>
+<span id="cb178-3"><a href="scaling.html#cb178-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##    part_id     name cm_height inch_height z_height T_height
+## 1        1     John       190       74.80  2.08408    70.84
+## 2        2      Jim       179       70.47  0.71133    57.11
+## 3        3    Steve       165       64.96 -1.03580    39.64
+## 4        4    Jamal       179       70.47  0.71133    57.11
+## 5        5      Eli       174       68.50  0.08736    50.87
+## 6        6     Sean       179       70.47  0.71133    57.11
+## 7        7  Basheer       185       72.83  1.46011    64.60
+## 8        8     Matt       180       70.87  0.83613    58.36
+## 9        9      Tim       173       68.11 -0.03744    49.63
+## 10      10     Rick       183       72.05  1.21052    62.11
+## 11      11     Jane       174       68.50  0.08736    50.87
+## 12      12    Nancy       161       63.39 -1.53498    34.65
+## 13      13      Sue       174       68.50  0.08736    50.87
+## 14      14    Maggy       169       66.54 -0.53662    44.63
+## 15      15    Aisha       161       63.39 -1.53498    34.65
+## 16      16     Saba       172       67.72 -0.16223    48.38
+## 17      17     Katy       173       68.11 -0.03744    49.63
+## 18      18 Jennifer       169       66.54 -0.53662    44.63
+## 19      19  Natalie       165       64.96 -1.03580    39.64
+## 20      20    Megan       161       63.39 -1.53498    34.65</code></pre>
 </div>
 <div id="summary-2" class="section level4">
 <h4><span class="header-section-number">3.7.3.3</span> Summary</h4>

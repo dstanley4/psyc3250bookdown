@@ -493,10 +493,12 @@ height_data <- height_data %>%
   mutate(T_height =  z_height * 10 + 50 )
 ```
 
-After running the above command, you can see everyone's height as a T-score with this code:
+After running the above command, you can see everyone's height as a T-score with this code. We omit the sex column from the output (using the select() command) so there are not too many columns on your screen.
 
 ```{r}
-height_data %>% as.data.frame()
+height_data %>%
+  select(-sex) %>%
+  as.data.frame()
 ```
 
 
