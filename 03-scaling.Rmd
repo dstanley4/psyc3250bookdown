@@ -327,12 +327,12 @@ One alternative approach to representing scores, or more specifically heights, i
 
 The advantage of *z*-scores is that by simply looking a person's *z*-score we can tell if they are above or below the mean for the frame of reference. Specifically, when *z*-scores are positive this indicates that a person is above the mean for the frame of reference; likewise, when *z*-score are negative this indicates that the person is below the mean for the frame of reference. The magnitude of the *z*-score indicates how distant that person is from the mean of the frame of reference in standard deviation units. 
 
-In we example our data we find that John has a height of 190 cm. We use the heights of the people in our data set as a frame of reference. Specifically, we calculate a mean height of 173.3 cm and a standard deviation (population formula) of 8.013114 cm. We use these values as a frame of reference when calculating John's *z*-score. Using this frame of reference John's height of 190 cm can be expressed as a *z*-score of 2.08408360 (calculation below). Because this is a positive value we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the *z*-score, 2.08408360, indicates that John is 2.08408360 standard deviations taller than the average person in our frame of reference (i.e., our data set). This means that John is quite tall - **relative** to the other people in our data set. The key word here is **relative** - *z*-scores provide information about a person's score relative to some frame of reference. In this example, the frame of reference was all of the people in the data set.
+In we example our data we find that John has a height of 190 cm. We use the heights of the people in our data set as a frame of reference. Specifically, we calculate a mean height of 173.3 cm and a standard deviation (population formula) of 8.013114 cm. We use these values as a frame of reference when calculating John's *z*-score. Using this frame of reference John's height of 190 cm can be expressed as a *z*-score of 2.084084 (calculation below). Because this is a positive value we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the *z*-score, 2.084084, indicates that John is 2.084084 standard deviations taller than the average person in our frame of reference (i.e., the people in our data set). This means that John is quite tall - **relative** to the other people in our data set. The key word here is **relative** - *z*-scores provide information about a person's score relative to some frame of reference. In this example, the frame of reference was all of the people in the data set.
 
 
 #### Hand calculation
 
-Let's walk through converting John's height from cm to a *z*-score. The first step is determine the frame of reference we want to use to calculate the *z*-score. We decide to use the entire data set a frame of reference.
+Let's walk through converting John's height from cm to a *z*-score. The first step is determining the frame of reference we want to use to calculate the *z*-score. We decide to use the entire data set a frame of reference.
 
 We find that the for the entire data set we have the mean and standard deviation (population formula) below that will serve as a frame of reference.
 
@@ -365,6 +365,8 @@ z_i &= \frac{X_i - \overline{X}}{S_X}\\
 \end{aligned}
 $$
 
+
+As noted previously: Because this is a positive value we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the *z*-score, 2.084084, indicates that John is 2.084084 standard deviations taller than the average person in our frame of reference (i.e., the people in our data set). This means that John is quite tall - **relative** to the other people in our data set. The key word here is **relative** - *z*-scores provide information about a person's score relative to some frame of reference. In this example, the frame of reference was all of the people in the data set.
 
 #### R calculation
 
