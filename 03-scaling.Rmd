@@ -188,7 +188,8 @@ glimpse(height_data)
 We can view all of the data we entered with the command below:
 
 ```{r}
-height_data %>% as.data.frame()
+height_data %>% 
+  as.data.frame()
 ```
 
 
