@@ -372,10 +372,21 @@ As noted previously: Because this is a positive value we know John is taller tha
 
 We can use R to calculate the *z*-score for everyone in our data set. Because we are using the data set itself as the frame of reference we can use to code to represent the mean and standard deviation for the data set - our frame of reference. Specifically,  where you see **mean(cm_height)** in the code below computer substitutes the mean of cm_height column (i.e., 173.3) - our frame of reference. Likewise, where you see **sd_pop(cm_height)** the computer substitutes the standard deviation of cm_height column (i.e., 8.013114) - our frame of reference. You can see the formula in the mutate command below is the same as the formula used above in the hand calculation - just expressed differently.
 
+We could write the code below:
+
+```{r, eval = FALSE}
+
+height_data <- height_data %>%
+  mutate(z_data = (  cm_height - 173.3  )  /  8.013114  )
+```
+
+But because the mean and standard deviation are based on all of our currernt data we can write it as below - this avoid making typos in the numbers:
+
+
 ```{r}
 
 height_data <- height_data %>%
-  mutate(z_height = (  cm_height - mean(cm_height)  )  /  sd_pop(cm_height)  )
+  mutate(z_data = (  cm_height - mean(cm_height)  )  /  sd_pop(cm_height)  )
 ```
 
 Use the code below to see the data with the new column. 
@@ -405,7 +416,7 @@ height_data %>%
   as.data.frame() %>% t()
 ```
 
-This output may be confusing. Consider the cm_height_mean of 1.733e+02 the e+02 means move the decimal two places to the right. Likewise, consider the z_height_mean of -1.414e-15 the e-15 means move the decimal 15 places to the left.
+This output may be confusing. Consider the cm_height_mean of 1.733e+02 the e+02 means move the decimal two places to the right. Likewise, consider the z_data_mean of -1.414e-15 the e-15 means move the decimal 15 places to the left.
 
 We can see this information presented in table form below (decimals adjusted). You can see that *z*-scores are simply a way of representing heights with a different type of unit. By converting heights to *z*-scores we have not changed anyone's actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.
 
@@ -490,14 +501,15 @@ We can use this same approach in R to convert all of the *z*-scores to T-scores.
 ```{r}
 
 height_data <- height_data %>%
-  mutate(T_height =  z_height * 10 + 50 )
+  mutate(T_data =  z_data * 10 + 50 )
 ```
 
 After running the above command, you can see everyone's height as a T-score with the code below. We omit the sex column from the output (using the select() command) so there are not too many columns on your screen.
 
 ```{r}
 height_data %>%
-  select(-sex) %>%
+  select(-part_id, -sex) %>%
+  arrange(cm_height) %>%
   as.data.frame()
 ```
 
@@ -525,7 +537,6 @@ height_data %>%
 We can see this information presented in table form below (decimals adjusted). You can see that T-scores are simply a way of representing heights with a different type of unit. By converting heights to T-scores we have not changed anyone's actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.
 
 A special case: Also notice that when we use the data set itself as the frame of reference something interesting happens with T-scores. Specifically, the T-score column has a mean of 50 and a standard deviation of 10. This won't always be the case. If we use a frame of reference other than our data set, the mean and standard deviation of T-scores in our data set will not necessarily be equal to 50 and 10, respectively.
-
 
 
 ```{r, echo = FALSE}
@@ -566,21 +577,10 @@ kableExtra::kable(summary_table_rounded)
 We sort the scores by height with the command below:
 
 ```{r}
-height_data_sorted <- height_data %>%
-  arrange(cm_height) 
-```
-
-We remove the sex column with this command (just so the data isn't too wide for your screen).
-
-```{r}
-height_data_sorted <- height_data_sorted %>%
-  select(-sex) 
-```
-
-You can see the sorted scores with the command below.
-
-```{r}
-height_data_sorted %>% as.data.frame()
+height_data %>%
+  select(-part_id, -sex) %>%
+  arrange(cm_height) %>%
+  as.data.frame()
 ```
 
 Notice in the output above how all the people with heights below the mean of 173.3 cm have *z*-scores less than 0 and T-scores less than 50.
@@ -589,28 +589,11 @@ Notice in the output above how all the people with heights below the mean of 173
 ## Frame of references
 
 
-
-
-
-### Reset
-
-For the next few exercises lets do a bit of reset and get rid of a few columns.
-
-```{r}
-height_data <- height_data %>%
-  select(-inch_height, -T_height)
-```
-
-And we can see that we have fewer columns now:
-
-```{r}
-height_data %>% as.data.frame()
-```
-
-
 ### All participants
 
-In the above data, the z_height column was calculated using the mean and standard deviation for all participants. Specifically, for all participants in this data set the mean and standard deviation are:
+
+In the above excercises we used the entire data set as our frame of reference. That is, the z_data column was calculated using the mean and standard deviation for all participants. These values are presented below:
+
 
 $$
 \begin{aligned}
@@ -632,42 +615,47 @@ z_i &= \frac{X_i - \overline{X}}{S_X}\\
 $$
 
 
-### Male participants
+### Male reference
+
+Let's examine only the male participants for the next part of the exercise. We want to determine how tall each male is relative to other males. Instead of using entire data set as the frame of reference when we calculate z-scores we will use only males as the frame of reference.
 
 
-
-
-
+We can obtain a data set with only the males by using the command below:
 
 ```{r}
 male_height_data <- height_data %>%
   filter(sex == "male") 
 ```
 
-```{r}
-male_height_data %>% as.data.frame()
-```
-
+You can confirm we have only males in the data with this command:
 
 ```{r}
 male_height_data %>%
-    summarise(across(.cols = starts_with("cm"),
-                     .fns = mean,
-                     na.rm = TRUE,
-                     .names = "mean_{col}")) %>%
+  select(-part_id, -sex, -T_data) %>%
+  arrange(cm_height) %>%
   as.data.frame()
 ```
+
+We see the mean and standard deviation for males is:
 
 
 ```{r}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  sd_pop = ~sd_pop(.x)
+)
+
 male_height_data %>%
-    summarise(across(.cols = starts_with("cm"),
-                     .fns = sd_pop,
-                     .names = "sd_{col}")) %>%
-  as.data.frame()
+    summarise(across(.cols = starts_with("cm_"),
+                     .fns = desired_descriptives,
+                     na.rm = TRUE)) %>%
+  as.data.frame() %>% t()
 ```
 
-For male participants
+
+#### Hand calculation
+
+Thus, for males only:
 
 $$
 \begin{aligned}
@@ -676,9 +664,15 @@ S_{males} &= 6.558201 \\
 \end{aligned}
 $$
 
+
+
+Previously, when we used the whole data set as a frame of reference we found that John's *z*-score was 2.084084. But now we want to calculate a *z*-score for John using only the males as a frame of reference. Therefore, we calculate his *z*-score using the mean and standard deviation for only males; as illustrated below:
+
+
 $$
 \begin{aligned}
 z_i &= \frac{X_i - \overline{X_{males}}}{S_{males}}\\
+&= \frac{\text{(John's height in cm)} - \overline{X_{males}}}{S_{males}}\\
 &= \frac{190 - 178.7}{6.558201}\\
 &= \frac{11.3}{6.558201}\\
 &= 1.723033\\
@@ -687,14 +681,140 @@ $$
 
 
 
+#### R calculation
+
+
 ```{r}
 
 male_height_data <- male_height_data %>%
-  mutate(z_males = (cm_height - mean(cm_height))/sd_pop(cm_height)  )
+  mutate(z_data_males = (cm_height - 178.7)/ 6.5582  )
+```
+
+
+```{r}
+male_height_data %>%
+  select(-part_id, -sex, -T_data, -inch_height) %>%
+  arrange(cm_height) %>%
+  as.data.frame()
+```
+
+
+
+```{r, echo = FALSE}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  sd_pop = ~sd_pop(.x),
+  N = ~sum(!is.na(.x))
+)
+
+row_sum <- male_height_data %>% 
+  select(-part_id, -sex, -T_data, -inch_height) %>%
+  summarise(across(.cols = where(is.numeric),
+                   .fns =  desired_descriptives,
+                   .names = "{col}___{fn}"))
+
+long_summary <- row_sum %>%
+  pivot_longer(cols = everything(),
+               names_to = c("unit", "stat"),
+               names_sep = c("___"),
+               values_to = "value")
+
+summary_table <- long_summary %>% 
+  pivot_wider(names_from = stat,
+              values_from = value)
+
+# round to 3 decimals
+summary_table_rounded <- summary_table %>%
+  mutate(across(.cols = where(is.numeric),
+                .fns= round,
+                digits = 3)) %>%
+  as.data.frame()
+
+kableExtra::kable(summary_table_rounded)
+```
+
+
+### Canadian reference
+
+
+$$
+\begin{aligned}
+\overline{X_{males_canada}} &= 176.1 \\
+S_{males_canada} &= 7.20 \\
+\end{aligned}
+$$
+
+
+#### Hand calculation
+
+$$
+\begin{aligned}
+z_i &= \frac{X_i - \overline{X_{males_canada}}}{S_{males_canada}}\\
+&= \frac{\text{(John's height in cm)} - \overline{X_{males_canada}}}{S_{males_canada}}\\
+&= \frac{190 - 176.1}{7.20}\\
+&= \frac{13.9}{7.20}\\
+&= 1.930556\\
+\end{aligned}
+$$
+
+
+#### R calculation
+
+
+```{r}
+
+male_height_data <- male_height_data %>%
+  mutate(z_canada_males = (cm_height - 176.1)/ 7.20  )
 ```
 
 ```{r}
-male_height_data %>% as.data.frame()
+male_height_data %>%
+  select(-part_id, -sex, -T_data, -inch_height) %>%
+  filter(name == "John") %>%
+  as.data.frame()
 ```
 
+
+```{r}
+male_height_data %>%
+  select(-part_id, -sex, -T_data, -inch_height) %>%
+  arrange(cm_height) %>%
+  as.data.frame()
+```
+
+
+
+
+```{r, echo = FALSE}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  sd_pop = ~sd_pop(.x),
+  N = ~sum(!is.na(.x))
+)
+
+row_sum <- male_height_data %>% 
+  select(-part_id, -sex, -T_data, -inch_height) %>%
+  summarise(across(.cols = where(is.numeric),
+                   .fns =  desired_descriptives,
+                   .names = "{col}___{fn}"))
+
+long_summary <- row_sum %>%
+  pivot_longer(cols = everything(),
+               names_to = c("unit", "stat"),
+               names_sep = c("___"),
+               values_to = "value")
+
+summary_table <- long_summary %>% 
+  pivot_wider(names_from = stat,
+              values_from = value)
+
+# round to 3 decimals
+summary_table_rounded <- summary_table %>%
+  mutate(across(.cols = where(is.numeric),
+                .fns= round,
+                digits = 3)) %>%
+  as.data.frame()
+
+kableExtra::kable(summary_table_rounded)
+```
 

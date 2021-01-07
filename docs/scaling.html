@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2021-01-06" />
+<meta name="date" content="2021-01-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -216,9 +216,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#comparing-scores"><i class="fa fa-check"></i><b>3.8</b> Comparing scores</a></li>
 <li class="chapter" data-level="3.9" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.9</b> Frame of references</a><ul>
-<li class="chapter" data-level="3.9.1" data-path="scaling.html"><a href="scaling.html#reset"><i class="fa fa-check"></i><b>3.9.1</b> Reset</a></li>
-<li class="chapter" data-level="3.9.2" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.9.2</b> All participants</a></li>
-<li class="chapter" data-level="3.9.3" data-path="scaling.html"><a href="scaling.html#male-participants"><i class="fa fa-check"></i><b>3.9.3</b> Male participants</a></li>
+<li class="chapter" data-level="3.9.1" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.9.1</b> All participants</a></li>
+<li class="chapter" data-level="3.9.2" data-path="scaling.html"><a href="scaling.html#male-reference"><i class="fa fa-check"></i><b>3.9.2</b> Male reference</a></li>
+<li class="chapter" data-level="3.9.3" data-path="scaling.html"><a href="scaling.html#canadian-reference"><i class="fa fa-check"></i><b>3.9.3</b> Canadian reference</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>4</b> Data Entry/Analysis</a><ul>
@@ -606,11 +606,15 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 <div id="r-calculation-1" class="section level4">
 <h4><span class="header-section-number">3.7.2.2</span> R calculation</h4>
 <p>We can use R to calculate the <em>z</em>-score for everyone in our data set. Because we are using the data set itself as the frame of reference we can use to code to represent the mean and standard deviation for the data set - our frame of reference. Specifically, where you see <strong>mean(cm_height)</strong> in the code below computer substitutes the mean of cm_height column (i.e., 173.3) - our frame of reference. Likewise, where you see <strong>sd_pop(cm_height)</strong> the computer substitutes the standard deviation of cm_height column (i.e., 8.013114) - our frame of reference. You can see the formula in the mutate command below is the same as the formula used above in the hand calculation - just expressed differently.</p>
+<p>We could write the code below:</p>
 <div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="scaling.html#cb172-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
-<span id="cb172-2"><a href="scaling.html#cb172-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_height =</span> (  cm_height <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(cm_height)  )  <span class="op">/</span><span class="st">  </span><span class="kw">sd_pop</span>(cm_height)  )</span></code></pre></div>
+<span id="cb172-2"><a href="scaling.html#cb172-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_data =</span> (  cm_height <span class="op">-</span><span class="st"> </span><span class="fl">173.3</span>  )  <span class="op">/</span><span class="st">  </span><span class="fl">8.013114</span>  )</span></code></pre></div>
+<p>But because the mean and standard deviation are based on all of our currernt data we can write it as below - this avoid making typos in the numbers:</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="scaling.html#cb173-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
+<span id="cb173-2"><a href="scaling.html#cb173-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_data =</span> (  cm_height <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(cm_height)  )  <span class="op">/</span><span class="st">  </span><span class="kw">sd_pop</span>(cm_height)  )</span></code></pre></div>
 <p>Use the code below to see the data with the new column.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="scaling.html#cb173-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##    part_id     name    sex cm_height inch_height z_height
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="scaling.html#cb174-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##    part_id     name    sex cm_height inch_height   z_data
 ## 1        1     John   male       190       74.80  2.08408
 ## 2        2      Jim   male       179       70.47  0.71133
 ## 3        3    Steve   male       165       64.96 -1.03580
@@ -636,24 +640,24 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 <div id="summary-1" class="section level4">
 <h4><span class="header-section-number">3.7.2.3</span> Summary</h4>
 <p>We can obtain the mean for the cm, inches, and <em>z</em>-score columns with the command below:</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="scaling.html#cb175-1"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
-<span id="cb175-2"><a href="scaling.html#cb175-2"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb175-3"><a href="scaling.html#cb175-3"></a>  <span class="dt">sd_pop =</span> <span class="op">~</span><span class="kw">sd_pop</span>(.x)</span>
-<span id="cb175-4"><a href="scaling.html#cb175-4"></a>)</span>
-<span id="cb175-5"><a href="scaling.html#cb175-5"></a></span>
-<span id="cb175-6"><a href="scaling.html#cb175-6"></a>height_data <span class="op">%&gt;%</span></span>
-<span id="cb175-7"><a href="scaling.html#cb175-7"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
-<span id="cb175-8"><a href="scaling.html#cb175-8"></a>                     <span class="dt">.fns =</span> desired_descriptives,</span>
-<span id="cb175-9"><a href="scaling.html#cb175-9"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb175-10"><a href="scaling.html#cb175-10"></a><span class="st">  </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">t</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="scaling.html#cb176-1"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
+<span id="cb176-2"><a href="scaling.html#cb176-2"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb176-3"><a href="scaling.html#cb176-3"></a>  <span class="dt">sd_pop =</span> <span class="op">~</span><span class="kw">sd_pop</span>(.x)</span>
+<span id="cb176-4"><a href="scaling.html#cb176-4"></a>)</span>
+<span id="cb176-5"><a href="scaling.html#cb176-5"></a></span>
+<span id="cb176-6"><a href="scaling.html#cb176-6"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb176-7"><a href="scaling.html#cb176-7"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
+<span id="cb176-8"><a href="scaling.html#cb176-8"></a>                     <span class="dt">.fns =</span> desired_descriptives,</span>
+<span id="cb176-9"><a href="scaling.html#cb176-9"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb176-10"><a href="scaling.html#cb176-10"></a><span class="st">  </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">t</span>()</span></code></pre></div>
 <pre><code>##                          [,1]
 ## cm_height_mean      1.733e+02
 ## cm_height_sd_pop    8.013e+00
 ## inch_height_mean    6.823e+01
 ## inch_height_sd_pop  3.155e+00
-## z_height_mean      -1.414e-15
-## z_height_sd_pop     1.000e+00</code></pre>
-<p>This output may be confusing. Consider the cm_height_mean of 1.733e+02 the e+02 means move the decimal two places to the right. Likewise, consider the z_height_mean of -1.414e-15 the e-15 means move the decimal 15 places to the left.</p>
+## z_data_mean        -1.414e-15
+## z_data_sd_pop       1.000e+00</code></pre>
+<p>This output may be confusing. Consider the cm_height_mean of 1.733e+02 the e+02 means move the decimal two places to the right. Likewise, consider the z_data_mean of -1.414e-15 the e-15 means move the decimal 15 places to the left.</p>
 <p>We can see this information presented in table form below (decimals adjusted). You can see that <em>z</em>-scores are simply a way of representing heights with a different type of unit. By converting heights to <em>z</em>-scores we have not changed anyone’s actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.</p>
 <p>A special case: Also notice that when we use the data set itself as the frame of reference something interesting happens with <em>z</em>-scores. Specifically, the <em>z</em>-score column has a mean of zero and a standard deviation of 1.0. This won’t always be the case. If we use a frame of reference other than our data set, the mean and standard deviation of <em>z</em>-scores in our data set will not necessarily be equal to 0 and 1, respectively.</p>
 <table>
@@ -704,7 +708,7 @@ inch_height
 </tr>
 <tr>
 <td style="text-align:left;">
-z_height
+z_data
 </td>
 <td style="text-align:right;">
 0.00
@@ -750,57 +754,58 @@ T_i &amp;= z_i \times 10 + 50\\
 <div id="r-calculation-2" class="section level4">
 <h4><span class="header-section-number">3.7.3.2</span> R calculation</h4>
 <p>We can use this same approach in R to convert all of the <em>z</em>-scores to T-scores. Notice how the mutate() command below is just the R version of the above formula for converting <em>z</em>-scores to T-scores.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="scaling.html#cb177-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
-<span id="cb177-2"><a href="scaling.html#cb177-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">T_height =</span>  z_height <span class="op">*</span><span class="st"> </span><span class="dv">10</span> <span class="op">+</span><span class="st"> </span><span class="dv">50</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="scaling.html#cb178-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
+<span id="cb178-2"><a href="scaling.html#cb178-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">T_data =</span>  z_data <span class="op">*</span><span class="st"> </span><span class="dv">10</span> <span class="op">+</span><span class="st"> </span><span class="dv">50</span> )</span></code></pre></div>
 <p>After running the above command, you can see everyone’s height as a T-score with the code below. We omit the sex column from the output (using the select() command) so there are not too many columns on your screen.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="scaling.html#cb178-1"></a>height_data <span class="op">%&gt;%</span></span>
-<span id="cb178-2"><a href="scaling.html#cb178-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>sex) <span class="op">%&gt;%</span></span>
-<span id="cb178-3"><a href="scaling.html#cb178-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##    part_id     name cm_height inch_height z_height T_height
-## 1        1     John       190       74.80  2.08408    70.84
-## 2        2      Jim       179       70.47  0.71133    57.11
-## 3        3    Steve       165       64.96 -1.03580    39.64
-## 4        4    Jamal       179       70.47  0.71133    57.11
-## 5        5      Eli       174       68.50  0.08736    50.87
-## 6        6     Sean       179       70.47  0.71133    57.11
-## 7        7  Basheer       185       72.83  1.46011    64.60
-## 8        8     Matt       180       70.87  0.83613    58.36
-## 9        9      Tim       173       68.11 -0.03744    49.63
-## 10      10     Rick       183       72.05  1.21052    62.11
-## 11      11     Jane       174       68.50  0.08736    50.87
-## 12      12    Nancy       161       63.39 -1.53498    34.65
-## 13      13      Sue       174       68.50  0.08736    50.87
-## 14      14    Maggy       169       66.54 -0.53662    44.63
-## 15      15    Aisha       161       63.39 -1.53498    34.65
-## 16      16     Saba       172       67.72 -0.16223    48.38
-## 17      17     Katy       173       68.11 -0.03744    49.63
-## 18      18 Jennifer       169       66.54 -0.53662    44.63
-## 19      19  Natalie       165       64.96 -1.03580    39.64
-## 20      20    Megan       161       63.39 -1.53498    34.65</code></pre>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="scaling.html#cb179-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb179-2"><a href="scaling.html#cb179-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex) <span class="op">%&gt;%</span></span>
+<span id="cb179-3"><a href="scaling.html#cb179-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
+<span id="cb179-4"><a href="scaling.html#cb179-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##        name cm_height inch_height   z_data T_data
+## 1     Nancy       161       63.39 -1.53498  34.65
+## 2     Aisha       161       63.39 -1.53498  34.65
+## 3     Megan       161       63.39 -1.53498  34.65
+## 4     Steve       165       64.96 -1.03580  39.64
+## 5   Natalie       165       64.96 -1.03580  39.64
+## 6     Maggy       169       66.54 -0.53662  44.63
+## 7  Jennifer       169       66.54 -0.53662  44.63
+## 8      Saba       172       67.72 -0.16223  48.38
+## 9       Tim       173       68.11 -0.03744  49.63
+## 10     Katy       173       68.11 -0.03744  49.63
+## 11      Eli       174       68.50  0.08736  50.87
+## 12     Jane       174       68.50  0.08736  50.87
+## 13      Sue       174       68.50  0.08736  50.87
+## 14      Jim       179       70.47  0.71133  57.11
+## 15    Jamal       179       70.47  0.71133  57.11
+## 16     Sean       179       70.47  0.71133  57.11
+## 17     Matt       180       70.87  0.83613  58.36
+## 18     Rick       183       72.05  1.21052  62.11
+## 19  Basheer       185       72.83  1.46011  64.60
+## 20     John       190       74.80  2.08408  70.84</code></pre>
 <p>When you examined the output above did you notice correspondence between <em>z</em>-scores and T-scores. Whenever a <em>z</em>-score was less than 0 the corresponding T-score for that person was less than 50. Both of these values indicate a person had a height lower than the mean for the reference group (the entire data set).</p>
 </div>
 <div id="summary-2" class="section level4">
 <h4><span class="header-section-number">3.7.3.3</span> Summary</h4>
 <p>We can obtain the mean for the cm, inches, <em>z</em>-score, and T-score columns with the command below:</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="scaling.html#cb180-1"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
-<span id="cb180-2"><a href="scaling.html#cb180-2"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb180-3"><a href="scaling.html#cb180-3"></a>  <span class="dt">sd_pop =</span> <span class="op">~</span><span class="kw">sd_pop</span>(.x)</span>
-<span id="cb180-4"><a href="scaling.html#cb180-4"></a>)</span>
-<span id="cb180-5"><a href="scaling.html#cb180-5"></a></span>
-<span id="cb180-6"><a href="scaling.html#cb180-6"></a>height_data <span class="op">%&gt;%</span></span>
-<span id="cb180-7"><a href="scaling.html#cb180-7"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
-<span id="cb180-8"><a href="scaling.html#cb180-8"></a>                     <span class="dt">.fns =</span> desired_descriptives,</span>
-<span id="cb180-9"><a href="scaling.html#cb180-9"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb180-10"><a href="scaling.html#cb180-10"></a><span class="st">  </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">t</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="scaling.html#cb181-1"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
+<span id="cb181-2"><a href="scaling.html#cb181-2"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb181-3"><a href="scaling.html#cb181-3"></a>  <span class="dt">sd_pop =</span> <span class="op">~</span><span class="kw">sd_pop</span>(.x)</span>
+<span id="cb181-4"><a href="scaling.html#cb181-4"></a>)</span>
+<span id="cb181-5"><a href="scaling.html#cb181-5"></a></span>
+<span id="cb181-6"><a href="scaling.html#cb181-6"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb181-7"><a href="scaling.html#cb181-7"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
+<span id="cb181-8"><a href="scaling.html#cb181-8"></a>                     <span class="dt">.fns =</span> desired_descriptives,</span>
+<span id="cb181-9"><a href="scaling.html#cb181-9"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb181-10"><a href="scaling.html#cb181-10"></a><span class="st">  </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">t</span>()</span></code></pre></div>
 <pre><code>##                          [,1]
 ## cm_height_mean      1.733e+02
 ## cm_height_sd_pop    8.013e+00
 ## inch_height_mean    6.823e+01
 ## inch_height_sd_pop  3.155e+00
-## z_height_mean      -1.414e-15
-## z_height_sd_pop     1.000e+00
-## T_height_mean       5.000e+01
-## T_height_sd_pop     1.000e+01</code></pre>
+## z_data_mean        -1.414e-15
+## z_data_sd_pop       1.000e+00
+## T_data_mean         5.000e+01
+## T_data_sd_pop       1.000e+01</code></pre>
 <p>We can see this information presented in table form below (decimals adjusted). You can see that T-scores are simply a way of representing heights with a different type of unit. By converting heights to T-scores we have not changed anyone’s actual height. Nor have we changed the relative heights of any two individuals. We have only changed the units used to express those heights.</p>
 <p>A special case: Also notice that when we use the data set itself as the frame of reference something interesting happens with T-scores. Specifically, the T-score column has a mean of 50 and a standard deviation of 10. This won’t always be the case. If we use a frame of reference other than our data set, the mean and standard deviation of T-scores in our data set will not necessarily be equal to 50 and 10, respectively.</p>
 <table>
@@ -851,7 +856,7 @@ inch_height
 </tr>
 <tr>
 <td style="text-align:left;">
-z_height
+z_data
 </td>
 <td style="text-align:right;">
 0.00
@@ -865,7 +870,7 @@ z_height
 </tr>
 <tr>
 <td style="text-align:left;">
-T_height
+T_data
 </td>
 <td style="text-align:right;">
 50.00
@@ -885,70 +890,38 @@ T_height
 <div id="comparing-scores" class="section level2">
 <h2><span class="header-section-number">3.8</span> Comparing scores</h2>
 <p>We sort the scores by height with the command below:</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="scaling.html#cb182-1"></a>height_data_sorted &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
-<span id="cb182-2"><a href="scaling.html#cb182-2"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) </span></code></pre></div>
-<p>We remove the sex column with this command (just so the data isn’t too wide for your screen).</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="scaling.html#cb183-1"></a>height_data_sorted &lt;-<span class="st"> </span>height_data_sorted <span class="op">%&gt;%</span></span>
-<span id="cb183-2"><a href="scaling.html#cb183-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>sex) </span></code></pre></div>
-<p>You can see the sorted scores with the command below.</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="scaling.html#cb184-1"></a>height_data_sorted <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##    part_id     name cm_height inch_height z_height T_height
-## 1       12    Nancy       161       63.39 -1.53498    34.65
-## 2       15    Aisha       161       63.39 -1.53498    34.65
-## 3       20    Megan       161       63.39 -1.53498    34.65
-## 4        3    Steve       165       64.96 -1.03580    39.64
-## 5       19  Natalie       165       64.96 -1.03580    39.64
-## 6       14    Maggy       169       66.54 -0.53662    44.63
-## 7       18 Jennifer       169       66.54 -0.53662    44.63
-## 8       16     Saba       172       67.72 -0.16223    48.38
-## 9        9      Tim       173       68.11 -0.03744    49.63
-## 10      17     Katy       173       68.11 -0.03744    49.63
-## 11       5      Eli       174       68.50  0.08736    50.87
-## 12      11     Jane       174       68.50  0.08736    50.87
-## 13      13      Sue       174       68.50  0.08736    50.87
-## 14       2      Jim       179       70.47  0.71133    57.11
-## 15       4    Jamal       179       70.47  0.71133    57.11
-## 16       6     Sean       179       70.47  0.71133    57.11
-## 17       8     Matt       180       70.87  0.83613    58.36
-## 18      10     Rick       183       72.05  1.21052    62.11
-## 19       7  Basheer       185       72.83  1.46011    64.60
-## 20       1     John       190       74.80  2.08408    70.84</code></pre>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="scaling.html#cb183-1"></a>height_data <span class="op">%&gt;%</span></span>
+<span id="cb183-2"><a href="scaling.html#cb183-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex) <span class="op">%&gt;%</span></span>
+<span id="cb183-3"><a href="scaling.html#cb183-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
+<span id="cb183-4"><a href="scaling.html#cb183-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##        name cm_height inch_height   z_data T_data
+## 1     Nancy       161       63.39 -1.53498  34.65
+## 2     Aisha       161       63.39 -1.53498  34.65
+## 3     Megan       161       63.39 -1.53498  34.65
+## 4     Steve       165       64.96 -1.03580  39.64
+## 5   Natalie       165       64.96 -1.03580  39.64
+## 6     Maggy       169       66.54 -0.53662  44.63
+## 7  Jennifer       169       66.54 -0.53662  44.63
+## 8      Saba       172       67.72 -0.16223  48.38
+## 9       Tim       173       68.11 -0.03744  49.63
+## 10     Katy       173       68.11 -0.03744  49.63
+## 11      Eli       174       68.50  0.08736  50.87
+## 12     Jane       174       68.50  0.08736  50.87
+## 13      Sue       174       68.50  0.08736  50.87
+## 14      Jim       179       70.47  0.71133  57.11
+## 15    Jamal       179       70.47  0.71133  57.11
+## 16     Sean       179       70.47  0.71133  57.11
+## 17     Matt       180       70.87  0.83613  58.36
+## 18     Rick       183       72.05  1.21052  62.11
+## 19  Basheer       185       72.83  1.46011  64.60
+## 20     John       190       74.80  2.08408  70.84</code></pre>
 <p>Notice in the output above how all the people with heights below the mean of 173.3 cm have <em>z</em>-scores less than 0 and T-scores less than 50.</p>
 </div>
 <div id="frame-of-references" class="section level2">
 <h2><span class="header-section-number">3.9</span> Frame of references</h2>
-<div id="reset" class="section level3">
-<h3><span class="header-section-number">3.9.1</span> Reset</h3>
-<p>For the next few exercises lets do a bit of reset and get rid of a few columns.</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="scaling.html#cb186-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
-<span id="cb186-2"><a href="scaling.html#cb186-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>inch_height, <span class="op">-</span>T_height)</span></code></pre></div>
-<p>And we can see that we have fewer columns now:</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="scaling.html#cb187-1"></a>height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##    part_id     name    sex cm_height z_height
-## 1        1     John   male       190  2.08408
-## 2        2      Jim   male       179  0.71133
-## 3        3    Steve   male       165 -1.03580
-## 4        4    Jamal   male       179  0.71133
-## 5        5      Eli   male       174  0.08736
-## 6        6     Sean   male       179  0.71133
-## 7        7  Basheer   male       185  1.46011
-## 8        8     Matt   male       180  0.83613
-## 9        9      Tim   male       173 -0.03744
-## 10      10     Rick   male       183  1.21052
-## 11      11     Jane female       174  0.08736
-## 12      12    Nancy female       161 -1.53498
-## 13      13      Sue female       174  0.08736
-## 14      14    Maggy female       169 -0.53662
-## 15      15    Aisha female       161 -1.53498
-## 16      16     Saba female       172 -0.16223
-## 17      17     Katy female       173 -0.03744
-## 18      18 Jennifer female       169 -0.53662
-## 19      19  Natalie female       165 -1.03580
-## 20      20    Megan female       161 -1.53498</code></pre>
-</div>
 <div id="all-participants" class="section level3">
-<h3><span class="header-section-number">3.9.2</span> All participants</h3>
-<p>In the above data, the z_height column was calculated using the mean and standard deviation for all participants. Specifically, for all participants in this data set the mean and standard deviation are:</p>
+<h3><span class="header-section-number">3.9.1</span> All participants</h3>
+<p>In the above excercises we used the entire data set as our frame of reference. That is, the z_data column was calculated using the mean and standard deviation for all participants. These values are presented below:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \overline{X} &amp;= 173.3 \\
@@ -966,67 +939,268 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 \end{aligned}
 \]</span></p>
 </div>
-<div id="male-participants" class="section level3">
-<h3><span class="header-section-number">3.9.3</span> Male participants</h3>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="scaling.html#cb189-1"></a>male_height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
-<span id="cb189-2"><a href="scaling.html#cb189-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;male&quot;</span>) </span></code></pre></div>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="scaling.html#cb190-1"></a>male_height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##    part_id    name  sex cm_height z_height
-## 1        1    John male       190  2.08408
-## 2        2     Jim male       179  0.71133
-## 3        3   Steve male       165 -1.03580
-## 4        4   Jamal male       179  0.71133
-## 5        5     Eli male       174  0.08736
-## 6        6    Sean male       179  0.71133
-## 7        7 Basheer male       185  1.46011
-## 8        8    Matt male       180  0.83613
-## 9        9     Tim male       173 -0.03744
-## 10      10    Rick male       183  1.21052</code></pre>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="scaling.html#cb192-1"></a>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb192-2"><a href="scaling.html#cb192-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;cm&quot;</span>),</span>
-<span id="cb192-3"><a href="scaling.html#cb192-3"></a>                     <span class="dt">.fns =</span> mean,</span>
-<span id="cb192-4"><a href="scaling.html#cb192-4"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb192-5"><a href="scaling.html#cb192-5"></a>                     <span class="dt">.names =</span> <span class="st">&quot;mean_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb192-6"><a href="scaling.html#cb192-6"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##   mean_cm_height
-## 1          178.7</code></pre>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="scaling.html#cb194-1"></a>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb194-2"><a href="scaling.html#cb194-2"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;cm&quot;</span>),</span>
-<span id="cb194-3"><a href="scaling.html#cb194-3"></a>                     <span class="dt">.fns =</span> sd_pop,</span>
-<span id="cb194-4"><a href="scaling.html#cb194-4"></a>                     <span class="dt">.names =</span> <span class="st">&quot;sd_{col}&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb194-5"><a href="scaling.html#cb194-5"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##   sd_cm_height
-## 1        6.558</code></pre>
-<p>For male participants</p>
+<div id="male-reference" class="section level3">
+<h3><span class="header-section-number">3.9.2</span> Male reference</h3>
+<p>Let’s examine only the male participants for the next part of the exercise. We want to determine how tall each male is relative to other males. Instead of using entire data set as the frame of reference when we calculate z-scores we will use only males as the frame of reference.</p>
+<p>We can obtain a data set with only the males by using the command below:</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="scaling.html#cb185-1"></a>male_height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
+<span id="cb185-2"><a href="scaling.html#cb185-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;male&quot;</span>) </span></code></pre></div>
+<p>You can confirm we have only males in the data with this command:</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="scaling.html#cb186-1"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb186-2"><a href="scaling.html#cb186-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data) <span class="op">%&gt;%</span></span>
+<span id="cb186-3"><a href="scaling.html#cb186-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
+<span id="cb186-4"><a href="scaling.html#cb186-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##       name cm_height inch_height   z_data
+## 1    Steve       165       64.96 -1.03580
+## 2      Tim       173       68.11 -0.03744
+## 3      Eli       174       68.50  0.08736
+## 4      Jim       179       70.47  0.71133
+## 5    Jamal       179       70.47  0.71133
+## 6     Sean       179       70.47  0.71133
+## 7     Matt       180       70.87  0.83613
+## 8     Rick       183       72.05  1.21052
+## 9  Basheer       185       72.83  1.46011
+## 10    John       190       74.80  2.08408</code></pre>
+<p>We see the mean and standard deviation for males is:</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="scaling.html#cb188-1"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
+<span id="cb188-2"><a href="scaling.html#cb188-2"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb188-3"><a href="scaling.html#cb188-3"></a>  <span class="dt">sd_pop =</span> <span class="op">~</span><span class="kw">sd_pop</span>(.x)</span>
+<span id="cb188-4"><a href="scaling.html#cb188-4"></a>)</span>
+<span id="cb188-5"><a href="scaling.html#cb188-5"></a></span>
+<span id="cb188-6"><a href="scaling.html#cb188-6"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb188-7"><a href="scaling.html#cb188-7"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;cm_&quot;</span>),</span>
+<span id="cb188-8"><a href="scaling.html#cb188-8"></a>                     <span class="dt">.fns =</span> desired_descriptives,</span>
+<span id="cb188-9"><a href="scaling.html#cb188-9"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb188-10"><a href="scaling.html#cb188-10"></a><span class="st">  </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">t</span>()</span></code></pre></div>
+<pre><code>##                     [,1]
+## cm_height_mean   178.700
+## cm_height_sd_pop   6.558</code></pre>
+<div id="hand-calculation-3" class="section level4">
+<h4><span class="header-section-number">3.9.2.1</span> Hand calculation</h4>
+<p>Thus, for males only:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \overline{X_{males}} &amp;= 178.7 \\
 S_{males} &amp;= 6.558201 \\
 \end{aligned}
 \]</span></p>
+<p>Previously, when we used the whole data set as a frame of reference we found that John’s <em>z</em>-score was 2.084084. But now we want to calculate a <em>z</em>-score for John using only the males as a frame of reference. Therefore, we calculate his <em>z</em>-score using the mean and standard deviation for only males; as illustrated below:</p>
 <p><span class="math display">\[
 \begin{aligned}
 z_i &amp;= \frac{X_i - \overline{X_{males}}}{S_{males}}\\
+&amp;= \frac{\text{(John&#39;s height in cm)} - \overline{X_{males}}}{S_{males}}\\
 &amp;= \frac{190 - 178.7}{6.558201}\\
 &amp;= \frac{11.3}{6.558201}\\
 &amp;= 1.723033\\
 \end{aligned}
 \]</span></p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="scaling.html#cb196-1"></a>male_height_data &lt;-<span class="st"> </span>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb196-2"><a href="scaling.html#cb196-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_males =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(cm_height))<span class="op">/</span><span class="kw">sd_pop</span>(cm_height)  )</span></code></pre></div>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="scaling.html#cb197-1"></a>male_height_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##    part_id    name  sex cm_height z_height  z_males
-## 1        1    John male       190  2.08408  1.72303
-## 2        2     Jim male       179  0.71133  0.04574
-## 3        3   Steve male       165 -1.03580 -2.08899
-## 4        4   Jamal male       179  0.71133  0.04574
-## 5        5     Eli male       174  0.08736 -0.71666
-## 6        6    Sean male       179  0.71133  0.04574
-## 7        7 Basheer male       185  1.46011  0.96063
-## 8        8    Matt male       180  0.83613  0.19823
-## 9        9     Tim male       173 -0.03744 -0.86914
-## 10      10    Rick male       183  1.21052  0.65567</code></pre>
+</div>
+<div id="r-calculation-3" class="section level4">
+<h4><span class="header-section-number">3.9.2.2</span> R calculation</h4>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="scaling.html#cb190-1"></a>male_height_data &lt;-<span class="st"> </span>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb190-2"><a href="scaling.html#cb190-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_data_males =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="fl">178.7</span>)<span class="op">/</span><span class="st"> </span><span class="fl">6.5582</span>  )</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="scaling.html#cb191-1"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb191-2"><a href="scaling.html#cb191-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
+<span id="cb191-3"><a href="scaling.html#cb191-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
+<span id="cb191-4"><a href="scaling.html#cb191-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##       name cm_height   z_data z_data_males
+## 1    Steve       165 -1.03580     -2.08899
+## 2      Tim       173 -0.03744     -0.86914
+## 3      Eli       174  0.08736     -0.71666
+## 4      Jim       179  0.71133      0.04574
+## 5    Jamal       179  0.71133      0.04574
+## 6     Sean       179  0.71133      0.04574
+## 7     Matt       180  0.83613      0.19823
+## 8     Rick       183  1.21052      0.65567
+## 9  Basheer       185  1.46011      0.96063
+## 10    John       190  2.08408      1.72303</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+unit
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd_pop
+</th>
+<th style="text-align:right;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+cm_height
+</td>
+<td style="text-align:right;">
+178.700
+</td>
+<td style="text-align:right;">
+6.558
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+z_data
+</td>
+<td style="text-align:right;">
+0.674
+</td>
+<td style="text-align:right;">
+0.818
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+z_data_males
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="canadian-reference" class="section level3">
+<h3><span class="header-section-number">3.9.3</span> Canadian reference</h3>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{X_{males_canada}} &amp;= 176.1 \\
+S_{males_canada} &amp;= 7.20 \\
+\end{aligned}
+\]</span></p>
+<div id="hand-calculation-4" class="section level4">
+<h4><span class="header-section-number">3.9.3.1</span> Hand calculation</h4>
+<p><span class="math display">\[
+\begin{aligned}
+z_i &amp;= \frac{X_i - \overline{X_{males_canada}}}{S_{males_canada}}\\
+&amp;= \frac{\text{(John&#39;s height in cm)} - \overline{X_{males_canada}}}{S_{males_canada}}\\
+&amp;= \frac{190 - 176.1}{7.20}\\
+&amp;= \frac{13.9}{7.20}\\
+&amp;= 1.930556\\
+\end{aligned}
+\]</span></p>
+</div>
+<div id="r-calculation-4" class="section level4">
+<h4><span class="header-section-number">3.9.3.2</span> R calculation</h4>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="scaling.html#cb193-1"></a>male_height_data &lt;-<span class="st"> </span>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb193-2"><a href="scaling.html#cb193-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_canada_males =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="fl">176.1</span>)<span class="op">/</span><span class="st"> </span><span class="fl">7.20</span>  )</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="scaling.html#cb194-1"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb194-2"><a href="scaling.html#cb194-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
+<span id="cb194-3"><a href="scaling.html#cb194-3"></a><span class="st">  </span><span class="kw">filter</span>(name <span class="op">==</span><span class="st"> &quot;John&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb194-4"><a href="scaling.html#cb194-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##   name cm_height z_data z_data_males z_canada_males
+## 1 John       190  2.084        1.723          1.931</code></pre>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="scaling.html#cb196-1"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb196-2"><a href="scaling.html#cb196-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
+<span id="cb196-3"><a href="scaling.html#cb196-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
+<span id="cb196-4"><a href="scaling.html#cb196-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<pre><code>##       name cm_height   z_data z_data_males z_canada_males
+## 1    Steve       165 -1.03580     -2.08899        -1.5417
+## 2      Tim       173 -0.03744     -0.86914        -0.4306
+## 3      Eli       174  0.08736     -0.71666        -0.2917
+## 4      Jim       179  0.71133      0.04574         0.4028
+## 5    Jamal       179  0.71133      0.04574         0.4028
+## 6     Sean       179  0.71133      0.04574         0.4028
+## 7     Matt       180  0.83613      0.19823         0.5417
+## 8     Rick       183  1.21052      0.65567         0.9583
+## 9  Basheer       185  1.46011      0.96063         1.2361
+## 10    John       190  2.08408      1.72303         1.9306</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+unit
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd_pop
+</th>
+<th style="text-align:right;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+cm_height
+</td>
+<td style="text-align:right;">
+178.700
+</td>
+<td style="text-align:right;">
+6.558
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+z_data
+</td>
+<td style="text-align:right;">
+0.674
+</td>
+<td style="text-align:right;">
+0.818
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+z_data_males
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+z_canada_males
+</td>
+<td style="text-align:right;">
+0.361
+</td>
+<td style="text-align:right;">
+0.911
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+</tbody>
+</table>
 
+</div>
 </div>
 </div>
 </div>

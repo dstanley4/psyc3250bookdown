@@ -99,9 +99,13 @@ r-calculation-2
 summary-2
 comparing-scores
 frame-of-references
-reset
 all-participants
-male-participants
+male-reference
+hand-calculation-3
+r-calculation-3
+canadian-reference
+hand-calculation-4
+r-calculation-4
 data-entryanalysis
 required-packages
 objective-1
