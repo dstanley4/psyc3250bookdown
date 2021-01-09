@@ -978,7 +978,7 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 <pre><code>##                     [,1]
 ## cm_height_mean   178.700
 ## cm_height_sd_pop   6.558</code></pre>
-<p>In table form we see:</p>
+<p>In table form we see that for males the mean and standard deviation are 178.700 and 6.558, respectively.</p>
 <table>
 <thead>
 <tr>
@@ -1033,7 +1033,7 @@ inch_height
 <p><span class="math display">\[
 \begin{aligned}
 \overline{X_{males}} &amp;= 178.7 \\
-S_{males} &amp;= 6.558201 \\
+S_{males} &amp;= 6.558 \\
 \end{aligned}
 \]</span></p>
 <p>Previously, when we used the whole data set as a frame of reference we found that John’s <em>z</em>-score was 2.084084. But now we want to calculate a <em>z</em>-score for John using only the males as a frame of reference. Therefore, we calculate his <em>z</em>-score using the mean and standard deviation for only males; as illustrated below:</p>
@@ -1041,7 +1041,7 @@ S_{males} &amp;= 6.558201 \\
 \begin{aligned}
 z_i &amp;= \frac{X_i - \overline{X_{males}}}{S_{males}}\\
 &amp;= \frac{\text{(John&#39;s height in cm)} - \overline{X_{males}}}{S_{males}}\\
-&amp;= \frac{190 - 178.7}{6.558201}\\
+&amp;= \frac{190 - 178.7}{6.558}\\
 &amp;= \frac{11.3}{6.558201}\\
 &amp;= 1.723033\\
 \end{aligned}
@@ -1050,22 +1050,22 @@ z_i &amp;= \frac{X_i - \overline{X_{males}}}{S_{males}}\\
 <div id="r-calculation-3" class="section level4">
 <h4><span class="header-section-number">3.8.2.2</span> R calculation</h4>
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="scaling.html#cb190-1"></a>male_height_data &lt;-<span class="st"> </span>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb190-2"><a href="scaling.html#cb190-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_data_males =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="fl">178.7</span>)<span class="op">/</span><span class="st"> </span><span class="fl">6.5582</span>  )</span></code></pre></div>
+<span id="cb190-2"><a href="scaling.html#cb190-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_data_males =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="fl">178.7</span>)<span class="op">/</span><span class="st"> </span><span class="fl">6.558</span>  )</span></code></pre></div>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="scaling.html#cb191-1"></a>male_height_data <span class="op">%&gt;%</span></span>
 <span id="cb191-2"><a href="scaling.html#cb191-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
 <span id="cb191-3"><a href="scaling.html#cb191-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
 <span id="cb191-4"><a href="scaling.html#cb191-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##       name cm_height   z_data z_data_males
-## 1    Steve       165 -1.03580     -2.08899
-## 2      Tim       173 -0.03744     -0.86914
-## 3      Eli       174  0.08736     -0.71666
-## 4      Jim       179  0.71133      0.04574
-## 5    Jamal       179  0.71133      0.04574
-## 6     Sean       179  0.71133      0.04574
+## 1    Steve       165 -1.03580     -2.08905
+## 2      Tim       173 -0.03744     -0.86917
+## 3      Eli       174  0.08736     -0.71668
+## 4      Jim       179  0.71133      0.04575
+## 5    Jamal       179  0.71133      0.04575
+## 6     Sean       179  0.71133      0.04575
 ## 7     Matt       180  0.83613      0.19823
-## 8     Rick       183  1.21052      0.65567
-## 9  Basheer       185  1.46011      0.96063
-## 10    John       190  2.08408      1.72303</code></pre>
+## 8     Rick       183  1.21052      0.65569
+## 9  Basheer       185  1.46011      0.96066
+## 10    John       190  2.08408      1.72309</code></pre>
 <table>
 <thead>
 <tr>
@@ -1165,16 +1165,16 @@ z_i &amp;= \frac{X_i - \overline{X_{males_canada}}}{S_{males_canada}}\\
 <span id="cb196-3"><a href="scaling.html#cb196-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
 <span id="cb196-4"><a href="scaling.html#cb196-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##       name cm_height   z_data z_data_males z_canada_males
-## 1    Steve       165 -1.03580     -2.08899        -1.5417
-## 2      Tim       173 -0.03744     -0.86914        -0.4306
-## 3      Eli       174  0.08736     -0.71666        -0.2917
-## 4      Jim       179  0.71133      0.04574         0.4028
-## 5    Jamal       179  0.71133      0.04574         0.4028
-## 6     Sean       179  0.71133      0.04574         0.4028
+## 1    Steve       165 -1.03580     -2.08905        -1.5417
+## 2      Tim       173 -0.03744     -0.86917        -0.4306
+## 3      Eli       174  0.08736     -0.71668        -0.2917
+## 4      Jim       179  0.71133      0.04575         0.4028
+## 5    Jamal       179  0.71133      0.04575         0.4028
+## 6     Sean       179  0.71133      0.04575         0.4028
 ## 7     Matt       180  0.83613      0.19823         0.5417
-## 8     Rick       183  1.21052      0.65567         0.9583
-## 9  Basheer       185  1.46011      0.96063         1.2361
-## 10    John       190  2.08408      1.72303         1.9306</code></pre>
+## 8     Rick       183  1.21052      0.65569         0.9583
+## 9  Basheer       185  1.46011      0.96066         1.2361
+## 10    John       190  2.08408      1.72309         1.9306</code></pre>
 <table>
 <thead>
 <tr>

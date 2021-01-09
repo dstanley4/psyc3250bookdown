@@ -650,8 +650,7 @@ male_height_data %>%
   as.data.frame() %>% t()
 ```
 
-In table form we see:
-
+In table form we see that for males the mean and standard deviation are 178.700	and 6.558, respectively.
 
 ```{r, echo = FALSE}
 desired_descriptives <- list(
@@ -693,7 +692,7 @@ Thus, for males only:
 $$
 \begin{aligned}
 \overline{X_{males}} &= 178.7 \\
-S_{males} &= 6.558201 \\
+S_{males} &= 6.558 \\
 \end{aligned}
 $$
 
@@ -706,7 +705,7 @@ $$
 \begin{aligned}
 z_i &= \frac{X_i - \overline{X_{males}}}{S_{males}}\\
 &= \frac{\text{(John's height in cm)} - \overline{X_{males}}}{S_{males}}\\
-&= \frac{190 - 178.7}{6.558201}\\
+&= \frac{190 - 178.7}{6.558}\\
 &= \frac{11.3}{6.558201}\\
 &= 1.723033\\
 \end{aligned}
@@ -720,7 +719,7 @@ $$
 ```{r}
 
 male_height_data <- male_height_data %>%
-  mutate(z_data_males = (cm_height - 178.7)/ 6.5582  )
+  mutate(z_data_males = (cm_height - 178.7)/ 6.558  )
 ```
 
 
