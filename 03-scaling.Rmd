@@ -194,7 +194,7 @@ height_data %>%
 
 ## Summary statistics
 
-To obtain the mean and standard deviation (population formula) for each column in the data set we use the commands below. These are explained in the previous "Handling data with the tidyverse" chapter. You can see in the code below that by specifying .cols as "where(is.numeric)" that we obtain descriptive statistics for any numeric column.
+To obtain the mean and standard deviation (population formula) for each column in the data set we use the commands below. These are explained in the previous "Handling data with the tidyverse" chapter. You can see in the code below that by specifying, in the summarise() command, .cols = where(is.numeric) that we obtain descriptive statistics for any numeric column.
 
 ```{r}
 desired_descriptives <- list(
@@ -478,18 +478,17 @@ kableExtra::kable(summary_table_rounded)
 
 T-scores are simply another unit for representing scores. Do not confuse the T-score with the *t*-value in inferential statistics (a very different number).
 
-T-scores are very similar to *z*-scores - the provide scores for each person relative to a frame of reference. With *z*-scores we use 0 to indicate the mean of the frame of reference and 1.0 to indicate the standard deviation of the frame of reference. With T-scores we use 50 to indicate the mean of the frame of reference and 10 to indicate the standard deviation of the frame of reference.
+T-scores are very similar to *z*-scores - the provide scores for each person relative to a frame of reference. With *z*-scores we use 0 to indicate the mean of the frame of reference and 1 to indicate the standard deviation of the frame of reference. With T-scores we use 50 to indicate the mean of the frame of reference and 10 to indicate the standard deviation of the frame of reference.
 
 When T-scores are greater than 50 this indicates that a person is above the mean of the frame of reference; likewise, when a T-scores is less than 50 this indicates that a person is below the mean of the frame of reference. Every difference of 10 units from 50 represents a standard deviation. Thus, a person with a T-score of 60 is one standard deviation above the mean of the frame of reference.
 
-In we example our data we find that John has a height of 190 cm. We use the heights of the people in our data set as a frame of reference. To create a T-score for John we first need to convert his height in cm to a *z*-score. Following this, we convert his *z*-score to a T-score. Fortunately, we've already calculated John's height in *z*-score form for this frame of reference as 2.084084. We convert that number (calculation below) to a T-score of 
-70.84084. Because this T-score if greater than 50 we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the T-score is roughly 20 higher (i.e., 2* 10 higher) than 50 we know John is about 2 standard deviations taller than the mean for the frame of reference.
+In we examine our data we find that John has a height of 190 cm. We use the heights of the people in our data set as a frame of reference. To create a T-score for John we first need to convert his height in cm to a *z*-score. Following this, we convert his *z*-score to a T-score. Fortunately, we've already calculated John's height in *z*-score form for this frame of reference as 2.084084. We convert that number (calculation below) to a T-score of 70.84084. Because this T-score if greater than 50 we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the T-score is roughly 20 higher (i.e., 2* 10 higher) than 50 we know John is about 2 standard deviations taller than the mean for the frame of reference.
 
 #### Hand calculation
 
-Let's walk through converting John's height as a *z*-score to a T-score. The score used our entire data set as the frame of reference - so that will be the frame of reference for the T-score as well.
+Let's walk through converting John's height as a *z*-score to a T-score. The *z*-score used our entire data set as the frame of reference - so that will be the frame of reference for the T-score as well.
 
-The generic formula for converting *z*-scores to T-scores is below. You can see that we simply multiply a *z*-score by 10 and add 50 to get a T-score for that same frame of reference.
+The generic formula for converting *z*-scores to T-scores is below. In this formula $T_i$ represents the new T-score whereas $z_i$ represents the previously calculated *z*-score for that person. We need to calculate the *z*-score as a first step in calculating a T-score. You can see that we simply multiply a *z*-score by 10 and add 50 to get a T-score. The resulting T-score has the same frame of reference as the *z*-score used to calculate it. 
 
 $$
 \begin{aligned}
@@ -514,7 +513,7 @@ As noted previously: Because this T-score if greater than 50 we know John is tal
 
 #### R calculation
 
-We can use this same approach in R to convert all of the *z*-scores to T-scores. Notice how the mutate() command below is just the R version of the above formula for converting *z*-scores to T-scores.
+We can use this same approach in R to convert all of the *z*-scores to T-scores. We use the mutate() commmand to create a new column called T_data. We use this name to indicate the the frame of reference for the T-score is the data set (i.e., T_data). Notice how the mutate() command below is just the R version of the above formula for converting *z*-scores to T-scores.
 
 ```{r}
 
@@ -522,23 +521,22 @@ height_data <- height_data %>%
   mutate(T_data =  z_data * 10 + 50 )
 ```
 
-After running the above command, you can see everyone's height as a T-score with the code below. We omit the sex column from the output (using the select() command) so there are not too many columns on your screen.
+After running the above command, we have a new column called T_data which contains the T-score for each person. We can use the code below to display the height data. We use the select command() - specifically select(-part_id, -sex) to omit the part_id and sex columns from the output - it's too wide otherwise.  We use the arrange(T_data) command to sort the heights by T-score prior to displaying them. Inspecting the output you see the order of the rows is the same as when we sorted by *z*-score.
 
 ```{r}
 height_data %>%
   select(-part_id, -sex) %>%
-  arrange(cm_height) %>%
+  arrange(T_data) %>%
   as.data.frame()
 ```
 
 
-When you examined the output above did you notice correspondence between *z*-scores and T-scores. Whenever a *z*-score was less than 0 the corresponding T-score for that person was less than 50. Both of these values indicate a person had a height lower than the mean for the reference group (the entire data set).
+When you examined the output above did you notice correspondence between *z*-scores and T-scores. Whenever a *z*-score was less than 0 the corresponding T-score for that person was less than 50. Both of these values indicate a person had a height lower than the mean, 193.3 cm, for the reference group (the entire data set).
 
 
 #### Summary
 
-
-We can obtain the mean for the cm, inches, *z*-score, and T-score columns with the command below:
+We can obtain the mean and standard deviation (population formula) for all numeric columns (i.e, the cm, inches, *z*-score, and T-score columns) using the summarise() command below.
 
 ```{r}
 desired_descriptives <- list(
@@ -590,28 +588,11 @@ summary_table_rounded <- summary_table %>%
 kableExtra::kable(summary_table_rounded)
 ```
 
-
-## Comparing scores
-
-We sort the scores by height with the command below:
-
-```{r}
-height_data %>%
-  select(-part_id, -sex) %>%
-  arrange(cm_height) %>%
-  as.data.frame()
-```
-
-Notice in the output above how all the people with heights below the mean of 173.3 cm have *z*-scores less than 0 and T-scores less than 50.
-
-
 ## Frame of references
-
 
 ### All participants
 
-
-In the above excercises we used the entire data set as our frame of reference. That is, the z_data column was calculated using the mean and standard deviation for all participants. These values are presented below:
+In the above exercises we used the entire data set as our frame of reference. That is, the *z*-score column, z_data, was calculated using the mean and standard deviation for the data set (i.e., all participants in the data set). These values are presented below:
 
 
 $$
@@ -621,7 +602,7 @@ S_X &= 8.013114 \\
 \end{aligned}
 $$
 
-These mean and standard deviation values were used to calculate John's *z*-score (and everyone else's *z*-scores too):
+Recall, that these mean and standard deviation values were used to calculate John's *z*-score (and everyone else's *z*-scores too):
 
 $$
 \begin{aligned}
@@ -636,17 +617,16 @@ $$
 
 ### Male reference
 
-Let's examine only the male participants for the next part of the exercise. We want to determine how tall each male is relative to other males. Instead of using entire data set as the frame of reference when we calculate z-scores we will use only males as the frame of reference.
+The frame of reference doesn't have to be the entire data set. Image we wanted to examine just the males in the data set. We could calculate a z-score using just the male data so the *z*-score would indicate how tall a male is **relative** to other other males. Depending on our research question it might be quite helpful to express male heights (i.e. male scores) in this way.
 
-
-We can obtain a data set with only the males by using the command below:
+Let's use only males as our frame of reference. We can do by creating a new data set that contains only the males from our original data set. Below we create a data set called male_height_data. The code uses the filter(sex == "male") command to obtain only the rows where the sex columns indicates the participant is male (notice the use of the double equals sign, ==, to indicate "is equal to").
 
 ```{r}
 male_height_data <- height_data %>%
   filter(sex == "male") 
 ```
 
-You can confirm we have only males in the data with this command:
+You can confirm we have only males in the new data set by inspecting the data. As before, to make the output easier to read we omit some columns from the output using the select() commmand. Additionaly, use use the arrange() command or sort the output by the cm_height column. The output confirms we only have male in the new data set.
 
 ```{r}
 male_height_data %>%
@@ -655,8 +635,7 @@ male_height_data %>%
   as.data.frame()
 ```
 
-We see the mean and standard deviation for males is:
-
+For this all male data set, we obtain the mean and standard standard deviation (population formula) for the cm_height column using the code below. You can see in the code below that by specifying, in the summarise() command, .cols = starts_with("cm_") that we obtain descriptive statistics only for columns that begin with cm_ (which is a single column).
 
 ```{r}
 desired_descriptives <- list(
@@ -671,6 +650,41 @@ male_height_data %>%
   as.data.frame() %>% t()
 ```
 
+In table form we see:
+
+
+```{r, echo = FALSE}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  sd_pop = ~sd_pop(.x),
+  N = ~sum(!is.na(.x))
+)
+
+row_sum <- male_height_data %>% 
+  select(-part_id, -sex, -T_data, -z_data) %>%
+  summarise(across(.cols = where(is.numeric),
+                   .fns =  desired_descriptives,
+                   .names = "{col}___{fn}"))
+
+long_summary <- row_sum %>%
+  pivot_longer(cols = everything(),
+               names_to = c("unit", "stat"),
+               names_sep = c("___"),
+               values_to = "value")
+
+summary_table <- long_summary %>% 
+  pivot_wider(names_from = stat,
+              values_from = value)
+
+# round to 3 decimals
+summary_table_rounded <- summary_table %>%
+  mutate(across(.cols = where(is.numeric),
+                .fns= round,
+                digits = 3)) %>%
+  as.data.frame()
+
+kableExtra::kable(summary_table_rounded)
+```
 
 #### Hand calculation
 

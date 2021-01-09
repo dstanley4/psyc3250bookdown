@@ -214,11 +214,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.7.2" data-path="scaling.html"><a href="scaling.html#z-scores"><i class="fa fa-check"></i><b>3.7.2</b> <em>z</em>-scores</a></li>
 <li class="chapter" data-level="3.7.3" data-path="scaling.html"><a href="scaling.html#t-scores"><i class="fa fa-check"></i><b>3.7.3</b> T-scores</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#comparing-scores"><i class="fa fa-check"></i><b>3.8</b> Comparing scores</a></li>
-<li class="chapter" data-level="3.9" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.9</b> Frame of references</a><ul>
-<li class="chapter" data-level="3.9.1" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.9.1</b> All participants</a></li>
-<li class="chapter" data-level="3.9.2" data-path="scaling.html"><a href="scaling.html#male-reference"><i class="fa fa-check"></i><b>3.9.2</b> Male reference</a></li>
-<li class="chapter" data-level="3.9.3" data-path="scaling.html"><a href="scaling.html#canadian-reference"><i class="fa fa-check"></i><b>3.9.3</b> Canadian reference</a></li>
+<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.8</b> Frame of references</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.8.1</b> All participants</a></li>
+<li class="chapter" data-level="3.8.2" data-path="scaling.html"><a href="scaling.html#male-reference"><i class="fa fa-check"></i><b>3.8.2</b> Male reference</a></li>
+<li class="chapter" data-level="3.8.3" data-path="scaling.html"><a href="scaling.html#canadian-reference"><i class="fa fa-check"></i><b>3.8.3</b> Canadian reference</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>4</b> Data Entry/Analysis</a><ul>
@@ -433,7 +432,7 @@ S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
 </div>
 <div id="summary-statistics" class="section level2">
 <h2><span class="header-section-number">3.6</span> Summary statistics</h2>
-<p>To obtain the mean and standard deviation (population formula) for each column in the data set we use the commands below. These are explained in the previous “Handling data with the tidyverse” chapter. You can see in the code below that by specifying .cols as “where(is.numeric)” that we obtain descriptive statistics for any numeric column.</p>
+<p>To obtain the mean and standard deviation (population formula) for each column in the data set we use the commands below. These are explained in the previous “Handling data with the tidyverse” chapter. You can see in the code below that by specifying, in the summarise() command, .cols = where(is.numeric) that we obtain descriptive statistics for any numeric column.</p>
 <div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="scaling.html#cb165-1"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
 <span id="cb165-2"><a href="scaling.html#cb165-2"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
 <span id="cb165-3"><a href="scaling.html#cb165-3"></a>  <span class="dt">sd_pop =</span> <span class="op">~</span><span class="kw">sd_pop</span>(.x)</span>
@@ -762,14 +761,13 @@ z_data
 <div id="t-scores" class="section level3">
 <h3><span class="header-section-number">3.7.3</span> T-scores</h3>
 <p>T-scores are simply another unit for representing scores. Do not confuse the T-score with the <em>t</em>-value in inferential statistics (a very different number).</p>
-<p>T-scores are very similar to <em>z</em>-scores - the provide scores for each person relative to a frame of reference. With <em>z</em>-scores we use 0 to indicate the mean of the frame of reference and 1.0 to indicate the standard deviation of the frame of reference. With T-scores we use 50 to indicate the mean of the frame of reference and 10 to indicate the standard deviation of the frame of reference.</p>
+<p>T-scores are very similar to <em>z</em>-scores - the provide scores for each person relative to a frame of reference. With <em>z</em>-scores we use 0 to indicate the mean of the frame of reference and 1 to indicate the standard deviation of the frame of reference. With T-scores we use 50 to indicate the mean of the frame of reference and 10 to indicate the standard deviation of the frame of reference.</p>
 <p>When T-scores are greater than 50 this indicates that a person is above the mean of the frame of reference; likewise, when a T-scores is less than 50 this indicates that a person is below the mean of the frame of reference. Every difference of 10 units from 50 represents a standard deviation. Thus, a person with a T-score of 60 is one standard deviation above the mean of the frame of reference.</p>
-<p>In we example our data we find that John has a height of 190 cm. We use the heights of the people in our data set as a frame of reference. To create a T-score for John we first need to convert his height in cm to a <em>z</em>-score. Following this, we convert his <em>z</em>-score to a T-score. Fortunately, we’ve already calculated John’s height in <em>z</em>-score form for this frame of reference as 2.084084. We convert that number (calculation below) to a T-score of
-70.84084. Because this T-score if greater than 50 we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the T-score is roughly 20 higher (i.e., 2* 10 higher) than 50 we know John is about 2 standard deviations taller than the mean for the frame of reference.</p>
+<p>In we examine our data we find that John has a height of 190 cm. We use the heights of the people in our data set as a frame of reference. To create a T-score for John we first need to convert his height in cm to a <em>z</em>-score. Following this, we convert his <em>z</em>-score to a T-score. Fortunately, we’ve already calculated John’s height in <em>z</em>-score form for this frame of reference as 2.084084. We convert that number (calculation below) to a T-score of 70.84084. Because this T-score if greater than 50 we know John is taller than the average person in the frame of reference (i.e, the people in our data set). Likewise, the magnitude of the T-score is roughly 20 higher (i.e., 2* 10 higher) than 50 we know John is about 2 standard deviations taller than the mean for the frame of reference.</p>
 <div id="hand-calculation-2" class="section level4">
 <h4><span class="header-section-number">3.7.3.1</span> Hand calculation</h4>
-<p>Let’s walk through converting John’s height as a <em>z</em>-score to a T-score. The score used our entire data set as the frame of reference - so that will be the frame of reference for the T-score as well.</p>
-<p>The generic formula for converting <em>z</em>-scores to T-scores is below. You can see that we simply multiply a <em>z</em>-score by 10 and add 50 to get a T-score for that same frame of reference.</p>
+<p>Let’s walk through converting John’s height as a <em>z</em>-score to a T-score. The <em>z</em>-score used our entire data set as the frame of reference - so that will be the frame of reference for the T-score as well.</p>
+<p>The generic formula for converting <em>z</em>-scores to T-scores is below. In this formula <span class="math inline">\(T_i\)</span> represents the new T-score whereas <span class="math inline">\(z_i\)</span> represents the previously calculated <em>z</em>-score for that person. We need to calculate the <em>z</em>-score as a first step in calculating a T-score. You can see that we simply multiply a <em>z</em>-score by 10 and add 50 to get a T-score. The resulting T-score has the same frame of reference as the <em>z</em>-score used to calculate it.</p>
 <p><span class="math display">\[
 \begin{aligned}
 T_i = z_i \times 10 + 50\\
@@ -788,13 +786,13 @@ T_i &amp;= z_i \times 10 + 50\\
 </div>
 <div id="r-calculation-2" class="section level4">
 <h4><span class="header-section-number">3.7.3.2</span> R calculation</h4>
-<p>We can use this same approach in R to convert all of the <em>z</em>-scores to T-scores. Notice how the mutate() command below is just the R version of the above formula for converting <em>z</em>-scores to T-scores.</p>
+<p>We can use this same approach in R to convert all of the <em>z</em>-scores to T-scores. We use the mutate() commmand to create a new column called T_data. We use this name to indicate the the frame of reference for the T-score is the data set (i.e., T_data). Notice how the mutate() command below is just the R version of the above formula for converting <em>z</em>-scores to T-scores.</p>
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="scaling.html#cb180-1"></a>height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
 <span id="cb180-2"><a href="scaling.html#cb180-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">T_data =</span>  z_data <span class="op">*</span><span class="st"> </span><span class="dv">10</span> <span class="op">+</span><span class="st"> </span><span class="dv">50</span> )</span></code></pre></div>
-<p>After running the above command, you can see everyone’s height as a T-score with the code below. We omit the sex column from the output (using the select() command) so there are not too many columns on your screen.</p>
+<p>After running the above command, we have a new column called T_data which contains the T-score for each person. We can use the code below to display the height data. We use the select command() - specifically select(-part_id, -sex) to omit the part_id and sex columns from the output - it’s too wide otherwise. We use the arrange(T_data) command to sort the heights by T-score prior to displaying them. Inspecting the output you see the order of the rows is the same as when we sorted by <em>z</em>-score.</p>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="scaling.html#cb181-1"></a>height_data <span class="op">%&gt;%</span></span>
 <span id="cb181-2"><a href="scaling.html#cb181-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex) <span class="op">%&gt;%</span></span>
-<span id="cb181-3"><a href="scaling.html#cb181-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
+<span id="cb181-3"><a href="scaling.html#cb181-3"></a><span class="st">  </span><span class="kw">arrange</span>(T_data) <span class="op">%&gt;%</span></span>
 <span id="cb181-4"><a href="scaling.html#cb181-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##        name cm_height inch_height   z_data T_data
 ## 1     Nancy       161       63.39 -1.53498  34.65
@@ -817,11 +815,11 @@ T_i &amp;= z_i \times 10 + 50\\
 ## 18     Rick       183       72.05  1.21052  62.11
 ## 19  Basheer       185       72.83  1.46011  64.60
 ## 20     John       190       74.80  2.08408  70.84</code></pre>
-<p>When you examined the output above did you notice correspondence between <em>z</em>-scores and T-scores. Whenever a <em>z</em>-score was less than 0 the corresponding T-score for that person was less than 50. Both of these values indicate a person had a height lower than the mean for the reference group (the entire data set).</p>
+<p>When you examined the output above did you notice correspondence between <em>z</em>-scores and T-scores. Whenever a <em>z</em>-score was less than 0 the corresponding T-score for that person was less than 50. Both of these values indicate a person had a height lower than the mean, 193.3 cm, for the reference group (the entire data set).</p>
 </div>
 <div id="summary-2" class="section level4">
 <h4><span class="header-section-number">3.7.3.3</span> Summary</h4>
-<p>We can obtain the mean for the cm, inches, <em>z</em>-score, and T-score columns with the command below:</p>
+<p>We can obtain the mean and standard deviation (population formula) for all numeric columns (i.e, the cm, inches, <em>z</em>-score, and T-score columns) using the summarise() command below.</p>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="scaling.html#cb183-1"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
 <span id="cb183-2"><a href="scaling.html#cb183-2"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
 <span id="cb183-3"><a href="scaling.html#cb183-3"></a>  <span class="dt">sd_pop =</span> <span class="op">~</span><span class="kw">sd_pop</span>(.x)</span>
@@ -922,48 +920,18 @@ T_data
 </div>
 </div>
 </div>
-<div id="comparing-scores" class="section level2">
-<h2><span class="header-section-number">3.8</span> Comparing scores</h2>
-<p>We sort the scores by height with the command below:</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="scaling.html#cb185-1"></a>height_data <span class="op">%&gt;%</span></span>
-<span id="cb185-2"><a href="scaling.html#cb185-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex) <span class="op">%&gt;%</span></span>
-<span id="cb185-3"><a href="scaling.html#cb185-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
-<span id="cb185-4"><a href="scaling.html#cb185-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##        name cm_height inch_height   z_data T_data
-## 1     Nancy       161       63.39 -1.53498  34.65
-## 2     Aisha       161       63.39 -1.53498  34.65
-## 3     Megan       161       63.39 -1.53498  34.65
-## 4     Steve       165       64.96 -1.03580  39.64
-## 5   Natalie       165       64.96 -1.03580  39.64
-## 6     Maggy       169       66.54 -0.53662  44.63
-## 7  Jennifer       169       66.54 -0.53662  44.63
-## 8      Saba       172       67.72 -0.16223  48.38
-## 9       Tim       173       68.11 -0.03744  49.63
-## 10     Katy       173       68.11 -0.03744  49.63
-## 11      Eli       174       68.50  0.08736  50.87
-## 12     Jane       174       68.50  0.08736  50.87
-## 13      Sue       174       68.50  0.08736  50.87
-## 14      Jim       179       70.47  0.71133  57.11
-## 15    Jamal       179       70.47  0.71133  57.11
-## 16     Sean       179       70.47  0.71133  57.11
-## 17     Matt       180       70.87  0.83613  58.36
-## 18     Rick       183       72.05  1.21052  62.11
-## 19  Basheer       185       72.83  1.46011  64.60
-## 20     John       190       74.80  2.08408  70.84</code></pre>
-<p>Notice in the output above how all the people with heights below the mean of 173.3 cm have <em>z</em>-scores less than 0 and T-scores less than 50.</p>
-</div>
 <div id="frame-of-references" class="section level2">
-<h2><span class="header-section-number">3.9</span> Frame of references</h2>
+<h2><span class="header-section-number">3.8</span> Frame of references</h2>
 <div id="all-participants" class="section level3">
-<h3><span class="header-section-number">3.9.1</span> All participants</h3>
-<p>In the above excercises we used the entire data set as our frame of reference. That is, the z_data column was calculated using the mean and standard deviation for all participants. These values are presented below:</p>
+<h3><span class="header-section-number">3.8.1</span> All participants</h3>
+<p>In the above exercises we used the entire data set as our frame of reference. That is, the <em>z</em>-score column, z_data, was calculated using the mean and standard deviation for the data set (i.e., all participants in the data set). These values are presented below:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \overline{X} &amp;= 173.3 \\
 S_X &amp;= 8.013114 \\
 \end{aligned}
 \]</span></p>
-<p>These mean and standard deviation values were used to calculate John’s <em>z</em>-score (and everyone else’s <em>z</em>-scores too):</p>
+<p>Recall, that these mean and standard deviation values were used to calculate John’s <em>z</em>-score (and everyone else’s <em>z</em>-scores too):</p>
 <p><span class="math display">\[
 \begin{aligned}
 z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
@@ -975,16 +943,16 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 \]</span></p>
 </div>
 <div id="male-reference" class="section level3">
-<h3><span class="header-section-number">3.9.2</span> Male reference</h3>
-<p>Let’s examine only the male participants for the next part of the exercise. We want to determine how tall each male is relative to other males. Instead of using entire data set as the frame of reference when we calculate z-scores we will use only males as the frame of reference.</p>
-<p>We can obtain a data set with only the males by using the command below:</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="scaling.html#cb187-1"></a>male_height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
-<span id="cb187-2"><a href="scaling.html#cb187-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;male&quot;</span>) </span></code></pre></div>
-<p>You can confirm we have only males in the data with this command:</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="scaling.html#cb188-1"></a>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb188-2"><a href="scaling.html#cb188-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data) <span class="op">%&gt;%</span></span>
-<span id="cb188-3"><a href="scaling.html#cb188-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
-<span id="cb188-4"><a href="scaling.html#cb188-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<h3><span class="header-section-number">3.8.2</span> Male reference</h3>
+<p>The frame of reference doesn’t have to be the entire data set. Image we wanted to examine just the males in the data set. We could calculate a z-score using just the male data so the <em>z</em>-score would indicate how tall a male is <strong>relative</strong> to other other males. Depending on our research question it might be quite helpful to express male heights (i.e. male scores) in this way.</p>
+<p>Let’s use only males as our frame of reference. We can do by creating a new data set that contains only the males from our original data set. Below we create a data set called male_height_data. The code uses the filter(sex == “male”) command to obtain only the rows where the sex columns indicates the participant is male (notice the use of the double equals sign, ==, to indicate “is equal to”).</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="scaling.html#cb185-1"></a>male_height_data &lt;-<span class="st"> </span>height_data <span class="op">%&gt;%</span></span>
+<span id="cb185-2"><a href="scaling.html#cb185-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;male&quot;</span>) </span></code></pre></div>
+<p>You can confirm we have only males in the new data set by inspecting the data. As before, to make the output easier to read we omit some columns from the output using the select() commmand. Additionaly, use use the arrange() command or sort the output by the cm_height column. The output confirms we only have male in the new data set.</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="scaling.html#cb186-1"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb186-2"><a href="scaling.html#cb186-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data) <span class="op">%&gt;%</span></span>
+<span id="cb186-3"><a href="scaling.html#cb186-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
+<span id="cb186-4"><a href="scaling.html#cb186-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##       name cm_height inch_height   z_data
 ## 1    Steve       165       64.96 -1.03580
 ## 2      Tim       173       68.11 -0.03744
@@ -996,22 +964,71 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 ## 8     Rick       183       72.05  1.21052
 ## 9  Basheer       185       72.83  1.46011
 ## 10    John       190       74.80  2.08408</code></pre>
-<p>We see the mean and standard deviation for males is:</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="scaling.html#cb190-1"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
-<span id="cb190-2"><a href="scaling.html#cb190-2"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb190-3"><a href="scaling.html#cb190-3"></a>  <span class="dt">sd_pop =</span> <span class="op">~</span><span class="kw">sd_pop</span>(.x)</span>
-<span id="cb190-4"><a href="scaling.html#cb190-4"></a>)</span>
-<span id="cb190-5"><a href="scaling.html#cb190-5"></a></span>
-<span id="cb190-6"><a href="scaling.html#cb190-6"></a>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb190-7"><a href="scaling.html#cb190-7"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;cm_&quot;</span>),</span>
-<span id="cb190-8"><a href="scaling.html#cb190-8"></a>                     <span class="dt">.fns =</span> desired_descriptives,</span>
-<span id="cb190-9"><a href="scaling.html#cb190-9"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb190-10"><a href="scaling.html#cb190-10"></a><span class="st">  </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">t</span>()</span></code></pre></div>
+<p>For this all male data set, we obtain the mean and standard standard deviation (population formula) for the cm_height column using the code below. You can see in the code below that by specifying, in the summarise() command, .cols = starts_with(“cm_”) that we obtain descriptive statistics only for columns that begin with cm_ (which is a single column).</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="scaling.html#cb188-1"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
+<span id="cb188-2"><a href="scaling.html#cb188-2"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb188-3"><a href="scaling.html#cb188-3"></a>  <span class="dt">sd_pop =</span> <span class="op">~</span><span class="kw">sd_pop</span>(.x)</span>
+<span id="cb188-4"><a href="scaling.html#cb188-4"></a>)</span>
+<span id="cb188-5"><a href="scaling.html#cb188-5"></a></span>
+<span id="cb188-6"><a href="scaling.html#cb188-6"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb188-7"><a href="scaling.html#cb188-7"></a><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;cm_&quot;</span>),</span>
+<span id="cb188-8"><a href="scaling.html#cb188-8"></a>                     <span class="dt">.fns =</span> desired_descriptives,</span>
+<span id="cb188-9"><a href="scaling.html#cb188-9"></a>                     <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb188-10"><a href="scaling.html#cb188-10"></a><span class="st">  </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">t</span>()</span></code></pre></div>
 <pre><code>##                     [,1]
 ## cm_height_mean   178.700
 ## cm_height_sd_pop   6.558</code></pre>
+<p>In table form we see:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+unit
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd_pop
+</th>
+<th style="text-align:right;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+cm_height
+</td>
+<td style="text-align:right;">
+178.70
+</td>
+<td style="text-align:right;">
+6.558
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+inch_height
+</td>
+<td style="text-align:right;">
+70.35
+</td>
+<td style="text-align:right;">
+2.582
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+</tbody>
+</table>
 <div id="hand-calculation-3" class="section level4">
-<h4><span class="header-section-number">3.9.2.1</span> Hand calculation</h4>
+<h4><span class="header-section-number">3.8.2.1</span> Hand calculation</h4>
 <p>Thus, for males only:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1031,13 +1048,13 @@ z_i &amp;= \frac{X_i - \overline{X_{males}}}{S_{males}}\\
 \]</span></p>
 </div>
 <div id="r-calculation-3" class="section level4">
-<h4><span class="header-section-number">3.9.2.2</span> R calculation</h4>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="scaling.html#cb192-1"></a>male_height_data &lt;-<span class="st"> </span>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb192-2"><a href="scaling.html#cb192-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_data_males =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="fl">178.7</span>)<span class="op">/</span><span class="st"> </span><span class="fl">6.5582</span>  )</span></code></pre></div>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="scaling.html#cb193-1"></a>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb193-2"><a href="scaling.html#cb193-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
-<span id="cb193-3"><a href="scaling.html#cb193-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
-<span id="cb193-4"><a href="scaling.html#cb193-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<h4><span class="header-section-number">3.8.2.2</span> R calculation</h4>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="scaling.html#cb190-1"></a>male_height_data &lt;-<span class="st"> </span>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb190-2"><a href="scaling.html#cb190-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_data_males =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="fl">178.7</span>)<span class="op">/</span><span class="st"> </span><span class="fl">6.5582</span>  )</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="scaling.html#cb191-1"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb191-2"><a href="scaling.html#cb191-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
+<span id="cb191-3"><a href="scaling.html#cb191-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
+<span id="cb191-4"><a href="scaling.html#cb191-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##       name cm_height   z_data z_data_males
 ## 1    Steve       165 -1.03580     -2.08899
 ## 2      Tim       173 -0.03744     -0.86914
@@ -1114,7 +1131,7 @@ z_data_males
 </div>
 </div>
 <div id="canadian-reference" class="section level3">
-<h3><span class="header-section-number">3.9.3</span> Canadian reference</h3>
+<h3><span class="header-section-number">3.8.3</span> Canadian reference</h3>
 <p><span class="math display">\[
 \begin{aligned}
 \overline{X_{males_canada}} &amp;= 176.1 \\
@@ -1122,7 +1139,7 @@ S_{males_canada} &amp;= 7.20 \\
 \end{aligned}
 \]</span></p>
 <div id="hand-calculation-4" class="section level4">
-<h4><span class="header-section-number">3.9.3.1</span> Hand calculation</h4>
+<h4><span class="header-section-number">3.8.3.1</span> Hand calculation</h4>
 <p><span class="math display">\[
 \begin{aligned}
 z_i &amp;= \frac{X_i - \overline{X_{males_canada}}}{S_{males_canada}}\\
@@ -1134,19 +1151,19 @@ z_i &amp;= \frac{X_i - \overline{X_{males_canada}}}{S_{males_canada}}\\
 \]</span></p>
 </div>
 <div id="r-calculation-4" class="section level4">
-<h4><span class="header-section-number">3.9.3.2</span> R calculation</h4>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="scaling.html#cb195-1"></a>male_height_data &lt;-<span class="st"> </span>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb195-2"><a href="scaling.html#cb195-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_canada_males =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="fl">176.1</span>)<span class="op">/</span><span class="st"> </span><span class="fl">7.20</span>  )</span></code></pre></div>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="scaling.html#cb196-1"></a>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb196-2"><a href="scaling.html#cb196-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
-<span id="cb196-3"><a href="scaling.html#cb196-3"></a><span class="st">  </span><span class="kw">filter</span>(name <span class="op">==</span><span class="st"> &quot;John&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb196-4"><a href="scaling.html#cb196-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<h4><span class="header-section-number">3.8.3.2</span> R calculation</h4>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="scaling.html#cb193-1"></a>male_height_data &lt;-<span class="st"> </span>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb193-2"><a href="scaling.html#cb193-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_canada_males =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="fl">176.1</span>)<span class="op">/</span><span class="st"> </span><span class="fl">7.20</span>  )</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="scaling.html#cb194-1"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb194-2"><a href="scaling.html#cb194-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
+<span id="cb194-3"><a href="scaling.html#cb194-3"></a><span class="st">  </span><span class="kw">filter</span>(name <span class="op">==</span><span class="st"> &quot;John&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb194-4"><a href="scaling.html#cb194-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##   name cm_height z_data z_data_males z_canada_males
 ## 1 John       190  2.084        1.723          1.931</code></pre>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="scaling.html#cb198-1"></a>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb198-2"><a href="scaling.html#cb198-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
-<span id="cb198-3"><a href="scaling.html#cb198-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
-<span id="cb198-4"><a href="scaling.html#cb198-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="scaling.html#cb196-1"></a>male_height_data <span class="op">%&gt;%</span></span>
+<span id="cb196-2"><a href="scaling.html#cb196-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
+<span id="cb196-3"><a href="scaling.html#cb196-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
+<span id="cb196-4"><a href="scaling.html#cb196-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##       name cm_height   z_data z_data_males z_canada_males
 ## 1    Steve       165 -1.03580     -2.08899        -1.5417
 ## 2      Tim       173 -0.03744     -0.86914        -0.4306
