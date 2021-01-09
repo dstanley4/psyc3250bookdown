@@ -438,7 +438,7 @@ We can see this information presented in table form below (decimals adjusted). Y
 
 A special case: Also notice that when we use the data set itself as the frame of reference something interesting happens with *z*-scores. Specifically, the *z*-score column has a mean of zero and a standard deviation of 1.0. This won't always be the case. 
 
-Consider two different situations. In situation 1, imagine we obtained a subset of the people in our the current data set (after the *z*-scores were calculated). If we were to calculate, for the this subset of people, the mean and standard deviation of the *z*-score column the values would not be 0 and 1, respectively. In situation 2, imagine we have the full data set, and the we calculated *z*-scores using a different frame of reference. That is we used a mean and standard deviation as frame of reference there were not obtained from our data. In this scenario, if we calculated *z*-scores for everyone, the mean and standard deviation of the *z*-score column would likely not be 0 and 1, respectively.
+Consider two different situations. In situation 1, imagine we obtained a subset of the people in our the current data set (after the *z*-scores were calculated). If we were to calculate, for the this subset of people, the mean and standard deviation of the *z*-score column the values would not be 0 and 1, respectively. In situation 2, imagine we have the full data set, and the we calculated *z*-scores using a different frame of reference. That is we used a mean and standard deviation as the frame of reference there were not obtained from our data. In this scenario, if we calculated *z*-scores for everyone, the mean and standard deviation of the *z*-score column would likely not be 0 and 1, respectively.
 
 
 
@@ -712,6 +712,8 @@ $$
 
 #### R calculation
 
+
+
 We can use R to calculate the *z*-score for our male only data set. We are using the mutate() command to create a new colum called z_data_males. We use this column name to reflect the fact that the we are using males from our data set as frame of reference for the new *z*-score column.  Also notice how the formula in the mutate() command corresponds to the formula used in the hand calculation above.
 
 
@@ -777,10 +779,14 @@ kableExtra::kable(summary_table_rounded)
 
 ### Canadian reference
 
+So far we have used two frame of two frames of reference: the entire data and just males from the data set. Now let's move on and consider a frame of reference that is not based our data.
+
+Imagine that Statistics Canada has a database of the heights of all Canada Canadian males. In psychology, we would refer to this type of database as containing the normative information for height or the height norms. Examining this data from all Canadian males we find the mean and standard deviation below (I made up these values):
+
 
 $$
 \begin{aligned}
-\overline{X_{males_canada}} &= 176.1 \\
+\overline{X_{males_canada}} &= 186.1 \\
 S_{males_canada} &= 7.20 \\
 \end{aligned}
 $$
@@ -788,33 +794,33 @@ $$
 
 #### Hand calculation
 
+We can use the normative information from all Canadian males to calculate a *z*-score for John uses **Canadian males as the frame of reference**. We do so with the hand calculation below:
+
 $$
 \begin{aligned}
 z_i &= \frac{X_i - \overline{X_{males_canada}}}{S_{males_canada}}\\
 &= \frac{\text{(John's height in cm)} - \overline{X_{males_canada}}}{S_{males_canada}}\\
-&= \frac{190 - 176.1}{7.20}\\
-&= \frac{13.9}{7.20}\\
-&= 1.930556\\
+&= \frac{190 - 186.1}{7.20}\\
+&= \frac{3.9}{7.20}\\
+&= 0.5416667\\
 \end{aligned}
 $$
 
 
+We see that relative to Canadian males John's *z*-score is 0.5416667. That means that relative to Canadian males is 0.54 standard deviations taller than the mean.
+
 #### R calculation
 
+We can use R to calculate the *z*-score for each male in our data set **relative to all Canadian males** (i.e., relative to the height norms for males).  We are using the mutate() command to create a new colum called z_canada_males We use this column name to reflect the fact that the we are using all Canadian males as the frame of reference for the new *z*-score column.  Also notice how the formula in the mutate() command corresponds to the formula used in the hand calculation above.
 
 ```{r}
 
 male_height_data <- male_height_data %>%
-  mutate(z_canada_males = (cm_height - 176.1)/ 7.20  )
+  mutate(z_canada_male = (cm_height - 186.1)/ 7.20  )
 ```
 
-```{r}
-male_height_data %>%
-  select(-part_id, -sex, -T_data, -inch_height) %>%
-  filter(name == "John") %>%
-  as.data.frame()
-```
 
+We see the new z_canada_male column (and the old *z*-score columns) with the code below.
 
 ```{r}
 male_height_data %>%
@@ -823,8 +829,26 @@ male_height_data %>%
   as.data.frame()
 ```
 
+Examine the table above table above and contrast the values of the z_data, z_data_male, and z_canada_male columns. Each column index the height of the males in our data set relative to a different frame of reference.
+
+We can can consider the values for a single person, Sean, by using the filter command below:
+
+
+```{r}
+male_height_data %>%
+  filter(name == "Sean") %>%
+  select(-part_id, -sex, -T_data, -inch_height) %>%
+  arrange(cm_height) %>%
+  as.data.frame()
+```
+
+Examine Sean's *z*-scores in the output above. When we consider Sean's height relative to everyone in the data set he is 0.7113 above the mean. That is, relative to everyone in the data set Sean is slightly tall. But when we consider Sean's height relative to only males in the data set he is 0.04575 standard deviations above the mean. That is when considering only males in the data set Sean is roughly average in height (0.04575 is very close to 0; or roughly 0). In contrast, when we consider Sean's height relative to all Canadian males we obtain a *z*-score of -0.9861. This indicates that relative to all Canadian males Sean is almost 1 standard deviation below the mean. That is, relative to all Canadian males Sean is somewhat short. 
+
+The value of *z*-score is that they provide you with a number that allows easily consider a person's score relative to a frame of reference.
 
 #### Summary
+
+If you inspect the summary table below you see the z_canada_male column has a mean of -1.028. This indicate that the average height of the males in our data set is 1.028 standard deviations below the mean height for Canadian males. Consequently, relative to all Canadian males, the males in our sample tend to be short.
 
 
 ```{r, echo = FALSE}
