@@ -102,9 +102,11 @@ all-participants
 male-reference
 hand-calculation-3
 r-calculation-3
+summary-3
 canadian-reference
 hand-calculation-4
 r-calculation-4
+summary-4
 data-entryanalysis
 required-packages
 objective-1

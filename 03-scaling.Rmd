@@ -630,7 +630,7 @@ You can confirm we have only males in the new data set by inspecting the data. A
 
 ```{r}
 male_height_data %>%
-  select(-part_id, -sex, -T_data) %>%
+  select(-part_id, -T_data) %>%
   arrange(cm_height) %>%
   as.data.frame()
 ```
@@ -687,7 +687,7 @@ kableExtra::kable(summary_table_rounded)
 
 #### Hand calculation
 
-Thus, for males only:
+To calculate a z-score using a male only frame of reference we need the mean and standard deviation (population formula) for males. These are presented below.
 
 $$
 \begin{aligned}
@@ -696,10 +696,7 @@ S_{males} &= 6.558 \\
 \end{aligned}
 $$
 
-
-
 Previously, when we used the whole data set as a frame of reference we found that John's *z*-score was 2.084084. But now we want to calculate a *z*-score for John using only the males as a frame of reference. Therefore, we calculate his *z*-score using the mean and standard deviation for only males; as illustrated below:
-
 
 $$
 \begin{aligned}
@@ -715,6 +712,8 @@ $$
 
 #### R calculation
 
+We can use R to calculate the *z*-score for our male only data set. We are using the mutate() command to create a new colum called z_data_males. We use this column name to reflect the fact that the we are using males from our data set as frame of reference for the new *z*-score column.  Also notice how the formula in the mutate() command corresponds to the formula used in the hand calculation above.
+
 
 ```{r}
 
@@ -723,13 +722,23 @@ male_height_data <- male_height_data %>%
 ```
 
 
+Once we have obtained the *z*-scores for males we can inspect them on the screen. We do so with the code below. In this code we use the select() command to omit a number of columns and focus on only the ones we are currently interested in. Likewise, we use arrange(z_data_males) to sort the data the z_data_males column.
+
 ```{r}
 male_height_data %>%
-  select(-part_id, -sex, -T_data, -inch_height) %>%
-  arrange(cm_height) %>%
+  select(-part_id, -T_data, -inch_height) %>%
+  arrange(z_data_males) %>%
   as.data.frame()
 ```
 
+
+Examine the last row of this sorted data set to see the two *z*-scores for John. When we used the entire data set as the frame of reference (z_data) John's height was 2.08408. This value indicates that **relative to the entire data set (males and females)** John is 2.08408 standard deviations taller than the mean height for the data set. However, when we calculated a *z*-score for John **relative to only males**, the z_data_male column, his height is represented by a *z*-score of 1.72309. This indicates that John is 1.72309 standard deviations taller than the mean height for males. So relative to everyone John's height is 2.08408 but relative to only males John's height is 1.72309. John's height is the same in both cases - only the frame of reference has changed. These two frames of reference allow us to see that relative to everyone (males and females) John is taller than when his height is considered in the context of only males (2.08408 vs 1.72309, respectively). Thus, we might think of John as an extraordinarily tall person in the context of everyone (males/females) in data set but as a somewhat large person in the context of the males in the data set. 
+
+Take a moment examine the *z*-scores for Basheer and Sean. Notice the large difference between z_data and z_data_male for these two individuals.
+
+#### Summary
+
+For this male only data set, we can see the summary statistics below. Notice how the mean and standard deviation for the z_data column are no longer 0 and 1, respectively. These new values occur because we are examining a subset of the entire data set. In contrast, notice how for the z_data_male column the mean and standard deviation are 0 and 1.
 
 
 ```{r, echo = FALSE}
@@ -815,6 +824,7 @@ male_height_data %>%
 ```
 
 
+#### Summary
 
 
 ```{r, echo = FALSE}

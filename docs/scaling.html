@@ -950,20 +950,20 @@ z_i &amp;= \frac{X_i - \overline{X}}{S_X}\\
 <span id="cb185-2"><a href="scaling.html#cb185-2"></a><span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;male&quot;</span>) </span></code></pre></div>
 <p>You can confirm we have only males in the new data set by inspecting the data. As before, to make the output easier to read we omit some columns from the output using the select() commmand. Additionaly, use use the arrange() command or sort the output by the cm_height column. The output confirms we only have male in the new data set.</p>
 <div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="scaling.html#cb186-1"></a>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb186-2"><a href="scaling.html#cb186-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data) <span class="op">%&gt;%</span></span>
+<span id="cb186-2"><a href="scaling.html#cb186-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>T_data) <span class="op">%&gt;%</span></span>
 <span id="cb186-3"><a href="scaling.html#cb186-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
 <span id="cb186-4"><a href="scaling.html#cb186-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##       name cm_height inch_height   z_data
-## 1    Steve       165       64.96 -1.03580
-## 2      Tim       173       68.11 -0.03744
-## 3      Eli       174       68.50  0.08736
-## 4      Jim       179       70.47  0.71133
-## 5    Jamal       179       70.47  0.71133
-## 6     Sean       179       70.47  0.71133
-## 7     Matt       180       70.87  0.83613
-## 8     Rick       183       72.05  1.21052
-## 9  Basheer       185       72.83  1.46011
-## 10    John       190       74.80  2.08408</code></pre>
+<pre><code>##       name  sex cm_height inch_height   z_data
+## 1    Steve male       165       64.96 -1.03580
+## 2      Tim male       173       68.11 -0.03744
+## 3      Eli male       174       68.50  0.08736
+## 4      Jim male       179       70.47  0.71133
+## 5    Jamal male       179       70.47  0.71133
+## 6     Sean male       179       70.47  0.71133
+## 7     Matt male       180       70.87  0.83613
+## 8     Rick male       183       72.05  1.21052
+## 9  Basheer male       185       72.83  1.46011
+## 10    John male       190       74.80  2.08408</code></pre>
 <p>For this all male data set, we obtain the mean and standard standard deviation (population formula) for the cm_height column using the code below. You can see in the code below that by specifying, in the summarise() command, .cols = starts_with(“cm_”) that we obtain descriptive statistics only for columns that begin with cm_ (which is a single column).</p>
 <div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="scaling.html#cb188-1"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
 <span id="cb188-2"><a href="scaling.html#cb188-2"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
@@ -1029,7 +1029,7 @@ inch_height
 </table>
 <div id="hand-calculation-3" class="section level4">
 <h4><span class="header-section-number">3.8.2.1</span> Hand calculation</h4>
-<p>Thus, for males only:</p>
+<p>To calculate a z-score using a male only frame of reference we need the mean and standard deviation (population formula) for males. These are presented below.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \overline{X_{males}} &amp;= 178.7 \\
@@ -1049,23 +1049,31 @@ z_i &amp;= \frac{X_i - \overline{X_{males}}}{S_{males}}\\
 </div>
 <div id="r-calculation-3" class="section level4">
 <h4><span class="header-section-number">3.8.2.2</span> R calculation</h4>
+<p>We can use R to calculate the <em>z</em>-score for our male only data set. We are using the mutate() command to create a new colum called z_data_males. We use this column name to reflect the fact that the we are using males from our data set as frame of reference for the new <em>z</em>-score column. Also notice how the formula in the mutate() command corresponds to the formula used in the hand calculation above.</p>
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="scaling.html#cb190-1"></a>male_height_data &lt;-<span class="st"> </span>male_height_data <span class="op">%&gt;%</span></span>
 <span id="cb190-2"><a href="scaling.html#cb190-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">z_data_males =</span> (cm_height <span class="op">-</span><span class="st"> </span><span class="fl">178.7</span>)<span class="op">/</span><span class="st"> </span><span class="fl">6.558</span>  )</span></code></pre></div>
+<p>Once we have obtained the <em>z</em>-scores for males we can inspect them on the screen. We do so with the code below. In this code we use the select() command to omit a number of columns and focus on only the ones we are currently interested in. Likewise, we use arrange(z_data_males) to sort the data the z_data_males column.</p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="scaling.html#cb191-1"></a>male_height_data <span class="op">%&gt;%</span></span>
-<span id="cb191-2"><a href="scaling.html#cb191-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>sex, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
-<span id="cb191-3"><a href="scaling.html#cb191-3"></a><span class="st">  </span><span class="kw">arrange</span>(cm_height) <span class="op">%&gt;%</span></span>
+<span id="cb191-2"><a href="scaling.html#cb191-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>part_id, <span class="op">-</span>T_data, <span class="op">-</span>inch_height) <span class="op">%&gt;%</span></span>
+<span id="cb191-3"><a href="scaling.html#cb191-3"></a><span class="st">  </span><span class="kw">arrange</span>(z_data_males) <span class="op">%&gt;%</span></span>
 <span id="cb191-4"><a href="scaling.html#cb191-4"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
-<pre><code>##       name cm_height   z_data z_data_males
-## 1    Steve       165 -1.03580     -2.08905
-## 2      Tim       173 -0.03744     -0.86917
-## 3      Eli       174  0.08736     -0.71668
-## 4      Jim       179  0.71133      0.04575
-## 5    Jamal       179  0.71133      0.04575
-## 6     Sean       179  0.71133      0.04575
-## 7     Matt       180  0.83613      0.19823
-## 8     Rick       183  1.21052      0.65569
-## 9  Basheer       185  1.46011      0.96066
-## 10    John       190  2.08408      1.72309</code></pre>
+<pre><code>##       name  sex cm_height   z_data z_data_males
+## 1    Steve male       165 -1.03580     -2.08905
+## 2      Tim male       173 -0.03744     -0.86917
+## 3      Eli male       174  0.08736     -0.71668
+## 4      Jim male       179  0.71133      0.04575
+## 5    Jamal male       179  0.71133      0.04575
+## 6     Sean male       179  0.71133      0.04575
+## 7     Matt male       180  0.83613      0.19823
+## 8     Rick male       183  1.21052      0.65569
+## 9  Basheer male       185  1.46011      0.96066
+## 10    John male       190  2.08408      1.72309</code></pre>
+<p>Examine the last row of this sorted data set to see the two <em>z</em>-scores for John. When we used the entire data set as the frame of reference (z_data) John’s height was 2.08408. This value indicates that <strong>relative to the entire data set (males and females)</strong> John is 2.08408 standard deviations taller than the mean height for the data set. However, when we calculated a <em>z</em>-score for John <strong>relative to only males</strong>, the z_data_male column, his height is represented by a <em>z</em>-score of 1.72309. This indicates that John is 1.72309 standard deviations taller than the mean height for males. So relative to everyone John’s height is 2.08408 but relative to only males John’s height is 1.72309. John’s height is the same in both cases - only the frame of reference has changed. These two frames of reference allow us to see that relative to everyone (males and females) John is taller than when his height is considered in the context of only males (2.08408 vs 1.72309, respectively). Thus, we might think of John as an extraordinarily tall person in the context of everyone (males/females) in data set but as a somewhat large person in the context of the males in the data set.</p>
+<p>Take a moment examine the <em>z</em>-scores for Basheer and Sean. Notice the large difference between z_data and z_data_male for these two individuals.</p>
+</div>
+<div id="summary-3" class="section level4">
+<h4><span class="header-section-number">3.8.2.3</span> Summary</h4>
+<p>For this male only data set, we can see the summary statistics below. Notice how the mean and standard deviation for the z_data column are no longer 0 and 1, respectively. These new values occur because we are examining a subset of the entire data set. In contrast, notice how for the z_data_male column the mean and standard deviation are 0 and 1.</p>
 <table>
 <thead>
 <tr>
@@ -1175,6 +1183,9 @@ z_i &amp;= \frac{X_i - \overline{X_{males_canada}}}{S_{males_canada}}\\
 ## 8     Rick       183  1.21052      0.65569         0.9583
 ## 9  Basheer       185  1.46011      0.96066         1.2361
 ## 10    John       190  2.08408      1.72309         1.9306</code></pre>
+</div>
+<div id="summary-4" class="section level4">
+<h4><span class="header-section-number">3.8.3.3</span> Summary</h4>
 <table>
 <thead>
 <tr>
