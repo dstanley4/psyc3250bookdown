@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2021-01-09" />
+<meta name="date" content="2021-01-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="scaling.html"/>
 <link rel="next" href="references.html"/>
+<script src="libs/header-attrs/header-attrs.js"></script>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -50,24 +51,22 @@
 
 
 
-<script src="libs/accessible-code-block/empty-anchor.js"></script>
 <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,107 +137,128 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course:</a></li>
 <li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#software-choice"><i class="fa fa-check"></i><b>1.3</b> Software Choice</a><ul>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#software-choice"><i class="fa fa-check"></i><b>1.3</b> Software Choice</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#mac"><i class="fa fa-check"></i><b>1.3.1</b> Mac</a></li>
 <li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#pc"><i class="fa fa-check"></i><b>1.3.2</b> PC</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#begin-with-an-rstudio-project"><i class="fa fa-check"></i><b>1.4</b> Begin with an RStudio Project</a></li>
-<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a>
+<ul>
 <li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
 <li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a>
+<ul>
 <li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
 <li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
 <li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
 <li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
 <li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a>
+<ul>
 <li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a>
+<ul>
 <li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
 <li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
 <li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
 <li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
 <li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
 </ul></li>
-<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a>
+<ul>
 <li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
 <li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
 <li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
 </ul></li>
 <li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
-<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a>
+<ul>
 <li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
 </ul></li>
 <li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#revisiting-read_csv"><i class="fa fa-check"></i><b>1.12</b> Revisiting read_csv()</a></li>
 <li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.13</b> That’s it!</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
 <li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
 <li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
-<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
 <li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
 <li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
 <li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
 <li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
 <li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
 <li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
 </ul></li>
 <li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
-<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a>
+<ul>
 <li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
 <li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv() and data frames</a></li>
 <li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv() and tibbles</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="scaling.html"><a href="scaling.html"><i class="fa fa-check"></i><b>3</b> Scaling</a><ul>
+<li class="chapter" data-level="3" data-path="scaling.html"><a href="scaling.html"><i class="fa fa-check"></i><b>3</b> Scaling</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="scaling.html"><a href="scaling.html#notation"><i class="fa fa-check"></i><b>3.1</b> Notation</a></li>
 <li class="chapter" data-level="3.2" data-path="scaling.html"><a href="scaling.html#measurement-notation"><i class="fa fa-check"></i><b>3.2</b> Measurement Notation</a></li>
 <li class="chapter" data-level="3.3" data-path="scaling.html"><a href="scaling.html#data-entry"><i class="fa fa-check"></i><b>3.3</b> Data entry</a></li>
 <li class="chapter" data-level="3.4" data-path="scaling.html"><a href="scaling.html#loading-data"><i class="fa fa-check"></i><b>3.4</b> Loading data</a></li>
 <li class="chapter" data-level="3.5" data-path="scaling.html"><a href="scaling.html#viewing-data"><i class="fa fa-check"></i><b>3.5</b> Viewing data</a></li>
 <li class="chapter" data-level="3.6" data-path="scaling.html"><a href="scaling.html#summary-statistics"><i class="fa fa-check"></i><b>3.6</b> Summary statistics</a></li>
-<li class="chapter" data-level="3.7" data-path="scaling.html"><a href="scaling.html#converting-units"><i class="fa fa-check"></i><b>3.7</b> Converting units</a><ul>
+<li class="chapter" data-level="3.7" data-path="scaling.html"><a href="scaling.html#converting-units"><i class="fa fa-check"></i><b>3.7</b> Converting units</a>
+<ul>
 <li class="chapter" data-level="3.7.1" data-path="scaling.html"><a href="scaling.html#inches"><i class="fa fa-check"></i><b>3.7.1</b> Inches</a></li>
 <li class="chapter" data-level="3.7.2" data-path="scaling.html"><a href="scaling.html#z-scores"><i class="fa fa-check"></i><b>3.7.2</b> <em>z</em>-scores</a></li>
 <li class="chapter" data-level="3.7.3" data-path="scaling.html"><a href="scaling.html#t-scores"><i class="fa fa-check"></i><b>3.7.3</b> T-scores</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.8</b> Frame of references</a><ul>
+<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.8</b> Frame of references</a>
+<ul>
 <li class="chapter" data-level="3.8.1" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.8.1</b> All participants</a></li>
 <li class="chapter" data-level="3.8.2" data-path="scaling.html"><a href="scaling.html#male-reference"><i class="fa fa-check"></i><b>3.8.2</b> Male reference</a></li>
 <li class="chapter" data-level="3.8.3" data-path="scaling.html"><a href="scaling.html#canadian-reference"><i class="fa fa-check"></i><b>3.8.3</b> Canadian reference</a></li>
 </ul></li>
+<li class="chapter" data-level="3.9" data-path="scaling.html"><a href="scaling.html#summary-4"><i class="fa fa-check"></i><b>3.9</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>4</b> Data Entry/Analysis</a><ul>
+<li class="chapter" data-level="4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>4</b> Data Entry/Analysis</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#required-packages"><i class="fa fa-check"></i><b>4.1</b> Required Packages</a></li>
 <li class="chapter" data-level="4.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#objective-1"><i class="fa fa-check"></i><b>4.2</b> Objective</a></li>
-<li class="chapter" data-level="4.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>4.3</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="4.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>4.3</b> Begin with the end in mind</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>4.3.1</b> Structuring data: Obtaining tidy data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>4.4</b> Data collection considerations</a><ul>
+<li class="chapter" data-level="4.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>4.4</b> Data collection considerations</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#naming-conventions"><i class="fa fa-check"></i><b>4.4.1</b> Naming conventions</a></li>
 <li class="chapter" data-level="4.4.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#likert-type-items"><i class="fa fa-check"></i><b>4.4.2</b> Likert-type items</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#following-the-examples"><i class="fa fa-check"></i><b>4.5</b> Following the examples</a></li>
 <li class="chapter" data-level="4.6" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>4.6</b> Entering data into spreadsheets</a></li>
-<li class="chapter" data-level="4.7" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#surveys-single-occassion"><i class="fa fa-check"></i><b>4.7</b> Surveys: Single Occassion</a><ul>
+<li class="chapter" data-level="4.7" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#surveys-single-occassion"><i class="fa fa-check"></i><b>4.7</b> Surveys: Single Occassion</a>
+<ul>
 <li class="chapter" data-level="4.7.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#creating-factors"><i class="fa fa-check"></i><b>4.7.1</b> Creating factors</a></li>
 <li class="chapter" data-level="4.7.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#factor-screening"><i class="fa fa-check"></i><b>4.7.2</b> Factor screening</a></li>
 <li class="chapter" data-level="4.7.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#numeric-screening"><i class="fa fa-check"></i><b>4.7.3</b> Numeric screening</a></li>
 <li class="chapter" data-level="4.7.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#scale-scores"><i class="fa fa-check"></i><b>4.7.4</b> Scale scores</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>4.8</b> Basic descriptive statistics</a><ul>
+<li class="chapter" data-level="4.8" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>4.8</b> Basic descriptive statistics</a>
+<ul>
 <li class="chapter" data-level="4.8.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#skim"><i class="fa fa-check"></i><b>4.8.1</b> skim()</a></li>
 <li class="chapter" data-level="4.8.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#apa.cor.table"><i class="fa fa-check"></i><b>4.8.2</b> apa.cor.table()</a></li>
 <li class="chapter" data-level="4.8.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#tidyverse"><i class="fa fa-check"></i><b>4.8.3</b> tidyverse</a></li>
@@ -266,9 +286,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-entryanalysis" class="section level1">
+<div id="data-entryanalysis" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Data Entry/Analysis</h1>
-<div id="required-packages" class="section level2">
+<div id="required-packages" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Required Packages</h2>
 <p>The data files below are used in this chapter. The files are available at: <a href="https://github.com/dstanley4/psyc3250bookdown" class="uri">https://github.com/dstanley4/psyc3250bookdown</a></p>
 <table>
@@ -313,10 +333,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p><strong>Important Note:</strong> You should NOT use library(psych) at any point! There are major conflicts between the psych package and the tidyverse. We will access the psych package commands by preceding each command with psych:: instead of using library(psych).</p>
 </div>
-<div id="objective-1" class="section level2">
+<div id="objective-1" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Objective</h2>
-<p>Due to a number of high profile failures to replicate study results <span class="citation">(Nosek <a href="#ref-cos2015" role="doc-biblioref">2015</a>)</span> it’s become increasingly clear that there is a general crisis of confidence in many areas of science <span class="citation">(Baker <a href="#ref-baker2016" role="doc-biblioref">2016</a>)</span>. Statistical (and other) explanations have been offered <span class="citation">(Simmons, Nelson, and Simonsohn <a href="#ref-simmons2011" role="doc-biblioref">2011</a>)</span> for why it’s hard to replicate results across different sets of data. However, scientists are also finding it challenging to recreate the numbers in their own papers using their own data. Indeed, the editor of Molecular Brain asked authors to submit the data used to create the numbers in published papers and found that the wrong data was submitted for 40 out of 41 papers <span class="citation">(Miyakawa <a href="#ref-miyakawa2020" role="doc-biblioref">2020</a>)</span>.</p>
-<p>Consequently, some researchers have suggested that it is critical to distinguish between replication and reproducibility <span class="citation">(Patil P. <a href="#ref-patil2019" role="doc-biblioref">2019</a>)</span>. Replication refers to trying to obtain the same result from a different data sets. Reproducibility refers to trying to obtain the same results from the same data set. Unfortunately, some authors use these two terms interchangeably and fail to make any distinction between them. I encourage you to make the distinction and the use the terms consist with use suggested by <span class="citation">(Patil P. <a href="#ref-patil2019" role="doc-biblioref">2019</a>)</span>.</p>
+<p>Due to a number of high profile failures to replicate study results <span class="citation">(<a href="references.html#ref-cos2015" role="doc-biblioref">Nosek 2015</a>)</span> it’s become increasingly clear that there is a general crisis of confidence in many areas of science <span class="citation">(<a href="references.html#ref-baker2016" role="doc-biblioref">Baker 2016</a>)</span>. Statistical (and other) explanations have been offered <span class="citation">(<a href="references.html#ref-simmons2011" role="doc-biblioref">Simmons, Nelson, and Simonsohn 2011</a>)</span> for why it’s hard to replicate results across different sets of data. However, scientists are also finding it challenging to recreate the numbers in their own papers using their own data. Indeed, the editor of Molecular Brain asked authors to submit the data used to create the numbers in published papers and found that the wrong data was submitted for 40 out of 41 papers <span class="citation">(<a href="references.html#ref-miyakawa2020" role="doc-biblioref">Miyakawa 2020</a>)</span>.</p>
+<p>Consequently, some researchers have suggested that it is critical to distinguish between replication and reproducibility <span class="citation">(<a href="references.html#ref-patil2019" role="doc-biblioref">Patil P. 2019</a>)</span>. Replication refers to trying to obtain the same result from a different data sets. Reproducibility refers to trying to obtain the same results from the same data set. Unfortunately, some authors use these two terms interchangeably and fail to make any distinction between them. I encourage you to make the distinction and the use the terms consist with use suggested by <span class="citation">(<a href="references.html#ref-patil2019" role="doc-biblioref">Patil P. 2019</a>)</span>.</p>
 <p>It may seem that reproducibility should be a given - but it’s not. Correspondingly, there is a trend for journals and authors to adopt Transparency and Openness Promotion (TOP) <a href="https://www.cos.io/our-services/top-guidelines">guidelines</a>. These guidelines involve such things as making your materials, data, code, and analysis scripts available on public repositories so anyone can check your data. A new open science journal rating system has even emerged called the <a href="https://topfactor.org">TOP Factor</a>.</p>
 <p>The idea is not that open science articles are more trustworthy than other types of articles – the idea is that trust doesn’t play a role. Anyone can inspect the data using the scripts and data provided by authors. It’s really just the same as making your science available for auditing the way financial records can be audited. But just like in the world of business, some people don’t like the idea of making it possible for others to audit their work. The problems reported in Molecular Brain (doubtless common to many journals) are likely avoided with open science - because the data and scripts needed to reproduce the statistics in the articles are uploaded prior to publication.</p>
 <p>The TOP open science guidelines have made an impact and some newer journals, such as Meta Psychology, have fully embraced open science. Figure <a href="data-entryanalysis.html#fig:metapsychology">4.1</a> shows the header from an <a href="https://open.lnu.se/index.php/metapsychology/article/view/1630/2266">article</a> in Meta Psychology that clearly delineates the open science attributes of the article that used computer simulations (instead of participant data). Take note that the header even indicates who verified that the analyses in the article were reproducible.</p>
@@ -326,7 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 FIGURE 4.1: Open science in an article header
 </p>
 </div>
-<p>In Canada, the majority of university research is funded by the Federal Government’s Tri-Agency (i.e., NSERC, SSHRC, CIHR). The agency has a new draft <a href="https://www.ic.gc.ca/eic/site/063.nsf/eng/h_83F7624E.html">Data Management Policy</a> in which they state that “<em>The agencies believe that research data collected with the use of public funds belong, to the fullest extent possible, in the public domain and available for reuse by others.</em>” The perspective of the funding agency on data ownership differs substantially from that of some researchers who incorrectly believe “they own their data”. In Canada at least, the government makes it clear that when tax payers fund research (through the Tri-Agency) the research data is public property. Additionally the Tri-Agency Data Management policy clearly indicates the responsibilities of funded researchers:</p>
+<p>In Canada, the majority of university research is funded by the Federal Government’s Tri-Agency (i.e., NSERC, SSHRC, CIHR). The agency has a new draft <a href="https://www.ic.gc.ca/eic/site/063.nsf/eng/h_83F7624E.html">Data Management Policy</a> in which they state that “<em>The agencies believe that research data collected with the use of public funds belong, to the fullest extent possible, in the public domain and available for reuse by others.</em>” The perspective of the funding agency on data ownership differs substantially from that of some researchers who incorrectly believe “they own their data.” In Canada at least, the government makes it clear that when tax payers fund research (through the Tri-Agency) the research data is public property. Additionally the Tri-Agency Data Management policy clearly indicates the responsibilities of funded researchers:</p>
 <p>"Responsibilities of researchers include:</p>
 <ul>
 <li>incorporating data management best practices into their research;</li>
@@ -337,7 +357,7 @@ FIGURE 4.1: Open science in an article header
 </ul>
 <p>As a result of this perspective on data, it’s important that you think about structuring your data for reuse by yourself and others before you collect it. Toward this end, properly documenting your data file and analysis scripts is critical.</p>
 </div>
-<div id="begin-with-the-end-in-mind" class="section level2">
+<div id="begin-with-the-end-in-mind" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Begin with the end in mind</h2>
 <p>In this chapter we will walk you though the steps from data collection, data entry, loading raw data, and the creation of data you will analyze (analytic data) via pre-processing scripts. These steps are outlined in Figure <a href="data-entryanalysis.html#fig:pipeline">4.2</a>. This figure makes a clear distinction between raw data and analytic data. Raw data refers to the data as you entered it into a spreadsheet or received it from survey software. Analytic data is the data that has been structured and processed so that it is ready for analysis. This pre-processing could include such things as identifying categorical variables to the computer, averaging multiple items into a scale score, and other tasks.</p>
 <p>It’s critical that you don’t think of the analysis of your data as being completely removed from the data collection and data entry choices you make. Poor choices at the data collection and data entry stage can make your life substantially more complicated when it comes time to write the pre-processing script that will convert your raw data to analytic data. The mantra of this chapter is <em>begin with the end in mind</em>.</p>
@@ -349,9 +369,9 @@ FIGURE 4.2: Data science pipeline by Roger Peng
 </div>
 <p>It’s difficult to being with the end in mind when you haven’t read later chapters. So, here we will be provide you with some general thoughts around different approaches to structuring data files and the naming conventions you can use when creating those data files.</p>
 <p>Indeed, in this chapter we strongly advocate that you use a naming convention for file, variable, and column names. This convention will save you hours of hassles and permit easy application of certain tidyverse commands. However, we must stress that although the naming convention we advocate is based on the tidyverse style guide, it is not “right” or “correct” - there are other naming conventions you can use. Any naming convention is better than no naming convention. The naming convention we advocate here will solve many problems. We encourage to use this system for for weeks or months over many projects - until you see the benefits of this system, and correspondingly its shortcomings. After you are well versed in the strengths/weaknesses of the naming conventions used here you may choose to create your own naming convention system.</p>
-<div id="structuring-data-obtaining-tidy-data" class="section level3">
+<div id="structuring-data-obtaining-tidy-data" class="section level3" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> Structuring data: Obtaining tidy data</h3>
-<p>When conducting analyses in R it is typically necessary to have data in a format called tidy data <span class="citation">(Wickham <a href="#ref-tidy-data" role="doc-biblioref">2014</a>)</span>. <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">Tidy data</a>, as defined by Hadley, involves (among other requirements) that:</p>
+<p>When conducting analyses in R it is typically necessary to have data in a format called tidy data <span class="citation">(<a href="references.html#ref-tidy-data" role="doc-biblioref">Wickham 2014</a>)</span>. <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">Tidy data</a>, as defined by Hadley, involves (among other requirements) that:</p>
 <ol style="list-style-type: decimal">
 <li><p>Each variable forms a column.</p></li>
 <li><p>Each observation forms a row.</p></li>
@@ -884,12 +904,12 @@ july
 <p>Why did we walk you through this technical treatment of structuring data at this point in time - so that you pay attention to the advice that follows. You can see at this point that you may well need to restructure your data for certain analyses. The ability to do so quickly and easily depends upon following the advice in this chapter around naming conventions for variables and other aspects of your analyses. You can imagine the challenges for converting the data in Figure <a href="data-entryanalysis.html#tab:withinex">4.2</a> to the data in Figure <a href="data-entryanalysis.html#tab:withintidyex">4.3</a> by hand. You want to be able to automate that process and others - which is made substantially easier if you follow the forthcoming advice about naming conventions in the tidyverse.</p>
 </div>
 </div>
-<div id="data-collection-considerations" class="section level2">
+<div id="data-collection-considerations" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Data collection considerations</h2>
 <p>Data can be collected in a wide variety of ways. Regardless of the method of data collection researchers typically come to data in one of two ways: 1) a research assistant enters the data into a spreadsheet type interface, or 2) the data is obtained as the output from computer software (e.g., Qualtrics, SurveyMonkey, Noldus, etc.).</p>
 <p>Regardless of the approach, it is critical to name your variables appropriately. For those using software, such as Qualtrics, this means setting up the software to use appropriate variable names PRIOR to data collection - so the exported file has desirable column names. For spreadsheet users, this means setting up the spreadsheet in which the data will be recorded with column names that are amenable to the future analyses you want to conduct.</p>
 <p>Although failure to take this thoughtful approach at the data collection stage can be overcome - it is only overcome with substantial manual effort. Therefore, as noted previously, we strongly encourage you to follow the naming conventions we espouse here when you set up your data recording regime. Additionally, we encourage you to give careful thought in advance to the codes you will use to record missing data.</p>
-<div id="naming-conventions" class="section level3">
+<div id="naming-conventions" class="section level3" number="4.4.1">
 <h3><span class="header-section-number">4.4.1</span> Naming conventions</h3>
 <p>To make your life easier down the road, it is critical you set up your spreadsheet or online survey such that it uses a naming convention prior to data collection. The naming conventions suggested here are adapted from the tidyverse <a href="https://style.tidyverse.org">style guide</a>.</p>
 <ul>
@@ -900,26 +920,26 @@ july
 <li><p>If you have a column name that represents the levels of two repeated measures variables only use the underscore character to separate the levels of the different variables. See within-participant ANOVA section below for details.</p></li>
 </ul>
 </div>
-<div id="likert-type-items" class="section level3">
+<div id="likert-type-items" class="section level3" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> Likert-type items</h3>
-<p>A Likert-type item is typically composed of a statement with which participants are asked to agree or disagree. For example, participants could be asked to indicate the extent to which they agree with a number of statements such as “I like my job”. Then tey would be presented with response scale such as: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. A common question is, how should I enter the data?</p>
+<p>A Likert-type item is typically composed of a statement with which participants are asked to agree or disagree. For example, participants could be asked to indicate the extent to which they agree with a number of statements such as “I like my job.” Then tey would be presented with response scale such as: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. A common question is, how should I enter the data?</p>
 <ul>
 <li><p><strong>Enter numeric responses not labels</strong>. You should enter the numeric value for each item response (e.g., 5) into your data - not the label (e.g., Strongly Agree). The labels associated with each value can be applied later in a script, if needed.</p></li>
 <li><p><strong>High numbers should be associated with more of the construct being measured.</strong> When designing your survey or data collection tools, it is important that you set the response options appropriately. If your scale measures job satisfaction, it is important that you collect data in a manner that ensures high numbers on the job satisfaction scale indicate high levels of job satisfaction. Therefore, assigning numbers makes sense using the 5-point scale: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. With this approach high response numbers indicate more job satisfaction. However, using the opposite scale would not make sense: 1 - Strongly Agree, 2 - Moderately Agree, 3 - Neutral, 4, Moderately Disagree, 5 - Strongly Disagree. With this opposite scale high numbers on a job satisfaction scale would indicate lower levels of job satisfaction - a very confusing situation. Avoid this situation, assign numbers so that higher numbers are associated with more of the construct being measured.</p></li>
 <li><p><strong>Use appropriate item names.</strong> As described in the naming convention section, use moderate length names with different labels for each subscale.</p></li>
-<li><p><strong>Use moderate length column names unique to each subscale</strong>. Imagine you have a survey with an 18-item commitment scale <span class="citation">(Meyer, Allen, and Smith <a href="#ref-meyer1993commitment" role="doc-biblioref">1993</a>)</span> composed of three 6-item subscales: affective, normative, and continuance commitment. It would be a poor choice to prefix the labels of all 18 columns in your data with “commit” such that the names would be commit1, commit2, commit3, etc. The problem with this approach is that it fails to distinguish among the three subscales in naming convention; making it impossible to select the items for a single subscale using starts_with(). A better, but still poor choice for a naming convention would be use use a two letter prefix for the three scale such ac, nc, and cc. This would result in names for the columns like ac1, ac2, ac3, etc. This is an improvement because you could apparently (but likely not) select the columns using starts_with(“ac”). The problem with these short names is that there could be many columns in data set that start with “ac” beside the affective commitment items. You might want to select the affective commitment items using starts_with(“ac”); but you would get all the affective commitment item columns; but also all the columns measuring other variables that also start with “ac”. Therefore, it’s a good idea to use a moderate length unique prefix for column names. For example, you might use prefixes like affectcom, normcom, and contincom for the three subscales. This would create column names like affectcom1, affectcom2, affectcom3, etc. These column prefixes are unlikely to be duplicated in other places in your column name conventions making it easy to select those columns using a command like starts_with(“affectcom”).</p></li>
+<li><p><strong>Use moderate length column names unique to each subscale</strong>. Imagine you have a survey with an 18-item commitment scale <span class="citation">(<a href="references.html#ref-meyer1993commitment" role="doc-biblioref">Meyer, Allen, and Smith 1993</a>)</span> composed of three 6-item subscales: affective, normative, and continuance commitment. It would be a poor choice to prefix the labels of all 18 columns in your data with “commit” such that the names would be commit1, commit2, commit3, etc. The problem with this approach is that it fails to distinguish among the three subscales in naming convention; making it impossible to select the items for a single subscale using starts_with(). A better, but still poor choice for a naming convention would be use use a two letter prefix for the three scale such ac, nc, and cc. This would result in names for the columns like ac1, ac2, ac3, etc. This is an improvement because you could apparently (but likely not) select the columns using starts_with(“ac”). The problem with these short names is that there could be many columns in data set that start with “ac” beside the affective commitment items. You might want to select the affective commitment items using starts_with(“ac”); but you would get all the affective commitment item columns; but also all the columns measuring other variables that also start with “ac.” Therefore, it’s a good idea to use a moderate length unique prefix for column names. For example, you might use prefixes like affectcom, normcom, and contincom for the three subscales. This would create column names like affectcom1, affectcom2, affectcom3, etc. These column prefixes are unlikely to be duplicated in other places in your column name conventions making it easy to select those columns using a command like starts_with(“affectcom”).</p></li>
 </ul>
-<p><strong>Indicate in the item name if the item is reversed keyed. </strong> Sometimes with Likert-type items, an item is reverse keyed. For example, on a job satisfaction scale, participants will typically respond to items that reflect job satisfaction using the scale: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. Higher numbers indicate more job satisfaction. Sometimes, however, some items will use the same 1 to 5 response scale but be worded in the opposite manner such as “I hate my job”. Responding with a 5 to this item would indicate high job <em>dissatisfaction</em>. But the columns for job satisfaction items should have high values indicate job satisfaction not job dissatifaction. Consequently, we flag the names of columns with reversed responses (i.e., reverse-key items) so that we know to treat those column differently later. Columns with reverse-keyed items need to be processed by a script so that the values are flipped and scored in the right direction. The procedure for doing so is outlined in the next point.</p>
+<p><strong>Indicate in the item name if the item is reversed keyed. </strong> Sometimes with Likert-type items, an item is reverse keyed. For example, on a job satisfaction scale, participants will typically respond to items that reflect job satisfaction using the scale: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. Higher numbers indicate more job satisfaction. Sometimes, however, some items will use the same 1 to 5 response scale but be worded in the opposite manner such as “I hate my job.” Responding with a 5 to this item would indicate high job <em>dissatisfaction</em>. But the columns for job satisfaction items should have high values indicate job satisfaction not job dissatifaction. Consequently, we flag the names of columns with reversed responses (i.e., reverse-key items) so that we know to treat those column differently later. Columns with reverse-keyed items need to be processed by a script so that the values are flipped and scored in the right direction. The procedure for doing so is outlined in the next point.</p>
 <p><strong>Indicate in the item name the range for reverse-key items.</strong> If an item is reverse keyed, the process for the flipping the scores depends upon the range of a scale. Although 5-point scales are common, any number of points are possible. The process for correcting a reverse-key item depends upon: 1) the number of points on the scale, and 2) the range of the points on the scale. The reverse-key item correction process is different for an item that uses a 5-point scale ranging from 1 to 5 versus from 0 to 4. Both are 5-point scales but your correction process will be different. Therefore, for reverse-key items add a suffix at the end of each item name that indicates an item is reverse keyed and the range of the item. For example, if the third job satisfaction item was reversed keyed on scale using a 1 to 5 response format you might name the item: jobsat3_rev15. The suffix "_rev15" indicates the item is reverse keyed and the range of responses used on the item is 1 to 5. Be sure to set up your survey with this naming convention when you collect your data.</p>
 <ul>
-<li>If you collect items over multiple time points use a prefix with a short code to indicate the time followed by an underscore. For example, if you had a multi-item self-esteem scale you might call the column for the first time “t1_esteem1_rev15”. This indicate that you have for time 1 (t1), the first self-esteem item (esteem1) and that item is reverse keyed on a 1 to 5 scale.</li>
+<li>If you collect items over multiple time points use a prefix with a short code to indicate the time followed by an underscore. For example, if you had a multi-item self-esteem scale you might call the column for the first time “t1_esteem1_rev15.” This indicate that you have for time 1 (t1), the first self-esteem item (esteem1) and that item is reverse keyed on a 1 to 5 scale.</li>
 </ul>
 </div>
 </div>
-<div id="following-the-examples" class="section level2">
+<div id="following-the-examples" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Following the examples</h2>
 <p>Below we present example scripts transforming raw data to analytic data for various study designs (experimental and survey). These examples illustrate the value of using the naming conventions outlined previously. Don’t just read the example - follow along with the projects by creating a separate script for each example. Resist the urge to cut and paste from this document - type the script yourself.</p>
-<p>When first learning iPhone/Mac software development, I did so by taking a course at <a href="https://www.bignerdranch.com">Big Nerd Ranch</a> - yes, that’s a real place. They advised in their material (and now book) the following: “We have learned that “going through the motions” is much more important than it sounds. Many times we will ask you to start typing in code before you understand it. We realize that you may feel like a trained monkey typing in a bunch of code that you do not fully grasp. But the best way to learn coding is to find and fix your typos. Far from being a drag, this basic debugging is where you really learn the ins and outs of the code. That is why we encourage you to type in the code yourself. You could just download it, but copying and pasting is not programming. We want better for you and your skills.", p. xiv, <span class="citation">(Keur and Hillegass <a href="#ref-keur2020" role="doc-biblioref">2020</a>)</span>. This is excellent advice for a beginning statistician or data scientist as well. And as an aside: if you want to learn iPhone programming you can’t go wrong with the Big Nerd Ranch guide!</p>
+<p>When first learning iPhone/Mac software development, I did so by taking a course at <a href="https://www.bignerdranch.com">Big Nerd Ranch</a> - yes, that’s a real place. They advised in their material (and now book) the following: “We have learned that “going through the motions” is much more important than it sounds. Many times we will ask you to start typing in code before you understand it. We realize that you may feel like a trained monkey typing in a bunch of code that you do not fully grasp. But the best way to learn coding is to find and fix your typos. Far from being a drag, this basic debugging is where you really learn the ins and outs of the code. That is why we encourage you to type in the code yourself. You could just download it, but copying and pasting is not programming. We want better for you and your skills.", p. xiv, <span class="citation">(<a href="references.html#ref-keur2020" role="doc-biblioref">Keur and Hillegass 2020</a>)</span>. This is excellent advice for a beginning statistician or data scientist as well. And as an aside: if you want to learn iPhone programming you can’t go wrong with the Big Nerd Ranch guide!</p>
 <p>As you work through this chapter, create your own new script for each example. In light of the above advice, avoid copying and pasting code - type it out; you will be the better for it.</p>
 <p>Getting started:</p>
 <p><strong>The Class: R Studio in the Cloud Assignment</strong></p>
@@ -952,7 +972,7 @@ july
 <li><p>After you type each new block of code in an example, do two additional things: 1) Session Restart R, 2) Run your script using Source with Echo.</p></li>
 </ul>
 </div>
-<div id="entering-data-into-spreadsheets" class="section level2">
+<div id="entering-data-into-spreadsheets" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> Entering data into spreadsheets</h2>
 <p>The first example uses a data file data_ex_between.csv that corresponds to a fictitious example where we recorded the run times for a number of male and female participants. How did we create this data file? We used a spreadsheet to enter the data, as illustrated in Figure <a href="data-entryanalysis.html#fig:spreadsheetbetween">4.3</a>. Programs like Microsoft Excel and Google Sheets are good options for entering data.</p>
 <div class="figure"><span id="fig:spreadsheetbetween"></span>
@@ -970,25 +990,25 @@ FIGURE 4.4: Text view of CSV data
 </div>
 <p>There are many ways to save data, but the CSV data is one of the better ones because it is a non-proprietary format. Some software, such as SPSS, uses a proprietary format (e.g., .sav for SPSS) this makes it challenging to access that data if you don’t have that (often expensive) software. One of our goals as scientists is to make it easy for others to audit our work - that allows science to be self-correcting. Therefore, choose an open format for your data like .csv.</p>
 </div>
-<div id="surveys-single-occassion" class="section level2">
+<div id="surveys-single-occassion" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> Surveys: Single Occassion</h2>
 <p>This section outlines a workflow appropriate for when you have cross-sectional single occasion survey data. The data corresponds to a design where the researcher has measured, age, sex, eye color, self-esteem, and job satisfaction. Two of these, self-esteem and job satisfaction, were measured with multi-item scales with reverse-keyed items.</p>
 <p>To Begin:</p>
 <ul>
 <li><p>Use the Files tab to confirm you have the data: data_item_scoring.csv</p></li>
-<li><p>Start a new script for this example. Don’t forget to start the script name with “script_”.</p></li>
+<li><p>Start a new script for this example. Don’t forget to start the script name with “script_.”</p></li>
 </ul>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="data-entryanalysis.html#cb198-1"></a><span class="co"># Date: YYYY-MM-DD</span></span>
-<span id="cb198-2"><a href="data-entryanalysis.html#cb198-2"></a><span class="co"># Name: your name here</span></span>
-<span id="cb198-3"><a href="data-entryanalysis.html#cb198-3"></a><span class="co"># Example: Single occasion survey</span></span>
-<span id="cb198-4"><a href="data-entryanalysis.html#cb198-4"></a></span>
-<span id="cb198-5"><a href="data-entryanalysis.html#cb198-5"></a><span class="co"># Load data</span></span>
-<span id="cb198-6"><a href="data-entryanalysis.html#cb198-6"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb198-7"><a href="data-entryanalysis.html#cb198-7"></a></span>
-<span id="cb198-8"><a href="data-entryanalysis.html#cb198-8"></a>my_missing_value_codes &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;-999&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>)</span>
-<span id="cb198-9"><a href="data-entryanalysis.html#cb198-9"></a></span>
-<span id="cb198-10"><a href="data-entryanalysis.html#cb198-10"></a>raw_data_survey &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data_item_scoring.csv&quot;</span>,</span>
-<span id="cb198-11"><a href="data-entryanalysis.html#cb198-11"></a>                     <span class="dt">na =</span> my_missing_value_codes)</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="data-entryanalysis.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Date: YYYY-MM-DD</span></span>
+<span id="cb199-2"><a href="data-entryanalysis.html#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Name: your name here</span></span>
+<span id="cb199-3"><a href="data-entryanalysis.html#cb199-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Single occasion survey</span></span>
+<span id="cb199-4"><a href="data-entryanalysis.html#cb199-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb199-5"><a href="data-entryanalysis.html#cb199-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb199-6"><a href="data-entryanalysis.html#cb199-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb199-7"><a href="data-entryanalysis.html#cb199-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb199-8"><a href="data-entryanalysis.html#cb199-8" aria-hidden="true" tabindex="-1"></a>my_missing_value_codes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;-999&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>)</span>
+<span id="cb199-9"><a href="data-entryanalysis.html#cb199-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb199-10"><a href="data-entryanalysis.html#cb199-10" aria-hidden="true" tabindex="-1"></a>raw_data_survey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_item_scoring.csv&quot;</span>,</span>
+<span id="cb199-11"><a href="data-entryanalysis.html#cb199-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">na =</span> my_missing_value_codes)</span></code></pre></div>
 <pre><code>## 
 ## ── Column specification ────────────────────────────────────
 ## cols(
@@ -1008,21 +1028,21 @@ FIGURE 4.4: Text view of CSV data
 ##   jobsat5 = col_double()
 ## )</code></pre>
 <p>We load the initial data into a raw_data_survey but immediately make a copy we will work with called analytic_data_survey. It’s good to keep a copy of the raw data for reference if you encounter problems.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="data-entryanalysis.html#cb200-1"></a>analytic_data_survey &lt;-<span class="st"> </span>raw_data_survey</span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="data-entryanalysis.html#cb201-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> raw_data_survey</span></code></pre></div>
 <p>Remove empty row and columns from your data using the remove_empty_cols() and remove_empty_rows(), respectively. As well, clean the names of your columns to ensure they conform to tidyverse naming conventions.</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="data-entryanalysis.html#cb201-1"></a><span class="kw">library</span>(janitor)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="data-entryanalysis.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: &#39;janitor&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
 ## 
 ##     chisq.test, fisher.test</code></pre>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="data-entryanalysis.html#cb204-1"></a><span class="co"># Initial cleaning</span></span>
-<span id="cb204-2"><a href="data-entryanalysis.html#cb204-2"></a>analytic_data_survey &lt;-<span class="st"> </span>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb204-3"><a href="data-entryanalysis.html#cb204-3"></a><span class="st">  </span><span class="kw">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb204-4"><a href="data-entryanalysis.html#cb204-4"></a><span class="st">  </span><span class="kw">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb204-5"><a href="data-entryanalysis.html#cb204-5"></a><span class="st">  </span><span class="kw">clean_names</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="data-entryanalysis.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial cleaning</span></span>
+<span id="cb205-2"><a href="data-entryanalysis.html#cb205-2" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb205-3"><a href="data-entryanalysis.html#cb205-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb205-4"><a href="data-entryanalysis.html#cb205-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb205-5"><a href="data-entryanalysis.html#cb205-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code></pre></div>
 <p>You can confirm the column names following our naming convention with the glimpse command - and see the data type for each column.</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="data-entryanalysis.html#cb205-1"></a><span class="kw">glimpse</span>(analytic_data_survey)</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="data-entryanalysis.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 14
 ## $ id            &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, …
@@ -1039,10 +1059,10 @@ FIGURE 4.4: Text view of CSV data
 ## $ jobsat3       &lt;dbl&gt; 3, NA, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3…
 ## $ jobsat4       &lt;dbl&gt; NA, 5, 5, 4, 4, 4, 4, 5, NA, 4, NA,…
 ## $ jobsat5       &lt;dbl&gt; 5, NA, 5, 4, 5, 4, 4, 5, 5, 5, 4, N…</code></pre>
-<div id="creating-factors" class="section level3">
+<div id="creating-factors" class="section level3" number="4.7.1">
 <h3><span class="header-section-number">4.7.1</span> Creating factors</h3>
 <p>Following initial cleaning, we identify categorical variables as factors. If you plan to conduct an ANOVA - it’s critical that all predictor variables are converted to factors. Inspect the glimpse() output - if you followed our data entry naming conventions, categorical variables should be of the type character.</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="data-entryanalysis.html#cb207-1"></a><span class="kw">glimpse</span>(analytic_data_survey)</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="data-entryanalysis.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 14
 ## $ id            &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, …
@@ -1060,14 +1080,14 @@ FIGURE 4.4: Text view of CSV data
 ## $ jobsat4       &lt;dbl&gt; NA, 5, 5, 4, 4, 4, 4, 5, NA, 4, NA,…
 ## $ jobsat5       &lt;dbl&gt; 5, NA, 5, 4, 5, 4, 4, 5, 5, 5, 4, N…</code></pre>
 <p>We have two variables, sex and eye_color, that are categorical variable of type character (i.e., chr). The participant id column is categorical as well, but of type double (i.e., dbl) which is a numeric column. You can quickly convert all character columns to factors using the code below:</p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="data-entryanalysis.html#cb209-1"></a>analytic_data_survey &lt;-<span class="st"> </span>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb209-2"><a href="data-entryanalysis.html#cb209-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.character),</span>
-<span id="cb209-3"><a href="data-entryanalysis.html#cb209-3"></a>                <span class="dt">.fns =</span> as_factor))</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="data-entryanalysis.html#cb210-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb210-2"><a href="data-entryanalysis.html#cb210-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">where</span>(is.character),</span>
+<span id="cb210-3"><a href="data-entryanalysis.html#cb210-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">.fns =</span> as_factor))</span></code></pre></div>
 <p>The participant identification number in the id column is a numeric column, so we have to handle that column on its own.</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="data-entryanalysis.html#cb210-1"></a>analytic_data_survey &lt;-<span class="st"> </span>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb210-2"><a href="data-entryanalysis.html#cb210-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="kw">as_factor</span>(id))</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="data-entryanalysis.html#cb211-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb211-2"><a href="data-entryanalysis.html#cb211-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">as_factor</span>(id))</span></code></pre></div>
 <p>You can ensure all of these columns are now factors using the glimpse() command.</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="data-entryanalysis.html#cb211-1"></a><span class="kw">glimpse</span>(analytic_data_survey)</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="data-entryanalysis.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 14
 ## $ id            &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, …
@@ -1087,12 +1107,12 @@ FIGURE 4.4: Text view of CSV data
 <p>Inspect the output of the glimpse() command and make sure you have converted all categorical variables to factors - especially those you will use as predictors.</p>
 <p><strong>Note:</strong> f you have factors like sex that have numeric data in the column (e.g, 1 and 2) instead of male/female you need to handle the situation differently. The preceding section, Experiment: Within N-way, illustrates how to handle this scenario.</p>
 </div>
-<div id="factor-screening" class="section level3">
+<div id="factor-screening" class="section level3" number="4.7.2">
 <h3><span class="header-section-number">4.7.2</span> Factor screening</h3>
 <p>Inspect the levels of each factor carefully. Make sure the factor levels of each variable are correct. Examine spelling and look for additional unwanted levels. For example, you wouldn’t want to have the following levels for sex: male, mmale, female. Obviously, mmale is an incorrectly typed version of male. Scan all the factors in your data for erroneous factor levels. The code below displays the factor levels:</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="data-entryanalysis.html#cb213-1"></a>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb213-2"><a href="data-entryanalysis.html#cb213-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">where</span>(is.factor)) <span class="op">%&gt;%</span></span>
-<span id="cb213-3"><a href="data-entryanalysis.html#cb213-3"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="data-entryanalysis.html#cb214-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb214-2"><a href="data-entryanalysis.html#cb214-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.factor)) <span class="sc">%&gt;%</span></span>
+<span id="cb214-3"><a href="data-entryanalysis.html#cb214-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div>
 <pre><code>##        id            sex      eye_color  
 ##  1      :  1   male    :147   blue : 99  
 ##  2      :  1   female  :149   brown: 98  
@@ -1102,18 +1122,18 @@ FIGURE 4.4: Text view of CSV data
 ##  6      :  1                             
 ##  (Other):294</code></pre>
 <p>Also inspect the output of the above summary() command paying attention to the order of the levels in the factors. The order influences how text output and graphs are generated. In these data, the sex column has two levels: male and female in that order. Below we adjust the order of the sex variable because we want the x-axis of a future graph to display columns in the left to right order: female, male.</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="data-entryanalysis.html#cb215-1"></a>analytic_data_survey &lt;-<span class="st"> </span>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb215-2"><a href="data-entryanalysis.html#cb215-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sex =</span> <span class="kw">fct_relevel</span>(sex,</span>
-<span id="cb215-3"><a href="data-entryanalysis.html#cb215-3"></a>                           <span class="st">&quot;intersex&quot;</span>,</span>
-<span id="cb215-4"><a href="data-entryanalysis.html#cb215-4"></a>                           <span class="st">&quot;female&quot;</span>,</span>
-<span id="cb215-5"><a href="data-entryanalysis.html#cb215-5"></a>                           <span class="st">&quot;male&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="data-entryanalysis.html#cb216-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb216-2"><a href="data-entryanalysis.html#cb216-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">fct_relevel</span>(sex,</span>
+<span id="cb216-3"><a href="data-entryanalysis.html#cb216-3" aria-hidden="true" tabindex="-1"></a>                           <span class="st">&quot;intersex&quot;</span>,</span>
+<span id="cb216-4"><a href="data-entryanalysis.html#cb216-4" aria-hidden="true" tabindex="-1"></a>                           <span class="st">&quot;female&quot;</span>,</span>
+<span id="cb216-5"><a href="data-entryanalysis.html#cb216-5" aria-hidden="true" tabindex="-1"></a>                           <span class="st">&quot;male&quot;</span>))</span></code></pre></div>
 <p>For eye color, we want a future graph to have the most common eye colors on the left so we reorder the factor levels:</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="data-entryanalysis.html#cb216-1"></a>analytic_data_survey &lt;-<span class="st"> </span>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb216-2"><a href="data-entryanalysis.html#cb216-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">eye_color =</span> <span class="kw">fct_infreq</span>(eye_color))</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="data-entryanalysis.html#cb217-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb217-2"><a href="data-entryanalysis.html#cb217-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">eye_color =</span> <span class="fu">fct_infreq</span>(eye_color))</span></code></pre></div>
 <p>You can see the new order of the factor levels with summary():</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="data-entryanalysis.html#cb217-1"></a>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb217-2"><a href="data-entryanalysis.html#cb217-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">where</span>(is.factor)) <span class="op">%&gt;%</span></span>
-<span id="cb217-3"><a href="data-entryanalysis.html#cb217-3"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="data-entryanalysis.html#cb218-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb218-2"><a href="data-entryanalysis.html#cb218-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.factor)) <span class="sc">%&gt;%</span></span>
+<span id="cb218-3"><a href="data-entryanalysis.html#cb218-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div>
 <pre><code>##        id            sex      eye_color  
 ##  1      :  1   intersex:  2   hazel:100  
 ##  2      :  1   female  :149   blue : 99  
@@ -1123,22 +1143,22 @@ FIGURE 4.4: Text view of CSV data
 ##  6      :  1                             
 ##  (Other):294</code></pre>
 </div>
-<div id="numeric-screening" class="section level3">
+<div id="numeric-screening" class="section level3" number="4.7.3">
 <h3><span class="header-section-number">4.7.3</span> Numeric screening</h3>
 <p>For numeric variables, it’s important to find and remove impossible values. For example, in the context of this example you want to ensure none of the Likert responses are impossible (e.g., outside the 1- to 5-point rating scale) or clearly data entry errors.</p>
 <p>Because we have several numeric columns that we are screening, we use the skim() command from the skimr package. The skim() command quickly provides basic descriptive statistics. In the output for this command there are also several columns that begin with p: p0, p25, p50, p75, and p100 (p25 and p75 omitted in output due to space). These columns correspond to the 0th, 25th, 50th, 75th, and 100th percentiles, respectively. The minimum and maximum values for the data column are indicated under the p0 and p100 labels. The median is the 50th percentile (p50). The interquartile range is the range between p25 and p75.</p>
 <p>Start by examining the range of non-scale items. In this case it’s only age. Examine the output to see if any of the age values are unreasonable. As noted, in the output p0 and p100 indicate the 0th percentile and the 100th percentile; that is the minimum and maximum values for the variable. Check to make sure none of the age values are unreasonably low or high. If they are, you may need to check the original data source or replace them with missing values.</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="data-entryanalysis.html#cb219-1"></a><span class="kw">library</span>(skimr)</span>
-<span id="cb219-2"><a href="data-entryanalysis.html#cb219-2"></a>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb219-3"><a href="data-entryanalysis.html#cb219-3"></a><span class="st">  </span><span class="kw">select</span>(age) <span class="op">%&gt;%</span></span>
-<span id="cb219-4"><a href="data-entryanalysis.html#cb219-4"></a><span class="st">  </span><span class="kw">skim</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="data-entryanalysis.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb220-2"><a href="data-entryanalysis.html#cb220-2" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb220-3"><a href="data-entryanalysis.html#cb220-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age) <span class="sc">%&gt;%</span></span>
+<span id="cb220-4"><a href="data-entryanalysis.html#cb220-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
 <pre><code>##   skim_variable n_missing  mean   sd p0 p50 p100
 ## 1           age         3 20.52 2.05 17  20   24</code></pre>
 <p>With respect to the multi-item scales, it makes sense to look at sets of items rather than all of the items at once. This is because sometimes items from different scales use different response ranges. For example, one measure might use a response scale with a range from 1 to 5; whereas another measure might use a response scale with a range from 1 to 7. This is undesirable from a psychometric point of view, as discussed previously, but if it happens in your data - look at the scale items separately to make it easy to see out of range values.</p>
 <p>We begin by looking at the items in the first scale, self-esteem. Possible items responses for this scale range from 1 to 5; make sure all responses are in this range. If any values fall outside this range, you may need to check the original data source or replace them with missing values - as described previously.</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="data-entryanalysis.html#cb221-1"></a>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb221-2"><a href="data-entryanalysis.html#cb221-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb221-3"><a href="data-entryanalysis.html#cb221-3"></a><span class="st">  </span><span class="kw">skim</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="data-entryanalysis.html#cb222-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb222-2"><a href="data-entryanalysis.html#cb222-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb222-3"><a href="data-entryanalysis.html#cb222-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
 <pre><code>##   skim_variable n_missing mean   sd p0 p50 p100
 ## 1       esteem1        24 3.39 0.54  3   3    5
 ## 2       esteem2        28 2.35 0.48  2   2    3
@@ -1147,9 +1167,9 @@ FIGURE 4.4: Text view of CSV data
 ## 5 esteem5_rev15        35 2.22 0.47  1   2    3</code></pre>
 <p>Follow the same process for the job satisfaction items. Write that code on your own now.</p>
 <p>Possible item responses for the job satisfaction scale range from 1 to 5, make sure all responses are in this range. If any values fall outside this range, you may need to check the original data source or replace them with missing values - as described previously.</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="data-entryanalysis.html#cb223-1"></a>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb223-2"><a href="data-entryanalysis.html#cb223-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;jobsat&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb223-3"><a href="data-entryanalysis.html#cb223-3"></a><span class="st">  </span><span class="kw">skim</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="data-entryanalysis.html#cb224-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb224-2"><a href="data-entryanalysis.html#cb224-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;jobsat&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb224-3"><a href="data-entryanalysis.html#cb224-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
 <pre><code>##   skim_variable n_missing mean   sd p0 p50 p100
 ## 1       jobsat1        25 3.34 0.51  3   3    5
 ## 2 jobsat2_rev15        27 1.51 0.61  1   1    3
@@ -1157,17 +1177,17 @@ FIGURE 4.4: Text view of CSV data
 ## 4       jobsat4        35 4.29 0.70  3   4    5
 ## 5       jobsat5        24 4.57 0.61  3   5    5</code></pre>
 </div>
-<div id="scale-scores" class="section level3">
+<div id="scale-scores" class="section level3" number="4.7.4">
 <h3><span class="header-section-number">4.7.4</span> Scale scores</h3>
 <p>For each person, scale scores involve averaging scores from several items to create an overall score. The first step in the creation of scales is correcting the values of any reverse-keyed items.</p>
-<div id="reverse-key-items" class="section level4">
+<div id="reverse-key-items" class="section level4" number="4.7.4.1">
 <h4><span class="header-section-number">4.7.4.1</span> Reverse-key items</h4>
 <p>The way you deal with reverse-keyed items depends on how you scored them. Imagine you had a 5-point scale. You could have scored the scale with the values 1, 2, 3, 4, and 5. Alternatively, you could have scored the scale with the values 0, 1, 2, 3, and 4. The mathematical approach you use to correcting reverse-keyed items depends upon whether the scale starts with 1 or 0.</p>
 <p>In this example, we scored the data using the value 1 to 5; so that is the approach illustrated here. See the extra information box for details on how to fixed reverse-keyed items when the scale begins with zero.</p>
 <p>In this data file all the reverse-keyed items were identified with the suffix "_rev15" in the column names. This suffix indicates the item was reverse keyed and that the original scale used the response points 1 to 5. We can see those items with the glimpse() command below. Notice that there are two reverse-keyed items - each on difference scales.</p>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="data-entryanalysis.html#cb225-1"></a>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb225-2"><a href="data-entryanalysis.html#cb225-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">ends_with</span>(<span class="st">&quot;_rev15&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb225-3"><a href="data-entryanalysis.html#cb225-3"></a><span class="st">  </span><span class="kw">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="data-entryanalysis.html#cb226-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb226-2"><a href="data-entryanalysis.html#cb226-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">&quot;_rev15&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb226-3"><a href="data-entryanalysis.html#cb226-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 2
 ## $ esteem5_rev15 &lt;dbl&gt; 2, 2, 2, 2, 2, NA, NA, 2, 2, 2, 3, …
@@ -1215,13 +1235,13 @@ FIGURE 4.4: Text view of CSV data
 <li>subtracts the values in those columns from 6</li>
 <li>renames the columns by removing "_rev15" from the name because the reverse coding is complete</li>
 </ul>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="data-entryanalysis.html#cb227-1"></a>analytic_data_survey &lt;-<span class="st"> </span>analytic_data_survey <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb227-2"><a href="data-entryanalysis.html#cb227-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dv">6</span> <span class="op">-</span><span class="st"> </span><span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">ends_with</span>(<span class="st">&quot;_rev15&quot;</span>)) ) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb227-3"><a href="data-entryanalysis.html#cb227-3"></a><span class="st">  </span><span class="kw">rename_with</span>(<span class="dt">.fn =</span> str_remove,</span>
-<span id="cb227-4"><a href="data-entryanalysis.html#cb227-4"></a>              <span class="dt">.cols =</span> <span class="kw">ends_with</span>(<span class="st">&quot;_rev15&quot;</span>),</span>
-<span id="cb227-5"><a href="data-entryanalysis.html#cb227-5"></a>              <span class="dt">pattern =</span> <span class="st">&quot;_rev15&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="data-entryanalysis.html#cb228-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
+<span id="cb228-2"><a href="data-entryanalysis.html#cb228-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="dv">6</span> <span class="sc">-</span> <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_rev15&quot;</span>)) ) <span class="sc">%&gt;%</span> </span>
+<span id="cb228-3"><a href="data-entryanalysis.html#cb228-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="at">.fn =</span> str_remove,</span>
+<span id="cb228-4"><a href="data-entryanalysis.html#cb228-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_rev15&quot;</span>),</span>
+<span id="cb228-5"><a href="data-entryanalysis.html#cb228-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">pattern =</span> <span class="st">&quot;_rev15&quot;</span>)</span></code></pre></div>
 <p>You can use the glimpse() command to see the result of your work. If you compare these new values to those obtained from the previous glimpse() command you can see they have changed. Also notice the column names no longer indicate the items are reverse keyed.</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="data-entryanalysis.html#cb228-1"></a><span class="kw">glimpse</span>(analytic_data_survey)</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="data-entryanalysis.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 14
 ## $ id        &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, …
@@ -1281,16 +1301,15 @@ For each item you would use subtract values from the highest possible point (i.e
 <p>Thus, the mutate command would instead be:</p>
 mutate(4 - across(.cols = ends_with("_rev15")) )
 </div>
-
 </div>
-<div id="creating-scores" class="section level4">
+<div id="creating-scores" class="section level4" number="4.7.4.2">
 <h4><span class="header-section-number">4.7.4.2</span> Creating scores</h4>
 <p>The process we use for creating scale scores deletes item-level data from analytic_data_survey. This is a desirable aspect of the process because it removes information that we are no longer interested in from our analytic data. That said, before we create scale score, we create a backup on the item-level data called analytic_data_survey_items. We will need to use this backup later to compute the reliability of the scales we are creating.</p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="data-entryanalysis.html#cb230-1"></a>analytic_data_survey_items &lt;-<span class="st"> </span>analytic_data_survey</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="data-entryanalysis.html#cb231-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey_items <span class="ot">&lt;-</span> analytic_data_survey</span></code></pre></div>
 <p>We want to make a self_esteem scale and plan to select items using starts_with(“esteem”). But prior to doing this we make sure the start_with() command only gives us the items we want - and not additional unwanted items. The output below confirms there are not problems associated with using starts_with(“esteem”).</p>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="data-entryanalysis.html#cb231-1"></a>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb231-2"><a href="data-entryanalysis.html#cb231-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb231-3"><a href="data-entryanalysis.html#cb231-3"></a><span class="st">  </span><span class="kw">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="data-entryanalysis.html#cb232-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb232-2"><a href="data-entryanalysis.html#cb232-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb232-3"><a href="data-entryanalysis.html#cb232-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 5
 ## $ esteem1 &lt;dbl&gt; 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 4, NA, N…
@@ -1299,9 +1318,9 @@ mutate(4 - across(.cols = ends_with("_rev15")) )
 ## $ esteem4 &lt;dbl&gt; 3, 4, 4, 3, 4, 4, 4, 4, 3, 4, NA, 4, 3, 3…
 ## $ esteem5 &lt;dbl&gt; 4, 4, 4, 4, 4, NA, NA, 4, 4, 4, 3, 4, 4, …</code></pre>
 <p>Likewise, we want to make a job_sat scale and plan to select items using starts_with(“jobsat”). The code and output below using starts_with(“jobsat”) only returns the items we are interested in.</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="data-entryanalysis.html#cb233-1"></a>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb233-2"><a href="data-entryanalysis.html#cb233-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;jobsat&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb233-3"><a href="data-entryanalysis.html#cb233-3"></a><span class="st">  </span><span class="kw">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="data-entryanalysis.html#cb234-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb234-2"><a href="data-entryanalysis.html#cb234-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;jobsat&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb234-3"><a href="data-entryanalysis.html#cb234-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 5
 ## $ jobsat1 &lt;dbl&gt; 3, 5, 4, 3, 3, 3, 3, 5, 3, 3, 3, 4, 4, 3,…
@@ -1311,17 +1330,17 @@ mutate(4 - across(.cols = ends_with("_rev15")) )
 ## $ jobsat5 &lt;dbl&gt; 5, NA, 5, 4, 5, 4, 4, 5, 5, 5, 4, NA, 4, …</code></pre>
 <p>We calculate the scale scores using the rowwise() command. The mean() command provides the mean of columns by default - not people. We use the rowwise() command in the code below to make the mean() command work across columns (within participants) rather than within columns. The mutate command calculates the scale score for each person. The c_across() command combined with the starts_with() command ensures the items we want averaged together are the items that are averaged together. Notice there is a separate mutate line for each scale. The ungroup() command turns off the rowwise() command. We end the code block by removing the item-level data from the data set.</p>
 <p><strong>Important:</strong> Take note of how we name the scale variables (e.g., self_esteem, job_sat). We use a slightly different convention than our items. That is, these scale labels were picked so that they would <em>not</em> be selected by a starts_with(“esteem”) or starts_with(“jobsat”). Why - because we later use those commands to remove the item-level data. We would want the command designed to remove the item-level data to also remove the scale we just calculated! This example illustrates how carefully you need to think about your naming conventions.</p>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="data-entryanalysis.html#cb235-1"></a>analytic_data_survey &lt;-<span class="st"> </span>analytic_data_survey <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb235-2"><a href="data-entryanalysis.html#cb235-2"></a><span class="st">  </span><span class="kw">rowwise</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb235-3"><a href="data-entryanalysis.html#cb235-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">self_esteem =</span> <span class="kw">mean</span>(<span class="kw">c_across</span>(<span class="kw">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)),</span>
-<span id="cb235-4"><a href="data-entryanalysis.html#cb235-4"></a>                               <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb235-5"><a href="data-entryanalysis.html#cb235-5"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">job_sat =</span> <span class="kw">mean</span>(<span class="kw">c_across</span>(<span class="kw">starts_with</span>(<span class="st">&quot;jobsat&quot;</span>)),</span>
-<span id="cb235-6"><a href="data-entryanalysis.html#cb235-6"></a>                               <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb235-7"><a href="data-entryanalysis.html#cb235-7"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></span>
-<span id="cb235-8"><a href="data-entryanalysis.html#cb235-8"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb235-9"><a href="data-entryanalysis.html#cb235-9"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">starts_with</span>(<span class="st">&quot;jobsat&quot;</span>)) </span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="data-entryanalysis.html#cb236-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
+<span id="cb236-2"><a href="data-entryanalysis.html#cb236-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb236-3"><a href="data-entryanalysis.html#cb236-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">self_esteem =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)),</span>
+<span id="cb236-4"><a href="data-entryanalysis.html#cb236-4" aria-hidden="true" tabindex="-1"></a>                               <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb236-5"><a href="data-entryanalysis.html#cb236-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">job_sat =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">&quot;jobsat&quot;</span>)),</span>
+<span id="cb236-6"><a href="data-entryanalysis.html#cb236-6" aria-hidden="true" tabindex="-1"></a>                               <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb236-7"><a href="data-entryanalysis.html#cb236-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb236-8"><a href="data-entryanalysis.html#cb236-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb236-9"><a href="data-entryanalysis.html#cb236-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;jobsat&quot;</span>)) </span></code></pre></div>
 <p>We can see our data now has the self_esteem column, a job_sat column, and that all of the item-level data has been removed.</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="data-entryanalysis.html#cb236-1"></a><span class="kw">glimpse</span>(analytic_data_survey)</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="data-entryanalysis.html#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 6
 ## $ id          &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12…
@@ -1334,26 +1353,26 @@ mutate(4 - across(.cols = ends_with("_rev15")) )
 </div>
 </div>
 </div>
-<div id="basic-descriptive-statistics" class="section level2">
+<div id="basic-descriptive-statistics" class="section level2" number="4.8">
 <h2><span class="header-section-number">4.8</span> Basic descriptive statistics</h2>
 <p>Regardless of the design of the study, most researchers want to see descriptive statistics for the variables in their study. We offer three approaches for obtaining descriptive statistics below. For convenience we use the recent data set analytic_data_occasions. But recognize the commands below can be used with all the analytic data sets we created for the various designs.</p>
-<div id="skim" class="section level3">
+<div id="skim" class="section level3" number="4.8.1">
 <h3><span class="header-section-number">4.8.1</span> skim()</h3>
 <p>One approach is the skim() command from the skimr package. The skim() command quickly provides the basic descriptive statistics. In the output for this command there are also several columns that begin with p: p0, p25, p50, p75, and p100 (p25 and p75 are omitted in output due to space). These columns correspond to the 0th, 25th, 50th, 75th, and 100th percentiles, respectively. The minimum and maximum values for the data column are indicated under the p0 and p100 labels. The median is the 50th percentile (p50). The interquartile range is the range between p25 and p75. Notice that we run this command on the “wide” version of the data (analytic_data_occasions) rather than tidy version of the data (analytic_occasion_tidy).</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="data-entryanalysis.html#cb238-1"></a><span class="kw">library</span>(skimr)</span>
-<span id="cb238-2"><a href="data-entryanalysis.html#cb238-2"></a><span class="kw">skim</span>(analytic_data_survey)</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="data-entryanalysis.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb239-2"><a href="data-entryanalysis.html#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(analytic_data_survey)</span></code></pre></div>
 <pre><code>##   skim_variable n_missing  mean   sd   p0  p50  p100
 ## 1           age         3 20.52 2.05 17.0 20.0 24.00
 ## 2   self_esteem         0  3.40 0.32  2.5  3.4  4.25
 ## 3       job_sat         0  3.91 0.43  2.0  4.0  5.00</code></pre>
 </div>
-<div id="apa.cor.table" class="section level3">
+<div id="apa.cor.table" class="section level3" number="4.8.2">
 <h3><span class="header-section-number">4.8.2</span> apa.cor.table()</h3>
 <p>Another approach is the apa.cor.table() command from the apaTables package. This quickly provides the basic descriptive statistics as well as correlations among variable. As well, it will even create a Word document with this information, see Figure <a href="data-entryanalysis.html#fig:descapa">4.5</a>. Notice that we run this command on the “wide” version of the data (analytic_data_occasions) rather than tidy version of the data (analytic_occasion_tidy).</p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="data-entryanalysis.html#cb240-1"></a><span class="kw">library</span>(apaTables)</span>
-<span id="cb240-2"><a href="data-entryanalysis.html#cb240-2"></a>analytic_data_survey <span class="op">%&gt;%</span></span>
-<span id="cb240-3"><a href="data-entryanalysis.html#cb240-3"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">where</span>(is.numeric)) <span class="op">%&gt;%</span></span>
-<span id="cb240-4"><a href="data-entryanalysis.html#cb240-4"></a><span class="st">  </span><span class="kw">apa.cor.table</span>(<span class="dt">filename =</span> <span class="st">&quot;apa_descriptives.doc&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="data-entryanalysis.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(apaTables)</span>
+<span id="cb241-2"><a href="data-entryanalysis.html#cb241-2" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb241-3"><a href="data-entryanalysis.html#cb241-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span></span>
+<span id="cb241-4"><a href="data-entryanalysis.html#cb241-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apa.cor.table</span>(<span class="at">filename =</span> <span class="st">&quot;apa_descriptives.doc&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:descapa"></span>
 <img src="ch_enter_load/images/desc_apa.png" alt="Word document created by apa.cor.table" width="100%" />
 <p class="caption">
@@ -1361,56 +1380,56 @@ FIGURE 4.5: Word document created by apa.cor.table
 </p>
 </div>
 </div>
-<div id="tidyverse" class="section level3">
+<div id="tidyverse" class="section level3" number="4.8.3">
 <h3><span class="header-section-number">4.8.3</span> tidyverse</h3>
 <p>A final approach uses tidyverse commands. This approach is oddly long - and we won’t describe how it works in detail. But, based on the information in the previous chapter you should be able to work out how this code works. Even though this code is long - it provide the ultimate in flexibility. If a new statistic is developed that you want to use, you can simply include the command for it in the desired_descriptives list and it will be included in your table. Notice that we run this command on the “wide” version of the data (analytic_data_occasions) rather than tidy version of the data (analytic_occasion_tidy).</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="data-entryanalysis.html#cb241-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb241-2"><a href="data-entryanalysis.html#cb241-2"></a><span class="co"># HMisc package must be installed. </span></span>
-<span id="cb241-3"><a href="data-entryanalysis.html#cb241-3"></a><span class="co"># Library command not needed for HMisc package.</span></span>
-<span id="cb241-4"><a href="data-entryanalysis.html#cb241-4"></a></span>
-<span id="cb241-5"><a href="data-entryanalysis.html#cb241-5"></a>desired_descriptives &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
-<span id="cb241-6"><a href="data-entryanalysis.html#cb241-6"></a>  <span class="dt">mean =</span> <span class="op">~</span><span class="kw">mean</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb241-7"><a href="data-entryanalysis.html#cb241-7"></a>  <span class="dt">CI95_LL =</span> <span class="op">~</span>Hmisc<span class="op">::</span><span class="kw">smean.cl.normal</span>(.x)[<span class="dv">2</span>],</span>
-<span id="cb241-8"><a href="data-entryanalysis.html#cb241-8"></a>  <span class="dt">CI95_UL =</span> <span class="op">~</span>Hmisc<span class="op">::</span><span class="kw">smean.cl.normal</span>(.x)[<span class="dv">3</span>],</span>
-<span id="cb241-9"><a href="data-entryanalysis.html#cb241-9"></a>  <span class="dt">sd =</span> <span class="op">~</span><span class="kw">sd</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb241-10"><a href="data-entryanalysis.html#cb241-10"></a>  <span class="dt">min =</span> <span class="op">~</span><span class="kw">min</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb241-11"><a href="data-entryanalysis.html#cb241-11"></a>  <span class="dt">max =</span> <span class="op">~</span><span class="kw">max</span>(.x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb241-12"><a href="data-entryanalysis.html#cb241-12"></a>  <span class="dt">n =</span> <span class="op">~</span><span class="kw">sum</span>(<span class="op">!</span><span class="kw">is.na</span>(.x))</span>
-<span id="cb241-13"><a href="data-entryanalysis.html#cb241-13"></a>)</span>
-<span id="cb241-14"><a href="data-entryanalysis.html#cb241-14"></a></span>
-<span id="cb241-15"><a href="data-entryanalysis.html#cb241-15"></a>row_sum &lt;-<span class="st"> </span>analytic_data_survey <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb241-16"><a href="data-entryanalysis.html#cb241-16"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
-<span id="cb241-17"><a href="data-entryanalysis.html#cb241-17"></a>                   <span class="dt">.fns =</span>  desired_descriptives,</span>
-<span id="cb241-18"><a href="data-entryanalysis.html#cb241-18"></a>                   <span class="dt">.names =</span> <span class="st">&quot;{col}___{fn}&quot;</span>))</span>
-<span id="cb241-19"><a href="data-entryanalysis.html#cb241-19"></a></span>
-<span id="cb241-20"><a href="data-entryanalysis.html#cb241-20"></a>long_summary &lt;-<span class="st"> </span>row_sum <span class="op">%&gt;%</span></span>
-<span id="cb241-21"><a href="data-entryanalysis.html#cb241-21"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="kw">everything</span>(),</span>
-<span id="cb241-22"><a href="data-entryanalysis.html#cb241-22"></a>               <span class="dt">names_to =</span> <span class="kw">c</span>(<span class="st">&quot;var&quot;</span>, <span class="st">&quot;stat&quot;</span>),</span>
-<span id="cb241-23"><a href="data-entryanalysis.html#cb241-23"></a>               <span class="dt">names_sep =</span> <span class="kw">c</span>(<span class="st">&quot;___&quot;</span>),</span>
-<span id="cb241-24"><a href="data-entryanalysis.html#cb241-24"></a>               <span class="dt">values_to =</span> <span class="st">&quot;value&quot;</span>)</span>
-<span id="cb241-25"><a href="data-entryanalysis.html#cb241-25"></a></span>
-<span id="cb241-26"><a href="data-entryanalysis.html#cb241-26"></a>summary_table &lt;-<span class="st"> </span>long_summary <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb241-27"><a href="data-entryanalysis.html#cb241-27"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> stat,</span>
-<span id="cb241-28"><a href="data-entryanalysis.html#cb241-28"></a>              <span class="dt">values_from =</span> value)</span>
-<span id="cb241-29"><a href="data-entryanalysis.html#cb241-29"></a></span>
-<span id="cb241-30"><a href="data-entryanalysis.html#cb241-30"></a><span class="co"># round to 3 decimals</span></span>
-<span id="cb241-31"><a href="data-entryanalysis.html#cb241-31"></a>summary_table_rounded &lt;-<span class="st"> </span>summary_table <span class="op">%&gt;%</span></span>
-<span id="cb241-32"><a href="data-entryanalysis.html#cb241-32"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="kw">across</span>(<span class="dt">.cols =</span> <span class="kw">where</span>(is.numeric),</span>
-<span id="cb241-33"><a href="data-entryanalysis.html#cb241-33"></a>                <span class="dt">.fns=</span> round,</span>
-<span id="cb241-34"><a href="data-entryanalysis.html#cb241-34"></a>                <span class="dt">digits =</span> <span class="dv">3</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb241-35"><a href="data-entryanalysis.html#cb241-35"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span>
-<span id="cb241-36"><a href="data-entryanalysis.html#cb241-36"></a></span>
-<span id="cb241-37"><a href="data-entryanalysis.html#cb241-37"></a><span class="kw">print</span>(summary_table_rounded)</span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="data-entryanalysis.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb242-2"><a href="data-entryanalysis.html#cb242-2" aria-hidden="true" tabindex="-1"></a><span class="co"># HMisc package must be installed. </span></span>
+<span id="cb242-3"><a href="data-entryanalysis.html#cb242-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Library command not needed for HMisc package.</span></span>
+<span id="cb242-4"><a href="data-entryanalysis.html#cb242-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-5"><a href="data-entryanalysis.html#cb242-5" aria-hidden="true" tabindex="-1"></a>desired_descriptives <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb242-6"><a href="data-entryanalysis.html#cb242-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb242-7"><a href="data-entryanalysis.html#cb242-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">CI95_LL =</span> <span class="sc">~</span>Hmisc<span class="sc">::</span><span class="fu">smean.cl.normal</span>(.x)[<span class="dv">2</span>],</span>
+<span id="cb242-8"><a href="data-entryanalysis.html#cb242-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">CI95_UL =</span> <span class="sc">~</span>Hmisc<span class="sc">::</span><span class="fu">smean.cl.normal</span>(.x)[<span class="dv">3</span>],</span>
+<span id="cb242-9"><a href="data-entryanalysis.html#cb242-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb242-10"><a href="data-entryanalysis.html#cb242-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">min =</span> <span class="sc">~</span><span class="fu">min</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb242-11"><a href="data-entryanalysis.html#cb242-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">max =</span> <span class="sc">~</span><span class="fu">max</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb242-12"><a href="data-entryanalysis.html#cb242-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="sc">~</span><span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(.x))</span>
+<span id="cb242-13"><a href="data-entryanalysis.html#cb242-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb242-14"><a href="data-entryanalysis.html#cb242-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-15"><a href="data-entryanalysis.html#cb242-15" aria-hidden="true" tabindex="-1"></a>row_sum <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
+<span id="cb242-16"><a href="data-entryanalysis.html#cb242-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">where</span>(is.numeric),</span>
+<span id="cb242-17"><a href="data-entryanalysis.html#cb242-17" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span>  desired_descriptives,</span>
+<span id="cb242-18"><a href="data-entryanalysis.html#cb242-18" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.names =</span> <span class="st">&quot;{col}___{fn}&quot;</span>))</span>
+<span id="cb242-19"><a href="data-entryanalysis.html#cb242-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-20"><a href="data-entryanalysis.html#cb242-20" aria-hidden="true" tabindex="-1"></a>long_summary <span class="ot">&lt;-</span> row_sum <span class="sc">%&gt;%</span></span>
+<span id="cb242-21"><a href="data-entryanalysis.html#cb242-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb242-22"><a href="data-entryanalysis.html#cb242-22" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;var&quot;</span>, <span class="st">&quot;stat&quot;</span>),</span>
+<span id="cb242-23"><a href="data-entryanalysis.html#cb242-23" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_sep =</span> <span class="fu">c</span>(<span class="st">&quot;___&quot;</span>),</span>
+<span id="cb242-24"><a href="data-entryanalysis.html#cb242-24" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span>)</span>
+<span id="cb242-25"><a href="data-entryanalysis.html#cb242-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-26"><a href="data-entryanalysis.html#cb242-26" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> long_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb242-27"><a href="data-entryanalysis.html#cb242-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> stat,</span>
+<span id="cb242-28"><a href="data-entryanalysis.html#cb242-28" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> value)</span>
+<span id="cb242-29"><a href="data-entryanalysis.html#cb242-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-30"><a href="data-entryanalysis.html#cb242-30" aria-hidden="true" tabindex="-1"></a><span class="co"># round to 3 decimals</span></span>
+<span id="cb242-31"><a href="data-entryanalysis.html#cb242-31" aria-hidden="true" tabindex="-1"></a>summary_table_rounded <span class="ot">&lt;-</span> summary_table <span class="sc">%&gt;%</span></span>
+<span id="cb242-32"><a href="data-entryanalysis.html#cb242-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">where</span>(is.numeric),</span>
+<span id="cb242-33"><a href="data-entryanalysis.html#cb242-33" aria-hidden="true" tabindex="-1"></a>                <span class="at">.fns=</span> round,</span>
+<span id="cb242-34"><a href="data-entryanalysis.html#cb242-34" aria-hidden="true" tabindex="-1"></a>                <span class="at">digits =</span> <span class="dv">3</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb242-35"><a href="data-entryanalysis.html#cb242-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
+<span id="cb242-36"><a href="data-entryanalysis.html#cb242-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-37"><a href="data-entryanalysis.html#cb242-37" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(summary_table_rounded)</span></code></pre></div>
 <pre><code>##           var   mean CI95_LL CI95_UL    sd  min   max   n
 ## 1         age 20.522  20.288  20.756 2.048 17.0 24.00 297
 ## 2 self_esteem  3.403   3.366   3.440 0.324  2.5  4.25 300
 ## 3     job_sat  3.905   3.856   3.955 0.435  2.0  5.00 300</code></pre>
 </div>
-<div id="cronbachs-alpha" class="section level3">
+<div id="cronbachs-alpha" class="section level3" number="4.8.4">
 <h3><span class="header-section-number">4.8.4</span> Cronbach’s alpha</h3>
 <p>If you want Cronbach’s alpha to estimate the reliability of the scale, you can use the alpha command from the psych package with the code below. Note we have to use the item-level data we previously created a copy of called analytic_data_survey_items. The glimpse() command illustrates this data set has all the original items (after reverse-key coding has been fixed).</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="data-entryanalysis.html#cb243-1"></a>analytic_data_survey_items <span class="op">%&gt;%</span></span>
-<span id="cb243-2"><a href="data-entryanalysis.html#cb243-2"></a><span class="st">  </span><span class="kw">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="data-entryanalysis.html#cb244-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey_items <span class="sc">%&gt;%</span></span>
+<span id="cb244-2"><a href="data-entryanalysis.html#cb244-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 14
 ## $ id        &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, …
@@ -1428,44 +1447,17 @@ FIGURE 4.5: Word document created by apa.cor.table
 ## $ jobsat4   &lt;dbl&gt; NA, 5, 5, 4, 4, 4, 4, 5, NA, 4, NA, 5, …
 ## $ jobsat5   &lt;dbl&gt; 5, NA, 5, 4, 5, 4, 4, 5, 5, 5, 4, NA, 4…</code></pre>
 <p>We calculated reliability using psych::alpha() command. Cronbach’s alpha is labeled “raw alpha” in the output. Cronbach’s alpha is an estimate of the proportion of variability in observed scores that is due to actual differences among participants (rather than measurement error). Remember, never use library(psych), it will break the tidyverse packages. Instead, precede all psych package commands with psych:: as we do below with psych::alpha().</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="data-entryanalysis.html#cb245-1"></a>rxx_alpha &lt;-<span class="st"> </span>analytic_data_survey_items <span class="op">%&gt;%</span></span>
-<span id="cb245-2"><a href="data-entryanalysis.html#cb245-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb245-3"><a href="data-entryanalysis.html#cb245-3"></a><span class="st">  </span>psych<span class="op">::</span><span class="kw">alpha</span>()</span>
-<span id="cb245-4"><a href="data-entryanalysis.html#cb245-4"></a></span>
-<span id="cb245-5"><a href="data-entryanalysis.html#cb245-5"></a><span class="kw">print</span>(rxx_alpha<span class="op">$</span>total)</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="data-entryanalysis.html#cb246-1" aria-hidden="true" tabindex="-1"></a>rxx_alpha <span class="ot">&lt;-</span> analytic_data_survey_items <span class="sc">%&gt;%</span></span>
+<span id="cb246-2"><a href="data-entryanalysis.html#cb246-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb246-3"><a href="data-entryanalysis.html#cb246-3" aria-hidden="true" tabindex="-1"></a>  psych<span class="sc">::</span><span class="fu">alpha</span>()</span>
+<span id="cb246-4"><a href="data-entryanalysis.html#cb246-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb246-5"><a href="data-entryanalysis.html#cb246-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(rxx_alpha<span class="sc">$</span>total)</span></code></pre></div>
 <pre><code>##  raw_alpha std.alpha G6(smc) average_r  S/N     ase  mean
 ##     0.6622    0.6634  0.6173    0.2827 1.97 0.03035 3.403
 ##      sd median_r
 ##  0.3239   0.2927</code></pre>
 
 </div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-baker2016">
-<p>Baker, M. 2016. “1500 Scientists Lift the Lid on Reproducibility.” <em>Nature</em> 533. <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.</p>
-</div>
-<div id="ref-keur2020">
-<p>Keur, Christian, and Aaron Hillegass. 2020. <em>IOS Programming: The Big Nerd Ranch Guide</em>. Pearson Technology Group.</p>
-</div>
-<div id="ref-meyer1993commitment">
-<p>Meyer, John P, Natalie J Allen, and Catherine A Smith. 1993. “Commitment to Organizations and Occupations: Extension and Test of a Three-Component Conceptualization.” <em>Journal of Applied Psychology</em> 78 (4): 538.</p>
-</div>
-<div id="ref-miyakawa2020">
-<p>Miyakawa, T. 2020. “No Raw Data, No Science: Another Possible Source of the Reproducibility Crisis.” <em>Mol Brain</em> 13 (24). <a href="https://doi.org/10.1186/s13041-020-0552-2">https://doi.org/10.1186/s13041-020-0552-2</a>.</p>
-</div>
-<div id="ref-cos2015">
-<p>Nosek. 2015. “Estimating the Reproducibility of Psychological Science.” <em>Science</em> 349 (6251). <a href="http://doi.org/10.1126/science.aac4716">http://doi.org/10.1126/science.aac4716</a>.</p>
-</div>
-<div id="ref-patil2019">
-<p>Patil P., &amp; Leek J. T, Peng R. D. 2019. “A Visual Tool for Defining Reproducibility and Replicability.” <em>Nat Hum Behav</em> 3: 650–52. <a href="https://doi.org/10.1038/s41562-019-0629-z">https://doi.org/10.1038/s41562-019-0629-z</a>.</p>
-</div>
-<div id="ref-simmons2011">
-<p>Simmons, Joseph P, Leif D Nelson, and Uri Simonsohn. 2011. “False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant.” <em>Psychological Science</em> 22 (11): 1359–66.</p>
-</div>
-<div id="ref-tidy-data">
-<p>Wickham, Hadley. 2014. “Tidy Data.” <em>The Journal of Statistical Software</em> 59 (10). <a href="http://www.jstatsoft.org/v59/i10/">http://www.jstatsoft.org/v59/i10/</a>.</p>
 </div>
 </div>
             </section>

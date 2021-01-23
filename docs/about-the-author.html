@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2021-01-09" />
+<meta name="date" content="2021-01-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="introduction.html"/>
+<script src="libs/header-attrs/header-attrs.js"></script>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -50,24 +51,22 @@
 
 
 
-<script src="libs/accessible-code-block/empty-anchor.js"></script>
 <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,107 +137,128 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course:</a></li>
 <li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#software-choice"><i class="fa fa-check"></i><b>1.3</b> Software Choice</a><ul>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#software-choice"><i class="fa fa-check"></i><b>1.3</b> Software Choice</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#mac"><i class="fa fa-check"></i><b>1.3.1</b> Mac</a></li>
 <li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#pc"><i class="fa fa-check"></i><b>1.3.2</b> PC</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#begin-with-an-rstudio-project"><i class="fa fa-check"></i><b>1.4</b> Begin with an RStudio Project</a></li>
-<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a><ul>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a>
+<ul>
 <li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
 <li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a><ul>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a>
+<ul>
 <li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
 <li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
 <li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
 <li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
 <li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a><ul>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a>
+<ul>
 <li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a><ul>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a>
+<ul>
 <li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
 <li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
 <li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
 <li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
 <li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
 </ul></li>
-<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a><ul>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a>
+<ul>
 <li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
 <li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
 <li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
 </ul></li>
 <li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
-<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a><ul>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a>
+<ul>
 <li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
 </ul></li>
 <li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#revisiting-read_csv"><i class="fa fa-check"></i><b>1.12</b> Revisiting read_csv()</a></li>
 <li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.13</b> That’s it!</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a><ul>
+<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
 <li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
 <li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
-<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a><ul>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
 <li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
 <li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
 <li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
 <li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a><ul>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
 <li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
 <li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
 </ul></li>
 <li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
-<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a><ul>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a>
+<ul>
 <li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
 <li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv() and data frames</a></li>
 <li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv() and tibbles</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="scaling.html"><a href="scaling.html"><i class="fa fa-check"></i><b>3</b> Scaling</a><ul>
+<li class="chapter" data-level="3" data-path="scaling.html"><a href="scaling.html"><i class="fa fa-check"></i><b>3</b> Scaling</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="scaling.html"><a href="scaling.html#notation"><i class="fa fa-check"></i><b>3.1</b> Notation</a></li>
 <li class="chapter" data-level="3.2" data-path="scaling.html"><a href="scaling.html#measurement-notation"><i class="fa fa-check"></i><b>3.2</b> Measurement Notation</a></li>
 <li class="chapter" data-level="3.3" data-path="scaling.html"><a href="scaling.html#data-entry"><i class="fa fa-check"></i><b>3.3</b> Data entry</a></li>
 <li class="chapter" data-level="3.4" data-path="scaling.html"><a href="scaling.html#loading-data"><i class="fa fa-check"></i><b>3.4</b> Loading data</a></li>
 <li class="chapter" data-level="3.5" data-path="scaling.html"><a href="scaling.html#viewing-data"><i class="fa fa-check"></i><b>3.5</b> Viewing data</a></li>
 <li class="chapter" data-level="3.6" data-path="scaling.html"><a href="scaling.html#summary-statistics"><i class="fa fa-check"></i><b>3.6</b> Summary statistics</a></li>
-<li class="chapter" data-level="3.7" data-path="scaling.html"><a href="scaling.html#converting-units"><i class="fa fa-check"></i><b>3.7</b> Converting units</a><ul>
+<li class="chapter" data-level="3.7" data-path="scaling.html"><a href="scaling.html#converting-units"><i class="fa fa-check"></i><b>3.7</b> Converting units</a>
+<ul>
 <li class="chapter" data-level="3.7.1" data-path="scaling.html"><a href="scaling.html#inches"><i class="fa fa-check"></i><b>3.7.1</b> Inches</a></li>
 <li class="chapter" data-level="3.7.2" data-path="scaling.html"><a href="scaling.html#z-scores"><i class="fa fa-check"></i><b>3.7.2</b> <em>z</em>-scores</a></li>
 <li class="chapter" data-level="3.7.3" data-path="scaling.html"><a href="scaling.html#t-scores"><i class="fa fa-check"></i><b>3.7.3</b> T-scores</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.8</b> Frame of references</a><ul>
+<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.8</b> Frame of references</a>
+<ul>
 <li class="chapter" data-level="3.8.1" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.8.1</b> All participants</a></li>
 <li class="chapter" data-level="3.8.2" data-path="scaling.html"><a href="scaling.html#male-reference"><i class="fa fa-check"></i><b>3.8.2</b> Male reference</a></li>
 <li class="chapter" data-level="3.8.3" data-path="scaling.html"><a href="scaling.html#canadian-reference"><i class="fa fa-check"></i><b>3.8.3</b> Canadian reference</a></li>
 </ul></li>
+<li class="chapter" data-level="3.9" data-path="scaling.html"><a href="scaling.html#summary-4"><i class="fa fa-check"></i><b>3.9</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>4</b> Data Entry/Analysis</a><ul>
+<li class="chapter" data-level="4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>4</b> Data Entry/Analysis</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#required-packages"><i class="fa fa-check"></i><b>4.1</b> Required Packages</a></li>
 <li class="chapter" data-level="4.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#objective-1"><i class="fa fa-check"></i><b>4.2</b> Objective</a></li>
-<li class="chapter" data-level="4.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>4.3</b> Begin with the end in mind</a><ul>
+<li class="chapter" data-level="4.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>4.3</b> Begin with the end in mind</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>4.3.1</b> Structuring data: Obtaining tidy data</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>4.4</b> Data collection considerations</a><ul>
+<li class="chapter" data-level="4.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>4.4</b> Data collection considerations</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#naming-conventions"><i class="fa fa-check"></i><b>4.4.1</b> Naming conventions</a></li>
 <li class="chapter" data-level="4.4.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#likert-type-items"><i class="fa fa-check"></i><b>4.4.2</b> Likert-type items</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#following-the-examples"><i class="fa fa-check"></i><b>4.5</b> Following the examples</a></li>
 <li class="chapter" data-level="4.6" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>4.6</b> Entering data into spreadsheets</a></li>
-<li class="chapter" data-level="4.7" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#surveys-single-occassion"><i class="fa fa-check"></i><b>4.7</b> Surveys: Single Occassion</a><ul>
+<li class="chapter" data-level="4.7" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#surveys-single-occassion"><i class="fa fa-check"></i><b>4.7</b> Surveys: Single Occassion</a>
+<ul>
 <li class="chapter" data-level="4.7.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#creating-factors"><i class="fa fa-check"></i><b>4.7.1</b> Creating factors</a></li>
 <li class="chapter" data-level="4.7.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#factor-screening"><i class="fa fa-check"></i><b>4.7.2</b> Factor screening</a></li>
 <li class="chapter" data-level="4.7.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#numeric-screening"><i class="fa fa-check"></i><b>4.7.3</b> Numeric screening</a></li>
 <li class="chapter" data-level="4.7.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#scale-scores"><i class="fa fa-check"></i><b>4.7.4</b> Scale scores</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>4.8</b> Basic descriptive statistics</a><ul>
+<li class="chapter" data-level="4.8" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>4.8</b> Basic descriptive statistics</a>
+<ul>
 <li class="chapter" data-level="4.8.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#skim"><i class="fa fa-check"></i><b>4.8.1</b> skim()</a></li>
 <li class="chapter" data-level="4.8.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#apa.cor.table"><i class="fa fa-check"></i><b>4.8.2</b> apa.cor.table()</a></li>
 <li class="chapter" data-level="4.8.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#tidyverse"><i class="fa fa-check"></i><b>4.8.3</b> tidyverse</a></li>
@@ -269,7 +289,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="about-the-author" class="section level1 unnumbered">
 <h1>About the Author</h1>
 <p>David J. Stanley is an Associate Professor of Industrial and Organizational Psychology at the University of Guelph in Canada. He obtained his PhD from Western University in London, Ontario. David has published articles in Advances in Methods and Practices in Psychological Science, Organizational Research Methods, Journal of Applied Psychology, Perspectives in Psychological Science, Journal of Business and Psychology, Journal of Vocational Behaviour, Journal of Personality and Social Psychology, Behavior Research Methods, Industrial and Organizational Psychology, and Emotion among other journals. David also created the apaTables R package.</p>
-
 
 </div>
             </section>
