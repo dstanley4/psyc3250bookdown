@@ -1,0 +1,237 @@
+# Percentiles
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(sjstats) # say no if complied ...
+
+T2z <- function(T){
+  z = (T-50)/10
+  return(z)
+}
+
+get_fill_distribution <- function(z_position) {
+  xinit <- seq(-3, 3, by = .01)
+  yinit <- dnorm(xinit)
+  x <- c(-3, xinit, 3)
+  y <- c(0, yinit, 0)
+  
+  xfill <- c(-3, xinit[xinit <= z_position], z_position)
+  yfill <- c(0,  yinit[xinit <= z_position], 0)
+  
+  df <- data.frame(x, y)
+  df_fill <- data.frame(x = xfill, y = yfill)
+  
+  df_out <- list(
+    dist_data = df,
+    fill_data = df_fill
+  )
+}
+
+get_z_graph <- function(z_position=.50, is_T = FALSE) {
+  df_plot <- get_fill_distribution(z_position)
+  dist_data <- df_plot$dist_data
+  fill_data <- df_plot$fill_data
+
+  percent_fill <- round(pnorm(z_position) *100)
+  if (is_T == FALSE) {
+    title_str <- sprintf("%1.1f%% people in reference group below z = %1.2f", percent_fill, z_position)
+  } else {
+    title_str <- sprintf("%1.1f%% people in reference group below T = %1.2f", percent_fill, z_position*10)
+  }
+  
+  myplot <-ggplot(data = dist_data, mapping = aes(x = x, y = y)) +
+    geom_polygon(fill = "white", color = "black") + 
+    geom_polygon(data = fill_data, fill = "black", color = "black") +
+    scale_x_continuous(breaks = seq(-3, 3, by = .5)) +
+    labs(x = "z-score", y = "Density") +
+    ggtitle(title_str) +
+    theme_classic(18) +
+    theme(plot.title = element_text(size = 14, face = "bold"))
+  
+  return(myplot)
+}
+
+
+
+
+
+
+
+height_data <- read_csv("data_heights.csv", na = c("", "-999"))
+
+height_data <- height_data %>%
+  mutate(part_id = as_factor(part_id),
+         sex = as_factor(sex))
+
+height_data <- height_data %>%
+  mutate(inch_height = cm_height / 2.54)
+
+height_data <- height_data %>%
+  mutate(z_data = (  cm_height - 173.3  )  /  8.013114  )
+
+height_data <- height_data %>%
+  mutate(T_data =  z_data * 10 + 50 )
+
+male_height_data <- height_data %>%
+  filter(sex == "male") 
+
+male_height_data <- male_height_data %>%
+  mutate(z_data_males = (cm_height - 178.7)/ 6.558  )
+
+male_height_data <- male_height_data %>%
+  mutate(z_canada_male = (cm_height - 186.1)/ 7.20  )
+```
+
+In the previous chapter, we calculated z-scores for males in our sample. We calculated the z-scores using three different frames of references: all sample data (male and female), male sample data, and Canadian males. Recall that a z-score provides information relative to a frame of reference e.g., all sample data, male sample data, Canadian males). For a given frame a reference, z-score of 0 represents the mean of that frame of reference. Positive z-scores indicate participants above the mean for the frame of reference whereas negative z-score indicate participants below the mean for the frame of reference. A value of 1 corresponds to one standard deviation. Therefore, a person with a z-score of 2 is two standard deviations above the mean.
+
+## Assuming a normal distribution
+
+### A single case
+
+If we assume our frame of reference has a normal distribution, we can calculate for each person the proportion of people who scored lower than them. For example, imagine a person has a z-score of 0 relative to some reference group. If the distribution is normal, we can determine the **proportion** of people, in the reference group, that haver scores lower than 0 using the command below:
+
+```{r}
+pnorm(0)
+```
+
+We see that 50% of people, in the reference group, have a z-score lower than zero. We can see this graphically below.
+
+```{r, echo = FALSE}
+get_z_graph(0)
+```
+
+
+Of course, the pnorm(0) command is the same as looking up a value of zero in a z-table -- as illustrated below. Examine the first row that is underlined in red. Notice the value of 0 in the z column (indicating a z-score of zero). Then examine the "Larger portion" column and notice the .50 value. This .50 indicates the proportion of the distribution is below a z-score of zero (i.e., .50 or 50%). As noted, examining the table in this way is the same as running pnorm(0) command. 
+
+```{r, echo = FALSE}
+knitr::include_graphics("percentiles/images/z_table_0.png")
+```
+
+### Many cases using R
+
+
+Let's return to the male_height_data from the previous chapter. We begin with the data set as it existed at the end of the last chapter. We take only a few essential columns from that data and place them into a new data set called male_height_canada_percentiles with command below.
+
+```{r}
+male_height_canada_percentiles <- male_height_data %>%
+  select(name, cm_height, z_canada_male) %>%
+  arrange(cm_height) 
+
+print(male_height_canada_percentiles)
+```
+
+We can calculate the portion lower (i.e., proportion_lower column) using the mutate() command below with pnorm().  We also calculate the percent lower (i.e, percentile) by multiplying the proportion_lower column by 100.
+
+```{r}
+male_height_canada_percentiles <- male_height_canada_percentiles %>%
+  mutate(proportion_lower = pnorm(z_canada_male)) %>%
+  mutate(percentile = proportion_lower*100)
+
+print(male_height_canada_percentiles)
+```
+
+Examine the pattern of results for these males. Pay particular attention to the percentile column for Rick, Basheer, and John. For each of these cases we create a graph (based on the numbers in the table above) to illustrate the percentage of Canadian males that are shorter (i.e., have lower height values). Keep in mind, when we calculate the "percentage lower" the resulting number is always for the same frame of reference that we used to calculate the z-score.
+
+
+```{r, echo = FALSE}
+z_rick <- male_height_canada_percentiles %>%
+  filter(name == "Rick") %>%
+  pull(z_canada_male)
+
+z_basheer <- male_height_canada_percentiles %>%
+  filter(name == "Basheer") %>%
+  pull(z_canada_male)
+
+
+z_john <- male_height_canada_percentiles %>%
+  filter(name == "John") %>%
+  pull(z_canada_male)
+
+```
+
+#### Rick
+
+Rick had a z-score of $z$ = -0.43 when using all Canadian males as a frame of reference. If we assume the heights of Canadian males are normally distributed, as we did in the calculations above, we find that 33% of Canadian males are shorter than Rick. We say Rick is in the 33rd percentile.
+
+
+```{r, echo = FALSE}
+get_z_graph(z_rick)
+```
+
+#### Basheer
+
+Basheer had a z-score of $z$ = -0.15 when using all Canadian males as a frame of reference. If we assume the heights of Canadian males are normally distributed, as we did in the calculations above, we find that 44% of Canadian males are shorter than Basheer. We say Basheer is in the 44th percentile.
+
+
+```{r, echo = FALSE}
+get_z_graph(z_basheer)
+```
+
+#### John
+
+John had a z-score of $z$ = .54 when using all Canadian males as a frame of reference. If we assume the heights of Canadian males are normally distributed, as we did in the calculations above, we find that 71% of Canadian males are shorter than John. We say John is in the 71st percentile.
+
+```{r, echo = FALSE}
+get_z_graph(z_john)
+```
+
+## Assuming an unknown distribution
+
+The decision to assume a normal distribution, as we did above, depends on a few things. In order to make a normal distirbution assumption we would a) want to ensure we had a very large number of people in our frame of reference and b) that the shape was actually normal - as determined by a visual inspection of a histogram or a statistical test. If both of these things are true we can use the normal distribution to calculate a percentile for each person. If both of these things are not true - we need to use another approach. That's the focus of this section.
+
+
+1. Rank order the participants in the frame of reference by attribute of interest (e.g., height)
+2. Determine how many people in the frame of reference have scores below each person on the attribute of interest
+3. Divide the "number below" by the total number of people in the frame of reference.
+
+
+### Single person
+
+
+
+### Multiple cases
+
+
+
+```{r}
+male_height_sample_percentiles <- male_height_data %>%
+  select(name, cm_height)
+
+print(male_height_sample_percentiles)
+```
+
+Step 1: Sort by height
+
+```{r}
+male_height_sample_percentiles <- male_height_sample_percentiles %>%
+  arrange(cm_height)
+
+print(male_height_sample_percentiles)
+```
+
+
+
+Step 2: Number below
+
+```{r}
+male_height_sample_percentiles <- male_height_sample_percentiles %>%
+  mutate(number_below = 1:n() - 1)
+
+print(male_height_sample_percentiles)
+```
+
+Step 3: Calculate percentile
+
+```{r, eval = TRUE}
+male_height_sample_percentiles <- male_height_sample_percentiles %>%
+  mutate(proportion_lower = number_below / n()) %>%
+  mutate(percentile = proportion_lower * 100)
+
+print(male_height_sample_percentiles)
+```
+
+#### Tables to reference these percentiles
+
+
+
