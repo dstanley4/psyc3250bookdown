@@ -107,6 +107,14 @@ canadian-reference
 hand-calculation-4
 r-calculation-4
 summary-4
+percentiles
+assuming-a-normal-distribution-approach
+a-single-case
+many-cases-using-r
+rick
+basheer
+john
+assumption-free-approach
 data-entryanalysis
 required-packages
 objective-1
