@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Percentiles | Welcome!</title>
+  <meta name="description" content="Course notes for PSYC 3250" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Percentiles | Welcome!" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course notes for PSYC 3250" />
+  <meta name="github-repo" content="dstanley4/psyc3250bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Percentiles | Welcome!" />
+  
+  <meta name="twitter:description" content="Course notes for PSYC 3250" />
+  
+
+<meta name="author" content="David J. Stanley" />
+
+
+<meta name="date" content="2021-01-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="scaling.html"/>
+<link rel="next" href="data-entryanalysis.html"/>
+<script src="libs/header-attrs/header-attrs.js"></script>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Course Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course:</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#a-focus-on-workflow"><i class="fa fa-check"></i><b>1.1</b> A focus on workflow</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#r-works-with-plug-ins"><i class="fa fa-check"></i><b>1.2</b> R works with plug-ins</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#software-choice"><i class="fa fa-check"></i><b>1.3</b> Software Choice</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#mac"><i class="fa fa-check"></i><b>1.3.1</b> Mac</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#pc"><i class="fa fa-check"></i><b>1.3.2</b> PC</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#begin-with-an-rstudio-project"><i class="fa fa-check"></i><b>1.4</b> Begin with an RStudio Project</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exploring-the-r-studio-interface"><i class="fa fa-check"></i><b>1.5</b> Exploring the R Studio Interface</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#console-panel"><i class="fa fa-check"></i><b>1.5.1</b> Console panel</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#script-panel"><i class="fa fa-check"></i><b>1.5.2</b> Script Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#writing-your-first-script"><i class="fa fa-check"></i><b>1.6</b> Writing your first script</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#create-the-script-file"><i class="fa fa-check"></i><b>1.6.1</b> Create the script file</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#add-a-comment-to-your-script"><i class="fa fa-check"></i><b>1.6.2</b> Add a comment to your script</a></li>
+<li class="chapter" data-level="1.6.3" data-path="introduction.html"><a href="introduction.html#background-about-the-tidyverse"><i class="fa fa-check"></i><b>1.6.3</b> Background about the tidyverse</a></li>
+<li class="chapter" data-level="1.6.4" data-path="introduction.html"><a href="introduction.html#add-librarytidyverse-to-your-script"><i class="fa fa-check"></i><b>1.6.4</b> Add library(tidyverse) to your script</a></li>
+<li class="chapter" data-level="1.6.5" data-path="introduction.html"><a href="introduction.html#activate-tidyverse-auto-complete-for-your-script"><i class="fa fa-check"></i><b>1.6.5</b> Activate tidyverse auto-complete for your script</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#loading-your-data"><i class="fa fa-check"></i><b>1.7</b> Loading your data</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#use-read_csv-not-read.csv-to-open-files."><i class="fa fa-check"></i><b>1.7.1</b> Use read_csv (not read.csv) to open files.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#checking-out-your-data"><i class="fa fa-check"></i><b>1.8</b> Checking out your data</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#view-see-a-spreadsheet-view-of-your-data"><i class="fa fa-check"></i><b>1.8.1</b> view(): See a spreadsheet view of your data</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#print-see-you-data-in-the-console"><i class="fa fa-check"></i><b>1.8.2</b> print(): See you data in the Console</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#head-check-out-the-first-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.3</b> head(): Check out the first few rows of data</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#tail-check-out-the-last-few-rows-of-data"><i class="fa fa-check"></i><b>1.8.4</b> tail(): Check out the last few rows of data</a></li>
+<li class="chapter" data-level="1.8.5" data-path="introduction.html"><a href="introduction.html#summary-quick-summaries"><i class="fa fa-check"></i><b>1.8.5</b> summary(): Quick summaries</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#run-vs.-source-with-echo-vs.-source"><i class="fa fa-check"></i><b>1.9</b> Run <em>vs.</em> Source with Echo <em>vs.</em> Source</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#run-select-text"><i class="fa fa-check"></i><b>1.9.1</b> Run select text</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#source-without-echo"><i class="fa fa-check"></i><b>1.9.2</b> Source (without Echo)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#source-with-echo"><i class="fa fa-check"></i><b>1.9.3</b> Source with Echo</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#trying-source-with-echo"><i class="fa fa-check"></i><b>1.10</b> Trying Source with Echo</a></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#a-few-key-points-about"><i class="fa fa-check"></i><b>1.11</b> A few key points about</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>1.11.1</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#revisiting-read_csv"><i class="fa fa-check"></i><b>1.12</b> Revisiting read_csv()</a></li>
+<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#thats-it"><i class="fa fa-check"></i><b>1.13</b> That’s it!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html"><i class="fa fa-check"></i><b>2</b> Handling Data with the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
+<li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
+<li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
+<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
+<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
+<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv() and data frames</a></li>
+<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv() and tibbles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="scaling.html"><a href="scaling.html"><i class="fa fa-check"></i><b>3</b> Scaling</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="scaling.html"><a href="scaling.html#notation"><i class="fa fa-check"></i><b>3.1</b> Notation</a></li>
+<li class="chapter" data-level="3.2" data-path="scaling.html"><a href="scaling.html#measurement-notation"><i class="fa fa-check"></i><b>3.2</b> Measurement Notation</a></li>
+<li class="chapter" data-level="3.3" data-path="scaling.html"><a href="scaling.html#data-entry"><i class="fa fa-check"></i><b>3.3</b> Data entry</a></li>
+<li class="chapter" data-level="3.4" data-path="scaling.html"><a href="scaling.html#loading-data"><i class="fa fa-check"></i><b>3.4</b> Loading data</a></li>
+<li class="chapter" data-level="3.5" data-path="scaling.html"><a href="scaling.html#viewing-data"><i class="fa fa-check"></i><b>3.5</b> Viewing data</a></li>
+<li class="chapter" data-level="3.6" data-path="scaling.html"><a href="scaling.html#summary-statistics"><i class="fa fa-check"></i><b>3.6</b> Summary statistics</a></li>
+<li class="chapter" data-level="3.7" data-path="scaling.html"><a href="scaling.html#converting-units"><i class="fa fa-check"></i><b>3.7</b> Converting units</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="scaling.html"><a href="scaling.html#inches"><i class="fa fa-check"></i><b>3.7.1</b> Inches</a></li>
+<li class="chapter" data-level="3.7.2" data-path="scaling.html"><a href="scaling.html#z-scores"><i class="fa fa-check"></i><b>3.7.2</b> <em>z</em>-scores</a></li>
+<li class="chapter" data-level="3.7.3" data-path="scaling.html"><a href="scaling.html#t-scores"><i class="fa fa-check"></i><b>3.7.3</b> T-scores</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="scaling.html"><a href="scaling.html#frame-of-references"><i class="fa fa-check"></i><b>3.8</b> Frame of references</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="scaling.html"><a href="scaling.html#all-participants"><i class="fa fa-check"></i><b>3.8.1</b> All participants</a></li>
+<li class="chapter" data-level="3.8.2" data-path="scaling.html"><a href="scaling.html#male-reference"><i class="fa fa-check"></i><b>3.8.2</b> Male reference</a></li>
+<li class="chapter" data-level="3.8.3" data-path="scaling.html"><a href="scaling.html#canadian-reference"><i class="fa fa-check"></i><b>3.8.3</b> Canadian reference</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="scaling.html"><a href="scaling.html#summary-4"><i class="fa fa-check"></i><b>3.9</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="percentiles.html"><a href="percentiles.html"><i class="fa fa-check"></i><b>4</b> Percentiles</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="percentiles.html"><a href="percentiles.html#assuming-a-normal-distribution-approach"><i class="fa fa-check"></i><b>4.1</b> Assuming a normal distribution approach</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="percentiles.html"><a href="percentiles.html#a-single-case"><i class="fa fa-check"></i><b>4.1.1</b> A single case</a></li>
+<li class="chapter" data-level="4.1.2" data-path="percentiles.html"><a href="percentiles.html#many-cases-using-r"><i class="fa fa-check"></i><b>4.1.2</b> Many cases using R</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="percentiles.html"><a href="percentiles.html#assumption-free-approach"><i class="fa fa-check"></i><b>4.2</b> Assumption free approach</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html"><i class="fa fa-check"></i><b>5</b> Data Entry/Analysis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#required-packages"><i class="fa fa-check"></i><b>5.1</b> Required Packages</a></li>
+<li class="chapter" data-level="5.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#objective-1"><i class="fa fa-check"></i><b>5.2</b> Objective</a></li>
+<li class="chapter" data-level="5.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#begin-with-the-end-in-mind"><i class="fa fa-check"></i><b>5.3</b> Begin with the end in mind</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#structuring-data-obtaining-tidy-data"><i class="fa fa-check"></i><b>5.3.1</b> Structuring data: Obtaining tidy data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#data-collection-considerations"><i class="fa fa-check"></i><b>5.4</b> Data collection considerations</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#naming-conventions"><i class="fa fa-check"></i><b>5.4.1</b> Naming conventions</a></li>
+<li class="chapter" data-level="5.4.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#likert-type-items"><i class="fa fa-check"></i><b>5.4.2</b> Likert-type items</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#following-the-examples"><i class="fa fa-check"></i><b>5.5</b> Following the examples</a></li>
+<li class="chapter" data-level="5.6" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#entering-data-into-spreadsheets"><i class="fa fa-check"></i><b>5.6</b> Entering data into spreadsheets</a></li>
+<li class="chapter" data-level="5.7" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#surveys-single-occassion"><i class="fa fa-check"></i><b>5.7</b> Surveys: Single Occassion</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#creating-factors"><i class="fa fa-check"></i><b>5.7.1</b> Creating factors</a></li>
+<li class="chapter" data-level="5.7.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#factor-screening"><i class="fa fa-check"></i><b>5.7.2</b> Factor screening</a></li>
+<li class="chapter" data-level="5.7.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#numeric-screening"><i class="fa fa-check"></i><b>5.7.3</b> Numeric screening</a></li>
+<li class="chapter" data-level="5.7.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#scale-scores"><i class="fa fa-check"></i><b>5.7.4</b> Scale scores</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>5.8</b> Basic descriptive statistics</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#skim"><i class="fa fa-check"></i><b>5.8.1</b> skim()</a></li>
+<li class="chapter" data-level="5.8.2" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#apa.cor.table"><i class="fa fa-check"></i><b>5.8.2</b> apa.cor.table()</a></li>
+<li class="chapter" data-level="5.8.3" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#tidyverse"><i class="fa fa-check"></i><b>5.8.3</b> tidyverse</a></li>
+<li class="chapter" data-level="5.8.4" data-path="data-entryanalysis.html"><a href="data-entryanalysis.html#cronbachs-alpha"><i class="fa fa-check"></i><b>5.8.4</b> Cronbach’s alpha</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Welcome!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="percentiles" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Percentiles</h1>
+<p>In the previous chapter, we calculated <em>z</em>-scores for males in our sample. We calculated the <em>z</em>-scores using three different frames of references: all sample data (male and female), male sample data, and Canadian males. Recall that a <em>z</em>-score provides information relative to a frame of reference (e.g., all sample data, male sample data, Canadian males). For a given frame a reference, a <em>z</em>-score of 0 represents the mean of that frame of reference. Positive <em>z</em>-scores indicate participants above the mean for the frame of reference whereas negative <em>z</em>-score indicate participants below the mean for the frame of reference. A value of 1 corresponds to one standard deviation. Therefore, a person with a <em>z</em>-score of 2 is two standard deviations above the mean.</p>
+<div id="assuming-a-normal-distribution-approach" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Assuming a normal distribution approach</h2>
+<div id="a-single-case" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> A single case</h3>
+<p>If we assume our frame of reference has a normal distribution, we can calculate for one person the proportion of people who scored the same or lower than them. We multiply that proportion by 100 and we have the percentage, The percentage indicates the percentage of people who score the same or lower than them. We refer to this number as the <strong>percentile</strong> for that person.</p>
+<p>Imagine a person has a <em>z</em>-score of 0 relative to some reference group. If the distribution is normal, we can determine the <strong>proportion</strong> of people, in the reference group, that have the same score or a lower score using the command pnorm() command below. We simply put the z-score in the brackets of the pnorm() command:</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="percentiles.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">0</span>)</span></code></pre></div>
+<pre><code>## [1] 0.5</code></pre>
+<p>We see that the <strong>proportion</strong> of people in the reference group with a <em>z</em>-score of zero or lower is 0.50.</p>
+<p>We can convert this proportion to a percentage by mulitplying it by 1000:</p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="percentiles.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.500</span> <span class="sc">*</span> <span class="dv">100</span></span></code></pre></div>
+<pre><code>## [1] 50</code></pre>
+<p>We see the percentage is 50%. This indicates that 50% of the reference group had a <em>z</em>-score of 0 or lower – assuming the distribution is normal. We illustrate this graphically below:</p>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-146-1.png" width="672" /></p>
+<p>Of course, the pnorm(0) command is the same as looking up a value of zero in a <em>z</em>-table – as illustrated below. Examine the first row that is underlined in red. Notice the value of 0 in the <em>z</em> column (indicating a <em>z</em>-score of zero). Then examine the “Larger portion” column and notice the .50 value. This .50 indicates the proportion of the distribution is below a <em>z</em>-score of zero (i.e., .50 or 50%). As noted, examining the table in this way is the same as running pnorm(0) command.</p>
+<p><img src="ch_percentiles/images/z_table_0.png" width="741" /></p>
+</div>
+<div id="many-cases-using-r" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Many cases using R</h3>
+<p>Let’s return to the male_height_data from the previous chapter. We begin with the data set as it existed at the end of the last chapter. We take only a few essential columns from that data and place them into a new data set called male_height_canada_percentiles with commands below. Note that we use <strong>arrange(desc(cm_height))</strong> to sort the order of the rows so that the tallest people are at the top of the table. The desc() function makes the order of the rows based on cm_height <strong>desc</strong>ending.</p>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="percentiles.html#cb202-1" aria-hidden="true" tabindex="-1"></a>male_height_canada_percentiles <span class="ot">&lt;-</span> male_height_data <span class="sc">%&gt;%</span></span>
+<span id="cb202-2"><a href="percentiles.html#cb202-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, cm_height, z_canada_male) <span class="sc">%&gt;%</span></span>
+<span id="cb202-3"><a href="percentiles.html#cb202-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(cm_height))</span>
+<span id="cb202-4"><a href="percentiles.html#cb202-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-5"><a href="percentiles.html#cb202-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_canada_percentiles)</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 3
+##    name    cm_height z_canada_male
+##    &lt;chr&gt;       &lt;dbl&gt;         &lt;dbl&gt;
+##  1 John          190         0.542
+##  2 Basheer       185        -0.153
+##  3 Rick          183        -0.431
+##  4 Matt          180        -0.847
+##  5 Sean          179        -0.986
+##  6 Eli           174        -1.68 
+##  7 Tim           173        -1.82 
+##  8 Jamal         172        -1.96 
+##  9 Jim           168        -2.51 
+## 10 Steve         165        -2.93</code></pre>
+<p>For each person we will calculate the proportion of the distribution of Canadian males that the same height or shorter than them via the normal distribution. We will place this information in the proportion_lower column. The proportion_lower column is calculated via the mutate() command using pnorm(). Following creation of the proportion_lower column we create the percentile column by multiplying the proportion_lower column by 100 - again using the mutate() command:</p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="percentiles.html#cb204-1" aria-hidden="true" tabindex="-1"></a>male_height_canada_percentiles <span class="ot">&lt;-</span> male_height_canada_percentiles <span class="sc">%&gt;%</span></span>
+<span id="cb204-2"><a href="percentiles.html#cb204-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">proportion_lower =</span> <span class="fu">pnorm</span>(z_canada_male)) <span class="sc">%&gt;%</span></span>
+<span id="cb204-3"><a href="percentiles.html#cb204-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percentile =</span> proportion_lower <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb204-4"><a href="percentiles.html#cb204-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-5"><a href="percentiles.html#cb204-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_canada_percentiles)</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 5
+##    name  cm_height z_canada_male proportion_lower percentile
+##    &lt;chr&gt;     &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;
+##  1 John        190         0.542          0.706       70.6  
+##  2 Bash…       185        -0.153          0.439       43.9  
+##  3 Rick        183        -0.431          0.333       33.3  
+##  4 Matt        180        -0.847          0.198       19.8  
+##  5 Sean        179        -0.986          0.162       16.2  
+##  6 Eli         174        -1.68           0.0464       4.64 
+##  7 Tim         173        -1.82           0.0344       3.44 
+##  8 Jamal       172        -1.96           0.0251       2.51 
+##  9 Jim         168        -2.51           0.00597      0.597
+## 10 Steve       165        -2.93           0.00169      0.169</code></pre>
+<p>Examine the pattern of results for these males. Pay particular attention to the percentile column for Rick, Basheer, and John. For each of these cases we create a graph (based on the numbers in the table above) to illustrate the percentage of Canadian males that are shorter (i.e., have lower height values). Keep in mind, when we calculate the “percentage lower” the resulting number is always for the same frame of reference that we used to calculate the <em>z</em>-score. In this case, the <em>z</em>-scores (z_canada_male) used all Canadian males as the frame of reference.</p>
+<div id="rick" class="section level4" number="4.1.2.1">
+<h4><span class="header-section-number">4.1.2.1</span> Rick</h4>
+<p>Rick had a <em>z</em>-score of <span class="math inline">\(z\)</span> = -0.43 when using all Canadian males as a frame of reference. He is 0.43 standard deviations shorter than the average Canadian male. If we assume the heights of Canadian males are normally distributed, as we did in the calculations above, we find that 33% of Canadian males are shorter than Rick. We say Rick is in the 33rd percentile.</p>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-151-1.png" width="672" /></p>
+</div>
+<div id="basheer" class="section level4" number="4.1.2.2">
+<h4><span class="header-section-number">4.1.2.2</span> Basheer</h4>
+<p>Basheer had a <em>z</em>-score of <span class="math inline">\(z\)</span> = -0.15 when using all Canadian males as a frame of reference. He is 0.15 standard deviations shorter than the average Canadian male. If we assume the heights of Canadian males are normally distributed, as we did in the calculations above, we find that 44% of Canadian males are shorter than Basheer. We say Basheer is in the 44th percentile.</p>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-152-1.png" width="672" /></p>
+</div>
+<div id="john" class="section level4" number="4.1.2.3">
+<h4><span class="header-section-number">4.1.2.3</span> John</h4>
+<p>John had a <em>z</em>-score of <span class="math inline">\(z\)</span> = .54 when using all Canadian males as a frame of reference. He is 0.54 standard deviations taller than the average Canadian male. If we assume the heights of Canadian males are normally distributed, as we did in the calculations above, we find that 71% of Canadian males are shorter than John. We say John is in the 71st percentile.</p>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-153-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="assumption-free-approach" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Assumption free approach</h2>
+<p>The decision to assume a normal distribution, as we did above, depends on a few things. In order to make a normal distirbution assumption we would a) want to ensure we had a very large number of people in our frame of reference and b) that the shape was actually normal - as determined by a visual inspection of a histogram or a statistical test. If both of these things are true we can use the normal distribution to calculate a percentile for each person. If both of these things are not true - we need to use another approach. That’s the focus of this section.</p>
+<ol style="list-style-type: decimal">
+<li><p>Rank order the participants in the frame of reference by attribute of interest (e.g., height) so the larger numbers are at the top of the list</p></li>
+<li><p>Determine how many people in the frame of reference have scores below each person on the attribute of interest.</p></li>
+<li><p>Divide the “number below” by the total number of people in the frame of reference.</p></li>
+</ol>
+<p>We will follow these steps using R.</p>
+<p>We begin by creating a new data set called male_height_sample_percentiles we include just the <strong>name</strong> and <strong>cm_height</strong> columns in this data set.</p>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="percentiles.html#cb206-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_data <span class="sc">%&gt;%</span></span>
+<span id="cb206-2"><a href="percentiles.html#cb206-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, cm_height)</span>
+<span id="cb206-3"><a href="percentiles.html#cb206-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb206-4"><a href="percentiles.html#cb206-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 2
+##    name    cm_height
+##    &lt;chr&gt;       &lt;dbl&gt;
+##  1 John          190
+##  2 Jim           168
+##  3 Steve         165
+##  4 Jamal         172
+##  5 Eli           174
+##  6 Sean          179
+##  7 Basheer       185
+##  8 Matt          180
+##  9 Tim           173
+## 10 Rick          183</code></pre>
+<p><strong>Step 1: Sort by height</strong>
+We sort the rows by height - ensuring the tallest males are at the top of the list by using the arrange(desc(cm_height)) command:</p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="percentiles.html#cb208-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
+<span id="cb208-2"><a href="percentiles.html#cb208-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(cm_height))</span>
+<span id="cb208-3"><a href="percentiles.html#cb208-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-4"><a href="percentiles.html#cb208-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 2
+##    name    cm_height
+##    &lt;chr&gt;       &lt;dbl&gt;
+##  1 John          190
+##  2 Basheer       185
+##  3 Rick          183
+##  4 Matt          180
+##  5 Sean          179
+##  6 Eli           174
+##  7 Tim           173
+##  8 Jamal         172
+##  9 Jim           168
+## 10 Steve         165</code></pre>
+<p><strong>Step 2: Number below</strong></p>
+<p>Because the heights are now sorted we can determine the number of people on the list below each person just by their position in the list. For example, John is the tallest and there 9 people shorter than him. Basheer is the second tallest and there are 8 people shorter than him. We need a column of numbers with the values 9, 8, 7, 6, 5, 4, 3, 2, 1, 0. We use the command: n():1. The n() refers to the number of people in the data set. Correspondingly, n():1 creates the numbers 10, 9, 8, 7, 6, 5, 4, 3, 2, 1. We subtract 1 from these values to obtain 9, 8, 7, 6, 5, 4, 3, 2, 1, 0.</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="percentiles.html#cb210-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
+<span id="cb210-2"><a href="percentiles.html#cb210-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">number_below =</span> <span class="fu">n</span>()<span class="sc">:</span><span class="dv">1</span> <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb210-3"><a href="percentiles.html#cb210-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-4"><a href="percentiles.html#cb210-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 3
+##    name    cm_height number_below
+##    &lt;chr&gt;       &lt;dbl&gt;        &lt;dbl&gt;
+##  1 John          190            9
+##  2 Basheer       185            8
+##  3 Rick          183            7
+##  4 Matt          180            6
+##  5 Sean          179            5
+##  6 Eli           174            4
+##  7 Tim           173            3
+##  8 Jamal         172            2
+##  9 Jim           168            1
+## 10 Steve         165            0</code></pre>
+<p><strong>Step 3: Calculate percentile</strong></p>
+<p>We create a new column called proportion_lower using a mutate() command. In this column we index the proportion of people with the same height or a shorter height by dividing each value in the number_below column by the total number of people (obtained via the n() command). Following this we create a percentile column by multiplying the values in the proportion_lower column by 100.</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="percentiles.html#cb212-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
+<span id="cb212-2"><a href="percentiles.html#cb212-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">proportion_lower =</span> number_below <span class="sc">/</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb212-3"><a href="percentiles.html#cb212-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percentile =</span> proportion_lower <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb212-4"><a href="percentiles.html#cb212-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb212-5"><a href="percentiles.html#cb212-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 5
+##    name   cm_height number_below proportion_lower percentile
+##    &lt;chr&gt;      &lt;dbl&gt;        &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;
+##  1 John         190            9              0.9         90
+##  2 Bashe…       185            8              0.8         80
+##  3 Rick         183            7              0.7         70
+##  4 Matt         180            6              0.6         60
+##  5 Sean         179            5              0.5         50
+##  6 Eli          174            4              0.4         40
+##  7 Tim          173            3              0.3         30
+##  8 Jamal        172            2              0.2         20
+##  9 Jim          168            1              0.1         10
+## 10 Steve        165            0              0            0</code></pre>
+<p>If you inspect the percentile column above you can see how we calculated the percentile for each person in the data set without using the normal distribution or z-scores.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="scaling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-entryanalysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/04-percentiles.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
