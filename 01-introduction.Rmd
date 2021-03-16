@@ -216,7 +216,7 @@ A good way to start every script is with a comment that includes the date of you
 # By: John Smith
 ```
 
-Moving forward, I suggest you use comments to make your own personal notes in your own code as your write it. Note that in the above comment I used the internationally accepted date format\index{date format} order Year/Month/Day created by the [International Organization for Standardization](https://www.iso.org/home.html) (ISO). Some people use the mnemonic *Your My Dream* to remember the **Y**ear **M**onth **D**ay order. Wikipedia provides more information about this [International Date Format (ISO 8601)](https://en.wikipedia.org/wiki/ISO_8601). An [XKCD](https://xkcd.com/1179/) cartoon highlights the ISO date format:
+Moving forward, I suggest you use comments to make your own personal notes in your own code as your write it. Note that in the above comment I used the internationally accepted date format\index{date format} order Year/Month/Day created by the [International Organization for Standardization](https://www.iso.org/home.html) (ISO). Some people use the mnemonic *You're My Dream* to remember the **Y**ear **M**onth **D**ay order. Wikipedia provides more information about this [International Date Format (ISO 8601)](https://en.wikipedia.org/wiki/ISO_8601). An [XKCD](https://xkcd.com/1179/) cartoon highlights the ISO date format:
 
 ```{r, echo = FALSE, out.width="40%"}
 knitr::include_graphics("ch_introduction/images/iso8601.png")
