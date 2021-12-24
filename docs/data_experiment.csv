@@ -1,0 +1,7 @@
+﻿id,sex,t1_vomit,t1_aggression,t2_vomit,t2_aggression
+1,male,3,5,2,6
+2,female,2,6,1,7
+3,male,0,4,1,6
+4,female,3,7,2,7
+5,male,2,3,1,5
+6,female,1,8,2,8

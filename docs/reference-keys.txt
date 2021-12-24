@@ -53,6 +53,7 @@ handling-data-with-the-tidyverse
 required
 objective
 using-the-console
+tidyverse-help-with-the-introverse
 basic-tidyverse-commands
 select
 summarise

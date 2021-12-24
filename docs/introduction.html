@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Introduction | Welcome!</title>
   <meta name="description" content="Course notes for PSYC 3250" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Introduction | Welcome!" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2021-03-16" />
+<meta name="date" content="2021-12-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,7 +34,8 @@
 <link rel="prev" href="about-the-author.html"/>
 <link rel="next" href="handling-data-with-the-tidyverse.html"/>
 <script src="libs/header-attrs/header-attrs.js"></script>
-<script src="libs/jquery/jquery.min.js"></script>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -59,6 +59,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -117,6 +118,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -191,26 +215,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#required"><i class="fa fa-check"></i><b>2.1</b> Required</a></li>
 <li class="chapter" data-level="2.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#objective"><i class="fa fa-check"></i><b>2.2</b> Objective</a></li>
 <li class="chapter" data-level="2.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-the-console"><i class="fa fa-check"></i><b>2.3</b> Using the Console</a></li>
-<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.4</b> Basic tidyverse commands</a>
+<li class="chapter" data-level="2.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tidyverse-help-with-the-introverse"><i class="fa fa-check"></i><b>2.4</b> Tidyverse help with the Introverse</a></li>
+<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#basic-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Basic tidyverse commands</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.4.1</b> select()</a></li>
-<li class="chapter" data-level="2.4.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.4.2</b> summarise()</a></li>
-<li class="chapter" data-level="2.4.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.4.3</b> filter()</a></li>
-<li class="chapter" data-level="2.4.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.4.4</b> group_by()</a></li>
-<li class="chapter" data-level="2.4.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.4.5</b> mutate()</a></li>
+<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>2.5.3</b> filter()</a></li>
+<li class="chapter" data-level="2.5.4" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#group_by"><i class="fa fa-check"></i><b>2.5.4</b> group_by()</a></li>
+<li class="chapter" data-level="2.5.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate"><i class="fa fa-check"></i><b>2.5.5</b> mutate()</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.5</b> Advanced tidyverse commands</a>
+<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#advanced-tidyverse-commands"><i class="fa fa-check"></i><b>2.6</b> Advanced tidyverse commands</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.5.1</b> select()</a></li>
-<li class="chapter" data-level="2.5.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.5.2</b> summarise()</a></li>
-<li class="chapter" data-level="2.5.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
+<li class="chapter" data-level="2.6.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#select-1"><i class="fa fa-check"></i><b>2.6.1</b> select()</a></li>
+<li class="chapter" data-level="2.6.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#summarise-1"><i class="fa fa-check"></i><b>2.6.2</b> summarise()</a></li>
+<li class="chapter" data-level="2.6.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#mutate-1"><i class="fa fa-check"></i><b>2.6.3</b> mutate()</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.6</b> Using help</a></li>
-<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.7</b> Base R vs tidyverse</a>
+<li class="chapter" data-level="2.7" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#using-help"><i class="fa fa-check"></i><b>2.7</b> Using help</a></li>
+<li class="chapter" data-level="2.8" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#base-r-vs-tidyverse"><i class="fa fa-check"></i><b>2.8</b> Base R vs tidyverse</a>
 <ul>
-<li class="chapter" data-level="2.7.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.7.1</b> Tibbles vs. data frames</a></li>
-<li class="chapter" data-level="2.7.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.7.2</b> read.csv() and data frames</a></li>
-<li class="chapter" data-level="2.7.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.7.3</b> read_csv() and tibbles</a></li>
+<li class="chapter" data-level="2.8.1" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#tibbles-vs.-data-frames"><i class="fa fa-check"></i><b>2.8.1</b> Tibbles vs. data frames</a></li>
+<li class="chapter" data-level="2.8.2" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read.csv-and-data-frames"><i class="fa fa-check"></i><b>2.8.2</b> read.csv() and data frames</a></li>
+<li class="chapter" data-level="2.8.3" data-path="handling-data-with-the-tidyverse.html"><a href="handling-data-with-the-tidyverse.html#read_csv-and-tibbles"><i class="fa fa-check"></i><b>2.8.3</b> read_csv() and tibbles</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="scaling.html"><a href="scaling.html"><i class="fa fa-check"></i><b>3</b> Scaling</a>
@@ -435,7 +460,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="exploring-the-r-studio-interface" class="section level2" number="1.5">
 <h2><span class="header-section-number">1.5</span> Exploring the R Studio Interface</h2>
 <p>Once you have opened (or created) a Project folder, you are presented with the R Studio interface. There are a few key elements to the user interface that are illustrated in Figure <a href="introduction.html#fig:interface">1.1</a> In the lower right of the screen you can see the a panel with several tabs (i.e., Files, Plots, Packages, etc) that I will refer to as the Files pane. You look in this pane to see all the files associated with your project. On the left side of the screen is the Console which is an interactive pane where you type and obtain results in real time. I’ve placed two large grey blocks on the screen with text to more clearly identify the Console and Files panes. Not shown in this figure is the Script panel where we can store our commands for later reuse.</p>
-<div class="figure"><span id="fig:interface"></span>
+<div class="figure"><span style="display:block;" id="fig:interface"></span>
 <img src="ch_introduction/images/screenshot_interface.png" alt="R Studio interface" width="70%" />
 <p class="caption">
 FIGURE 1.1: R Studio interface
@@ -483,13 +508,16 @@ the results of an analysis, or anything else.</p>
 <h3><span class="header-section-number">1.6.3</span> Background about the tidyverse</h3>
 <p>There are generally two broad ways of using R, the older way and the newer way. Using R the older way is referred to as using base R. A more modern approach to using R is the tidyverse. The tidyverse represents a collection of packages the work together to give R a modern workflow. These packages do many things to help the data analyst (loading data, rearranging data, graphing, etc.). We will use the tidyverse approach to R in this guide.</p>
 <p>A noted the tidyverse is a collection of packages. Each package adds new commands to R. The number of packages and correspondingly the number of new commands added to R by the tidyverse is large. Below is a list of the tidyverse packages:</p>
-<pre><code>##  [1] &quot;broom&quot;      &quot;cli&quot;        &quot;crayon&quot;     &quot;dbplyr&quot;    
-##  [5] &quot;dplyr&quot;      &quot;forcats&quot;    &quot;ggplot2&quot;    &quot;haven&quot;     
-##  [9] &quot;hms&quot;        &quot;httr&quot;       &quot;jsonlite&quot;   &quot;lubridate&quot; 
-## [13] &quot;magrittr&quot;   &quot;modelr&quot;     &quot;pillar&quot;     &quot;purrr&quot;     
-## [17] &quot;readr&quot;      &quot;readxl&quot;     &quot;reprex&quot;     &quot;rlang&quot;     
-## [21] &quot;rstudioapi&quot; &quot;rvest&quot;      &quot;stringr&quot;    &quot;tibble&quot;    
-## [25] &quot;tidyr&quot;      &quot;xml2&quot;       &quot;tidyverse&quot;</code></pre>
+<pre><code>##  [1] &quot;broom&quot;         &quot;cli&quot;           &quot;crayon&quot;       
+##  [4] &quot;dbplyr&quot;        &quot;dplyr&quot;         &quot;dtplyr&quot;       
+##  [7] &quot;forcats&quot;       &quot;googledrive&quot;   &quot;googlesheets4&quot;
+## [10] &quot;ggplot2&quot;       &quot;haven&quot;         &quot;hms&quot;          
+## [13] &quot;httr&quot;          &quot;jsonlite&quot;      &quot;lubridate&quot;    
+## [16] &quot;magrittr&quot;      &quot;modelr&quot;        &quot;pillar&quot;       
+## [19] &quot;purrr&quot;         &quot;readr&quot;         &quot;readxl&quot;       
+## [22] &quot;reprex&quot;        &quot;rlang&quot;         &quot;rstudioapi&quot;   
+## [25] &quot;rvest&quot;         &quot;stringr&quot;       &quot;tibble&quot;       
+## [28] &quot;tidyr&quot;         &quot;xml2&quot;          &quot;tidyverse&quot;</code></pre>
 <p>Before you can use a package it needs to be installed – this is the same as downloading an app from the App Store. Normally, you can install a <strong>single</strong> packages with the install.packages command. Previously, you needed run an install.package command for every package in the tidyverse as illustrated below (though we no longer use this approach).</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introduction.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The old way of installing the tidyverse packages</span></span>
 <span id="cb8-2"><a href="introduction.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Like downloading apps from the app store</span></span>
@@ -511,11 +539,11 @@ the results of an analysis, or anything else.</p>
 <div id="activate-tidyverse-auto-complete-for-your-script" class="section level3" number="1.6.5">
 <h3><span class="header-section-number">1.6.5</span> Activate tidyverse auto-complete for your script</h3>
 <p>Select the library(tidyverse) text with your mouse/track-pad so that it is highlighted. Then click the Run button in the upper right of the Script panel. Doing this “runs” the selected text. After you click the Run button you should see text like the following the Console panel:</p>
-<pre><code>## ── Attaching packages ─────────────────── tidyverse 1.3.0 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
-## ✓ tibble  3.1.0     ✓ dplyr   1.0.5
-## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
-## ✓ readr   1.4.0     ✓ forcats 0.5.1</code></pre>
+<pre><code>## ── Attaching packages ─────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+## ✓ tibble  3.1.6     ✓ dplyr   1.0.7
+## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
+## ✓ readr   2.1.1     ✓ forcats 0.5.1</code></pre>
 <pre><code>## ── Conflicts ────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
@@ -531,16 +559,14 @@ the results of an analysis, or anything else.</p>
 <p>If you inspect the Files pane on the right of the screen you see the <strong>data_okcupid.csv</strong> data file in our project directory. We will load this data with the commands below. If you followed the steps above, you should have auto-complete for the tidyverse commands you type for now in – in the current R session. Enter the command below into your script. As your start to type read_csv you will likely be presented with an auto-complete option. You can use the arrow keys to move up and down the list of options to select the one you want - then press tab to select it.</p>
 <p>Once your command looks like the one below select the text and click on the “Run” button.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introduction.html#cb14-1" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 59946 Columns: 6</code></pre>
+<pre><code>## ── Column specification ────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (4): diet, pets, sex, status
+## dbl (2): age, height</code></pre>
 <pre><code>## 
-## ── Column specification ────────────────────────────────────
-## cols(
-##   age = col_double(),
-##   diet = col_character(),
-##   height = col_double(),
-##   pets = col_character(),
-##   sex = col_character(),
-##   status = col_character()
-## )</code></pre>
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <p>The output indicates that you have loaded a data file and the type of data in each column. The sex column is of type col_character which indicates it contains text/letters. Most of the columns are of the type character. The age and height columns contain numbers are correspondingly indicated to be the type col_double. The label col_double indicates that a column of numbers represented in R with <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">high precision</a>. There are other ways of representing numbers in R but this is the type we will see/use most often.</p>
 </div>
 </div>
@@ -550,76 +576,76 @@ the results of an analysis, or anything else.</p>
 <div id="view-see-a-spreadsheet-view-of-your-data" class="section level3" number="1.8.1">
 <h3><span class="header-section-number">1.8.1</span> view(): See a spreadsheet view of your data</h3>
 <p>You can inspect your data in a spreadsheet view by using the view command. Do NOT add this command to your script file – EVER. Adding it to the script can cause substantial problems. Type this command in the Console.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="introduction.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(okcupid_profiles)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="introduction.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(okcupid_profiles)</span></code></pre></div>
 </div>
 <div id="print-see-you-data-in-the-console" class="section level3" number="1.8.2">
 <h3><span class="header-section-number">1.8.2</span> print(): See you data in the Console</h3>
 <p>You can inspect the first few rows of your data with the print() command. It is OK to add a print command to your script. Try the print() command below in the Console:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="introduction.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(okcupid_profiles)</span></code></pre></div>
-<pre><code>## # A tibble: 59,946 x 6
-##      age diet         height pets              sex   status 
-##    &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt;  
-##  1    22 strictly an…     75 likes dogs and l… m     single 
-##  2    35 mostly other     70 likes dogs and l… m     single 
-##  3    38 anything         68 has cats          m     availa…
-##  4    23 vegetarian       71 likes cats        m     single 
-##  5    29 NA               66 likes dogs and l… m     single 
-##  6    29 mostly anyt…     67 likes cats        m     single 
-##  7    32 strictly an…     65 likes dogs and l… f     single 
-##  8    31 mostly anyt…     65 likes dogs and l… f     single 
-##  9    24 strictly an…     67 likes dogs and l… f     single 
-## 10    37 mostly anyt…     65 likes dogs and l… m     single 
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="introduction.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## # A tibble: 59,946 × 6
+##      age diet              height pets         sex   status 
+##    &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;  
+##  1    22 strictly anything     75 likes dogs … m     single 
+##  2    35 mostly other          70 likes dogs … m     single 
+##  3    38 anything              68 has cats     m     availa…
+##  4    23 vegetarian            71 likes cats   m     single 
+##  5    29 &lt;NA&gt;                  66 likes dogs … m     single 
+##  6    29 mostly anything       67 likes cats   m     single 
+##  7    32 strictly anything     65 likes dogs … f     single 
+##  8    31 mostly anything       65 likes dogs … f     single 
+##  9    24 strictly anything     67 likes dogs … f     single 
+## 10    37 mostly anything       65 likes dogs … m     single 
 ## # … with 59,936 more rows</code></pre>
 </div>
 <div id="head-check-out-the-first-few-rows-of-data" class="section level3" number="1.8.3">
 <h3><span class="header-section-number">1.8.3</span> head(): Check out the first few rows of data</h3>
 <p>You can inspect the first few rows of your data with the head() command. Try the command below in the Console:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="introduction.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 6
-##     age diet          height pets              sex   status 
-##   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt;  
-## 1    22 strictly any…     75 likes dogs and l… m     single 
-## 2    35 mostly other      70 likes dogs and l… m     single 
-## 3    38 anything          68 has cats          m     availa…
-## 4    23 vegetarian        71 likes cats        m     single 
-## 5    29 NA                66 likes dogs and l… m     single 
-## 6    29 mostly anyth…     67 likes cats        m     single</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="introduction.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 6
+##     age diet              height pets          sex   status 
+##   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;  
+## 1    22 strictly anything     75 likes dogs a… m     single 
+## 2    35 mostly other          70 likes dogs a… m     single 
+## 3    38 anything              68 has cats      m     availa…
+## 4    23 vegetarian            71 likes cats    m     single 
+## 5    29 &lt;NA&gt;                  66 likes dogs a… m     single 
+## 6    29 mostly anything       67 likes cats    m     single</code></pre>
 <p>You can be even more specific and indicate you only want the first three row of your data with the head() command. Try the command below in the Console:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="introduction.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles, <span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 6
-##     age diet          height pets              sex   status 
-##   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt;  
-## 1    22 strictly any…     75 likes dogs and l… m     single 
-## 2    35 mostly other      70 likes dogs and l… m     single 
-## 3    38 anything          68 has cats          m     availa…</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="introduction.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 6
+##     age diet              height pets          sex   status 
+##   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;  
+## 1    22 strictly anything     75 likes dogs a… m     single 
+## 2    35 mostly other          70 likes dogs a… m     single 
+## 3    38 anything              68 has cats      m     availa…</code></pre>
 </div>
 <div id="tail-check-out-the-last-few-rows-of-data" class="section level3" number="1.8.4">
 <h3><span class="header-section-number">1.8.4</span> tail(): Check out the last few rows of data</h3>
 <p>You can inspect the last few rows of your data with the tail() command. Try the command below in the Console:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="introduction.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 6
-##     age diet         height pets                sex   status
-##   &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt; 
-## 1    31 NA               62 likes dogs          f     single
-## 2    59 NA               62 has dogs            f     single
-## 3    24 mostly anyt…     72 likes dogs and lik… m     single
-## 4    42 mostly anyt…     71 NA                  m     single
-## 5    27 mostly anyt…     73 likes dogs and lik… m     single
-## 6    39 NA               68 likes dogs and lik… m     single</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="introduction.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 6
+##     age diet            height pets             sex   status
+##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt; 
+## 1    31 &lt;NA&gt;                62 likes dogs       f     single
+## 2    59 &lt;NA&gt;                62 has dogs         f     single
+## 3    24 mostly anything     72 likes dogs and … m     single
+## 4    42 mostly anything     71 &lt;NA&gt;             m     single
+## 5    27 mostly anything     73 likes dogs and … m     single
+## 6    39 &lt;NA&gt;                68 likes dogs and … m     single</code></pre>
 <p>You can be even more specific and indicate you only want the last three row of your data with the tail() command. Try the command below in the Console:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="introduction.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles, <span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 6
-##     age diet         height pets                sex   status
-##   &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt; 
-## 1    42 mostly anyt…     71 NA                  m     single
-## 2    27 mostly anyt…     73 likes dogs and lik… m     single
-## 3    39 NA               68 likes dogs and lik… m     single</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="introduction.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 6
+##     age diet            height pets             sex   status
+##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt; 
+## 1    42 mostly anything     71 &lt;NA&gt;             m     single
+## 2    27 mostly anything     73 likes dogs and … m     single
+## 3    39 &lt;NA&gt;                68 likes dogs and … m     single</code></pre>
 </div>
 <div id="summary-quick-summaries" class="section level3" number="1.8.5">
 <h3><span class="header-section-number">1.8.5</span> summary(): Quick summaries</h3>
 <p>You can a short summary of your data with the summary() command. Note that we will use the summary() command in many places in the guide. The output of the summary() command changes depending on what you give it - that is put inside the brackets. You can give the summary() command many things such as data, the results of a regression analysis, etc.</p>
 <p>Try the command below in the Console. You will see that summary() give the mean and median for each of the numeric variables (age and height).</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="introduction.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="introduction.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
 <pre><code>##       age            diet               height    
 ##  Min.   : 18.0   Length:59946       Min.   : 1.0  
 ##  1st Qu.: 26.0   Class :character   1st Qu.:66.0  
@@ -649,7 +675,7 @@ the results of an analysis, or anything else.</p>
 <li>Script: Source With Echo</li>
 </ol>
 <p>Two of these approaches involve using the Source button, see Figure <a href="introduction.html#fig:sourcebutton">1.2</a>. You bring up the options for the Source button, illustrated in this figure, by clicking on the small arrow to the right of the word Source.</p>
-<div class="figure"><span id="fig:sourcebutton"></span>
+<div class="figure"><span style="display:block;" id="fig:sourcebutton"></span>
 <img src="ch_introduction/images/screenshot_source.png" alt="Source button options" width="35%" />
 <p class="caption">
 FIGURE 1.2: Source button options
@@ -684,59 +710,57 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 <div id="trying-source-with-echo" class="section level2" number="1.10">
 <h2><span class="header-section-number">1.10</span> Trying Source with Echo</h2>
 <p>Put the head(), tail(), and summary() command we used previously into your script. Then save your script using using the File &gt; Save menu. You script should appear as below.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="introduction.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
-<span id="cb29-2"><a href="introduction.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># By: John Smith</span></span>
-<span id="cb29-3"><a href="introduction.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb29-4"><a href="introduction.html#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-5"><a href="introduction.html#cb29-5" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span>
-<span id="cb29-6"><a href="introduction.html#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-7"><a href="introduction.html#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span>
-<span id="cb29-8"><a href="introduction.html#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-9"><a href="introduction.html#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span>
-<span id="cb29-10"><a href="introduction.html#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-11"><a href="introduction.html#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="introduction.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
+<span id="cb31-2"><a href="introduction.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># By: John Smith</span></span>
+<span id="cb31-3"><a href="introduction.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb31-4"><a href="introduction.html#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="introduction.html#cb31-5" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span>
+<span id="cb31-6"><a href="introduction.html#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="introduction.html#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span>
+<span id="cb31-8"><a href="introduction.html#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="introduction.html#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span>
+<span id="cb31-10"><a href="introduction.html#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-11"><a href="introduction.html#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
 <p>Now do the following:</p>
 <ol style="list-style-type: decimal">
 <li>Use the menu item: <strong>Session &gt; Restart R</strong></li>
 <li>Click the down arrow beside the Source button, and click on Source With Echo</li>
 </ol>
 <p>You should see the output below:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="introduction.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
-<span id="cb30-2"><a href="introduction.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># By: John Smith</span></span>
-<span id="cb30-3"><a href="introduction.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb30-4"><a href="introduction.html#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="introduction.html#cb30-5" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="introduction.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
+<span id="cb32-2"><a href="introduction.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># By: John Smith</span></span>
+<span id="cb32-3"><a href="introduction.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb32-4"><a href="introduction.html#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="introduction.html#cb32-5" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 59946 Columns: 6</code></pre>
+<pre><code>## ── Column specification ────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (4): diet, pets, sex, status
+## dbl (2): age, height</code></pre>
 <pre><code>## 
-## ── Column specification ────────────────────────────────────
-## cols(
-##   age = col_double(),
-##   diet = col_character(),
-##   height = col_double(),
-##   pets = col_character(),
-##   sex = col_character(),
-##   status = col_character()
-## )</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="introduction.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 6
-##     age diet          height pets              sex   status 
-##   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt;  
-## 1    22 strictly any…     75 likes dogs and l… m     single 
-## 2    35 mostly other      70 likes dogs and l… m     single 
-## 3    38 anything          68 has cats          m     availa…
-## 4    23 vegetarian        71 likes cats        m     single 
-## 5    29 NA                66 likes dogs and l… m     single 
-## 6    29 mostly anyth…     67 likes cats        m     single</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="introduction.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 6
-##     age diet         height pets                sex   status
-##   &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt; 
-## 1    31 NA               62 likes dogs          f     single
-## 2    59 NA               62 has dogs            f     single
-## 3    24 mostly anyt…     72 likes dogs and lik… m     single
-## 4    42 mostly anyt…     71 NA                  m     single
-## 5    27 mostly anyt…     73 likes dogs and lik… m     single
-## 6    39 NA               68 likes dogs and lik… m     single</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="introduction.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="introduction.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 6
+##     age diet              height pets          sex   status 
+##   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;  
+## 1    22 strictly anything     75 likes dogs a… m     single 
+## 2    35 mostly other          70 likes dogs a… m     single 
+## 3    38 anything              68 has cats      m     availa…
+## 4    23 vegetarian            71 likes cats    m     single 
+## 5    29 &lt;NA&gt;                  66 likes dogs a… m     single 
+## 6    29 mostly anything       67 likes cats    m     single</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="introduction.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 6
+##     age diet            height pets             sex   status
+##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt; 
+## 1    31 &lt;NA&gt;                62 likes dogs       f     single
+## 2    59 &lt;NA&gt;                62 has dogs         f     single
+## 3    24 mostly anything     72 likes dogs and … m     single
+## 4    42 mostly anything     71 &lt;NA&gt;             m     single
+## 5    27 mostly anything     73 likes dogs and … m     single
+## 6    39 &lt;NA&gt;                68 likes dogs and … m     single</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="introduction.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
 <pre><code>##       age            diet               height    
 ##  Min.   : 18.0   Length:59946       Min.   : 1.0  
 ##  1st Qu.: 26.0   Class :character   1st Qu.:66.0  
@@ -761,34 +785,34 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 <div id="vector-of-numbers" class="section level4" number="1.11.0.1">
 <h4><span class="header-section-number">1.11.0.1</span> Vector of numbers</h4>
 <p>We can create a vector of only numbers using the “c” function - which you can think of as being short for “combine” (or concatenate). In the commands below we create a vector of a few even numbers called “even_numbers.”</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="introduction.html#cb38-1" aria-hidden="true" tabindex="-1"></a>even_numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="introduction.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(even_numbers)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="introduction.html#cb42-1" aria-hidden="true" tabindex="-1"></a>even_numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="introduction.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(even_numbers)</span></code></pre></div>
 <pre><code>## [1]  2  4  6  8 10</code></pre>
 <p>We can obtain the second number in the vector using the following notation:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="introduction.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(even_numbers[<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="introduction.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(even_numbers[<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 </div>
 <div id="vector-of-characters" class="section level4" number="1.11.0.2">
 <h4><span class="header-section-number">1.11.0.2</span> Vector of characters</h4>
 <p>We can also create vectors using only characters. Note that I use <strong>SHIFT RETURN</strong> after each comma to move to the next line.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="introduction.html#cb43-1" aria-hidden="true" tabindex="-1"></a>favourite_things <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;copper kettles&quot;</span>,</span>
-<span id="cb43-2"><a href="introduction.html#cb43-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;woolen mittens&quot;</span>,</span>
-<span id="cb43-3"><a href="introduction.html#cb43-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;brown paper packages&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="introduction.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(favourite_things)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="introduction.html#cb47-1" aria-hidden="true" tabindex="-1"></a>favourite_things <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;copper kettles&quot;</span>,</span>
+<span id="cb47-2"><a href="introduction.html#cb47-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;woolen mittens&quot;</span>,</span>
+<span id="cb47-3"><a href="introduction.html#cb47-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;brown paper packages&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="introduction.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(favourite_things)</span></code></pre></div>
 <pre><code>## [1] &quot;copper kettles&quot;       &quot;woolen mittens&quot;      
 ## [3] &quot;brown paper packages&quot;</code></pre>
 <p>As before, can obtain the second item in the vector using the following notation:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="introduction.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(favourite_things[<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="introduction.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(favourite_things[<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## [1] &quot;woolen mittens&quot;</code></pre>
 </div>
 <div id="lists" class="section level3" number="1.11.1">
 <h3><span class="header-section-number">1.11.1</span> Lists</h3>
 <p>Lists are similar to vectors in that you can create them and access items by their numeric position. Vectors must be all characters or all numbers. Lists can be a mix of characters or numbers. Most importantly items in lists can be accessed by their label. Note that I use <strong>SHIFT RETURN</strong> after each comma to move to the next line in the code below.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="introduction.html#cb48-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">last_name =</span> <span class="st">&quot;Smith&quot;</span>,</span>
-<span id="cb48-2"><a href="introduction.html#cb48-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">first_name =</span> <span class="st">&quot;John&quot;</span>,</span>
-<span id="cb48-3"><a href="introduction.html#cb48-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">office_number =</span> <span class="dv">1913</span>)</span>
-<span id="cb48-4"><a href="introduction.html#cb48-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-5"><a href="introduction.html#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="introduction.html#cb52-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">last_name =</span> <span class="st">&quot;Smith&quot;</span>,</span>
+<span id="cb52-2"><a href="introduction.html#cb52-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">first_name =</span> <span class="st">&quot;John&quot;</span>,</span>
+<span id="cb52-3"><a href="introduction.html#cb52-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">office_number =</span> <span class="dv">1913</span>)</span>
+<span id="cb52-4"><a href="introduction.html#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-5"><a href="introduction.html#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list)</span></code></pre></div>
 <pre><code>## $last_name
 ## [1] &quot;Smith&quot;
 ## 
@@ -798,22 +822,22 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 ## $office_number
 ## [1] 1913</code></pre>
 <p>You can access an item in a list using double brackets:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="introduction.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list[<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="introduction.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list[<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## $first_name
 ## [1] &quot;John&quot;</code></pre>
 <p>You can access an item in a list by its label/name using the dollar sign:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="introduction.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>last_name)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="introduction.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>last_name)</span></code></pre></div>
 <pre><code>## [1] &quot;Smith&quot;</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="introduction.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>office_number)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="introduction.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>office_number)</span></code></pre></div>
 <pre><code>## [1] 1913</code></pre>
 </div>
 </div>
 <div id="revisiting-read_csv" class="section level2" number="1.12">
 <h2><span class="header-section-number">1.12</span> Revisiting read_csv()</h2>
-<p>In the text above we learned about vectors of characters. This information can be used handle missing values in the read_csv() command. Consider a data set where for many participants we did not get a response to a question. We might have that represented in various ways within the data file. The value for that question might simply be omitted (i.e., represented by nothing – ""), represented by NA for not available, or maybe simply be something like -777.</p>
+<p>In the text above we learned about vectors of characters. This information can be used handle missing values in the read_csv() command. Consider a data set where for many participants we did not get a response to a question. We might have that represented in various ways within the data file. The value for that question might simply be omitted (i.e., represented by nothing – ““), represented by NA for not available, or maybe simply be something like -777.</p>
 <p>When we load data with read_csv() we can indicate to the computer how missing values are represented. This ensures the computer sees something like -777 as a missing value rather than an actual value. We do so in the read_csv() command below using the <strong>na</strong> argument (not available). Note: use SHIFT-RETURN or SHIFT-ENTER to move the next line within the read_csv() command. Failure to indicate the missing value codes within read_csv() will result in incorrect answers in most scenarios with missing data.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="introduction.html#cb56-1" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>,</span>
-<span id="cb56-2"><a href="introduction.html#cb56-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">na =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>, <span class="st">&quot;-777&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="introduction.html#cb60-1" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>,</span>
+<span id="cb60-2"><a href="introduction.html#cb60-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">na =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>, <span class="st">&quot;-777&quot;</span>))</span></code></pre></div>
 </div>
 <div id="thats-it" class="section level2" number="1.13">
 <h2><span class="header-section-number">1.13</span> That’s it!</h2>
@@ -831,7 +855,6 @@ Using Restart R before you run a script, or R code in general, is a critical wor
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
-<script src="libs/gitbook/js/lunr.js"></script>
 <script src="libs/gitbook/js/clipboard.min.js"></script>
 <script src="libs/gitbook/js/plugin-search.js"></script>
 <script src="libs/gitbook/js/plugin-sharing.js"></script>
@@ -850,6 +873,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -858,7 +882,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-crc/edit/master/01-introduction.Rmd",
+"link": "https://github.com/yihui/bookdown-crc/edit/master/01-introduction_3250_local_R.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -870,6 +894,10 @@ gitbook.start({
 "text": null
 },
 "download": ["bookdown.pdf", "bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "none"
 }
