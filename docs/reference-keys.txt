@@ -27,6 +27,8 @@ mac-download-rstudio
 pc
 pc-download-r
 pc-download-rstudio
+run-rstudio-not-r
+rstudio-configuration-first-run-only
 begin-with-an-rstudio-project
 exploring-the-r-studio-interface
 console-panel

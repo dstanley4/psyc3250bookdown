@@ -117,6 +117,29 @@ knitr::include_graphics("ch_introduction/images/screenshot_rstudio.png")
 
 * In the future you will only use RStudio to access use R.
 
+## Run RStudio not R
+
+As noted above, in the future you will run RStudio to use R. That is, you click the icon below to use RStudio moving forward.
+
+```{r, echo = F, out.width="30%"}
+knitr::include_graphics("ch_introduction/images/rstudio_icon.png")
+```
+
+## RStudio configuration, First run only
+
+Prior using RStudio it is important it to configure it properly to avoid problems getting your code to work.  Therefore, the very first time you run RStudio you should configure it correctly.
+
+As illustrated below, go to the Tools menu and select Global Options... 
+
+```{r, echo = F, out.width="70%"}
+knitr::include_graphics("ch_introduction/images/screenshot_global_menu.png")
+```
+
+Next, ensure General is selected on the left side. Then ensure that "Restore .RData into workspace at startup" is not checked. I repeat, NOT CHECKED. Also, make sure that "Save workspace to .RData on exit" is set to NEVER. Then click the OK button at the bottom of the window.
+
+```{r, echo = F, out.width="70%"}
+knitr::include_graphics("ch_introduction/images/screenshot_global_details.png")
+```
 
 ## Begin with an RStudio Project
 
