@@ -484,7 +484,7 @@ div.csl-indent {
 </div>
 <div id="run-rstudio-not-r" class="section level2" number="1.4">
 <h2><span class="header-section-number">1.4</span> Run RStudio not R</h2>
-<p>As noted above, in the future you will run RStudio to use R. That is, you click the icon below to use RStudio moving forward.</p>
+<p>As noted above, in the future you will run RStudio to use R. That is, you click the icon below to use RStudio moving forward. On macOs make sure it is the icon in the Applications folder. On Windows make sure it is the icon in the Program Files folder.</p>
 <p><img src="ch_introduction/images/rstudio_icon.png" width="30%" /></p>
 </div>
 <div id="rstudio-configuration-first-run-only" class="section level2" number="1.5">
@@ -500,7 +500,7 @@ div.csl-indent {
 <p>It can be hard to keep track of files you use and create when using RStudio. Therefore, you should always use an RStudio Project to keep track of things. This is basically just a Folder on your computer that RStudio associates with a particular task. Later in this introduction to RStudio we will use the file data_okcupid.csv. Right now we will set up a Project to make it easier to use that file.</p>
 <ol style="list-style-type: decimal">
 <li><p>Create a folder on your computer called “psyc3250_project_1.” Be sure you know where you create this folder so you can find it again easily.</p></li>
-<li><p>Download the data_okcupid.csv file, linked: <a href="https://github.com/dstanley4/psyc3250bookdown/raw/main/data_okcupid.csv">here</a> (Right click link to download file)</p></li>
+<li><p>Download the data_okcupid.csv file, linked: <a href="https://github.com/dstanley4/psyc3250bookdown/raw/main/data_okcupid.csv">here</a> (Right click link to download file). <strong>NOTE:You must get this file from your Downloads folder. For many people (on macOS) the file may Open in Numbers - then they are tempted to save it from Numbers. This will not work. Just close Numbers. Then retrieve the file from you Downloads folder.</strong></p></li>
 <li><p>Place the data_okcupid.csv file into the psyc3250_project_1 folder.</p></li>
 <li><p>Load RStudio.</p></li>
 <li><p>Go to the File menu and select “New Project…”</p></li>
@@ -586,6 +586,13 @@ the results of an analysis, or anything else.</p>
 <span id="cb8-7"><a href="introduction.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># etc</span></span></code></pre></div>
 <p>Fortunately, the tidyverse packages can now by installed with a single install.packages command. Specifically, the install.packages command below will install all of the packages listed above.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introduction.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div id="warnings-regarding-install.packages" class="section level4" number="1.8.3.1">
+<h4><span class="header-section-number">1.8.3.1</span> Warnings regarding install.packages()</h4>
+<ol style="list-style-type: decimal">
+<li><p>Prior to running install.packages() ALWAYS use Session &gt; Restart R. Failure to do so could corrupt the R installation on your computer.</p></li>
+<li><p>The install.packages() command should NEVER be put in a script. ALWAYS run install.packages() from the Console not your script.</p></li>
+</ol>
+</div>
 </div>
 <div id="add-librarytidyverse-to-your-script" class="section level3" number="1.8.4">
 <h3><span class="header-section-number">1.8.4</span> Add library(tidyverse) to your script</h3>

@@ -119,7 +119,7 @@ knitr::include_graphics("ch_introduction/images/screenshot_rstudio.png")
 
 ## Run RStudio not R
 
-As noted above, in the future you will run RStudio to use R. That is, you click the icon below to use RStudio moving forward.
+As noted above, in the future you will run RStudio to use R. That is, you click the icon below to use RStudio moving forward. On macOs make sure it is the icon in the Applications folder. On Windows make sure it is the icon in the Program Files folder.
 
 ```{r, echo = F, out.width="30%"}
 knitr::include_graphics("ch_introduction/images/rstudio_icon.png")
@@ -148,7 +148,7 @@ It can be hard to keep track of files you use and create when using RStudio. The
 
 1. Create a folder on your computer called "psyc3250_project_1". Be sure you know where you create this folder so you can find it again easily.
 
-2. Download the data_okcupid.csv file, linked: [here](https://github.com/dstanley4/psyc3250bookdown/raw/main/data_okcupid.csv) (Right click link to download file)
+2. Download the data_okcupid.csv file, linked: [here](https://github.com/dstanley4/psyc3250bookdown/raw/main/data_okcupid.csv) (Right click link to download file). **NOTE:You must get this file from your Downloads folder. For many people (on macOS) the file may Open in Numbers - then they are tempted to save it from Numbers. This will not work. Just close Numbers. Then retrieve the file from you Downloads folder.**
 
 3. Place the data_okcupid.csv file into the psyc3250_project_1 folder.
 
@@ -273,6 +273,12 @@ Fortunately, the tidyverse packages can now by installed with a single install.p
 ```{r, eval = FALSE}
 install.packages("tidyverse", dep = TRUE)
 ```
+
+#### Warnings regarding install.packages()
+
+1. Prior to running install.packages() ALWAYS use Session > Restart R. Failure to do so could corrupt the R installation on your computer.
+
+2. The install.packages() command should NEVER be put in a script. ALWAYS run install.packages() from the Console not your script.
 
 ### Add library(tidyverse) to your script 
 

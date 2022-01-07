@@ -37,6 +37,7 @@ writing-your-first-script
 create-the-script-file
 add-a-comment-to-your-script
 background-about-the-tidyverse
+warnings-regarding-install.packages
 add-librarytidyverse-to-your-script
 activate-tidyverse-auto-complete-for-your-script
 loading-your-data
