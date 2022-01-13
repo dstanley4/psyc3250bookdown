@@ -426,6 +426,7 @@ div.csl-indent {
 </tbody>
 </table>
 <p><strong>Important Note:</strong> You should NOT use library(psych) at any point! There are major conflicts between the psych package and the tidyverse. We will access the psych package commands by preceding each command with psych:: instead of using library(psych).</p>
+<p>The complete script for this project can be download here: <a href="script_workshop2.R">script_workshop2.R</a></p>
 </div>
 <div id="goals" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Goals</h2>
@@ -521,13 +522,11 @@ div.csl-indent {
 <div id="clean-and-screen-the-data" class="section level2" number="7.7">
 <h2><span class="header-section-number">7.7</span> Clean and screen the data</h2>
 <p>Remove empty row and columns from your data using the remove_empty_cols() and remove_empty_rows(), respectively. As well, clean the names of your columns to ensure they conform to tidyverse naming conventions.</p>
-<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="week-2-friday-workshop.html#cb332-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb332-2"><a href="week-2-friday-workshop.html#cb332-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb332-3"><a href="week-2-friday-workshop.html#cb332-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial cleaning</span></span>
-<span id="cb332-4"><a href="week-2-friday-workshop.html#cb332-4" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
-<span id="cb332-5"><a href="week-2-friday-workshop.html#cb332-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb332-6"><a href="week-2-friday-workshop.html#cb332-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb332-7"><a href="week-2-friday-workshop.html#cb332-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="week-2-friday-workshop.html#cb332-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial cleaning</span></span>
+<span id="cb332-2"><a href="week-2-friday-workshop.html#cb332-2" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb332-3"><a href="week-2-friday-workshop.html#cb332-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb332-4"><a href="week-2-friday-workshop.html#cb332-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb332-5"><a href="week-2-friday-workshop.html#cb332-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code></pre></div>
 <p>You can confirm the column names following our naming convention with the glimpse command - and see the data type for each column.</p>
 <div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="week-2-friday-workshop.html#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
 <pre><code>## Rows: 100
@@ -580,10 +579,9 @@ div.csl-indent {
 <div id="numeric-screening-1" class="section level3" number="7.7.3">
 <h3><span class="header-section-number">7.7.3</span> Numeric screening</h3>
 <p>For numeric variables, we want to make sure that we don’t have impossible values. For example, in the context of this example you want to ensure none of the Likert responses are impossible (e.g., outside the 1- to 7-point rating scale) or clearly data entry errors. If a value is below 1 or higher than 7 it is an error. The p0 column indicate the lowest value for each variable. Yu can see the lowest value for aff_com2_likert7 is 1. The p100 column tells you the highest value in each column. You can see that the highest value for aff_com2_likert7 was 5. What are the lowest and highest values for aff_com3_likert7 and aff_com4_likert7rev. Also reported in this output are the mean and standard deviation. But note that the standard deviation reported use <span class="math inline">\(n\)</span>-1 in the denominator when it is calculated. This may or may not be what you want to know.</p>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="week-2-friday-workshop.html#cb342-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb342-2"><a href="week-2-friday-workshop.html#cb342-2" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
-<span id="cb342-3"><a href="week-2-friday-workshop.html#cb342-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev) <span class="sc">%&gt;%</span></span>
-<span id="cb342-4"><a href="week-2-friday-workshop.html#cb342-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="week-2-friday-workshop.html#cb342-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb342-2"><a href="week-2-friday-workshop.html#cb342-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev) <span class="sc">%&gt;%</span></span>
+<span id="cb342-3"><a href="week-2-friday-workshop.html#cb342-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
 <pre><code>##         skim_variable n_missing mean   sd p0 p50 p100
 ## 1    aff_com2_likert7         0 3.50 0.82  1 4.0    5
 ## 2    aff_com3_likert7         0 3.49 0.59  2 3.5    5
@@ -783,9 +781,8 @@ mutate(4 - across(.cols = ends_with(“_likert7rev”)) )
 <div id="descriptive-statistics-for-scale-scores" class="section level2" number="7.10">
 <h2><span class="header-section-number">7.10</span> Descriptive statistics for scale scores</h2>
 <p>You can quickly get descriptive statistics using the skim() command - as illustrated below.</p>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="week-2-friday-workshop.html#cb357-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb357-2"><a href="week-2-friday-workshop.html#cb357-2" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
-<span id="cb357-3"><a href="week-2-friday-workshop.html#cb357-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="week-2-friday-workshop.html#cb357-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb357-2"><a href="week-2-friday-workshop.html#cb357-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
 <pre><code>##          skim_variable mean   sd    p0   p50  p100
 ## 1                  sex   NA   NA    NA    NA    NA
 ## 2     aff_com2_likert7 3.50 0.82 1.000 4.000 5.000

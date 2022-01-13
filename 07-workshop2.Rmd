@@ -26,6 +26,7 @@ The following CRAN packages must be installed:
 
 **Important Note:** You should NOT use library(psych) at any point! There are major conflicts between the psych package and the tidyverse. We will access the psych package commands by preceding each command with psych:: instead of using library(psych).
 
+The complete script for this project can be download here: [script_workshop2.R](script_workshop2.R)
 
 ## Goals
 
@@ -146,8 +147,6 @@ analytic_data_survey <- raw_data_survey
 Remove empty row and columns from your data using the remove_empty_cols() and remove_empty_rows(), respectively. As well, clean the names of your columns to ensure they conform to tidyverse naming conventions. 
 
 ```{r, results = "hide"}
-library(janitor)
-
 # Initial cleaning
 analytic_data_survey <- analytic_data_survey %>%
   remove_empty("rows") %>%
@@ -215,7 +214,6 @@ For numeric variables, we want to make sure that we don't have impossible values
 
 
 ```{r, eval = FALSE}
-library(skimr)
 analytic_data_survey %>%
   select(aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev) %>%
   skim()
@@ -370,7 +368,6 @@ head(analytic_data_survey)
 You can quickly get descriptive statistics using the skim() command - as illustrated below.
 
 ```{r, eval = FALSE}
-library(skimr)
 analytic_data_survey %>%
   skim()
 ```
