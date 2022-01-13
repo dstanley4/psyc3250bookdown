@@ -1,0 +1,406 @@
+# Week 2 Friday Workshop
+
+```{r, include=FALSE}
+library(tidyverse)
+```
+
+## Required Packages
+
+
+The data files below are used in this chapter. The files are available at: https://github.com/dstanley4/psyc3250bookdown
+
+
+| Required Data |
+|-------------------|
+|[data_aff_survey.csv](data_aff_survey.csv)|
+
+
+The following CRAN packages must be installed:
+
+| Required CRAN Packages |
+|-------------------|
+|tidyverse          |
+|janitor            |
+|skimr              |
+|sjstats            |
+
+**Important Note:** You should NOT use library(psych) at any point! There are major conflicts between the psych package and the tidyverse. We will access the psych package commands by preceding each command with psych:: instead of using library(psych).
+
+
+## Goals
+
+For this workshop our goals are to learn how to:
+
+* Learn about column naming conventions
+
+* Use Projects in RStudio
+
+* Load data
+
+* Clean and screen data
+
+* Reverse-key items
+
+* Make scale scores
+
+* Calculate variance using the population-level formula
+
+
+## Data and column names
+
+A key component of effect data analysis is the use of naming conventions for column names. In this section we focus on one column naming convention that makes it easy to work with survey data. You will need to use this column naming convention for your major project. 
+
+The namning convention we advocate will save you hours of hassles and permit easy application of certain tidyverse commands. However, we must stress that although the naming convention we advocate is based on the tidyverse style guide, it is not "right" or "correct" - there are other naming conventions you can use (once you finish the course). Any naming convention is better than no naming convention. The naming convention we advocate here will solve many problems. 
+
+To make your life easier down the road, it is critical you set up your spreadsheet or online survey such that it uses a naming convention prior to data collection. The naming conventions suggested here are adapted from the tidyverse [style guide](https://style.tidyverse.org).
+
+The key components of the column naming convention are the following:
+
+* Lowercase letters only
+
+* If two word column names are necessary, only use the underscore ("_") character to separate words in the name. Do not use a period (".") a space (" ") or other symbols.
+
+* Use moderate length (not short0 column prefixes. For example, if you have an Affective Commitment Scale do not preface each items with "acs" instead preface each item with a longer verison like "aff_com".  
+
+* Indicate in the item name if it is a likert-type scale and the number of points in the scale. For example, if your affective commitment scale has a 7-point Likert-type response scale you indicate that in the column name. For example, the name for two commtiment items might be: "aff_com1_likert7' and "aff_com2_likert7". This indicates important information for future users of the data set (including you)
+
+* Indicate in the item name if the item is reversed keyed. ** Sometimes with Likert-type items, an item is reverse keyed. For example, on a **positive** job affect scale, participants will typically respond to items that reflect job affect using the scale: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. Higher numbers indicate more positive job affect. Sometimes, however, some items will use the same 1 to 5 response scale but be worded in the opposite manner such as "I hate my job". Responding with a 5 to this item would indicate high **negative** job affect (not positive affect). But the columns for positive job affect scale should have high values to indicate more positive job affect not less positive job affect. Consequently, we flag the names of columns with reversed responses (i.e., reverse-key items) so that we know to treat those column differently later. Columns with reverse-keyed items need to be processed by a script so that the values are flipped and scored in the right direction. A normal positive job affect item might have a name like "job_aff1_likert7" whereas a reverse-key item would have a name like "job_aff2-likert7rev". The "rev" in the column name indicates the item was a reverse-keyed item.
+
+
+Notice how the data file we use for this workshop follows this naming convention.
+
+## Install packages
+
+Prior to the starting this activity you must have a number of packages installed. Because you are using RStudio Cloud on your computer - a package only needs to be installed once. If you installed it previously you do not need to instal it again. But if you're not sure - you can allways install it again to be safe.
+
+1. Use the menu Session  > Restart R
+
+2. In the Console (NOT THE SCRIPT) type the following commands to install the required packages:
+
+```{r, eval =  FALSE}
+install.packages("tidyverse", dep = TRUE)
+install.packages("skimr", dep = TRUE)
+install.packages("janitor", dep = TRUE)
+install.packages("sjstats", dep = TRUE)
+```
+
+3. You're done - these packages are now stored on your computer. You won't need to install them again.
+
+## RStudio Project
+
+1. Create a folder on your computer for the example
+
+2. Download the data file for this example: [data_aff_survey.csv](data_aff_survey.csv). ONLY obtain this file from the Downloads folder. If you open in another program and save it again - the data file will not work.
+
+3. Place all the example data file in the folder you created in Step 1. 
+
+3. Use the menu item File > New Project... to start the project
+
+4. On the window that appears select "Existing Directory"
+
+5. On the next screen, press the "Browse" button and find/select the folder with your data
+
+6. Press the Create Project Button
+
+
+### Make a script
+
+1. Go the File menu. File > New File > Script
+
+2. When you write your code - place into this script.
+
+
+## Loading data
+
+Place the code below into your script:
+
+
+
+```{r, results='hide'}
+# Date: YYYY-MM-DD
+# Name: your name here
+# Example: Single occasion survey
+
+# Activate packages
+library(tidyverse)
+library(janitor)
+library(skimr)
+library(sjstats)
+
+# Load the data
+my_missing_value_codes <- c("-999", "", "NA")
+
+raw_data_survey <- read_csv(file = "data_aff_survey.csv",
+                     na = my_missing_value_codes)
+```
+
+We load the initial data into a raw_data_survey but immediately make a copy we will work with called analytic_data_survey. It's good to keep a copy of the raw data for reference if you encounter problems.
+
+```{r}
+analytic_data_survey <- raw_data_survey
+
+```
+
+## Clean and screen the data
+
+Remove empty row and columns from your data using the remove_empty_cols() and remove_empty_rows(), respectively. As well, clean the names of your columns to ensure they conform to tidyverse naming conventions. 
+
+```{r, results = "hide"}
+library(janitor)
+
+# Initial cleaning
+analytic_data_survey <- analytic_data_survey %>%
+  remove_empty("rows") %>%
+  remove_empty("cols") %>%
+  clean_names()
+```
+
+You can confirm the column names following our naming convention with the glimpse command - and see the data type for each column.
+
+```{r}
+glimpse(analytic_data_survey)
+```
+
+Notice the column names in this file. We have a sex column, an aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev. The likert columns contain the reponses to three affective commitment to the organization items. In particular, pay attention to the fact that the third item is reverse-keyed. 
+
+Just for your reference the text of the items used to generate the data for this columns was:
+
+* aff_com2_likert7: I enjoy discussing my organization with people outside of it
+
+* aff_com3_likert7: I really feel as if this organizations problems are my own
+
+* aff_com4_likert7rev: I think I could easily become as attached to another organization as I am to this one. (reverse-keyed)
+
+### Creating factors
+
+Following initial cleaning, we have to tell R which variables/columns are categorical columns. We do that by telling R that a column is a factor.  
+
+```{r}
+glimpse(analytic_data_survey)
+```
+
+Notice the sex column show up as chr in this output. That means it's a character column. R doesn't know that this is a categorical variable. So we have to tell R that this is a categorical variable by converting it to a factor. This is done with the code below.
+
+```{r}
+analytic_data_survey <- analytic_data_survey %>%
+  mutate(sex = as_factor(sex))
+
+```
+
+Let's check the column now.
+
+```{r}
+glimpse(analytic_data_survey)
+```
+
+Notice the sex column is now fct - that tells you that R now understands that sex is a categorical varible.
+
+### Factor screening
+
+When you have a categorical variable - you need to ensure that all the *levels* of that categorical variable make sense. For example, you might have male, female, and ffemale as the levels of sex. Clearly, ffemale is typo. You want to make sure you don't have typos or other mistakes in the levels of the categorical variable. We do that with the summary() command.
+
+```{r}
+analytic_data_survey %>%
+  select(where(is.factor)) %>%
+  summary()
+```
+
+
+You can see in this output that male and female are the only levels of sex -- there are not any typos versions of these levels. So you're all good.
+
+
+### Numeric screening
+
+For numeric variables, we want to make sure that we don't have impossible values.  For example, in the context of this example you want to ensure none of the Likert responses are impossible (e.g., outside the 1- to 7-point rating scale) or clearly data entry errors. If a value is below 1 or higher than 7 it is an error. The p0 column indicate the lowest value for each variable. Yu can see the lowest value for aff_com2_likert7 is 1. The p100 column tells you the highest value in each column. You can see that the highest value for aff_com2_likert7 was 5. What are the lowest and highest values for aff_com3_likert7 and aff_com4_likert7rev. Also reported in this output are the mean and standard deviation. But note that the standard deviation reported use $n$-1 in the denominator when it is calculated. This may or may not be what you want to know.
+
+
+```{r, eval = FALSE}
+library(skimr)
+analytic_data_survey %>%
+  select(aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev) %>%
+  skim()
+```
+```{r, echo=FALSE}
+library(skimr)
+
+outdf <- analytic_data_survey %>%
+  select(aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev) %>%
+  skim_without_charts() %>%
+  as_tibble() %>%
+  select(-skim_type) %>%
+    rename_with(.fn = str_remove,
+              .cols = everything(),
+              pattern = "numeric.") %>%
+  select(-p25, -complete_rate, -p75) %>%
+  as.data.frame()
+
+outdf$mean = round(outdf$mean,2)
+outdf$sd = round(outdf$sd,2)
+
+outdf
+```
+
+## Flipping responses to reverse-key items
+
+The way you deal with reverse-keyed items depends on how you scored them. Imagine you had a 7-point scale. You could have scored the scale with the values 1, 2, 3, 4, 5, 6, and 7. Alternatively, you could have scored the scale with the values 0, 1, 2, 3, 4, 5, and 6. The mathematical approach you use to correcting reverse-keyed items depends upon whether the 7-point scale starts with 1 or 0.
+
+In this example, we scored the data using the value 1 to 7; so that is the approach illustrated here. See the extra information box (below) for details on how to fixed reverse-keyed items when the scale begins with zero.
+
+In this data file all the reverse-keyed items were identified with the suffix "_likert7rev" in the column names. This suffix indicates the item was reverse keyed and that the original scale used the response points 1 to 7. We can see using the glimpse() command below that there was only one reverse-keyed item.
+
+```{r}
+analytic_data_survey %>%
+  glimpse()
+```
+
+To correct a reverse-keyed item where the lowest possible rating is 1 (i.e, 1 on a 1 to 7 scale), we simply subtract all the scores from a value one more than the highest point possible on the scale (i.e., one more than 7). For example, if a 1 to 7 response scale was used we subtract each response from 8 to obtain the recoded value.
+
+|  Original value | Math  | Recoded value |
+|             :-: |  :-:  | :-:           |
+| 1               | 8 - 1 | 7             |
+| 2               | 8 - 2 | 6             |
+| 3               | 8 - 3 | 5             |
+| 4               | 8 - 4 | 4             |
+| 5               | 8 - 5 | 3             |
+| 6               | 8 - 6 | 2             |
+| 7               | 8 - 7 | 1             |
+
+
+** Thus, for we need to subtract every value in the aff_com4_likert7rev column from 8 to flip the reverse-key response to the correct direction. You can see the code that does this below (but don't type it yet).
+
+
+```{r,echo=TRUE,eval=FALSE}
+# Do not type into your script. 
+# This is PART of a command not a full command.
+analytic_data_survey <- analytic_data_survey %>% 
+  mutate(8 - across(.cols = ends_with("_likert7rev")) )
+```
+
+The code above is general in nature and will perform the substraction for any column that end in "_likert7rev" in our case there is only one column that will be affect. The problem with the code above though is that you have the wrong column name. You have flipped the values in the column so that are not reverse-keyed anymore -- but the column name indicates that you have reverse-keyed responses. So you need to add the code below to change the column name.
+
+
+```{r,echo=TRUE,eval=FALSE}
+# Do not type into your script. 
+# This is PART of a command not a full command.
+  rename_with(.fn = str_replace,
+              .cols = ends_with("_likert7rev"),
+              pattern = "_likert7rev",
+              replacement = "_likert7")
+```
+
+Let's begin by looking at the first few rows of your data set:
+
+```{r}
+head(analytic_data_survey)
+```
+
+You can see the first three values of the aff_com4_likert7 column are 5, 4, 6.
+
+Now let fix the column with code below - which you should put in your script.
+
+```{r,echo=TRUE,eval=TRUE}
+
+# Place this code in your script
+
+analytic_data_survey <- analytic_data_survey %>% 
+  mutate(8 - across(.cols = ends_with("_likert7rev")) ) %>% 
+  rename_with(.fn = str_replace,
+              .cols = ends_with("_likert7rev"),
+              pattern = "_likert7rev",
+              replacement = "_likert7")
+
+```
+
+After you put that above code in your script. Add another head() command:
+
+```{r, echo = FALSE}
+head(analytic_data_survey)
+```
+
+Let's run your full script. Go to the menu Session > Restart R. The click the Source with Echo button to run full script.
+
+
+```{r, echo = TRUE}
+head(analytic_data_survey)
+```
+
+When you see the output fo the second head() command you can see that the aff_com4_likert7rev column has turned into aff_com4_likert7 (with no rev). You can also see the first few values of this column are 3, 4, and 2. That is, you can see the values in the column have been flipped.
+
+Congratulations you've finished fixing the reverse-key item in your data set.
+
+
+```{block2, type='rmdcaution'}
+If your scale had used response options numbered 0 to 6 the math is different.
+For each item you would use subtract values from the highest possible point (i.e, 4) instead of one larger than the highest possible point.
+
+|  Original value | Math  | Recoded value |
+|             :-: |  :-:  | :-:           |
+| 0               | 6 - 0 | 6             |
+| 1               | 6 - 1 | 5             |
+| 2               | 6 - 2 | 4             |
+| 3               | 6 - 3 | 3             |
+| 4               | 6 - 4 | 2             |
+| 5               | 6 - 5 | 1             |
+| 6               | 6 - 6 | 0             |
+
+Thus, the mutate command would instead be:
+
+  mutate(4 - across(.cols = ends_with("_likert7rev")) )
+```
+
+## Making scale scores
+
+```{r}
+analytic_data_survey <- analytic_data_survey %>% 
+  rowwise() %>% 
+  mutate(affective_commitment = mean(c_across(starts_with("aff_com")),
+                                     na.rm = TRUE)) %>%
+  ungroup() 
+```
+
+You can see the new column you created with the head() command. The values in this column represent the average of the three affective commitment items for each person.
+
+```{r}
+head(analytic_data_survey)
+```
+
+
+## Descriptive statistics for scale scores
+
+You can quickly get descriptive statistics using the skim() command - as illustrated below.
+
+```{r, eval = FALSE}
+library(skimr)
+analytic_data_survey %>%
+  skim()
+```
+```{r, echo=FALSE}
+library(skimr)
+
+outdf <- analytic_data_survey %>%
+  skim_without_charts() %>%
+  as_tibble() %>%
+  select(-skim_type) %>%
+    rename_with(.fn = str_remove,
+              .cols = everything(),
+              pattern = "numeric.") %>%
+  select(-p25, -complete_rate, -p75,-n_missing,-factor.ordered,-factor.n_unique,-factor.top_counts) %>%
+  as.data.frame()
+
+outdf$mean = round(outdf$mean,2)
+outdf$sd = round(outdf$sd,2)
+
+outdf
+```
+
+
+However, if you can be more specific about what you want - especially if you want the variance of the column. See the code below where we calculate the sample mean (mean), variance using $n-1$ in the denominator (var_using_n_1), and variance using $n$ in the denominator (var_using_n). Not that the na.rm = TRUE just tells the computer to remove/ignore missing values (i.e, remove Not Available values).
+
+
+```{r}
+analytic_data_survey %>%
+  summarise(mean = mean(affective_commitment, na.rm = TRUE),
+            var_using_n_1 = var(affective_commitment, na.rm = TRUE),
+            var_using_n = var_pop(affective_commitment))
+```
+

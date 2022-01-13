@@ -1,6 +1,6 @@
 \mainmatter
 
-# Introduction
+# Week 1 Friday Workshop
 
 Welcome! In this guide, we will teach you about statistics using the statistical software R with the interface provided by R Studio. The purpose of this chapter to is provide you with a set of activities that get you up-and-running in R quickly so get a sense of how it works. In later chapters we will revisit these same topics in more detail. 
 

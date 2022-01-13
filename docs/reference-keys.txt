@@ -17,7 +17,7 @@ fig:colorpal
 fig:colorspalthree
 fig:pairedpal
 fig:colorcomparison2
-introduction
+week-1-friday-workshop
 a-focus-on-workflow
 r-works-with-plug-ins
 software-choice
@@ -185,3 +185,18 @@ avoid-color
 saving
 mac-1
 pc-or-mac
+week-2-friday-workshop
+required-packages-1
+goals
+data-and-column-names
+install-packages
+rstudio-project
+make-a-script
+loading-data-1
+clean-and-screen-the-data
+creating-factors-1
+factor-screening-1
+numeric-screening-1
+flipping-responses-to-reverse-key-items
+making-scale-scores
+descriptive-statistics-for-scale-scores
