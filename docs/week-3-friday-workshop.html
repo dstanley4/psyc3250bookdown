@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Percentiles | Welcome!</title>
+  <title>Chapter 4 Week 3 Friday Workshop | Welcome!</title>
   <meta name="description" content="Course notes for PSYC 3250" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Percentiles | Welcome!" />
+  <meta property="og:title" content="Chapter 4 Week 3 Friday Workshop | Welcome!" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="dstanley4/psyc3250bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Percentiles | Welcome!" />
+  <meta name="twitter:title" content="Chapter 4 Week 3 Friday Workshop | Welcome!" />
   
   <meta name="twitter:description" content="Course notes for PSYC 3250" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="scaling-1.html"/>
-<link rel="next" href="graphing.html"/>
+<link rel="prev" href="week-2-friday-workshop.html"/>
+<link rel="next" href="scaling.html"/>
 <script src="libs/header-attrs/header-attrs.js"></script>
 <script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -377,170 +377,254 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="percentiles" class="section level1" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Percentiles</h1>
-<p>In the previous chapter, we calculated <em>z</em>-scores for males in our sample. We calculated the <em>z</em>-scores using three different frames of references: all sample data (male and female), male sample data, and Canadian males. Recall that a <em>z</em>-score provides information relative to a frame of reference (e.g., all sample data, male sample data, Canadian males). For a given frame a reference, a <em>z</em>-score of 0 represents the mean of that frame of reference. Positive <em>z</em>-scores indicate participants above the mean for the frame of reference whereas negative <em>z</em>-score indicate participants below the mean for the frame of reference. A value of 1 corresponds to one standard deviation. Therefore, a person with a <em>z</em>-score of 2 is two standard deviations above the mean.</p>
-<div id="assuming-a-normal-distribution-approach" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Assuming a normal distribution approach</h2>
-<div id="a-single-case" class="section level3" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> A single case</h3>
-<p>If we assume our frame of reference has a normal distribution, we can calculate for one person the proportion of people who scored the same or lower than them. We multiply that proportion by 100 and we have the percentage, The percentage indicates the percentage of people who score the same or lower than them. We refer to this number as the <strong>percentile</strong> for that person.</p>
-<p>Imagine a person has a <em>z</em>-score of 0 relative to some reference group. If the distribution is normal, we can determine the <strong>proportion</strong> of people, in the reference group, that have the same score or a lower score using the command pnorm() command below. We simply put the z-score in the brackets of the pnorm() command:</p>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="percentiles.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">0</span>)</span></code></pre></div>
-<pre><code>## [1] 0.5</code></pre>
-<p>We see that the <strong>proportion</strong> of people in the reference group with a <em>z</em>-score of zero or lower is 0.50.</p>
-<p>We can convert this proportion to a percentage by mulitplying it by 1000:</p>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="percentiles.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.500</span> <span class="sc">*</span> <span class="dv">100</span></span></code></pre></div>
-<pre><code>## [1] 50</code></pre>
-<p>We see the percentage is 50%. This indicates that 50% of the reference group had a <em>z</em>-score of 0 or lower – assuming the distribution is normal. We illustrate this graphically below:</p>
-<p><img src="bookdown_files/figure-html/unnamed-chunk-183-1.png" width="672" /></p>
-<p>Of course, the pnorm(0) command is the same as looking up a value of zero in a <em>z</em>-table – as illustrated below. Examine the first row that is underlined in red. Notice the value of 0 in the <em>z</em> column (indicating a <em>z</em>-score of zero). Then examine the “Larger portion” column and notice the .50 value. This .50 indicates the proportion of the distribution is below a <em>z</em>-score of zero (i.e., .50 or 50%). As noted, examining the table in this way is the same as running pnorm(0) command.</p>
-<p><img src="ch_percentiles/images/z_table_0.png" width="741" /></p>
+<div id="week-3-friday-workshop" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Week 3 Friday Workshop</h1>
+<div id="required-packages-1" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Required Packages</h2>
+<p>The data files below are used in this chapter. The files are available at: <a href="https://github.com/dstanley4/psyc3250bookdown" class="uri">https://github.com/dstanley4/psyc3250bookdown</a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Required Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="data_aff_survey.csv">data_aff_survey.csv</a></td>
+</tr>
+</tbody>
+</table>
+<p>The following CRAN packages must be installed:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required CRAN Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tidyverse</td>
+</tr>
+<tr class="even">
+<td>janitor</td>
+</tr>
+<tr class="odd">
+<td>skimr</td>
+</tr>
+<tr class="even">
+<td>sjstats</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important Note:</strong> You should NOT use library(psych) at any point! There are major conflicts between the psych package and the tidyverse. We will access the psych package commands by preceding each command with psych:: instead of using library(psych).</p>
+<p>The complete script for this project can be download here: <a href="script_workshop2.R">script_workshop2.R</a></p>
 </div>
-<div id="many-cases-using-r" class="section level3" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> Many cases using R</h3>
-<p>Let’s return to the male_height_data from the previous chapter. We begin with the data set as it existed at the end of the last chapter. We take only a few essential columns from that data and place them into a new data set called male_height_canada_percentiles with commands below. Note that we use <strong>arrange(desc(cm_height))</strong> to sort the order of the rows so that the tallest people are at the top of the table. The desc() function makes the order of the rows based on cm_height <strong>desc</strong>ending.</p>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="percentiles.html#cb262-1" aria-hidden="true" tabindex="-1"></a>male_height_canada_percentiles <span class="ot">&lt;-</span> male_height_data <span class="sc">%&gt;%</span></span>
-<span id="cb262-2"><a href="percentiles.html#cb262-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, cm_height, z_canada_male) <span class="sc">%&gt;%</span></span>
-<span id="cb262-3"><a href="percentiles.html#cb262-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(cm_height))</span>
-<span id="cb262-4"><a href="percentiles.html#cb262-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb262-5"><a href="percentiles.html#cb262-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_canada_percentiles)</span></code></pre></div>
-<pre><code>## # A tibble: 10 × 3
-##    name    cm_height z_canada_male
-##    &lt;chr&gt;       &lt;dbl&gt;         &lt;dbl&gt;
-##  1 John          190         0.542
-##  2 Basheer       185        -0.153
-##  3 Rick          183        -0.431
-##  4 Matt          180        -0.847
-##  5 Sean          179        -0.986
-##  6 Eli           174        -1.68 
-##  7 Tim           173        -1.82 
-##  8 Jamal         172        -1.96 
-##  9 Jim           168        -2.51 
-## 10 Steve         165        -2.93</code></pre>
-<p>For each person we will calculate the proportion of the distribution of Canadian males that the same height or shorter than them via the normal distribution. We will place this information in the proportion_lower column. The proportion_lower column is calculated via the mutate() command using pnorm(). Following creation of the proportion_lower column we create the percentile column by multiplying the proportion_lower column by 100 - again using the mutate() command:</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="percentiles.html#cb264-1" aria-hidden="true" tabindex="-1"></a>male_height_canada_percentiles <span class="ot">&lt;-</span> male_height_canada_percentiles <span class="sc">%&gt;%</span></span>
-<span id="cb264-2"><a href="percentiles.html#cb264-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">proportion_lower =</span> <span class="fu">pnorm</span>(z_canada_male)) <span class="sc">%&gt;%</span></span>
-<span id="cb264-3"><a href="percentiles.html#cb264-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percentile =</span> proportion_lower <span class="sc">*</span> <span class="dv">100</span>)</span>
-<span id="cb264-4"><a href="percentiles.html#cb264-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb264-5"><a href="percentiles.html#cb264-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_canada_percentiles)</span></code></pre></div>
-<pre><code>## # A tibble: 10 × 5
-##    name  cm_height z_canada_male proportion_lower percentile
-##    &lt;chr&gt;     &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;
-##  1 John        190         0.542          0.706       70.6  
-##  2 Bash…       185        -0.153          0.439       43.9  
-##  3 Rick        183        -0.431          0.333       33.3  
-##  4 Matt        180        -0.847          0.198       19.8  
-##  5 Sean        179        -0.986          0.162       16.2  
-##  6 Eli         174        -1.68           0.0464       4.64 
-##  7 Tim         173        -1.82           0.0344       3.44 
-##  8 Jamal       172        -1.96           0.0251       2.51 
-##  9 Jim         168        -2.51           0.00597      0.597
-## 10 Steve       165        -2.93           0.00169      0.169</code></pre>
-<p>Examine the pattern of results for these males. Pay particular attention to the percentile column for Rick, Basheer, and John. For each of these cases we create a graph (based on the numbers in the table above) to illustrate the percentage of Canadian males that are shorter (i.e., have lower height values). Keep in mind, when we calculate the “percentage lower” the resulting number is always for the same frame of reference that we used to calculate the <em>z</em>-score. In this case, the <em>z</em>-scores (z_canada_male) used all Canadian males as the frame of reference.</p>
-<div id="rick" class="section level4" number="7.1.2.1">
-<h4><span class="header-section-number">7.1.2.1</span> Rick</h4>
-<p>Rick had a <em>z</em>-score of <span class="math inline">\(z\)</span> = -0.43 when using all Canadian males as a frame of reference. He is 0.43 standard deviations shorter than the average Canadian male. If we assume the heights of Canadian males are normally distributed, as we did in the calculations above, we find that 33% of Canadian males are shorter than Rick. We say Rick is in the 33rd percentile.</p>
-<p><img src="bookdown_files/figure-html/unnamed-chunk-188-1.png" width="672" /></p>
+<div id="goals-1" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Goals</h2>
+<p>For this workshop our goals are to learn how to:</p>
+<ul>
+<li><p>Consolidate Workshop 2 concepts</p></li>
+<li><p>Examine variance and covariance in the context of items</p></li>
+<li><p>Illustrate how we can calculate the variance of a column of scale scores</p></li>
+</ul>
 </div>
-<div id="basheer" class="section level4" number="7.1.2.2">
-<h4><span class="header-section-number">7.1.2.2</span> Basheer</h4>
-<p>Basheer had a <em>z</em>-score of <span class="math inline">\(z\)</span> = -0.15 when using all Canadian males as a frame of reference. He is 0.15 standard deviations shorter than the average Canadian male. If we assume the heights of Canadian males are normally distributed, as we did in the calculations above, we find that 44% of Canadian males are shorter than Basheer. We say Basheer is in the 44th percentile.</p>
-<p><img src="bookdown_files/figure-html/unnamed-chunk-189-1.png" width="672" /></p>
+<div id="data-and-column-names-1" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Data and column names</h2>
+<p>A key component of effect data analysis is the use of naming conventions for column names. In this section we focus on one column naming convention that makes it easy to work with survey data. You will need to use this column naming convention for your major project.</p>
+<p>The namning convention we advocate will save you hours of hassles and permit easy application of certain tidyverse commands. However, we must stress that although the naming convention we advocate is based on the tidyverse style guide, it is not “right” or “correct” - there are other naming conventions you can use (once you finish the course). Any naming convention is better than no naming convention. The naming convention we advocate here will solve many problems.</p>
+<p>To make your life easier down the road, it is critical you set up your spreadsheet or online survey such that it uses a naming convention prior to data collection. The naming conventions suggested here are adapted from the tidyverse <a href="https://style.tidyverse.org">style guide</a>.</p>
+<p>The key components of the column naming convention are the following:</p>
+<ul>
+<li><p>Lowercase letters only</p></li>
+<li><p>If two word column names are necessary, only use the underscore (“_“) character to separate words in the name. Do not use a period (.””) a space (” “) or other symbols.</p></li>
+<li><p>Use moderate length (not short0 column prefixes. For example, if you have an Affective Commitment Scale do not preface each items with “acs” instead preface each item with a longer verison like “aff_com.”</p></li>
+<li><p>Indicate in the item name if it is a likert-type scale and the number of points in the scale. For example, if your affective commitment scale has a 7-point Likert-type response scale you indicate that in the column name. For example, the name for two commtiment items might be: “aff_com1_likert7’ and”aff_com2_likert7”. This indicates important information for future users of the data set (including you)</p></li>
+<li><p>Indicate in the item name if the item is reversed keyed. ** Sometimes with Likert-type items, an item is reverse keyed. For example, on a <strong>positive</strong> job affect scale, participants will typically respond to items that reflect job affect using the scale: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. Higher numbers indicate more positive job affect. Sometimes, however, some items will use the same 1 to 5 response scale but be worded in the opposite manner such as “I hate my job.” Responding with a 5 to this item would indicate high <strong>negative</strong> job affect (not positive affect). But the columns for positive job affect scale should have high values to indicate more positive job affect not less positive job affect. Consequently, we flag the names of columns with reversed responses (i.e., reverse-key items) so that we know to treat those column differently later. Columns with reverse-keyed items need to be processed by a script so that the values are flipped and scored in the right direction. A normal positive job affect item might have a name like “job_aff1_likert7” whereas a reverse-key item would have a name like “job_aff2-likert7rev.” The “rev” in the column name indicates the item was a reverse-keyed item.</p></li>
+</ul>
 </div>
-<div id="john" class="section level4" number="7.1.2.3">
-<h4><span class="header-section-number">7.1.2.3</span> John</h4>
-<p>John had a <em>z</em>-score of <span class="math inline">\(z\)</span> = .54 when using all Canadian males as a frame of reference. He is 0.54 standard deviations taller than the average Canadian male. If we assume the heights of Canadian males are normally distributed, as we did in the calculations above, we find that 71% of Canadian males are shorter than John. We say John is in the 71st percentile.</p>
-<p><img src="bookdown_files/figure-html/unnamed-chunk-190-1.png" width="672" /></p>
+<div id="install-packages-1" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Install packages</h2>
+<p>You will need the same packages installed as you did for the Week 2 Friday workshop. If you did not install the packages then - go back to that week and do so now.</p>
 </div>
-</div>
-</div>
-<div id="assumption-free-approach" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Assumption free approach</h2>
-<p>The decision to assume a normal distribution, as we did above, depends on a few things. In order to make a normal distirbution assumption we would a) want to ensure we had a very large number of people in our frame of reference and b) that the shape was actually normal - as determined by a visual inspection of a histogram or a statistical test. If both of these things are true we can use the normal distribution to calculate a percentile for each person. If both of these things are not true - we need to use another approach. That’s the focus of this section.</p>
+<div id="rstudio-project-1" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> RStudio Project</h2>
 <ol style="list-style-type: decimal">
-<li><p>Rank order the participants in the frame of reference by attribute of interest (e.g., height) so the larger numbers are at the top of the list</p></li>
-<li><p>Determine how many people in the frame of reference have scores below each person on the attribute of interest.</p></li>
-<li><p>Divide the “number below” by the total number of people in the frame of reference.</p></li>
+<li><p>Create a folder on your computer for the example</p></li>
+<li><p>Download the data file for this example: <a href="data_aff_survey.csv">data_aff_survey.csv</a>. ONLY obtain this file from the Downloads folder. If you open in another program and save it again - the data file will not work.</p></li>
+<li><p>Place all the example data file in the folder you created in Step 1.</p></li>
+<li><p>Use the menu item File &gt; New Project… to start the project</p></li>
+<li><p>On the window that appears select “Existing Directory”</p></li>
+<li><p>On the next screen, press the “Browse” button and find/select the folder with your data</p></li>
+<li><p>Press the Create Project Button</p></li>
 </ol>
-<p>We will follow these steps using R.</p>
-<p>We begin by creating a new data set called male_height_sample_percentiles we include just the <strong>name</strong> and <strong>cm_height</strong> columns in this data set.</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="percentiles.html#cb266-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_data <span class="sc">%&gt;%</span></span>
-<span id="cb266-2"><a href="percentiles.html#cb266-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, cm_height)</span>
-<span id="cb266-3"><a href="percentiles.html#cb266-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb266-4"><a href="percentiles.html#cb266-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
-<pre><code>## # A tibble: 10 × 2
-##    name    cm_height
-##    &lt;chr&gt;       &lt;dbl&gt;
-##  1 John          190
-##  2 Jim           168
-##  3 Steve         165
-##  4 Jamal         172
-##  5 Eli           174
-##  6 Sean          179
-##  7 Basheer       185
-##  8 Matt          180
-##  9 Tim           173
-## 10 Rick          183</code></pre>
-<p><strong>Step 1: Sort by height</strong>
-We sort the rows by height - ensuring the tallest males are at the top of the list by using the arrange(desc(cm_height)) command:</p>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="percentiles.html#cb268-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
-<span id="cb268-2"><a href="percentiles.html#cb268-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(cm_height))</span>
-<span id="cb268-3"><a href="percentiles.html#cb268-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb268-4"><a href="percentiles.html#cb268-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
-<pre><code>## # A tibble: 10 × 2
-##    name    cm_height
-##    &lt;chr&gt;       &lt;dbl&gt;
-##  1 John          190
-##  2 Basheer       185
-##  3 Rick          183
-##  4 Matt          180
-##  5 Sean          179
-##  6 Eli           174
-##  7 Tim           173
-##  8 Jamal         172
-##  9 Jim           168
-## 10 Steve         165</code></pre>
-<p><strong>Step 2: Number below</strong></p>
-<p>Because the heights are now sorted we can determine the number of people on the list below each person just by their position in the list. For example, John is the tallest and there 9 people shorter than him. Basheer is the second tallest and there are 8 people shorter than him. We need a column of numbers with the values 9, 8, 7, 6, 5, 4, 3, 2, 1, 0. We use the command: n():1. The n() refers to the number of people in the data set. Correspondingly, n():1 creates the numbers 10, 9, 8, 7, 6, 5, 4, 3, 2, 1. We subtract 1 from these values to obtain 9, 8, 7, 6, 5, 4, 3, 2, 1, 0.</p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="percentiles.html#cb270-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
-<span id="cb270-2"><a href="percentiles.html#cb270-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">number_below =</span> <span class="fu">n</span>()<span class="sc">:</span><span class="dv">1</span> <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb270-3"><a href="percentiles.html#cb270-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb270-4"><a href="percentiles.html#cb270-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
-<pre><code>## # A tibble: 10 × 3
-##    name    cm_height number_below
-##    &lt;chr&gt;       &lt;dbl&gt;        &lt;dbl&gt;
-##  1 John          190            9
-##  2 Basheer       185            8
-##  3 Rick          183            7
-##  4 Matt          180            6
-##  5 Sean          179            5
-##  6 Eli           174            4
-##  7 Tim           173            3
-##  8 Jamal         172            2
-##  9 Jim           168            1
-## 10 Steve         165            0</code></pre>
-<p><strong>Step 3: Calculate percentile</strong></p>
-<p>We create a new column called proportion_lower using a mutate() command. In this column we index the proportion of people with the same height or a shorter height by dividing each value in the number_below column by the total number of people (obtained via the n() command). Following this we create a percentile column by multiplying the values in the proportion_lower column by 100.</p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="percentiles.html#cb272-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
-<span id="cb272-2"><a href="percentiles.html#cb272-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">proportion_lower =</span> number_below <span class="sc">/</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb272-3"><a href="percentiles.html#cb272-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percentile =</span> proportion_lower <span class="sc">*</span> <span class="dv">100</span>)</span>
-<span id="cb272-4"><a href="percentiles.html#cb272-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb272-5"><a href="percentiles.html#cb272-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
-<pre><code>## # A tibble: 10 × 5
-##    name   cm_height number_below proportion_lower percentile
-##    &lt;chr&gt;      &lt;dbl&gt;        &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;
-##  1 John         190            9              0.9         90
-##  2 Bashe…       185            8              0.8         80
-##  3 Rick         183            7              0.7         70
-##  4 Matt         180            6              0.6         60
-##  5 Sean         179            5              0.5         50
-##  6 Eli          174            4              0.4         40
-##  7 Tim          173            3              0.3         30
-##  8 Jamal        172            2              0.2         20
-##  9 Jim          168            1              0.1         10
-## 10 Steve        165            0              0            0</code></pre>
-<p>If you inspect the percentile column above you can see how we calculated the percentile for each person in the data set without using the normal distribution or z-scores.</p>
+<div id="make-a-script-1" class="section level3" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Make a script</h3>
+<ol style="list-style-type: decimal">
+<li><p>Go the File menu. File &gt; New File &gt; Script</p></li>
+<li><p>When you write your code - place into this script.</p></li>
+</ol>
+</div>
+</div>
+<div id="week-2-catchup" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Week 2 Catchup</h2>
+<p>Place the code below into your script from last week:</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="week-3-friday-workshop.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Date: YYYY-MM-DD</span></span>
+<span id="cb196-2"><a href="week-3-friday-workshop.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Name: your name here</span></span>
+<span id="cb196-3"><a href="week-3-friday-workshop.html#cb196-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Workshop 3 PSYC 3250</span></span>
+<span id="cb196-4"><a href="week-3-friday-workshop.html#cb196-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-5"><a href="week-3-friday-workshop.html#cb196-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Activate packages  </span></span>
+<span id="cb196-6"><a href="week-3-friday-workshop.html#cb196-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb196-7"><a href="week-3-friday-workshop.html#cb196-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb196-8"><a href="week-3-friday-workshop.html#cb196-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb196-9"><a href="week-3-friday-workshop.html#cb196-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjstats)</span>
+<span id="cb196-10"><a href="week-3-friday-workshop.html#cb196-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-11"><a href="week-3-friday-workshop.html#cb196-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Load data </span></span>
+<span id="cb196-12"><a href="week-3-friday-workshop.html#cb196-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-13"><a href="week-3-friday-workshop.html#cb196-13" aria-hidden="true" tabindex="-1"></a>my_missing_value_codes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;-999&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>)</span>
+<span id="cb196-14"><a href="week-3-friday-workshop.html#cb196-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-15"><a href="week-3-friday-workshop.html#cb196-15" aria-hidden="true" tabindex="-1"></a>raw_data_survey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_aff_survey.csv&quot;</span>,</span>
+<span id="cb196-16"><a href="week-3-friday-workshop.html#cb196-16" aria-hidden="true" tabindex="-1"></a>                            <span class="at">na =</span> my_missing_value_codes)</span></code></pre></div>
+<pre><code>## Rows: 100 Columns: 3</code></pre>
+<pre><code>## ── Column specification ────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## dbl (3): aff_com2_likert7, aff_com3_likert7, aff_com4_li...</code></pre>
+<pre><code>## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="week-3-friday-workshop.html#cb200-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> raw_data_survey</span>
+<span id="cb200-2"><a href="week-3-friday-workshop.html#cb200-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-3"><a href="week-3-friday-workshop.html#cb200-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-4"><a href="week-3-friday-workshop.html#cb200-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Clean and screen </span></span>
+<span id="cb200-5"><a href="week-3-friday-workshop.html#cb200-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-6"><a href="week-3-friday-workshop.html#cb200-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial cleaning</span></span>
+<span id="cb200-7"><a href="week-3-friday-workshop.html#cb200-7" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb200-8"><a href="week-3-friday-workshop.html#cb200-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb200-9"><a href="week-3-friday-workshop.html#cb200-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb200-10"><a href="week-3-friday-workshop.html#cb200-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb200-11"><a href="week-3-friday-workshop.html#cb200-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-12"><a href="week-3-friday-workshop.html#cb200-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Numeric screening</span></span>
+<span id="cb200-13"><a href="week-3-friday-workshop.html#cb200-13" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb200-14"><a href="week-3-friday-workshop.html#cb200-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev) <span class="sc">%&gt;%</span></span>
+<span id="cb200-15"><a href="week-3-friday-workshop.html#cb200-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span>
+<span id="cb200-16"><a href="week-3-friday-workshop.html#cb200-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-17"><a href="week-3-friday-workshop.html#cb200-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Flipping responses to reverse-key items </span></span>
+<span id="cb200-18"><a href="week-3-friday-workshop.html#cb200-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-19"><a href="week-3-friday-workshop.html#cb200-19" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(analytic_data_survey)</span>
+<span id="cb200-20"><a href="week-3-friday-workshop.html#cb200-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-21"><a href="week-3-friday-workshop.html#cb200-21" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
+<span id="cb200-22"><a href="week-3-friday-workshop.html#cb200-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="dv">8</span> <span class="sc">-</span> <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert7rev&quot;</span>)) ) <span class="sc">%&gt;%</span> </span>
+<span id="cb200-23"><a href="week-3-friday-workshop.html#cb200-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="at">.fn =</span> str_replace,</span>
+<span id="cb200-24"><a href="week-3-friday-workshop.html#cb200-24" aria-hidden="true" tabindex="-1"></a>              <span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert7rev&quot;</span>),</span>
+<span id="cb200-25"><a href="week-3-friday-workshop.html#cb200-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">pattern =</span> <span class="st">&quot;_likert7rev&quot;</span>,</span>
+<span id="cb200-26"><a href="week-3-friday-workshop.html#cb200-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">replacement =</span> <span class="st">&quot;_likert7&quot;</span>)</span>
+<span id="cb200-27"><a href="week-3-friday-workshop.html#cb200-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-28"><a href="week-3-friday-workshop.html#cb200-28" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(analytic_data_survey)</span></code></pre></div>
+<p>Now go to the menu: Session &gt; Restart R</p>
+<p>Then press the Source with Echo button to run the entire script.</p>
+<p>Following this type the head() command in the Console:</p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="week-3-friday-workshop.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(analytic_data_survey)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+##   aff_com2_likert7 aff_com3_likert7 aff_com4_likert7
+##              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1                3                3                3
+## 2                5                4                4
+## 3                2                3                2
+## 4                4                3                3
+## 5                2                3                2
+## 6                3                3                3</code></pre>
+<p>In the current scenario all of the columns are coded in the right direction (i.e., there are no reverse-coded items) in the next section we will create the scale scores.</p>
+</div>
+<div id="creating-compositescale-scores" class="section level2" number="4.7">
+<h2><span class="header-section-number">4.7</span> Creating composite/scale scores</h2>
+<p>When we AVERAGE (i.e., take the mean) of the commitment items for each person we call that a scale score. It represents our best guess of their overall commitment level based on those three items. The advantage of taking the AVERAGE of the three items is that we can interpret the result on the original 1 to 7 scale. We know the lowest score the someone can get is 1.0 (i.e, they obtained an average of 1.0 because that have a score of 1.0 on all three items). Correspondingly, the highest score someone can get is 7.0 (i.e, they obtained an average of 7.0 because that have a score of 7.0 on all three items). This is an interpretation approach the many researchers prefer. If you had more items, the range of possible scores would stay the same.</p>
+<p>Other researchers prefer to get the SUM of the three items when calculating a scale score. This approach is use sometimes – but interpretation needs to into account the number of items in this case. For example, if you used the SUM approach the minimum maximum range is 3 to 21. That is, if a person scored 1.0 for all three items their score would be 3.0. Likewise, if a person scored 7.0 for all three items then their score would be 27. If you had more items, the range of possible scores would change.</p>
+<p>Both approaches (AVERAGE vs SUM) are acceptable you just need to make sure you know which one you’re dealing with.</p>
+<p>Add the code below to your script. Notice we calculate the scale score in two different ways in this script. The affect_mean and affect_sum columns are created. The affect_mean column corresponds to the affective_commitment column we created last week.</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="week-3-friday-workshop.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Creating scale scores </span></span>
+<span id="cb203-2"><a href="week-3-friday-workshop.html#cb203-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb203-3"><a href="week-3-friday-workshop.html#cb203-3" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
+<span id="cb203-4"><a href="week-3-friday-workshop.html#cb203-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb203-5"><a href="week-3-friday-workshop.html#cb203-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">affect_mean =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">&quot;aff_com&quot;</span>)),</span>
+<span id="cb203-6"><a href="week-3-friday-workshop.html#cb203-6" aria-hidden="true" tabindex="-1"></a>                            <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb203-7"><a href="week-3-friday-workshop.html#cb203-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">affect_sum =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">&quot;aff_com&quot;</span>)),</span>
+<span id="cb203-8"><a href="week-3-friday-workshop.html#cb203-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb203-9"><a href="week-3-friday-workshop.html#cb203-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() </span></code></pre></div>
+<p>Use the head() command to see the columns you created:</p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="week-3-friday-workshop.html#cb204-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb204-2"><a href="week-3-friday-workshop.html#cb204-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##   aff_com2_likert7 aff_com3_likert7 aff_com4_likert7
+##              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1                3                3                3
+## 2                5                4                4
+## 3                2                3                2
+## 4                4                3                3
+## 5                2                3                2
+## 6                3                3                3
+## # … with 2 more variables: affect_mean &lt;dbl&gt;,
+## #   affect_sum &lt;dbl&gt;</code></pre>
+<p>Check for yourself that affect_mean column is the average of the three items for each person.
+As well, check for yourself that the affect_sum column is the sum of the three items for each person.</p>
+</div>
+<div id="variance-of-scale-scores" class="section level2" number="4.8">
+<h2><span class="header-section-number">4.8</span> Variance of scale scores</h2>
+<p>We will now calculate the variance of the two scale score columns:</p>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="week-3-friday-workshop.html#cb206-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb206-2"><a href="week-3-friday-workshop.html#cb206-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">var_affect_mean_column =</span> <span class="fu">var</span>(affect_mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb206-3"><a href="week-3-friday-workshop.html#cb206-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">var_affect_sum_column =</span> <span class="fu">var</span>(affect_sum, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 2
+##   var_affect_mean_column var_affect_sum_column
+##                    &lt;dbl&gt;                 &lt;dbl&gt;
+## 1                  0.340                  3.06</code></pre>
+<p>In particular, notice that the variance the affect_sum column is 3.06. In the section below we will obtain this value through a very different calculation approach.</p>
+</div>
+<div id="variance-of-items" class="section level2" number="4.9">
+<h2><span class="header-section-number">4.9</span> Variance of items</h2>
+<p>In this section we focus on the item variances.</p>
+<div id="approach-1" class="section level3" number="4.9.1">
+<h3><span class="header-section-number">4.9.1</span> Approach 1</h3>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="week-3-friday-workshop.html#cb208-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb208-2"><a href="week-3-friday-workshop.html#cb208-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">var_aff_com2 =</span> <span class="fu">var</span>(aff_com2_likert7),</span>
+<span id="cb208-3"><a href="week-3-friday-workshop.html#cb208-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">var_aff_com3 =</span> <span class="fu">var</span>(aff_com3_likert7),</span>
+<span id="cb208-4"><a href="week-3-friday-workshop.html#cb208-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">var_aff_com4 =</span> <span class="fu">var</span>(aff_com4_likert7))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 3
+##   var_aff_com2 var_aff_com3 var_aff_com4
+##          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+## 1        0.677        0.353        0.452</code></pre>
+<p>If you inspect the output above you see the variances aff_com2, aff_com3, and aff_com4 items are 0.677, 0.353, and 0.452, respectively. Remember these number - we’re going to look for them in the output of the second approach.</p>
+</div>
+<div id="approach-2" class="section level3" number="4.9.2">
+<h3><span class="header-section-number">4.9.2</span> Approach 2</h3>
+<p>With the second approach to getting the variance of the number we use the cov() (i.e., covariance command). You can see in commands below produce a covariance matrix.</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="week-3-friday-workshop.html#cb210-1" aria-hidden="true" tabindex="-1"></a>cov_matrix <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb210-2"><a href="week-3-friday-workshop.html#cb210-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(aff_com2_likert7, aff_com3_likert7, aff_com4_likert7) <span class="sc">%&gt;%</span></span>
+<span id="cb210-3"><a href="week-3-friday-workshop.html#cb210-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cov</span>()</span>
+<span id="cb210-4"><a href="week-3-friday-workshop.html#cb210-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-5"><a href="week-3-friday-workshop.html#cb210-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cov_matrix)</span></code></pre></div>
+<pre><code>##                  aff_com2_likert7 aff_com3_likert7
+## aff_com2_likert7           0.6768           0.2677
+## aff_com3_likert7           0.2677           0.3534
+## aff_com4_likert7           0.3283           0.1914
+##                  aff_com4_likert7
+## aff_com2_likert7           0.3283
+## aff_com3_likert7           0.1914
+## aff_com4_likert7           0.4520</code></pre>
+<p>Examine the diagonal values of the covariance matrix. Notice that the (rounded) diagonal values are 0.677, 0.353, and 0.452. These are the same values we observed with Approach 1. We can conclude from this that in a covariance matrix the values along the diagonal represent variance.</p>
+<p>In contrast, in matrix above, the values that are off-diagonal values represent covariances.</p>
+</div>
+</div>
+<div id="variance-of-the-sum-of-these-columns" class="section level2" number="4.10">
+<h2><span class="header-section-number">4.10</span> Variance of the SUM of these columns</h2>
+<p><span class="math display">\[
+s_x^2= s_{A1}^2 + s_{A2}^2 + s_{A3}^2 + 2*COV(A1,A2) + 2*COV(A1,A3) + 2*COV(A2,A3)
+\]</span></p>
+<p>If we wanted</p>
+<p><span class="math display">\[
+s_x^2 = s_{\text{aff_com2}}^2 + s_{\text{aff_com3}}^2 + s_{\text{aff_com4}}^2 
++ 2*COV(\text{aff_com2},\text{aff_com3}) 
++ 2*COV(\text{aff_com2},\text{aff_com4}) 
++ 2*COV(\text{aff_com3}, \text{aff_com4})
+\]</span></p>
 
 </div>
 </div>
@@ -549,8 +633,8 @@ We sort the rows by height - ensuring the tallest males are at the top of the li
           </div>
         </div>
       </div>
-<a href="scaling-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="graphing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-2-friday-workshop.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="scaling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -581,7 +665,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-crc/edit/master/07-percentiles.Rmd",
+"link": "https://github.com/yihui/bookdown-crc/edit/master/04-workshop3.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -160,7 +160,7 @@ You can confirm the column names following our naming convention with the glimps
 glimpse(analytic_data_survey)
 ```
 
-Notice the column names in this file. We have a sex column, an aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev. The likert columns contain the reponses to three affective commitment to the organization items. In particular, pay attention to the fact that the third item is reverse-keyed. 
+Notice the column names in this file. We have an aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev. The likert columns contain the reponses to three affective commitment to the organization items. In particular, pay attention to the fact that the third item is reverse-keyed. 
 
 Just for your reference the text of the items used to generate the data for this columns was:
 
@@ -169,43 +169,6 @@ Just for your reference the text of the items used to generate the data for this
 * aff_com3_likert7: I really feel as if this organizations problems are my own
 
 * aff_com4_likert7rev: I think I could easily become as attached to another organization as I am to this one. (reverse-keyed)
-
-### Creating factors
-
-Following initial cleaning, we have to tell R which variables/columns are categorical columns. We do that by telling R that a column is a factor.  
-
-```{r}
-glimpse(analytic_data_survey)
-```
-
-Notice the sex column show up as chr in this output. That means it's a character column. R doesn't know that this is a categorical variable. So we have to tell R that this is a categorical variable by converting it to a factor. This is done with the code below.
-
-```{r}
-analytic_data_survey <- analytic_data_survey %>%
-  mutate(sex = as_factor(sex))
-
-```
-
-Let's check the column now.
-
-```{r}
-glimpse(analytic_data_survey)
-```
-
-Notice the sex column is now fct - that tells you that R now understands that sex is a categorical varible.
-
-### Factor screening
-
-When you have a categorical variable - you need to ensure that all the *levels* of that categorical variable make sense. For example, you might have male, female, and ffemale as the levels of sex. Clearly, ffemale is typo. You want to make sure you don't have typos or other mistakes in the levels of the categorical variable. We do that with the summary() command.
-
-```{r}
-analytic_data_survey %>%
-  select(where(is.factor)) %>%
-  summary()
-```
-
-
-You can see in this output that male and female are the only levels of sex -- there are not any typos versions of these levels. So you're all good.
 
 
 ### Numeric screening
@@ -351,7 +314,7 @@ Thus, the mutate command would instead be:
 ```{r}
 analytic_data_survey <- analytic_data_survey %>% 
   rowwise() %>% 
-  mutate(affective_commitment = mean(c_across(starts_with("aff_com")),
+  mutate(affect_mean = mean(c_across(starts_with("aff_com")),
                                      na.rm = TRUE)) %>%
   ungroup() 
 ```
@@ -361,6 +324,8 @@ You can see the new column you created with the head() command. The values in th
 ```{r}
 head(analytic_data_survey)
 ```
+
+Check for yourself that affect_mean column is the average of the three items for each person.
 
 
 ## Descriptive statistics for scale scores
@@ -381,7 +346,7 @@ outdf <- analytic_data_survey %>%
     rename_with(.fn = str_remove,
               .cols = everything(),
               pattern = "numeric.") %>%
-  select(-p25, -complete_rate, -p75,-n_missing,-factor.ordered,-factor.n_unique,-factor.top_counts) %>%
+  select(-p25, -complete_rate, -p75,-n_missing) %>%
   as.data.frame()
 
 outdf$mean = round(outdf$mean,2)
@@ -391,13 +356,11 @@ outdf
 ```
 
 
-However, if you can be more specific about what you want - especially if you want the variance of the column. See the code below where we calculate the sample mean (mean), variance using $n-1$ in the denominator (var_using_n_1), and variance using $n$ in the denominator (var_using_n). Not that the na.rm = TRUE just tells the computer to remove/ignore missing values (i.e, remove Not Available values).
-
+However, if you can be more specific about the descriptive statistics you want. For example, if you wanted the mean and variance (rather than standard deviation) you could obtain them with the code below.
 
 ```{r}
 analytic_data_survey %>%
-  summarise(mean = mean(affective_commitment, na.rm = TRUE),
-            var_using_n_1 = var(affective_commitment, na.rm = TRUE),
-            var_using_n = var_pop(affective_commitment))
+  summarise(mean_affect_mean_column = mean(affect_mean, na.rm = TRUE),
+            var_affect_mean_column = var(affect_mean, na.rm = TRUE))
 ```
 
