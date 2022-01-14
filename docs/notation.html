@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>About the Author | Welcome!</title>
+  <title>Chapter 5 Notation | Welcome!</title>
   <meta name="description" content="Course notes for PSYC 3250" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="About the Author | Welcome!" />
+  <meta property="og:title" content="Chapter 5 Notation | Welcome!" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="dstanley4/psyc3250bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="About the Author | Welcome!" />
+  <meta name="twitter:title" content="Chapter 5 Notation | Welcome!" />
   
   <meta name="twitter:description" content="Course notes for PSYC 3250" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="week-1-friday-workshop.html"/>
+<link rel="prev" href="week-3-friday-workshop.html"/>
+<link rel="next" href="scaling.html"/>
 <script src="libs/header-attrs/header-attrs.js"></script>
 <script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -376,18 +376,101 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="about-the-author" class="section level1 unnumbered">
-<h1>About the Author</h1>
-<p>David J. Stanley is an Associate Professor of Industrial and Organizational Psychology at the University of Guelph in Canada. He obtained his PhD from Western University in London, Ontario. David has published articles in Advances in Methods and Practices in Psychological Science, Organizational Research Methods, Journal of Applied Psychology, Perspectives in Psychological Science, Journal of Business and Psychology, Journal of Vocational Behaviour, Journal of Personality and Social Psychology, Behavior Research Methods, Industrial and Organizational Psychology, and Emotion among other journals. David also created the apaTables R package.</p>
+<div id="notation" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Notation</h1>
+<p>In this chapter we will use summation notation. If you are not familiar with summation notation, we present a brief overview here.</p>
+<p>Consider a scenario where we have the IQ data for three participants We use the N symbol to represent the number of participants. Because we have three participants N = 3. The data for these participants is illustrated in Figure <a href="notation.html#fig:notationdata">5.1</a>.</p>
+<p>Notice how each person in the data set can be represented by the variable X: the first person by <span class="math inline">\(X_1\)</span>, the second by <span class="math inline">\(X_2\)</span>, and the third by <span class="math inline">\(X_3\)</span>. Often we refer to individuals in a data set by using the variable X accompanied by a subscript (e.g., 1, 2, 3, etc.).</p>
+<div class="figure"><span style="display:block;" id="fig:notationdata"></span>
+<img src="ch_scaling/images/screenshot_data_n6.png" alt="Data for understanding summation notation" width="40%" />
+<p class="caption">
+FIGURE 5.1: Data for understanding summation notation
+</p>
+</div>
+<p>Referring to participants using the variable X and subscript is valuable because it can be used in conjunction with the sigma (i.e., <span class="math inline">\(\Sigma\)</span>) symbol for summation. Consider the example below in which we use the summation notation to indicate that we want to add all the X values (representing IQ) for the participants. We use a lower case <span class="math inline">\(i\)</span> to represent all possible subscript values. The notation, <span class="math inline">\(i\)</span> = 1, below the <span class="math inline">\(\Sigma\)</span> symbol indicates that we should start with participant 1. The notation, N, above the <span class="math inline">\(\Sigma\)</span> symbol indicates that we should iterate <span class="math inline">\(i\)</span> up to the value indicated by N; in this case 3, because there are three participants.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum_{i=1}^{N} X_i &amp;=  X_1 + X_2 + X_3\\ 
+&amp;= 110 + 120 + 100 \\
+&amp;= 330
+\end{aligned} 
+\]</span></p>
+<p>Sometimes, to simplify the notation, the numbers above and below the <span class="math inline">\(\Sigma\)</span> symbol are omitted. Likewise, the <span class="math inline">\(i\)</span> subscript is omitted. There is a general understanding that when these components of the notation are omitted the version of the notation above is implied.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum{X} &amp;= X_1 + X_2 + X_3\\ 
+&amp;= 110 + 120 + 100\\
+&amp;= 330
+\end{aligned} 
+\]</span></p>
+<p><strong>Calculating a mean</strong>. The full version of the notation can be used to indicate how an average/mean is calculated.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\bar{X} &amp;= \frac{\sum_{i=1}^{N} X_i}{N} \\
+&amp;= \frac{X_1 + X_2 + X_3}{3}\\ 
+&amp;= \frac{110 + 120 + 100}{3}\\
+&amp;= \frac{330}{3}\\
+&amp;= 110\\
+\end{aligned} 
+\]</span></p>
+<p>Likewise, the concise version of the notation can be used to indicate how an average/mean is calculated.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\bar{X} &amp;= \frac{\sum{X}}{N} \\
+&amp;= \frac{X_1 + X_2 + X_3}{3}\\ 
+&amp;= \frac{110 + 120 + 100}{3}\\
+&amp;= \frac{330}{3}\\
+&amp;= 110\\
+\end{aligned} 
+\]</span></p>
+<p><strong>Calculating squared differences</strong>.A common task in statistics is to calculate 1) the squared difference between each person and the mean, and 2) add up those squared differences. This calculation is easily expressed with the full version of the notation.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum_{i=1}^{N}{(X_i - \bar{X})^2} &amp;= (X_1-\bar{X})^2 + (X_2-\bar{X})^2 + (X_3-\bar{X})^2\\ 
+&amp;= (110-110)^2 + (120-110)^2 + (100-110)^2\\
+&amp;= (0)^2 + (10)^2 (-10)^2 \\
+&amp;= 0 + 100 + 100 \\
+&amp;= 200
+\end{aligned} 
+\]</span></p>
+<p>Likewise, the sum of the squared differences from the mean can be expressed using the concise version of the notation.</p>
+<p><span class="math display">\[
+\begin{aligned} 
+\sum{(X - \bar{X})^2} &amp;= (X_1-\bar{X})^2 + (X_2-\bar{X})^2 + (X_3-\bar{X})^2\\ 
+&amp;= (110-110)^2 + (120-110)^2 + (100-110)^2\\
+&amp;= (0)^2 + (10)^2 (-10)^2 \\
+&amp;= 0 + 100 + 100 \\
+&amp;= 200
+\end{aligned} 
+\]</span></p>
+<div id="measurement-notation" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Measurement Notation</h2>
+<p>You may be familiar with the notation typically used when making inferences from a sample to a population. Unfortunately, the notation used in Psychological Measurement is different - similar but different. For the purposes of this course we use the notation and formulas below. Notice that we use N in the denominator - that is we use the population-level variance formula - even though we are working with sample data. Typically, measurement textbooks treat the sample as our population of interest. This difference is often a source of confusion for students.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{X} &amp;= \frac{\sum{X}}{N} \\
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+S^2_X &amp;= \frac{\sum{(X - \overline{X})^2}}{N} \\
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
+\end{aligned}
+\]</span></p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-1-friday-workshop.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-3-friday-workshop.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="scaling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -418,7 +501,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-crc/edit/master/00-author.Rmd",
+"link": "https://github.com/yihui/bookdown-crc/edit/master/05-notation.Rmd",
 "text": "Edit"
 },
 "history": {

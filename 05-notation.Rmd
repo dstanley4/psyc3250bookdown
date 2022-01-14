@@ -1,6 +1,4 @@
-# Scaling
-
-## Notation
+# Notation
 
 In this chapter we will use summation notation. If you are not familiar with summation notation, we present a brief overview here.
 

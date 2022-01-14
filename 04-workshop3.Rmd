@@ -208,6 +208,8 @@ In this section we focus on the item variances.
 
 ### Approach 1
 
+Below is the traditionall approach to calculating the variance for columns. Try it out in RStudio.
+
 ```{r}
 analytic_data_survey %>%
   summarise(var_aff_com2 = var(aff_com2_likert7),
@@ -221,7 +223,7 @@ If you inspect the output above you see the variances aff_com2, aff_com3, and af
 
 ### Approach 2
 
-With the second approach to getting the variance of the number we use the cov() (i.e., covariance command). You can see in commands below produce a covariance matrix.
+With the second approach to getting the variance of the items we use the cov() (i.e., covariance command). The commands below produce a covariance matrix.
 
 ```{r}
 cov_matrix <- analytic_data_survey %>%
@@ -237,13 +239,15 @@ Examine the diagonal values of the covariance matrix. Notice that the (rounded) 
 In contrast, in matrix above, the values that are off-diagonal values represent covariances.
 
 
-## Variance of the SUM of these columns
+## Variance of affect_sum column
+
+Previously, we saw that the variance of the affect_sum column was 3.06. In lecture, we learned that you can calculate the variance of this column from the items variance and covariances. In lecture, we saw the formula below.
 
 $$
 s_x^2= s_{A1}^2 + s_{A2}^2 + s_{A3}^2 + 2*COV(A1,A2) + 2*COV(A1,A3) + 2*COV(A2,A3)
 $$
 
-If we wanted
+If we contextualize this formula for the current example it looks like the following:
 
 $$
 s_x^2 = s_{\text{aff_com2}}^2 + s_{\text{aff_com3}}^2 + s_{\text{aff_com4}}^2 
@@ -251,4 +255,22 @@ s_x^2 = s_{\text{aff_com2}}^2 + s_{\text{aff_com3}}^2 + s_{\text{aff_com4}}^2
 + 2*COV(\text{aff_com2},\text{aff_com4}) 
 + 2*COV(\text{aff_com3}, \text{aff_com4})
 $$
+
+However, the fancy formulas are just a way of saying sum up all the values in the covariance matrix.
+
+We see the covariance matrix below:
+
+```{r}
+print(cov_matrix)
+```
+
+
+We can sum up all the values in the covariance matrix with the code below:
+
+```{r}
+sum(cov_matrix)
+```
+
+You see we get a value of 3.06 which is the variance of the affect_sum column.
+
 

@@ -27,20 +27,6 @@ analytic_data_survey <- analytic_data_survey %>%
   remove_empty("cols") %>%
   clean_names()
 
-# Create factors
-glimpse(analytic_data_survey)
-
-analytic_data_survey <- analytic_data_survey %>%
-  mutate(sex = as_factor(sex))
-
-glimpse(analytic_data_survey)
-
-
-# Factor screening
-analytic_data_survey %>%
-  select(where(is.factor)) %>%
-  summary()
-
 # Numeric screening
 analytic_data_survey %>%
   select(aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev) %>%
@@ -63,7 +49,7 @@ head(analytic_data_survey)
 
 analytic_data_survey <- analytic_data_survey %>% 
   rowwise() %>% 
-  mutate(affective_commitment = mean(c_across(starts_with("aff_com")),
+  mutate(affect_mean = mean(c_across(starts_with("aff_com")),
                                      na.rm = TRUE)) %>%
   ungroup() 
 
@@ -77,8 +63,6 @@ analytic_data_survey %>%
 
 
 analytic_data_survey %>%
-  summarise(mean = mean(affective_commitment, na.rm = TRUE),
-            var_using_n_1 = var(affective_commitment, na.rm = TRUE),
-            var_using_n = var_pop(affective_commitment))
-
+  summarise(mean_affect_mean_column = mean(affect_mean, na.rm = TRUE),
+            var_affect_mean_column = var(affect_mean, na.rm = TRUE))
 

@@ -106,11 +106,10 @@ variance-of-scale-scores
 variance-of-items
 approach-1
 approach-2
-variance-of-the-sum-of-these-columns
-scaling
+variance-of-affect_sum-column
 notation
 measurement-notation
-scaling-1
+scaling
 data-entry
 loading-data-1
 viewing-data
