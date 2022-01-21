@@ -292,7 +292,7 @@ Congratulations you've finished fixing the reverse-key item in your data set.
 
 ```{block2, type='rmdcaution'}
 If your scale had used response options numbered 0 to 6 the math is different.
-For each item you would use subtract values from the highest possible point (i.e, 4) instead of one larger than the highest possible point.
+For each item you would use subtract values from the highest possible point (i.e, 6) instead of one larger than the highest possible point.
 
 |  Original value | Math  | Recoded value |
 |             :-: |  :-:  | :-:           |
@@ -306,7 +306,7 @@ For each item you would use subtract values from the highest possible point (i.e
 
 Thus, the mutate command would instead be:
 
-  mutate(4 - across(.cols = ends_with("_likert7rev")) )
+  mutate(6 - across(.cols = ends_with("_likert7rev")) )
 ```
 
 ## Making scale scores

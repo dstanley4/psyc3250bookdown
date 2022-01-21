@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2022-01-14" />
+<meta name="date" content="2022-01-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -665,7 +665,7 @@ div.csl-indent {
 
 <div class="rmdcaution">
 <p>If your scale had used response options numbered 0 to 6 the math is different.
-For each item you would use subtract values from the highest possible point (i.e, 4) instead of one larger than the highest possible point.</p>
+For each item you would use subtract values from the highest possible point (i.e, 6) instead of one larger than the highest possible point.</p>
 <table>
 <thead>
 <tr class="header">
@@ -713,7 +713,7 @@ For each item you would use subtract values from the highest possible point (i.e
 </tbody>
 </table>
 <p>Thus, the mutate command would instead be:</p>
-mutate(4 - across(.cols = ends_with(“_likert7rev”)) )
+mutate(6 - across(.cols = ends_with(“_likert7rev”)) )
 </div>
 </div>
 <div id="making-scale-scores" class="section level2" number="3.9">
