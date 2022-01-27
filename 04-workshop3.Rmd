@@ -152,6 +152,14 @@ Following this type the head() command in the Console:
 head(analytic_data_survey)
 ```
 
+Somtimes there are too many columns. So another option is to use the glimpse() command:
+
+```{r}
+analytic_data_survey %>%
+  glimpse()
+```
+
+
 In the current scenario all of the columns are coded in the right direction (i.e., there are no reverse-coded items) in the next section we will create the scale scores.
 
 ## Creating composite/scale scores
@@ -184,8 +192,15 @@ analytic_data_survey %>%
   head()
 ```
 
-Check for yourself that affect_mean column is the average of the three items for each person.
-As well, check for yourself that the affect_sum column is the sum of the three items for each person.
+Check for yourself that affect_mean column is the average of the three items for each person. As well, check for yourself that the affect_sum column is the sum of the three items for each person.
+
+Sometimes there are too many columns to show across your screen when using the head() command. So you can also use the glimpse() command to see the columns:
+
+```{r}
+analytic_data_survey %>%
+  glimpse()
+```
+
 
 
 ## Variance of scale scores
