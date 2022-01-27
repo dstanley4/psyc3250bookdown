@@ -229,8 +229,14 @@ With the second approach to getting the variance of the items we use the cov() (
 cov_matrix <- analytic_data_survey %>%
   select(aff_com2_likert7, aff_com3_likert7, aff_com4_likert7) %>%
   cov()
+```
 
+```{r, eval = FALSE}
 print(cov_matrix)
+```
+
+```{r, echo = FALSE}
+knitr::kable(cov_matrix)
 ```
 
 
@@ -260,8 +266,12 @@ However, the fancy formulas are just a way of saying sum up all the values in th
 
 We see the covariance matrix below:
 
-```{r}
+```{r, eval = FALSE}
 print(cov_matrix)
+```
+
+```{r, echo = FALSE}
+knitr::kable(cov_matrix)
 ```
 
 
