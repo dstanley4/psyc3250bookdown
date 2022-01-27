@@ -271,10 +271,10 @@ $$
 If we contextualize this formula for the current example it looks like the following:
 
 $$
-s_x^2 = s_{\text{aff_com2}}^2 + s_{\text{aff_com3}}^2 + s_{\text{aff_com4}}^2 
-+ 2*COV(\text{aff_com2},\text{aff_com3}) 
-+ 2*COV(\text{aff_com2},\text{aff_com4}) 
-+ 2*COV(\text{aff_com3}, \text{aff_com4})
+s_x^2 = s_{\text{aff_com2}}^2 + s_{\text{aff_com3}}^2 + s_{\text{aff_com4}}^2 \\
++ 2*COV(_{\text{aff_com2},\text{aff_com3}}) \\
++ 2*COV(_{\text{aff_com2},\text{aff_com4}})\\ 
++ 2*COV(_{\text{aff_com3},\text{aff_com4}})\\
 $$
 
 However, the fancy formulas are just a way of saying sum up all the values in the covariance matrix.
