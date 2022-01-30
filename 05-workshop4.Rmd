@@ -328,7 +328,7 @@ outskim <- zscore_data %>%
 print(outskim)
 ```
 
-In the code below, we combine the z_aff_com2, z_aff_com3, and z_aff_com4 items, by adding them together (i.e., summing them together) to create a new column called affect_sum.
+In the code below, we combine the z_aff_com2, z_aff_com3, and z_aff_com4 items, by adding them together (i.e., summing them together) to create a new column called **z_affect_sum**. The **z** at the start of the column name reminds us that we created the column from the z-score versions of the original items.
 
 ```{r}
 # Creating scale SUM scores
@@ -354,9 +354,9 @@ zscore_data %>%
   head()
 ```
 
-You can see that there is a new column called affect_sum and the values in this column were created by adding together the z_aff_com2, z_aff_com3, and z_aff_com4 items.
+You can see that there is a new column called **z_affect_sum** and the values in this column were created by adding together the z_aff_com2, z_aff_com3, and z_aff_com4 items.
 
-We can obtain the variance of the new affect_sum column with the commands below:
+We can obtain the variance of the new **z_affect_sum** column with the commands below:
 
 ```{r}
 zscore_data %>%
@@ -365,7 +365,7 @@ zscore_data %>%
 
 We can see the variance of this column is 25.0. That is, the variance of observed scores on affective commitment scale is 25.0. This variability in observed scores is composed of 1) actual variability in commitment levels across participants (i.e., true score variance) and 2) measurement error.
 
-We might wonder, of the observed variance of 25.0, what proportion is due to actual variability in people's affective commitment levels - and not measurement error. That is, we might wonder, what proportion of the 3.06 variance is due to variability in true scores. We determine that proportion by calculating Standardized alpha.
+We might wonder, of the observed variance of 25.0, what proportion is due to actual variability in people's affective commitment levels - and not measurement error. That is, we might wonder, what proportion of the 25.0 variance is due to variability in true scores. We determine that proportion by calculating Standardized alpha.
 
 ### Standardized Alpha via correlation matrix
 
