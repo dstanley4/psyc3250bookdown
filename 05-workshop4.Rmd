@@ -369,7 +369,7 @@ We might wonder, of the observed variance of 25.0, what proportion is due to act
 
 ### Standardized Alpha via correlation matrix
 
-In this section we review the logic of calculating Cronbach's alpha. In practice, you would not use the approach in this section - it is merely to enhance your understanding of Cronbach's alpha. In practice you would use the approach in the next section that uses the psych::alpha command to calculate standardized alpha.
+In this section we review the logic of calculating Standardized's alpha. In practice, you would not use the approach in this section - it is merely to enhance your understanding of Standardized alpha. In practice you would use the approach in the next section that uses the psych::alpha command to calculate Standardized alpha.
 
 To calculate alpha we begin by obtaining the just the columns with the item data for the scale.
 
@@ -385,7 +385,11 @@ items %>%
   glimpse()
 ```
 
-Next, we calculate the correlation matrix based on those items.
+Next, we calculate the correlation matrix based on the times in their original form.  **Note that this different from Cronbach's alpha where we where interested in determining the reliability of scores in the aff_sum column - created from the aff_com2, aff_com3, and aff_com4 items in their original form. In that case, we used the covariance matrix of the original item. In the current scenario were are interested in determining the reliability of scores in the z_affect_sum column not the affect_sum column. Recall we used the transformed versions of the items to create the z_affect_sum column. That is we added the z_aff_com2, z_aff_com3, and z_aff_com4 column together to create z_affect_sum. Because we used the transformed version of the items, instead of the original form of the items, we need to use the correlation matrix in the calculation. 
+
+Optional learning point: If you were to calculate the covariance matrix from the z_aff_com2, z_aff_com3, and z_aff_com4 items you would see it is the same the correlation matrix for the aff_com2, aff_com3, and aff_com4 items.
+
+Check out the correlation matrix below:
 
 ```{r}
 correl_matrix = cor(items)
