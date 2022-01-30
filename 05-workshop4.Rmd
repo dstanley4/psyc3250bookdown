@@ -410,12 +410,12 @@ Finally, we use the correlation matrix in the usual alpha formula below.
 
 
 ```{r, echo = FALSE,out.width="80%"}
-#knitr::include_graphics("ch_workshop_alpha/images/cron_alpha_calc.png")
+knitr::include_graphics("ch_workshop_alpha/images/std_alpha_calc.png")
 ```
 
-This the value of Standardized alpha is 0.778788, or .78, The z_affect_sum column has variance of 25.0 This is an indication of the differences among people with respect to **observed** scores (i.e., the actual values in affect_sum column). Of course, not all of the variability in observed scores is due to differences among people (i.e., true scores). Some of the variability in observed scores (in the z_affect_sum column) is due to random measurement error. A Standardized alpha of .78 indicates that we **estimate** 78% of the variability in scores in the affect_sum column is due to actual differences among people (i.e., variability in true scores).
+This the value of Standardized alpha is 0.778788, or .78, The z_affect_sum column has variance of 25.0 This is an indication of the differences among people with respect to **observed** scores (i.e., the actual values in **z_affect_sum** column). Of course, not all of the variability in observed scores is due to differences among people (i.e., true scores). Some of the variability in observed scores (in the **z_affect_sum** column) is due to random measurement error. A Standardized alpha of .78 indicates that we **estimate** 78% of the variability in scores in the **z_affect_sum** column is due to actual differences among people (i.e., variability in true scores).
 
-Note that in these data, the Standardized alpha value (.78) is very close to the Cronbach's alpha value (.77). This will not always be the case. In many circumstances, the two values will differ considerably.
+Note that in these data, the Standardized alpha value (.78) is very close to the Cronbach's alpha value (.77). This will not always be the case. In many circumstances, the two values will differ considerably. **The extent to which the two values differ indicates the extent to which the items are contributing unequally to the creation of the affect_sum column compared to the z_affect_sum column.** 
 
 ### Standardized Alpha via psych package
 
