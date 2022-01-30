@@ -296,7 +296,7 @@ We can sum up all the values in the covariance matrix with the code below:
 sum(cov_matrix)
 ```
 
-You see we get a value of 3.06 which is the variance of the affect_sum column. Recall our previous calculation in which we looked aff_sum_column directly - we obtained the same value  (taking rounding into account).
+You see we get a value of 3.06 which is the variance of the affect_sum column. Recall our previous calculation, Approach 1 (repeated below), in which we looked aff_sum_column directly - we obtained the same value  (taking rounding into account).
 
 ```{r}
 analytic_data_survey %>%
