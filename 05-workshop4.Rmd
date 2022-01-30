@@ -248,9 +248,9 @@ In the output you can see **raw_alpha** is 0.7727002, this is the value for Cron
 
 Before considering Standardized alpha - let's think about what we did in the previous section with Cronbach's alpha. With Cronbach's alpha we added the items together (in their original form) to create a new column called affect_sum. 
 
-Permit me a slight digression into a cooking analogy. When you are cooking, you have a variety of ingredients that you combine, in different amounts, to create your final dish. Think of combining the columns to create affect_sum using this analogy. Each column is a different ingredient. The amount of each ingredient in the receipe is indicated by the variance column. Items with a large variance contribute more to the affect_sum column than items with a small variance. 
+Permit me a slight digression into a cooking analogy. When you are cooking, you have a variety of ingredients that you combine, in different amounts, to create your final dish. Think of combining the columns to create affect_sum using this analogy. Each column is a different ingredient. The amount of each ingredient in the receipe is indicated by the variance of the column. Items with a large variance contribute more to the affect_sum column creation than items with a small variance. 
 
-When you are creating scale scores, you have a variety of items (i.e., ingredients) that you combine, in different amounts (based on their variance), to create your affect_sum column. We do not "do" anything to make items with greater variance contribute more. It's just a fact that items with greater variance will contribute more the creatioin of the affect_sum colum than items with smaller variances.
+When you are creating scale scores, you have a variety of items (i.e., ingredients) that you combine, in different amounts (based on their variance), to create your affect_sum column. We do not "do" anything to make items with greater variance contribute more. It's just a fact that items with greater variance will contribute more the creation of the affect_sum column than items with smaller variances.
 
 We use the skim() command on the data from the data we used previously to calculate Cronbach's alpha. In the output below examine the numeric.sd column. This column illustrates that the standard deviation (and variance) is different for the three items. Consequently, the items contributed differently to the creation of the affect_sum column. 
 
@@ -269,6 +269,9 @@ outskim <- analytic_data_survey %>%
   select(-skim_type,
          -n_missing,
          -complete_rate,
+        -numeric.p0,
+        -numeric.p50,
+        -numeric.p100,
         -numeric.p25,
          -numeric.p75)
 print(outskim)
@@ -317,6 +320,9 @@ outskim <- zscore_data %>%
   select(-skim_type,
          -n_missing,
          -complete_rate,
+        -numeric.p0,
+        -numeric.p50,
+        -numeric.p100,
         -numeric.p25,
          -numeric.p75)
 print(outskim)
