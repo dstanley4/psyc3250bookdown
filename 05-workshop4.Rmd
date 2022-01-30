@@ -135,7 +135,7 @@ analytic_data_survey %>%
   head()
 ```
 
-Somtimes there are too many columns. So another option is to use the glimpse() command:
+Sometimes there are too many columns. So another option is to use the glimpse() command:
 
 ```{r}
 analytic_data_survey %>%
@@ -146,7 +146,7 @@ You can see that the data has been loaded and all of the columns are no longer a
 
 ## Cronbach's Alpha
 
-When we discuss Cronbach's alpha you know we are dealing with the original form of the data. That is, we are dealing with the actual scores there reported by particpants - rather than some transformed version of those scores.
+When we discuss Cronbach's alpha you know we are dealing with the original form of the data. That is, we are dealing with the actual scores there reported by participants - rather than some transformed version of those scores.
 
 We use Cronbach's alpha to describe a set "scale score". That is, scores for a set of participants that are made by combining responses to several items.
 
@@ -200,7 +200,7 @@ items <- analytic_data_survey %>%
   select(starts_with("aff_com"))
 ```
 
-We have a new tibble now, called **items**, that has just the affective commitment item data in it. You can see that tibble via the glimpse() commmand:
+We have a new tibble now, called **items**, that has just the affective commitment item data in it. You can see that tibble via the glimpse() command:
 
 ```{r}
 items %>%
@@ -231,11 +231,11 @@ Finally, we use the covariance matrix in the Cronbach's alpha formula below.
 knitr::include_graphics("ch_workshop_alpha/images/cron_alpha_calc.png")
 ```
 
-This the value of Cronbach's alpha is .7727002, or .77. The affect_sum column has variance of 3.06. This is an indication of the differences among people with respect to **observed** scores (i.e., the actual values in affect_sum column). Of course, not all of the variability in observed scores is due to differences among people (i.e., true scores). Some of the variability in observed scores (in the affect_sum column) is due to random measurement error. A Cronbach's alpha of .77 indicates that we **estimate** 77% of the variabilty in scores in the affect_sum column is due to actual differences among people (i.e., variability in true scores).
+This the value of Cronbach's alpha is .7727002, or .77. The affect_sum column has variance of 3.06. This is an indication of the differences among people with respect to **observed** scores (i.e., the actual values in affect_sum column). Of course, not all of the variability in observed scores is due to differences among people (i.e., true scores). Some of the variability in observed scores (in the affect_sum column) is due to random measurement error. A Cronbach's alpha of .77 indicates that we **estimate** 77% of the variability in scores in the affect_sum column is due to actual differences among people (i.e., variability in true scores).
 
 ### Alpha via psych package
 
-You can obtain Cronbach's alpha using the alpha comamnd from the **psych** package. However, because we didn't use library(psych), because it breaks the tidyverse, we add psych:: in front of the alpha() command.
+You can obtain Cronbach's alpha using the alpha command from the **psych** package. However, because we didn't use library(psych), because it breaks the tidyverse, we add psych:: in front of the alpha() command.
 
 ```{r}
 item_stats <- psych::alpha(items)
@@ -248,7 +248,7 @@ In the output you can see **raw_alpha** is 0.7727002, this is the value for Cron
 
 Before considering Standardized alpha - let's think about what we did in the previous section with Cronbach's alpha. With Cronbach's alpha we added the items together (in their original form) to create a new column called affect_sum. 
 
-Permit me a slight digression into a cooking analogy. When you are cooking, you have a variety of ingredients that you combine, in different amounts, to create your final dish. Think of combining the columns to create affect_sum using this analogy. Each column is a different ingredient. The amount of each ingredient in the receipe is indicated by the variance of the column. Items with a large variance contribute more to the affect_sum column creation than items with a small variance. 
+Permit me a slight digression into a cooking analogy. When you are cooking, you have a variety of ingredients that you combine, in different amounts, to create your final dish. Think of combining the columns to create affect_sum using this analogy. Each column is a different ingredient. The amount of each ingredient in the recipe is indicated by the variance of the column. Items with a large variance contribute more to the affect_sum column creation than items with a small variance. 
 
 When you are creating scale scores, you have a variety of items (i.e., ingredients) that you combine, in different amounts (based on their variance), to create your affect_sum column. We do not "do" anything to make items with greater variance contribute more. It's just a fact that items with greater variance will contribute more the creation of the affect_sum column than items with smaller variances.
 
@@ -277,7 +277,7 @@ outskim <- analytic_data_survey %>%
 print(outskim)
 ```
 
-Although it is rare, some reseachers like to *transform* the item data prior to creating the affect_sum column. Specifically, they transform the column for each item to have the same mean (i.e., 0) and the same standard deviation (i.e., 1.0) before adding the items together. Each item is transformed via the z-score formula below. This formula indicates that for each value in the an item column we subtract the column mean and then divide by the column standard deviation.
+Although it is rare, some researchers like to *transform* the item data prior to creating the affect_sum column. Specifically, they transform the column for each item to have the same mean (i.e., 0) and the same standard deviation (i.e., 1.0) before adding the items together. Each item is transformed via the z-score formula below. This formula indicates that for each value in the an item column we subtract the column mean and then divide by the column standard deviation.
 
 $$
 z = \frac{X_i-\overline{X_{item}}}{s_{item}}
@@ -305,7 +305,7 @@ zscore_data %>%
   glimpse()
 ```
 
-As before we use the skim() command to get the standard deviation of each item. Examine the numeric.sd column in the output. You see a value of 1.0 for each item. This indicates that is were to add the values in these columns together to create a new column - each column would contribute equally to the creation of that new column. Using our cooking analolgy, we now using the same amount of each ingredient.
+As before we use the skim() command to get the standard deviation of each item. Examine the numeric.sd column in the output. You see a value of 1.0 for each item. This indicates that is were to add the values in these columns together to create a new column - each column would contribute equally to the creation of that new column. Using our cooking analogy, we now using the same amount of each ingredient.
 
 ```{r, eval=FALSE}
 zscore_data %>%
@@ -378,7 +378,7 @@ items <- analytic_data_survey %>%
   select(starts_with("aff_com"))
 ```
 
-We have a new tibble now, called **items**, that has just the affective commitment item data in it. You can see that tibble via the glimpse() commmand:
+We have a new tibble now, called **items**, that has just the affective commitment item data in it. You can see that tibble via the glimpse() command:
 
 ```{r}
 items %>%
@@ -409,13 +409,13 @@ Finally, we use the correlation matrix in the usual alpha formula below.
 #knitr::include_graphics("ch_workshop_alpha/images/cron_alpha_calc.png")
 ```
 
-This the value of Standardized alpha is 0.778788, or .78, The z_affect_sum column has variance of 25.0 This is an indication of the differences among people with respect to **observed** scores (i.e., the actual values in affect_sum column). Of course, not all of the variability in observed scores is due to differences among people (i.e., true scores). Some of the variability in observed scores (in the z_affect_sum column) is due to random measurement error. A Standardized alpha of .78 indicates that we **estimate** 78% of the variabilty in scores in the affect_sum column is due to actual differences among people (i.e., variability in true scores).
+This the value of Standardized alpha is 0.778788, or .78, The z_affect_sum column has variance of 25.0 This is an indication of the differences among people with respect to **observed** scores (i.e., the actual values in affect_sum column). Of course, not all of the variability in observed scores is due to differences among people (i.e., true scores). Some of the variability in observed scores (in the z_affect_sum column) is due to random measurement error. A Standardized alpha of .78 indicates that we **estimate** 78% of the variability in scores in the affect_sum column is due to actual differences among people (i.e., variability in true scores).
 
 Note that in these data, the Standardized alpha value (.78) is very close to the Cronbach's alpha value (.77). This will not always be the case. In many circumstances, the two values will differ considerably.
 
 ### Standardized Alpha via psych package
 
-You can obtain standardized alpha using the alpha comamnd from the **psych** package. However, because we didn't use library(psych), because it breaks the tidyverse, we add psych:: in front of the alpha() command.
+You can obtain standardized alpha using the alpha command from the **psych** package. However, because we didn't use library(psych), because it breaks the tidyverse, we add psych:: in front of the alpha() command.
 
 ```{r}
 item_stats <- psych::alpha(items)
