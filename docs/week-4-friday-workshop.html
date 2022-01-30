@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Week 2 Friday Workshop | Welcome!</title>
+  <title>Chapter 5 Week 4 Friday Workshop | Welcome!</title>
   <meta name="description" content="Course notes for PSYC 3250" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Week 2 Friday Workshop | Welcome!" />
+  <meta property="og:title" content="Chapter 5 Week 4 Friday Workshop | Welcome!" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="dstanley4/psyc3250bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Week 2 Friday Workshop | Welcome!" />
+  <meta name="twitter:title" content="Chapter 5 Week 4 Friday Workshop | Welcome!" />
   
   <meta name="twitter:description" content="Course notes for PSYC 3250" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="handling-data-with-the-tidyverse.html"/>
-<link rel="next" href="week-3-friday-workshop.html"/>
+<link rel="prev" href="week-3-friday-workshop.html"/>
+<link rel="next" href="notation.html"/>
 <script src="libs/header-attrs/header-attrs.js"></script>
 <script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -397,10 +397,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-2-friday-workshop" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Week 2 Friday Workshop</h1>
-<div id="required-packages" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Required Packages</h2>
+<div id="week-4-friday-workshop" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Week 4 Friday Workshop</h1>
+<div id="required-packagess" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Required Packagess</h2>
 <p>The data files below are used in this chapter. The files are available at: <a href="https://github.com/dstanley4/psyc3250bookdown" class="uri">https://github.com/dstanley4/psyc3250bookdown</a></p>
 <table>
 <thead>
@@ -432,58 +432,32 @@ div.csl-indent {
 <td>skimr</td>
 </tr>
 <tr class="even">
-<td>sjstats</td>
+<td>psych</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Important Note:</strong> You should NOT use library(psych) at any point! There are major conflicts between the psych package and the tidyverse. We will access the psych package commands by preceding each command with psych:: instead of using library(psych).</p>
 <p>The complete script for this project can be download here: <a href="script_workshop2.R">script_workshop2.R</a></p>
 </div>
-<div id="goals" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Goals</h2>
+<div id="goals-2" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Goals</h2>
 <p>For this workshop our goals are to learn how to:</p>
 <ul>
-<li><p>Learn about column naming conventions</p></li>
-<li><p>Use Projects in RStudio</p></li>
-<li><p>Load data</p></li>
-<li><p>Clean and screen data</p></li>
-<li><p>Reverse-key items</p></li>
-<li><p>Make scale scores</p></li>
-<li><p>Calculate variance using the population-level formula</p></li>
+<li><p>Calculate <strong>Cronbach’s alpha</strong> using a covariance matrix</p></li>
+<li><p>Calculate <strong>Cronbach’s alpha</strong> using the <strong>psych::alpha() command</strong></p></li>
+<li><p>Calculate <strong>standardized</strong> alpha using a covariance matrix</p></li>
+<li><p>Calculate <strong>standardized</strong> alpha using the <strong>psych::alpha() command</strong></p></li>
+<li><p>All of the above goals assume familiarity with past workshops</p></li>
 </ul>
 </div>
-<div id="data-and-column-names" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Data and column names</h2>
-<p>A key component of effect data analysis is the use of naming conventions for column names. In this section we focus on one column naming convention that makes it easy to work with survey data. You will need to use this column naming convention for your major project.</p>
-<p>The namning convention we advocate will save you hours of hassles and permit easy application of certain tidyverse commands. However, we must stress that although the naming convention we advocate is based on the tidyverse style guide, it is not “right” or “correct” - there are other naming conventions you can use (once you finish the course). Any naming convention is better than no naming convention. The naming convention we advocate here will solve many problems.</p>
-<p>To make your life easier down the road, it is critical you set up your spreadsheet or online survey such that it uses a naming convention prior to data collection. The naming conventions suggested here are adapted from the tidyverse <a href="https://style.tidyverse.org">style guide</a>.</p>
-<p>The key components of the column naming convention are the following:</p>
-<ul>
-<li><p>Lowercase letters only</p></li>
-<li><p>If two word column names are necessary, only use the underscore (“_“) character to separate words in the name. Do not use a period (.””) a space (” “) or other symbols.</p></li>
-<li><p>Use moderate length (not short0 column prefixes. For example, if you have an Affective Commitment Scale do not preface each items with “acs” instead preface each item with a longer verison like “aff_com.”</p></li>
-<li><p>Indicate in the item name if it is a likert-type scale and the number of points in the scale. For example, if your affective commitment scale has a 7-point Likert-type response scale you indicate that in the column name. For example, the name for two commtiment items might be: “aff_com1_likert7’ and”aff_com2_likert7”. This indicates important information for future users of the data set (including you)</p></li>
-<li><p>Indicate in the item name if the item is reversed keyed. ** Sometimes with Likert-type items, an item is reverse keyed. For example, on a <strong>positive</strong> job affect scale, participants will typically respond to items that reflect job affect using the scale: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. Higher numbers indicate more positive job affect. Sometimes, however, some items will use the same 1 to 5 response scale but be worded in the opposite manner such as “I hate my job.” Responding with a 5 to this item would indicate high <strong>negative</strong> job affect (not positive affect). But the columns for positive job affect scale should have high values to indicate more positive job affect not less positive job affect. Consequently, we flag the names of columns with reversed responses (i.e., reverse-key items) so that we know to treat those column differently later. Columns with reverse-keyed items need to be processed by a script so that the values are flipped and scored in the right direction. A normal positive job affect item might have a name like “job_aff1_likert7” whereas a reverse-key item would have a name like “job_aff2-likert7rev.” The “rev” in the column name indicates the item was a reverse-keyed item.</p></li>
-</ul>
-<p>Notice how the data file we use for this workshop follows this naming convention.</p>
+<div id="install-packages-2" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Install packages</h2>
+<p>You will need the same packages installed as you did for the Week 2 Friday workshop. However, we also need the <strong>psych</strong> package this week. You can install the <strong>psych</strong> package using the command below.</p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="week-4-friday-workshop.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;psych&quot;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><strong>WARNINGS</strong>: 1) Remember never put an install.packages() command in your script. Only ever type install.packages() commands into the Console. 2) NEVER use the library(psych) command, doing so breaks the tidyverse. We will use another approach to access commands in this package.</p>
 </div>
-<div id="install-packages" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Install packages</h2>
-<p>Prior to the starting this activity you must have a number of packages installed. Because you are using RStudio Cloud on your computer - a package only needs to be installed once. If you installed it previously you do not need to instal it again. But if you’re not sure - you can allways install it again to be safe.</p>
-<ol style="list-style-type: decimal">
-<li><p>Use the menu Session &gt; Restart R</p></li>
-<li><p>In the Console (NOT THE SCRIPT) type the following commands to install the required packages:</p></li>
-</ol>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="week-2-friday-workshop.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb165-2"><a href="week-2-friday-workshop.html#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;skimr&quot;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb165-3"><a href="week-2-friday-workshop.html#cb165-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;janitor&quot;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb165-4"><a href="week-2-friday-workshop.html#cb165-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;sjstats&quot;</span>, <span class="at">dep =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<ol start="3" style="list-style-type: decimal">
-<li>You’re done - these packages are now stored on your computer. You won’t need to install them again.</li>
-</ol>
-</div>
-<div id="rstudio-project" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> RStudio Project</h2>
+<div id="rstudio-project-2" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> RStudio Project</h2>
 <ol style="list-style-type: decimal">
 <li><p>Create a folder on your computer for the example</p></li>
 <li><p>Download the data file for this example: <a href="data_aff_survey.csv">data_aff_survey.csv</a>. ONLY obtain this file from the Downloads folder. If you open in another program and save it again - the data file will not work.</p></li>
@@ -493,174 +467,57 @@ div.csl-indent {
 <li><p>On the next screen, press the “Browse” button and find/select the folder with your data</p></li>
 <li><p>Press the Create Project Button</p></li>
 </ol>
-<div id="make-a-script" class="section level3" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> Make a script</h3>
+<div id="make-a-script-2" class="section level3" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Make a script</h3>
 <ol style="list-style-type: decimal">
 <li><p>Go the File menu. File &gt; New File &gt; Script</p></li>
 <li><p>When you write your code - place into this script.</p></li>
 </ol>
 </div>
 </div>
-<div id="loading-data" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Loading data</h2>
-<p>Place the code below into your script:</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="week-2-friday-workshop.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Date: YYYY-MM-DD</span></span>
-<span id="cb166-2"><a href="week-2-friday-workshop.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Name: your name here</span></span>
-<span id="cb166-3"><a href="week-2-friday-workshop.html#cb166-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Single occasion survey</span></span>
-<span id="cb166-4"><a href="week-2-friday-workshop.html#cb166-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb166-5"><a href="week-2-friday-workshop.html#cb166-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Activate packages</span></span>
-<span id="cb166-6"><a href="week-2-friday-workshop.html#cb166-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb166-7"><a href="week-2-friday-workshop.html#cb166-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;janitor&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     chisq.test, fisher.test</code></pre>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="week-2-friday-workshop.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb169-2"><a href="week-2-friday-workshop.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjstats)</span>
-<span id="cb169-3"><a href="week-2-friday-workshop.html#cb169-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb169-4"><a href="week-2-friday-workshop.html#cb169-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
-<span id="cb169-5"><a href="week-2-friday-workshop.html#cb169-5" aria-hidden="true" tabindex="-1"></a>my_missing_value_codes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;-999&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>)</span>
-<span id="cb169-6"><a href="week-2-friday-workshop.html#cb169-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb169-7"><a href="week-2-friday-workshop.html#cb169-7" aria-hidden="true" tabindex="-1"></a>raw_data_survey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_aff_survey.csv&quot;</span>,</span>
-<span id="cb169-8"><a href="week-2-friday-workshop.html#cb169-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">na =</span> my_missing_value_codes)</span></code></pre></div>
-<pre><code>## Rows: 100 Columns: 3</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## dbl (3): aff_com2_likert7, aff_com3_likert7, aff_com4_li...</code></pre>
-<pre><code>## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<p>We load the initial data into a raw_data_survey but immediately make a copy we will work with called analytic_data_survey. It’s good to keep a copy of the raw data for reference if you encounter problems.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="week-2-friday-workshop.html#cb173-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> raw_data_survey</span></code></pre></div>
-</div>
-<div id="clean-and-screen-the-data" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> Clean and screen the data</h2>
-<p>Remove empty row and columns from your data using the remove_empty_cols() and remove_empty_rows(), respectively. As well, clean the names of your columns to ensure they conform to tidyverse naming conventions.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="week-2-friday-workshop.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial cleaning</span></span>
-<span id="cb174-2"><a href="week-2-friday-workshop.html#cb174-2" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
-<span id="cb174-3"><a href="week-2-friday-workshop.html#cb174-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb174-4"><a href="week-2-friday-workshop.html#cb174-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb174-5"><a href="week-2-friday-workshop.html#cb174-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code></pre></div>
-<p>You can confirm the column names following our naming convention with the glimpse command - and see the data type for each column.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="week-2-friday-workshop.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
-<pre><code>## Rows: 100
-## Columns: 3
-## $ aff_com2_likert7    &lt;dbl&gt; 3, 5, 2, 4, 2, 3, 4, 4, 4, 3, …
-## $ aff_com3_likert7    &lt;dbl&gt; 3, 4, 3, 3, 3, 3, 4, 3, 3, 3, …
-## $ aff_com4_likert7rev &lt;dbl&gt; 5, 4, 6, 5, 6, 5, 4, 5, 5, 5, …</code></pre>
-<p>Notice the column names in this file. We have an aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev. The likert columns contain the reponses to three affective commitment to the organization items. In particular, pay attention to the fact that the third item is reverse-keyed.</p>
-<p>Just for your reference the text of the items used to generate the data for this columns was:</p>
-<ul>
-<li><p>aff_com2_likert7: I enjoy discussing my organization with people outside of it</p></li>
-<li><p>aff_com3_likert7: I really feel as if this organizations problems are my own</p></li>
-<li><p>aff_com4_likert7rev: I think I could easily become as attached to another organization as I am to this one. (reverse-keyed)</p></li>
-</ul>
-<div id="numeric-screening" class="section level3" number="3.7.1">
-<h3><span class="header-section-number">3.7.1</span> Numeric screening</h3>
-<p>For numeric variables, we want to make sure that we don’t have impossible values. For example, in the context of this example you want to ensure none of the Likert responses are impossible (e.g., outside the 1- to 7-point rating scale) or clearly data entry errors. If a value is below 1 or higher than 7 it is an error. The p0 column indicate the lowest value for each variable. Yu can see the lowest value for aff_com2_likert7 is 1. The p100 column tells you the highest value in each column. You can see that the highest value for aff_com2_likert7 was 5. What are the lowest and highest values for aff_com3_likert7 and aff_com4_likert7rev. Also reported in this output are the mean and standard deviation. But note that the standard deviation reported use <span class="math inline">\(n\)</span>-1 in the denominator when it is calculated. This may or may not be what you want to know.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="week-2-friday-workshop.html#cb177-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
-<span id="cb177-2"><a href="week-2-friday-workshop.html#cb177-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev) <span class="sc">%&gt;%</span></span>
-<span id="cb177-3"><a href="week-2-friday-workshop.html#cb177-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
-<pre><code>##         skim_variable n_missing mean   sd p0 p50 p100
-## 1    aff_com2_likert7         0 3.50 0.82  1 4.0    5
-## 2    aff_com3_likert7         0 3.49 0.59  2 3.5    5
-## 3 aff_com4_likert7rev         0 4.55 0.67  3 5.0    6</code></pre>
-</div>
-</div>
-<div id="flipping-responses-to-reverse-key-items" class="section level2" number="3.8">
-<h2><span class="header-section-number">3.8</span> Flipping responses to reverse-key items</h2>
-<p>The way you deal with reverse-keyed items depends on how you scored them. Imagine you had a 7-point scale. You could have scored the scale with the values 1, 2, 3, 4, 5, 6, and 7. Alternatively, you could have scored the scale with the values 0, 1, 2, 3, 4, 5, and 6. The mathematical approach you use to correcting reverse-keyed items depends upon whether the 7-point scale starts with 1 or 0.</p>
-<p>In this example, we scored the data using the value 1 to 7; so that is the approach illustrated here. See the extra information box (below) for details on how to fixed reverse-keyed items when the scale begins with zero.</p>
-<p>In this data file all the reverse-keyed items were identified with the suffix “_likert7rev” in the column names. This suffix indicates the item was reverse keyed and that the original scale used the response points 1 to 7. We can see using the glimpse() command below that there was only one reverse-keyed item.</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="week-2-friday-workshop.html#cb179-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
-<span id="cb179-2"><a href="week-2-friday-workshop.html#cb179-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
-<pre><code>## Rows: 100
-## Columns: 3
-## $ aff_com2_likert7    &lt;dbl&gt; 3, 5, 2, 4, 2, 3, 4, 4, 4, 3, …
-## $ aff_com3_likert7    &lt;dbl&gt; 3, 4, 3, 3, 3, 3, 4, 3, 3, 3, …
-## $ aff_com4_likert7rev &lt;dbl&gt; 5, 4, 6, 5, 6, 5, 4, 5, 5, 5, …</code></pre>
-<p>To correct a reverse-keyed item where the lowest possible rating is 1 (i.e, 1 on a 1 to 7 scale), we simply subtract all the scores from a value one more than the highest point possible on the scale (i.e., one more than 7). For example, if a 1 to 7 response scale was used we subtract each response from 8 to obtain the recoded value.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Original value</th>
-<th align="center">Math</th>
-<th align="center">Recoded value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">1</td>
-<td align="center">8 - 1</td>
-<td align="center">7</td>
-</tr>
-<tr class="even">
-<td align="center">2</td>
-<td align="center">8 - 2</td>
-<td align="center">6</td>
-</tr>
-<tr class="odd">
-<td align="center">3</td>
-<td align="center">8 - 3</td>
-<td align="center">5</td>
-</tr>
-<tr class="even">
-<td align="center">4</td>
-<td align="center">8 - 4</td>
-<td align="center">4</td>
-</tr>
-<tr class="odd">
-<td align="center">5</td>
-<td align="center">8 - 5</td>
-<td align="center">3</td>
-</tr>
-<tr class="even">
-<td align="center">6</td>
-<td align="center">8 - 6</td>
-<td align="center">2</td>
-</tr>
-<tr class="odd">
-<td align="center">7</td>
-<td align="center">8 - 7</td>
-<td align="center">1</td>
-</tr>
-</tbody>
-</table>
-<p>** Thus, for we need to subtract every value in the aff_com4_likert7rev column from 8 to flip the reverse-key response to the correct direction. You can see the code that does this below (but don’t type it yet).</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="week-2-friday-workshop.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do not type into your script. </span></span>
-<span id="cb181-2"><a href="week-2-friday-workshop.html#cb181-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is PART of a command not a full command.</span></span>
-<span id="cb181-3"><a href="week-2-friday-workshop.html#cb181-3" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
-<span id="cb181-4"><a href="week-2-friday-workshop.html#cb181-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="dv">8</span> <span class="sc">-</span> <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert7rev&quot;</span>)) )</span></code></pre></div>
-<p>The code above is general in nature and will perform the substraction for any column that end in “_likert7rev” in our case there is only one column that will be affect. The problem with the code above though is that you have the wrong column name. You have flipped the values in the column so that are not reverse-keyed anymore – but the column name indicates that you have reverse-keyed responses. So you need to add the code below to change the column name.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="week-2-friday-workshop.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do not type into your script. </span></span>
-<span id="cb182-2"><a href="week-2-friday-workshop.html#cb182-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is PART of a command not a full command.</span></span>
-<span id="cb182-3"><a href="week-2-friday-workshop.html#cb182-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="at">.fn =</span> str_replace,</span>
-<span id="cb182-4"><a href="week-2-friday-workshop.html#cb182-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert7rev&quot;</span>),</span>
-<span id="cb182-5"><a href="week-2-friday-workshop.html#cb182-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">pattern =</span> <span class="st">&quot;_likert7rev&quot;</span>,</span>
-<span id="cb182-6"><a href="week-2-friday-workshop.html#cb182-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">replacement =</span> <span class="st">&quot;_likert7&quot;</span>)</span></code></pre></div>
-<p>Let’s begin by looking at the first few rows of your data set:</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="week-2-friday-workshop.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(analytic_data_survey)</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 3
-##   aff_com2_likert7 aff_com3_likert7 aff_com4_likert7rev
-##              &lt;dbl&gt;            &lt;dbl&gt;               &lt;dbl&gt;
-## 1                3                3                   5
-## 2                5                4                   4
-## 3                2                3                   6
-## 4                4                3                   5
-## 5                2                3                   6
-## 6                3                3                   5</code></pre>
-<p>You can see the first three values of the aff_com4_likert7 column are 5, 4, 6.</p>
-<p>Now let fix the column with code below - which you should put in your script.</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="week-2-friday-workshop.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Place this code in your script</span></span>
-<span id="cb185-2"><a href="week-2-friday-workshop.html#cb185-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb185-3"><a href="week-2-friday-workshop.html#cb185-3" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
-<span id="cb185-4"><a href="week-2-friday-workshop.html#cb185-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="dv">8</span> <span class="sc">-</span> <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert7rev&quot;</span>)) ) <span class="sc">%&gt;%</span> </span>
-<span id="cb185-5"><a href="week-2-friday-workshop.html#cb185-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="at">.fn =</span> str_replace,</span>
-<span id="cb185-6"><a href="week-2-friday-workshop.html#cb185-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert7rev&quot;</span>),</span>
-<span id="cb185-7"><a href="week-2-friday-workshop.html#cb185-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">pattern =</span> <span class="st">&quot;_likert7rev&quot;</span>,</span>
-<span id="cb185-8"><a href="week-2-friday-workshop.html#cb185-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">replacement =</span> <span class="st">&quot;_likert7&quot;</span>)</span></code></pre></div>
-<p>After you put that above code in your script. Add another head() command:</p>
+<div id="code-catchup" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Code Catchup</h2>
+<p>Place the code below into your script from last week:</p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="week-4-friday-workshop.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Date: YYYY-MM-DD</span></span>
+<span id="cb222-2"><a href="week-4-friday-workshop.html#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Name: your name here</span></span>
+<span id="cb222-3"><a href="week-4-friday-workshop.html#cb222-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Workshop 3 PSYC 3250</span></span>
+<span id="cb222-4"><a href="week-4-friday-workshop.html#cb222-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-5"><a href="week-4-friday-workshop.html#cb222-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Activate packages  </span></span>
+<span id="cb222-6"><a href="week-4-friday-workshop.html#cb222-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb222-7"><a href="week-4-friday-workshop.html#cb222-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb222-8"><a href="week-4-friday-workshop.html#cb222-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb222-9"><a href="week-4-friday-workshop.html#cb222-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-10"><a href="week-4-friday-workshop.html#cb222-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Load data </span></span>
+<span id="cb222-11"><a href="week-4-friday-workshop.html#cb222-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-12"><a href="week-4-friday-workshop.html#cb222-12" aria-hidden="true" tabindex="-1"></a>my_missing_value_codes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;-999&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>)</span>
+<span id="cb222-13"><a href="week-4-friday-workshop.html#cb222-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-14"><a href="week-4-friday-workshop.html#cb222-14" aria-hidden="true" tabindex="-1"></a>raw_data_survey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_aff_survey.csv&quot;</span>,</span>
+<span id="cb222-15"><a href="week-4-friday-workshop.html#cb222-15" aria-hidden="true" tabindex="-1"></a>                            <span class="at">na =</span> my_missing_value_codes,</span>
+<span id="cb222-16"><a href="week-4-friday-workshop.html#cb222-16" aria-hidden="true" tabindex="-1"></a>                            <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb222-17"><a href="week-4-friday-workshop.html#cb222-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-18"><a href="week-4-friday-workshop.html#cb222-18" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> raw_data_survey</span>
+<span id="cb222-19"><a href="week-4-friday-workshop.html#cb222-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-20"><a href="week-4-friday-workshop.html#cb222-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-21"><a href="week-4-friday-workshop.html#cb222-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Clean and screen </span></span>
+<span id="cb222-22"><a href="week-4-friday-workshop.html#cb222-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-23"><a href="week-4-friday-workshop.html#cb222-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial cleaning</span></span>
+<span id="cb222-24"><a href="week-4-friday-workshop.html#cb222-24" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb222-25"><a href="week-4-friday-workshop.html#cb222-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb222-26"><a href="week-4-friday-workshop.html#cb222-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb222-27"><a href="week-4-friday-workshop.html#cb222-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb222-28"><a href="week-4-friday-workshop.html#cb222-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-29"><a href="week-4-friday-workshop.html#cb222-29" aria-hidden="true" tabindex="-1"></a><span class="do">## Flipping responses to reverse-key items </span></span>
+<span id="cb222-30"><a href="week-4-friday-workshop.html#cb222-30" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
+<span id="cb222-31"><a href="week-4-friday-workshop.html#cb222-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="dv">8</span> <span class="sc">-</span> <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert7rev&quot;</span>)) ) <span class="sc">%&gt;%</span> </span>
+<span id="cb222-32"><a href="week-4-friday-workshop.html#cb222-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="at">.fn =</span> str_replace,</span>
+<span id="cb222-33"><a href="week-4-friday-workshop.html#cb222-33" aria-hidden="true" tabindex="-1"></a>              <span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert7rev&quot;</span>),</span>
+<span id="cb222-34"><a href="week-4-friday-workshop.html#cb222-34" aria-hidden="true" tabindex="-1"></a>              <span class="at">pattern =</span> <span class="st">&quot;_likert7rev&quot;</span>,</span>
+<span id="cb222-35"><a href="week-4-friday-workshop.html#cb222-35" aria-hidden="true" tabindex="-1"></a>              <span class="at">replacement =</span> <span class="st">&quot;_likert7&quot;</span>)</span></code></pre></div>
+<p>Now go to the menu: Session &gt; Restart R</p>
+<p>Then press the Source with Echo button to run the entire script.</p>
+<p>Following this type the head() command in the Console:</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="week-4-friday-workshop.html#cb223-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb223-2"><a href="week-4-friday-workshop.html#cb223-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 3
 ##   aff_com2_likert7 aff_com3_likert7 aff_com4_likert7
 ##              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
@@ -670,82 +527,39 @@ div.csl-indent {
 ## 4                4                3                3
 ## 5                2                3                2
 ## 6                3                3                3</code></pre>
-<p>Let’s run your full script. Go to the menu Session &gt; Restart R. The click the Source with Echo button to run full script.</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="week-2-friday-workshop.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(analytic_data_survey)</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 3
-##   aff_com2_likert7 aff_com3_likert7 aff_com4_likert7
-##              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
-## 1                3                3                3
-## 2                5                4                4
-## 3                2                3                2
-## 4                4                3                3
-## 5                2                3                2
-## 6                3                3                3</code></pre>
-<p>When you see the output fo the second head() command you can see that the aff_com4_likert7rev column has turned into aff_com4_likert7 (with no rev). You can also see the first few values of this column are 3, 4, and 2. That is, you can see the values in the column have been flipped.</p>
-<p>Congratulations you’ve finished fixing the reverse-key item in your data set.</p>
-
-<div class="rmdcaution">
-<p>If your scale had used response options numbered 0 to 6 the math is different.
-For each item you would use subtract values from the highest possible point (i.e, 6) instead of one larger than the highest possible point.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Original value</th>
-<th align="center">Math</th>
-<th align="center">Recoded value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">0</td>
-<td align="center">6 - 0</td>
-<td align="center">6</td>
-</tr>
-<tr class="even">
-<td align="center">1</td>
-<td align="center">6 - 1</td>
-<td align="center">5</td>
-</tr>
-<tr class="odd">
-<td align="center">2</td>
-<td align="center">6 - 2</td>
-<td align="center">4</td>
-</tr>
-<tr class="even">
-<td align="center">3</td>
-<td align="center">6 - 3</td>
-<td align="center">3</td>
-</tr>
-<tr class="odd">
-<td align="center">4</td>
-<td align="center">6 - 4</td>
-<td align="center">2</td>
-</tr>
-<tr class="even">
-<td align="center">5</td>
-<td align="center">6 - 5</td>
-<td align="center">1</td>
-</tr>
-<tr class="odd">
-<td align="center">6</td>
-<td align="center">6 - 6</td>
-<td align="center">0</td>
-</tr>
-</tbody>
-</table>
-<p>Thus, the mutate command would instead be:</p>
-mutate(6 - across(.cols = ends_with(“_likert7rev”)) )
+<p>Somtimes there are too many columns. So another option is to use the glimpse() command:</p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="week-4-friday-workshop.html#cb225-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb225-2"><a href="week-4-friday-workshop.html#cb225-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 100
+## Columns: 3
+## $ aff_com2_likert7 &lt;dbl&gt; 3, 5, 2, 4, 2, 3, 4, 4, 4, 3, 4, …
+## $ aff_com3_likert7 &lt;dbl&gt; 3, 4, 3, 3, 3, 3, 4, 3, 3, 3, 4, …
+## $ aff_com4_likert7 &lt;dbl&gt; 3, 4, 2, 3, 2, 3, 4, 3, 3, 3, 4, …</code></pre>
+<p>You can see that the data has been loaded and all of the columns are no longer any “reverse key items.” To gain additional insight into this process - revisit previous Friday workshops.</p>
 </div>
-</div>
-<div id="making-scale-scores" class="section level2" number="3.9">
-<h2><span class="header-section-number">3.9</span> Making scale scores</h2>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="week-2-friday-workshop.html#cb189-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
-<span id="cb189-2"><a href="week-2-friday-workshop.html#cb189-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb189-3"><a href="week-2-friday-workshop.html#cb189-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">affect_mean =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">&quot;aff_com&quot;</span>)),</span>
-<span id="cb189-4"><a href="week-2-friday-workshop.html#cb189-4" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb189-5"><a href="week-2-friday-workshop.html#cb189-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() </span></code></pre></div>
-<p>You can see the new column you created with the head() command. The values in this column represent the average of the three affective commitment items for each person.</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="week-2-friday-workshop.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(analytic_data_survey)</span></code></pre></div>
+<div id="cronbachs-alpha" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Cronbach’s Alpha</h2>
+<p>When we discuss Cronbach’s alpha you know we are dealing with the original form of the data. That is, we are dealing with the actual scores there reported by particpants - rather than some transformed version of those scores.</p>
+<p>We use Cronbach’s alpha to describe a set “scale score.” That is, scores for a set of participants that are made by combining responses to several items.</p>
+<p>In the code below, we combine the aff_com2, aff_com3, and aff_com4 items, by adding them together (i.e., summing them together) to create a new column called affect_sum.</p>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="week-4-friday-workshop.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating scale SUM scores</span></span>
+<span id="cb227-2"><a href="week-4-friday-workshop.html#cb227-2" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
+<span id="cb227-3"><a href="week-4-friday-workshop.html#cb227-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb227-4"><a href="week-4-friday-workshop.html#cb227-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">affect_sum =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">&quot;aff_com&quot;</span>)),</span>
+<span id="cb227-5"><a href="week-4-friday-workshop.html#cb227-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb227-6"><a href="week-4-friday-workshop.html#cb227-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() </span></code></pre></div>
+<p>The glimpse() command reveals this new column.</p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="week-4-friday-workshop.html#cb228-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb228-2"><a href="week-4-friday-workshop.html#cb228-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 100
+## Columns: 4
+## $ aff_com2_likert7 &lt;dbl&gt; 3, 5, 2, 4, 2, 3, 4, 4, 4, 3, 4, …
+## $ aff_com3_likert7 &lt;dbl&gt; 3, 4, 3, 3, 3, 3, 4, 3, 3, 3, 4, …
+## $ aff_com4_likert7 &lt;dbl&gt; 3, 4, 2, 3, 2, 3, 4, 3, 3, 3, 4, …
+## $ affect_sum       &lt;dbl&gt; 9, 13, 7, 10, 7, 9, 12, 10, 10, 9…</code></pre>
+<p>As does the head() command, although if the output is too wide some columns are not printed with this command:</p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="week-4-friday-workshop.html#cb230-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb230-2"><a href="week-4-friday-workshop.html#cb230-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 4
 ##   aff_com2_likert7 aff_com3_likert7 aff_com4_likert7
 ##              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
@@ -755,28 +569,232 @@ mutate(6 - across(.cols = ends_with(“_likert7rev”)) )
 ## 4                4                3                3
 ## 5                2                3                2
 ## 6                3                3                3
-## # … with 1 more variable: affect_mean &lt;dbl&gt;</code></pre>
-<p>Check for yourself that affect_mean column is the average of the three items for each person.</p>
+## # … with 1 more variable: affect_sum &lt;dbl&gt;</code></pre>
+<p>You can see that there is a new column called affect_sum and the values in this column were created by adding together the aff_com2, aff_com3, and aff_com4 items.</p>
+<p>We can obtain the variance of the new affect_sum column with the commands below:</p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="week-4-friday-workshop.html#cb232-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb232-2"><a href="week-4-friday-workshop.html#cb232-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">var_affect_sum =</span> <span class="fu">var</span>(affect_sum, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 1
+##   var_affect_sum
+##            &lt;dbl&gt;
+## 1           3.06</code></pre>
+<p>We can see the variance of this column is 3.06. That is, the variance of observed scores on affective commitment scale is 3.06. This variability in observed scores is composed of 1) actual variability in commitment levels across participants (i.e., true score variance) and 2) measurement error.</p>
+<p>We might wonder, of the observed variance of 3.06, what proportion is due to actual variability in people’s affective commitment levels - and not measurement error. That is, we might wonder, what proportion of the 3.06 variance is due to variability in true scores. We determine that proportion by calculating Cronbach’s alpha.</p>
+<div id="alpha-via-covariance-matrix" class="section level3" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> Alpha via covariance matrix</h3>
+<p>In this section we review the logic of calculating Cronbach’s alpha. In practice, you would not use the approach in this section - it is merely to enhance your understanding of Cronbach’s alpha. In practice you would use the approach in the next section that uses the psych::alpha command to calculate standardized alpha.</p>
+<p>To calculate alpha we begin by obtaining the just the columns with the item data for the scale.</p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="week-4-friday-workshop.html#cb234-1" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb234-2"><a href="week-4-friday-workshop.html#cb234-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;aff_com&quot;</span>))</span></code></pre></div>
+<p>We have a new tibble now, called <strong>items</strong>, that has just the affective commitment item data in it. You can see that tibble via the glimpse() commmand:</p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="week-4-friday-workshop.html#cb235-1" aria-hidden="true" tabindex="-1"></a>items <span class="sc">%&gt;%</span></span>
+<span id="cb235-2"><a href="week-4-friday-workshop.html#cb235-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 100
+## Columns: 3
+## $ aff_com2_likert7 &lt;dbl&gt; 3, 5, 2, 4, 2, 3, 4, 4, 4, 3, 4, …
+## $ aff_com3_likert7 &lt;dbl&gt; 3, 4, 3, 3, 3, 3, 4, 3, 3, 3, 4, …
+## $ aff_com4_likert7 &lt;dbl&gt; 3, 4, 2, 3, 2, 3, 4, 3, 3, 3, 4, …</code></pre>
+<p>Next, we calculate the covariance matrix based on those items.</p>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="week-4-friday-workshop.html#cb237-1" aria-hidden="true" tabindex="-1"></a>cov_matrix <span class="ot">=</span> <span class="fu">cov</span>(items)</span></code></pre></div>
+<p>You can see the values in the covariance matrix below:</p>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="week-4-friday-workshop.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cov_matrix)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">aff_com2_likert7</th>
+<th align="right">aff_com3_likert7</th>
+<th align="right">aff_com4_likert7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">aff_com2_likert7</td>
+<td align="right">0.6768</td>
+<td align="right">0.2677</td>
+<td align="right">0.3283</td>
+</tr>
+<tr class="even">
+<td align="left">aff_com3_likert7</td>
+<td align="right">0.2677</td>
+<td align="right">0.3534</td>
+<td align="right">0.1914</td>
+</tr>
+<tr class="odd">
+<td align="left">aff_com4_likert7</td>
+<td align="right">0.3283</td>
+<td align="right">0.1914</td>
+<td align="right">0.4520</td>
+</tr>
+</tbody>
+</table>
+<p>Finally, we use the covariance matrix in the Cronbach’s alpha formula below.</p>
+<p><img src="ch_workshop_alpha/images/cron_alpha_calc.png" width="80%" /></p>
+<p>This the value of Cronbach’s alpha is .7727002, or .77. The affect_sum column has variance of 3.06. This is an indication of the differences among people with respect to <strong>observed</strong> scores (i.e., the actual values in affect_sum column). Of course, not all of the variability in observed scores is due to differences among people (i.e., true scores). Some of the variability in observed scores (in the affect_sum column) is due to random measurement error. A Cronbach’s alpha of .77 indicates that we <strong>estimate</strong> 77% of the variabilty in scores in the affect_sum column is due to actual differences among people (i.e., variability in true scores).</p>
 </div>
-<div id="descriptive-statistics-for-scale-scores" class="section level2" number="3.10">
-<h2><span class="header-section-number">3.10</span> Descriptive statistics for scale scores</h2>
-<p>You can quickly get descriptive statistics using the skim() command - as illustrated below.</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="week-2-friday-workshop.html#cb192-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
-<span id="cb192-2"><a href="week-2-friday-workshop.html#cb192-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
-<pre><code>##      skim_variable mean   sd    p0   p50  p100
-## 1 aff_com2_likert7 3.50 0.82 1.000 4.000 5.000
-## 2 aff_com3_likert7 3.49 0.59 2.000 3.500 5.000
-## 3 aff_com4_likert7 3.45 0.67 2.000 3.000 5.000
-## 4      affect_mean 3.48 0.58 1.667 3.333 4.667</code></pre>
-<p>However, if you can be more specific about the descriptive statistics you want. For example, if you wanted the mean and variance (rather than standard deviation) you could obtain them with the code below.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="week-2-friday-workshop.html#cb194-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
-<span id="cb194-2"><a href="week-2-friday-workshop.html#cb194-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_affect_mean_column =</span> <span class="fu">mean</span>(affect_mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb194-3"><a href="week-2-friday-workshop.html#cb194-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">var_affect_mean_column =</span> <span class="fu">var</span>(affect_mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 1 × 2
-##   mean_affect_mean_column var_affect_mean_column
-##                     &lt;dbl&gt;                  &lt;dbl&gt;
-## 1                    3.48                  0.340</code></pre>
+<div id="alpha-via-psych-package" class="section level3" number="5.6.2">
+<h3><span class="header-section-number">5.6.2</span> Alpha via psych package</h3>
+<p>You can obtain Cronbach’s alpha using the alpha comamnd from the <strong>psych</strong> package. However, because we didn’t use library(psych), because it breaks the tidyverse, we add psych:: in front of the alpha() command.</p>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="week-4-friday-workshop.html#cb239-1" aria-hidden="true" tabindex="-1"></a>item_stats <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">alpha</span>(items)</span>
+<span id="cb239-2"><a href="week-4-friday-workshop.html#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(item_stats<span class="sc">$</span>total)</span></code></pre></div>
+<pre><code>##  raw_alpha std.alpha G6(smc) average_r   S/N     ase mean
+##     0.7727    0.7788  0.7058    0.5399 3.521 0.03735 3.48
+##      sd median_r
+##  0.5828   0.5473</code></pre>
+<p>In the output you can see <strong>raw_alpha</strong> is 0.7727002, this is the value for Cronbach’s alpha.</p>
+</div>
+</div>
+<div id="standardized-alpha" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Standardized Alpha</h2>
+<p>Before considering Standardized alpha - let’s think about what we did in the previous section with Cronbach’s alpha. With Cronbach’s alpha we added the items together (in their original form) to create a new column called affect_sum.</p>
+<p>Permit me a slight digression into a cooking analogy. When you are cooking, you have a variety of ingredients that you combine, in different amounts, to create your final dish. Think of combining the columns to create affect_sum using this analogy. Each column is a different ingredient. The amount of each ingredient in the receipe is indicated by the variance column. Items with a large variance contribute more to the affect_sum column than items with a small variance.</p>
+<p>When you are creating scale scores, you have a variety of items (i.e., ingredients) that you combine, in different amounts (based on their variance), to create your affect_sum column. We do not “do” anything to make items with greater variance contribute more. It’s just a fact that items with greater variance will contribute more the creatioin of the affect_sum colum than items with smaller variances.</p>
+<p>We use the skim() command on the data from the data we used previously to calculate Cronbach’s alpha. In the output below examine the numeric.sd column. This column illustrates that the standard deviation (and variance) is different for the three items. Consequently, the items contributed differently to the creation of the affect_sum column.</p>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="week-4-friday-workshop.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb241-2"><a href="week-4-friday-workshop.html#cb241-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb241-3"><a href="week-4-friday-workshop.html#cb241-3" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb241-4"><a href="week-4-friday-workshop.html#cb241-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;aff_com&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb241-5"><a href="week-4-friday-workshop.html#cb241-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
+<pre><code>##      skim_variable numeric.mean numeric.sd numeric.p0
+## 1 aff_com2_likert7         3.50     0.8227          1
+## 2 aff_com3_likert7         3.49     0.5945          2
+## 3 aff_com4_likert7         3.45     0.6723          2
+##   numeric.p50 numeric.p100
+## 1         4.0            5
+## 2         3.5            5
+## 3         3.0            5</code></pre>
+<p>Although it is rare, some reseachers like to <em>transform</em> the item data prior to creating the affect_sum column. Specifically, they transform the column for each item to have the same mean (i.e., 0) and the same standard deviation (i.e., 1.0) before adding the items together. Each item is transformed via the z-score formula below. This formula indicates that for each value in the an item column we subtract the column mean and then divide by the column standard deviation.</p>
+<p><span class="math display">\[
+z = \frac{X_i-\overline{X_{item}}}{s_{item}}
+\]</span></p>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="week-4-friday-workshop.html#cb243-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb243-2"><a href="week-4-friday-workshop.html#cb243-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z_aff_com2 =</span> (aff_com2_likert7 <span class="sc">-</span> <span class="fu">mean</span>(aff_com2_likert7))<span class="sc">/</span><span class="fu">sd</span>(aff_com2_likert7)) <span class="sc">%&gt;%</span></span>
+<span id="cb243-3"><a href="week-4-friday-workshop.html#cb243-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z_aff_com3 =</span> (aff_com3_likert7 <span class="sc">-</span> <span class="fu">mean</span>(aff_com3_likert7))<span class="sc">/</span><span class="fu">sd</span>(aff_com3_likert7)) <span class="sc">%&gt;%</span></span>
+<span id="cb243-4"><a href="week-4-friday-workshop.html#cb243-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z_aff_com4 =</span> (aff_com4_likert7 <span class="sc">-</span> <span class="fu">mean</span>(aff_com4_likert7))<span class="sc">/</span><span class="fu">sd</span>(aff_com4_likert7)) </span></code></pre></div>
+<p>Now let’s place those items in their own tibble:</p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="week-4-friday-workshop.html#cb244-1" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb244-2"><a href="week-4-friday-workshop.html#cb244-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;z_&quot;</span>))</span></code></pre></div>
+<p>We can see the columns in the tibble:</p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="week-4-friday-workshop.html#cb245-1" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="sc">%&gt;%</span></span>
+<span id="cb245-2"><a href="week-4-friday-workshop.html#cb245-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 100
+## Columns: 3
+## $ z_aff_com2 &lt;dbl&gt; -0.6078, 1.8234, -1.8234, 0.6078, -1.82…
+## $ z_aff_com3 &lt;dbl&gt; -0.8242, 0.8579, -0.8242, -0.8242, -0.8…
+## $ z_aff_com4 &lt;dbl&gt; -0.6693, 0.8181, -2.1567, -0.6693, -2.1…</code></pre>
+<p>As before we use the skim() command to get the standard deviation of each item. Examine the numeric.sd column in the output. You see a value of 1.0 for each item. This indicates that is were to add the values in these columns together to create a new column - each column would contribute equally to the creation of that new column. Using our cooking analolgy, we now using the same amount of each ingredient.</p>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="week-4-friday-workshop.html#cb247-1" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="sc">%&gt;%</span></span>
+<span id="cb247-2"><a href="week-4-friday-workshop.html#cb247-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
+<pre><code>##   skim_variable numeric.mean numeric.sd numeric.p0
+## 1    z_aff_com2    1.164e-18          1     -3.039
+## 2    z_aff_com3   -3.508e-16          1     -2.506
+## 3    z_aff_com4   -2.298e-16          1     -2.157
+##   numeric.p50 numeric.p100
+## 1     0.60779        1.823
+## 2     0.01682        2.540
+## 3    -0.66932        2.305</code></pre>
+<p>In the code below, we combine the aff_com2, aff_com3, and aff_com4 items, by adding them together (i.e., summing them together) to create a new column called affect_sum.</p>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="week-4-friday-workshop.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating scale SUM scores</span></span>
+<span id="cb249-2"><a href="week-4-friday-workshop.html#cb249-2" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="ot">&lt;-</span> zscore_data <span class="sc">%&gt;%</span> </span>
+<span id="cb249-3"><a href="week-4-friday-workshop.html#cb249-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb249-4"><a href="week-4-friday-workshop.html#cb249-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z_affect_sum =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">&quot;z_aff&quot;</span>)),</span>
+<span id="cb249-5"><a href="week-4-friday-workshop.html#cb249-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb249-6"><a href="week-4-friday-workshop.html#cb249-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() </span></code></pre></div>
+<p>The glimpse() command reveals this new column.</p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="week-4-friday-workshop.html#cb250-1" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="sc">%&gt;%</span></span>
+<span id="cb250-2"><a href="week-4-friday-workshop.html#cb250-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 100
+## Columns: 4
+## $ z_aff_com2   &lt;dbl&gt; -0.6078, 1.8234, -1.8234, 0.6078, -1.…
+## $ z_aff_com3   &lt;dbl&gt; -0.8242, 0.8579, -0.8242, -0.8242, -0…
+## $ z_aff_com4   &lt;dbl&gt; -0.6693, 0.8181, -2.1567, -0.6693, -2…
+## $ z_affect_sum &lt;dbl&gt; -2.1013, 3.4993, -4.8043, -0.8858, -4…</code></pre>
+<p>As does the head() command, although if the output is too wide some columns are not printed with this command:</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="week-4-friday-workshop.html#cb252-1" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="sc">%&gt;%</span></span>
+<span id="cb252-2"><a href="week-4-friday-workshop.html#cb252-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 4
+##   z_aff_com2 z_aff_com3 z_aff_com4 z_affect_sum
+##        &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+## 1     -0.608     -0.824     -0.669       -2.10 
+## 2      1.82       0.858      0.818        3.50 
+## 3     -1.82      -0.824     -2.16        -4.80 
+## 4      0.608     -0.824     -0.669       -0.886
+## 5     -1.82      -0.824     -2.16        -4.80 
+## 6     -0.608     -0.824     -0.669       -2.10</code></pre>
+<p>You can see that there is a new column called affect_sum and the values in this column were created by adding together the aff_com2, aff_com3, and aff_com4 items.</p>
+<p>We can obtain the variance of the new affect_sum column with the commands below:</p>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="week-4-friday-workshop.html#cb254-1" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="sc">%&gt;%</span></span>
+<span id="cb254-2"><a href="week-4-friday-workshop.html#cb254-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">var_z_affect_sum =</span> <span class="fu">var</span>(z_affect_sum, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 1
+##   var_z_affect_sum
+##              &lt;dbl&gt;
+## 1             6.24</code></pre>
+<p>We can see the variance of this column is 25.0. That is, the variance of observed scores on affective commitment scale is 25.0. This variability in observed scores is composed of 1) actual variability in commitment levels across participants (i.e., true score variance) and 2) measurement error.</p>
+<p>We might wonder, of the observed variance of 25.0, what proportion is due to actual variability in people’s affective commitment levels - and not measurement error. That is, we might wonder, what proportion of the 3.06 variance is due to variability in true scores. We determine that proportion by calculating Standardized alpha.</p>
+<div id="standardized-alpha-via-correlation-matrix" class="section level3" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> Standardized Alpha via correlation matrix</h3>
+<p>In this section we review the logic of calculating Cronbach’s alpha. In practice, you would not use the approach in this section - it is merely to enhance your understanding of Cronbach’s alpha. In practice you would use the approach in the next section that uses the psych::alpha command to calculate standardized alpha.</p>
+<p>To calculate alpha we begin by obtaining the just the columns with the item data for the scale.</p>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="week-4-friday-workshop.html#cb256-1" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb256-2"><a href="week-4-friday-workshop.html#cb256-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;aff_com&quot;</span>))</span></code></pre></div>
+<p>We have a new tibble now, called <strong>items</strong>, that has just the affective commitment item data in it. You can see that tibble via the glimpse() commmand:</p>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="week-4-friday-workshop.html#cb257-1" aria-hidden="true" tabindex="-1"></a>items <span class="sc">%&gt;%</span></span>
+<span id="cb257-2"><a href="week-4-friday-workshop.html#cb257-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 100
+## Columns: 3
+## $ aff_com2_likert7 &lt;dbl&gt; 3, 5, 2, 4, 2, 3, 4, 4, 4, 3, 4, …
+## $ aff_com3_likert7 &lt;dbl&gt; 3, 4, 3, 3, 3, 3, 4, 3, 3, 3, 4, …
+## $ aff_com4_likert7 &lt;dbl&gt; 3, 4, 2, 3, 2, 3, 4, 3, 3, 3, 4, …</code></pre>
+<p>Next, we calculate the correlation matrix based on those items.</p>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="week-4-friday-workshop.html#cb259-1" aria-hidden="true" tabindex="-1"></a>correl_matrix <span class="ot">=</span> <span class="fu">cor</span>(items)</span></code></pre></div>
+<p>You can see the values in the correlation matrix below:</p>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="week-4-friday-workshop.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(correl_matrix)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">aff_com2_likert7</th>
+<th align="right">aff_com3_likert7</th>
+<th align="right">aff_com4_likert7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">aff_com2_likert7</td>
+<td align="right">1.0000</td>
+<td align="right">0.5473</td>
+<td align="right">0.5935</td>
+</tr>
+<tr class="even">
+<td align="left">aff_com3_likert7</td>
+<td align="right">0.5473</td>
+<td align="right">1.0000</td>
+<td align="right">0.4789</td>
+</tr>
+<tr class="odd">
+<td align="left">aff_com4_likert7</td>
+<td align="right">0.5935</td>
+<td align="right">0.4789</td>
+<td align="right">1.0000</td>
+</tr>
+</tbody>
+</table>
+<p>Finally, we use the correlation matrix in the usual alpha formula below.</p>
+<p>This the value of Standardized alpha is 0.778788, or .78, The z_affect_sum column has variance of 25.0 This is an indication of the differences among people with respect to <strong>observed</strong> scores (i.e., the actual values in affect_sum column). Of course, not all of the variability in observed scores is due to differences among people (i.e., true scores). Some of the variability in observed scores (in the z_affect_sum column) is due to random measurement error. A Standardized alpha of .78 indicates that we <strong>estimate</strong> 78% of the variabilty in scores in the affect_sum column is due to actual differences among people (i.e., variability in true scores).</p>
+<p>Note that in these data, the Standardized alpha value (.78) is very close to the Cronbach’s alpha value (.77). This will not always be the case. In many circumstances, the two values will differ considerably.</p>
+</div>
+<div id="standardized-alpha-via-psych-package" class="section level3" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> Standardized Alpha via psych package</h3>
+<p>You can obtain standardized alpha using the alpha comamnd from the <strong>psych</strong> package. However, because we didn’t use library(psych), because it breaks the tidyverse, we add psych:: in front of the alpha() command.</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="week-4-friday-workshop.html#cb261-1" aria-hidden="true" tabindex="-1"></a>item_stats <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">alpha</span>(items)</span>
+<span id="cb261-2"><a href="week-4-friday-workshop.html#cb261-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(item_stats<span class="sc">$</span>total)</span></code></pre></div>
+<pre><code>##  raw_alpha std.alpha G6(smc) average_r   S/N     ase mean
+##     0.7727    0.7788  0.7058    0.5399 3.521 0.03735 3.48
+##      sd median_r
+##  0.5828   0.5473</code></pre>
+<p>In the output you can see <strong>std.alpha</strong> is 0.778788, this is the value for standardized alpha.</p>
 
+</div>
 </div>
 </div>
             </section>
@@ -784,8 +802,8 @@ mutate(6 - across(.cols = ends_with(“_likert7rev”)) )
           </div>
         </div>
       </div>
-<a href="handling-data-with-the-tidyverse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-3-friday-workshop.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-3-friday-workshop.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="notation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -816,7 +834,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-crc/edit/master/03-workshop2.Rmd",
+"link": "https://github.com/yihui/bookdown-crc/edit/master/05-workshop4.Rmd",
 "text": "Edit"
 },
 "history": {
