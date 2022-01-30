@@ -649,7 +649,7 @@ div.csl-indent {
 <p>Before considering Standardized alpha - let’s think about what we did in the previous section with Cronbach’s alpha. With Cronbach’s alpha we added the items together (in their original form) to create a new column called affect_sum.</p>
 <p>Permit me a slight digression into a cooking analogy. When you are cooking, you have a variety of ingredients that you combine, in different amounts, to create your final dish. Think of combining the columns to create affect_sum using this analogy. Each column is a different ingredient. The amount of each ingredient in the recipe is indicated by the variance of the column. Items with a large variance contribute more to the affect_sum column creation than items with a small variance.</p>
 <p>When you are creating scale scores, you have a variety of items (i.e., ingredients) that you combine, in different amounts (based on their variance), to create your affect_sum column. We do not “do” anything to make items with greater variance contribute more. It’s just a fact that items with greater variance will contribute more the creation of the affect_sum column than items with smaller variances.</p>
-<p>We use the skim() command on the data from the data we used previously to calculate Cronbach’s alpha. In the output below examine the numeric.sd column. This column illustrates that the standard deviation (and variance) is different for the three items. Consequently, the items contributed differently to the creation of the affect_sum column.</p>
+<p>We use the skim() command on the data in its <strong>original form</strong> to assess the extent to which the items have different variances. Recall that variance is simply standard deviation squared - so when we examine standard deviations for items we are learning about the variance of each item. Examine the numeric.sd column in the output to see the standard deviation for each item. This column illustrates that the standard deviation (and variance) is different for the three items. Consequently, the items contributed differently to the creation of the affect_sum column.</p>
 <div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="week-4-friday-workshop.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
 <span id="cb241-2"><a href="week-4-friday-workshop.html#cb241-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb241-3"><a href="week-4-friday-workshop.html#cb241-3" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
@@ -678,14 +678,14 @@ z = \frac{X_i-\overline{X_{item}}}{s_{item}}
 ## $ z_aff_com2 &lt;dbl&gt; -0.6078, 1.8234, -1.8234, 0.6078, -1.82…
 ## $ z_aff_com3 &lt;dbl&gt; -0.8242, 0.8579, -0.8242, -0.8242, -0.8…
 ## $ z_aff_com4 &lt;dbl&gt; -0.6693, 0.8181, -2.1567, -0.6693, -2.1…</code></pre>
-<p>As before we use the skim() command to get the standard deviation of each item. Examine the numeric.sd column in the output. You see a value of 1.0 for each item. This indicates that is were to add the values in these columns together to create a new column - each column would contribute equally to the creation of that new column. Using our cooking analogy, we now using the same amount of each ingredient.</p>
+<p>As before use the skim() command on the data in its <strong>transformed (i.e., z-score) form</strong> to assess the extent to which the items now have different/similar variances. Recall that variance is simply standard deviation squared - so when we examine standard deviations for items we are learning about the variance of each item. You see a value of 1.0 for each item. This indicates that is were to add the values in these columns together to create a new column - each column would contribute equally to the creation of that new column. Using our cooking analogy, we now using the same amount of each ingredient when we create a scale score.</p>
 <div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="week-4-friday-workshop.html#cb247-1" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="sc">%&gt;%</span></span>
 <span id="cb247-2"><a href="week-4-friday-workshop.html#cb247-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
 <pre><code>##   skim_variable numeric.mean numeric.sd
 ## 1    z_aff_com2    1.164e-18          1
 ## 2    z_aff_com3   -3.508e-16          1
 ## 3    z_aff_com4   -2.298e-16          1</code></pre>
-<p>In the code below, we combine the aff_com2, aff_com3, and aff_com4 items, by adding them together (i.e., summing them together) to create a new column called affect_sum.</p>
+<p>In the code below, we combine the z_aff_com2, z_aff_com3, and z_aff_com4 items, by adding them together (i.e., summing them together) to create a new column called affect_sum.</p>
 <div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="week-4-friday-workshop.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating scale SUM scores</span></span>
 <span id="cb249-2"><a href="week-4-friday-workshop.html#cb249-2" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="ot">&lt;-</span> zscore_data <span class="sc">%&gt;%</span> </span>
 <span id="cb249-3"><a href="week-4-friday-workshop.html#cb249-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
@@ -713,7 +713,7 @@ z = \frac{X_i-\overline{X_{item}}}{s_{item}}
 ## 4      0.608     -0.824     -0.669       -0.886
 ## 5     -1.82      -0.824     -2.16        -4.80 
 ## 6     -0.608     -0.824     -0.669       -2.10</code></pre>
-<p>You can see that there is a new column called affect_sum and the values in this column were created by adding together the aff_com2, aff_com3, and aff_com4 items.</p>
+<p>You can see that there is a new column called affect_sum and the values in this column were created by adding together the z_aff_com2, z_aff_com3, and z_aff_com4 items.</p>
 <p>We can obtain the variance of the new affect_sum column with the commands below:</p>
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="week-4-friday-workshop.html#cb254-1" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="sc">%&gt;%</span></span>
 <span id="cb254-2"><a href="week-4-friday-workshop.html#cb254-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">var_z_affect_sum =</span> <span class="fu">var</span>(z_affect_sum, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>

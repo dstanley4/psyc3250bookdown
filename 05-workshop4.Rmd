@@ -252,7 +252,7 @@ Permit me a slight digression into a cooking analogy. When you are cooking, you 
 
 When you are creating scale scores, you have a variety of items (i.e., ingredients) that you combine, in different amounts (based on their variance), to create your affect_sum column. We do not "do" anything to make items with greater variance contribute more. It's just a fact that items with greater variance will contribute more the creation of the affect_sum column than items with smaller variances.
 
-We use the skim() command on the data from the data we used previously to calculate Cronbach's alpha. In the output below examine the numeric.sd column. This column illustrates that the standard deviation (and variance) is different for the three items. Consequently, the items contributed differently to the creation of the affect_sum column. 
+We use the skim() command on the data in its **original form** to assess the extent to which the items have different variances. Recall that variance is simply standard deviation squared - so when we examine standard deviations for items we are learning about the variance of each item. Examine the numeric.sd column in the output to see the standard deviation for each item.  This column illustrates that the standard deviation (and variance) is different for the three items. Consequently, the items contributed differently to the creation of the affect_sum column. 
 
 ```{r eval=FALSE}
 library(skimr)
@@ -305,7 +305,7 @@ zscore_data %>%
   glimpse()
 ```
 
-As before we use the skim() command to get the standard deviation of each item. Examine the numeric.sd column in the output. You see a value of 1.0 for each item. This indicates that is were to add the values in these columns together to create a new column - each column would contribute equally to the creation of that new column. Using our cooking analogy, we now using the same amount of each ingredient.
+As before use the skim() command on the data in its **transformed (i.e., z-score) form** to assess the extent to which the items now have different/similar variances. Recall that variance is simply standard deviation squared - so when we examine standard deviations for items we are learning about the variance of each item. You see a value of 1.0 for each item. This indicates that is were to add the values in these columns together to create a new column - each column would contribute equally to the creation of that new column. Using our cooking analogy, we now using the same amount of each ingredient when we create a scale score.
 
 ```{r, eval=FALSE}
 zscore_data %>%
@@ -328,7 +328,7 @@ outskim <- zscore_data %>%
 print(outskim)
 ```
 
-In the code below, we combine the aff_com2, aff_com3, and aff_com4 items, by adding them together (i.e., summing them together) to create a new column called affect_sum.
+In the code below, we combine the z_aff_com2, z_aff_com3, and z_aff_com4 items, by adding them together (i.e., summing them together) to create a new column called affect_sum.
 
 ```{r}
 # Creating scale SUM scores
@@ -354,7 +354,7 @@ zscore_data %>%
   head()
 ```
 
-You can see that there is a new column called affect_sum and the values in this column were created by adding together the aff_com2, aff_com3, and aff_com4 items.
+You can see that there is a new column called affect_sum and the values in this column were created by adding together the z_aff_com2, z_aff_com3, and z_aff_com4 items.
 
 We can obtain the variance of the new affect_sum column with the commands below:
 
