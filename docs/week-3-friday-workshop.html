@@ -451,14 +451,14 @@ div.csl-indent {
 <div id="data-and-column-names-1" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Data and column names</h2>
 <p>A key component of effect data analysis is the use of naming conventions for column names. In this section we focus on one column naming convention that makes it easy to work with survey data. You will need to use this column naming convention for your major project.</p>
-<p>The namning convention we advocate will save you hours of hassles and permit easy application of certain tidyverse commands. However, we must stress that although the naming convention we advocate is based on the tidyverse style guide, it is not “right” or “correct” - there are other naming conventions you can use (once you finish the course). Any naming convention is better than no naming convention. The naming convention we advocate here will solve many problems.</p>
+<p>The naming convention we advocate will save you hours of hassles and permit easy application of certain tidyverse commands. However, we must stress that although the naming convention we advocate is based on the tidyverse style guide, it is not “right” or “correct” - there are other naming conventions you can use (once you finish the course). Any naming convention is better than no naming convention. The naming convention we advocate here will solve many problems.</p>
 <p>To make your life easier down the road, it is critical you set up your spreadsheet or online survey such that it uses a naming convention prior to data collection. The naming conventions suggested here are adapted from the tidyverse <a href="https://style.tidyverse.org">style guide</a>.</p>
 <p>The key components of the column naming convention are the following:</p>
 <ul>
 <li><p>Lowercase letters only</p></li>
 <li><p>If two word column names are necessary, only use the underscore (“_“) character to separate words in the name. Do not use a period (.””) a space (” “) or other symbols.</p></li>
-<li><p>Use moderate length (not short0 column prefixes. For example, if you have an Affective Commitment Scale do not preface each items with “acs” instead preface each item with a longer verison like “aff_com.”</p></li>
-<li><p>Indicate in the item name if it is a likert-type scale and the number of points in the scale. For example, if your affective commitment scale has a 7-point Likert-type response scale you indicate that in the column name. For example, the name for two commtiment items might be: “aff_com1_likert7’ and”aff_com2_likert7”. This indicates important information for future users of the data set (including you)</p></li>
+<li><p>Use moderate length (not short0 column prefixes. For example, if you have an Affective Commitment Scale do not preface each items with “acs” instead preface each item with a longer version like “aff_com.”</p></li>
+<li><p>Indicate in the item name if it is a likert-type scale and the number of points in the scale. For example, if your affective commitment scale has a 7-point Likert-type response scale you indicate that in the column name. For example, the name for two commitment items might be: “aff_com1_likert7’ and”aff_com2_likert7”. This indicates important information for future users of the data set (including you)</p></li>
 <li><p>Indicate in the item name if the item is reversed keyed. ** Sometimes with Likert-type items, an item is reverse keyed. For example, on a <strong>positive</strong> job affect scale, participants will typically respond to items that reflect job affect using the scale: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. Higher numbers indicate more positive job affect. Sometimes, however, some items will use the same 1 to 5 response scale but be worded in the opposite manner such as “I hate my job.” Responding with a 5 to this item would indicate high <strong>negative</strong> job affect (not positive affect). But the columns for positive job affect scale should have high values to indicate more positive job affect not less positive job affect. Consequently, we flag the names of columns with reversed responses (i.e., reverse-key items) so that we know to treat those column differently later. Columns with reverse-keyed items need to be processed by a script so that the values are flipped and scored in the right direction. A normal positive job affect item might have a name like “job_aff1_likert7” whereas a reverse-key item would have a name like “job_aff2-likert7rev.” The “rev” in the column name indicates the item was a reverse-keyed item.</p></li>
 </ul>
 </div>
@@ -552,7 +552,7 @@ div.csl-indent {
 ## 4                4                3                3
 ## 5                2                3                2
 ## 6                3                3                3</code></pre>
-<p>Somtimes there are too many columns. So another option is to use the glimpse() command:</p>
+<p>Sometimes there are too many columns. So another option is to use the glimpse() command:</p>
 <div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="week-3-friday-workshop.html#cb203-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
 <span id="cb203-2"><a href="week-3-friday-workshop.html#cb203-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 100
@@ -620,7 +620,7 @@ div.csl-indent {
 <p>In this section we focus on the item variances.</p>
 <div id="approach-1" class="section level3" number="4.9.1">
 <h3><span class="header-section-number">4.9.1</span> Approach 1</h3>
-<p>Below is the traditionall approach to calculating the variance for columns. Try it out in RStudio.</p>
+<p>Below is the traditional approach to calculating the variance for columns. Try it out in RStudio.</p>
 <div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="week-3-friday-workshop.html#cb212-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
 <span id="cb212-2"><a href="week-3-friday-workshop.html#cb212-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">var_aff_com2 =</span> <span class="fu">var</span>(aff_com2_likert7),</span>
 <span id="cb212-3"><a href="week-3-friday-workshop.html#cb212-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">var_aff_com3 =</span> <span class="fu">var</span>(aff_com3_likert7),</span>
