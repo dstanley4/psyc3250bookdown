@@ -51,7 +51,7 @@ For this workshop our goals are to learn how to:
 
 A key component of effect data analysis is the use of naming conventions for column names. In this section we focus on one column naming convention that makes it easy to work with survey data. You will need to use this column naming convention for your major project. 
 
-The namning convention we advocate will save you hours of hassles and permit easy application of certain tidyverse commands. However, we must stress that although the naming convention we advocate is based on the tidyverse style guide, it is not "right" or "correct" - there are other naming conventions you can use (once you finish the course). Any naming convention is better than no naming convention. The naming convention we advocate here will solve many problems. 
+The naming convention we advocate will save you hours of hassles and permit easy application of certain tidyverse commands. However, we must stress that although the naming convention we advocate is based on the tidyverse style guide, it is not "right" or "correct" - there are other naming conventions you can use (once you finish the course). Any naming convention is better than no naming convention. The naming convention we advocate here will solve many problems. 
 
 To make your life easier down the road, it is critical you set up your spreadsheet or online survey such that it uses a naming convention prior to data collection. The naming conventions suggested here are adapted from the tidyverse [style guide](https://style.tidyverse.org).
 
@@ -61,9 +61,9 @@ The key components of the column naming convention are the following:
 
 * If two word column names are necessary, only use the underscore ("_") character to separate words in the name. Do not use a period (".") a space (" ") or other symbols.
 
-* Use moderate length (not short0 column prefixes. For example, if you have an Affective Commitment Scale do not preface each items with "acs" instead preface each item with a longer verison like "aff_com".  
+* Use moderate length (not short0 column prefixes. For example, if you have an Affective Commitment Scale do not preface each items with "acs" instead preface each item with a longer version like "aff_com".  
 
-* Indicate in the item name if it is a likert-type scale and the number of points in the scale. For example, if your affective commitment scale has a 7-point Likert-type response scale you indicate that in the column name. For example, the name for two commtiment items might be: "aff_com1_likert7' and "aff_com2_likert7". This indicates important information for future users of the data set (including you)
+* Indicate in the item name if it is a likert-type scale and the number of points in the scale. For example, if your affective commitment scale has a 7-point Likert-type response scale you indicate that in the column name. For example, the name for two commitment items might be: "aff_com1_likert7' and "aff_com2_likert7". This indicates important information for future users of the data set (including you)
 
 * Indicate in the item name if the item is reversed keyed. ** Sometimes with Likert-type items, an item is reverse keyed. For example, on a **positive** job affect scale, participants will typically respond to items that reflect job affect using the scale: 1 - Strongly Disagree, 2 - Moderately Disagree, 3 - Neutral, 4, Moderately Agree, 5 - Strongly Agree. Higher numbers indicate more positive job affect. Sometimes, however, some items will use the same 1 to 5 response scale but be worded in the opposite manner such as "I hate my job". Responding with a 5 to this item would indicate high **negative** job affect (not positive affect). But the columns for positive job affect scale should have high values to indicate more positive job affect not less positive job affect. Consequently, we flag the names of columns with reversed responses (i.e., reverse-key items) so that we know to treat those column differently later. Columns with reverse-keyed items need to be processed by a script so that the values are flipped and scored in the right direction. A normal positive job affect item might have a name like "job_aff1_likert7" whereas a reverse-key item would have a name like "job_aff2-likert7rev". The "rev" in the column name indicates the item was a reverse-keyed item.
 
@@ -72,7 +72,7 @@ Notice how the data file we use for this workshop follows this naming convention
 
 ## Install packages
 
-Prior to the starting this activity you must have a number of packages installed. Because you are using RStudio Cloud on your computer - a package only needs to be installed once. If you installed it previously you do not need to instal it again. But if you're not sure - you can allways install it again to be safe.
+Prior to the starting this activity you must have a number of packages installed. Because you are using RStudio Cloud on your computer - a package only needs to be installed once. If you installed it previously you do not need to install it again. But if you're not sure - you can always install it again to be safe.
 
 1. Use the menu Session  > Restart R
 
@@ -160,7 +160,7 @@ You can confirm the column names following our naming convention with the glimps
 glimpse(analytic_data_survey)
 ```
 
-Notice the column names in this file. We have an aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev. The likert columns contain the reponses to three affective commitment to the organization items. In particular, pay attention to the fact that the third item is reverse-keyed. 
+Notice the column names in this file. We have an aff_com2_likert7, aff_com3_likert7, aff_com4_likert7rev. The likert columns contain the responses to three affective commitment to the organization items. In particular, pay attention to the fact that the third item is reverse-keyed. 
 
 Just for your reference the text of the items used to generate the data for this columns was:
 
@@ -173,7 +173,7 @@ Just for your reference the text of the items used to generate the data for this
 
 ### Numeric screening
 
-For numeric variables, we want to make sure that we don't have impossible values.  For example, in the context of this example you want to ensure none of the Likert responses are impossible (e.g., outside the 1- to 7-point rating scale) or clearly data entry errors. If a value is below 1 or higher than 7 it is an error. The p0 column indicate the lowest value for each variable. Yu can see the lowest value for aff_com2_likert7 is 1. The p100 column tells you the highest value in each column. You can see that the highest value for aff_com2_likert7 was 5. What are the lowest and highest values for aff_com3_likert7 and aff_com4_likert7rev. Also reported in this output are the mean and standard deviation. But note that the standard deviation reported use $n$-1 in the denominator when it is calculated. This may or may not be what you want to know.
+For numeric variables, we want to make sure that we don't have impossible values.  For example, in the context of this example you want to ensure none of the Likert responses are impossible (e.g., outside the 1- to 7-point rating scale) or clearly data entry errors. If a value is below 1 or higher than 7 it is an error. The p0 column indicate the lowest value for each variable. You can see the lowest value for aff_com2_likert7 is 1. The p100 column tells you the highest value in each column. You can see that the highest value for aff_com2_likert7 was 5. What are the lowest and highest values for aff_com3_likert7 and aff_com4_likert7rev. Also reported in this output are the mean and standard deviation. But note that the standard deviation reported use $n$-1 in the denominator when it is calculated. This may or may not be what you want to know.
 
 
 ```{r, eval = FALSE}
@@ -237,7 +237,7 @@ analytic_data_survey <- analytic_data_survey %>%
   mutate(8 - across(.cols = ends_with("_likert7rev")) )
 ```
 
-The code above is general in nature and will perform the substraction for any column that end in "_likert7rev" in our case there is only one column that will be affect. The problem with the code above though is that you have the wrong column name. You have flipped the values in the column so that are not reverse-keyed anymore -- but the column name indicates that you have reverse-keyed responses. So you need to add the code below to change the column name.
+The code above is general in nature and will perform the subtraction for any column that end in "_likert7rev" in our case there is only one column that will be affect. The problem with the code above though is that you have the wrong column name. You have flipped the values in the column so that are not reverse-keyed anymore -- but the column name indicates that you have reverse-keyed responses. So you need to add the code below to change the column name.
 
 
 ```{r,echo=TRUE,eval=FALSE}
