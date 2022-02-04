@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2022-01-30" />
+<meta name="date" content="2022-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -289,15 +289,16 @@ div.csl-indent {
 <li class="chapter" data-level="5.4.1" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#make-a-script-2"><i class="fa fa-check"></i><b>5.4.1</b> Make a script</a></li>
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#code-catchup"><i class="fa fa-check"></i><b>5.5</b> Code Catchup</a></li>
-<li class="chapter" data-level="5.6" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#cronbachs-alpha"><i class="fa fa-check"></i><b>5.6</b> Cronbach’s Alpha</a>
+<li class="chapter" data-level="5.6" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#reliability"><i class="fa fa-check"></i><b>5.6</b> Reliability</a></li>
+<li class="chapter" data-level="5.7" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#cronbachs-alpha"><i class="fa fa-check"></i><b>5.7</b> Cronbach’s Alpha</a>
 <ul>
-<li class="chapter" data-level="5.6.1" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#alpha-via-covariance-matrix"><i class="fa fa-check"></i><b>5.6.1</b> Alpha via covariance matrix</a></li>
-<li class="chapter" data-level="5.6.2" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#alpha-via-psych-package"><i class="fa fa-check"></i><b>5.6.2</b> Alpha via psych package</a></li>
+<li class="chapter" data-level="5.7.1" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#alpha-via-covariance-matrix"><i class="fa fa-check"></i><b>5.7.1</b> Alpha via covariance matrix</a></li>
+<li class="chapter" data-level="5.7.2" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#alpha-via-psych-package"><i class="fa fa-check"></i><b>5.7.2</b> Alpha via psych package</a></li>
 </ul></li>
-<li class="chapter" data-level="5.7" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#standardized-alpha"><i class="fa fa-check"></i><b>5.7</b> Standardized Alpha</a>
+<li class="chapter" data-level="5.8" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#standardized-alpha"><i class="fa fa-check"></i><b>5.8</b> Standardized Alpha</a>
 <ul>
-<li class="chapter" data-level="5.7.1" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#standardized-alpha-via-correlation-matrix"><i class="fa fa-check"></i><b>5.7.1</b> Standardized Alpha via correlation matrix</a></li>
-<li class="chapter" data-level="5.7.2" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#standardized-alpha-via-psych-package"><i class="fa fa-check"></i><b>5.7.2</b> Standardized Alpha via psych package</a></li>
+<li class="chapter" data-level="5.8.1" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#standardized-alpha-via-correlation-matrix"><i class="fa fa-check"></i><b>5.8.1</b> Standardized Alpha via correlation matrix</a></li>
+<li class="chapter" data-level="5.8.2" data-path="week-4-friday-workshop.html"><a href="week-4-friday-workshop.html#standardized-alpha-via-psych-package"><i class="fa fa-check"></i><b>5.8.2</b> Standardized Alpha via psych package</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>6</b> Notation</a>
@@ -447,7 +448,8 @@ div.csl-indent {
 <li><p>Calculate <strong>Cronbach’s alpha</strong> using the <strong>psych::alpha() command</strong></p></li>
 <li><p>Calculate <strong>standardized</strong> alpha using a covariance matrix</p></li>
 <li><p>Calculate <strong>standardized</strong> alpha using the <strong>psych::alpha() command</strong></p></li>
-<li><p>All of the above goals assume familiarity with past workshops</p></li>
+<li><p>All of the above goals assume familiarity with past workshops.</p></li>
+<li><p>DON’T WORRY ABOUT THE MATH. WE WILL COVER IT IN A FUTURE LECTURE.</p></li>
 </ul>
 </div>
 <div id="install-packages-2" class="section level2" number="5.3">
@@ -537,8 +539,13 @@ div.csl-indent {
 ## $ aff_com4_likert7 &lt;dbl&gt; 3, 4, 2, 3, 2, 3, 4, 3, 3, 3, 4, …</code></pre>
 <p>You can see that the data has been loaded and all of the columns are no longer any “reverse key items.” To gain additional insight into this process - revisit previous Friday workshops.</p>
 </div>
-<div id="cronbachs-alpha" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> Cronbach’s Alpha</h2>
+<div id="reliability" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Reliability</h2>
+<p>For the rest of this Friday Workshop we focus on calculating the reliability of composite score. That is, the reliability of a column of numbers created by adding items together. Reliability ranges between 0 and 1. A reliability closer to 1.0 is better than a lower reliability.</p>
+<p><strong>We have yet to cover reliability in lecture - so don’t worry if you don’t understand the math below. We will cover the math in a future lecture. For today - just realize that the math is presented just to show what happens inside the black box of the psych:alpha command. We will spend a substantial amount of time understanding the math and conceptual basis for reliability in future lectures. Just focus on the psych::alpha() command today and see how you can calculate reliability using R.</strong></p>
+</div>
+<div id="cronbachs-alpha" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Cronbach’s Alpha</h2>
 <p>When we discuss Cronbach’s alpha you know we are dealing with the original form of the data. That is, we are dealing with the actual scores there reported by participants - rather than some transformed version of those scores.</p>
 <p>We use Cronbach’s alpha to describe a set “scale score.” That is, scores for a set of participants that are made by combining responses to several items.</p>
 <p>In the code below, we combine the aff_com2, aff_com3, and aff_com4 items, by adding them together (i.e., summing them together) to create a new column called affect_sum.</p>
@@ -580,8 +587,8 @@ div.csl-indent {
 ## 1           3.06</code></pre>
 <p>We can see the variance of this column is 3.06. That is, the variance of observed scores on affective commitment scale is 3.06. This variability in observed scores is composed of 1) actual variability in commitment levels across participants (i.e., true score variance) and 2) measurement error.</p>
 <p>We might wonder, of the observed variance of 3.06, what proportion is due to actual variability in people’s affective commitment levels - and not measurement error. That is, we might wonder, what proportion of the 3.06 variance is due to variability in true scores. We determine that proportion by calculating Cronbach’s alpha.</p>
-<div id="alpha-via-covariance-matrix" class="section level3" number="5.6.1">
-<h3><span class="header-section-number">5.6.1</span> Alpha via covariance matrix</h3>
+<div id="alpha-via-covariance-matrix" class="section level3" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> Alpha via covariance matrix</h3>
 <p>In this section we review the logic of calculating Cronbach’s alpha. In practice, you would not use the approach in this section - it is merely to enhance your understanding of Cronbach’s alpha. In practice you would use the approach in the next section that uses the psych::alpha command to calculate standardized alpha.</p>
 <p>To calculate alpha we begin by obtaining the just the columns with the item data for the scale.</p>
 <div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="week-4-friday-workshop.html#cb234-1" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
@@ -628,12 +635,12 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>Finally, we use the covariance matrix in the Cronbach’s alpha formula below.</p>
+<p>Finally, we use the covariance matrix in the Cronbach’s alpha formula below. <strong>AGAIN, DON’T WORRY IF YOU DON’T UNDERSTAND THE MATH BELOW. THE MATH IS PRESENTED JUST TO SHOW YOU WHAT HAPPENS INSIDE THE BLACK BOX OF THE psych:alpha() COMMAND. WE WILL COVER THE MATH IN A FUTURE LECTURE.</strong></p>
 <p><img src="ch_workshop_alpha/images/cron_alpha_calc.png" width="80%" /></p>
 <p>Thus the value of Cronbach’s alpha is .7727002, or .77. The affect_sum column has variance of 3.06. This is an indication of the differences among people with respect to <strong>observed</strong> scores (i.e., the actual values in affect_sum column). Of course, not all of the variability in observed scores is due to differences among people (i.e., true scores). Some of the variability in observed scores (in the affect_sum column) is due to random measurement error. A Cronbach’s alpha of .77 indicates that we <strong>estimate</strong> 77% of the variability in scores in the affect_sum column is due to actual differences among people (i.e., variability in true scores).</p>
 </div>
-<div id="alpha-via-psych-package" class="section level3" number="5.6.2">
-<h3><span class="header-section-number">5.6.2</span> Alpha via psych package</h3>
+<div id="alpha-via-psych-package" class="section level3" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> Alpha via psych package</h3>
 <p>You can obtain Cronbach’s alpha using the alpha command from the <strong>psych</strong> package. However, because we didn’t use library(psych), because it breaks the tidyverse, we add psych:: in front of the alpha() command.</p>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="week-4-friday-workshop.html#cb239-1" aria-hidden="true" tabindex="-1"></a>item_stats <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">alpha</span>(items)</span>
 <span id="cb239-2"><a href="week-4-friday-workshop.html#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(item_stats<span class="sc">$</span>total)</span></code></pre></div>
@@ -644,8 +651,8 @@ div.csl-indent {
 <p>In the output you can see <strong>raw_alpha</strong> is 0.7727002, this is the value for Cronbach’s alpha.</p>
 </div>
 </div>
-<div id="standardized-alpha" class="section level2" number="5.7">
-<h2><span class="header-section-number">5.7</span> Standardized Alpha</h2>
+<div id="standardized-alpha" class="section level2" number="5.8">
+<h2><span class="header-section-number">5.8</span> Standardized Alpha</h2>
 <p>Before considering Standardized alpha - let’s think about what we did in the previous section with Cronbach’s alpha. With Cronbach’s alpha we added the items together (in their original form) to create a new column called affect_sum.</p>
 <p>Permit me a slight digression into a cooking analogy. When you are cooking, you have a variety of ingredients that you combine, in different amounts, to create your final dish. Think of combining the columns to create affect_sum using this analogy. Each column is a different ingredient. The amount of each ingredient in the recipe is indicated by the variance of the column. Items with a large variance contribute more to the affect_sum column creation than items with a small variance.</p>
 <p>When you are creating scale scores, you have a variety of items (i.e., ingredients) that you combine, in different amounts (based on their variance), to create your affect_sum column. We do not “do” anything to make items with greater variance contribute more. It’s just a fact that items with greater variance will contribute more the creation of the affect_sum column than items with smaller variances.</p>
@@ -723,9 +730,9 @@ z = \frac{X_i-\overline{X_{item}}}{s_{item}}
 ## 1             6.24</code></pre>
 <p>We can see the variance of this column is 6.24. That is, the variance of observed scores on affective commitment scale is 6.24. This variability in observed scores is composed of 1) actual variability in commitment levels across participants (i.e., true score variance) and 2) measurement error.</p>
 <p>We might wonder, of the observed variance of 6.24, what proportion is due to actual variability in people’s affective commitment levels - and not measurement error. That is, we might wonder, what proportion of the 6.24 variance is due to variability in true scores. We determine that proportion by calculating Standardized alpha.</p>
-<div id="standardized-alpha-via-correlation-matrix" class="section level3" number="5.7.1">
-<h3><span class="header-section-number">5.7.1</span> Standardized Alpha via correlation matrix</h3>
-<p>In this section we review the logic of calculating Standardized’s alpha. In practice, you would not use the approach in this section - it is merely to enhance your understanding of Standardized alpha. In practice you would use the approach in the next section that uses the psych::alpha command to calculate Standardized alpha.</p>
+<div id="standardized-alpha-via-correlation-matrix" class="section level3" number="5.8.1">
+<h3><span class="header-section-number">5.8.1</span> Standardized Alpha via correlation matrix</h3>
+<p>In this section we review the logic of calculating Standardized alpha. In practice, you would not use the approach in this section - it is merely to enhance your understanding of Standardized alpha. In practice you would use the approach in the next section that uses the psych::alpha command to calculate Standardized alpha.</p>
 <p>To calculate alpha we begin by obtaining the just the columns with the item data for the scale.</p>
 <div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="week-4-friday-workshop.html#cb256-1" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span></span>
 <span id="cb256-2"><a href="week-4-friday-workshop.html#cb256-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;aff_com&quot;</span>))</span></code></pre></div>
@@ -773,13 +780,13 @@ z = \frac{X_i-\overline{X_{item}}}{s_{item}}
 </tr>
 </tbody>
 </table>
-<p>Finally, we use the correlation matrix in the usual alpha formula below.</p>
+<p>Finally, we use the correlation matrix in the usual alpha formula below. <strong>AGAIN, DON’T WORRY IF YOU DON’T UNDERSTAND THE MATH BELOW. THE MATH IS PRESENTED JUST TO SHOW YOU WHAT HAPPENS INSIDE THE BLACK BOX OF THE psych:alpha() COMMAND. WE WILL COVER THE MATH IN A FUTURE LECTURE.</strong></p>
 <p><img src="ch_workshop_alpha/images/std_alpha_calc.png" width="80%" /></p>
 <p>Thus the value of Standardized alpha is 0.778788, or .78, The z_affect_sum column has variance of 6.24 This is an indication of the differences among people with respect to <strong>observed</strong> scores (i.e., the actual values in <strong>z_affect_sum</strong> column). Of course, not all of the variability in observed scores is due to differences among people (i.e., true scores). Some of the variability in observed scores (in the <strong>z_affect_sum</strong> column) is due to random measurement error. A Standardized alpha of .78 indicates that we <strong>estimate</strong> 78% of the variability in scores in the <strong>z_affect_sum</strong> column is due to actual differences among people (i.e., variability in true scores).</p>
 <p>Note that in these data, the Standardized alpha value (.78) is very close to the Cronbach’s alpha value (.77). This will not always be the case. In many circumstances, the two values will differ considerably. <strong>The extent to which the two values differ indicates the extent to which the items are contributing unequally to the creation of the affect_sum column compared to the z_affect_sum column.</strong></p>
 </div>
-<div id="standardized-alpha-via-psych-package" class="section level3" number="5.7.2">
-<h3><span class="header-section-number">5.7.2</span> Standardized Alpha via psych package</h3>
+<div id="standardized-alpha-via-psych-package" class="section level3" number="5.8.2">
+<h3><span class="header-section-number">5.8.2</span> Standardized Alpha via psych package</h3>
 <p>You can obtain standardized alpha using the alpha command from the <strong>psych</strong> package. However, because we didn’t use library(psych), because it breaks the tidyverse, we add psych:: in front of the alpha() command.</p>
 <div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="week-4-friday-workshop.html#cb261-1" aria-hidden="true" tabindex="-1"></a>item_stats <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">alpha</span>(items)</span>
 <span id="cb261-2"><a href="week-4-friday-workshop.html#cb261-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(item_stats<span class="sc">$</span>total)</span></code></pre></div>

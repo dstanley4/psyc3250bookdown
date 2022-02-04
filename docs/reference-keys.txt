@@ -114,6 +114,7 @@ install-packages-2
 rstudio-project-2
 make-a-script-2
 code-catchup
+reliability
 cronbachs-alpha
 alpha-via-covariance-matrix
 alpha-via-psych-package

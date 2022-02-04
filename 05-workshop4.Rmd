@@ -42,7 +42,9 @@ For this workshop our goals are to learn how to:
 
 * Calculate **standardized** alpha using the **psych::alpha() command**
 
-* All of the above goals assume familiarity with past workshops
+* All of the above goals assume familiarity with past workshops.
+
+* DON'T WORRY ABOUT THE MATH. WE WILL COVER IT IN A FUTURE LECTURE.
 
 
 ## Install packages
@@ -144,6 +146,15 @@ analytic_data_survey %>%
 
 You can see that the data has been loaded and all of the columns are no longer any "reverse key items". To gain additional insight into this process - revisit previous Friday workshops.
 
+## Reliability
+
+For the rest of this Friday Workshop we focus on calculating the reliability of composite score. That is, the reliability of a column of numbers created by adding items together. Reliability ranges between 0 and 1. A reliability closer to 1.0 is better than a lower reliability.
+
+**We have yet to cover reliability in lecture - so don't worry if you don't understand the math below. We will cover the math in a future lecture. For today - just realize that the math is presented just to show what happens inside the black box of the psych:alpha command. We will spend a substantial amount of time understanding the math and conceptual basis for reliability in future lectures. Just focus on the psych::alpha() command today and see how you can calculate reliability using R.**
+
+
+
+
 ## Cronbach's Alpha
 
 When we discuss Cronbach's alpha you know we are dealing with the original form of the data. That is, we are dealing with the actual scores there reported by participants - rather than some transformed version of those scores.
@@ -224,7 +235,7 @@ knitr::kable(cov_matrix)
 ```
 
 
-Finally, we use the covariance matrix in the Cronbach's alpha formula below.
+Finally, we use the covariance matrix in the Cronbach's alpha formula below. **AGAIN, DON'T WORRY IF YOU DON'T UNDERSTAND THE MATH BELOW. THE MATH IS PRESENTED JUST TO SHOW YOU WHAT HAPPENS INSIDE THE BLACK BOX OF THE psych:alpha() COMMAND. WE WILL COVER THE MATH IN A FUTURE LECTURE.**
 
 
 ```{r, echo = FALSE,out.width="80%"}
@@ -369,7 +380,7 @@ We might wonder, of the observed variance of 6.24, what proportion is due to act
 
 ### Standardized Alpha via correlation matrix
 
-In this section we review the logic of calculating Standardized's alpha. In practice, you would not use the approach in this section - it is merely to enhance your understanding of Standardized alpha. In practice you would use the approach in the next section that uses the psych::alpha command to calculate Standardized alpha.
+In this section we review the logic of calculating Standardized alpha. In practice, you would not use the approach in this section - it is merely to enhance your understanding of Standardized alpha. In practice you would use the approach in the next section that uses the psych::alpha command to calculate Standardized alpha.
 
 To calculate alpha we begin by obtaining the just the columns with the item data for the scale.
 
@@ -406,7 +417,7 @@ knitr::kable(correl_matrix)
 ```
 
 
-Finally, we use the correlation matrix in the usual alpha formula below.
+Finally, we use the correlation matrix in the usual alpha formula below. **AGAIN, DON'T WORRY IF YOU DON'T UNDERSTAND THE MATH BELOW. THE MATH IS PRESENTED JUST TO SHOW YOU WHAT HAPPENS INSIDE THE BLACK BOX OF THE psych:alpha() COMMAND. WE WILL COVER THE MATH IN A FUTURE LECTURE.**
 
 
 ```{r, echo = FALSE,out.width="80%"}
