@@ -166,7 +166,7 @@ What's the big picture for today? What should I focus on?
 
 2) One way we can describe the quality of scale scores is using Cronbach's alpha. Cronbach's alpha is an estimate of reliability.
 
-3) Sometimes, people convert items to z-scores before combining them. When they do that, we use Standardized alpha (instead of Cronbach's alpha) to describe the column of scale scores.
+3) Sometimes, people convert items to z-scores before combining them. When they do that, we use Standardized alpha (instead of Cronbach's alpha) to describe the quality of the column of scale scores.
 
 
 
@@ -462,5 +462,5 @@ What should you take away from this activity?
 
 2) One way we can describe the quality of scale scores is using Cronbach's alpha. Cronbach's alpha is an estimate of reliability.
 
-3) Sometimes, people convert items to z-scores before combining them. When they do that, we use Standardized alpha (instead of Cronbach's alpha) to describe the column of scale scores.
+3) Sometimes, people convert items to z-scores before combining them. When they do that, we use Standardized alpha (instead of Cronbach's alpha) to describe the quality of the column of scale scores.
 
