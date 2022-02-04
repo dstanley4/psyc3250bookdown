@@ -542,7 +542,7 @@ div.csl-indent {
 <div id="reliability" class="section level2" number="5.6">
 <h2><span class="header-section-number">5.6</span> Reliability</h2>
 <p>For the rest of this Friday Workshop we focus on calculating the reliability of composite score. That is, the reliability of a column of numbers created by adding items together. Reliability ranges between 0 and 1. A reliability closer to 1.0 is better than a lower reliability.</p>
-<p><strong>We have yet to cover reliability in lecture - so don’t worry if you don’t understand the math below. We will cover the math in a future lecture. For today - just realize that the math is presented just to show what happens inside the black box of the psych:alpha command. We will spend a substantial amount of time understanding the math and conceptual basis for reliability in future lectures. Just focus on the psych::alpha() command today and see how you can calculate reliability using R.</strong></p>
+<p><strong>We have yet to cover reliability in lecture - so don’t worry if you don’t understand the math below. We will cover the math in a future lecture. For today - just realize that the math is presented just to show what happens inside the black box of the psych:alpha() command. We will spend a substantial amount of time understanding the math and conceptual basis for reliability in future lectures. Just focus on the psych::alpha() command today and see how you can calculate reliability using R.</strong></p>
 <p>Below we review two ways of estimating reliabilty:</p>
 <ul>
 <li><p>Cronbach’s alpha</p></li>
@@ -552,7 +552,7 @@ div.csl-indent {
 <div id="cronbachs-alpha" class="section level2" number="5.7">
 <h2><span class="header-section-number">5.7</span> Cronbach’s Alpha</h2>
 <p>When we discuss Cronbach’s alpha you know we are dealing with the original form of the data. That is, we are dealing with the actual scores there reported by participants - rather than some transformed version of those scores.</p>
-<p>We use Cronbach’s alpha to describe a set “scale score.” That is, scores for a set of participants that are made by combining responses to several items.</p>
+<p>We use Cronbach’s alpha to describe a set “scale scores.” That is, scores for a set of participants that are made by combining responses to several items.</p>
 <p>In the code below, we combine the aff_com2, aff_com3, and aff_com4 items, by adding them together (i.e., summing them together) to create a new column called affect_sum.</p>
 <div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="week-4-friday-workshop.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating scale SUM scores</span></span>
 <span id="cb227-2"><a href="week-4-friday-workshop.html#cb227-2" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
@@ -590,8 +590,8 @@ div.csl-indent {
 ##   var_affect_sum
 ##            &lt;dbl&gt;
 ## 1           3.06</code></pre>
-<p>We can see the variance of this column is 3.06. That is, the variance of observed scores on affective commitment scale is 3.06. This variability in observed scores is composed of 1) actual variability in commitment levels across participants (i.e., true score variance) and 2) measurement error.</p>
-<p>We might wonder, of the observed variance of 3.06, what proportion is due to actual variability in people’s affective commitment levels - and not measurement error. That is, we might wonder, what proportion of the 3.06 variance is due to variability in true scores. We determine that proportion by calculating Cronbach’s alpha.</p>
+<p>We can see the variance of this column is 3.06. That is, the variance of observed scores on affective commitment scale is 3.06. <strong>This variability in observed scores is composed of 1) actual variability in commitment levels across participants (i.e., true score variance) and 2) random measurement error.</strong></p>
+<p>We might wonder, of the observed variance of 3.06, what proportion is due to actual variability in people’s affective commitment levels - and not random measurement error. That is, we might wonder, what proportion of the 3.06 variance is due to variability in true scores. We determine that proportion by calculating Cronbach’s alpha.</p>
 <div id="alpha-via-covariance-matrix" class="section level3" number="5.7.1">
 <h3><span class="header-section-number">5.7.1</span> Alpha via covariance matrix</h3>
 <p>In this section we review the logic of calculating Cronbach’s alpha. In practice, you would not use the approach in this section - it is merely to enhance your understanding of Cronbach’s alpha. In practice you would use the approach in the next section that uses the psych::alpha command to calculate standardized alpha.</p>
@@ -690,7 +690,7 @@ z = \frac{X_i-\overline{X_{item}}}{s_{item}}
 ## $ z_aff_com2 &lt;dbl&gt; -0.6078, 1.8234, -1.8234, 0.6078, -1.82…
 ## $ z_aff_com3 &lt;dbl&gt; -0.8242, 0.8579, -0.8242, -0.8242, -0.8…
 ## $ z_aff_com4 &lt;dbl&gt; -0.6693, 0.8181, -2.1567, -0.6693, -2.1…</code></pre>
-<p>As before use the skim() command on the data in its <strong>transformed (i.e., z-score) form</strong> to assess the extent to which the items now have different/similar variances. Recall that variance is simply standard deviation squared - so when we examine standard deviations for items we are learning about the variance of each item. You see a value of 1.0 for each item. This indicates that is were to add the values in these columns together to create a new column - each column would contribute equally to the creation of that new column. Using our cooking analogy, we now using the same amount of each ingredient when we create a scale score.</p>
+<p>As before use the skim() command on the data in its <strong>transformed (i.e., z-score) form</strong> to assess the extent to which the items now have different/similar variances. Recall that variance is simply standard deviation squared - so when we examine standard deviations for items we are learning about the variance of each item. You see a value of 1.0 for each item. <strong>This indicates that is were to add the values in these columns together to create a new column - each column would contribute equally to the creation of that new column. Using our cooking analogy, we now using the same amount of each ingredient when we create a scale score.</strong></p>
 <div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="week-4-friday-workshop.html#cb247-1" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="sc">%&gt;%</span></span>
 <span id="cb247-2"><a href="week-4-friday-workshop.html#cb247-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
 <pre><code>##   skim_variable numeric.mean numeric.sd
@@ -733,8 +733,8 @@ z = \frac{X_i-\overline{X_{item}}}{s_{item}}
 ##   var_z_affect_sum
 ##              &lt;dbl&gt;
 ## 1             6.24</code></pre>
-<p>We can see the variance of this column is 6.24. That is, the variance of observed scores on affective commitment scale is 6.24. This variability in observed scores is composed of 1) actual variability in commitment levels across participants (i.e., true score variance) and 2) measurement error.</p>
-<p>We might wonder, of the observed variance of 6.24, what proportion is due to actual variability in people’s affective commitment levels - and not measurement error. That is, we might wonder, what proportion of the 6.24 variance is due to variability in true scores. We determine that proportion by calculating Standardized alpha.</p>
+<p>We can see the variance of this column is 6.24. That is, the variance of observed scores on affective commitment scale is 6.24. This variability in observed scores is composed of 1) actual variability in commitment levels across participants (i.e., true score variance) and 2) random measurement error.</p>
+<p>We might wonder, of the observed variance of 6.24, what proportion is due to actual variability in people’s affective commitment levels - and not random measurement error. That is, we might wonder, what proportion of the 6.24 variance is due to variability in true scores. We determine that proportion by calculating Standardized alpha.</p>
 <div id="standardized-alpha-via-correlation-matrix" class="section level3" number="5.8.1">
 <h3><span class="header-section-number">5.8.1</span> Standardized Alpha via correlation matrix</h3>
 <p>In this section we review the logic of calculating Standardized alpha. In practice, you would not use the approach in this section - it is merely to enhance your understanding of Standardized alpha. In practice you would use the approach in the next section that uses the psych::alpha command to calculate Standardized alpha.</p>
