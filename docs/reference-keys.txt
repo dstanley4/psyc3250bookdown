@@ -115,6 +115,7 @@ rstudio-project-2
 make-a-script-2
 code-catchup
 reliability
+big-picture-for-today
 cronbachs-alpha
 alpha-via-covariance-matrix
 alpha-via-psych-package
