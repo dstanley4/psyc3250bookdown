@@ -445,5 +445,13 @@ print(item_stats$total)
 
 In the output you can see **std.alpha** is 0.778788, this is the value for standardized alpha.
 
+## Walk away
 
+What should you take away from this activity?
+
+1) People combine items (by adding them together) to create a scale scores.
+
+2) One way we can describe the quality of scale scores is using Cronbach's alpha.
+
+3) Sometimes, people convert items to z-scores before combining them. When they do that, we use Standardized alpha (instead of Cronbach's alpha) to describe the column of scale scores.
 

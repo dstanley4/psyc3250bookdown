@@ -121,6 +121,7 @@ alpha-via-psych-package
 standardized-alpha
 standardized-alpha-via-correlation-matrix
 standardized-alpha-via-psych-package
+walk-away
 notation
 measurement-notation
 scaling
