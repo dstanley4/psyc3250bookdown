@@ -4,14 +4,14 @@
 
 We begin by entering data into Excel (or any other spreadsheet) as per below. Notice how we use the first row as a header for the column names. Once we enter the data this way we need to save it as a .CSV file (comma separated values). You do so using the Save As menu item in Excel. Once the Save window appears - you will notice a File Format pull-down button. Use the button to select the CSV (comma delimited) option. Indicate a file name of "data_heights.csv" and save the file.
 
-```{r, echo=FALSE, out.width="35%"}
+```{r, echo=FALSE, out.width="40%"}
 knitr::include_graphics("ch_scaling/images/scaling_data_excel.png")
 ```
 
 
 What is a .CSV file? It's just a text file where the columns are separated by commas. If you were to open the file in TextEdit on a Mac (or Notepad on Windows) you would see something like the image below. You don't need to do this step - but if you did, it would just show you how the file is saved on disk.
 
-```{r, echo=FALSE, out.width="25%"}
+```{r, echo=FALSE, out.width="40%"}
 knitr::include_graphics("ch_scaling/images/scaling_data_text.png")
 ```
 
