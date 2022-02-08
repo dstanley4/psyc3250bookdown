@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Notation | Welcome!</title>
+  <title>Chapter 6 Week 5 Friday Workshop | Welcome!</title>
   <meta name="description" content="Course notes for PSYC 3250" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Notation | Welcome!" />
+  <meta property="og:title" content="Chapter 6 Week 5 Friday Workshop | Welcome!" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="dstanley4/psyc3250bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Notation | Welcome!" />
+  <meta name="twitter:title" content="Chapter 6 Week 5 Friday Workshop | Welcome!" />
   
   <meta name="twitter:description" content="Course notes for PSYC 3250" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="week-5-friday-workshop.html"/>
-<link rel="next" href="scaling.html"/>
+<link rel="prev" href="week-4-friday-workshop.html"/>
+<link rel="next" href="notation.html"/>
 <script src="libs/header-attrs/header-attrs.js"></script>
 <script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -425,91 +425,245 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="notation" class="section level1" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Notation</h1>
-<p>In this chapter we will use summation notation. If you are not familiar with summation notation, we present a brief overview here.</p>
-<p>Consider a scenario where we have the IQ data for three participants We use the N symbol to represent the number of participants. Because we have three participants N = 3. The data for these participants is illustrated in Figure <a href="notation.html#fig:notationdata">7.1</a>.</p>
-<p>Notice how each person in the data set can be represented by the variable X: the first person by <span class="math inline">\(X_1\)</span>, the second by <span class="math inline">\(X_2\)</span>, and the third by <span class="math inline">\(X_3\)</span>. Often we refer to individuals in a data set by using the variable X accompanied by a subscript (e.g., 1, 2, 3, etc.).</p>
-<div class="figure"><span style="display:block;" id="fig:notationdata"></span>
-<img src="ch_scaling/images/screenshot_data_n6.png" alt="Data for understanding summation notation" width="40%" />
-<p class="caption">
-FIGURE 7.1: Data for understanding summation notation
-</p>
+<div id="week-5-friday-workshop" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Week 5 Friday Workshop</h1>
+<div id="required-packagess-1" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Required Packagess</h2>
+<p>The data files below are used in this chapter. The files are available at: <a href="https://github.com/dstanley4/psyc3250bookdown" class="uri">https://github.com/dstanley4/psyc3250bookdown</a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Required Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="data_rel_theory.csv">data_rel_theory.csv</a></td>
+</tr>
+</tbody>
+</table>
+<p>The following CRAN packages must be installed:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Required CRAN Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tidyverse</td>
+</tr>
+<tr class="even">
+<td>sjstats</td>
+</tr>
+</tbody>
+</table>
 </div>
-<p>Referring to participants using the variable X and subscript is valuable because it can be used in conjunction with the sigma (i.e., <span class="math inline">\(\Sigma\)</span>) symbol for summation. Consider the example below in which we use the summation notation to indicate that we want to add all the X values (representing IQ) for the participants. We use a lower case <span class="math inline">\(i\)</span> to represent all possible subscript values. The notation, <span class="math inline">\(i\)</span> = 1, below the <span class="math inline">\(\Sigma\)</span> symbol indicates that we should start with participant 1. The notation, N, above the <span class="math inline">\(\Sigma\)</span> symbol indicates that we should iterate <span class="math inline">\(i\)</span> up to the value indicated by N; in this case 3, because there are three participants.</p>
+<div id="goals-3" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Goals</h2>
+<p>For this workshop our goals are to:</p>
+<ul>
+<li><p>Consider the conceptual ideas of true scores and random measurement errors</p></li>
+<li><p>Understand the formula: <span class="math inline">\(X = T + E\)</span>.</p></li>
+<li><p>Understand the formula: <span class="math inline">\(\sigma^2_{observed} = \sigma^2_{true} + \sigma^2_{error}\)</span></p></li>
+<li><p>Calculate reliability, using a conceptual approach, four different ways.</p></li>
+<li><p>Recognize that in practice, we don’t know true score and errors so we need another approach (covered next week).</p></li>
+</ul>
+</div>
+<div id="rstudio-project-3" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> RStudio Project</h2>
+<ol style="list-style-type: decimal">
+<li><p>Create a folder on your computer for the example</p></li>
+<li><p>Download the data file for this example: <a href="data_rel_theory.csv">data_rel_theory.csv</a>. ONLY obtain this file from the Downloads folder. If you open in another program and save it again - the data file will not work.</p></li>
+<li><p>Place all the example data file in the folder you created in Step 1.</p></li>
+<li><p>Use the menu item File &gt; New Project… to start the project</p></li>
+<li><p>On the window that appears select “Existing Directory”</p></li>
+<li><p>On the next screen, press the “Browse” button and find/select the folder with your data</p></li>
+<li><p>Press the Create Project Button</p></li>
+</ol>
+<div id="make-a-script-3" class="section level3" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Make a script</h3>
+<ol style="list-style-type: decimal">
+<li><p>Go the File menu. File &gt; New File &gt; Script</p></li>
+<li><p>When you write your code - place into this script.</p></li>
+</ol>
+</div>
+</div>
+<div id="loading-data-1" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Loading data</h2>
+<p>This week that data we use should not be considered data we could obtain “in the real world.” The data we use is theoretical in nature only. We load it with the code below.</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="week-5-friday-workshop.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Date: YYYY-MM-DD</span></span>
+<span id="cb263-2"><a href="week-5-friday-workshop.html#cb263-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Name: your name here</span></span>
+<span id="cb263-3"><a href="week-5-friday-workshop.html#cb263-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Workshop 3 PSYC 3250</span></span>
+<span id="cb263-4"><a href="week-5-friday-workshop.html#cb263-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb263-5"><a href="week-5-friday-workshop.html#cb263-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Activate packages  </span></span>
+<span id="cb263-6"><a href="week-5-friday-workshop.html#cb263-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb263-7"><a href="week-5-friday-workshop.html#cb263-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjstats)</span>
+<span id="cb263-8"><a href="week-5-friday-workshop.html#cb263-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb263-9"><a href="week-5-friday-workshop.html#cb263-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Load data </span></span>
+<span id="cb263-10"><a href="week-5-friday-workshop.html#cb263-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb263-11"><a href="week-5-friday-workshop.html#cb263-11" aria-hidden="true" tabindex="-1"></a>data_theory <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_rel_theory.csv&quot;</span>,</span>
+<span id="cb263-12"><a href="week-5-friday-workshop.html#cb263-12" aria-hidden="true" tabindex="-1"></a>                            <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>Now go to the menu: Session &gt; Restart R</p>
+<p>Then press the Source with Echo button to run the entire script. This should load the data.</p>
+</div>
+<div id="true-scores-and-errors" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> True scores and errors</h2>
+<p>Imagine that we are interested in the extroversion level of 10 people. If we were all knowing - and didn’t need to measure anything - we could know the extroversion of level of each person. Let’s look the data with the print() command, below. Inspect the true score column.</p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="week-5-friday-workshop.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data_theory)</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 3
+##    name    true_score error
+##    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;
+##  1 Bob              5     4
+##  2 Jane            10    -3
+##  3 Sue             15    -8
+##  4 Sam             20     9
+##  5 Harry           25    -5
+##  6 Richard         30    -1
+##  7 John            35     8
+##  8 Natalie         40     0
+##  9 Joan            45    -5
+## 10 Clive           50     1</code></pre>
+<p>Think of the values in the true score column as representing the “true” or actual extroversion level for each person. In practice, we could never know this value. But in this workshop we are “all knowing” and can know these value.</p>
+<p>If we were to try to measure the extroversion level of these people with a survey we would not obtain the true extroversion level for each person. Why is that? Because any attempt to measure the extroversion level of each person would likely be contaminated by random measurement error. These random measurement errors are illustrated in the error column.</p>
+</div>
+<div id="observed-scores" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> Observed scores</h2>
+<p>In practice, any measured score would reflect an individuals true score and the random measurement error. This is reflected in the equation below.</p>
 <p><span class="math display">\[
-\begin{aligned} 
-\sum_{i=1}^{N} X_i &amp;=  X_1 + X_2 + X_3\\ 
-&amp;= 110 + 120 + 100 \\
-&amp;= 330
-\end{aligned} 
+\text{observed scores} = \text{true scores} + \text{errors}
 \]</span></p>
-<p>Sometimes, to simplify the notation, the numbers above and below the <span class="math inline">\(\Sigma\)</span> symbol are omitted. Likewise, the <span class="math inline">\(i\)</span> subscript is omitted. There is a general understanding that when these components of the notation are omitted the version of the notation above is implied.</p>
+<p>Sometimes, people use the symbols below to express this relation:
+<span class="math display">\[
+X = T + E
+\]</span></p>
+<p>We can create the score one would observe in a measurement attempt using the code below. With this code we add the true score and the errors.</p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="week-5-friday-workshop.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating scale SUM scores</span></span>
+<span id="cb266-2"><a href="week-5-friday-workshop.html#cb266-2" aria-hidden="true" tabindex="-1"></a>data_theory <span class="ot">&lt;-</span> data_theory <span class="sc">%&gt;%</span> </span>
+<span id="cb266-3"><a href="week-5-friday-workshop.html#cb266-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb266-4"><a href="week-5-friday-workshop.html#cb266-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">observed_score =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>( <span class="fu">c</span>(<span class="st">&quot;true_score&quot;</span>, <span class="st">&quot;error&quot;</span>) )) ) <span class="sc">%&gt;%</span></span>
+<span id="cb266-5"><a href="week-5-friday-workshop.html#cb266-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() </span></code></pre></div>
+<p>You can see the scores we would observed in the new observed_score column via the print() command:</p>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="week-5-friday-workshop.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data_theory)</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 4
+##    name    true_score error observed_score
+##    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
+##  1 Bob              5     4              9
+##  2 Jane            10    -3              7
+##  3 Sue             15    -8              7
+##  4 Sam             20     9             29
+##  5 Harry           25    -5             20
+##  6 Richard         30    -1             29
+##  7 John            35     8             43
+##  8 Natalie         40     0             40
+##  9 Joan            45    -5             40
+## 10 Clive           50     1             51</code></pre>
+<p>When you inspect this observed_score column you can see that for each value the observed score is the sum of the true score and random measurement error.</p>
 <p><span class="math display">\[
-\begin{aligned} 
-\sum{X} &amp;= X_1 + X_2 + X_3\\ 
-&amp;= 110 + 120 + 100\\
-&amp;= 330
-\end{aligned} 
+\text{observed scores} = \text{true scores} + \text{errors}
 \]</span></p>
-<p><strong>Calculating a mean</strong>. The full version of the notation can be used to indicate how an average/mean is calculated.</p>
+</div>
+<div id="column-variances" class="section level2" number="6.7">
+<h2><span class="header-section-number">6.7</span> Column variances</h2>
+<p>Let’s calculate the variance for the values in each column. To do so we use the var_pop() command. We use this command because it calculate variance using <span class="math inline">\(N\)</span> in the denominator (instead of <span class="math inline">\(N-1\)</span>) via the formula below:</p>
 <p><span class="math display">\[
-\begin{aligned} 
-\bar{X} &amp;= \frac{\sum_{i=1}^{N} X_i}{N} \\
-&amp;= \frac{X_1 + X_2 + X_3}{3}\\ 
-&amp;= \frac{110 + 120 + 100}{3}\\
-&amp;= \frac{330}{3}\\
-&amp;= 110\\
-\end{aligned} 
+\text{var_pop()} = \sigma^2 = \frac{\Sigma(X-\bar{X})^2}{N}
 \]</span></p>
-<p>Likewise, the concise version of the notation can be used to indicate how an average/mean is calculated.</p>
+</div>
+<div id="observed-score-variance" class="section level2" number="6.8">
+<h2><span class="header-section-number">6.8</span> Observed score variance</h2>
+<p>We can calculate the variance of the observed_score column using the var_pop() command. Note that when we use data_theory$observed_score this tells the computer to got to the “data_theory spreadsheet” and the use the values in the observed_score column for the calculation.</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="week-5-friday-workshop.html#cb269-1" aria-hidden="true" tabindex="-1"></a>var_obs <span class="ot">&lt;-</span>  <span class="fu">var_pop</span>(data_theory<span class="sc">$</span>observed_score)</span>
+<span id="cb269-2"><a href="week-5-friday-workshop.html#cb269-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_obs)</span></code></pre></div>
+<pre><code>## [1] 234.9</code></pre>
+<p>You can see the variance of observed scores is 234.85. That is, <span class="math inline">\(\sigma^2_{observed}\)</span> = 234.85.</p>
+</div>
+<div id="true-score-variance" class="section level2" number="6.9">
+<h2><span class="header-section-number">6.9</span> True score variance</h2>
+<p>We use the same process to calculate the variance of true scores:</p>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="week-5-friday-workshop.html#cb271-1" aria-hidden="true" tabindex="-1"></a>var_true <span class="ot">&lt;-</span>  <span class="fu">var_pop</span>(data_theory<span class="sc">$</span>true_score)</span>
+<span id="cb271-2"><a href="week-5-friday-workshop.html#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_true)</span></code></pre></div>
+<pre><code>## [1] 206.2</code></pre>
+<p>You can see the variance of true scores is 206.25. That is, <span class="math inline">\(\sigma^2_{true}\)</span> = 206.25.</p>
+</div>
+<div id="variance-random-measurement-errors" class="section level2" number="6.10">
+<h2><span class="header-section-number">6.10</span> Variance random measurement errors</h2>
+<p>And again for the variance of random measurement errors.</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="week-5-friday-workshop.html#cb273-1" aria-hidden="true" tabindex="-1"></a>var_error <span class="ot">&lt;-</span>  <span class="fu">var_pop</span>(data_theory<span class="sc">$</span>error)</span>
+<span id="cb273-2"><a href="week-5-friday-workshop.html#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_error)</span></code></pre></div>
+<pre><code>## [1] 28.6</code></pre>
+<p>You can see the variance of random measurement errors is 28.6. That is, <span class="math inline">\(\sigma^2_{error}\)</span> = 28.6.</p>
+</div>
+<div id="variance-sum-rule" class="section level2" number="6.11">
+<h2><span class="header-section-number">6.11</span> Variance sum rule</h2>
+<p>The variances of the three columns are related via the rule below. The variance of observed scores is equal the sum of the variance of true score and errors.</p>
 <p><span class="math display">\[
-\begin{aligned} 
-\bar{X} &amp;= \frac{\sum{X}}{N} \\
-&amp;= \frac{X_1 + X_2 + X_3}{3}\\ 
-&amp;= \frac{110 + 120 + 100}{3}\\
-&amp;= \frac{330}{3}\\
-&amp;= 110\\
-\end{aligned} 
+\sigma^2_{observed} = \sigma^2_{true} + \sigma^2_{error}
 \]</span></p>
-<p><strong>Calculating squared differences</strong>.A common task in statistics is to calculate 1) the squared difference between each person and the mean, and 2) add up those squared differences. This calculation is easily expressed with the full version of the notation.</p>
+<p>You can see this by examining the variance of observed scores:</p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="week-5-friday-workshop.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_obs)</span></code></pre></div>
+<pre><code>## [1] 234.9</code></pre>
+<p>And the variance of true score plus the variance of errors:</p>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="week-5-friday-workshop.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_true <span class="sc">+</span> var_error)</span></code></pre></div>
+<pre><code>## [1] 234.8</code></pre>
+</div>
+<div id="reliability-1" class="section level2" number="6.12">
+<h2><span class="header-section-number">6.12</span> Reliability</h2>
+<p>When we analyze participant data our results are only meaningful if the values we are analyzing actually reflect participants true scores on the construct of interest. For example, if we were to conduct a <span class="math inline">\(t\)</span>-test or correlation using the measured (i.e., observed) score for participants the results are only meaningful if the observed scores are highly reflective of the underlying true levels of the construct (i.e., true scores). If, on the other hand, observed scores are composed mostly of random measurement error then the results of our analyses are meaningless.</p>
+<p>We calculate reliability for a column of observed scores to get a sense of the quality of those scores. A reliability index ranges from 0 to 1. If the reliability value is 1.00 than 100% of the variability in observed score is due to true scores (i.e., all random measurement errors are 0). For example, a reliability value of .85 for a column of extroversion score would indicate that 85% of the differences among people in the measured extroversion scores is due to actual differences in extroversion levels.</p>
+<p>Below we illustrate, using our conceptual data, four different ways to calculate reliability. I must emphasize again that with real world item-level data we would use a different approach. The value of these approaches is that they help you to understand reliability at a conceptual level.</p>
+<div id="approach-1-true-score-variance" class="section level3" number="6.12.1">
+<h3><span class="header-section-number">6.12.1</span> Approach 1: True score variance</h3>
+<p>Reliability can be thought of as the proportion of observed score variance that is due to true score variance. Lock this definition into your mind - it is the most useful one. Approaches 2 through 4 should be considered algebraic variants of this definition. We see the current definition/approach reflected in the equation below.</p>
 <p><span class="math display">\[
-\begin{aligned} 
-\sum_{i=1}^{N}{(X_i - \bar{X})^2} &amp;= (X_1-\bar{X})^2 + (X_2-\bar{X})^2 + (X_3-\bar{X})^2\\ 
-&amp;= (110-110)^2 + (120-110)^2 + (100-110)^2\\
-&amp;= (0)^2 + (10)^2 (-10)^2 \\
-&amp;= 0 + 100 + 100 \\
-&amp;= 200
-\end{aligned} 
+\rho_{xx} = \frac{\sigma^2_{true}}{\sigma^2_{observed}}\\
 \]</span></p>
-<p>Likewise, the sum of the squared differences from the mean can be expressed using the concise version of the notation.</p>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="week-5-friday-workshop.html#cb279-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> var_true<span class="sc">/</span>var_obs</span>
+<span id="cb279-2"><a href="week-5-friday-workshop.html#cb279-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
+<pre><code>## [1] 0.8782</code></pre>
+</div>
+<div id="approach-2-error-variance" class="section level3" number="6.12.2">
+<h3><span class="header-section-number">6.12.2</span> Approach 2: Error variance</h3>
+<p>Reliability can also be thought of using the algebraic version below based on error variance.</p>
 <p><span class="math display">\[
-\begin{aligned} 
-\sum{(X - \bar{X})^2} &amp;= (X_1-\bar{X})^2 + (X_2-\bar{X})^2 + (X_3-\bar{X})^2\\ 
-&amp;= (110-110)^2 + (120-110)^2 + (100-110)^2\\
-&amp;= (0)^2 + (10)^2 (-10)^2 \\
-&amp;= 0 + 100 + 100 \\
-&amp;= 200
-\end{aligned} 
+\rho_{xx} = 1 - \frac{\sigma^2_{error}}{\sigma^2_{observed}}\\
 \]</span></p>
-<div id="measurement-notation" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Measurement Notation</h2>
-<p>You may be familiar with the notation typically used when making inferences from a sample to a population. Unfortunately, the notation used in Psychological Measurement is different - similar but different. For the purposes of this course we use the notation and formulas below. Notice that we use N in the denominator - that is we use the population-level variance formula - even though we are working with sample data. Typically, measurement textbooks treat the sample as our population of interest. This difference is often a source of confusion for students.</p>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="week-5-friday-workshop.html#cb281-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> var_error<span class="sc">/</span>var_obs</span>
+<span id="cb281-2"><a href="week-5-friday-workshop.html#cb281-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
+<pre><code>## [1] 0.8782</code></pre>
+</div>
+<div id="approach-3-correlation-trueobserved" class="section level3" number="6.12.3">
+<h3><span class="header-section-number">6.12.3</span> Approach 3: Correlation true/observed</h3>
+<p>Reliability can also be thought of as the squared correlation between true scores and observed scores.</p>
 <p><span class="math display">\[
-\begin{aligned}
-\overline{X} &amp;= \frac{\sum{X}}{N} \\
-\end{aligned}
+\rho_{xx} = r_{(true,observed)}\\
 \]</span></p>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="week-5-friday-workshop.html#cb283-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> <span class="fu">cor</span>(data_theory<span class="sc">$</span>true_score, data_theory<span class="sc">$</span>observed_score)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb283-2"><a href="week-5-friday-workshop.html#cb283-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
+<pre><code>## [1] 0.8782</code></pre>
+</div>
+<div id="approach-4-correlation-errorobserved" class="section level3" number="6.12.4">
+<h3><span class="header-section-number">6.12.4</span> Approach 4: Correlation error/observed</h3>
+<p>Reliability can also be thought of as 1 - the squared correlation between errors and observed scores.</p>
 <p><span class="math display">\[
-\begin{aligned}
-S^2_X &amp;= \frac{\sum{(X - \overline{X})^2}}{N} \\
-\end{aligned}
+\rho_{xx} = 1 = r_{(error,observed)}\\
 \]</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
-\end{aligned}
-\]</span></p>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="week-5-friday-workshop.html#cb285-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">cor</span>(data_theory<span class="sc">$</span>error, data_theory<span class="sc">$</span>observed_score)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb285-2"><a href="week-5-friday-workshop.html#cb285-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
+<pre><code>## [1] 0.8782</code></pre>
+</div>
+</div>
+<div id="recap" class="section level2" number="6.13">
+<h2><span class="header-section-number">6.13</span> Recap</h2>
+<p>Let’s recap. For this workshop our goals were to:</p>
+<ul>
+<li><p>Consider the conceptual ideas of true scores and random measurement errors</p></li>
+<li><p>Understand the formula: <span class="math inline">\(X = T + E\)</span>.</p></li>
+<li><p>Understand the formula: <span class="math inline">\(\sigma^2_{observed} = \sigma^2_{true} + \sigma^2_{error}\)</span></p></li>
+<li><p>Calculate reliability, using a conceptual approach, four different ways.</p></li>
+<li><p>Recognize that in practice, we don’t know true score and errors so we need another approach (covered next week).</p></li>
+</ul>
+<p>Hopefully, you understand these concepts better than you did before the workshop.</p>
 
 </div>
 </div>
@@ -518,8 +672,8 @@ S_X &amp;= \sqrt{\frac{\sum{(X - \overline{X})^2}}{N}} \\
           </div>
         </div>
       </div>
-<a href="week-5-friday-workshop.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="scaling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-4-friday-workshop.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="notation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -550,7 +704,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-crc/edit/master/07-notation.Rmd",
+"link": "https://github.com/yihui/bookdown-crc/edit/master/06-workshop5.Rmd",
 "text": "Edit"
 },
 "history": {

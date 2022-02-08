@@ -1,0 +1,285 @@
+# Week 5 Friday Workshop
+
+
+```{r, include=FALSE}
+library(tidyverse)
+library(sjstats)
+```
+
+## Required Packagess
+
+The data files below are used in this chapter. The files are available at: https://github.com/dstanley4/psyc3250bookdown
+
+
+| Required Data |
+|-------------------|
+|[data_rel_theory.csv](data_rel_theory.csv)|
+
+
+The following CRAN packages must be installed:
+
+| Required CRAN Packages |
+|-------------------|
+|tidyverse          |
+|sjstats               |
+
+
+## Goals
+
+For this workshop our goals are to:
+
+* Consider the conceptual ideas of true scores and random measurement errors
+
+* Understand the formula: $X = T + E$.
+
+* Understand the formula: $\sigma^2_{observed} = \sigma^2_{true} + \sigma^2_{error}$
+
+* Calculate reliability, using a conceptual approach, four different ways.
+
+* Recognize that in practice, we don't know true score and errors so we need another approach (covered next week).
+
+## RStudio Project
+
+1. Create a folder on your computer for the example
+
+2. Download the data file for this example: [data_rel_theory.csv](data_rel_theory.csv). ONLY obtain this file from the Downloads folder. If you open in another program and save it again - the data file will not work.
+
+3. Place all the example data file in the folder you created in Step 1. 
+
+3. Use the menu item File > New Project... to start the project
+
+4. On the window that appears select "Existing Directory"
+
+5. On the next screen, press the "Browse" button and find/select the folder with your data
+
+6. Press the Create Project Button
+
+
+### Make a script
+
+1. Go the File menu. File > New File > Script
+
+2. When you write your code - place into this script.
+
+
+## Loading data
+
+This week that data we use should not be considered data we could obtain "in the real world". The data we use is theoretical in nature only. We load it with the code below.
+
+
+```{r, results='hide'}
+# Date: YYYY-MM-DD
+# Name: your name here
+# Example: Workshop 3 PSYC 3250
+
+## Activate packages  
+library(tidyverse)
+library(sjstats)
+
+## Load data 
+
+data_theory <- read_csv(file = "data_rel_theory.csv",
+                            show_col_types = FALSE)
+
+```
+
+Now go to the menu: Session > Restart R
+
+Then press the Source with Echo button to run the entire script. This should load the data.
+
+## True scores and errors
+
+Imagine that we are interested in the extroversion level of 10 people. If we were all knowing - and didn't need to measure anything - we could know the extroversion of level of each person. Let's look the data with the print() command, below. Inspect the true score column.
+
+```{r}
+print(data_theory)
+```
+
+Think of the values in the true score column as representing the "true" or actual extroversion level for each person. In practice, we could never know this value. But in this workshop we are "all knowing" and can know these value.
+
+If we were to try to measure the extroversion level of these people with a survey we would not obtain the true extroversion level for each person. Why is that? Because any attempt to measure the extroversion level of each person would likely be contaminated by random measurement error. These random measurement errors are illustrated in the error column.
+
+## Observed scores
+
+In practice, any measured score would reflect an individuals true score and the random measurement error. This is reflected in the equation below.
+
+$$
+\text{observed scores} = \text{true scores} + \text{errors}
+$$
+
+Sometimes, people use the symbols below to express this relation:
+$$
+X = T + E
+$$
+
+We can create the score one would observe in a measurement attempt using the code below. With this code we add the true score and the errors.
+
+```{r}
+# Creating scale SUM scores
+data_theory <- data_theory %>% 
+  rowwise() %>% 
+  mutate(observed_score = sum(c_across( c("true_score", "error") )) ) %>%
+  ungroup() 
+
+```
+
+You can see the scores we would observed in the new observed_score column via the print() command:
+
+```{r}
+print(data_theory)
+```
+
+When you inspect this observed_score column you can see that for each value the observed score is the sum of the true score and random measurement error.
+
+
+$$
+\text{observed scores} = \text{true scores} + \text{errors}
+$$
+
+
+## Column variances
+
+Let's calculate the variance for the values in each column. To do so we use the var_pop() command. We use this command because it calculate variance using $N$ in the denominator (instead of $N-1$) via the formula below:
+
+$$
+\text{var_pop()} = \sigma^2 = \frac{\Sigma(X-\bar{X})^2}{N}
+$$
+
+## Observed score variance
+
+We can calculate the variance of the observed_score column using the var_pop() command. Note that when we use data_theory$observed_score this tells the computer to got to the "data_theory spreadsheet" and the use the values in the observed_score column for the calculation. 
+
+```{r}
+var_obs <-  var_pop(data_theory$observed_score)
+print(var_obs)
+```
+
+You can see the variance of observed scores is `r var_obs`. That is, $\sigma^2_{observed}$ = `r var_obs`.
+
+## True score variance
+
+We use the same process to calculate the variance of true scores:
+
+```{r}
+var_true <-  var_pop(data_theory$true_score)
+print(var_true)
+```
+
+You can see the variance of true scores is `r var_true`. That is, $\sigma^2_{true}$ = `r var_true`.
+
+## Variance random measurement errors
+
+And again for the variance of random measurement errors. 
+
+```{r}
+var_error <-  var_pop(data_theory$error)
+print(var_error)
+```
+
+You can see the variance of random measurement errors is `r var_error`. That is, $\sigma^2_{error}$ = `r var_error`.
+
+## Variance sum rule
+
+The variances of the three columns are related via the rule below. The variance of observed scores is equal the sum of the variance of true score and errors.
+
+
+$$
+\sigma^2_{observed} = \sigma^2_{true} + \sigma^2_{error}
+$$
+
+You can see this by examining the variance of observed scores:
+
+```{r}
+print(var_obs)
+```
+
+And the variance of true score plus the variance of errors:
+
+```{r}
+print(var_true + var_error)
+```
+
+
+## Reliability
+
+When we analyze participant data our results are only meaningful if the values we are analyzing actually reflect participants true scores on the construct of interest. For example, if we were to conduct a $t$-test or correlation using the measured (i.e., observed) score for participants the results are only meaningful if the observed scores are highly reflective of the underlying true levels of the construct (i.e., true scores). If, on the other hand, observed scores are composed mostly of random measurement error then the results of our analyses are meaningless.
+
+We calculate reliability for a column of observed scores to get a sense of the quality of those scores. A reliability index ranges from 0 to 1. If the reliability value is 1.00 than 100% of the variability in observed score is due to true scores (i.e., all random measurement errors are 0). For example, a reliability value of .85 for a column of extroversion score would indicate that 85% of the differences among people in the measured extroversion scores is due to actual differences in extroversion levels.
+
+Below we illustrate, using our conceptual data, four different ways to calculate reliability. I must emphasize again that with real world item-level data we would use a different approach. The value of these approaches is that they help you to understand reliability at a conceptual level.
+
+
+### Approach 1: True score variance
+
+Reliability can be thought of as the proportion of observed score variance that is due to true score variance. Lock this definition into your mind - it is the most useful one. Approaches 2 through 4 should be considered algebraic variants of this definition. We see the current definition/approach reflected in the equation below.
+
+$$
+\rho_{xx} = \frac{\sigma^2_{true}}{\sigma^2_{observed}}\\
+$$
+
+
+```{r}
+reliability = var_true/var_obs
+print(reliability)
+```
+
+
+### Approach 2: Error variance
+
+Reliability can also be thought of using the algebraic version below based on error variance.
+
+$$
+\rho_{xx} = 1 - \frac{\sigma^2_{error}}{\sigma^2_{observed}}\\
+$$
+
+```{r}
+reliability = 1 - var_error/var_obs
+print(reliability)
+```
+
+
+### Approach 3: Correlation true/observed
+
+Reliability can also be thought of as the squared correlation between true scores and observed scores.
+
+
+$$
+\rho_{xx} = r_{(true,observed)}\\
+$$
+
+```{r}
+reliability = cor(data_theory$true_score, data_theory$observed_score)^2
+print(reliability)
+```
+
+
+### Approach 4: Correlation error/observed
+
+Reliability can also be thought of as 1 - the squared correlation between errors and observed scores.
+
+
+$$
+\rho_{xx} = 1 = r_{(error,observed)}\\
+$$
+
+
+```{r}
+reliability = 1 - cor(data_theory$error, data_theory$observed_score)^2
+print(reliability)
+```
+
+## Recap
+
+Let's recap. For this workshop our goals were to:
+
+* Consider the conceptual ideas of true scores and random measurement errors
+
+* Understand the formula: $X = T + E$.
+
+* Understand the formula: $\sigma^2_{observed} = \sigma^2_{true} + \sigma^2_{error}$
+
+* Calculate reliability, using a conceptual approach, four different ways.
+
+* Recognize that in practice, we don't know true score and errors so we need another approach (covered next week).
+
+Hopefully, you understand these concepts better than you did before the workshop.
