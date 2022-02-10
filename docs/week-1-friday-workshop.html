@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2022-02-08" />
+<meta name="date" content="2022-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -667,8 +667,8 @@ the results of an analysis, or anything else.</p>
 <pre><code>## ── Attaching packages ─────────────────── tidyverse 1.3.1 ──</code></pre>
 <pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
 ## ✓ tibble  3.1.6     ✓ dplyr   1.0.7
-## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
-## ✓ readr   2.1.1     ✓ forcats 0.5.1</code></pre>
+## ✓ tidyr   1.2.0     ✓ stringr 1.4.0
+## ✓ readr   2.1.2     ✓ forcats 0.5.1</code></pre>
 <pre><code>## ── Conflicts ────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
@@ -684,12 +684,12 @@ the results of an analysis, or anything else.</p>
 <p>If you inspect the Files pane on the right of the screen you see the <strong>data_okcupid.csv</strong> data file in our project directory. We will load this data with the commands below. If you followed the steps above, you should have auto-complete for the tidyverse commands you type for now in – in the current R session. Enter the command below into your script. As your start to type read_csv you will likely be presented with an auto-complete option. You can use the arrow keys to move up and down the list of options to select the one you want - then press tab to select it.</p>
 <p>Once your command looks like the one below select the text and click on the “Run” button.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="week-1-friday-workshop.html#cb14-1" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## Rows: 59946 Columns: 6</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────
+<pre><code>## Rows: 59946 Columns: 6
+## ── Column specification ────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (4): diet, pets, sex, status
-## dbl (2): age, height</code></pre>
-<pre><code>## 
+## dbl (2): age, height
+## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <p>The output indicates that you have loaded a data file and the type of data in each column. The sex column is of type col_character which indicates it contains text/letters. Most of the columns are of the type character. The age and height columns contain numbers are correspondingly indicated to be the type col_double. The label col_double indicates that a column of numbers represented in R with <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">high precision</a>. There are other ways of representing numbers in R but this is the type we will see/use most often.</p>
@@ -701,53 +701,53 @@ the results of an analysis, or anything else.</p>
 <div id="view-see-a-spreadsheet-view-of-your-data" class="section level3" number="1.10.1">
 <h3><span class="header-section-number">1.10.1</span> view(): See a spreadsheet view of your data</h3>
 <p>You can inspect your data in a spreadsheet view by using the view command. Do NOT add this command to your script file – EVER. Adding it to the script can cause substantial problems. Type this command in the Console.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="week-1-friday-workshop.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(okcupid_profiles)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="week-1-friday-workshop.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(okcupid_profiles)</span></code></pre></div>
 </div>
 <div id="print-see-you-data-in-the-console" class="section level3" number="1.10.2">
 <h3><span class="header-section-number">1.10.2</span> print(): See you data in the Console</h3>
 <p>You can inspect the first few rows of your data with the print() command. It is OK to add a print command to your script. Try the print() command below in the Console:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="week-1-friday-workshop.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(okcupid_profiles)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="week-1-friday-workshop.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(okcupid_profiles)</span></code></pre></div>
 <pre><code>## # A tibble: 59,946 × 6
-##      age diet              height pets         sex   status 
-##    &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;  
-##  1    22 strictly anything     75 likes dogs … m     single 
-##  2    35 mostly other          70 likes dogs … m     single 
-##  3    38 anything              68 has cats     m     availa…
-##  4    23 vegetarian            71 likes cats   m     single 
-##  5    29 &lt;NA&gt;                  66 likes dogs … m     single 
-##  6    29 mostly anything       67 likes cats   m     single 
-##  7    32 strictly anything     65 likes dogs … f     single 
-##  8    31 mostly anything       65 likes dogs … f     single 
-##  9    24 strictly anything     67 likes dogs … f     single 
-## 10    37 mostly anything       65 likes dogs … m     single 
+##      age diet              height pets          sex   status
+##    &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt; 
+##  1    22 strictly anything     75 likes dogs a… m     single
+##  2    35 mostly other          70 likes dogs a… m     single
+##  3    38 anything              68 has cats      m     avail…
+##  4    23 vegetarian            71 likes cats    m     single
+##  5    29 &lt;NA&gt;                  66 likes dogs a… m     single
+##  6    29 mostly anything       67 likes cats    m     single
+##  7    32 strictly anything     65 likes dogs a… f     single
+##  8    31 mostly anything       65 likes dogs a… f     single
+##  9    24 strictly anything     67 likes dogs a… f     single
+## 10    37 mostly anything       65 likes dogs a… m     single
 ## # … with 59,936 more rows</code></pre>
 </div>
 <div id="head-check-out-the-first-few-rows-of-data" class="section level3" number="1.10.3">
 <h3><span class="header-section-number">1.10.3</span> head(): Check out the first few rows of data</h3>
 <p>You can inspect the first few rows of your data with the head() command. Try the command below in the Console:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="week-1-friday-workshop.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="week-1-friday-workshop.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 6
-##     age diet              height pets          sex   status 
-##   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;  
-## 1    22 strictly anything     75 likes dogs a… m     single 
-## 2    35 mostly other          70 likes dogs a… m     single 
-## 3    38 anything              68 has cats      m     availa…
-## 4    23 vegetarian            71 likes cats    m     single 
-## 5    29 &lt;NA&gt;                  66 likes dogs a… m     single 
-## 6    29 mostly anything       67 likes cats    m     single</code></pre>
+##     age diet              height pets           sex   status
+##   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt; &lt;chr&gt; 
+## 1    22 strictly anything     75 likes dogs an… m     single
+## 2    35 mostly other          70 likes dogs an… m     single
+## 3    38 anything              68 has cats       m     avail…
+## 4    23 vegetarian            71 likes cats     m     single
+## 5    29 &lt;NA&gt;                  66 likes dogs an… m     single
+## 6    29 mostly anything       67 likes cats     m     single</code></pre>
 <p>You can be even more specific and indicate you only want the first three row of your data with the head() command. Try the command below in the Console:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="week-1-friday-workshop.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="week-1-friday-workshop.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 6
-##     age diet              height pets          sex   status 
-##   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;  
-## 1    22 strictly anything     75 likes dogs a… m     single 
-## 2    35 mostly other          70 likes dogs a… m     single 
-## 3    38 anything              68 has cats      m     availa…</code></pre>
+##     age diet              height pets           sex   status
+##   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt; &lt;chr&gt; 
+## 1    22 strictly anything     75 likes dogs an… m     single
+## 2    35 mostly other          70 likes dogs an… m     single
+## 3    38 anything              68 has cats       m     avail…</code></pre>
 </div>
 <div id="tail-check-out-the-last-few-rows-of-data" class="section level3" number="1.10.4">
 <h3><span class="header-section-number">1.10.4</span> tail(): Check out the last few rows of data</h3>
 <p>You can inspect the last few rows of your data with the tail() command. Try the command below in the Console:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="week-1-friday-workshop.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="week-1-friday-workshop.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 6
 ##     age diet            height pets             sex   status
 ##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt; 
@@ -758,7 +758,7 @@ the results of an analysis, or anything else.</p>
 ## 5    27 mostly anything     73 likes dogs and … m     single
 ## 6    39 &lt;NA&gt;                68 likes dogs and … m     single</code></pre>
 <p>You can be even more specific and indicate you only want the last three row of your data with the tail() command. Try the command below in the Console:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="week-1-friday-workshop.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="week-1-friday-workshop.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 6
 ##     age diet            height pets             sex   status
 ##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt; 
@@ -770,7 +770,7 @@ the results of an analysis, or anything else.</p>
 <h3><span class="header-section-number">1.10.5</span> summary(): Quick summaries</h3>
 <p>You can a short summary of your data with the summary() command. Note that we will use the summary() command in many places in the guide. The output of the summary() command changes depending on what you give it - that is put inside the brackets. You can give the summary() command many things such as data, the results of a regression analysis, etc.</p>
 <p>Try the command below in the Console. You will see that summary() give the mean and median for each of the numeric variables (age and height).</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="week-1-friday-workshop.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="week-1-friday-workshop.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
 <pre><code>##       age            diet               height    
 ##  Min.   : 18.0   Length:59946       Min.   : 1.0  
 ##  1st Qu.: 26.0   Class :character   1st Qu.:66.0  
@@ -835,47 +835,47 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 <div id="trying-source-with-echo" class="section level2" number="1.12">
 <h2><span class="header-section-number">1.12</span> Trying Source with Echo</h2>
 <p>Put the head(), tail(), and summary() command we used previously into your script. Then save your script using using the File &gt; Save menu. You script should appear as below.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="week-1-friday-workshop.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
-<span id="cb31-2"><a href="week-1-friday-workshop.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># By: John Smith</span></span>
-<span id="cb31-3"><a href="week-1-friday-workshop.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb31-4"><a href="week-1-friday-workshop.html#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-5"><a href="week-1-friday-workshop.html#cb31-5" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span>
-<span id="cb31-6"><a href="week-1-friday-workshop.html#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-7"><a href="week-1-friday-workshop.html#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span>
-<span id="cb31-8"><a href="week-1-friday-workshop.html#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-9"><a href="week-1-friday-workshop.html#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span>
-<span id="cb31-10"><a href="week-1-friday-workshop.html#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-11"><a href="week-1-friday-workshop.html#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="week-1-friday-workshop.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
+<span id="cb29-2"><a href="week-1-friday-workshop.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># By: John Smith</span></span>
+<span id="cb29-3"><a href="week-1-friday-workshop.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb29-4"><a href="week-1-friday-workshop.html#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="week-1-friday-workshop.html#cb29-5" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span>
+<span id="cb29-6"><a href="week-1-friday-workshop.html#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="week-1-friday-workshop.html#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span>
+<span id="cb29-8"><a href="week-1-friday-workshop.html#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="week-1-friday-workshop.html#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span>
+<span id="cb29-10"><a href="week-1-friday-workshop.html#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="week-1-friday-workshop.html#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
 <p>Now do the following:</p>
 <ol style="list-style-type: decimal">
 <li>Use the menu item: <strong>Session &gt; Restart R</strong></li>
 <li>Click the down arrow beside the Source button, and click on Source With Echo</li>
 </ol>
 <p>You should see the output below:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="week-1-friday-workshop.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
-<span id="cb32-2"><a href="week-1-friday-workshop.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># By: John Smith</span></span>
-<span id="cb32-3"><a href="week-1-friday-workshop.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb32-4"><a href="week-1-friday-workshop.html#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="week-1-friday-workshop.html#cb32-5" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## Rows: 59946 Columns: 6</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="week-1-friday-workshop.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code written on: YYYY/MM/DD </span></span>
+<span id="cb30-2"><a href="week-1-friday-workshop.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># By: John Smith</span></span>
+<span id="cb30-3"><a href="week-1-friday-workshop.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb30-4"><a href="week-1-friday-workshop.html#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="week-1-friday-workshop.html#cb30-5" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 59946 Columns: 6
+## ── Column specification ────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (4): diet, pets, sex, status
-## dbl (2): age, height</code></pre>
-<pre><code>## 
+## dbl (2): age, height
+## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="week-1-friday-workshop.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="week-1-friday-workshop.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(okcupid_profiles)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 6
-##     age diet              height pets          sex   status 
-##   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;  
-## 1    22 strictly anything     75 likes dogs a… m     single 
-## 2    35 mostly other          70 likes dogs a… m     single 
-## 3    38 anything              68 has cats      m     availa…
-## 4    23 vegetarian            71 likes cats    m     single 
-## 5    29 &lt;NA&gt;                  66 likes dogs a… m     single 
-## 6    29 mostly anything       67 likes cats    m     single</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="week-1-friday-workshop.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span></code></pre></div>
+##     age diet              height pets           sex   status
+##   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt; &lt;chr&gt; 
+## 1    22 strictly anything     75 likes dogs an… m     single
+## 2    35 mostly other          70 likes dogs an… m     single
+## 3    38 anything              68 has cats       m     avail…
+## 4    23 vegetarian            71 likes cats     m     single
+## 5    29 &lt;NA&gt;                  66 likes dogs an… m     single
+## 6    29 mostly anything       67 likes cats     m     single</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="week-1-friday-workshop.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(okcupid_profiles)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 6
 ##     age diet            height pets             sex   status
 ##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt; 
@@ -885,7 +885,7 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 ## 4    42 mostly anything     71 &lt;NA&gt;             m     single
 ## 5    27 mostly anything     73 likes dogs and … m     single
 ## 6    39 &lt;NA&gt;                68 likes dogs and … m     single</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="week-1-friday-workshop.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="week-1-friday-workshop.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
 <pre><code>##       age            diet               height    
 ##  Min.   : 18.0   Length:59946       Min.   : 1.0  
 ##  1st Qu.: 26.0   Class :character   1st Qu.:66.0  
@@ -910,34 +910,34 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 <div id="vector-of-numbers" class="section level4" number="1.13.0.1">
 <h4><span class="header-section-number">1.13.0.1</span> Vector of numbers</h4>
 <p>We can create a vector of only numbers using the “c” function - which you can think of as being short for “combine” (or concatenate). In the commands below we create a vector of a few even numbers called “even_numbers.”</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="week-1-friday-workshop.html#cb42-1" aria-hidden="true" tabindex="-1"></a>even_numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="week-1-friday-workshop.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(even_numbers)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="week-1-friday-workshop.html#cb38-1" aria-hidden="true" tabindex="-1"></a>even_numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="week-1-friday-workshop.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(even_numbers)</span></code></pre></div>
 <pre><code>## [1]  2  4  6  8 10</code></pre>
 <p>We can obtain the second number in the vector using the following notation:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="week-1-friday-workshop.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(even_numbers[<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="week-1-friday-workshop.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(even_numbers[<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 </div>
 <div id="vector-of-characters" class="section level4" number="1.13.0.2">
 <h4><span class="header-section-number">1.13.0.2</span> Vector of characters</h4>
 <p>We can also create vectors using only characters. Note that I use <strong>SHIFT RETURN</strong> after each comma to move to the next line.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="week-1-friday-workshop.html#cb47-1" aria-hidden="true" tabindex="-1"></a>favourite_things <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;copper kettles&quot;</span>,</span>
-<span id="cb47-2"><a href="week-1-friday-workshop.html#cb47-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;woolen mittens&quot;</span>,</span>
-<span id="cb47-3"><a href="week-1-friday-workshop.html#cb47-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;brown paper packages&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="week-1-friday-workshop.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(favourite_things)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="week-1-friday-workshop.html#cb43-1" aria-hidden="true" tabindex="-1"></a>favourite_things <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;copper kettles&quot;</span>,</span>
+<span id="cb43-2"><a href="week-1-friday-workshop.html#cb43-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;woolen mittens&quot;</span>,</span>
+<span id="cb43-3"><a href="week-1-friday-workshop.html#cb43-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;brown paper packages&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="week-1-friday-workshop.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(favourite_things)</span></code></pre></div>
 <pre><code>## [1] &quot;copper kettles&quot;       &quot;woolen mittens&quot;      
 ## [3] &quot;brown paper packages&quot;</code></pre>
 <p>As before, can obtain the second item in the vector using the following notation:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="week-1-friday-workshop.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(favourite_things[<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="week-1-friday-workshop.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(favourite_things[<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## [1] &quot;woolen mittens&quot;</code></pre>
 </div>
 <div id="lists" class="section level3" number="1.13.1">
 <h3><span class="header-section-number">1.13.1</span> Lists</h3>
 <p>Lists are similar to vectors in that you can create them and access items by their numeric position. Vectors must be all characters or all numbers. Lists can be a mix of characters or numbers. Most importantly items in lists can be accessed by their label. Note that I use <strong>SHIFT RETURN</strong> after each comma to move to the next line in the code below.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="week-1-friday-workshop.html#cb52-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">last_name =</span> <span class="st">&quot;Smith&quot;</span>,</span>
-<span id="cb52-2"><a href="week-1-friday-workshop.html#cb52-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">first_name =</span> <span class="st">&quot;John&quot;</span>,</span>
-<span id="cb52-3"><a href="week-1-friday-workshop.html#cb52-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">office_number =</span> <span class="dv">1913</span>)</span>
-<span id="cb52-4"><a href="week-1-friday-workshop.html#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-5"><a href="week-1-friday-workshop.html#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="week-1-friday-workshop.html#cb48-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">last_name =</span> <span class="st">&quot;Smith&quot;</span>,</span>
+<span id="cb48-2"><a href="week-1-friday-workshop.html#cb48-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">first_name =</span> <span class="st">&quot;John&quot;</span>,</span>
+<span id="cb48-3"><a href="week-1-friday-workshop.html#cb48-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">office_number =</span> <span class="dv">1913</span>)</span>
+<span id="cb48-4"><a href="week-1-friday-workshop.html#cb48-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-5"><a href="week-1-friday-workshop.html#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list)</span></code></pre></div>
 <pre><code>## $last_name
 ## [1] &quot;Smith&quot;
 ## 
@@ -947,13 +947,13 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 ## $office_number
 ## [1] 1913</code></pre>
 <p>You can access an item in a list using double brackets:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="week-1-friday-workshop.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list[<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="week-1-friday-workshop.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list[<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## $first_name
 ## [1] &quot;John&quot;</code></pre>
 <p>You can access an item in a list by its label/name using the dollar sign:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="week-1-friday-workshop.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>last_name)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="week-1-friday-workshop.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>last_name)</span></code></pre></div>
 <pre><code>## [1] &quot;Smith&quot;</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="week-1-friday-workshop.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>office_number)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="week-1-friday-workshop.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>office_number)</span></code></pre></div>
 <pre><code>## [1] 1913</code></pre>
 </div>
 </div>
@@ -961,8 +961,8 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 <h2><span class="header-section-number">1.14</span> Revisiting read_csv()</h2>
 <p>In the text above we learned about vectors of characters. This information can be used handle missing values in the read_csv() command. Consider a data set where for many participants we did not get a response to a question. We might have that represented in various ways within the data file. The value for that question might simply be omitted (i.e., represented by nothing – ““), represented by NA for not available, or maybe simply be something like -777.</p>
 <p>When we load data with read_csv() we can indicate to the computer how missing values are represented. This ensures the computer sees something like -777 as a missing value rather than an actual value. We do so in the read_csv() command below using the <strong>na</strong> argument (not available). Note: use SHIFT-RETURN or SHIFT-ENTER to move the next line within the read_csv() command. Failure to indicate the missing value codes within read_csv() will result in incorrect answers in most scenarios with missing data.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="week-1-friday-workshop.html#cb60-1" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>,</span>
-<span id="cb60-2"><a href="week-1-friday-workshop.html#cb60-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">na =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>, <span class="st">&quot;-777&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="week-1-friday-workshop.html#cb56-1" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>,</span>
+<span id="cb56-2"><a href="week-1-friday-workshop.html#cb56-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">na =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>, <span class="st">&quot;-777&quot;</span>))</span></code></pre></div>
 </div>
 <div id="thats-it" class="section level2" number="1.15">
 <h2><span class="header-section-number">1.15</span> That’s it!</h2>

@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2022-02-08" />
+<meta name="date" content="2022-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -492,25 +492,25 @@ div.csl-indent {
 <div id="loading-data-1" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> Loading data</h2>
 <p>This week that data we use should not be considered data we could obtain “in the real world.” The data we use is theoretical in nature only. We load it with the code below.</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="week-5-friday-workshop.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Date: YYYY-MM-DD</span></span>
-<span id="cb263-2"><a href="week-5-friday-workshop.html#cb263-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Name: your name here</span></span>
-<span id="cb263-3"><a href="week-5-friday-workshop.html#cb263-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Workshop 3 PSYC 3250</span></span>
-<span id="cb263-4"><a href="week-5-friday-workshop.html#cb263-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb263-5"><a href="week-5-friday-workshop.html#cb263-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Activate packages  </span></span>
-<span id="cb263-6"><a href="week-5-friday-workshop.html#cb263-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb263-7"><a href="week-5-friday-workshop.html#cb263-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjstats)</span>
-<span id="cb263-8"><a href="week-5-friday-workshop.html#cb263-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb263-9"><a href="week-5-friday-workshop.html#cb263-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Load data </span></span>
-<span id="cb263-10"><a href="week-5-friday-workshop.html#cb263-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb263-11"><a href="week-5-friday-workshop.html#cb263-11" aria-hidden="true" tabindex="-1"></a>data_theory <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_rel_theory.csv&quot;</span>,</span>
-<span id="cb263-12"><a href="week-5-friday-workshop.html#cb263-12" aria-hidden="true" tabindex="-1"></a>                            <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="week-5-friday-workshop.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Date: YYYY-MM-DD</span></span>
+<span id="cb252-2"><a href="week-5-friday-workshop.html#cb252-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Name: your name here</span></span>
+<span id="cb252-3"><a href="week-5-friday-workshop.html#cb252-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Workshop 3 PSYC 3250</span></span>
+<span id="cb252-4"><a href="week-5-friday-workshop.html#cb252-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb252-5"><a href="week-5-friday-workshop.html#cb252-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Activate packages  </span></span>
+<span id="cb252-6"><a href="week-5-friday-workshop.html#cb252-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb252-7"><a href="week-5-friday-workshop.html#cb252-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjstats)</span>
+<span id="cb252-8"><a href="week-5-friday-workshop.html#cb252-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb252-9"><a href="week-5-friday-workshop.html#cb252-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Load data </span></span>
+<span id="cb252-10"><a href="week-5-friday-workshop.html#cb252-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb252-11"><a href="week-5-friday-workshop.html#cb252-11" aria-hidden="true" tabindex="-1"></a>data_theory <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_rel_theory.csv&quot;</span>,</span>
+<span id="cb252-12"><a href="week-5-friday-workshop.html#cb252-12" aria-hidden="true" tabindex="-1"></a>                            <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>Now go to the menu: Session &gt; Restart R</p>
 <p>Then press the Source with Echo button to run the entire script. This should load the data.</p>
 </div>
 <div id="true-scores-and-errors" class="section level2" number="6.5">
 <h2><span class="header-section-number">6.5</span> True scores and errors</h2>
 <p>Imagine that we are interested in the extroversion level of 10 people. If we were all knowing - and didn’t need to measure anything - we could know the extroversion of level of each person. Let’s look the data with the print() command, below. Inspect the true score column.</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="week-5-friday-workshop.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data_theory)</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="week-5-friday-workshop.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data_theory)</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 3
 ##    name    true_score error
 ##    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;
@@ -538,13 +538,13 @@ div.csl-indent {
 X = T + E
 \]</span></p>
 <p>We can create the score one would observe in a measurement attempt using the code below. With this code we add the true score and the errors.</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="week-5-friday-workshop.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating scale SUM scores</span></span>
-<span id="cb266-2"><a href="week-5-friday-workshop.html#cb266-2" aria-hidden="true" tabindex="-1"></a>data_theory <span class="ot">&lt;-</span> data_theory <span class="sc">%&gt;%</span> </span>
-<span id="cb266-3"><a href="week-5-friday-workshop.html#cb266-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb266-4"><a href="week-5-friday-workshop.html#cb266-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">observed_score =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>( <span class="fu">c</span>(<span class="st">&quot;true_score&quot;</span>, <span class="st">&quot;error&quot;</span>) )) ) <span class="sc">%&gt;%</span></span>
-<span id="cb266-5"><a href="week-5-friday-workshop.html#cb266-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="week-5-friday-workshop.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating scale SUM scores</span></span>
+<span id="cb255-2"><a href="week-5-friday-workshop.html#cb255-2" aria-hidden="true" tabindex="-1"></a>data_theory <span class="ot">&lt;-</span> data_theory <span class="sc">%&gt;%</span> </span>
+<span id="cb255-3"><a href="week-5-friday-workshop.html#cb255-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb255-4"><a href="week-5-friday-workshop.html#cb255-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">observed_score =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>( <span class="fu">c</span>(<span class="st">&quot;true_score&quot;</span>, <span class="st">&quot;error&quot;</span>) )) ) <span class="sc">%&gt;%</span></span>
+<span id="cb255-5"><a href="week-5-friday-workshop.html#cb255-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() </span></code></pre></div>
 <p>You can see the scores we would observed in the new observed_score column via the print() command:</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="week-5-friday-workshop.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data_theory)</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="week-5-friday-workshop.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data_theory)</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 4
 ##    name    true_score error observed_score
 ##    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
@@ -573,24 +573,24 @@ X = T + E
 <div id="observed-score-variance" class="section level2" number="6.8">
 <h2><span class="header-section-number">6.8</span> Observed score variance</h2>
 <p>We can calculate the variance of the observed_score column using the var_pop() command. Note that when we use data_theory$observed_score this tells the computer to got to the “data_theory spreadsheet” and the use the values in the observed_score column for the calculation.</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="week-5-friday-workshop.html#cb269-1" aria-hidden="true" tabindex="-1"></a>var_obs <span class="ot">&lt;-</span>  <span class="fu">var_pop</span>(data_theory<span class="sc">$</span>observed_score)</span>
-<span id="cb269-2"><a href="week-5-friday-workshop.html#cb269-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_obs)</span></code></pre></div>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="week-5-friday-workshop.html#cb258-1" aria-hidden="true" tabindex="-1"></a>var_obs <span class="ot">&lt;-</span>  <span class="fu">var_pop</span>(data_theory<span class="sc">$</span>observed_score)</span>
+<span id="cb258-2"><a href="week-5-friday-workshop.html#cb258-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_obs)</span></code></pre></div>
 <pre><code>## [1] 234.9</code></pre>
 <p>You can see the variance of observed scores is 234.85. That is, <span class="math inline">\(\sigma^2_{observed}\)</span> = 234.85.</p>
 </div>
 <div id="true-score-variance" class="section level2" number="6.9">
 <h2><span class="header-section-number">6.9</span> True score variance</h2>
 <p>We use the same process to calculate the variance of true scores:</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="week-5-friday-workshop.html#cb271-1" aria-hidden="true" tabindex="-1"></a>var_true <span class="ot">&lt;-</span>  <span class="fu">var_pop</span>(data_theory<span class="sc">$</span>true_score)</span>
-<span id="cb271-2"><a href="week-5-friday-workshop.html#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_true)</span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="week-5-friday-workshop.html#cb260-1" aria-hidden="true" tabindex="-1"></a>var_true <span class="ot">&lt;-</span>  <span class="fu">var_pop</span>(data_theory<span class="sc">$</span>true_score)</span>
+<span id="cb260-2"><a href="week-5-friday-workshop.html#cb260-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_true)</span></code></pre></div>
 <pre><code>## [1] 206.2</code></pre>
 <p>You can see the variance of true scores is 206.25. That is, <span class="math inline">\(\sigma^2_{true}\)</span> = 206.25.</p>
 </div>
 <div id="variance-random-measurement-errors" class="section level2" number="6.10">
 <h2><span class="header-section-number">6.10</span> Variance random measurement errors</h2>
 <p>And again for the variance of random measurement errors.</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="week-5-friday-workshop.html#cb273-1" aria-hidden="true" tabindex="-1"></a>var_error <span class="ot">&lt;-</span>  <span class="fu">var_pop</span>(data_theory<span class="sc">$</span>error)</span>
-<span id="cb273-2"><a href="week-5-friday-workshop.html#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_error)</span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="week-5-friday-workshop.html#cb262-1" aria-hidden="true" tabindex="-1"></a>var_error <span class="ot">&lt;-</span>  <span class="fu">var_pop</span>(data_theory<span class="sc">$</span>error)</span>
+<span id="cb262-2"><a href="week-5-friday-workshop.html#cb262-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_error)</span></code></pre></div>
 <pre><code>## [1] 28.6</code></pre>
 <p>You can see the variance of random measurement errors is 28.6. That is, <span class="math inline">\(\sigma^2_{error}\)</span> = 28.6.</p>
 </div>
@@ -601,10 +601,10 @@ X = T + E
 \sigma^2_{observed} = \sigma^2_{true} + \sigma^2_{error}
 \]</span></p>
 <p>You can see this by examining the variance of observed scores:</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="week-5-friday-workshop.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_obs)</span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="week-5-friday-workshop.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_obs)</span></code></pre></div>
 <pre><code>## [1] 234.9</code></pre>
 <p>And the variance of true score plus the variance of errors:</p>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="week-5-friday-workshop.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_true <span class="sc">+</span> var_error)</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="week-5-friday-workshop.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(var_true <span class="sc">+</span> var_error)</span></code></pre></div>
 <pre><code>## [1] 234.8</code></pre>
 </div>
 <div id="reliability-1" class="section level2" number="6.12">
@@ -618,8 +618,8 @@ X = T + E
 <p><span class="math display">\[
 \rho_{xx} = \frac{\sigma^2_{true}}{\sigma^2_{observed}}\\
 \]</span></p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="week-5-friday-workshop.html#cb279-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> var_true<span class="sc">/</span>var_obs</span>
-<span id="cb279-2"><a href="week-5-friday-workshop.html#cb279-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="week-5-friday-workshop.html#cb268-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> var_true<span class="sc">/</span>var_obs</span>
+<span id="cb268-2"><a href="week-5-friday-workshop.html#cb268-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
 <pre><code>## [1] 0.8782</code></pre>
 </div>
 <div id="approach-2-error-variance" class="section level3" number="6.12.2">
@@ -628,28 +628,28 @@ X = T + E
 <p><span class="math display">\[
 \rho_{xx} = 1 - \frac{\sigma^2_{error}}{\sigma^2_{observed}}\\
 \]</span></p>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="week-5-friday-workshop.html#cb281-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> var_error<span class="sc">/</span>var_obs</span>
-<span id="cb281-2"><a href="week-5-friday-workshop.html#cb281-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="week-5-friday-workshop.html#cb270-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> var_error<span class="sc">/</span>var_obs</span>
+<span id="cb270-2"><a href="week-5-friday-workshop.html#cb270-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
 <pre><code>## [1] 0.8782</code></pre>
 </div>
 <div id="approach-3-correlation-trueobserved" class="section level3" number="6.12.3">
 <h3><span class="header-section-number">6.12.3</span> Approach 3: Correlation true/observed</h3>
 <p>Reliability can also be thought of as the squared correlation between true scores and observed scores.</p>
 <p><span class="math display">\[
-\rho_{xx} = r_{(true,observed)}\\
+\rho_{xx} = r_{(true,observed)}^2\\
 \]</span></p>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="week-5-friday-workshop.html#cb283-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> <span class="fu">cor</span>(data_theory<span class="sc">$</span>true_score, data_theory<span class="sc">$</span>observed_score)<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb283-2"><a href="week-5-friday-workshop.html#cb283-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="week-5-friday-workshop.html#cb272-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> <span class="fu">cor</span>(data_theory<span class="sc">$</span>true_score, data_theory<span class="sc">$</span>observed_score)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb272-2"><a href="week-5-friday-workshop.html#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
 <pre><code>## [1] 0.8782</code></pre>
 </div>
 <div id="approach-4-correlation-errorobserved" class="section level3" number="6.12.4">
 <h3><span class="header-section-number">6.12.4</span> Approach 4: Correlation error/observed</h3>
 <p>Reliability can also be thought of as 1 - the squared correlation between errors and observed scores.</p>
 <p><span class="math display">\[
-\rho_{xx} = 1 = r_{(error,observed)}\\
+\rho_{xx} = 1 - r_{(error,observed)}^2\\
 \]</span></p>
-<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="week-5-friday-workshop.html#cb285-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">cor</span>(data_theory<span class="sc">$</span>error, data_theory<span class="sc">$</span>observed_score)<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb285-2"><a href="week-5-friday-workshop.html#cb285-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="week-5-friday-workshop.html#cb274-1" aria-hidden="true" tabindex="-1"></a>reliability <span class="ot">=</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">cor</span>(data_theory<span class="sc">$</span>error, data_theory<span class="sc">$</span>observed_score)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb274-2"><a href="week-5-friday-workshop.html#cb274-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliability)</span></code></pre></div>
 <pre><code>## [1] 0.8782</code></pre>
 </div>
 </div>

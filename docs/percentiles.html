@@ -24,7 +24,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2022-02-08" />
+<meta name="date" content="2022-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -434,11 +434,11 @@ div.csl-indent {
 <h3><span class="header-section-number">9.1.1</span> A single case</h3>
 <p>If we assume our frame of reference has a normal distribution, we can calculate for one person the proportion of people who scored the same or lower than them. We multiply that proportion by 100 and we have the percentage, The percentage indicates the percentage of people who score the same or lower than them. We refer to this number as the <strong>percentile</strong> for that person.</p>
 <p>Imagine a person has a <em>z</em>-score of 0 relative to some reference group. If the distribution is normal, we can determine the <strong>proportion</strong> of people, in the reference group, that have the same score or a lower score using the command pnorm() command below. We simply put the z-score in the brackets of the pnorm() command:</p>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="percentiles.html#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="percentiles.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 0.5</code></pre>
 <p>We see that the <strong>proportion</strong> of people in the reference group with a <em>z</em>-score of zero or lower is 0.50.</p>
 <p>We can convert this proportion to a percentage by mulitplying it by 1000:</p>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="percentiles.html#cb335-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.500</span> <span class="sc">*</span> <span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="percentiles.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.500</span> <span class="sc">*</span> <span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1] 50</code></pre>
 <p>We see the percentage is 50%. This indicates that 50% of the reference group had a <em>z</em>-score of 0 or lower – assuming the distribution is normal. We illustrate this graphically below:</p>
 <p><img src="bookdown_files/figure-html/unnamed-chunk-239-1.png" width="672" /></p>
@@ -448,11 +448,11 @@ div.csl-indent {
 <div id="many-cases-using-r" class="section level3" number="9.1.2">
 <h3><span class="header-section-number">9.1.2</span> Many cases using R</h3>
 <p>Let’s return to the male_height_data from the previous chapter. We begin with the data set as it existed at the end of the last chapter. We take only a few essential columns from that data and place them into a new data set called male_height_canada_percentiles with commands below. Note that we use <strong>arrange(desc(cm_height))</strong> to sort the order of the rows so that the tallest people are at the top of the table. The desc() function makes the order of the rows based on cm_height <strong>desc</strong>ending.</p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="percentiles.html#cb337-1" aria-hidden="true" tabindex="-1"></a>male_height_canada_percentiles <span class="ot">&lt;-</span> male_height_data <span class="sc">%&gt;%</span></span>
-<span id="cb337-2"><a href="percentiles.html#cb337-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, cm_height, z_canada_male) <span class="sc">%&gt;%</span></span>
-<span id="cb337-3"><a href="percentiles.html#cb337-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(cm_height))</span>
-<span id="cb337-4"><a href="percentiles.html#cb337-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb337-5"><a href="percentiles.html#cb337-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_canada_percentiles)</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="percentiles.html#cb324-1" aria-hidden="true" tabindex="-1"></a>male_height_canada_percentiles <span class="ot">&lt;-</span> male_height_data <span class="sc">%&gt;%</span></span>
+<span id="cb324-2"><a href="percentiles.html#cb324-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, cm_height, z_canada_male) <span class="sc">%&gt;%</span></span>
+<span id="cb324-3"><a href="percentiles.html#cb324-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(cm_height))</span>
+<span id="cb324-4"><a href="percentiles.html#cb324-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb324-5"><a href="percentiles.html#cb324-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_canada_percentiles)</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 3
 ##    name    cm_height z_canada_male
 ##    &lt;chr&gt;       &lt;dbl&gt;         &lt;dbl&gt;
@@ -467,11 +467,11 @@ div.csl-indent {
 ##  9 Jim           168        -2.51 
 ## 10 Steve         165        -2.93</code></pre>
 <p>For each person we will calculate the proportion of the distribution of Canadian males that the same height or shorter than them via the normal distribution. We will place this information in the proportion_lower column. The proportion_lower column is calculated via the mutate() command using pnorm(). Following creation of the proportion_lower column we create the percentile column by multiplying the proportion_lower column by 100 - again using the mutate() command:</p>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="percentiles.html#cb339-1" aria-hidden="true" tabindex="-1"></a>male_height_canada_percentiles <span class="ot">&lt;-</span> male_height_canada_percentiles <span class="sc">%&gt;%</span></span>
-<span id="cb339-2"><a href="percentiles.html#cb339-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">proportion_lower =</span> <span class="fu">pnorm</span>(z_canada_male)) <span class="sc">%&gt;%</span></span>
-<span id="cb339-3"><a href="percentiles.html#cb339-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percentile =</span> proportion_lower <span class="sc">*</span> <span class="dv">100</span>)</span>
-<span id="cb339-4"><a href="percentiles.html#cb339-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb339-5"><a href="percentiles.html#cb339-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_canada_percentiles)</span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="percentiles.html#cb326-1" aria-hidden="true" tabindex="-1"></a>male_height_canada_percentiles <span class="ot">&lt;-</span> male_height_canada_percentiles <span class="sc">%&gt;%</span></span>
+<span id="cb326-2"><a href="percentiles.html#cb326-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">proportion_lower =</span> <span class="fu">pnorm</span>(z_canada_male)) <span class="sc">%&gt;%</span></span>
+<span id="cb326-3"><a href="percentiles.html#cb326-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percentile =</span> proportion_lower <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb326-4"><a href="percentiles.html#cb326-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb326-5"><a href="percentiles.html#cb326-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_canada_percentiles)</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 5
 ##    name  cm_height z_canada_male proportion_lower percentile
 ##    &lt;chr&gt;     &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;
@@ -513,10 +513,10 @@ div.csl-indent {
 </ol>
 <p>We will follow these steps using R.</p>
 <p>We begin by creating a new data set called male_height_sample_percentiles we include just the <strong>name</strong> and <strong>cm_height</strong> columns in this data set.</p>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="percentiles.html#cb341-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_data <span class="sc">%&gt;%</span></span>
-<span id="cb341-2"><a href="percentiles.html#cb341-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, cm_height)</span>
-<span id="cb341-3"><a href="percentiles.html#cb341-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb341-4"><a href="percentiles.html#cb341-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="percentiles.html#cb328-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_data <span class="sc">%&gt;%</span></span>
+<span id="cb328-2"><a href="percentiles.html#cb328-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, cm_height)</span>
+<span id="cb328-3"><a href="percentiles.html#cb328-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb328-4"><a href="percentiles.html#cb328-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 2
 ##    name    cm_height
 ##    &lt;chr&gt;       &lt;dbl&gt;
@@ -532,10 +532,10 @@ div.csl-indent {
 ## 10 Rick          183</code></pre>
 <p><strong>Step 1: Sort by height</strong>
 We sort the rows by height - ensuring the tallest males are at the top of the list by using the arrange(desc(cm_height)) command:</p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="percentiles.html#cb343-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
-<span id="cb343-2"><a href="percentiles.html#cb343-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(cm_height))</span>
-<span id="cb343-3"><a href="percentiles.html#cb343-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb343-4"><a href="percentiles.html#cb343-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="percentiles.html#cb330-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
+<span id="cb330-2"><a href="percentiles.html#cb330-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(cm_height))</span>
+<span id="cb330-3"><a href="percentiles.html#cb330-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb330-4"><a href="percentiles.html#cb330-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 2
 ##    name    cm_height
 ##    &lt;chr&gt;       &lt;dbl&gt;
@@ -551,10 +551,10 @@ We sort the rows by height - ensuring the tallest males are at the top of the li
 ## 10 Steve         165</code></pre>
 <p><strong>Step 2: Number below</strong></p>
 <p>Because the heights are now sorted we can determine the number of people on the list below each person just by their position in the list. For example, John is the tallest and there 9 people shorter than him. Basheer is the second tallest and there are 8 people shorter than him. We need a column of numbers with the values 9, 8, 7, 6, 5, 4, 3, 2, 1, 0. We use the command: n():1. The n() refers to the number of people in the data set. Correspondingly, n():1 creates the numbers 10, 9, 8, 7, 6, 5, 4, 3, 2, 1. We subtract 1 from these values to obtain 9, 8, 7, 6, 5, 4, 3, 2, 1, 0.</p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="percentiles.html#cb345-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
-<span id="cb345-2"><a href="percentiles.html#cb345-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">number_below =</span> <span class="fu">n</span>()<span class="sc">:</span><span class="dv">1</span> <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb345-3"><a href="percentiles.html#cb345-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb345-4"><a href="percentiles.html#cb345-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="percentiles.html#cb332-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
+<span id="cb332-2"><a href="percentiles.html#cb332-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">number_below =</span> <span class="fu">n</span>()<span class="sc">:</span><span class="dv">1</span> <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb332-3"><a href="percentiles.html#cb332-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb332-4"><a href="percentiles.html#cb332-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 3
 ##    name    cm_height number_below
 ##    &lt;chr&gt;       &lt;dbl&gt;        &lt;dbl&gt;
@@ -570,11 +570,11 @@ We sort the rows by height - ensuring the tallest males are at the top of the li
 ## 10 Steve         165            0</code></pre>
 <p><strong>Step 3: Calculate percentile</strong></p>
 <p>We create a new column called proportion_lower using a mutate() command. In this column we index the proportion of people with the same height or a shorter height by dividing each value in the number_below column by the total number of people (obtained via the n() command). Following this we create a percentile column by multiplying the values in the proportion_lower column by 100.</p>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="percentiles.html#cb347-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
-<span id="cb347-2"><a href="percentiles.html#cb347-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">proportion_lower =</span> number_below <span class="sc">/</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb347-3"><a href="percentiles.html#cb347-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percentile =</span> proportion_lower <span class="sc">*</span> <span class="dv">100</span>)</span>
-<span id="cb347-4"><a href="percentiles.html#cb347-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb347-5"><a href="percentiles.html#cb347-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="percentiles.html#cb334-1" aria-hidden="true" tabindex="-1"></a>male_height_sample_percentiles <span class="ot">&lt;-</span> male_height_sample_percentiles <span class="sc">%&gt;%</span></span>
+<span id="cb334-2"><a href="percentiles.html#cb334-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">proportion_lower =</span> number_below <span class="sc">/</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb334-3"><a href="percentiles.html#cb334-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percentile =</span> proportion_lower <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb334-4"><a href="percentiles.html#cb334-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb334-5"><a href="percentiles.html#cb334-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(male_height_sample_percentiles)</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 5
 ##    name   cm_height number_below proportion_lower percentile
 ##    &lt;chr&gt;      &lt;dbl&gt;        &lt;dbl&gt;            &lt;dbl&gt;      &lt;dbl&gt;
