@@ -1,0 +1,7 @@
+﻿block,item_name,item_text,type,response_options
+group20,aff_com1_likert7,I would be very happy to spend the rest of my career with this organization.,matrix,Strongly Disagree;Moderately Disagree;Slightly Disagree;Neither Agree nor Disagree;Slightly Agree;Moderately Agree;Strongly Agree
+group20,aff_com2_likert7,I really feel as if this organization's problems are my own.,matrix,Strongly Disagree;Moderately Disagree;Slightly Disagree;Neither Agree nor Disagree;Slightly Agree;Moderately Agree;Strongly Agree
+group20,aff_com3_likert7rev,"I do not feel a strong sense of ""belonging"" to my organization.",matrix,Strongly Disagree;Moderately Disagree;Slightly Disagree;Neither Agree nor Disagree;Slightly Agree;Moderately Agree;Strongly Agree
+group20,aff_com4_likert7rev,"I do not feel ""emotionally attached"" to this organization.",matrix,Strongly Disagree;Moderately Disagree;Slightly Disagree;Neither Agree nor Disagree;Slightly Agree;Moderately Agree;Strongly Agree
+group20,aff_com5_likert7rev,"I do not feel like ""part of the family"" at my organization.",matrix,Strongly Disagree;Moderately Disagree;Slightly Disagree;Neither Agree nor Disagree;Slightly Agree;Moderately Agree;Strongly Agree
+group20,aff_com6_likert7,This organization has a great deal of personal meaning for me.,matrix,Strongly Disagree;Moderately Disagree;Slightly Disagree;Neither Agree nor Disagree;Slightly Agree;Moderately Agree;Strongly Agree

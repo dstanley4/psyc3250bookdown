@@ -144,6 +144,14 @@ approach-4-correlation-errorobserved
 recap
 notation
 measurement-notation
+weeks-67-friday-workshops
+deductive-scale-construction
+impulsivity-example
+affective-commitment-example
+definition-review-of-the-literature
+creating-your-own-definition
+writing-items
+item-submission
 scaling
 data-entry
 loading-data-2
