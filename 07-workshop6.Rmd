@@ -93,7 +93,7 @@ To ensure full marks for you work with items be sure you do all of the following
 
 * **response_options** column. 
 
-  * This column should only contain the response options for each item separated by commmas. 
+  * This column should only contain the response options for each item separated by semicolons. 
   * Simply copy/paste the content of this column so that they are present for all items.
   * Do not modify the contents of the item response cell - just copy/paste that content.
 
