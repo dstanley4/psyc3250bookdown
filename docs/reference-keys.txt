@@ -142,8 +142,6 @@ approach-2-error-variance
 approach-3-correlation-trueobserved
 approach-4-correlation-errorobserved
 recap
-notation
-measurement-notation
 weeks-67-friday-workshops
 deductive-scale-construction
 impulsivity-example
@@ -152,6 +150,8 @@ definition-review-of-the-literature
 creating-your-own-definition
 writing-items
 item-submission
+notation
+measurement-notation
 scaling
 data-entry
 loading-data-2
