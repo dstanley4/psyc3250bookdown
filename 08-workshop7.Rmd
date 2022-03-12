@@ -1,0 +1,368 @@
+# Week 9 Friday Workshop
+
+```{r, include=FALSE}
+library(tidyverse)
+```
+
+## Required Packages
+
+
+The data files below are used in this chapter. The files are available at: https://github.com/dstanley4/psyc3250bookdown
+
+
+| Required Data |
+|-------------------|
+|[data_survey.csv](data_survey.csv)|
+
+
+The following CRAN packages must be installed:
+
+| Required CRAN Packages |
+|-------------------|
+|tidyverse          |
+|janitor            |
+|psyc               |
+
+**Important Note:** You should NOT use library(psych) at any point! There are major conflicts between the psych package and the tidyverse. We will access the psych package commands by preceding each command with psych:: instead of using library(psych).
+
+## Goals
+
+The primary focus of this workshop is learning **how** to conduct an item analysis. An understanding of the process used for item analysis is covered in a separate lecture - that you need not have had prior to this workshop. 
+
+## Create a project
+
+Create a project with a name of your choosing. Next, download the data file [data_survey.csv](data_survey.csv) from Courselink and save it on your computer's hard drive in the project directory. 
+
+## Activate the packages
+
+Begin your script by activating the required packages using the *library* command. At this point we only activate two of the three packages. Note we **do not call the library command for psych**, doing so would create conflicts between the psych and tidyverse packages. Instead we preceed all calls to psych package commands with psych::
+
+```{r,echo=TRUE,eval=FALSE}
+library(tidyverse)
+library(janitor)
+```
+```{r,echo=FALSE,eval=TRUE,message=FALSE}
+library(tidyverse)
+library(janitor)
+options(digits = 3)
+options(width = 100)
+```
+\pagebreak
+
+## Load your data raw data
+
+Make sure you have created a PROJECT as described in class previously.
+
+We load the data below.
+```{r,eval=FALSE, echo = TRUE}
+raw_data_survey <- read_csv(file = "data_survey.csv", na =c("", "NA", "-999"))
+```
+```{r,include = FALSE}
+raw_data_survey <- read_csv(file = "data_survey.csv", na =c("", "NA", "-999"))
+```
+
+
+In the command above command: na = c("", "NA","-999") tells the computer to interpret 1) missing values, 2) NA, and 3) -999 as missing values, respectively, when reading the data. Your initial raw data will be stored in a spreadsheet called *analytic_data_survey*
+
+
+
+\pagebreak
+
+## Make analytic data
+
+Then we create a clean version of the data:
+
+```{r}
+analytic_data_survey <- raw_data_survey %>%
+  remove_empty("rows") %>%
+  remove_empty("cols") %>%
+  clean_names()
+```
+
+Your clean data will be stored in a spreadsheet called *analytic_data_survey*.
+
+Check out the analytic_data_survey below:
+
+```{r}
+glimpse(analytic_data_survey)
+```
+
+You can tell just by looking at this item names that a 5-point Likert scale was used and that item 7 was reverse-keyed.
+
+## Flipping responses to reverse-key items
+
+Inspecting the above output you see the esteem7_liker5rev item is reverse-keyed. As well, you can tell that this data set the items have been scored using the values 1 to 5 via a 5-point Likert-type rating scale.
+
+The way you deal with reverse-keyed items depends on how you scored them. Imagine you had a different 5-point scale. You could have scored the scale with the values 1, 2, 3, 4, and 5. Alternatively, you could have scored the scale with the values 0, 1, 2, 3, and 4. The mathematical approach you use to correcting reverse-keyed items depends upon whether the 5-point scale starts with 1 or 0.
+
+In this example, we scored the data using the value 1 to 5; so that is the approach illustrated here. 
+
+In this data file all the reverse-keyed items (only one) were identified with the suffix "_likert5rev" in the column names. This suffix indicates the item was reverse keyed and that the original scale used the response points 1 to 5. We can see using the glimpse() command below that there was only one reverse-keyed item.
+
+```{r}
+analytic_data_survey %>%
+  glimpse()
+```
+
+To correct a reverse-keyed item where the lowest possible rating is 1 (i.e, 1 on a 1 to 5 scale), we simply subtract all the scores from a value one more than the highest point possible on the scale (i.e., one more than 5). For example, if a 1 to 5 response scale was used we subtract each response from 6 to obtain the recoded value.
+
+|  Original value | Math  | Recoded value |
+|             :-: |  :-:  | :-:           |
+| 1               | 6 - 1 | 5             |
+| 2               | 6 - 2 | 4             |
+| 3               | 6 - 3 | 2             |
+| 4               | 6 - 4 | 1             |
+| 5               | 6 - 5 | 1             |
+
+** Thus, for we need to subtract every value in the esteem7_likert5rev column from 6 to flip the reverse-key response to the correct direction. You can see the code that does this below (but don't type it yet).
+
+
+```{r,echo=TRUE,eval=FALSE}
+# Do not type into your script. 
+# This is PART of a command not a full command.
+analytic_data_survey <- analytic_data_survey %>% 
+  mutate(6 - across(.cols = ends_with("_likert5rev")) )
+```
+
+The code above is general in nature and will perform the subtraction for any column that end in "_likert7rev" in our case there is only one column that will be affect. The problem with the code above though is that you have the wrong column name. You have flipped the values in the column so that are not reverse-keyed anymore -- but the column name indicates that you have reverse-keyed responses. So you need to add the code below to change the column name.
+
+
+```{r,echo=TRUE,eval=FALSE}
+# Do not type into your script. 
+# This is PART of a command not a full command.
+  rename_with(.fn = str_replace,
+              .cols = ends_with("_likert5rev"),
+              pattern = "_likert5rev",
+              replacement = "_likert5")
+```
+
+Let's begin by looking at the first few rows of your data set:
+
+```{r}
+glimpse(analytic_data_survey)
+```
+
+You can see the first three values of the esteem7 column are 1, 1, and 1.
+
+Now let fix the column with code below - which you should put in your script.
+
+```{r,echo=TRUE,eval=TRUE}
+
+# Place this code in your script
+
+analytic_data_survey <- analytic_data_survey %>% 
+  mutate(6 - across(.cols = ends_with("_likert5rev")) ) %>% 
+  rename_with(.fn = str_replace,
+              .cols = ends_with("_likert5rev"),
+              pattern = "_likert5rev",
+              replacement = "_likert5")
+
+```
+
+After you put that above code in your script. Add another head() command:
+
+```{r, echo = FALSE}
+glimpse(analytic_data_survey)
+```
+
+Let's run your full script. Go to the menu Session > Restart R. The click the Source with Echo button to run full script.
+
+
+```{r, echo = TRUE}
+glimpse(analytic_data_survey)
+```
+
+When you see the output fo the second head() command you can see that the esteem7_likert5rev column has turned into esteem7_likert5 (with no rev). You can also see the first few values of this column are 5, 5, and 5. That is, you can see the values in the column have been flipped.
+
+Congratulations you've finished fixing the reverse-key item in your data set.
+
+
+## Item descriptive statistics and correlations
+
+If desired, you can obtain the descriptive statistics for each item and correlations among items.
+
+Descriptive statistics can obtained with the *describe* command from the *psych* package:
+
+```{r,echo=TRUE,eval=TRUE}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE)
+)
+
+analytic_data_survey %>%
+  summarise(across(.cols = starts_with("esteem"), 
+                   .fns = desired_descriptives)) %>%
+  as.data.frame() %>%
+  t()
+```
+
+```{r,echo=FALSE,eval=FALSE, include = FALSE}
+# newdata <- data.frame(id = 1:10)
+# 
+# newdata$name <- analytic_data_survey %>%
+#   summarise_all(list(mean), na.rm = TRUE) %>% 
+#   t() %>%
+#   row.names()
+# newdata$mean <- analytic_data_survey %>% summarise_all(list(mean), na.rm = TRUE) %>% t() %>% as.numeric()
+# newdata$sd   <- analytic_data_survey %>% summarise_all(list(sd), na.rm = TRUE) %>% t() %>% as.numeric()
+```
+
+
+A correlation matrix can be obtained using the command below.
+
+```{r,echo=TRUE,eval=TRUE}
+cor.matrix <- cor(analytic_data_survey, use = "pairwise.complete.obs")
+round(cor.matrix, 2)
+```
+
+The above matrix can be hard to read so it's easier to use
+
+```{r,echo=TRUE,eval=TRUE}
+cor.matrix <- cor(as.matrix(analytic_data_survey),
+                  use = "pairwise.complete.obs")
+round(cor.matrix, 2)
+```
+
+
+
+## Initial Cronbach's Alpha
+
+We now analyze the items in *analytic_data_survey* using the command below. This command will give us the Cronbach's alpha (with confidence interval) and most, but not all, of the item level statistics we need.
+
+```{r,echo=TRUE,eval=TRUE}
+reliabilty_results <- psych::alpha( as.data.frame(analytic_data_survey),
+                                    check.keys = FALSE)
+print(reliabilty_results$total)
+```
+
+We can see from the output above that Cronbach's $\alpha$ = .83, 95\% CI[.80, .86].
+
+This is good. But imagine we were in a scenario where we couldn't use all 10 items. We are only allowed to use 5-items. This constraint is placed on us because there are so many measures in the survey they have to limit the survey to only 5-items per measure. How do we go about picking the best 5-items?
+
+## Create "Item-Reliablity Index"
+
+To determine the best 5-items we need to look at the item-reliability index for each item. The item-reliabilty index is based on both the corrected-item-total correlation and the standard deviation of scores on the item. Consequently, an item with a high item-reliability index presumably has both high standard deviation (it detects differences among people) and a high corrected-item-total correlation (it correlates well with the column average of other items). There are not any specific values we use to interpret item-reliability index because the value of the index depends on the scale of measurement. BUT we do know that higher values on the item-reliability index are better than lower values.
+
+Unfortunately, R doesn't create the item-reliability index automatically. We can create the item-reliability index using the commands below. The dollar sign in the command below tells R to extract item_stats from within reliability results. 
+
+First we extract the item statistics from *reliability_results*. Notice below sometime use use item_stats and item.stats - make sure you notice the difference.
+
+```{r,echo=TRUE,eval=TRUE}
+item_stats <- reliabilty_results$item.stats
+print(item_stats)
+```
+
+Next, we calculate the item-reliability index. Recall this index is simply the product of the corrected item-total correlation (called r.drop in the output above) and item standard deviation (called sd in the output above). 
+
+```{r,echo=TRUE,eval=TRUE}
+item_stats$item_reliability_index <- item_stats$r.drop * item_stats$sd
+
+print(item_stats)
+```
+We can now use the item reliability index to see which items are the best. 
+
+\pagebreak
+
+## Sorting by item-reliability index
+
+In this example, we want a 5-item scale in the end. This means we need to drop 5 items. Which items should we drop? We can simply sort the rows of *item_stats* by item-reliability index to find out. The good items have a high item-reliability index, the "less good" items have a low item-reliability index. The arrange() command sorts items lowest to highest. But we combine it with the desc() command - for descending. We use the arranges the data frame so the highest item_reliability_index values are the at the top of the data.
+
+```{r,echo=TRUE,eval=TRUE}
+item_stats %>%
+  arrange(desc(item_reliability_index))
+
+
+```
+You can see the five best items are esteem9_likert5, esteem7_likert5, esteem10_likert5, esteem5_likert5, and esteem1_likert5. These items are the first five items in the top part of the table (after sorting).
+
+Be sure to also look at the items with a low item reliabilty index. Try to determine why those items had a low index. Was it because of a small standard deviation, a weak corrected item total correlation (r.drop), or a combination of both. That may influence your decision as to which items to retain.
+(continued on next page)
+
+\pagebreak
+ 
+## Creating the final scale
+Select just the items we want:
+```{r,echo=TRUE,eval=TRUE}
+final_items <- select(analytic_data_survey, 
+                      esteem1_likert5, 
+                      esteem5_likert5,
+                      esteem7_likert5,
+                      esteem9_likert5,
+                      esteem10_likert5)
+```
+
+
+### Calculate Alpha for final scale
+
+Show the final reliability analysis:
+
+```{r,echo=TRUE,eval=TRUE}
+reliabilty_results <- psych::alpha( as.data.frame(final_items),
+                                    check.keys = FALSE)
+print(reliabilty_results$total)
+```
+
+You can see from this that: $\alpha$ = .75, 95\% CI[.70, .79].
+This is lower than all 10 items, but not too bad. Ideally we want alpha to be high, but this is the best we can do with just five items.
+
+### Obtain scale scores
+
+What your really want at the end of the process is a single score on self-esteem for each person (i.e., a scale score for each person). Fortunately, when you created the **reliabilty_results** object above the scale scores were automatically created. 
+
+The code below created a new column in analytic_data_survey called self_esteem and the scale scores are placed into this new column.
+
+```{r,eval=TRUE}
+final_items <- final_items %>% 
+  rowwise() %>% 
+  mutate(self_esteem = mean( c_across(cols = starts_with("esteem")),
+                           na.rm = TRUE)) %>%
+  ungroup()
+```
+
+View the first few scores:
+
+```{r,echo=TRUE,eval=TRUE}
+head(final_items)
+```
+
+You can see that the self_esteem column contains the average of the selected items (1,5,7,9, and 10). For example, for the first person, their scores were 3 (item 1), 4 (item 5), 5 (item 7 reverse-keyed), and 5 (item 10). There was no score for item 9 it was missing. The average of 3, 4, 5, and 5 is 4.25 (as indicated in the self_esteem column).
+
+## Final scores: Range of values
+
+What is the range of scores on the new measure?
+
+```{r,echo=TRUE, eval=TRUE}
+desired_descriptives <- list(
+  mean = ~mean(.x, na.rm = TRUE),
+  min = ~min(.x, na.rm = TRUE),
+  max = ~max(.x, na.rm = TRUE)
+)
+
+final_items %>%
+  summarise(across(.cols = starts_with("self"), 
+                   .fns = desired_descriptives)) %>%
+  as.data.frame() %>%
+  t()
+```
+
+
+## Graphing final scores
+
+An APA like graph can be created with the commands below. Don't forget these commands only work if you have first used library(tidyverse) as per the previous instructions.
+
+```{r,echo=TRUE,eval=TRUE,fig.height=5,fig.width=5,message=FALSE}
+my.graph <- ggplot(data = final_items, 
+                   mapping = aes(x = self_esteem)) + 
+  geom_histogram(binwidth = .25, boundary = 0,
+                 color = "black", fill = "black") +
+  coord_cartesian(xlim = c(1, 5)) +
+  scale_x_continuous(breaks = seq(1, 5, by = 0.5)) +
+  xlab("Self-esteem scores") + 
+  ylab("Frequency") + 
+  theme_classic() 
+
+print(my.graph)
+```
+
+
+Use the *Export* pull-down menu immediately above the graph to export the graph to a file that you can later import into MS Word. On a Mac you can just drag-and-drop the exported file into MS Word. Drag-and-drop can sometimes crashes MS Word on Windows though -- so if using MS Word for Windows, use menu commands to Import the graph as a picture.
+
