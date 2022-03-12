@@ -33,16 +33,16 @@
   
 <link rel="prev" href="weeks-67-friday-workshops.html"/>
 <link rel="next" href="notation.html"/>
-<script src="libs/header-attrs-2.12/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="libs/header-attrs/header-attrs.js"></script>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -51,9 +51,9 @@
 
 
 
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -121,6 +121,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -486,28 +508,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="activate-the-packages" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> Activate the packages<a href="week-9-friday-workshop.html#activate-the-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Begin your script by activating the required packages using the <em>library</em> command. At this point we only activate two of the three packages. Note we <strong>do not call the library command for psych</strong>, doing so would create conflicts between the psych and tidyverse packages. Instead we preceed all calls to psych package commands with psych::</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="week-9-friday-workshop.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="week-9-friday-workshop.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="week-9-friday-workshop.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb276-2"><a href="week-9-friday-workshop.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code></pre></div>
 <div style="page-break-after: always;"></div>
 </div>
 <div id="load-your-data-raw-data" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> Load your data raw data<a href="week-9-friday-workshop.html#load-your-data-raw-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Make sure you have created a PROJECT as described in class previously.</p>
 <p>We load the data below.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="week-9-friday-workshop.html#cb2-1" aria-hidden="true" tabindex="-1"></a>raw_data_survey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_survey.csv&quot;</span>, <span class="at">na =</span><span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>, <span class="st">&quot;-999&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="week-9-friday-workshop.html#cb277-1" aria-hidden="true" tabindex="-1"></a>raw_data_survey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_survey.csv&quot;</span>, <span class="at">na =</span><span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;NA&quot;</span>, <span class="st">&quot;-999&quot;</span>))</span></code></pre></div>
 <p>In the command above command: na = c(““,”NA”,“-999”) tells the computer to interpret 1) missing values, 2) NA, and 3) -999 as missing values, respectively, when reading the data. Your initial raw data will be stored in a spreadsheet called <em>analytic_data_survey</em></p>
 <div style="page-break-after: always;"></div>
 </div>
 <div id="make-analytic-data" class="section level2 hasAnchor" number="8.6">
 <h2><span class="header-section-number">8.6</span> Make analytic data<a href="week-9-friday-workshop.html#make-analytic-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Then we create a clean version of the data:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="week-9-friday-workshop.html#cb3-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> raw_data_survey <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="week-9-friday-workshop.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="week-9-friday-workshop.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-4"><a href="week-9-friday-workshop.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="week-9-friday-workshop.html#cb278-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> raw_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb278-2"><a href="week-9-friday-workshop.html#cb278-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;rows&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb278-3"><a href="week-9-friday-workshop.html#cb278-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_empty</span>(<span class="st">&quot;cols&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb278-4"><a href="week-9-friday-workshop.html#cb278-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code></pre></div>
 <p>Your clean data will be stored in a spreadsheet called <em>analytic_data_survey</em>.</p>
 <p>Check out the analytic_data_survey below:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="week-9-friday-workshop.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="week-9-friday-workshop.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 10
 ## $ esteem1_likert5    &lt;dbl&gt; 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 4, NA, NA, 3, 3, 3, 3, 3, NA, 5, NA, 3…
@@ -528,8 +550,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The way you deal with reverse-keyed items depends on how you scored them. Imagine you had a different 5-point scale. You could have scored the scale with the values 1, 2, 3, 4, and 5. Alternatively, you could have scored the scale with the values 0, 1, 2, 3, and 4. The mathematical approach you use to correcting reverse-keyed items depends upon whether the 5-point scale starts with 1 or 0.</p>
 <p>In this example, we scored the data using the value 1 to 5; so that is the approach illustrated here.</p>
 <p>In this data file all the reverse-keyed items (only one) were identified with the suffix “_likert5rev” in the column names. This suffix indicates the item was reverse keyed and that the original scale used the response points 1 to 5. We can see using the glimpse() command below that there was only one reverse-keyed item.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="week-9-friday-workshop.html#cb6-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="week-9-friday-workshop.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="week-9-friday-workshop.html#cb281-1" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb281-2"><a href="week-9-friday-workshop.html#cb281-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 10
 ## $ esteem1_likert5    &lt;dbl&gt; 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 4, NA, NA, 3, 3, 3, 3, 3, NA, 5, NA, 3…
@@ -580,19 +602,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>** Thus, for we need to subtract every value in the esteem7_likert5rev column from 6 to flip the reverse-key response to the correct direction. You can see the code that does this below (but don’t type it yet).</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="week-9-friday-workshop.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do not type into your script. </span></span>
-<span id="cb8-2"><a href="week-9-friday-workshop.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is PART of a command not a full command.</span></span>
-<span id="cb8-3"><a href="week-9-friday-workshop.html#cb8-3" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
-<span id="cb8-4"><a href="week-9-friday-workshop.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="dv">6</span> <span class="sc">-</span> <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert5rev&quot;</span>)) )</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="week-9-friday-workshop.html#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do not type into your script. </span></span>
+<span id="cb283-2"><a href="week-9-friday-workshop.html#cb283-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is PART of a command not a full command.</span></span>
+<span id="cb283-3"><a href="week-9-friday-workshop.html#cb283-3" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
+<span id="cb283-4"><a href="week-9-friday-workshop.html#cb283-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="dv">6</span> <span class="sc">-</span> <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert5rev&quot;</span>)) )</span></code></pre></div>
 <p>The code above is general in nature and will perform the subtraction for any column that end in “_likert7rev” in our case there is only one column that will be affect. The problem with the code above though is that you have the wrong column name. You have flipped the values in the column so that are not reverse-keyed anymore – but the column name indicates that you have reverse-keyed responses. So you need to add the code below to change the column name.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="week-9-friday-workshop.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do not type into your script. </span></span>
-<span id="cb9-2"><a href="week-9-friday-workshop.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is PART of a command not a full command.</span></span>
-<span id="cb9-3"><a href="week-9-friday-workshop.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="at">.fn =</span> str_replace,</span>
-<span id="cb9-4"><a href="week-9-friday-workshop.html#cb9-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert5rev&quot;</span>),</span>
-<span id="cb9-5"><a href="week-9-friday-workshop.html#cb9-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">pattern =</span> <span class="st">&quot;_likert5rev&quot;</span>,</span>
-<span id="cb9-6"><a href="week-9-friday-workshop.html#cb9-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">replacement =</span> <span class="st">&quot;_likert5&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="week-9-friday-workshop.html#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do not type into your script. </span></span>
+<span id="cb284-2"><a href="week-9-friday-workshop.html#cb284-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is PART of a command not a full command.</span></span>
+<span id="cb284-3"><a href="week-9-friday-workshop.html#cb284-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="at">.fn =</span> str_replace,</span>
+<span id="cb284-4"><a href="week-9-friday-workshop.html#cb284-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert5rev&quot;</span>),</span>
+<span id="cb284-5"><a href="week-9-friday-workshop.html#cb284-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">pattern =</span> <span class="st">&quot;_likert5rev&quot;</span>,</span>
+<span id="cb284-6"><a href="week-9-friday-workshop.html#cb284-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">replacement =</span> <span class="st">&quot;_likert5&quot;</span>)</span></code></pre></div>
 <p>Let’s begin by looking at the first few rows of your data set:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="week-9-friday-workshop.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="week-9-friday-workshop.html#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 10
 ## $ esteem1_likert5    &lt;dbl&gt; 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 4, NA, NA, 3, 3, 3, 3, 3, NA, 5, NA, 3…
@@ -607,14 +629,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $ esteem10_likert5   &lt;dbl&gt; 5, NA, 5, 4, 5, 4, 4, 5, 5, 5, 4, NA, 4, 5, 4, 4, 4, 4, 5, 4, 5, 4, NA,…</code></pre>
 <p>You can see the first three values of the esteem7 column are 1, 1, and 1.</p>
 <p>Now let fix the column with code below - which you should put in your script.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="week-9-friday-workshop.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Place this code in your script</span></span>
-<span id="cb12-2"><a href="week-9-friday-workshop.html#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="week-9-friday-workshop.html#cb12-3" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
-<span id="cb12-4"><a href="week-9-friday-workshop.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="dv">6</span> <span class="sc">-</span> <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert5rev&quot;</span>)) ) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-5"><a href="week-9-friday-workshop.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="at">.fn =</span> str_replace,</span>
-<span id="cb12-6"><a href="week-9-friday-workshop.html#cb12-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert5rev&quot;</span>),</span>
-<span id="cb12-7"><a href="week-9-friday-workshop.html#cb12-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">pattern =</span> <span class="st">&quot;_likert5rev&quot;</span>,</span>
-<span id="cb12-8"><a href="week-9-friday-workshop.html#cb12-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">replacement =</span> <span class="st">&quot;_likert5&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="week-9-friday-workshop.html#cb287-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Place this code in your script</span></span>
+<span id="cb287-2"><a href="week-9-friday-workshop.html#cb287-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb287-3"><a href="week-9-friday-workshop.html#cb287-3" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="ot">&lt;-</span> analytic_data_survey <span class="sc">%&gt;%</span> </span>
+<span id="cb287-4"><a href="week-9-friday-workshop.html#cb287-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="dv">6</span> <span class="sc">-</span> <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert5rev&quot;</span>)) ) <span class="sc">%&gt;%</span> </span>
+<span id="cb287-5"><a href="week-9-friday-workshop.html#cb287-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="at">.fn =</span> str_replace,</span>
+<span id="cb287-6"><a href="week-9-friday-workshop.html#cb287-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">.cols =</span> <span class="fu">ends_with</span>(<span class="st">&quot;_likert5rev&quot;</span>),</span>
+<span id="cb287-7"><a href="week-9-friday-workshop.html#cb287-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">pattern =</span> <span class="st">&quot;_likert5rev&quot;</span>,</span>
+<span id="cb287-8"><a href="week-9-friday-workshop.html#cb287-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">replacement =</span> <span class="st">&quot;_likert5&quot;</span>)</span></code></pre></div>
 <p>After you put that above code in your script. Add another head() command:</p>
 <pre><code>## Rows: 300
 ## Columns: 10
@@ -629,7 +651,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $ esteem9_likert5  &lt;dbl&gt; NA, 5, 5, 4, 4, 4, 4, 5, NA, 4, NA, 5, 4, 4, 4, 5, 4, 3, 4, 4, 5, 3, 5, 4…
 ## $ esteem10_likert5 &lt;dbl&gt; 5, NA, 5, 4, 5, 4, 4, 5, 5, 5, 4, NA, 4, 5, 4, 4, 4, 4, 5, 4, 5, 4, NA, 5…</code></pre>
 <p>Let’s run your full script. Go to the menu Session &gt; Restart R. The click the Source with Echo button to run full script.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="week-9-friday-workshop.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="week-9-friday-workshop.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analytic_data_survey)</span></code></pre></div>
 <pre><code>## Rows: 300
 ## Columns: 10
 ## $ esteem1_likert5  &lt;dbl&gt; 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 4, NA, NA, 3, 3, 3, 3, 3, NA, 5, NA, 3, …
@@ -649,15 +671,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.8</span> Item descriptive statistics and correlations<a href="week-9-friday-workshop.html#item-descriptive-statistics-and-correlations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If desired, you can obtain the descriptive statistics for each item and correlations among items.</p>
 <p>Descriptive statistics can obtained with the <em>describe</em> command from the <em>psych</em> package:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="week-9-friday-workshop.html#cb16-1" aria-hidden="true" tabindex="-1"></a>desired_descriptives <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb16-2"><a href="week-9-friday-workshop.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-3"><a href="week-9-friday-workshop.html#cb16-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-4"><a href="week-9-friday-workshop.html#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="week-9-friday-workshop.html#cb16-5" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
-<span id="cb16-6"><a href="week-9-friday-workshop.html#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;esteem&quot;</span>), </span>
-<span id="cb16-7"><a href="week-9-friday-workshop.html#cb16-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> desired_descriptives)) <span class="sc">%&gt;%</span></span>
-<span id="cb16-8"><a href="week-9-friday-workshop.html#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb16-9"><a href="week-9-friday-workshop.html#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="week-9-friday-workshop.html#cb291-1" aria-hidden="true" tabindex="-1"></a>desired_descriptives <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb291-2"><a href="week-9-friday-workshop.html#cb291-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb291-3"><a href="week-9-friday-workshop.html#cb291-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb291-4"><a href="week-9-friday-workshop.html#cb291-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb291-5"><a href="week-9-friday-workshop.html#cb291-5" aria-hidden="true" tabindex="-1"></a>analytic_data_survey <span class="sc">%&gt;%</span></span>
+<span id="cb291-6"><a href="week-9-friday-workshop.html#cb291-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;esteem&quot;</span>), </span>
+<span id="cb291-7"><a href="week-9-friday-workshop.html#cb291-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> desired_descriptives)) <span class="sc">%&gt;%</span></span>
+<span id="cb291-8"><a href="week-9-friday-workshop.html#cb291-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb291-9"><a href="week-9-friday-workshop.html#cb291-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>()</span></code></pre></div>
 <pre><code>##                       [,1]
 ## esteem1_likert5_mean  3.39
 ## esteem2_likert5_mean  2.35
@@ -670,8 +692,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## esteem9_likert5_mean  4.29
 ## esteem10_likert5_mean 4.57</code></pre>
 <p>A correlation matrix can be obtained using the command below.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="week-9-friday-workshop.html#cb18-1" aria-hidden="true" tabindex="-1"></a>cor.matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(analytic_data_survey, <span class="at">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>)</span>
-<span id="cb18-2"><a href="week-9-friday-workshop.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cor.matrix, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="week-9-friday-workshop.html#cb293-1" aria-hidden="true" tabindex="-1"></a>cor.matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(analytic_data_survey, <span class="at">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>)</span>
+<span id="cb293-2"><a href="week-9-friday-workshop.html#cb293-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cor.matrix, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##                  esteem1_likert5 esteem2_likert5 esteem3_likert5 esteem4_likert5 esteem5_likert5
 ## esteem1_likert5             1.00            0.31            0.20            0.34            0.34
 ## esteem2_likert5             0.31            1.00            0.24            0.22            0.31
@@ -695,9 +717,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## esteem9_likert5             0.34            0.42            0.51            1.00             0.36
 ## esteem10_likert5            0.25            0.39            0.35            0.36             1.00</code></pre>
 <p>The above matrix can be hard to read so it’s easier to use</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="week-9-friday-workshop.html#cb20-1" aria-hidden="true" tabindex="-1"></a>cor.matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="fu">as.matrix</span>(analytic_data_survey),</span>
-<span id="cb20-2"><a href="week-9-friday-workshop.html#cb20-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>)</span>
-<span id="cb20-3"><a href="week-9-friday-workshop.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cor.matrix, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="week-9-friday-workshop.html#cb295-1" aria-hidden="true" tabindex="-1"></a>cor.matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="fu">as.matrix</span>(analytic_data_survey),</span>
+<span id="cb295-2"><a href="week-9-friday-workshop.html#cb295-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>)</span>
+<span id="cb295-3"><a href="week-9-friday-workshop.html#cb295-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cor.matrix, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##                  esteem1_likert5 esteem2_likert5 esteem3_likert5 esteem4_likert5 esteem5_likert5
 ## esteem1_likert5             1.00            0.31            0.20            0.34            0.34
 ## esteem2_likert5             0.31            1.00            0.24            0.22            0.31
@@ -724,9 +746,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="initial-cronbachs-alpha" class="section level2 hasAnchor" number="8.9">
 <h2><span class="header-section-number">8.9</span> Initial Cronbach’s Alpha<a href="week-9-friday-workshop.html#initial-cronbachs-alpha" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We now analyze the items in <em>analytic_data_survey</em> using the command below. This command will give us the Cronbach’s alpha (with confidence interval) and most, but not all, of the item level statistics we need.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="week-9-friday-workshop.html#cb22-1" aria-hidden="true" tabindex="-1"></a>reliabilty_results <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">alpha</span>( <span class="fu">as.data.frame</span>(analytic_data_survey),</span>
-<span id="cb22-2"><a href="week-9-friday-workshop.html#cb22-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">check.keys =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb22-3"><a href="week-9-friday-workshop.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliabilty_results<span class="sc">$</span>total)</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="week-9-friday-workshop.html#cb297-1" aria-hidden="true" tabindex="-1"></a>reliabilty_results <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">alpha</span>( <span class="fu">as.data.frame</span>(analytic_data_survey),</span>
+<span id="cb297-2"><a href="week-9-friday-workshop.html#cb297-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">check.keys =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb297-3"><a href="week-9-friday-workshop.html#cb297-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliabilty_results<span class="sc">$</span>total)</span></code></pre></div>
 <pre><code>##  raw_alpha std.alpha G6(smc) average_r S/N    ase mean    sd median_r
 ##      0.828     0.833   0.828     0.333   5 0.0143 3.66 0.339    0.328</code></pre>
 <p>We can see from the output above that Cronbach’s <span class="math inline">\(\alpha\)</span> = .83, 95% CI[.80, .86].</p>
@@ -737,8 +759,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>To determine the best 5-items we need to look at the item-reliability index for each item. The item-reliabilty index is based on both the corrected-item-total correlation and the standard deviation of scores on the item. Consequently, an item with a high item-reliability index presumably has both high standard deviation (it detects differences among people) and a high corrected-item-total correlation (it correlates well with the column average of other items). There are not any specific values we use to interpret item-reliability index because the value of the index depends on the scale of measurement. BUT we do know that higher values on the item-reliability index are better than lower values.</p>
 <p>Unfortunately, R doesn’t create the item-reliability index automatically. We can create the item-reliability index using the commands below. The dollar sign in the command below tells R to extract item_stats from within reliability results.</p>
 <p>First we extract the item statistics from <em>reliability_results</em>. Notice below sometime use use item_stats and item.stats - make sure you notice the difference.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="week-9-friday-workshop.html#cb24-1" aria-hidden="true" tabindex="-1"></a>item_stats <span class="ot">&lt;-</span> reliabilty_results<span class="sc">$</span>item.stats</span>
-<span id="cb24-2"><a href="week-9-friday-workshop.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(item_stats)</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="week-9-friday-workshop.html#cb299-1" aria-hidden="true" tabindex="-1"></a>item_stats <span class="ot">&lt;-</span> reliabilty_results<span class="sc">$</span>item.stats</span>
+<span id="cb299-2"><a href="week-9-friday-workshop.html#cb299-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(item_stats)</span></code></pre></div>
 <pre><code>##                    n raw.r std.r r.cor r.drop mean    sd
 ## esteem1_likert5  276 0.596 0.604 0.536  0.494 3.39 0.538
 ## esteem2_likert5  272 0.569 0.587 0.513  0.473 2.35 0.479
@@ -751,9 +773,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## esteem9_likert5  265 0.734 0.712 0.679  0.611 4.29 0.705
 ## esteem10_likert5 276 0.641 0.615 0.553  0.501 4.57 0.614</code></pre>
 <p>Next, we calculate the item-reliability index. Recall this index is simply the product of the corrected item-total correlation (called r.drop in the output above) and item standard deviation (called sd in the output above).</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="week-9-friday-workshop.html#cb26-1" aria-hidden="true" tabindex="-1"></a>item_stats<span class="sc">$</span>item_reliability_index <span class="ot">&lt;-</span> item_stats<span class="sc">$</span>r.drop <span class="sc">*</span> item_stats<span class="sc">$</span>sd</span>
-<span id="cb26-2"><a href="week-9-friday-workshop.html#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="week-9-friday-workshop.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(item_stats)</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="week-9-friday-workshop.html#cb301-1" aria-hidden="true" tabindex="-1"></a>item_stats<span class="sc">$</span>item_reliability_index <span class="ot">&lt;-</span> item_stats<span class="sc">$</span>r.drop <span class="sc">*</span> item_stats<span class="sc">$</span>sd</span>
+<span id="cb301-2"><a href="week-9-friday-workshop.html#cb301-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb301-3"><a href="week-9-friday-workshop.html#cb301-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(item_stats)</span></code></pre></div>
 <pre><code>##                    n raw.r std.r r.cor r.drop mean    sd item_reliability_index
 ## esteem1_likert5  276 0.596 0.604 0.536  0.494 3.39 0.538                  0.266
 ## esteem2_likert5  272 0.569 0.587 0.513  0.473 2.35 0.479                  0.227
@@ -771,8 +793,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sorting-by-item-reliability-index" class="section level2 hasAnchor" number="8.11">
 <h2><span class="header-section-number">8.11</span> Sorting by item-reliability index<a href="week-9-friday-workshop.html#sorting-by-item-reliability-index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this example, we want a 5-item scale in the end. This means we need to drop 5 items. Which items should we drop? We can simply sort the rows of <em>item_stats</em> by item-reliability index to find out. The good items have a high item-reliability index, the “less good” items have a low item-reliability index. The arrange() command sorts items lowest to highest. But we combine it with the desc() command - for descending. We use the arranges the data frame so the highest item_reliability_index values are the at the top of the data.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="week-9-friday-workshop.html#cb28-1" aria-hidden="true" tabindex="-1"></a>item_stats <span class="sc">%&gt;%</span></span>
-<span id="cb28-2"><a href="week-9-friday-workshop.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(item_reliability_index))</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="week-9-friday-workshop.html#cb303-1" aria-hidden="true" tabindex="-1"></a>item_stats <span class="sc">%&gt;%</span></span>
+<span id="cb303-2"><a href="week-9-friday-workshop.html#cb303-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(item_reliability_index))</span></code></pre></div>
 <pre><code>##                    n raw.r std.r r.cor r.drop mean    sd item_reliability_index
 ## esteem9_likert5  265 0.734 0.712 0.679  0.611 4.29 0.705                  0.431
 ## esteem7_likert5  273 0.699 0.692 0.653  0.587 4.49 0.607                  0.357
@@ -792,18 +814,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="creating-the-final-scale" class="section level2 hasAnchor" number="8.12">
 <h2><span class="header-section-number">8.12</span> Creating the final scale<a href="week-9-friday-workshop.html#creating-the-final-scale" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Select just the items we want:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="week-9-friday-workshop.html#cb30-1" aria-hidden="true" tabindex="-1"></a>final_items <span class="ot">&lt;-</span> <span class="fu">select</span>(analytic_data_survey, </span>
-<span id="cb30-2"><a href="week-9-friday-workshop.html#cb30-2" aria-hidden="true" tabindex="-1"></a>                      esteem1_likert5, </span>
-<span id="cb30-3"><a href="week-9-friday-workshop.html#cb30-3" aria-hidden="true" tabindex="-1"></a>                      esteem5_likert5,</span>
-<span id="cb30-4"><a href="week-9-friday-workshop.html#cb30-4" aria-hidden="true" tabindex="-1"></a>                      esteem7_likert5,</span>
-<span id="cb30-5"><a href="week-9-friday-workshop.html#cb30-5" aria-hidden="true" tabindex="-1"></a>                      esteem9_likert5,</span>
-<span id="cb30-6"><a href="week-9-friday-workshop.html#cb30-6" aria-hidden="true" tabindex="-1"></a>                      esteem10_likert5)</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="week-9-friday-workshop.html#cb305-1" aria-hidden="true" tabindex="-1"></a>final_items <span class="ot">&lt;-</span> <span class="fu">select</span>(analytic_data_survey, </span>
+<span id="cb305-2"><a href="week-9-friday-workshop.html#cb305-2" aria-hidden="true" tabindex="-1"></a>                      esteem1_likert5, </span>
+<span id="cb305-3"><a href="week-9-friday-workshop.html#cb305-3" aria-hidden="true" tabindex="-1"></a>                      esteem5_likert5,</span>
+<span id="cb305-4"><a href="week-9-friday-workshop.html#cb305-4" aria-hidden="true" tabindex="-1"></a>                      esteem7_likert5,</span>
+<span id="cb305-5"><a href="week-9-friday-workshop.html#cb305-5" aria-hidden="true" tabindex="-1"></a>                      esteem9_likert5,</span>
+<span id="cb305-6"><a href="week-9-friday-workshop.html#cb305-6" aria-hidden="true" tabindex="-1"></a>                      esteem10_likert5)</span></code></pre></div>
 <div id="calculate-alpha-for-final-scale" class="section level3 hasAnchor" number="8.12.1">
 <h3><span class="header-section-number">8.12.1</span> Calculate Alpha for final scale<a href="week-9-friday-workshop.html#calculate-alpha-for-final-scale" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Show the final reliability analysis:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="week-9-friday-workshop.html#cb31-1" aria-hidden="true" tabindex="-1"></a>reliabilty_results <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">alpha</span>( <span class="fu">as.data.frame</span>(final_items),</span>
-<span id="cb31-2"><a href="week-9-friday-workshop.html#cb31-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">check.keys =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb31-3"><a href="week-9-friday-workshop.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliabilty_results<span class="sc">$</span>total)</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="week-9-friday-workshop.html#cb306-1" aria-hidden="true" tabindex="-1"></a>reliabilty_results <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">alpha</span>( <span class="fu">as.data.frame</span>(final_items),</span>
+<span id="cb306-2"><a href="week-9-friday-workshop.html#cb306-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">check.keys =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb306-3"><a href="week-9-friday-workshop.html#cb306-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliabilty_results<span class="sc">$</span>total)</span></code></pre></div>
 <pre><code>##  raw_alpha std.alpha G6(smc) average_r  S/N    ase mean    sd median_r
 ##      0.747     0.752   0.711     0.378 3.04 0.0227 4.11 0.437    0.387</code></pre>
 <p>You can see from this that: <span class="math inline">\(\alpha\)</span> = .75, 95% CI[.70, .79].
@@ -813,13 +835,13 @@ This is lower than all 10 items, but not too bad. Ideally we want alpha to be hi
 <h3><span class="header-section-number">8.12.2</span> Obtain scale scores<a href="week-9-friday-workshop.html#obtain-scale-scores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What your really want at the end of the process is a single score on self-esteem for each person (i.e., a scale score for each person). Fortunately, when you created the <strong>reliabilty_results</strong> object above the scale scores were automatically created.</p>
 <p>The code below created a new column in analytic_data_survey called self_esteem and the scale scores are placed into this new column.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="week-9-friday-workshop.html#cb33-1" aria-hidden="true" tabindex="-1"></a>final_items <span class="ot">&lt;-</span> final_items <span class="sc">%&gt;%</span> </span>
-<span id="cb33-2"><a href="week-9-friday-workshop.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb33-3"><a href="week-9-friday-workshop.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">self_esteem =</span> <span class="fu">mean</span>( <span class="fu">c_across</span>(<span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)),</span>
-<span id="cb33-4"><a href="week-9-friday-workshop.html#cb33-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb33-5"><a href="week-9-friday-workshop.html#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="week-9-friday-workshop.html#cb308-1" aria-hidden="true" tabindex="-1"></a>final_items <span class="ot">&lt;-</span> final_items <span class="sc">%&gt;%</span> </span>
+<span id="cb308-2"><a href="week-9-friday-workshop.html#cb308-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb308-3"><a href="week-9-friday-workshop.html#cb308-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">self_esteem =</span> <span class="fu">mean</span>( <span class="fu">c_across</span>(<span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;esteem&quot;</span>)),</span>
+<span id="cb308-4"><a href="week-9-friday-workshop.html#cb308-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb308-5"><a href="week-9-friday-workshop.html#cb308-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
 <p>View the first few scores:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="week-9-friday-workshop.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(final_items)</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="week-9-friday-workshop.html#cb309-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(final_items)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 6
 ##   esteem1_likert5 esteem5_likert5 esteem7_likert5 esteem9_likert5 esteem10_likert5 self_esteem
 ##             &lt;dbl&gt;           &lt;dbl&gt;           &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt;
@@ -835,17 +857,17 @@ This is lower than all 10 items, but not too bad. Ideally we want alpha to be hi
 <div id="final-scores-range-of-values" class="section level2 hasAnchor" number="8.13">
 <h2><span class="header-section-number">8.13</span> Final scores: Range of values<a href="week-9-friday-workshop.html#final-scores-range-of-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>What is the range of scores on the new measure?</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="week-9-friday-workshop.html#cb36-1" aria-hidden="true" tabindex="-1"></a>desired_descriptives <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb36-2"><a href="week-9-friday-workshop.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb36-3"><a href="week-9-friday-workshop.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">min =</span> <span class="sc">~</span><span class="fu">min</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb36-4"><a href="week-9-friday-workshop.html#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">max =</span> <span class="sc">~</span><span class="fu">max</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb36-5"><a href="week-9-friday-workshop.html#cb36-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb36-6"><a href="week-9-friday-workshop.html#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="week-9-friday-workshop.html#cb36-7" aria-hidden="true" tabindex="-1"></a>final_items <span class="sc">%&gt;%</span></span>
-<span id="cb36-8"><a href="week-9-friday-workshop.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;self&quot;</span>), </span>
-<span id="cb36-9"><a href="week-9-friday-workshop.html#cb36-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> desired_descriptives)) <span class="sc">%&gt;%</span></span>
-<span id="cb36-10"><a href="week-9-friday-workshop.html#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb36-11"><a href="week-9-friday-workshop.html#cb36-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="week-9-friday-workshop.html#cb311-1" aria-hidden="true" tabindex="-1"></a>desired_descriptives <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb311-2"><a href="week-9-friday-workshop.html#cb311-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb311-3"><a href="week-9-friday-workshop.html#cb311-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">min =</span> <span class="sc">~</span><span class="fu">min</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb311-4"><a href="week-9-friday-workshop.html#cb311-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">max =</span> <span class="sc">~</span><span class="fu">max</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb311-5"><a href="week-9-friday-workshop.html#cb311-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb311-6"><a href="week-9-friday-workshop.html#cb311-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb311-7"><a href="week-9-friday-workshop.html#cb311-7" aria-hidden="true" tabindex="-1"></a>final_items <span class="sc">%&gt;%</span></span>
+<span id="cb311-8"><a href="week-9-friday-workshop.html#cb311-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;self&quot;</span>), </span>
+<span id="cb311-9"><a href="week-9-friday-workshop.html#cb311-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> desired_descriptives)) <span class="sc">%&gt;%</span></span>
+<span id="cb311-10"><a href="week-9-friday-workshop.html#cb311-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb311-11"><a href="week-9-friday-workshop.html#cb311-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>()</span></code></pre></div>
 <pre><code>##                  [,1]
 ## self_esteem_mean 4.11
 ## self_esteem_min  3.00
@@ -854,18 +876,18 @@ This is lower than all 10 items, but not too bad. Ideally we want alpha to be hi
 <div id="graphing-final-scores" class="section level2 hasAnchor" number="8.14">
 <h2><span class="header-section-number">8.14</span> Graphing final scores<a href="week-9-friday-workshop.html#graphing-final-scores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An APA like graph can be created with the commands below. Don’t forget these commands only work if you have first used library(tidyverse) as per the previous instructions.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="week-9-friday-workshop.html#cb38-1" aria-hidden="true" tabindex="-1"></a>my.graph <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> final_items, </span>
-<span id="cb38-2"><a href="week-9-friday-workshop.html#cb38-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> self_esteem)) <span class="sc">+</span> </span>
-<span id="cb38-3"><a href="week-9-friday-workshop.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">25</span>, <span class="at">boundary =</span> <span class="dv">0</span>,</span>
-<span id="cb38-4"><a href="week-9-friday-workshop.html#cb38-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb38-5"><a href="week-9-friday-workshop.html#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb38-6"><a href="week-9-friday-workshop.html#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb38-7"><a href="week-9-friday-workshop.html#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Self-esteem scores&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb38-8"><a href="week-9-friday-workshop.html#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb38-9"><a href="week-9-friday-workshop.html#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() </span>
-<span id="cb38-10"><a href="week-9-friday-workshop.html#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-11"><a href="week-9-friday-workshop.html#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my.graph)</span></code></pre></div>
-<p><img src="bookdown_files/figure-html/unnamed-chunk-28-1.png" width="480" /></p>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="week-9-friday-workshop.html#cb313-1" aria-hidden="true" tabindex="-1"></a>my.graph <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> final_items, </span>
+<span id="cb313-2"><a href="week-9-friday-workshop.html#cb313-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> self_esteem)) <span class="sc">+</span> </span>
+<span id="cb313-3"><a href="week-9-friday-workshop.html#cb313-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">25</span>, <span class="at">boundary =</span> <span class="dv">0</span>,</span>
+<span id="cb313-4"><a href="week-9-friday-workshop.html#cb313-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb313-5"><a href="week-9-friday-workshop.html#cb313-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb313-6"><a href="week-9-friday-workshop.html#cb313-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb313-7"><a href="week-9-friday-workshop.html#cb313-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Self-esteem scores&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb313-8"><a href="week-9-friday-workshop.html#cb313-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb313-9"><a href="week-9-friday-workshop.html#cb313-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() </span>
+<span id="cb313-10"><a href="week-9-friday-workshop.html#cb313-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb313-11"><a href="week-9-friday-workshop.html#cb313-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my.graph)</span></code></pre></div>
+<p><img src="bookdown_files/figure-html/unnamed-chunk-226-1.png" width="480" /></p>
 <p>Use the <em>Export</em> pull-down menu immediately above the graph to export the graph to a file that you can later import into MS Word. On a Mac you can just drag-and-drop the exported file into MS Word. Drag-and-drop can sometimes crashes MS Word on Windows though – so if using MS Word for Windows, use menu commands to Import the graph as a picture.</p>
 
 </div>
@@ -879,14 +901,14 @@ This is lower than all 10 items, but not too bad. Ideally we want alpha to be hi
 <a href="notation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
