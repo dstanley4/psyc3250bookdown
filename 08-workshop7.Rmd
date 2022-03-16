@@ -239,7 +239,7 @@ reliabilty_results <- psych::alpha( as.data.frame(analytic_data_survey),
 print(reliabilty_results$total)
 ```
 
-We can see from the output above that Cronbach's $\alpha$ = .83, 95\% CI[.80, .86].
+We can see from the output above that Cronbach's $\alpha$ = .83, 95\% CI[.80, .86]. You look at the **raw alpha** output to obtain this value (.83).
 
 This is good. But imagine we were in a scenario where we couldn't use all 10 items. We are only allowed to use 5-items. This constraint is placed on us because there are so many measures in the survey they have to limit the survey to only 5-items per measure. How do we go about picking the best 5-items?
 
@@ -298,7 +298,8 @@ final_items <- select(analytic_data_survey,
 
 ### Calculate Alpha for final scale
 
-Show the final reliability analysis:
+Show the final reliability analysis with the code below. Look at the raw alpha to obtain Cronbach's alpha - the confidence interval is below it.
+
 
 ```{r,echo=TRUE,eval=TRUE}
 reliabilty_results <- psych::alpha( as.data.frame(final_items),

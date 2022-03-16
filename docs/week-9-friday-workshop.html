@@ -748,7 +748,7 @@ div.csl-indent {
 <span id="cb297-3"><a href="week-9-friday-workshop.html#cb297-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliabilty_results<span class="sc">$</span>total)</span></code></pre></div>
 <pre><code>##  raw_alpha std.alpha G6(smc) average_r S/N    ase mean    sd median_r
 ##      0.828     0.833   0.828     0.333   5 0.0143 3.66 0.339    0.328</code></pre>
-<p>We can see from the output above that Cronbach’s <span class="math inline">\(\alpha\)</span> = .83, 95% CI[.80, .86].</p>
+<p>We can see from the output above that Cronbach’s <span class="math inline">\(\alpha\)</span> = .83, 95% CI[.80, .86]. You look at the <strong>raw alpha</strong> output to obtain this value (.83).</p>
 <p>This is good. But imagine we were in a scenario where we couldn’t use all 10 items. We are only allowed to use 5-items. This constraint is placed on us because there are so many measures in the survey they have to limit the survey to only 5-items per measure. How do we go about picking the best 5-items?</p>
 </div>
 <div id="create-item-reliablity-index" class="section level2 hasAnchor" number="8.11">
@@ -819,7 +819,7 @@ div.csl-indent {
 <span id="cb305-6"><a href="week-9-friday-workshop.html#cb305-6" aria-hidden="true" tabindex="-1"></a>                      esteem10_likert5)</span></code></pre></div>
 <div id="calculate-alpha-for-final-scale" class="section level3 hasAnchor" number="8.13.1">
 <h3><span class="header-section-number">8.13.1</span> Calculate Alpha for final scale<a href="week-9-friday-workshop.html#calculate-alpha-for-final-scale" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Show the final reliability analysis:</p>
+<p>Show the final reliability analysis with the code below. Look at the raw alpha to obtain Cronbach’s alpha - the confidence interval is below it.</p>
 <div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="week-9-friday-workshop.html#cb306-1" aria-hidden="true" tabindex="-1"></a>reliabilty_results <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">alpha</span>( <span class="fu">as.data.frame</span>(final_items),</span>
 <span id="cb306-2"><a href="week-9-friday-workshop.html#cb306-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">check.keys =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb306-3"><a href="week-9-friday-workshop.html#cb306-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reliabilty_results)</span></code></pre></div>
