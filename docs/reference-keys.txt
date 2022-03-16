@@ -158,7 +158,8 @@ activate-the-packages
 load-your-data-raw-data
 make-analytic-data
 flipping-responses-to-reverse-key-items-1
-item-descriptive-statistics-and-correlations
+item-descriptive-statistics
+item-correlations
 initial-cronbachs-alpha
 create-item-reliablity-index
 sorting-by-item-reliability-index

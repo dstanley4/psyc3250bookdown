@@ -177,7 +177,7 @@ When you see the output fo the second head() command you can see that the esteem
 Congratulations you've finished fixing the reverse-key item in your data set.
 
 
-## Item descriptive statistics and correlations
+## Item descriptive statistics 
 
 If desired, you can obtain the descriptive statistics for each item and correlations among items.
 
@@ -206,6 +206,7 @@ analytic_data_survey %>%
 # newdata$sd   <- analytic_data_survey %>% summarise_all(list(sd), na.rm = TRUE) %>% t() %>% as.numeric()
 ```
 
+## Item correlations 
 
 A correlation matrix can be obtained using the command below.
 
@@ -214,11 +215,15 @@ cor.matrix <- cor(analytic_data_survey, use = "pairwise.complete.obs")
 round(cor.matrix, 2)
 ```
 
-The above matrix can be hard to read so it's easier to use
+The above matrix can be hard to read so it's easier to use the commands below to see the matrix. The column/row names are dropped but the matrix is easier to read.
 
 ```{r,echo=TRUE,eval=TRUE}
-cor.matrix <- cor(as.matrix(analytic_data_survey),
+temp_matrix <- analytic_data_survey
+names(temp_matrix) <- NULL
+
+cor.matrix <- cor(temp_matrix,
                   use = "pairwise.complete.obs")
+
 round(cor.matrix, 2)
 ```
 
@@ -298,7 +303,7 @@ Show the final reliability analysis:
 ```{r,echo=TRUE,eval=TRUE}
 reliabilty_results <- psych::alpha( as.data.frame(final_items),
                                     check.keys = FALSE)
-print(reliabilty_results$total)
+print(reliabilty_results)
 ```
 
 You can see from this that: $\alpha$ = .75, 95\% CI[.70, .79].
@@ -363,6 +368,8 @@ my.graph <- ggplot(data = final_items,
 print(my.graph)
 ```
 
+
+**Important note: In this example the data was on a 1 to 5 scale your data will be on 1 to 7 scale. You will need to adjust the x-axis accordingly for your projects.**
 
 Use the *Export* pull-down menu immediately above the graph to export the graph to a file that you can later import into MS Word. On a Mac you can just drag-and-drop the exported file into MS Word. Drag-and-drop can sometimes crashes MS Word on Windows though -- so if using MS Word for Windows, use menu commands to Import the graph as a picture.
 
