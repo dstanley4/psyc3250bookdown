@@ -168,6 +168,7 @@ calculate-alpha-for-final-scale
 obtain-scale-scores
 final-scores-range-of-values
 graphing-final-scores
+exporting-the-graph
 notation
 measurement-notation
 scaling

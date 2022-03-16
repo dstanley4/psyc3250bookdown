@@ -285,7 +285,9 @@ Be sure to also look at the items with a low item reliabilty index. Try to deter
 \pagebreak
  
 ## Creating the final scale
+
 Select just the items we want:
+
 ```{r,echo=TRUE,eval=TRUE}
 final_items <- select(analytic_data_survey, 
                       esteem1_likert5, 
@@ -372,5 +374,7 @@ print(my.graph)
 
 **Important note: In this example the data was on a 1 to 5 scale your data will be on 1 to 7 scale. You will need to adjust the x-axis accordingly for your projects.**
 
-Use the *Export* pull-down menu immediately above the graph to export the graph to a file that you can later import into MS Word. On a Mac you can just drag-and-drop the exported file into MS Word. Drag-and-drop can sometimes crashes MS Word on Windows though -- so if using MS Word for Windows, use menu commands to Import the graph as a picture.
+## Exporting the graph
+
+Use the *Export* pull-down menu immediately above the graph to export the graph to a file that you can later import into MS Word. On a Mac you can just drag-and-drop the exported file into MS Word. On MS Word for Windows though use menu commands to Import the graph as a picture.
 
