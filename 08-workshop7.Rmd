@@ -243,6 +243,31 @@ We can see from the output above that Cronbach's $\alpha$ = .83, 95\% CI[.80, .8
 
 This is good. But imagine we were in a scenario where we couldn't use all 10 items. We are only allowed to use 5-items. This constraint is placed on us because there are so many measures in the survey they have to limit the survey to only 5-items per measure. How do we go about picking the best 5-items?
 
+## WARNINGS
+
+Note that you may get warnings like the two below. Don't worry about these warnings. They just indicate poor items.
+
+### Warning 1
+
+**Negative item total correlation.** This warning will sometimes occur. It simply warns you that the item in question looks like it is reverse-keyed but you forgot to reverse it. However, we fixed all reverse key items before this step - so this simply indicates a poor item. That is, a poor item with a negative corrected item-total correlation.
+
+```{r, eval = FALSE}
+In psych::alpha(items, check.keys = F) :
+  Item = myitem_likert7rev had no variance and was deleted but still is counted in the score
+```
+
+### Warning 2
+
+**Item SD of zero.** This warning will also sometimes occur. It simply warns you that for the item in question all participants scored the same. That is, the warning indicates, a poor item with a standard deviation of zero.
+
+```{r, eval= FALSE}
+In psych::alpha(items, check.keys = F) :
+  Some items were negatively correlated with the total scale and probably 
+```
+
+Both of these warnings will be dealt with when we calculate the item-reliability index below.
+
+
 ## Create "Item-Reliablity Index"
 
 To determine the best 5-items we need to look at the item-reliability index for each item. The item-reliabilty index is based on both the corrected-item-total correlation and the standard deviation of scores on the item. Consequently, an item with a high item-reliability index presumably has both high standard deviation (it detects differences among people) and a high corrected-item-total correlation (it correlates well with the column average of other items). There are not any specific values we use to interpret item-reliability index because the value of the index depends on the scale of measurement. BUT we do know that higher values on the item-reliability index are better than lower values.

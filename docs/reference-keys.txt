@@ -161,6 +161,9 @@ flipping-responses-to-reverse-key-items-1
 item-descriptive-statistics
 item-correlations
 initial-cronbachs-alpha
+warnings
+warning-1
+warning-2
 create-item-reliablity-index
 sorting-by-item-reliability-index
 creating-the-final-scale
