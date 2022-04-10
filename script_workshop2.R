@@ -1,6 +1,6 @@
 # Date: YYYY-MM-DD
 # Name: your name here
-# Example: SWorkshop 2 PSYC 3250
+# Example: Workshop 2 PSYC 3250
 
 # Activate packages  --------------------------------------------------------
 library(tidyverse)
