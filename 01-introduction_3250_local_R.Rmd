@@ -53,7 +53,7 @@ knitr::include_graphics("ch_introduction/images/screenshot_mac_r.png")
 
 After installing R you will install RStudio. This is the software you will actually use in this course.
 
-* Go to this [link](https://rstudio.com/products/rstudio/download/) to download the latest version of RStudio. On the page that appears scroll down until you see the following:
+* Go to this [link](https://posit.co/download/rstudio-desktop/) to download the latest version of RStudio. On the page that appears scroll down until you see the following:
 
 ```{r, echo = FALSE, out.width="75%"}
 knitr::include_graphics("ch_introduction/images/screenshot_rstudio.png")
@@ -105,7 +105,7 @@ knitr::include_graphics("ch_introduction/images/screenshot_pc_base.png")
 
 After installing R you will install RStudio. This is the software you will actually use in this course.
 
-* Go to this [link](https://rstudio.com/products/rstudio/download/) to download the latest version of RStudio. On the page that appears scroll down until you see the following:
+* Go to this [link](https://posit.co/download/rstudio-desktop/) to download the latest version of RStudio. On the page that appears scroll down until you see the following:
 
 ```{r, echo = FALSE, out.width="75%"}
 knitr::include_graphics("ch_introduction/images/screenshot_rstudio.png")
