@@ -23,7 +23,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2023-01-07" />
+<meta name="date" content="2023-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,15 +32,15 @@
   
 <link rel="prev" href="about-the-author.html"/>
 <link rel="next" href="handling-data-with-the-tidyverse.html"/>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -49,9 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -119,6 +119,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -681,12 +703,12 @@ the results of an analysis, or anything else.</p>
 <div id="activate-tidyverse-auto-complete-for-your-script" class="section level3 hasAnchor" number="1.8.5">
 <h3><span class="header-section-number">1.8.5</span> Activate tidyverse auto-complete for your script<a href="week-1-friday-workshop.html#activate-tidyverse-auto-complete-for-your-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Select the library(tidyverse) text with your mouse/track-pad so that it is highlighted. Then click the Run button in the upper right of the Script panel. Doing this “runs” the selected text. After you click the Run button you should see text like the following the Console panel:</p>
-<pre><code>## ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-## ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 
+<pre><code>## ── Attaching packages ───────────────────────────────────────────────────────────────────── tidyverse 1.3.2 ──
+## ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
 ## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
 ## ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
 ## ✔ readr   2.1.3      ✔ forcats 0.5.2 
-## ── Conflicts ────────────────────── tidyverse_conflicts() ──
+## ── Conflicts ──────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <p>When you use library(tidyverse) to activate the tidyverse you activate the most commonly used subset of the tidyverse packages. In the output you see checkmarks beside names of the tidyverse packages you have activated.</p>
@@ -702,7 +724,7 @@ the results of an analysis, or anything else.</p>
 <p>Once your command looks like the one below select the text and click on the “Run” button.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="week-1-friday-workshop.html#cb12-1" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 59946 Columns: 6
-## ── Column specification ────────────────────────────────────
+## ── Column specification ──────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (4): diet, pets, sex, status
 ## dbl (2): age, height
@@ -788,14 +810,14 @@ the results of an analysis, or anything else.</p>
 <p>You can a short summary of your data with the summary() command. Note that we will use the summary() command in many places in the guide. The output of the summary() command changes depending on what you give it - that is put inside the brackets. You can give the summary() command many things such as data, the results of a regression analysis, etc.</p>
 <p>Try the command below in the Console. You will see that summary() give the mean and median for each of the numeric variables (age and height).</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="week-1-friday-workshop.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
-<pre><code>##       age             diet               height    
-##  Min.   : 18.00   Length:59946       Min.   : 1.0  
-##  1st Qu.: 26.00   Class :character   1st Qu.:66.0  
-##  Median : 30.00   Mode  :character   Median :68.0  
-##  Mean   : 32.34                      Mean   :68.3  
-##  3rd Qu.: 37.00                      3rd Qu.:71.0  
-##  Max.   :110.00                      Max.   :95.0  
-##                                      NA&#39;s   :3     
+<pre><code>##       age            diet               height    
+##  Min.   : 18.0   Length:59946       Min.   : 1.0  
+##  1st Qu.: 26.0   Class :character   1st Qu.:66.0  
+##  Median : 30.0   Mode  :character   Median :68.0  
+##  Mean   : 32.3                      Mean   :68.3  
+##  3rd Qu.: 37.0                      3rd Qu.:71.0  
+##  Max.   :110.0                      Max.   :95.0  
+##                                     NA&#39;s   :3     
 ##      pets               sex               status         
 ##  Length:59946       Length:59946       Length:59946      
 ##  Class :character   Class :character   Class :character  
@@ -875,7 +897,7 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 <span id="cb28-4"><a href="week-1-friday-workshop.html#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-5"><a href="week-1-friday-workshop.html#cb28-5" aria-hidden="true" tabindex="-1"></a>okcupid_profiles <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 59946 Columns: 6
-## ── Column specification ────────────────────────────────────
+## ── Column specification ──────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (4): diet, pets, sex, status
 ## dbl (2): age, height
@@ -903,14 +925,14 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 ## 5    27 mostly anything     73 likes dogs and … m     single
 ## 6    39 &lt;NA&gt;                68 likes dogs and … m     single</code></pre>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="week-1-friday-workshop.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(okcupid_profiles)</span></code></pre></div>
-<pre><code>##       age             diet               height    
-##  Min.   : 18.00   Length:59946       Min.   : 1.0  
-##  1st Qu.: 26.00   Class :character   1st Qu.:66.0  
-##  Median : 30.00   Mode  :character   Median :68.0  
-##  Mean   : 32.34                      Mean   :68.3  
-##  3rd Qu.: 37.00                      3rd Qu.:71.0  
-##  Max.   :110.00                      Max.   :95.0  
-##                                      NA&#39;s   :3     
+<pre><code>##       age            diet               height    
+##  Min.   : 18.0   Length:59946       Min.   : 1.0  
+##  1st Qu.: 26.0   Class :character   1st Qu.:66.0  
+##  Median : 30.0   Mode  :character   Median :68.0  
+##  Mean   : 32.3                      Mean   :68.3  
+##  3rd Qu.: 37.0                      3rd Qu.:71.0  
+##  Max.   :110.0                      Max.   :95.0  
+##                                     NA&#39;s   :3     
 ##      pets               sex               status         
 ##  Length:59946       Length:59946       Length:59946      
 ##  Class :character   Class :character   Class :character  
@@ -996,14 +1018,14 @@ Using Restart R before you run a script, or R code in general, is a critical wor
 <a href="handling-data-with-the-tidyverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1047,6 +1069,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

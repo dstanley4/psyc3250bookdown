@@ -37,13 +37,13 @@ The following GitHub package must be installed:
 
 | Required GitHub Packages |
 |--------------------------|
-|spielmanlab/introverse |
+|[https://github.com/sjspielman/introverse](https://github.com/sjspielman/introverse) |
 
 
 After the remotes package is installed, it can be used to install the introverse package from GitHub (an alternative "App Store"). If you get asked if you would like to install more recent versions of packages on your machine press "1" and Return to indicate "All" (if you are asked, you may not be).
 
 ```{r, eval = FALSE}
-remotes::install_github("spielmanlab/introverse")
+remotes::install_github("sjspielman/introverse")
 ```
 
 ## Objective
