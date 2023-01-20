@@ -7,7 +7,7 @@ library(tidyverse)
 ## Required Packages
 
 
-The data files below are used in this chapter. The files are available at: https://github.com/dstanley4/psyc3250bookdown
+The data files below are used in this chapter. Right click to download data or scripts.
 
 
 | Required Data |
@@ -15,7 +15,7 @@ The data files below are used in this chapter. The files are available at: https
 |[data_aff_survey.csv](data_aff_survey.csv)|
 
 
-The following CRAN packages must be installed:
+The following CRAN packages must be installed. Use the install.packages() command.
 
 | Required CRAN Packages |
 |-------------------|
