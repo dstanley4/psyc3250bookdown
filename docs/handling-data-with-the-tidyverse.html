@@ -23,7 +23,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2023-01-16" />
+<meta name="date" content="2023-01-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -710,8 +710,8 @@ div.csl-indent {
 <span id="cb88-2"><a href="handling-data-with-the-tidyverse.html#cb88-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex, status) <span class="sc">%&gt;%</span></span>
 <span id="cb88-3"><a href="handling-data-with-the-tidyverse.html#cb88-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">age_mean =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb88-4"><a href="handling-data-with-the-tidyverse.html#cb88-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">age_sd =</span> <span class="fu">sd</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) </span></code></pre></div>
-<pre><code>## `summarise()` has grouped output by &#39;sex&#39;. You can override
-## using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;sex&#39;. You can override using
+## the `.groups` argument.</code></pre>
 <pre><code>## # A tibble: 10 × 4
 ## # Groups:   sex [2]
 ##    sex   status         age_mean age_sd
@@ -754,7 +754,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="handling-data-with-the-tidyverse.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb94-2"><a href="handling-data-with-the-tidyverse.html#cb94-2" aria-hidden="true" tabindex="-1"></a>data_exp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data_experiment.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 6 Columns: 6
-## ── Column specification ──────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (1): sex
 ## dbl (5): id, t1_vomit, t1_aggression, t2_vomit, t2_aggre...
@@ -1089,7 +1089,7 @@ div.csl-indent {
 <p>When you read data into R using the command read_csv() (with an underscore) you load the data into a tibble (tidyverse).</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="handling-data-with-the-tidyverse.html#cb150-1" aria-hidden="true" tabindex="-1"></a>my_tibble <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;data_okcupid.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 59946 Columns: 6
-## ── Column specification ──────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (4): diet, pets, sex, status
 ## dbl (2): age, height

@@ -23,7 +23,7 @@
 <meta name="author" content="David J. Stanley" />
 
 
-<meta name="date" content="2023-01-16" />
+<meta name="date" content="2023-01-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -775,9 +775,9 @@ z = \frac{X_i-\overline{X_{item}}}{s_{item}}
 <div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="week-4-friday-workshop.html#cb234-1" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="sc">%&gt;%</span></span>
 <span id="cb234-2"><a href="week-4-friday-workshop.html#cb234-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>()</span></code></pre></div>
 <pre><code>##   skim_variable numeric.mean numeric.sd
-## 1    z_aff_com2    1.164e-18          1
-## 2    z_aff_com3   -3.508e-16          1
-## 3    z_aff_com4   -2.298e-16          1</code></pre>
+## 1    z_aff_com2   -3.109e-17          1
+## 2    z_aff_com3   -4.396e-16          1
+## 3    z_aff_com4   -3.042e-16          1</code></pre>
 <p>In the code below, we combine the z_aff_com2, z_aff_com3, and z_aff_com4 items, by adding them together (i.e., summing them together) to create a new column called <strong>z_affect_sum</strong>. The <strong>z</strong> at the start of the column name reminds us that we created the column from the z-score versions of the original items.</p>
 <div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="week-4-friday-workshop.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating scale SUM scores</span></span>
 <span id="cb236-2"><a href="week-4-friday-workshop.html#cb236-2" aria-hidden="true" tabindex="-1"></a>zscore_data <span class="ot">&lt;-</span> zscore_data <span class="sc">%&gt;%</span> </span>

@@ -308,7 +308,7 @@ Most importantly, running the library(tidyverse) prior to entering the rest of y
 
 ### Use read_csv (not read.csv) to open files. 
 
-If you inspect the Files pane on the right of the screen you see the  **data_okcupid.csv** data file in our project directory. We will load this data with the commands below. If you followed the steps above, you should have auto-complete for the tidyverse commands you type for now in -- in the current R session. Enter the command below into your script. As your start to type read_csv you will likely be presented with an auto-complete option. You can use the arrow keys to move up and down the list of options to select the one you want - then press tab to select it.
+If you inspect the Files pane on the right of the screen you see the  [data_okcupid.csv](data_okcupid.csv) data file in our project directory. We will load this data with the commands below. If you followed the steps above, you should have auto-complete for the tidyverse commands you type for now in -- in the current R session. Enter the command below into your script. As your start to type read_csv you will likely be presented with an auto-complete option. You can use the arrow keys to move up and down the list of options to select the one you want - then press tab to select it.
 
 Once your command looks like the one below select the text and click on the "Run" button.
 
